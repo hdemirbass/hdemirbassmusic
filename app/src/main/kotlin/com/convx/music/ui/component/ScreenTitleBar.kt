@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -21,8 +21,8 @@ import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.grid.LazyGridState
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
@@ -35,11 +35,11 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.convx.music.LocalAmbientBackgroundColor
-import com.convx.music.constants.AppBarHeight
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.LocalAccentTextColor
-import com.convx.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.constants.AppBarHeight
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.LocalAccentTextColor
+import com.hdemirbassmusic.music.ui.theme.isHueless
 import androidx.compose.ui.graphics.isSpecified
 
 /**

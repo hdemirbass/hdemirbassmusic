@@ -1,4 +1,4 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import java.util.concurrent.atomic.AtomicReference
 import kotlinx.coroutines.CompletableDeferred

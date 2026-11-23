@@ -1,7 +1,7 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.media.MediaCodecList
-import com.convx.music.constants.AudioQuality
+import com.hdemirbassmusic.music.constants.AudioQuality
 import com.music.spine.ModuleManager
 import com.music.spine.ModuleSearchResult
 import com.music.spine.ModuleStreamResponse

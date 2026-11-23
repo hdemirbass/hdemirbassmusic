@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
-import com.convx.music.utils.NetworkConnectivityObserver
+import com.hdemirbassmusic.music.utils.NetworkConnectivityObserver
 
 @Composable
 fun NetworkReload(

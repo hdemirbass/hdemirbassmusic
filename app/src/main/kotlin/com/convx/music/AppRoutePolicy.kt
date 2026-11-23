@@ -1,6 +1,6 @@
-package com.convx.music
+package com.hdemirbassmusic.music
 
-import com.convx.music.ui.screens.Screens
+import com.hdemirbassmusic.music.ui.screens.Screens
 
 /** Route-based rules for the app chrome surrounding each screen. */
 internal object AppRoutePolicy {

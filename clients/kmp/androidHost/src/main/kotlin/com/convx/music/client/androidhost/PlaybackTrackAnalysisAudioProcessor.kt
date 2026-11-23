@@ -1,10 +1,10 @@
-package com.convx.music.client.androidhost
+package com.hdemirbassmusic.music.client.androidhost
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.playback.TrackAnalysisGenerator
-import com.convx.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.playback.TrackAnalysisGenerator
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlinx.coroutines.channels.Channel

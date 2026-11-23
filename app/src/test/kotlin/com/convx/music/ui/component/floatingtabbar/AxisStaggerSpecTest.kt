@@ -1,4 +1,4 @@
-package com.convx.music.ui.component.floatingtabbar
+package com.hdemirbassmusic.music.ui.component.floatingtabbar
 
 import androidx.compose.ui.geometry.Rect
 import org.junit.Assert.assertEquals

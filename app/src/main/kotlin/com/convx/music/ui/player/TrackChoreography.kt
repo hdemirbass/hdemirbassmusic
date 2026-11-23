@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -10,7 +10,7 @@ import androidx.compose.runtime.Stable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import com.convx.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.MediaMetadata
 import kotlinx.coroutines.delay
 
 /**

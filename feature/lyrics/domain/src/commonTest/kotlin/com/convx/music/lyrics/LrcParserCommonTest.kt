@@ -1,7 +1,7 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
-import com.convx.music.lyrics.bitchord.LrcParser
-import com.convx.music.lyrics.bitchord.LyricAlignment
+import com.hdemirbassmusic.music.lyrics.bitchord.LrcParser
+import com.hdemirbassmusic.music.lyrics.bitchord.LyricAlignment
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue

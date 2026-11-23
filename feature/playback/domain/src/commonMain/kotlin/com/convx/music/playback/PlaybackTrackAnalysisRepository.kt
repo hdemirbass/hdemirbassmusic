@@ -1,6 +1,6 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
-import com.convx.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
 
 /** Persistent cache for provider-qualified, offline playback analysis. */
 interface PlaybackTrackAnalysisRepository {

@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.menuBottomInset
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.menuBottomInset
 import android.content.Intent
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.PaddingValues
@@ -20,10 +20,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -34,18 +34,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.music.innertube.models.ArtistItem
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.db.entities.SpeedDialItem
-import com.convx.music.db.entities.ArtistEntity
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
-import com.convx.music.ui.component.NewAction
-import com.convx.music.ui.component.NewActionGrid
-import com.convx.music.ui.component.YouTubeListItem
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.SpeedDialItem
+import com.hdemirbassmusic.music.db.entities.ArtistEntity
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.ui.component.NewAction
+import com.hdemirbassmusic.music.ui.component.NewActionGrid
+import com.hdemirbassmusic.music.ui.component.YouTubeListItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.rememberCoroutineScope

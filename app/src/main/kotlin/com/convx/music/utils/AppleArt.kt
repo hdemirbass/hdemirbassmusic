@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -11,10 +11,10 @@ import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.ui.utils.resize
-import com.convx.music.canvas.AppleArtist
-import com.convx.music.canvas.AppleArtwork
-import com.convx.music.canvas.AppleMusicCatalog
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.canvas.AppleArtist
+import com.hdemirbassmusic.music.canvas.AppleArtwork
+import com.hdemirbassmusic.music.canvas.AppleMusicCatalog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -211,7 +211,7 @@ fun rememberEstimatedArtworkBg(url: String?): Int? {
             val result = coil3.SingletonImageLoader.get(context).execute(request) as? coil3.request.SuccessResult
             result?.image?.let { image ->
                 runCatching {
-                    com.convx.music.ui.theme.AppleColors.estimateArtworkBackground(image.toBitmap())
+                    com.hdemirbassmusic.music.ui.theme.AppleColors.estimateArtworkBackground(image.toBitmap())
                 }.getOrNull()
             }?.also { estimatedBgCache.put(url, it) }
         }

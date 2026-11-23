@@ -1,4 +1,4 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
 import android.app.Application
 import android.content.Context

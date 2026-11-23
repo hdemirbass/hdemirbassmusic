@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.content.Context
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
@@ -18,8 +18,8 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -44,22 +44,22 @@ import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import com.convx.music.ui.ios.compat.SegmentedButton
-import com.convx.music.ui.ios.compat.SegmentedButtonDefaults
-import com.convx.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.SegmentedButton
+import com.hdemirbassmusic.music.ui.ios.compat.SegmentedButtonDefaults
+import com.hdemirbassmusic.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -86,9 +86,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFBubbleLeftAndBubbleRight
 import com.composables.sfsymbols.monochrome.SFCheckmark
@@ -104,22 +104,22 @@ import com.composables.sfsymbols.monochrome.SFStar
 import com.composables.sfsymbols.monochrome.SFTimer
 import com.composables.sfsymbols.monochrome.SFXmark
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.convx.music.constants.AppBarHeight
-import com.convx.music.constants.ListenTogetherInTopBarKey
-import com.convx.music.constants.ListenTogetherUsernameKey
-import com.convx.music.listentogether.ConnectionState
-import com.convx.music.listentogether.JoinRequestPayload
-import com.convx.music.listentogether.ListenTogetherEvent
-import com.convx.music.listentogether.MAX_ROOM_CODE_LENGTH
-import com.convx.music.listentogether.MIN_ROOM_CODE_LENGTH
-import com.convx.music.listentogether.SuggestionReceivedPayload
-import com.convx.music.listentogether.UserInfo
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.AppBarHeight
+import com.hdemirbassmusic.music.constants.ListenTogetherInTopBarKey
+import com.hdemirbassmusic.music.constants.ListenTogetherUsernameKey
+import com.hdemirbassmusic.music.listentogether.ConnectionState
+import com.hdemirbassmusic.music.listentogether.JoinRequestPayload
+import com.hdemirbassmusic.music.listentogether.ListenTogetherEvent
+import com.hdemirbassmusic.music.listentogether.MAX_ROOM_CODE_LENGTH
+import com.hdemirbassmusic.music.listentogether.MIN_ROOM_CODE_LENGTH
+import com.hdemirbassmusic.music.listentogether.SuggestionReceivedPayload
+import com.hdemirbassmusic.music.listentogether.UserInfo
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.launch
-import com.convx.music.ui.component.ScreenScaffold
+import com.hdemirbassmusic.music.ui.component.ScreenScaffold
 import androidx.compose.ui.platform.LocalLocale
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
@@ -299,8 +299,8 @@ fun ListenTogetherScreen(
                             maxLines = 2,
                         )
                     }
-                    com.convx.music.ui.component.SymbolIcon(
-                        symbol = com.convx.music.ui.component.sf("chevron.right"),
+                    com.hdemirbassmusic.music.ui.component.SymbolIcon(
+                        symbol = com.hdemirbassmusic.music.ui.component.sf("chevron.right"),
                         contentDescription = null, size = 16.dp,
                     )
                 }
@@ -1431,7 +1431,7 @@ private fun ControlModeCard(
     controlMode: String,
     onChange: (String) -> Unit
 ) {
-    val everyone = controlMode == com.convx.music.listentogether.ControlModes.EVERYONE
+    val everyone = controlMode == com.hdemirbassmusic.music.listentogether.ControlModes.EVERYONE
     Column(modifier = Modifier.fillMaxWidth()) {
         SectionLabel(stringResource(R.string.listen_together_control_mode))
         Spacer(Modifier.height(6.dp))
@@ -1448,12 +1448,12 @@ private fun ControlModeCard(
             SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
                 SegmentedButton(
                     selected = !everyone,
-                    onClick = { onChange(com.convx.music.listentogether.ControlModes.OWNER) },
+                    onClick = { onChange(com.hdemirbassmusic.music.listentogether.ControlModes.OWNER) },
                     shape = SegmentedButtonDefaults.itemShape(index = 0, count = 2)
                 ) { Text(stringResource(R.string.listen_together_control_owner)) }
                 SegmentedButton(
                     selected = everyone,
-                    onClick = { onChange(com.convx.music.listentogether.ControlModes.EVERYONE) },
+                    onClick = { onChange(com.hdemirbassmusic.music.listentogether.ControlModes.EVERYONE) },
                     shape = SegmentedButtonDefaults.itemShape(index = 1, count = 2)
                 ) { Text(stringResource(R.string.listen_together_control_everyone)) }
             }

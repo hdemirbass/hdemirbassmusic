@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.ambient
+package com.hdemirbassmusic.music.ui.screens.ambient
 
 import android.app.Activity
 import android.content.Context
@@ -85,41 +85,41 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.AmbientAutoHideBackButtonEnabledKey
-import com.convx.music.constants.AmbientCanvasAnchorSide
-import com.convx.music.constants.AmbientCanvasAnchorSideKey
-import com.convx.music.constants.AmbientCanvasEdgeFeatherKey
-import com.convx.music.constants.AmbientCanvasFarVeilKey
-import com.convx.music.constants.AmbientCanvasFitMode
-import com.convx.music.constants.AmbientCanvasFitModeKey
-import com.convx.music.constants.AmbientCanvasGradientSpreadKey
-import com.convx.music.constants.AmbientCanvasSideFitEnabledKey
-import com.convx.music.constants.AmbientCanvasSideGradientKey
-import com.convx.music.constants.AmbientCanvasSideWidthKey
-import com.convx.music.constants.AmbientLyricsTextSizeKey
-import com.convx.music.constants.AmbientProgressRingEnabledKey
-import com.convx.music.constants.AmbientPlaybackFeedbackEnabledKey
-import com.convx.music.constants.AmbientSeekHapticsEnabledKey
-import com.convx.music.constants.AmbientSeekTimeEnabledKey
-import com.convx.music.constants.AmbientSwipeNavigationEnabledKey
-import com.convx.music.constants.AmbientTapToPlayPauseEnabledKey
-import com.convx.music.constants.AmbientTrackInfoEnabledKey
-import com.convx.music.constants.AmbientTrackTransitionsEnabledKey
-import com.convx.music.constants.AmbientVideoCanvasBlurKey
-import com.convx.music.constants.AmbientVideoCanvasDimKey
-import com.convx.music.constants.AmbientVideoCanvasEnabledKey
-import com.convx.music.constants.AmbientCanvasSourceKey
-import com.convx.music.constants.CanvasSource
-import com.convx.music.constants.LyricsTextSizeKey
-import com.convx.music.models.MediaMetadata
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.ui.component.AnimatedPlayPauseIcon
-import com.convx.music.ui.player.InlineLyricsView
-import com.convx.music.utils.makeTimeString
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AmbientAutoHideBackButtonEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasAnchorSide
+import com.hdemirbassmusic.music.constants.AmbientCanvasAnchorSideKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasEdgeFeatherKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasFarVeilKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasFitMode
+import com.hdemirbassmusic.music.constants.AmbientCanvasFitModeKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasGradientSpreadKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasSideFitEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasSideGradientKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasSideWidthKey
+import com.hdemirbassmusic.music.constants.AmbientLyricsTextSizeKey
+import com.hdemirbassmusic.music.constants.AmbientProgressRingEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientPlaybackFeedbackEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientSeekHapticsEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientSeekTimeEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientSwipeNavigationEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientTapToPlayPauseEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientTrackInfoEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientTrackTransitionsEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientVideoCanvasBlurKey
+import com.hdemirbassmusic.music.constants.AmbientVideoCanvasDimKey
+import com.hdemirbassmusic.music.constants.AmbientVideoCanvasEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasSourceKey
+import com.hdemirbassmusic.music.constants.CanvasSource
+import com.hdemirbassmusic.music.constants.LyricsTextSizeKey
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.ui.component.AnimatedPlayPauseIcon
+import com.hdemirbassmusic.music.ui.player.InlineLyricsView
+import com.hdemirbassmusic.music.utils.makeTimeString
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

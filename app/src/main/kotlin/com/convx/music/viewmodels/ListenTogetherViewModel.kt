@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import androidx.lifecycle.ViewModel
-import com.convx.music.listentogether.ListenTogetherManager
+import com.hdemirbassmusic.music.listentogether.ListenTogetherManager
 
 class ListenTogetherViewModel(
     private val manager: ListenTogetherManager

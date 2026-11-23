@@ -1,9 +1,9 @@
-package com.convx.music.client.ios
+package com.hdemirbassmusic.music.client.ios
 
-import com.convx.music.account.SecureSessionStore
-import com.convx.music.client.ios.keychaincompat.convx_keychain_clear
-import com.convx.music.client.ios.keychaincompat.convx_keychain_read
-import com.convx.music.client.ios.keychaincompat.convx_keychain_write
+import com.hdemirbassmusic.music.account.SecureSessionStore
+import com.hdemirbassmusic.music.client.ios.keychaincompat.hdemirbassmusic_keychain_clear
+import com.hdemirbassmusic.music.client.ios.keychaincompat.hdemirbassmusic_keychain_read
+import com.hdemirbassmusic.music.client.ios.keychaincompat.hdemirbassmusic_keychain_write
 import kotlinx.cinterop.ByteVar
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.addressOf
@@ -26,7 +26,7 @@ internal class IosSecureSessionStore(
     override suspend fun read(): String? = withContext(Dispatchers.Default) {
         memScoped {
             val buffer = allocArray<ByteVar>(MAX_SESSION_BYTES)
-            val status = convx_keychain_read(
+            val status = hdemirbassmusic_keychain_read(
                 keychainAccount.cstr.getPointer(this),
                 buffer,
                 MAX_SESSION_BYTES.toULong(),
@@ -46,7 +46,7 @@ internal class IosSecureSessionStore(
         memScoped {
             val nativeAccount = keychainAccount.cstr.getPointer(this)
             bytes.usePinned { pinned ->
-                val status = convx_keychain_write(
+                val status = hdemirbassmusic_keychain_write(
                     nativeAccount,
                     pinned.addressOf(0),
                     bytes.size.toULong(),
@@ -58,7 +58,7 @@ internal class IosSecureSessionStore(
 
     override suspend fun clear() = withContext(Dispatchers.Default) {
         val status = memScoped {
-            convx_keychain_clear(keychainAccount.cstr.getPointer(this))
+            hdemirbassmusic_keychain_clear(keychainAccount.cstr.getPointer(this))
         }
         check(status == SUCCESS || status == ITEM_NOT_FOUND) {
             "iOS Keychain clear failed with status $status."
@@ -78,7 +78,7 @@ internal suspend fun verifyIosSecureSessionStoreRoundTrip(): String {
     val store = IosSecureSessionStore(keychainAccount = "ci-roundtrip-${Random.nextLong()}")
     var result: String? = null
     try {
-        val payload = "convx-keychain-roundtrip"
+        val payload = "hdemirbassmusic-keychain-roundtrip"
         store.write(payload)
         check(store.read() == payload) { "Keychain did not return the stored session probe." }
         store.clear()

@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.DownloadRingIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.menuBottomInset
+import com.hdemirbassmusic.music.ui.component.DownloadRingIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.menuBottomInset
 import android.content.Context
 import android.content.res.Configuration
 import android.widget.Toast
@@ -38,23 +38,23 @@ import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import com.convx.music.ui.component.shapes.ContinuousCapsule
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.AlertDialog
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.FilledTonalButton
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.LinearProgressIndicator
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.FilledTonalButton
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.LinearProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -85,30 +85,30 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import com.music.innertube.YouTube
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.ListItemHeight
-import com.convx.music.listentogether.ConnectionState
-import com.convx.music.listentogether.ListenTogetherEvent
-import com.convx.music.listentogether.MAX_ROOM_CODE_LENGTH
-import com.convx.music.listentogether.MIN_ROOM_CODE_LENGTH
-import com.convx.music.models.MediaMetadata
-import com.convx.music.playback.ExoDownloadService
-import com.convx.music.core.AudioDeviceMenu
-import com.convx.music.ui.component.BottomSheetState
-import com.convx.music.ui.component.ListDialog
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
-import com.convx.music.ui.component.NewAction
-import com.convx.music.ui.component.NewActionGrid
-import com.convx.music.constants.EnableSaavnStreamingKey
-import com.convx.music.utils.rememberPreference
-import com.convx.music.ui.player.menuLabel
-import com.convx.music.ui.player.rememberSleepTimerState
-import com.convx.music.ui.player.SleepTimerDialogHost
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ListItemHeight
+import com.hdemirbassmusic.music.listentogether.ConnectionState
+import com.hdemirbassmusic.music.listentogether.ListenTogetherEvent
+import com.hdemirbassmusic.music.listentogether.MAX_ROOM_CODE_LENGTH
+import com.hdemirbassmusic.music.listentogether.MIN_ROOM_CODE_LENGTH
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.playback.ExoDownloadService
+import com.hdemirbassmusic.music.core.AudioDeviceMenu
+import com.hdemirbassmusic.music.ui.component.BottomSheetState
+import com.hdemirbassmusic.music.ui.component.ListDialog
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.ui.component.NewAction
+import com.hdemirbassmusic.music.ui.component.NewActionGrid
+import com.hdemirbassmusic.music.constants.EnableSaavnStreamingKey
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.ui.player.menuLabel
+import com.hdemirbassmusic.music.ui.player.rememberSleepTimerState
+import com.hdemirbassmusic.music.ui.player.SleepTimerDialogHost
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlin.math.log2
@@ -127,7 +127,7 @@ fun PlayerMenu(
 ) {
     mediaMetadata ?: return
     val context = LocalContext.current
-    val ringtoneViewModel = com.convx.music.LocalRingtoneViewModel.current
+    val ringtoneViewModel = com.hdemirbassmusic.music.LocalRingtoneViewModel.current
     val database = LocalDatabase.current.get()
     val playerConnection = LocalPlayerConnection.current ?: return
     val sleepTimer = rememberSleepTimerState(playerConnection)
@@ -155,7 +155,7 @@ fun PlayerMenu(
     }
 
     val listenTogetherManager = LocalListenTogetherManager.current
-    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = com.convx.music.listentogether.RoomRole.NONE)
+    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = com.hdemirbassmusic.music.listentogether.RoomRole.NONE)
     // See Player.kt: gated on control mode, not on role.
     val canControlTogether = listenTogetherManager?.canControl?.collectAsState(initial = true)
     val isListenTogetherGuest = canControlTogether?.value == false
@@ -280,7 +280,7 @@ fun PlayerMenu(
                                 type = "text/plain"
                                 putExtra(
                                     android.content.Intent.EXTRA_TEXT,
-                                    com.convx.music.utils.ShareUtils.songUrl(mediaMetadata.id)
+                                    com.hdemirbassmusic.music.utils.ShareUtils.songUrl(mediaMetadata.id)
                                 )
                             }
                             context.startActivity(android.content.Intent.createChooser(intent, null))
@@ -638,7 +638,7 @@ fun TempoPitchDialog(onDismiss: () -> Unit) {
         playerConnection.player.playbackParameters =
             PlaybackParameters(tempo, 2f.pow(transposeValue.toFloat() / 12))
     }
-    val listenTogetherManager = com.convx.music.LocalListenTogetherManager.current
+    val listenTogetherManager = com.hdemirbassmusic.music.LocalListenTogetherManager.current
     val isInRoom = listenTogetherManager?.isInRoom ?: false
 
     AlertDialog(
@@ -751,7 +751,7 @@ fun ListenTogetherDialog(
     if (!visible) return
     
     val context = LocalContext.current
-    val listenTogetherManager = com.convx.music.LocalListenTogetherManager.current
+    val listenTogetherManager = com.hdemirbassmusic.music.LocalListenTogetherManager.current
     
     if (listenTogetherManager == null) {
         ListDialog(onDismiss = onDismiss) {
@@ -798,7 +798,7 @@ fun ListenTogetherDialog(
     val pendingJoinRequests by listenTogetherManager.pendingJoinRequests.collectAsStateWithLifecycle()
     val pendingSuggestions by listenTogetherManager.pendingSuggestions.collectAsStateWithLifecycle()
     
-    var savedUsername by rememberPreference(com.convx.music.constants.ListenTogetherUsernameKey, "")
+    var savedUsername by rememberPreference(com.hdemirbassmusic.music.constants.ListenTogetherUsernameKey, "")
     var roomCodeInput by rememberSaveable { mutableStateOf("") }
     var usernameInput by rememberSaveable { mutableStateOf(savedUsername) }
 

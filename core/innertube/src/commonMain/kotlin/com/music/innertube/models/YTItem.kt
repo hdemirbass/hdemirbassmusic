@@ -3,7 +3,7 @@ package com.music.innertube.models
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_PODCAST_EPISODE
 
-const val SHARE_DOMAIN = "convx.aryavl.com"
+const val SHARE_DOMAIN = "hdemirbassmusic.aryavl.com"
 const val SHARE_BASE_URL = "https://$SHARE_DOMAIN"
 
 sealed class YTItem {

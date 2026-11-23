@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.content.Context
 import android.os.Build
@@ -52,10 +52,10 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
-import com.convx.music.R
-import com.convx.music.ui.component.backdrop.internal.recordLayer
-import com.convx.music.ui.utils.resize
-import com.convx.music.ui.utils.sharedArtworkTarget
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.recordLayer
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkTarget
 import com.valentinilk.shimmer.shimmer
 import dev.chrisbanes.haze.ExperimentalHazeApi
 import kotlin.math.pow
@@ -123,7 +123,7 @@ fun ArtistHeroImage(
                         modifier = Modifier.fillMaxSize(),
                     )
                     // Keep the base artwork visible while Apple's image loads, then crossfade it over.
-                    if (!appleArtworkUrl.isNullOrBlank() && !com.convx.music.ui.utils.artworkTransitionRunning()) {
+                    if (!appleArtworkUrl.isNullOrBlank() && !com.hdemirbassmusic.music.ui.utils.artworkTransitionRunning()) {
                         AsyncImage(
                             model = ImageRequest.Builder(context)
                                 .data(appleArtworkUrl)
@@ -312,7 +312,7 @@ private suspend fun bakeArtistFoot(context: Context, url: String, extent: Float 
     val levels = Array(ArtistFootLevelsPt.size) { i ->
         val sigma = ArtistFootLevelsPt[i]
         if (sigma == 0f) base else base.copyOf().also {
-            com.convx.music.ui.utils.stackBlurPixels(it, w, h, stackRadiusFor(sigma * pxPerPt).coerceAtLeast(1))
+            com.hdemirbassmusic.music.ui.utils.stackBlurPixels(it, w, h, stackRadiusFor(sigma * pxPerPt).coerceAtLeast(1))
         }
     }
     val out = IntArray(w * h)

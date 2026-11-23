@@ -1,6 +1,6 @@
 @file:OptIn(androidx.compose.animation.ExperimentalSharedTransitionApi::class)
 
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ExperimentalSharedTransitionApi
@@ -78,10 +78,10 @@ import com.composables.sfsymbols.SfRenderingMode
 import com.composables.sfsymbols.SfSymbol
 import com.composables.sfsymbols.SfSymbolIcon
 import com.composables.sfsymbols.SfWeight
-import com.convx.music.designsystem.ConvxDesignTokens
-import com.convx.music.designsystem.MotionTokens
-import com.convx.music.playback.PlaybackController
-import com.convx.music.playback.PlaybackSnapshot
+import com.hdemirbassmusic.music.designsystem.hdemirbassmusicDesignTokens
+import com.hdemirbassmusic.music.designsystem.MotionTokens
+import com.hdemirbassmusic.music.playback.PlaybackController
+import com.hdemirbassmusic.music.playback.PlaybackSnapshot
 import com.kyant.backdrop.backdrops.LayerBackdrop
 import com.kyant.backdrop.backdrops.rememberLayerBackdrop
 import zone.ien.hig.CupertinoSlider
@@ -455,14 +455,14 @@ fun PlaybackFullPlayer(
                                 crossfadeEnabled -> "Turn crossfade off"
                                 else -> "Turn crossfade on"
                             },
-                            if (crossfadeEnabled) ConvxDesignTokens.Colors.AccentRed else foreground,
+                            if (crossfadeEnabled) hdemirbassmusicDesignTokens.Colors.AccentRed else foreground,
                             enabled = !crossfadeLocked,
                             onClick = onToggleCrossfade,
                         )
                         PlaybackSymbolButton(
                             "sparkles",
                             if (autoMixEnabled) "Turn AutoMix off" else "Turn AutoMix on",
-                            if (autoMixEnabled) ConvxDesignTokens.Colors.AccentRed else foreground,
+                            if (autoMixEnabled) hdemirbassmusicDesignTokens.Colors.AccentRed else foreground,
                             enabled = !crossfadeLocked,
                             onClick = onToggleAutoMix,
                         )
@@ -475,7 +475,7 @@ fun PlaybackFullPlayer(
                                 equalizerEnabled -> "Equalizer on"
                                 else -> "Equalizer off"
                             },
-                            if (equalizerEnabled) ConvxDesignTokens.Colors.AccentRed else foreground,
+                            if (equalizerEnabled) hdemirbassmusicDesignTokens.Colors.AccentRed else foreground,
                             enabled = !equalizerLocked,
                             onClick = onOpenEqualizer,
                         )
@@ -483,7 +483,7 @@ fun PlaybackFullPlayer(
                     PlaybackSymbolButton(
                         "moon.fill",
                         if (sleepTimerActive) "Sleep timer active" else "Sleep timer",
-                        if (sleepTimerActive) ConvxDesignTokens.Colors.AccentRed else foreground,
+                        if (sleepTimerActive) hdemirbassmusicDesignTokens.Colors.AccentRed else foreground,
                         onClick = onOpenSleepTimer,
                     )
                     PlaybackSymbolButton(
@@ -500,7 +500,7 @@ fun PlaybackFullPlayer(
             playbackSettingsError?.let { error ->
                 BasicText(
                     error,
-                    style = TextStyle(fontFamily = fontFamily, color = ConvxDesignTokens.Colors.AccentRed, fontSize = 12.sp),
+                    style = TextStyle(fontFamily = fontFamily, color = hdemirbassmusicDesignTokens.Colors.AccentRed, fontSize = 12.sp),
                 )
             }
 
@@ -624,7 +624,7 @@ private fun PlaybackDetails(
             PlaybackSymbolButton(
                 "shuffle",
                 if (playback.shuffleEnabled) "Turn shuffle off" else "Turn shuffle on",
-                if (playback.shuffleEnabled) ConvxDesignTokens.Colors.AccentRed else muted,
+                if (playback.shuffleEnabled) hdemirbassmusicDesignTokens.Colors.AccentRed else muted,
                 onClick = { controller.setShuffleEnabled(!playback.shuffleEnabled) },
             )
             PlaybackSymbolButton(
@@ -659,7 +659,7 @@ private fun PlaybackDetails(
             PlaybackSymbolButton(
                 "repeat",
                 "Change repeat mode",
-                if (playback.repeatMode != com.convx.music.playback.PlaybackRepeatMode.OFF) ConvxDesignTokens.Colors.AccentRed else muted,
+                if (playback.repeatMode != com.hdemirbassmusic.music.playback.PlaybackRepeatMode.OFF) hdemirbassmusicDesignTokens.Colors.AccentRed else muted,
                 onClick = controller::cycleRepeatMode,
             )
         }

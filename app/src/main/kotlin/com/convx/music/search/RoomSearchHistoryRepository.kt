@@ -1,7 +1,7 @@
-package com.convx.music.search
+package com.hdemirbassmusic.music.search
 
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.SearchHistory
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.SearchHistory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

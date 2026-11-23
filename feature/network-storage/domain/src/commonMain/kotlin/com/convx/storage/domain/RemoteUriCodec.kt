@@ -1,4 +1,4 @@
-package com.convx.storage.domain
+package com.hdemirbassmusic.storage.domain
 
 // java.net.URI.toASCIIString normalizes Unicode before escaping. Preserve existing
 // Android queue IDs and encrypted source addresses when another client reads them.

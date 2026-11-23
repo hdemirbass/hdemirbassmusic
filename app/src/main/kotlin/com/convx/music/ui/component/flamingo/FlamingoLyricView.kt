@@ -1,12 +1,12 @@
 /** Adapted from Flamingo by Yos-X, GPL-3.0. See NOTICE. */
-package com.convx.music.ui.component.flamingo
+package com.hdemirbassmusic.music.ui.component.flamingo
 
 import android.os.Build
 import androidx.compose.ui.text.font.FontFamily
-import com.convx.music.ui.component.LyricsEndNote
-import com.convx.music.ui.component.followLyricLine
-import com.convx.music.ui.component.lyricRubber
-import com.convx.music.ui.component.rememberLyricRubber
+import com.hdemirbassmusic.music.ui.component.LyricsEndNote
+import com.hdemirbassmusic.music.ui.component.followLyricLine
+import com.hdemirbassmusic.music.ui.component.lyricRubber
+import com.hdemirbassmusic.music.ui.component.rememberLyricRubber
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Animatable
@@ -79,8 +79,8 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.res.stringResource
-import com.convx.music.R
-import com.convx.music.ui.ios.compat.FilledTonalButton
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.ios.compat.FilledTonalButton
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll

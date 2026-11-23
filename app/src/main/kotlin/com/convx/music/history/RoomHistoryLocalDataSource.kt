@@ -1,7 +1,7 @@
-package com.convx.music.history
+package com.hdemirbassmusic.music.history
 
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.EventWithSong
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.EventWithSong
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

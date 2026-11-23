@@ -1,4 +1,4 @@
-package com.convx.music.utils.sabr
+package com.hdemirbassmusic.music.utils.sabr
 
 import android.content.Context
 import android.net.Uri
@@ -6,8 +6,8 @@ import android.webkit.ConsoleMessage
 import android.webkit.JavascriptInterface
 import android.webkit.WebChromeClient
 import android.webkit.WebView
-import com.convx.music.utils.cipher.CipherDeobfuscator
-import com.convx.music.utils.cipher.PlayerJsFetcher
+import com.hdemirbassmusic.music.utils.cipher.CipherDeobfuscator
+import com.hdemirbassmusic.music.utils.cipher.PlayerJsFetcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.suspendCancellableCoroutine
@@ -26,7 +26,7 @@ import kotlin.coroutines.resumeWithException
  * from the YouTube player JS.
  */
 object EjsNTransformSolver {
-    private const val TAG = "convx_EjsNSolver"
+    private const val TAG = "hdemirbassmusic_EjsNSolver"
 
     private var solverWebView: SolverWebView? = null
 

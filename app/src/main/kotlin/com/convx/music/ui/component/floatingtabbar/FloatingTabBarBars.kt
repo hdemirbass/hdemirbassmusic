@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:OptIn(ExperimentalSharedTransitionApi::class)
 
-package com.convx.music.ui.component.floatingtabbar
+package com.hdemirbassmusic.music.ui.component.floatingtabbar
 
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.AnimatedVisibilityScope
@@ -39,10 +39,10 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.elasticStretchLayerBlock
-import com.convx.music.ui.component.shapes.shadowShape
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.elasticStretchLayerBlock
+import com.hdemirbassmusic.music.ui.component.shapes.shadowShape
 
 @Composable
 internal fun SharedTransitionScope.InlineBar(

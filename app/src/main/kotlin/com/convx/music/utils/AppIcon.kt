@@ -1,17 +1,17 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.ComponentName
 import android.content.Context
 import android.content.pm.PackageManager
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import com.convx.music.R
-import com.convx.music.WelcomeActivity
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.WelcomeActivity
 
 /**
  * Launcher icon aliases; one is enabled at a time and the selection is mirrored in DataStore.

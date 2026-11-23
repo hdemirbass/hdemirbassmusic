@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.component
+package com.hdemirbassmusic.music.ui.ios.component
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.animation.core.animateFloatAsState
@@ -28,7 +28,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 import kotlin.math.roundToInt
 
 /** SwiftUI's SliderTick — a mark drawn on the track at [value] in the slider's range. */

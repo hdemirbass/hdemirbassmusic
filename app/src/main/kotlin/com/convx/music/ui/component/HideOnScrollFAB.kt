@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedVisibility
@@ -21,16 +21,16 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.grid.LazyGridState
-import com.convx.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.ui.utils.isScrollingUp
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.utils.isScrollingUp
 import dev.chrisbanes.haze.HazeState
 
 /** Pass the screen's scrolling [HazeState] for a frosted blur; null uses a flat fallback to avoid backdrop self-capture. */

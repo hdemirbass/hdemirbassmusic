@@ -23,7 +23,7 @@
    limitations under the License.
  */
 
-package com.convx.music.ui.component.backdrop.internal
+package com.hdemirbassmusic.music.ui.component.backdrop.internal
 
 import org.intellij.lang.annotations.Language
 

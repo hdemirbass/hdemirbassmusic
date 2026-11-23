@@ -1,4 +1,4 @@
-package com.convx.music.core.updater
+package com.hdemirbassmusic.music.core.updater
 
 import com.tencent.mmkv.MMKV
 import kotlinx.serialization.json.Json

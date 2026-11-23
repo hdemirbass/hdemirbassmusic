@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -23,8 +23,8 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.convx.music.constants.PlayerArtworkStyle
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
 
 /** How a cover joins a page change: its bounds travel into the header, or both dissolve in place. */
 internal enum class CoverMorph { SHARED, FADE }

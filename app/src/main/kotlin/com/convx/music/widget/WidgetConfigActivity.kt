@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.widget
+package com.hdemirbassmusic.music.widget
 
 import android.app.Activity
 import android.appwidget.AppWidgetManager
@@ -23,11 +23,11 @@ import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.RadioButton
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.RadioButton
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,11 +37,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
-import com.convx.music.ui.component.PreferenceEntry
-import com.convx.music.ui.component.PreferenceGroupTitle
-import com.convx.music.ui.component.SwitchPreference
-import com.convx.music.ui.theme.ConvxTheme
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.PreferenceEntry
+import com.hdemirbassmusic.music.ui.component.PreferenceGroupTitle
+import com.hdemirbassmusic.music.ui.component.SwitchPreference
+import com.hdemirbassmusic.music.ui.theme.hdemirbassmusicTheme
 
 /**
  * Per-widget configuration, launched by the launcher via APPWIDGET_CONFIGURE when
@@ -72,7 +72,7 @@ class WidgetConfigActivity : ComponentActivity() {
         }
 
         setContent {
-            ConvxTheme {
+            hdemirbassmusicTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = AppTheme.colorScheme.background,

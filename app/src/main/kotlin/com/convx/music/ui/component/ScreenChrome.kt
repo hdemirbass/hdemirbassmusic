@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
@@ -44,9 +44,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 
 /**
  * Shared layout for pushed screens. The scrolling content is the Haze source;

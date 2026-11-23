@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -19,13 +19,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -40,29 +40,29 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.ai.AiDefaults
-import com.convx.music.ai.AiKeyCheck
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ai.AiDefaults
+import com.hdemirbassmusic.music.ai.AiKeyCheck
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import com.convx.music.constants.AiProviderKey
-import com.convx.music.constants.DeeplApiKey
-import com.convx.music.constants.DeeplFormalityKey
-import com.convx.music.constants.LanguageCodeToName
-import com.convx.music.constants.OpenRouterApiKey
-import com.convx.music.constants.OpenRouterBaseUrlKey
-import com.convx.music.constants.OpenRouterModelKey
-import com.convx.music.constants.TranslateLanguageKey
-import com.convx.music.constants.TranslateModeKey
-import com.convx.music.ui.component.EnumDialog
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.component.TextFieldDialog
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.AiProviderKey
+import com.hdemirbassmusic.music.constants.DeeplApiKey
+import com.hdemirbassmusic.music.constants.DeeplFormalityKey
+import com.hdemirbassmusic.music.constants.LanguageCodeToName
+import com.hdemirbassmusic.music.constants.OpenRouterApiKey
+import com.hdemirbassmusic.music.constants.OpenRouterBaseUrlKey
+import com.hdemirbassmusic.music.constants.OpenRouterModelKey
+import com.hdemirbassmusic.music.constants.TranslateLanguageKey
+import com.hdemirbassmusic.music.constants.TranslateModeKey
+import com.hdemirbassmusic.music.ui.component.EnumDialog
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.component.TextFieldDialog
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

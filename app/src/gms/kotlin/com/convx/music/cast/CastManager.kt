@@ -1,4 +1,4 @@
-package com.convx.music.cast
+package com.hdemirbassmusic.music.cast
 
 import android.content.Context
 import androidx.media3.cast.CastPlayer

@@ -1,4 +1,4 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 import com.music.spine.EclipseAddon
 import com.music.spine.ModuleIndex
@@ -58,7 +58,7 @@ data class LoadedModule(val module: SpineModule, val manifest: ModuleManifest, v
 class ModuleClient(
     private val transport: ModuleTransport,
     private val scripts: ModuleScriptRuntime,
-    private val userAgent: String = "Convx/1.0",
+    private val userAgent: String = "hdemirbassmusic/1.0",
 ) {
     private val rateLimitLock = Mutex()
     private val rateLimits = mutableMapOf<String, kotlin.time.TimeMark>()

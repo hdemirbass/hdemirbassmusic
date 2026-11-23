@@ -1,4 +1,4 @@
-package com.convx.music.designsystem
+package com.hdemirbassmusic.music.designsystem
 
 import coil3.intercept.Interceptor
 import coil3.request.ErrorResult

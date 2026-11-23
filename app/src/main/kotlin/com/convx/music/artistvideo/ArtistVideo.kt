@@ -1,4 +1,4 @@
-package com.convx.music.artistvideo
+package com.hdemirbassmusic.music.artistvideo
 
 import android.content.Context
 import android.view.TextureView

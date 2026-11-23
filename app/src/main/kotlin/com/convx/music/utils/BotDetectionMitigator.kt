@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import androidx.datastore.preferences.core.edit
 import com.music.innertube.YouTube
-import com.convx.music.constants.VisitorDataKey
-import com.convx.music.utils.cipher.CipherDeobfuscator
-import com.convx.music.utils.PlaybackLogManager
-import com.convx.music.utils.PlaybackLogLevel
+import com.hdemirbassmusic.music.constants.VisitorDataKey
+import com.hdemirbassmusic.music.utils.cipher.CipherDeobfuscator
+import com.hdemirbassmusic.music.utils.PlaybackLogManager
+import com.hdemirbassmusic.music.utils.PlaybackLogLevel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock

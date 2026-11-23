@@ -1,4 +1,4 @@
-package com.convx.music.lyrics.bitchord
+package com.hdemirbassmusic.music.lyrics.bitchord
 
 import java.text.Normalizer
 

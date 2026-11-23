@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.util.Log
 import androidx.core.content.FileProvider
-import com.convx.music.BuildConfig
+import com.hdemirbassmusic.music.BuildConfig
 import timber.log.Timber
 import java.io.File
 import java.io.IOException
@@ -77,7 +77,7 @@ class FileLoggingTree(private val logFile: File) : Timber.Tree() {
  * + full Timber history + in-app playback event log, shipped via FileProvider.
  */
 object DebugLogs {
-    const val FILE_NAME = "convx_log.txt"
+    const val FILE_NAME = "hdemirbassmusic_log.txt"
     private const val MAX_SHARE_CHARS = 400_000
 
     fun file(context: Context): File {
@@ -88,7 +88,7 @@ object DebugLogs {
     fun tree(context: Context): FileLoggingTree = FileLoggingTree(file(context))
 
     private fun deviceHeader(context: Context): String = buildString {
-        appendLine("Convx Debug Log")
+        appendLine("hdemirbassmusic Debug Log")
         appendLine("=".repeat(50))
         appendLine("Time: ${SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).format(Date())}")
         appendLine("Manufacturer: ${Build.MANUFACTURER}")
@@ -125,13 +125,13 @@ object DebugLogs {
         val body = buildBody(context, playbackLogs)
         try {
             val ts = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
-            val shareFile = File(context.cacheDir, "convx_log_$ts.txt")
+            val shareFile = File(context.cacheDir, "hdemirbassmusic_log_$ts.txt")
             shareFile.writeText(body)
             val uri = FileProvider.getUriForFile(context, "${context.packageName}.FileProvider", shareFile)
             val intent = Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
                 putExtra(Intent.EXTRA_STREAM, uri)
-                putExtra(Intent.EXTRA_SUBJECT, "convx debug log")
+                putExtra(Intent.EXTRA_SUBJECT, "hdemirbassmusic debug log")
                 addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
             }
             context.startActivity(Intent.createChooser(intent, "Share debug log"))
@@ -139,7 +139,7 @@ object DebugLogs {
             val intent = Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, body)
-                putExtra(Intent.EXTRA_SUBJECT, "convx debug log")
+                putExtra(Intent.EXTRA_SUBJECT, "hdemirbassmusic debug log")
             }
             context.startActivity(Intent.createChooser(intent, "Share debug log"))
         }

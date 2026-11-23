@@ -1,4 +1,4 @@
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider

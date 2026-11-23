@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb

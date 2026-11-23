@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,10 +26,10 @@ import androidx.compose.ui.layout.boundsInRoot
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.Dp
 import kotlin.math.roundToInt
-import com.convx.music.ui.component.PLAYER_CONTENT_APPEAR_END
-import com.convx.music.ui.component.PLAYER_CONTENT_APPEAR_START
-import com.convx.music.ui.component.PLAYER_LAYER_HANDOFF_PROGRESS
-import com.convx.music.ui.component.PLAYER_MINI_FADE_END
+import com.hdemirbassmusic.music.ui.component.PLAYER_CONTENT_APPEAR_END
+import com.hdemirbassmusic.music.ui.component.PLAYER_CONTENT_APPEAR_START
+import com.hdemirbassmusic.music.ui.component.PLAYER_LAYER_HANDOFF_PROGRESS
+import com.hdemirbassmusic.music.ui.component.PLAYER_MINI_FADE_END
 
 /**
  * Where the mini player's own pill sits on screen, in root coordinates.
@@ -100,15 +100,15 @@ fun Modifier.registerMiniControlsNextRect(): Modifier = onGloballyPositioned {
 
 /** Mini title/buttons track across the first three tenths, then hand over. */
 fun playerSheetMiniContentAlpha(progress: Float): Float =
-    com.convx.music.playback.presentation.PlayerMorphGeometry.miniContentAlpha(progress)
+    com.hdemirbassmusic.music.playback.presentation.PlayerMorphGeometry.miniContentAlpha(progress)
 
 /** Full-player recording fades in from a tenth to six tenths, ease-in. */
 fun playerSheetPageAlpha(progress: Float): Float =
-    com.convx.music.playback.presentation.PlayerMorphGeometry.pageAlpha(progress)
+    com.hdemirbassmusic.music.playback.presentation.PlayerMorphGeometry.pageAlpha(progress)
 
 /** Full-player background leads across the first fifth, ease-in. */
 fun playerSheetBackgroundAlpha(progress: Float): Float =
-    com.convx.music.playback.presentation.PlayerMorphGeometry.backgroundAlpha(progress)
+    com.hdemirbassmusic.music.playback.presentation.PlayerMorphGeometry.backgroundAlpha(progress)
 
 /**
  * Draws the mini and full player layers in one container during the sheet morph.
@@ -273,8 +273,8 @@ fun PlayerContainerMorphOverlay(
 }
 
 /** How much the landing pill flattens at the bottom of its dip, and widens with it. */
-private const val LANDING_SQUASH = com.convx.music.designsystem.MotionTokens.PlayerLandingSquash
-private const val LANDING_SPREAD = com.convx.music.designsystem.MotionTokens.PlayerLandingSpread
+private const val LANDING_SQUASH = com.hdemirbassmusic.music.designsystem.MotionTokens.PlayerLandingSquash
+private const val LANDING_SPREAD = com.hdemirbassmusic.music.designsystem.MotionTokens.PlayerLandingSpread
 
 /**
  * The card during a close landing: the pill's own rect carried [PlayerMorph.landingDipPx]

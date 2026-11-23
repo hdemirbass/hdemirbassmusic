@@ -1,10 +1,10 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 // Apple Music player UI adapted from an open-source (GPL-3.0) base.
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -42,17 +42,17 @@ import androidx.media3.common.Player
 import androidx.media3.common.VideoSize
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.AspectRatioFrameLayout
-import com.convx.music.applecanvas.AppleMusicCanvasProvider
-import com.convx.music.canvas.CanvasArtwork
-import com.convx.music.canvas.TidalCanvasProvider
-import com.convx.music.constants.CanvasSource
-import com.convx.music.constants.CanvasSourceKey
-import com.convx.music.constants.CanvasThumbnailAnimationKey
-import com.convx.music.models.MediaMetadata
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
-import com.convx.music.convxcanvas.ConvxCanvasProvider
-import com.convx.music.utils.SpotifyCanvasLookup
+import com.hdemirbassmusic.music.applecanvas.AppleMusicCanvasProvider
+import com.hdemirbassmusic.music.canvas.CanvasArtwork
+import com.hdemirbassmusic.music.canvas.TidalCanvasProvider
+import com.hdemirbassmusic.music.constants.CanvasSource
+import com.hdemirbassmusic.music.constants.CanvasSourceKey
+import com.hdemirbassmusic.music.constants.CanvasThumbnailAnimationKey
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.hdemirbassmusiccanvas.hdemirbassmusicCanvasProvider
+import com.hdemirbassmusic.music.utils.SpotifyCanvasLookup
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -196,7 +196,7 @@ class CanvasVideoController internal constructor(
     private var loadingUrl: String? = null
     private var primary: String? = null
     private var fallback: String? = null
-    private var loadingVideoStream: com.convx.music.utils.YTPlayerUtils.VideoStream? = null
+    private var loadingVideoStream: com.hdemirbassmusic.music.utils.YTPlayerUtils.VideoStream? = null
     private var frameMediaId: String? = null
     private var boundTexture: TextureView? = null
     private val attached = ArrayList<Pair<Any, TextureView>>()
@@ -298,7 +298,7 @@ class CanvasVideoController internal constructor(
     }
 
     internal suspend fun loadVideo(
-        stream: com.convx.music.utils.YTPlayerUtils.VideoStream,
+        stream: com.hdemirbassmusic.music.utils.YTPlayerUtils.VideoStream,
         startPositionMs: Long,
         fadeOutMillis: Int,
     ) {
@@ -324,7 +324,7 @@ class CanvasVideoController internal constructor(
             MediaItem.Builder()
                 .setUri(stream.url.trim())
                 .setMimeType(stream.mimeType)
-                .setCustomCacheKey("convx-video-picture:${stream.videoId}")
+                .setCustomCacheKey("hdemirbassmusic-video-picture:${stream.videoId}")
                 .build(),
             startPositionMs.coerceAtLeast(0L),
         )
@@ -357,7 +357,7 @@ class CanvasVideoController internal constructor(
             MediaItem.Builder()
                 .setUri(stream.url.trim())
                 .setMimeType(stream.mimeType)
-                .setCustomCacheKey("convx-video-picture:${stream.videoId}")
+                .setCustomCacheKey("hdemirbassmusic-video-picture:${stream.videoId}")
                 .build(),
             exoPlayer.currentPosition.coerceAtLeast(0L),
         )
@@ -401,7 +401,7 @@ fun rememberCanvasVideoController(
     mediaMetadata: MediaMetadata?,
     isPlaying: Boolean,
     trackFadeMillis: Int,
-    videoStream: com.convx.music.utils.YTPlayerUtils.VideoStream? = null,
+    videoStream: com.hdemirbassmusic.music.utils.YTPlayerUtils.VideoStream? = null,
     videoStartPositionMs: Long = 0L,
 ): CanvasVideoController {
     val context = LocalContext.current
@@ -516,7 +516,7 @@ fun CanvasVideoSurface(
                     layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
                     resizeMode = if (crop) AspectRatioFrameLayout.RESIZE_MODE_ZOOM else AspectRatioFrameLayout.RESIZE_MODE_FIT
                     setBackgroundColor(android.graphics.Color.TRANSPARENT)
-                    val view = com.convx.music.artistvideo.VideoFrameTextureView(viewContext).apply {
+                    val view = com.hdemirbassmusic.music.artistvideo.VideoFrameTextureView(viewContext).apply {
                         layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
                     }
                     view.onFrame = {
@@ -533,7 +533,7 @@ fun CanvasVideoSurface(
             val frame = it.getChildAt(0) as AspectRatioFrameLayout
             frame.setAspectRatio(aspect)
             frame.resizeMode = if (crop) AspectRatioFrameLayout.RESIZE_MODE_ZOOM else AspectRatioFrameLayout.RESIZE_MODE_FIT
-            val frameView = frame.getChildAt(0) as? com.convx.music.artistvideo.VideoFrameTextureView
+            val frameView = frame.getChildAt(0) as? com.hdemirbassmusic.music.artistvideo.VideoFrameTextureView
             frameView?.let { view ->
                 view.onFrame = {
                     controller.onSurfaceFrame(view)
@@ -567,13 +567,13 @@ private suspend fun fetchCanvasArtwork(context: Context, metadata: MediaMetadata
                         ?.takeIf { !it.animated.isNullOrBlank() }
                         ?: TidalCanvasProvider.getBySongArtist(songTitle, artistName, albumName)
                             ?.takeIf { !it.animated.isNullOrBlank() }
-                        ?: ConvxCanvasProvider.getBySongArtist(songTitle, artistName)
+                        ?: hdemirbassmusicCanvasProvider.getBySongArtist(songTitle, artistName)
                             ?.takeIf { !it.animated.isNullOrBlank() }
                 CanvasSource.APPLE_MUSIC ->
                     AppleMusicCanvasProvider.getBySongArtist(songTitle, artistName, albumName, storefront)
                         ?.takeIf { !it.animated.isNullOrBlank() }
-                CanvasSource.CONVX ->
-                    ConvxCanvasProvider.getBySongArtist(songTitle, artistName)
+                CanvasSource.hdemirbassmusic ->
+                    hdemirbassmusicCanvasProvider.getBySongArtist(songTitle, artistName)
                         ?.takeIf { !it.animated.isNullOrBlank() }
                 CanvasSource.TIDAL ->
                     TidalCanvasProvider.getBySongArtist(songTitle, artistName, albumName)

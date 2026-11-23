@@ -1,20 +1,20 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.search
+package com.hdemirbassmusic.music.ui.screens.search
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.onlinePlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.onlinePlaylistRoute
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,11 +35,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import com.composables.sfsymbols.SfSymbols
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -63,8 +63,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.screens.library.apple.SfStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
 import com.composables.sfsymbols.monochrome.SFArrowUp
@@ -75,22 +75,22 @@ import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.SuggestionItemHeight
-import com.convx.music.playback.queues.searchResultQueue
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.YouTubeListItem
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.utils.listItemShape
-import com.convx.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.SuggestionItemHeight
+import com.hdemirbassmusic.music.playback.queues.searchResultQueue
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.YouTubeListItem
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
 import com.music.innertube.utils.YouTubeUrlParser
-import com.convx.music.ui.menu.YouTubeAlbumMenu
-import com.convx.music.ui.menu.YouTubeArtistMenu
-import com.convx.music.ui.menu.YouTubePlaylistMenu
-import com.convx.music.ui.menu.YouTubeSongMenu
-import com.convx.music.viewmodels.OnlineSearchSuggestionViewModel
+import com.hdemirbassmusic.music.ui.menu.YouTubeAlbumMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeArtistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubePlaylistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeSongMenu
+import com.hdemirbassmusic.music.viewmodels.OnlineSearchSuggestionViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.debounce

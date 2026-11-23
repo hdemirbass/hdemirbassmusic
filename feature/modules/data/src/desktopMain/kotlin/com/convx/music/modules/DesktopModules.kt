@@ -1,4 +1,4 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
@@ -35,9 +35,9 @@ class DesktopModuleStore(private val path: Path = defaultModulePath()) : ModuleS
 private fun defaultModulePath(): Path {
     val home = System.getProperty("user.home")
     val directory = when {
-        System.getProperty("os.name").startsWith("Windows") -> Path.of(System.getenv("APPDATA") ?: home, "Convx")
-        System.getProperty("os.name").startsWith("Mac") -> Path.of(home, "Library", "Application Support", "Convx")
-        else -> Path.of(System.getenv("XDG_CONFIG_HOME") ?: Path.of(home, ".config").toString(), "convx")
+        System.getProperty("os.name").startsWith("Windows") -> Path.of(System.getenv("APPDATA") ?: home, "hdemirbassmusic")
+        System.getProperty("os.name").startsWith("Mac") -> Path.of(home, "Library", "Application Support", "hdemirbassmusic")
+        else -> Path.of(System.getenv("XDG_CONFIG_HOME") ?: Path.of(home, ".config").toString(), "hdemirbassmusic")
     }
     return directory.resolve("modules.json")
 }

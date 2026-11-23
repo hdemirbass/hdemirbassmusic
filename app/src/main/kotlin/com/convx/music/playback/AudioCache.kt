@@ -1,4 +1,4 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.media.MediaDataSource
 import android.net.Uri
@@ -11,14 +11,14 @@ import androidx.media3.datasource.cache.CacheDataSource
 import androidx.media3.datasource.cache.CacheKeyFactory
 import androidx.media3.datasource.cache.ContentMetadata
 import androidx.media3.datasource.cache.SimpleCache
-import com.convx.music.playback.smart.TrackAnalyzer
+import com.hdemirbassmusic.music.playback.smart.TrackAnalyzer
 import java.io.IOException
 
 /** Gives [TrackAnalyzer] access to the same cache used by the player. */
 @UnstableApi
 object AudioCache {
 
-    private const val TAG = "ConvxAudioCache"
+    private const val TAG = "hdemirbassmusicAudioCache"
 
     private lateinit var cache: SimpleCache
 

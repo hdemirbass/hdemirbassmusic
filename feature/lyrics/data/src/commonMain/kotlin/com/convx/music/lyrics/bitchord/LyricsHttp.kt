@@ -1,5 +1,5 @@
 /** Adapted from BitChord (kushagrasinghx/BitChord), GPL-3.0. See NOTICE. */
-package com.convx.music.lyrics.bitchord
+package com.hdemirbassmusic.music.lyrics.bitchord
 
 import kotlinx.serialization.json.Json
 
@@ -22,7 +22,7 @@ private const val LYRICS_CONNECT_TIMEOUT_MS = 3_000L
 private const val AUTHENTICATED_TIMEOUT_MS = 15_000L
 private const val AUTHENTICATED_CONNECT_TIMEOUT_MS = 10_000L
 
-internal const val LYRICS_AGENT = "Convx (https://github.com/cosmictaserdev-creator/Convx)"
+internal const val LYRICS_AGENT = "hdemirbassmusic (https://github.com/cosmictaserdev-creator/hdemirbassmusic)"
 
 val lyricsJson = Json { ignoreUnknownKeys = true; isLenient = true }
 

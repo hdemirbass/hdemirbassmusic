@@ -1,12 +1,12 @@
-package com.convx.music.eq
+package com.hdemirbassmusic.music.eq
 
 
 import android.annotation.SuppressLint
 import androidx.annotation.OptIn
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.eq.audio.CustomEqualizerAudioProcessor
-import com.convx.music.eq.data.ParametricEQ
-import com.convx.music.eq.data.SavedEQProfile
+import com.hdemirbassmusic.music.eq.audio.CustomEqualizerAudioProcessor
+import com.hdemirbassmusic.music.eq.data.ParametricEQ
+import com.hdemirbassmusic.music.eq.data.SavedEQProfile
 import timber.log.Timber
 
 /**

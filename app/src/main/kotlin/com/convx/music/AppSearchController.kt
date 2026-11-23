@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
-import com.convx.music.utils.openSearchResults
+import com.hdemirbassmusic.music.utils.openSearchResults
 
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -23,14 +23,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.navigation.NavHostController
-import com.convx.music.constants.SearchSource
-import com.convx.music.constants.SearchSourceKey
-import com.convx.music.search.SearchHistoryCommands
-import com.convx.music.search.SearchHistorySettingsRepository
-import com.convx.music.search.shouldRecordSearchQuery
-import com.convx.music.ui.component.NavSearchState
-import com.convx.music.ui.screens.Screens
-import com.convx.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.constants.SearchSource
+import com.hdemirbassmusic.music.constants.SearchSourceKey
+import com.hdemirbassmusic.music.search.SearchHistoryCommands
+import com.hdemirbassmusic.music.search.SearchHistorySettingsRepository
+import com.hdemirbassmusic.music.search.shouldRecordSearchQuery
+import com.hdemirbassmusic.music.ui.component.NavSearchState
+import com.hdemirbassmusic.music.ui.screens.Screens
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

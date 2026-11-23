@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.ExperimentalTextApi
@@ -13,7 +13,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 /** SF Pro Text font files used for the app's Latin typography. */
 val SfProFontFamily = FontFamily(

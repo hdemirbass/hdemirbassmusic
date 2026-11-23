@@ -1,4 +1,4 @@
-package com.convx.music.utils.potoken
+package com.hdemirbassmusic.music.utils.potoken
 
 import android.content.Context
 import android.webkit.ConsoleMessage
@@ -8,8 +8,8 @@ import android.webkit.WebView
 import androidx.annotation.MainThread
 import androidx.collection.ArrayMap
 import com.music.innertube.YouTube
-import com.convx.music.utils.toJavaProxy
-import com.convx.music.BuildConfig
+import com.hdemirbassmusic.music.utils.toJavaProxy
+import com.hdemirbassmusic.music.BuildConfig
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope

@@ -1,4 +1,4 @@
-package com.convx.music.lyrics.bitchord
+package com.hdemirbassmusic.music.lyrics.bitchord
 
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpTimeout

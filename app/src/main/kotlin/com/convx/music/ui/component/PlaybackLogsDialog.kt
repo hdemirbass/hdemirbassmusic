@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
@@ -19,12 +19,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -36,10 +36,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
-import com.convx.music.utils.DebugLogs
-import com.convx.music.utils.PlaybackLogEntry
-import com.convx.music.utils.PlaybackLogLevel
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.utils.DebugLogs
+import com.hdemirbassmusic.music.utils.PlaybackLogEntry
+import com.hdemirbassmusic.music.utils.PlaybackLogLevel
 
 @Composable
 fun PlaybackLogsDialog(

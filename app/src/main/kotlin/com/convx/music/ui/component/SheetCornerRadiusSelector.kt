@@ -1,10 +1,10 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,13 +14,13 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.FilterChip
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.FilterChip
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -33,9 +33,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import kotlin.math.roundToInt
-import com.convx.music.R
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.utils.rimLight
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.utils.rimLight
 
 /**
  * Same shape/pattern as [ThumbnailCornerRadiusModal] (preset chips, custom field, slider),

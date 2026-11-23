@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.ColumnScope
@@ -12,13 +12,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import com.convx.music.ui.ios.compat.DropdownMenu
-import com.convx.music.ui.ios.compat.DropdownMenuItem
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenu
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenuItem
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -31,7 +31,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 /**
  * One sort option: the value to select and the string shown for it.

@@ -1,7 +1,7 @@
-package com.convx.music.utils.cipher
+package com.hdemirbassmusic.music.utils.cipher
 
 import com.music.innertube.YouTube
-import com.convx.music.utils.toJavaProxy
+import com.hdemirbassmusic.music.utils.toJavaProxy
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
@@ -10,7 +10,7 @@ import timber.log.Timber
 import java.io.File
 
 object PlayerJsFetcher {
-    private const val TAG = "convx_CipherFetcher"
+    private const val TAG = "hdemirbassmusic_CipherFetcher"
     private const val IFRAME_API_URL = "https://www.youtube.com/iframe_api"
     private const val PLAYER_JS_URL_TEMPLATE = "https://www.youtube.com/s/player/%s/player_ias.vflset/en_GB/base.js"
     private const val CACHE_TTL_MS = 6 * 60 * 60 * 1000L // 6 hours

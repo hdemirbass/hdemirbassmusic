@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.utils.MenuIconChrome
-import com.convx.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.MenuIconChrome
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionScope
@@ -33,9 +33,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.LaunchedEffect
@@ -49,10 +49,10 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import com.convx.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.ui.theme.isHueless
 import androidx.compose.ui.graphics.isSpecified
 import androidx.compose.ui.graphics.luminance
-import com.convx.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
@@ -63,24 +63,24 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
 import coil3.compose.AsyncImage
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.dualtone.SFSquareGrid2x2Fill
-import com.convx.music.R
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.backdrop.drawBackdrop
-import com.convx.music.ui.component.backdrop.effects.blur
-import com.convx.music.ui.component.backdrop.effects.lens
-import com.convx.music.ui.component.backdrop.highlight.Highlight
-import com.convx.music.ui.component.backdrop.shadow.Shadow
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.player.FloatingMiniPlayer
-import com.convx.music.ui.screens.Screens
-import com.convx.music.ui.screens.library.apple.SfStyle
-import com.convx.music.ui.theme.LocalAccentColor
-import com.convx.music.ui.utils.fadingEdge
-import com.convx.music.designsystem.ConvxDesignTokens
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.backdrop.drawBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.lens
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.Highlight
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.Shadow
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.player.FloatingMiniPlayer
+import com.hdemirbassmusic.music.ui.screens.Screens
+import com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle
+import com.hdemirbassmusic.music.ui.theme.LocalAccentColor
+import com.hdemirbassmusic.music.ui.utils.fadingEdge
+import com.hdemirbassmusic.music.designsystem.hdemirbassmusicDesignTokens
 
 /** Panel corner. A tall panel, so a rounded rect rather than the phone bar's capsule. */
 private val SideBarShape = ContinuousRoundedRectangle(20.dp)
@@ -89,19 +89,19 @@ private val SideBarShape = ContinuousRoundedRectangle(20.dp)
 private val SideRowShape = ContinuousRoundedRectangle(percent = 50)
 
 /** Width of the whole floating panel. */
-val SideBarWidth: Dp = ConvxDesignTokens.Metrics.SidebarWidth
+val SideBarWidth: Dp = hdemirbassmusicDesignTokens.Metrics.SidebarWidth
 
 /** Width when collapsed to an icon-only rail: just enough for the icon and padding. */
-val SideBarCollapsedWidth: Dp = ConvxDesignTokens.Metrics.SidebarCollapsedWidth
+val SideBarCollapsedWidth: Dp = hdemirbassmusicDesignTokens.Metrics.SidebarCollapsedWidth
 
 /**
  * Container width at or above which the app lays itself out for tab view on its
  * own. Below it the side bar only appears if the Appearance toggle forces it.
  */
-val TabletWidthThreshold: Dp = ConvxDesignTokens.Metrics.TabletWidthThreshold
+val TabletWidthThreshold: Dp = hdemirbassmusicDesignTokens.Metrics.TabletWidthThreshold
 
 /** Panel inset from the screen edge, and the gap it leaves to the content. */
-val SideBarMargin: Dp = ConvxDesignTokens.Metrics.SidebarInset
+val SideBarMargin: Dp = hdemirbassmusicDesignTokens.Metrics.SidebarInset
 private val SideBarDesignHeight: Dp = 600.dp
 
 /** Content padding keeps rows clear of the panel at rest while letting them scroll underneath. */
@@ -111,20 +111,20 @@ val SideBarContentInset: Dp = SideBarWidth + 20.dp
 private const val PuckRestHighlightAlpha = 0.5f
 private const val PuckRestShadowAlpha = 0.35f
 
-private val SideTabHeight = ConvxDesignTokens.Metrics.SidebarRowHeight
+private val SideTabHeight = hdemirbassmusicDesignTokens.Metrics.SidebarRowHeight
 private val SideBarContentPadding = PaddingValues(horizontal = 6.dp)
 
 /** Fixed leading slot keeps labels aligned across icons, artwork, and avatars. */
-private val SideRowLeadingSlot = ConvxDesignTokens.Metrics.SidebarLeadingSlot
-private val SideRowIconSize = ConvxDesignTokens.Metrics.SidebarIconSize
+private val SideRowLeadingSlot = hdemirbassmusicDesignTokens.Metrics.SidebarLeadingSlot
+private val SideRowIconSize = hdemirbassmusicDesignTokens.Metrics.SidebarIconSize
 
 /** Width of the floating mini player as a fraction of the available content width. */
-const val FloatingMiniPlayerWidthFraction = ConvxDesignTokens.Metrics.MiniPlayerWidthFraction
+const val FloatingMiniPlayerWidthFraction = hdemirbassmusicDesignTokens.Metrics.MiniPlayerWidthFraction
 
 /** Height as a share of the pill's own width, clamped to stay a bar. */
 private const val FloatingMiniPlayerAspect = 0.11f
-private val FloatingMiniPlayerMinHeight = ConvxDesignTokens.Metrics.MiniPlayerHeight
-private val FloatingMiniPlayerMaxHeight = ConvxDesignTokens.Metrics.MiniPlayerHeight
+private val FloatingMiniPlayerMinHeight = hdemirbassmusicDesignTokens.Metrics.MiniPlayerHeight
+private val FloatingMiniPlayerMaxHeight = hdemirbassmusicDesignTokens.Metrics.MiniPlayerHeight
 
 /** Scopes that let the side panel and the top pill morph into each other as one shared element. */
 @OptIn(ExperimentalSharedTransitionApi::class)
@@ -204,7 +204,7 @@ fun AppFloatingSideBar(
         InteractiveHighlight(animationScope = animationScope, radiusScale = 0.3f)
     }
 
-    val panelChrome = com.convx.music.ui.ios.foundation.IosTheme.colors.label
+    val panelChrome = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label
     val backgroundColor = when {
         useGlass -> Color.Transparent
         pureBlack -> Color.Black
@@ -230,7 +230,7 @@ fun AppFloatingSideBar(
 
     // A short landscape screen scales the whole panel down so the header, tabs and footer all fit.
     BoxWithConstraints(modifier) {
-    com.convx.music.ui.utils.ProvideFittedDensity(maxHeight, SideBarDesignHeight, minScale = 0.72f) {
+    com.hdemirbassmusic.music.ui.utils.ProvideFittedDensity(maxHeight, SideBarDesignHeight, minScale = 0.72f) {
     Column(
         Modifier
             .navMorph(morph, "navContainer")
@@ -350,7 +350,7 @@ private fun SideNavTabs(
     val sideThemeDark = AppTheme.colorScheme.surface.luminance() <= 0.5f
     val sideAmbient = Color.Unspecified // plain: no artwork-driven tinting
 
-    val selectedContentColor = com.convx.music.ui.ios.foundation.IosTheme.tint
+    val selectedContentColor = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.tint
     val inactiveContentColor = if (sideThemeDark) Color(0xFF8E8E93) else Color(0xFF6C6C70)
 
     val puckWash = if (appleMusicUi && sideThemeDark && puckColorIsDefault) {
@@ -360,7 +360,7 @@ private fun SideNavTabs(
     } else if (sideAmbient.isSpecified && !sideAmbient.isHueless()) {
         sideAmbient.asPuckTint(sideThemeDark)
     } else {
-        com.convx.music.ui.theme.GlassTintTokens.neutralTintColor(sideThemeDark)
+        com.hdemirbassmusic.music.ui.theme.GlassTintTokens.neutralTintColor(sideThemeDark)
     }
     val isHeroContext = sideAmbient.isSpecified && !sideAmbient.isHueless()
     val puckRestAlpha = if (appleMusicUi && sideThemeDark && puckColorIsDefault) {
@@ -506,7 +506,7 @@ fun BoxWithConstraintsScope.AppFloatingNowPlayingPill(
     FloatingMiniPlayer(
         isInline = false,
         // See AppNavigation: hardcoded white disappeared on light themes.
-        contentColor = if (useGlass) com.convx.music.ui.ios.foundation.IosTheme.colors.label else AppTheme.colorScheme.onSurface,
+        contentColor = if (useGlass) com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label else AppTheme.colorScheme.onSurface,
         onClick = onClick,
         onLyricsClick = onLyricsClick,
         onQueueClick = onQueueClick,
@@ -531,7 +531,7 @@ fun SideBarAccountRow(
     modifier: Modifier = Modifier,
     collapsed: Boolean = false,
 ) {
-    val contentColor = com.convx.music.ui.ios.foundation.IosTheme.colors.label
+    val contentColor = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
@@ -599,9 +599,9 @@ private fun SideTabRow(
                 text = stringResource(tab.screen.titleId),
                 color = contentColor,
                 style = SfStyle(
-                    ConvxDesignTokens.Type.SidebarLabel,
-                    ConvxDesignTokens.Type.SidebarLabelLineHeight,
-                    tracking = ConvxDesignTokens.Type.SidebarLabelTracking,
+                    hdemirbassmusicDesignTokens.Type.SidebarLabel,
+                    hdemirbassmusicDesignTokens.Type.SidebarLabelLineHeight,
+                    tracking = hdemirbassmusicDesignTokens.Type.SidebarLabelTracking,
                 ),
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -613,8 +613,8 @@ private fun SideTabRow(
 
 @Composable
 private fun SideBarLinkRow(link: SideBarLink, contentColor: Color) {
-    com.convx.music.ui.utils.ArtworkSourceHost(Modifier) { sourceModifier ->
-    val artworkOwner = com.convx.music.ui.utils.rememberArtworkSourceOwner()
+    com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost(Modifier) { sourceModifier ->
+    val artworkOwner = com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner()
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = sourceModifier
@@ -631,7 +631,7 @@ private fun SideBarLinkRow(link: SideBarLink, contentColor: Color) {
             when {
                 link.thumbnailUrl != null -> AsyncImage(
                     model = link.thumbnailUrl,
-                    onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(artworkOwner, link.thumbnailUrl),
+                    onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(artworkOwner, link.thumbnailUrl),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
@@ -653,9 +653,9 @@ private fun SideBarLinkRow(link: SideBarLink, contentColor: Color) {
             text = link.label,
             color = contentColor,
             style = SfStyle(
-                ConvxDesignTokens.Type.SidebarLabel,
-                ConvxDesignTokens.Type.SidebarLabelLineHeight,
-                tracking = ConvxDesignTokens.Type.SidebarLabelTracking,
+                hdemirbassmusicDesignTokens.Type.SidebarLabel,
+                hdemirbassmusicDesignTokens.Type.SidebarLabelLineHeight,
+                tracking = hdemirbassmusicDesignTokens.Type.SidebarLabelTracking,
             ),
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
@@ -681,8 +681,8 @@ fun AppTabViewTopPill(
     val glassConfig = LocalGlassEffectConfig.current
     val useGlass = glassConfig.isEnabledFor(GlassComponent.SIDE_PANEL) && isGlassAllowed()
     val shape = ContinuousRoundedRectangle(percent = 50)
-    val chrome = com.convx.music.ui.ios.foundation.IosTheme.colors.label
-    val accent = com.convx.music.ui.ios.foundation.IosTheme.tint
+    val chrome = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label
+    val accent = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.tint
     val selectedRoute = rememberStickySelectedRoute(currentRoute, navigationItems)
     val tabs = navigationItems.filter { it != Screens.Search }
     val search = navigationItems.firstOrNull { it == Screens.Search }

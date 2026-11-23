@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.convx.storage"
+    namespace = "com.hdemirbassmusic.storage"
     compileSdk = 37
     defaultConfig { minSdk = 26 }
     compileOptions {

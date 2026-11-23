@@ -1,8 +1,8 @@
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
-import com.convx.music.playback.PlaybackSettings
-import com.convx.music.playback.PlaybackSettingsRepository
-import com.convx.music.playback.PlaybackTransitionMode
+import com.hdemirbassmusic.music.playback.PlaybackSettings
+import com.hdemirbassmusic.music.playback.PlaybackSettingsRepository
+import com.hdemirbassmusic.music.playback.PlaybackTransitionMode
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first

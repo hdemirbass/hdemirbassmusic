@@ -1,43 +1,43 @@
 @file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
 
-package com.convx.music.client.ios
+package com.hdemirbassmusic.music.client.ios
 
-import com.convx.music.playback.PlaybackController
-import com.convx.music.playback.CrossfadeEnvelope
-import com.convx.music.playback.PlaybackQueueEntry
-import com.convx.music.playback.PlaybackQueueNavigator
-import com.convx.music.playback.PlaybackQueueSnapshot
-import com.convx.music.playback.moveQueueIndices
-import com.convx.music.playback.AudioStreamResolver
-import com.convx.music.playback.PlaybackPhase
-import com.convx.music.playback.PlaybackRepeatMode
-import com.convx.music.playback.PlaybackRequestTrack
-import com.convx.music.playback.PlaybackSettings
-import com.convx.music.playback.PlaybackSettingsRepository
-import com.convx.music.playback.EqualizerFilterType
-import com.convx.music.playback.PlaybackCheckpoint
-import com.convx.music.playback.PlaybackCheckpointRepository
-import com.convx.music.playback.PlaybackCheckpointWriter
-import com.convx.music.playback.PlaybackSleepTimer
-import com.convx.music.playback.PlaybackSnapshot
-import com.convx.music.playback.PlaybackTrackAnalysisCache
-import com.convx.music.playback.PlaybackTrackAnalysisRepository
-import com.convx.music.playback.PlaybackTrackSnapshot
-import com.convx.music.playback.analysisIdentity
-import com.convx.music.playback.planPlaybackTransitionWindow
-import com.convx.music.playback.shouldPauseOnToggle
-import com.convx.music.playback.smart.TransitionStyle
-import com.convx.music.client.ios.avplayercompat.convx_av_player_current_time_seconds
-import com.convx.music.client.ios.avplayercompat.convx_av_player_duration_seconds
-import com.convx.music.client.ios.avplayercompat.convx_av_player_item_status
-import com.convx.music.client.ios.avplayercompat.convx_av_player_pause
-import com.convx.music.client.ios.avplayercompat.convx_av_player_play
-import com.convx.music.client.ios.avplayercompat.convx_av_player_play_at_rate
-import com.convx.music.client.ios.avplayercompat.convx_av_player_replace_item
-import com.convx.music.client.ios.avplayercompat.convx_av_player_set_rate
-import com.convx.music.client.ios.avplayercompat.convx_av_player_seek_to_seconds
-import com.convx.music.client.ios.avplayercompat.convx_av_player_set_volume
-import com.convx.music.client.ios.equalizeraudiotapcompat.convx_av_player_set_equalizer
+import com.hdemirbassmusic.music.playback.PlaybackController
+import com.hdemirbassmusic.music.playback.CrossfadeEnvelope
+import com.hdemirbassmusic.music.playback.PlaybackQueueEntry
+import com.hdemirbassmusic.music.playback.PlaybackQueueNavigator
+import com.hdemirbassmusic.music.playback.PlaybackQueueSnapshot
+import com.hdemirbassmusic.music.playback.moveQueueIndices
+import com.hdemirbassmusic.music.playback.AudioStreamResolver
+import com.hdemirbassmusic.music.playback.PlaybackPhase
+import com.hdemirbassmusic.music.playback.PlaybackRepeatMode
+import com.hdemirbassmusic.music.playback.PlaybackRequestTrack
+import com.hdemirbassmusic.music.playback.PlaybackSettings
+import com.hdemirbassmusic.music.playback.PlaybackSettingsRepository
+import com.hdemirbassmusic.music.playback.EqualizerFilterType
+import com.hdemirbassmusic.music.playback.PlaybackCheckpoint
+import com.hdemirbassmusic.music.playback.PlaybackCheckpointRepository
+import com.hdemirbassmusic.music.playback.PlaybackCheckpointWriter
+import com.hdemirbassmusic.music.playback.PlaybackSleepTimer
+import com.hdemirbassmusic.music.playback.PlaybackSnapshot
+import com.hdemirbassmusic.music.playback.PlaybackTrackAnalysisCache
+import com.hdemirbassmusic.music.playback.PlaybackTrackAnalysisRepository
+import com.hdemirbassmusic.music.playback.PlaybackTrackSnapshot
+import com.hdemirbassmusic.music.playback.analysisIdentity
+import com.hdemirbassmusic.music.playback.planPlaybackTransitionWindow
+import com.hdemirbassmusic.music.playback.shouldPauseOnToggle
+import com.hdemirbassmusic.music.playback.smart.TransitionStyle
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_current_time_seconds
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_duration_seconds
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_item_status
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_pause
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_play
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_play_at_rate
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_replace_item
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_set_rate
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_seek_to_seconds
+import com.hdemirbassmusic.music.client.ios.avplayercompat.hdemirbassmusic_av_player_set_volume
+import com.hdemirbassmusic.music.client.ios.equalizeraudiotapcompat.hdemirbassmusic_av_player_set_equalizer
 import kotlinx.cinterop.addressOf
 import kotlinx.cinterop.usePinned
 import kotlinx.coroutines.CancellationException
@@ -120,7 +120,7 @@ internal class IosPlaybackController(
     private fun setDeckGain(player: AVPlayer, gain: Double) {
         if (player === primaryPlayer) primaryGain = gain else secondaryGain = gain
         val master = if (playbackSettings.bitPerfectEnabled) 1.0 else playbackSettings.volume.toDouble()
-        convx_av_player_set_volume(player, (gain * master).coerceIn(0.0, 1.0))
+        hdemirbassmusic_av_player_set_volume(player, (gain * master).coerceIn(0.0, 1.0))
     }
 
     private fun applyMasterVolume() {
@@ -221,10 +221,10 @@ internal class IosPlaybackController(
         stopCrossfade(clearPrepared = true)
         trackAnalysisCollector.setTrack(activePlayer, track)
         trackAnalysisCollector.setTrack(standbyPlayer, null)
-        convx_av_player_pause(activePlayer)
-        convx_av_player_replace_item(activePlayer, null)
-        convx_av_player_pause(standbyPlayer)
-        convx_av_player_replace_item(standbyPlayer, null)
+        hdemirbassmusic_av_player_pause(activePlayer)
+        hdemirbassmusic_av_player_replace_item(activePlayer, null)
+        hdemirbassmusic_av_player_pause(standbyPlayer)
+        hdemirbassmusic_av_player_replace_item(standbyPlayer, null)
         publishQueueSnapshot()
         publish()
 
@@ -247,7 +247,7 @@ internal class IosPlaybackController(
                     return@launch
                 }
                 setDeckGain(activePlayer, 1.0)
-                convx_av_player_replace_item(activePlayer, AVPlayerItem(uRL = url))
+                hdemirbassmusic_av_player_replace_item(activePlayer, AVPlayerItem(uRL = url))
                 isPlaying = false
                 phase = PlaybackPhase.BUFFERING
                 publish()
@@ -275,8 +275,8 @@ internal class IosPlaybackController(
             hasUserPlaybackChanges = true
             shouldPlayAfterResolve = true
             if (phase == PlaybackPhase.READY) {
-                convx_av_player_play(activePlayer)
-                if (crossfadeJob != null) convx_av_player_play(standbyPlayer)
+                hdemirbassmusic_av_player_play(activePlayer)
+                if (crossfadeJob != null) hdemirbassmusic_av_player_play(standbyPlayer)
             }
             isPlaying = phase == PlaybackPhase.READY
             errorMessage = null
@@ -287,8 +287,8 @@ internal class IosPlaybackController(
     override fun pause() {
         hasUserPlaybackChanges = true
         shouldPlayAfterResolve = false
-        convx_av_player_pause(activePlayer)
-        if (crossfadeJob != null) convx_av_player_pause(standbyPlayer)
+        hdemirbassmusic_av_player_pause(activePlayer)
+        if (crossfadeJob != null) hdemirbassmusic_av_player_pause(standbyPlayer)
         isPlaying = false
         publish()
         persistCheckpoint(force = true)
@@ -299,7 +299,7 @@ internal class IosPlaybackController(
         val position = positionMs.coerceAtLeast(0L)
         stopCrossfade(clearPrepared = true)
         trackAnalysisCollector.invalidate(activePlayer)
-        convx_av_player_seek_to_seconds(activePlayer, position / 1_000.0)
+        hdemirbassmusic_av_player_seek_to_seconds(activePlayer, position / 1_000.0)
         applyEqualizer(activePlayer, playbackSettings)
         this.positionMs = durationMs?.let(position::coerceAtMost) ?: position
         publish()
@@ -350,10 +350,10 @@ internal class IosPlaybackController(
             stopCrossfade(clearPrepared = true)
             trackAnalysisCollector.setTrack(activePlayer, null)
             trackAnalysisCollector.setTrack(standbyPlayer, null)
-            convx_av_player_pause(activePlayer)
-            convx_av_player_replace_item(activePlayer, null)
-            convx_av_player_pause(standbyPlayer)
-            convx_av_player_replace_item(standbyPlayer, null)
+            hdemirbassmusic_av_player_pause(activePlayer)
+            hdemirbassmusic_av_player_replace_item(activePlayer, null)
+            hdemirbassmusic_av_player_pause(standbyPlayer)
+            hdemirbassmusic_av_player_replace_item(standbyPlayer, null)
             currentRequest = null
             currentIndex = -1
             phase = PlaybackPhase.IDLE
@@ -406,10 +406,10 @@ internal class IosPlaybackController(
         playbackMonitor = null
         sleepTimer.release()
         trackAnalysisCollector.release()
-        convx_av_player_pause(primaryPlayer)
-        convx_av_player_replace_item(primaryPlayer, null)
-        convx_av_player_pause(secondaryPlayer)
-        convx_av_player_replace_item(secondaryPlayer, null)
+        hdemirbassmusic_av_player_pause(primaryPlayer)
+        hdemirbassmusic_av_player_replace_item(primaryPlayer, null)
+        hdemirbassmusic_av_player_pause(secondaryPlayer)
+        hdemirbassmusic_av_player_replace_item(secondaryPlayer, null)
         scope.launch {
             try {
                 checkpointWriter.flush(finalCheckpoint)
@@ -429,7 +429,7 @@ internal class IosPlaybackController(
         startupTimeoutJob = null
         stopCrossfade(clearPrepared = true)
         trackAnalysisCollector.setTrack(activePlayer, null)
-        convx_av_player_pause(activePlayer)
+        hdemirbassmusic_av_player_pause(activePlayer)
         shouldPlayAfterResolve = false
         isPlaying = false
         phase = PlaybackPhase.IDLE
@@ -449,9 +449,9 @@ internal class IosPlaybackController(
             crossfadePreloadJob?.cancel()
             crossfadePreloadKey = target.key
             val targetPlayer = standbyPlayer
-            convx_av_player_pause(targetPlayer)
+            hdemirbassmusic_av_player_pause(targetPlayer)
             trackAnalysisCollector.setTrack(targetPlayer, null)
-            convx_av_player_replace_item(targetPlayer, null)
+            hdemirbassmusic_av_player_replace_item(targetPlayer, null)
             setDeckGain(targetPlayer, 0.0)
             crossfadePreloadJob = scope.launch {
                 try {
@@ -460,7 +460,7 @@ internal class IosPlaybackController(
                     if (!isCrossfadeTargetCurrent(target) || standbyPlayer !== targetPlayer) return@launch
                     val url = NSURL.URLWithString(stream.url) ?: return@launch
                     trackAnalysisCollector.setTrack(targetPlayer, target.incoming)
-                    convx_av_player_replace_item(targetPlayer, AVPlayerItem(uRL = url))
+                    hdemirbassmusic_av_player_replace_item(targetPlayer, AVPlayerItem(uRL = url))
                     setDeckGain(targetPlayer, 0.0)
                     standbyCueKey = null
                     crossfadePreloadJob = null
@@ -472,7 +472,7 @@ internal class IosPlaybackController(
             }
         }
 
-        val standbyReady = convx_av_player_item_status(standbyPlayer) == AVPlayerItemStatusReadyToPlay
+        val standbyReady = hdemirbassmusic_av_player_item_status(standbyPlayer) == AVPlayerItemStatusReadyToPlay
         if (standbyReady && trackAnalysisCollector.needsProcessing(standbyPlayer)) {
             applyEqualizer(standbyPlayer, playbackSettings)
         }
@@ -480,7 +480,7 @@ internal class IosPlaybackController(
             if (target.incomingCuePositionMs > 0L) {
                 if (standbyCueKey != target.key) {
                     trackAnalysisCollector.invalidate(standbyPlayer)
-                    convx_av_player_seek_to_seconds(
+                    hdemirbassmusic_av_player_seek_to_seconds(
                         standbyPlayer,
                         target.incomingCuePositionMs / 1_000.0,
                     )
@@ -488,7 +488,7 @@ internal class IosPlaybackController(
                     standbyCueKey = target.key
                     return
                 }
-                val actualCueMs = (convx_av_player_current_time_seconds(standbyPlayer) * 1_000.0).toLong()
+                val actualCueMs = (hdemirbassmusic_av_player_current_time_seconds(standbyPlayer) * 1_000.0).toLong()
                 if (kotlin.math.abs(actualCueMs - target.incomingCuePositionMs) > CUE_SEEK_TOLERANCE_MS) return
             }
             startCrossfade(target)
@@ -539,7 +539,7 @@ internal class IosPlaybackController(
 
     private fun startCrossfade(target: CrossfadeTarget) {
         if (crossfadeJob != null || !isPlaying || !isCrossfadeTargetCurrent(target)) return
-        if (convx_av_player_item_status(standbyPlayer) != AVPlayerItemStatusReadyToPlay) return
+        if (hdemirbassmusic_av_player_item_status(standbyPlayer) != AVPlayerItemStatusReadyToPlay) return
         if (trackAnalysisCollector.needsProcessing(standbyPlayer)) {
             applyEqualizer(standbyPlayer, playbackSettings)
         }
@@ -553,7 +553,7 @@ internal class IosPlaybackController(
             return
         }
         setDeckGain(incoming, 0.0)
-        convx_av_player_play_at_rate(incoming, target.incomingPlaybackRate)
+        hdemirbassmusic_av_player_play_at_rate(incoming, target.incomingPlaybackRate)
         crossfadeJob = scope.launch {
             var elapsedMs = 0L
             while (elapsedMs < target.durationMs && activePlayer === incoming && isActive) {
@@ -566,10 +566,10 @@ internal class IosPlaybackController(
             if (activePlayer === incoming) {
                 setDeckGain(incoming, 1.0)
                 setDeckGain(outgoing, 1.0)
-                convx_av_player_set_rate(incoming, 1.0)
-                convx_av_player_pause(outgoing)
+                hdemirbassmusic_av_player_set_rate(incoming, 1.0)
+                hdemirbassmusic_av_player_pause(outgoing)
                 trackAnalysisCollector.setTrack(outgoing, null)
-                convx_av_player_replace_item(outgoing, null)
+                hdemirbassmusic_av_player_replace_item(outgoing, null)
                 crossfadeJob = null
                 crossfadePreloadKey = null
             }
@@ -607,9 +607,9 @@ internal class IosPlaybackController(
         crossfadePreloadJob = null
         crossfadePreloadKey = null
         standbyCueKey = null
-        convx_av_player_pause(standbyPlayer)
+        hdemirbassmusic_av_player_pause(standbyPlayer)
         trackAnalysisCollector.setTrack(standbyPlayer, null)
-        convx_av_player_replace_item(standbyPlayer, null)
+        hdemirbassmusic_av_player_replace_item(standbyPlayer, null)
         setDeckGain(standbyPlayer, 1.0)
     }
 
@@ -623,9 +623,9 @@ internal class IosPlaybackController(
         setDeckGain(standbyPlayer, 1.0)
         if (clearPrepared) {
             standbyCueKey = null
-            convx_av_player_pause(standbyPlayer)
+            hdemirbassmusic_av_player_pause(standbyPlayer)
             trackAnalysisCollector.setTrack(standbyPlayer, null)
-            convx_av_player_replace_item(standbyPlayer, null)
+            hdemirbassmusic_av_player_replace_item(standbyPlayer, null)
         }
     }
 
@@ -709,17 +709,17 @@ internal class IosPlaybackController(
                 delay(if (phase == PlaybackPhase.BUFFERING) BUFFERING_POLL_MS else PLAYBACK_POLL_MS)
                 if (generation != requestGeneration) break
 
-                val itemStatus = convx_av_player_item_status(activePlayer)
+                val itemStatus = hdemirbassmusic_av_player_item_status(activePlayer)
                 if (itemStatus == AVPlayerItemStatusFailed) {
                     fail("The audio stream could not be played.")
                     break
                 }
 
-                val positionSeconds = convx_av_player_current_time_seconds(activePlayer)
+                val positionSeconds = hdemirbassmusic_av_player_current_time_seconds(activePlayer)
                 if (positionSeconds.isFinite() && positionSeconds >= 0.0) {
                     positionMs = (positionSeconds * 1_000.0).toLong()
                 }
-                val durationSeconds = convx_av_player_duration_seconds(activePlayer)
+                val durationSeconds = hdemirbassmusic_av_player_duration_seconds(activePlayer)
                 if (durationSeconds.isFinite() && durationSeconds > 0.0) {
                     durationMs = (durationSeconds * 1_000.0).toLong()
                 }
@@ -731,12 +731,12 @@ internal class IosPlaybackController(
                     startupTimeoutJob = null
                     restoredPositionPendingMs?.let { restoredPosition ->
                         trackAnalysisCollector.invalidate(activePlayer)
-                        convx_av_player_seek_to_seconds(activePlayer, restoredPosition / 1_000.0)
+                        hdemirbassmusic_av_player_seek_to_seconds(activePlayer, restoredPosition / 1_000.0)
                         applyEqualizer(activePlayer, playbackSettings)
                         positionMs = restoredPosition.coerceAtMost(durationMs ?: restoredPosition)
                         restoredPositionPendingMs = null
                     }
-                    if (shouldPlayAfterResolve) convx_av_player_play(activePlayer)
+                    if (shouldPlayAfterResolve) hdemirbassmusic_av_player_play(activePlayer)
                 }
                 updateCrossfade()
                 trackAnalysisCollector.ensureRun(activePlayer)
@@ -757,7 +757,7 @@ internal class IosPlaybackController(
                     }
                     if (repeatMode == PlaybackRepeatMode.ONE) {
                         seekTo(0L)
-                        convx_av_player_play(activePlayer)
+                        hdemirbassmusic_av_player_play(activePlayer)
                     } else {
                         phase = PlaybackPhase.ENDED
                         shouldPlayAfterResolve = false
@@ -786,7 +786,7 @@ internal class IosPlaybackController(
     }
 
     private fun applyEqualizer(player: AVPlayer, settings: PlaybackSettings) {
-        if (convx_av_player_item_status(player) != AVPlayerItemStatusReadyToPlay) return
+        if (hdemirbassmusic_av_player_item_status(player) != AVPlayerItemStatusReadyToPlay) return
         if (trackAnalysisCollector.hasActiveRun(player)) {
             trackAnalysisCollector.invalidate(player)
         }
@@ -815,7 +815,7 @@ internal class IosPlaybackController(
             gains.usePinned { pinnedGains ->
                 qualities.usePinned { pinnedQualities ->
                     filterTypes.usePinned { pinnedFilterTypes ->
-                        convx_av_player_set_equalizer(
+                        hdemirbassmusic_av_player_set_equalizer(
                             player,
                             if (settings.equalizerEnabled && !settings.bitPerfectEnabled) 1 else 0,
                             profile.preamp,

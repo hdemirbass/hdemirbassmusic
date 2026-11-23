@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.wrapped
+package com.hdemirbassmusic.music.ui.screens.wrapped
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -12,11 +12,11 @@ import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
-import com.convx.music.R
-import com.convx.music.constants.AudioQuality
-import com.convx.music.utils.YTPlayerUtils
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AudioQuality
+import com.hdemirbassmusic.music.utils.YTPlayerUtils
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -104,7 +104,7 @@ class WrappedAudioService(
         }
 
         return try {
-            val audioQuality = context.dataStore.get(com.convx.music.constants.AudioQualityKey).let {
+            val audioQuality = context.dataStore.get(com.hdemirbassmusic.music.constants.AudioQualityKey).let {
                 AudioQuality.valueOf(it ?: AudioQuality.AUTO.name)
             }
             val playbackData = withContext(Dispatchers.IO) {

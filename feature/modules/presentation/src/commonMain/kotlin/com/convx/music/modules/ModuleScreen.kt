@@ -1,4 +1,4 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -14,8 +14,8 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.BasicText
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.playback.PlaybackRequestTrack
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.playback.PlaybackRequestTrack
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.shape.RoundedCornerShape

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import android.annotation.SuppressLint
 import android.net.Uri
@@ -17,8 +17,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
@@ -30,11 +30,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.DiscordTokenKey
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.DiscordTokenKey
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberPreference
 import org.json.JSONTokener
 
 // Discord's web app removes window.localStorage from the page; an about:blank iframe

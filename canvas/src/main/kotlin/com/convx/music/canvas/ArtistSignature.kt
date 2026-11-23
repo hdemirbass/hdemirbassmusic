@@ -1,4 +1,4 @@
-package com.convx.music.canvas
+package com.hdemirbassmusic.music.canvas
 
 import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText

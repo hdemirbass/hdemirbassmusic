@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -11,8 +11,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.LoadingIndicator
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.LoadingIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -21,8 +21,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.convx.music.constants.ThumbnailCornerRadius
-import com.convx.music.constants.ThumbnailRoundedShape
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadius
+import com.hdemirbassmusic.music.constants.ThumbnailRoundedShape
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

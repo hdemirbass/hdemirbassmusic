@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.ui.unit.Dp
-import com.convx.music.ui.utils.bleedStart
+import com.hdemirbassmusic.music.ui.utils.bleedStart
 import android.annotation.SuppressLint
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
@@ -35,13 +35,13 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Done
-import com.convx.music.ui.ios.compat.DropdownMenu
-import com.convx.music.ui.ios.compat.DropdownMenuItem
-import com.convx.music.ui.ios.compat.FilterChip
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenu
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenuItem
+import com.hdemirbassmusic.music.ui.ios.compat.FilterChip
 import androidx.compose.material3.FilterChipDefaults
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFChevronDown
 import androidx.compose.runtime.Composable
@@ -55,19 +55,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.isSpecified
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.graphicsLayer
-import com.convx.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.filled.Tune
-import com.convx.music.ui.ios.compat.VerticalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.VerticalDivider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
-import com.convx.music.ui.screens.OptionStats
-import com.convx.music.ui.theme.LocalPageMetrics
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.screens.OptionStats
+import com.hdemirbassmusic.music.ui.theme.LocalPageMetrics
 
 @Composable
 fun <T> ChipsRow(
@@ -86,23 +86,23 @@ fun <T> ChipsRow(
 ) {
     val isDark = AppTheme.colorScheme.surface.luminance() <= 0.5f
     val ambientColor = LocalAmbientBackgroundColor.current.value
-    val defaultContainerColor = com.convx.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark).copy(
-        alpha = if (isDark) com.convx.music.ui.theme.GlassTintTokens.NavPillFillOpacityDark else com.convx.music.ui.theme.GlassTintTokens.NavPillFillOpacityLight
+    val defaultContainerColor = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark).copy(
+        alpha = if (isDark) com.hdemirbassmusic.music.ui.theme.GlassTintTokens.NavPillFillOpacityDark else com.hdemirbassmusic.music.ui.theme.GlassTintTokens.NavPillFillOpacityLight
     )
-    val defaultSelectedContainerColor = com.convx.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark).copy(
-        alpha = if (isDark) com.convx.music.ui.theme.GlassTintTokens.PillSelectedFillOpacityDark else com.convx.music.ui.theme.GlassTintTokens.PillSelectedFillOpacityLight
+    val defaultSelectedContainerColor = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark).copy(
+        alpha = if (isDark) com.hdemirbassmusic.music.ui.theme.GlassTintTokens.PillSelectedFillOpacityDark else com.hdemirbassmusic.music.ui.theme.GlassTintTokens.PillSelectedFillOpacityLight
     )
-    val defaultLabelColor = com.convx.music.ui.theme.GlassTintTokens.glassContentColor(
+    val defaultLabelColor = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassContentColor(
         isDark = isDark,
         activeTint = ambientColor,
         isSelected = false,
     )
-    val defaultSelectedLabelColor = com.convx.music.ui.theme.GlassTintTokens.glassContentColor(
+    val defaultSelectedLabelColor = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassContentColor(
         isDark = isDark,
         activeTint = ambientColor,
         isSelected = false, // Ambient tint for applied filter chip
     )
-    val pillBorder = androidx.compose.foundation.BorderStroke(1.dp, com.convx.music.ui.theme.GlassTintTokens.borderColor(isDark))
+    val pillBorder = androidx.compose.foundation.BorderStroke(1.dp, com.hdemirbassmusic.music.ui.theme.GlassTintTokens.borderColor(isDark))
 
     val effectiveContainerColor = if (containerColor != AppTheme.colorScheme.surfaceContainer) containerColor else defaultContainerColor
     val effectiveSelectedContainerColor = if (selectedContainerColor != AppTheme.colorScheme.secondaryContainer) selectedContainerColor else defaultSelectedContainerColor

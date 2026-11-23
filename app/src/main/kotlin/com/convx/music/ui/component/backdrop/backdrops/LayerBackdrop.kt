@@ -7,7 +7,7 @@
  * scale for cheaper effect rendering. KMP expect/actual declarations were
  * merged into this single Android source set. Package renamed accordingly.
  */
-package com.convx.music.ui.component.backdrop.backdrops
+package com.hdemirbassmusic.music.ui.component.backdrop.backdrops
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -30,10 +30,10 @@ import androidx.compose.ui.unit.toSize
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.unit.LayoutDirection
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.BackdropEffectScope
-import com.convx.music.ui.component.backdrop.PoolLens
-import com.convx.music.ui.component.backdrop.internal.InverseLayerScope
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.BackdropEffectScope
+import com.hdemirbassmusic.music.ui.component.backdrop.PoolLens
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.InverseLayerScope
 
 private val DefaultOnDraw: ContentDrawScope.() -> Unit = { drawContent() }
 

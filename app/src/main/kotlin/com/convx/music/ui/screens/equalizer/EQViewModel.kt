@@ -1,10 +1,10 @@
-package com.convx.music.ui.screens.equalizer
+package com.hdemirbassmusic.music.ui.screens.equalizer
 
-import com.convx.music.playback.EqualizerProfileParser
+import com.hdemirbassmusic.music.playback.EqualizerProfileParser
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.eq.EqualizerService
-import com.convx.music.eq.data.EQProfileRepository
+import com.hdemirbassmusic.music.eq.EqualizerService
+import com.hdemirbassmusic.music.eq.data.EQProfileRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

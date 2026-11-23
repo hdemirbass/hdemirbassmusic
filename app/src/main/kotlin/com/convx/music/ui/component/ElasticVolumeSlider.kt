@@ -1,5 +1,5 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
  * Port of React Bits' ElasticSlider (github.com/DavidHDev/react-bits): drag past
@@ -12,7 +12,7 @@
  * and drag callbacks below aren't.
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D
@@ -52,7 +52,7 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.component.shapes.ContinuousCapsule
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule
 import kotlinx.coroutines.launch
 import kotlin.math.exp
 

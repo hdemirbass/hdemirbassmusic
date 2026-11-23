@@ -1,11 +1,11 @@
-package com.convx.music.ui.screens.search.suggestions
+package com.hdemirbassmusic.music.ui.screens.search.suggestions
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 
 import androidx.compose.animation.core.animateDpAsState
-import com.convx.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.*
@@ -13,22 +13,22 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.ListItem
-import com.convx.music.ui.ios.compat.IosSearchField
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.ListItem
+import com.hdemirbassmusic.music.ui.ios.compat.IosSearchField
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 import androidx.compose.foundation.background
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFCheckmark
-import com.convx.music.ui.ios.compat.ModalBottomSheet
-import com.convx.music.ui.ios.compat.rememberIosModalSheetState
+import com.hdemirbassmusic.music.ui.ios.compat.ModalBottomSheet
+import com.hdemirbassmusic.music.ui.ios.compat.rememberIosModalSheetState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import com.convx.music.constants.SuggestionRegionSlugToName
+import com.hdemirbassmusic.music.constants.SuggestionRegionSlugToName
 import kotlinx.coroutines.launch
 
 @Composable

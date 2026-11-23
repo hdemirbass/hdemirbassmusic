@@ -1,4 +1,4 @@
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

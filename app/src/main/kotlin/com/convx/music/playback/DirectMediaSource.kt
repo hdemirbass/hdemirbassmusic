@@ -1,6 +1,6 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
-import com.convx.storage.domain.NetworkMediaUri
+import com.hdemirbassmusic.storage.domain.NetworkMediaUri
 
 /** Media that can reach the data-source chain without resolving a YouTube video ID. */
 internal fun isDirectMediaSource(mediaId: String): Boolean =

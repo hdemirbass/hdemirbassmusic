@@ -1,9 +1,9 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.convx.music.R
-import com.convx.music.constants.LyricsAnimationStyle
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.LyricsAnimationStyle
 
 @Composable
 fun lyricsStyleLabel(style: LyricsAnimationStyle): String = when (style) {
@@ -16,7 +16,7 @@ fun lyricsStyleLabel(style: LyricsAnimationStyle): String = when (style) {
     LyricsAnimationStyle.APPLE -> stringResource(R.string.apple_music_style)
     LyricsAnimationStyle.APPLE_V2 -> stringResource(R.string.apple_music_style_letter)
     LyricsAnimationStyle.BITCHORD -> stringResource(R.string.lyrics_animation_bitchord)
-    LyricsAnimationStyle.CONVX_1 -> stringResource(R.string.convx_1)
+    LyricsAnimationStyle.hdemirbassmusic_1 -> stringResource(R.string.hdemirbassmusic_1)
     LyricsAnimationStyle.LYRICS_V2 -> stringResource(R.string.lyrics_v2_fluid)
     LyricsAnimationStyle.METRO_LYRICS -> stringResource(R.string.lyrics_animation_metro)
     LyricsAnimationStyle.ARCHIVE_TUNE -> stringResource(R.string.lyrics_animation_karaoke_apple)

@@ -7,15 +7,15 @@
  * scale for cheaper effect rendering. KMP expect/actual declarations were
  * merged into this single Android source set. Package renamed accordingly.
  */
-package com.convx.music.ui.component.backdrop.effects
+package com.hdemirbassmusic.music.ui.component.backdrop.effects
 
 import androidx.compose.ui.graphics.RenderEffect
-import com.convx.music.ui.component.backdrop.BackdropEffectScope
-import com.convx.music.ui.component.backdrop.RuntimeShader
-import com.convx.music.ui.component.backdrop.internal.RuntimeShaderEffect
-import com.convx.music.ui.component.backdrop.internal.chain
-import com.convx.music.ui.component.backdrop.isRenderEffectSupported
-import com.convx.music.ui.component.backdrop.isRuntimeShaderSupported
+import com.hdemirbassmusic.music.ui.component.backdrop.BackdropEffectScope
+import com.hdemirbassmusic.music.ui.component.backdrop.RuntimeShader
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.RuntimeShaderEffect
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.chain
+import com.hdemirbassmusic.music.ui.component.backdrop.isRenderEffectSupported
+import com.hdemirbassmusic.music.ui.component.backdrop.isRuntimeShaderSupported
 import org.intellij.lang.annotations.Language
 import kotlin.contracts.ExperimentalContracts
 

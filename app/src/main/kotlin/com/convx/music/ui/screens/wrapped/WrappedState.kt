@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.wrapped
+package com.hdemirbassmusic.music.ui.screens.wrapped
 
 import com.music.innertube.models.AccountInfo
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.SongWithStats
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.SongWithStats
 
 data class WrappedState(
     val accountInfo: AccountInfo? = null,

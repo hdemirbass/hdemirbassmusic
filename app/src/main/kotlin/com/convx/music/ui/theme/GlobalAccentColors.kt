@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.convx.music.constants.AppTextColorKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.AppTextColorKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /**
  * (container, content) colors for accent buttons/chips (Play, Shuffle, sort pills, ...)

@@ -1,4 +1,4 @@
-package com.convx.music.widget
+package com.hdemirbassmusic.music.widget
 
 import com.composables.sfsymbols.monochrome.SFSpeakerWave2Fill
 import com.composables.sfsymbols.monochrome.SFHeadphones

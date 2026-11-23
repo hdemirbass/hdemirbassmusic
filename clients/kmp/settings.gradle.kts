@@ -37,7 +37,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "convx-kmp-clients"
+rootProject.name = "hdemirbassmusic-kmp-clients"
 include(":shared", ":androidHost")
 include(":network-storage-core")
 project(":network-storage-core").projectDir = file("../../feature/network-storage/domain")

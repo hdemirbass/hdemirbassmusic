@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.component
+package com.hdemirbassmusic.music.ui.ios.component
 
 import android.os.Build
 import androidx.compose.animation.core.Animatable
@@ -61,10 +61,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupPositionProvider
 import androidx.compose.ui.window.PopupProperties
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.math.roundToInt

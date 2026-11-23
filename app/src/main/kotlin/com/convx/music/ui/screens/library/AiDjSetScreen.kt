@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.library
+package com.hdemirbassmusic.music.ui.screens.library
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -38,23 +38,23 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.ai.toMediaItems
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.screens.settings.SettingsPage
-import com.convx.music.ui.utils.localPlaylistRoute
-import com.convx.music.viewmodels.AiDjSetViewModel
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ai.toMediaItems
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.screens.settings.SettingsPage
+import com.hdemirbassmusic.music.ui.utils.localPlaylistRoute
+import com.hdemirbassmusic.music.viewmodels.AiDjSetViewModel
 
 private const val MIN_SONG_COUNT = 4
 private const val MAX_SONG_COUNT = 30
@@ -100,12 +100,12 @@ fun AiDjSetScreen(
         when {
             result != null -> {
                 Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                    com.convx.music.ui.component.PlaylistIdentity(
+                    com.hdemirbassmusic.music.ui.component.PlaylistIdentity(
                         title = result.playlistName,
                         artwork = seedSong?.thumbnailUrl,
                         subtitle = stringResource(R.string.ai_dj_mix_song_count, result.orderedTitles.size),
                     )
-                    com.convx.music.ui.component.PlaylistPlaybackActions(
+                    com.hdemirbassmusic.music.ui.component.PlaylistPlaybackActions(
                         enabled = result.orderedTitles.isNotEmpty(),
                         playing = false,
                         onPlay = { playerConnection.playQueue(ListQueue(title = result.playlistName, items = result.toMediaItems())) },

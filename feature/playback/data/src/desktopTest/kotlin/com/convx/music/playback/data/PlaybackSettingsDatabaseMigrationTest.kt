@@ -1,8 +1,8 @@
-package com.convx.music.playback.data
+package com.hdemirbassmusic.music.playback.data
 
 import androidx.room.Room
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import com.convx.music.playback.PlaybackCheckpoint
+import com.hdemirbassmusic.music.playback.PlaybackCheckpoint
 import java.io.File
 import kotlin.random.Random
 import kotlin.test.Test
@@ -14,7 +14,7 @@ class PlaybackSettingsDatabaseMigrationTest {
     fun versionOneDatabaseMigratesWithoutLosingSettings() = kotlinx.coroutines.test.runTest {
         val path = File(
             System.getProperty("java.io.tmpdir"),
-            "convx-playback-v1-${Random.nextLong()}.db",
+            "hdemirbassmusic-playback-v1-${Random.nextLong()}.db",
         ).absolutePath
         createVersionOneDatabase(path)
 
@@ -37,7 +37,7 @@ class PlaybackSettingsDatabaseMigrationTest {
     fun versionTwoDatabaseMigratesWithTheAnalysisTable() = kotlinx.coroutines.test.runTest {
         val path = File(
             System.getProperty("java.io.tmpdir"),
-            "convx-playback-v2-${Random.nextLong()}.db",
+            "hdemirbassmusic-playback-v2-${Random.nextLong()}.db",
         ).absolutePath
         createVersionTwoDatabase(path)
 

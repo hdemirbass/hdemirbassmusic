@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings.diy
+package com.hdemirbassmusic.music.ui.screens.settings.diy
 
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -42,14 +42,14 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.AlertDialog
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -76,29 +76,29 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.datastore.preferences.core.edit
 import androidx.navigation.NavController
-import com.convx.music.R
-import com.convx.music.constants.DiyLayoutKey
-import com.convx.music.constants.PureBlackKey
-import com.convx.music.ui.component.BottomSheetState
-import com.convx.music.ui.component.LocalAppBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.expandedAnchor
-import com.convx.music.ui.component.rememberBottomSheetState
-import com.convx.music.ui.player.BottomSheetPlayer
-import com.convx.music.ui.player.customize.DIY_MAX_ASSET_BYTES
-import com.convx.music.ui.player.customize.DIY_MAX_STICKERS
-import com.convx.music.ui.player.customize.DiyBounds
-import com.convx.music.ui.player.customize.DiyDesignCanvas
-import com.convx.music.ui.player.customize.DiyLayout
-import com.convx.music.ui.player.customize.DiyOrientation
-import com.convx.music.ui.player.customize.DiySticker
-import com.convx.music.ui.player.customize.DiyStickerContent
-import com.convx.music.ui.player.customize.DiyStickerKind
-import com.convx.music.ui.player.customize.DiyStore
-import com.convx.music.ui.player.customize.DiyTransform
-import com.convx.music.utils.MediaImport
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.DiyLayoutKey
+import com.hdemirbassmusic.music.constants.PureBlackKey
+import com.hdemirbassmusic.music.ui.component.BottomSheetState
+import com.hdemirbassmusic.music.ui.component.LocalAppBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.expandedAnchor
+import com.hdemirbassmusic.music.ui.component.rememberBottomSheetState
+import com.hdemirbassmusic.music.ui.player.BottomSheetPlayer
+import com.hdemirbassmusic.music.ui.player.customize.DIY_MAX_ASSET_BYTES
+import com.hdemirbassmusic.music.ui.player.customize.DIY_MAX_STICKERS
+import com.hdemirbassmusic.music.ui.player.customize.DiyBounds
+import com.hdemirbassmusic.music.ui.player.customize.DiyDesignCanvas
+import com.hdemirbassmusic.music.ui.player.customize.DiyLayout
+import com.hdemirbassmusic.music.ui.player.customize.DiyOrientation
+import com.hdemirbassmusic.music.ui.player.customize.DiySticker
+import com.hdemirbassmusic.music.ui.player.customize.DiyStickerContent
+import com.hdemirbassmusic.music.ui.player.customize.DiyStickerKind
+import com.hdemirbassmusic.music.ui.player.customize.DiyStore
+import com.hdemirbassmusic.music.ui.player.customize.DiyTransform
+import com.hdemirbassmusic.music.utils.MediaImport
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

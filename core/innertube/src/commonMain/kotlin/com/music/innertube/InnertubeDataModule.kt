@@ -1,10 +1,10 @@
 package com.music.innertube
 
-import com.convx.music.playback.AudioStreamResolver
-import com.convx.music.account.MusicAccountRepository
-import com.convx.music.catalog.MusicCatalogRepository
-import com.convx.music.library.MusicLibraryRemoteDataSource
-import com.convx.music.library.MusicPlaylistRemoteDataSource
+import com.hdemirbassmusic.music.playback.AudioStreamResolver
+import com.hdemirbassmusic.music.account.MusicAccountRepository
+import com.hdemirbassmusic.music.catalog.MusicCatalogRepository
+import com.hdemirbassmusic.music.library.MusicLibraryRemoteDataSource
+import com.hdemirbassmusic.music.library.MusicPlaylistRemoteDataSource
 import com.music.innertube.account.InnertubeMusicAccountRepository
 import com.music.innertube.catalog.InnertubeMusicCatalogRepository
 import com.music.innertube.library.InnertubeMusicLibraryDataSource

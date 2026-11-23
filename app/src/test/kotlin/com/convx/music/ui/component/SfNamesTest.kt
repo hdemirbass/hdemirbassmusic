@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import com.composables.sfsymbols.SfSymbol
 import java.io.File

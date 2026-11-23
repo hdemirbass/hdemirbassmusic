@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.db
+package com.hdemirbassmusic.music.db
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -21,41 +21,41 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.pages.AlbumPage
 import com.music.innertube.pages.ArtistPage
-import com.convx.music.constants.AlbumSortType
-import com.convx.music.constants.ArtistSongSortType
-import com.convx.music.constants.ArtistSortType
-import com.convx.music.constants.PlaylistSortType
-import com.convx.music.constants.SongSortType
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.AlbumArtistMap
-import com.convx.music.db.entities.AlbumEntity
-import com.convx.music.db.entities.AlbumWithSongs
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.ArtistEntity
-import com.convx.music.db.entities.Event
-import com.convx.music.db.entities.EventWithSong
-import com.convx.music.db.entities.FormatEntity
-import com.convx.music.db.entities.LyricsEntity
-import com.convx.music.db.entities.PlayCountEntity
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.db.entities.PlaylistSong
-import com.convx.music.db.entities.PlaylistSongMap
-import com.convx.music.db.entities.RecognitionHistory
-import com.convx.music.db.entities.RelatedSongMap
-import com.convx.music.db.entities.SearchHistory
-import com.convx.music.db.entities.SetVideoIdEntity
-import com.convx.music.db.entities.Song
-import com.convx.music.db.entities.SongAlbumMap
-import com.convx.music.db.entities.SongAnalysisEntity
-import com.convx.music.db.entities.SongArtistMap
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.db.entities.SongWithStats
-import com.convx.music.extensions.reversed
-import com.convx.music.extensions.toSQLiteQuery
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.constants.AlbumSortType
+import com.hdemirbassmusic.music.constants.ArtistSongSortType
+import com.hdemirbassmusic.music.constants.ArtistSortType
+import com.hdemirbassmusic.music.constants.PlaylistSortType
+import com.hdemirbassmusic.music.constants.SongSortType
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.AlbumArtistMap
+import com.hdemirbassmusic.music.db.entities.AlbumEntity
+import com.hdemirbassmusic.music.db.entities.AlbumWithSongs
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.ArtistEntity
+import com.hdemirbassmusic.music.db.entities.Event
+import com.hdemirbassmusic.music.db.entities.EventWithSong
+import com.hdemirbassmusic.music.db.entities.FormatEntity
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.db.entities.PlayCountEntity
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.db.entities.PlaylistSong
+import com.hdemirbassmusic.music.db.entities.PlaylistSongMap
+import com.hdemirbassmusic.music.db.entities.RecognitionHistory
+import com.hdemirbassmusic.music.db.entities.RelatedSongMap
+import com.hdemirbassmusic.music.db.entities.SearchHistory
+import com.hdemirbassmusic.music.db.entities.SetVideoIdEntity
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.db.entities.SongAlbumMap
+import com.hdemirbassmusic.music.db.entities.SongAnalysisEntity
+import com.hdemirbassmusic.music.db.entities.SongArtistMap
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.db.entities.SongWithStats
+import com.hdemirbassmusic.music.extensions.reversed
+import com.hdemirbassmusic.music.extensions.toSQLiteQuery
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.ui.utils.resize
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.Dispatchers

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.EaseOutCubic
 import androidx.compose.foundation.background
@@ -28,15 +28,15 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.takeOrElse
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.constants.TopBarBlurStyle
-import com.convx.music.constants.TopBarBlurStyleKey
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.BackdropEffectScope
-import com.convx.music.ui.component.backdrop.drawPlainBackdrop
-import com.convx.music.ui.component.backdrop.effects.runtimeShaderEffect
-import com.convx.music.utils.rememberPreference
-import com.convx.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.constants.TopBarBlurStyle
+import com.hdemirbassmusic.music.constants.TopBarBlurStyleKey
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.BackdropEffectScope
+import com.hdemirbassmusic.music.ui.component.backdrop.drawPlainBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.runtimeShaderEffect
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
 import dev.chrisbanes.haze.ExperimentalHazeApi
 import dev.chrisbanes.haze.HazeInputScale
 import dev.chrisbanes.haze.HazeState
@@ -51,7 +51,7 @@ private val FADE_RUN = 64.dp
 /** Start inset reserved for the floating side bar; display cutout insets are too small to count. */
 @Composable
 private fun sideBarStartInset(): Dp =
-    com.convx.music.LocalPlayerAwareWindowInsets.current.asPaddingValues()
+    com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets.current.asPaddingValues()
         .calculateStartPadding(androidx.compose.ui.platform.LocalLayoutDirection.current)
         .let { if (it >= SideBarCollapsedWidth) it else 0.dp }
 

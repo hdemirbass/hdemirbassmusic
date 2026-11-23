@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.jam.JamManager
-import com.convx.music.jam.PartyPreview
-import com.convx.music.jam.PartyStats
+import com.hdemirbassmusic.music.jam.JamManager
+import com.hdemirbassmusic.music.jam.PartyPreview
+import com.hdemirbassmusic.music.jam.PartyStats
 import kotlinx.coroutines.launch
 
 class JamViewModel(private val manager: JamManager) : ViewModel() {

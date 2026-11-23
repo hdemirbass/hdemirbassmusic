@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.library.apple
+package com.hdemirbassmusic.music.ui.screens.library.apple
 
-import com.convx.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
 
-import com.convx.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.sf
 import android.content.Intent
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -85,66 +85,66 @@ import com.composables.sfsymbols.monochrome.SFStarFill
 import com.composables.sfsymbols.monochrome.SFTextBadgePlus
 import com.composables.sfsymbols.monochrome.SFTextLineFirstAndArrowtriangleForward
 import com.composables.sfsymbols.monochrome.SFTextLineLastAndArrowtriangleForward
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.AlbumSortDescendingKey
-import com.convx.music.constants.AlbumSortType
-import com.convx.music.constants.AlbumSortTypeKey
-import com.convx.music.constants.ArtistSortDescendingKey
-import com.convx.music.constants.ArtistSortType
-import com.convx.music.constants.ArtistSortTypeKey
-import com.convx.music.constants.LibraryViewType
-import com.convx.music.constants.PlaylistSortDescendingKey
-import com.convx.music.constants.PlaylistSortType
-import com.convx.music.constants.PlaylistSortTypeKey
-import com.convx.music.constants.PlaylistViewTypeKey
-import com.convx.music.constants.SongSortDescendingKey
-import com.convx.music.constants.SongSortType
-import com.convx.music.constants.SongSortTypeKey
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.LocalItem
-import com.convx.music.db.entities.Song
-import com.convx.music.library.PlaylistSummary
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.DownloadTarget
-import com.convx.music.playback.downloadSongs
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.CreatePlaylistDialog
-import com.convx.music.ui.component.TopFadeBlur
-import com.convx.music.ui.component.ListScrollRail
-import com.convx.music.ui.component.rememberTitleCollapseProgressState
-import com.convx.music.ui.ios.compat.DropdownMenu
-import com.convx.music.ui.ios.compat.DropdownMenuItem
-import com.convx.music.ui.ios.compat.IosMenuDivider
-import com.convx.music.ui.ios.compat.menuTrigger
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.component.AppleContextMenu
-import com.convx.music.ui.ios.component.IosCheckmark
-import com.convx.music.ui.ios.component.IosGlyph
-import com.convx.music.ui.ios.component.IosMenuItem
-import com.convx.music.ui.ios.component.IosMenuSection
-import com.convx.music.ui.ios.foundation.IosMenuMaterial
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.iosGlass
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.menu.AddToPlaylistDialog
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.localPlaylistRoute
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.LibraryAlbumsViewModel
-import com.convx.music.viewmodels.LibraryArtistsViewModel
-import com.convx.music.viewmodels.LibraryPlaylistsViewModel
-import com.convx.music.viewmodels.LibrarySongsViewModel
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AlbumSortDescendingKey
+import com.hdemirbassmusic.music.constants.AlbumSortType
+import com.hdemirbassmusic.music.constants.AlbumSortTypeKey
+import com.hdemirbassmusic.music.constants.ArtistSortDescendingKey
+import com.hdemirbassmusic.music.constants.ArtistSortType
+import com.hdemirbassmusic.music.constants.ArtistSortTypeKey
+import com.hdemirbassmusic.music.constants.LibraryViewType
+import com.hdemirbassmusic.music.constants.PlaylistSortDescendingKey
+import com.hdemirbassmusic.music.constants.PlaylistSortType
+import com.hdemirbassmusic.music.constants.PlaylistSortTypeKey
+import com.hdemirbassmusic.music.constants.PlaylistViewTypeKey
+import com.hdemirbassmusic.music.constants.SongSortDescendingKey
+import com.hdemirbassmusic.music.constants.SongSortType
+import com.hdemirbassmusic.music.constants.SongSortTypeKey
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.LocalItem
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.library.PlaylistSummary
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.DownloadTarget
+import com.hdemirbassmusic.music.playback.downloadSongs
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.CreatePlaylistDialog
+import com.hdemirbassmusic.music.ui.component.TopFadeBlur
+import com.hdemirbassmusic.music.ui.component.ListScrollRail
+import com.hdemirbassmusic.music.ui.component.rememberTitleCollapseProgressState
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenu
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenuItem
+import com.hdemirbassmusic.music.ui.ios.compat.IosMenuDivider
+import com.hdemirbassmusic.music.ui.ios.compat.menuTrigger
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.component.AppleContextMenu
+import com.hdemirbassmusic.music.ui.ios.component.IosCheckmark
+import com.hdemirbassmusic.music.ui.ios.component.IosGlyph
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuItem
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuSection
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMenuMaterial
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.iosGlass
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.menu.AddToPlaylistDialog
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.localPlaylistRoute
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.LibraryAlbumsViewModel
+import com.hdemirbassmusic.music.viewmodels.LibraryArtistsViewModel
+import com.hdemirbassmusic.music.viewmodels.LibraryPlaylistsViewModel
+import com.hdemirbassmusic.music.viewmodels.LibrarySongsViewModel
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
 import kotlinx.coroutines.launch
 
 // Shared subpage header: the large title scrolls beneath the toolbar and fades into its
@@ -172,7 +172,7 @@ internal fun AppleSubpage(
     // Sample this page's list instead of the app root. The toolbar sits inside the root's
     // captured layer, so sampling the root would recurse through the toolbar and crash RenderNode.
     val pageColor = colors.systemBackground
-    val pageBackdrop = com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop(
+    val pageBackdrop = com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop(
         onDraw = remember(pageColor) { { drawRect(pageColor); drawContent() } },
     )
 
@@ -192,7 +192,7 @@ internal fun AppleSubpage(
             // The side inset is padding, not a narrower list, so rows scroll under the side bar.
             contentPadding = androidx.compose.foundation.layout.PaddingValues(
                 start = sideInset,
-                top = statusTop + com.convx.music.ui.component.TopBarContentHeight,
+                top = statusTop + com.hdemirbassmusic.music.ui.component.TopBarContentHeight,
                 bottom = bottom + 16.dp,
             ),
         ) {
@@ -214,11 +214,11 @@ internal fun AppleSubpage(
             hazeState = haze,
             pageColor = colors.systemBackground,
             modifier = Modifier.align(Alignment.TopCenter),
-            heightOverride = statusTop + com.convx.music.ui.component.TopBarContentHeight + 8.dp,
+            heightOverride = statusTop + com.hdemirbassmusic.music.ui.component.TopBarContentHeight + 8.dp,
         )
 
-        androidx.compose.runtime.CompositionLocalProvider(com.convx.music.ui.ios.foundation.LocalIosBackdrop provides pageBackdrop) {
-        com.convx.music.ui.component.FrostedTopBar(
+        androidx.compose.runtime.CompositionLocalProvider(com.hdemirbassmusic.music.ui.ios.foundation.LocalIosBackdrop provides pageBackdrop) {
+        com.hdemirbassmusic.music.ui.component.FrostedTopBar(
             title = title,
             titleAlphaProvider = { collapse.value },
             titleColor = colors.label,
@@ -260,9 +260,9 @@ private fun ToolbarCapsule(
             .iosGlass(
                 shape = CircleShape,
                 spec = if (clearBackdrop) {
-                    com.convx.music.ui.ios.foundation.IosGlassSpec.Control.copy(blurRadius = 0.dp)
+                    com.hdemirbassmusic.music.ui.ios.foundation.IosGlassSpec.Control.copy(blurRadius = 0.dp)
                 } else {
-                    com.convx.music.ui.ios.foundation.IosGlassSpec.Control
+                    com.hdemirbassmusic.music.ui.ios.foundation.IosGlassSpec.Control
                 },
                 interactive = true,
                 wash = if (clearBackdrop) colors.systemBackground.copy(alpha = 0.62f) else Color.Transparent,
@@ -343,11 +343,11 @@ private fun ArtRow(
             .then(if (onClick != null) Modifier.iosRowPress(onClick = onClick) else Modifier)
             .padding(start = 16.dp),
     ) {
-        val shape = if (circle) CircleShape else com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(radius)
+        val shape = if (circle) CircleShape else com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(radius)
         AsyncImage(
             model = art,
-            onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(
-                com.convx.music.ui.utils.rememberArtworkSourceOwner(), art as? String,
+            onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(
+                com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner(), art as? String,
             ),
             contentDescription = null,
             contentScale = androidx.compose.ui.layout.ContentScale.Crop,
@@ -391,9 +391,9 @@ private fun ArtRow(
 @Composable
 fun ApplePlaylistsPage(navController: NavController, onBack: () -> Unit, viewModel: LibraryPlaylistsViewModel = koinViewModel()) {
     val allPlaylists by viewModel.allPlaylists.collectAsStateWithLifecycle()
-    val localOnly = com.convx.music.LocalLocalOnlyMode.current
+    val localOnly = com.hdemirbassmusic.music.LocalLocalOnlyMode.current
     val playlists = allPlaylists
-    val ytmSync by rememberPreference(com.convx.music.constants.YtmSyncKey, true)
+    val ytmSync by rememberPreference(com.hdemirbassmusic.music.constants.YtmSyncKey, true)
     androidx.compose.runtime.LaunchedEffect(ytmSync, localOnly) { if (ytmSync && !localOnly) viewModel.sync() }
     var viewType by rememberEnumPreference(PlaylistViewTypeKey, LibraryViewType.LIST)
     var sortType by rememberEnumPreference(PlaylistSortTypeKey, PlaylistSortType.CREATE_DATE)
@@ -428,7 +428,7 @@ fun ApplePlaylistsPage(navController: NavController, onBack: () -> Unit, viewMod
                     IosGlyph(sf("SFMusicNoteList"), colors.secondaryLabel, 44.dp)
                     Spacer(Modifier.height(16.dp))
                     Text(stringResource(R.string.no_playlists), color = colors.label, style = SfStyle(22.sp, 28.sp, FontWeight.Bold))
-                    com.convx.music.ui.ios.compat.TextButton(onClick = { newPlaylist = true }) {
+                    com.hdemirbassmusic.music.ui.ios.compat.TextButton(onClick = { newPlaylist = true }) {
                         Text(stringResource(R.string.create_playlist), color = IosTheme.tint)
                     }
                 }
@@ -498,7 +498,7 @@ private fun LazyListScope.playlistGridItems(list: List<PlaylistSummary>, tile: @
 fun AppleArtistsPage(navController: NavController, onBack: () -> Unit, viewModel: AppleLibraryViewModel = koinViewModel()) {
     val artists by viewModel.localArtists.collectAsStateWithLifecycle()
     val localOnly by viewModel.localOnly.collectAsStateWithLifecycle()
-    val permission = com.convx.music.ui.component.rememberLocalAudioPermission { }
+    val permission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { }
     val needsAccess = localOnly && !permission.granted
     androidx.compose.runtime.LaunchedEffect(permission.granted) { if (permission.granted) viewModel.scanDevice() }
     var sortType by rememberEnumPreference(ArtistSortTypeKey, ArtistSortType.NAME)
@@ -522,7 +522,7 @@ fun AppleArtistsPage(navController: NavController, onBack: () -> Unit, viewModel
         if (needsAccess || artists.isEmpty()) {
             item(key = "artist_access", contentType = "placeholder") {
                 if (needsAccess) LocalAccessCard(permission.blocked, permission.request)
-                else com.convx.music.ui.component.LocalMusicEmptyState(onScan = viewModel::scanDevice)
+                else com.hdemirbassmusic.music.ui.component.LocalMusicEmptyState(onScan = viewModel::scanDevice)
             }
             return@AppleSubpage
         }
@@ -546,7 +546,7 @@ fun AppleArtistsPage(navController: NavController, onBack: () -> Unit, viewModel
 fun AppleAlbumsPage(navController: NavController, onBack: () -> Unit, viewModel: AppleLibraryViewModel = koinViewModel()) {
     val albums by viewModel.localAlbums.collectAsStateWithLifecycle()
     val localOnly by viewModel.localOnly.collectAsStateWithLifecycle()
-    val permission = com.convx.music.ui.component.rememberLocalAudioPermission { }
+    val permission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { }
     val needsAccess = localOnly && !permission.granted
     androidx.compose.runtime.LaunchedEffect(permission.granted) { if (permission.granted) viewModel.scanDevice() }
     var sortType by rememberEnumPreference(AlbumSortTypeKey, AlbumSortType.NAME)
@@ -571,7 +571,7 @@ fun AppleAlbumsPage(navController: NavController, onBack: () -> Unit, viewModel:
         if (needsAccess || albums.isEmpty()) {
             item(key = "album_access", contentType = "placeholder") {
                 if (needsAccess) LocalAccessCard(permission.blocked, permission.request)
-                else com.convx.music.ui.component.LocalMusicEmptyState(onScan = viewModel::scanDevice)
+                else com.hdemirbassmusic.music.ui.component.LocalMusicEmptyState(onScan = viewModel::scanDevice)
             }
             return@AppleSubpage
         }
@@ -587,7 +587,7 @@ fun AppleAlbumsPage(navController: NavController, onBack: () -> Unit, viewModel:
 
 @Composable
 fun AppleSongsPage(navController: NavController, onBack: () -> Unit, viewModel: AppleLibraryViewModel = koinViewModel()) {
-    val permission = com.convx.music.ui.component.rememberLocalAudioPermission { }
+    val permission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { }
     val songs by viewModel.localSongs.collectAsStateWithLifecycle()
     val localOnly by viewModel.localOnly.collectAsStateWithLifecycle()
     androidx.compose.runtime.LaunchedEffect(permission.granted) { if (permission.granted) viewModel.scanDevice() }
@@ -602,7 +602,7 @@ fun AppleSongsPage(navController: NavController, onBack: () -> Unit, viewModel: 
         onBack = onBack,
         placeholder = when {
             localOnly && !permission.granted -> ({ LocalAccessCard(permission.blocked, permission.request) })
-            songs.isEmpty() -> ({ com.convx.music.ui.component.LocalMusicEmptyState(onScan = viewModel::scanDevice) })
+            songs.isEmpty() -> ({ com.hdemirbassmusic.music.ui.component.LocalMusicEmptyState(onScan = viewModel::scanDevice) })
             else -> null
         },
     )
@@ -614,8 +614,8 @@ fun AppleLocalSongsPage(navController: NavController, onBack: () -> Unit, viewMo
     val context = LocalContext.current
     val songs by viewModel.songs.collectAsStateWithLifecycle()
     val scanning by viewModel.scanning.collectAsStateWithLifecycle()
-    var granted by remember { mutableStateOf(com.convx.music.ui.component.hasLocalAudioPermission(context)) }
-    val permission = com.convx.music.ui.component.rememberLocalAudioPermission { ok ->
+    var granted by remember { mutableStateOf(com.hdemirbassmusic.music.ui.component.hasLocalAudioPermission(context)) }
+    val permission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { ok ->
         granted = ok
         if (ok) viewModel.scan(context)
     }
@@ -631,11 +631,11 @@ fun AppleLocalSongsPage(navController: NavController, onBack: () -> Unit, viewMo
         navController = navController,
         onBack = onBack,
         header = if (granted) ({
-            com.convx.music.ui.screens.library.LocalMusicFoldersEntry(count = null, navController = navController)
+            com.hdemirbassmusic.music.ui.screens.library.LocalMusicFoldersEntry(count = null, navController = navController)
         }) else null,
         placeholder = when {
             !granted -> ({ LocalAccessCard(blocked = permission.blocked, onAllow = permission.request) })
-            songs.isEmpty() && !scanning -> ({ com.convx.music.ui.component.LocalMusicEmptyState(onScan = { viewModel.scan(context) }) })
+            songs.isEmpty() && !scanning -> ({ com.hdemirbassmusic.music.ui.component.LocalMusicEmptyState(onScan = { viewModel.scan(context) }) })
             else -> null
         },
     )
@@ -740,7 +740,7 @@ private fun AppleSongList(
     // Rail map: letter -> index among the rail's items (headers + rows), which are the
     // last items of the list, as ListScrollRail expects.
     val railIndex = remember(sections, songs) {
-        if (sections == null) com.convx.music.ui.component.buildAlphabetSectionIndex(songs) { it.song.title }
+        if (sections == null) com.hdemirbassmusic.music.ui.component.buildAlphabetSectionIndex(songs) { it.song.title }
         else {
             var i = 0
             sections.associate { (letter, list) -> letter to i.also { i += 1 + list.size } }
@@ -847,7 +847,7 @@ private fun LetterHeader(letter: String) {
 private fun SongRow(song: Song, navController: NavController, onPlay: () -> Unit) {
     val entries = songMenu(song, navController)
     var dots by remember { mutableStateOf(false) }
-    com.convx.music.ui.utils.ArtworkSourceHost(Modifier) { sourceModifier ->
+    com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost(Modifier) { sourceModifier ->
     AppleContextMenu(
         sections = entries.sections,
         quickActions = entries.quick,
@@ -924,7 +924,7 @@ internal fun songMenu(song: Song, navController: NavController): SongMenuEntries
         if (isLocal) null else IosMenuItem(stringResource(R.string.share), icon = glyph(sf("SFSquareAndArrowUp"))) {
             context.startActivity(
                 Intent.createChooser(
-                    Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, com.convx.music.utils.ShareUtils.songUrl(song.id)),
+                    Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, com.hdemirbassmusic.music.utils.ShareUtils.songUrl(song.id)),
                     null,
                 ),
             )

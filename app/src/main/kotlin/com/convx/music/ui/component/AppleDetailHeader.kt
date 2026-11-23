@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -38,17 +38,17 @@ import coil3.compose.AsyncImage
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFECircle
 import com.composables.sfsymbols.monochrome.SFShuffle
-import com.convx.music.R
-import com.convx.music.constants.EnableTidalStreamingKey
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.utils.readLocalAudioProperties
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.EnableTidalStreamingKey
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.utils.readLocalAudioProperties
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /*
  * The Apple-Music album/playlist detail header, in three pieces:

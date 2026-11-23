@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.search
+package com.hdemirbassmusic.music.ui.screens.search
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -46,12 +46,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import com.convx.music.ui.utils.youtubeBrowseRoute
+import com.hdemirbassmusic.music.ui.utils.youtubeBrowseRoute
 import coil3.compose.AsyncImage
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.screens.library.apple.SfStyle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem

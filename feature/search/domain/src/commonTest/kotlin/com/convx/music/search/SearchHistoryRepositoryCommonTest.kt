@@ -1,4 +1,4 @@
-package com.convx.music.search
+package com.hdemirbassmusic.music.search
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
@@ -24,13 +24,13 @@ class SearchHistoryRepositoryCommonTest {
             val commands = app.koin.get<SearchHistoryCommands>()
             val history = repository.observeHistory("co")
 
-            commands.record("convx")
+            commands.record("hdemirbassmusic")
             commands.delete(42)
             commands.clear()
 
             assertSame(repository.rows, history)
             assertEquals("co", repository.requestedPrefix)
-            assertEquals(listOf("convx"), repository.recorded)
+            assertEquals(listOf("hdemirbassmusic"), repository.recorded)
             assertEquals(listOf(42L), repository.deleted)
             assertEquals(1, repository.clearCount)
         } finally {
@@ -39,7 +39,7 @@ class SearchHistoryRepositoryCommonTest {
     }
 
     private class FakeSearchHistoryRepository : SearchHistoryRepository {
-        val rows = flowOf(listOf(SearchHistoryEntry(42, "convx")))
+        val rows = flowOf(listOf(SearchHistoryEntry(42, "hdemirbassmusic")))
         val recorded = mutableListOf<String>()
         val deleted = mutableListOf<Long>()
         var clearCount = 0

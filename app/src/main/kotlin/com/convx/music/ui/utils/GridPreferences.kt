@@ -1,19 +1,19 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.convx.music.constants.GridColumnMinWidth
-import com.convx.music.constants.GridColumnsOverrideKey
-import com.convx.music.constants.GridSpacingKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.GridColumnMinWidth
+import com.hdemirbassmusic.music.constants.GridColumnsOverrideKey
+import com.hdemirbassmusic.music.constants.GridSpacingKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /** Discrete steps a user can pick for [GridColumnsOverrideKey] / [SpeedDialColumnsOverrideKey]. 0 = auto. */
 val GridColumnChoices = listOf(0, 2, 3, 4, 5, 6)

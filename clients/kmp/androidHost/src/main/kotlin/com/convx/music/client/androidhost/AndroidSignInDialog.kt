@@ -1,4 +1,4 @@
-package com.convx.music.client.androidhost
+package com.hdemirbassmusic.music.client.androidhost
 
 import android.net.Uri
 import android.webkit.CookieManager
@@ -73,12 +73,12 @@ internal fun AndroidSignInDialog(
                                 encodedDataSyncId?.takeIf(String::isNotBlank)
                                     ?.let { dataSyncId.set(Uri.decode(it)) }
                             }
-                        }, "ConvxSignIn")
+                        }, "hdemirbassmusicSignIn")
                         webViewClient = object : WebViewClient() {
                             override fun onPageFinished(view: WebView, url: String?) {
                                 view.evaluateJavascript(
                                     """(function(){const c=(window.yt&&window.yt.config_)||{};""" +
-                                        """window.ConvxSignIn.onSessionData(encodeURIComponent(c.VISITOR_DATA||''),encodeURIComponent(c.DATASYNC_ID||''));})();""",
+                                        """window.hdemirbassmusicSignIn.onSessionData(encodeURIComponent(c.VISITOR_DATA||''),encodeURIComponent(c.DATASYNC_ID||''));})();""",
                                     null,
                                 )
                                 if (!url.isMusicOrigin() || completed) return

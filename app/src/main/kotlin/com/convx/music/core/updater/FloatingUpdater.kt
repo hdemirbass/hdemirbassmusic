@@ -1,6 +1,6 @@
 @file:OptIn(zone.ien.hig.ExperimentalCupertinoApi::class, androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 
-package com.convx.music.core.updater
+package com.hdemirbassmusic.music.core.updater
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -21,20 +21,20 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import com.convx.music.R
-import com.convx.music.ui.component.LocalAppBackdrop
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.LocalPooledGlass
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.liquidGlass
-import com.convx.music.ui.component.glassUsesDarkAppearance
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.LocalIosBackdrop
-import com.convx.music.ui.ios.foundation.IosMenuMaterial
-import com.convx.music.viewmodels.UpdateViewModel
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.LocalAppBackdrop
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.LocalPooledGlass
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.liquidGlass
+import com.hdemirbassmusic.music.ui.component.glassUsesDarkAppearance
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosBackdrop
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMenuMaterial
+import com.hdemirbassmusic.music.viewmodels.UpdateViewModel
 import kotlinx.coroutines.android.awaitFrame
 import kotlinx.coroutines.delay
 import zone.ien.hig.CupertinoButton

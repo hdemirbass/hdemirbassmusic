@@ -1,4 +1,4 @@
-package com.convx.music.extensions
+package com.hdemirbassmusic.music.extensions
 
 import androidx.media3.common.Player
 import java.lang.reflect.Proxy

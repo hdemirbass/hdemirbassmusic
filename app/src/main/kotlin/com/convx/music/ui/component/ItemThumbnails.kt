@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
@@ -46,13 +46,13 @@ import coil3.request.allowHardware
 import coil3.request.bitmapConfig
 import coil3.request.crossfade
 import coil3.size.Size as CoilSize
-import com.convx.music.R
-import com.convx.music.constants.GridThumbnailHeight
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.utils.resize
-import com.convx.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.GridThumbnailHeight
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
 import kotlinx.coroutines.flow.first
 
 /** Real pixel size of a [dp] box on this device, for sizing an image decode to what
@@ -125,15 +125,15 @@ fun ItemThumbnail(
      *  but only for the tile actually being opened, so the same album appearing in two
      *  rails does not put two claimants on one key. See [sharedArtworkSource]. */
     sharedArtworkId: String? = null,
-    appleArtQuery: com.convx.music.utils.AppleArtQuery? = null,
+    appleArtQuery: com.hdemirbassmusic.music.utils.AppleArtQuery? = null,
 ) {
     val cropAlbumArtPref = LocalItemPrefs.current.cropAlbumArt
     val cropAlbumArt = forceContentScale == ContentScale.Crop || (forceContentScale == null && cropAlbumArtPref)
     val context = LocalContext.current
     val actualTargetSizePx = targetSizePx
-    val displayUrl = com.convx.music.utils.rememberAppleArtworkUrl(appleArtQuery, thumbnailUrl, actualTargetSizePx)
-    val artworkOwner = com.convx.music.ui.utils.rememberArtworkSourceOwner()
-    val imageListener = com.convx.music.ui.utils.sharedArtworkImageListener(artworkOwner, displayUrl)
+    val displayUrl = com.hdemirbassmusic.music.utils.rememberAppleArtworkUrl(appleArtQuery, thumbnailUrl, actualTargetSizePx)
+    val artworkOwner = com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner()
+    val imageListener = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(artworkOwner, displayUrl)
     val imageRequest = remember(displayUrl, actualTargetSizePx) {
         val resolvedUrl = displayUrl?.resize(actualTargetSizePx, actualTargetSizePx)
         ImageRequest.Builder(context)
@@ -235,7 +235,7 @@ fun LocalThumbnail(
     // branches transform anything) — the decode size below is what actually bounds a
     // local thumbnail's resolution, so it's what needs to be density-scaled, not 544.
     val targetPx = thumbnailPx(GridThumbnailHeight)
-    val artworkOwner = com.convx.music.ui.utils.rememberArtworkSourceOwner()
+    val artworkOwner = com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner()
     val imageRequest = remember(thumbnailUrl, targetPx) {
         val resolvedUrl = thumbnailUrl?.resize(targetPx, targetPx)
         ImageRequest.Builder(context)
@@ -260,7 +260,7 @@ fun LocalThumbnail(
     ) {
         AsyncImage(
             model = imageRequest,
-            onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(artworkOwner, thumbnailUrl),
+            onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(artworkOwner, thumbnailUrl),
             contentDescription = null,
             contentScale = if (cropAlbumArt) ContentScale.Crop else ContentScale.Fit,
             modifier = Modifier.fillMaxSize()

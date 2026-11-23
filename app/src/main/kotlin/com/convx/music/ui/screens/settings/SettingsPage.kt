@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.BoxScope
@@ -26,13 +26,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.ui.component.GlassScreenChrome
-import com.convx.music.ui.component.ScreenLazyPage
-import com.convx.music.ui.component.ScreenPage
-import com.convx.music.ui.component.ScreenScaffold
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.ui.component.GlassScreenChrome
+import com.hdemirbassmusic.music.ui.component.ScreenLazyPage
+import com.hdemirbassmusic.music.ui.component.ScreenPage
+import com.hdemirbassmusic.music.ui.component.ScreenScaffold
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.utils.backToMain
 
 /**
  * The settings dialect of [ScreenPage] and friends: iOS grouped background, iOS
@@ -40,7 +40,7 @@ import com.convx.music.ui.utils.backToMain
  * straight to the root, which is how these pages have always behaved).
  *
  * Everything structural — the Haze source, the progressive blur, the title
- * handoff — lives in [com.convx.music.ui.component.ScreenChromeBox] and is shared
+ * handoff — lives in [com.hdemirbassmusic.music.ui.component.ScreenChromeBox] and is shared
  * with every other pushed screen in the app. These three exist only so a settings
  * page does not repeat the same four arguments forty times.
  */

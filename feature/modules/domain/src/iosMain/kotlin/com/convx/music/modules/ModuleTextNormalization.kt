@@ -1,7 +1,7 @@
 @file:Suppress("CAST_NEVER_SUCCEEDS")
 @file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
 
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 import platform.Foundation.*
 

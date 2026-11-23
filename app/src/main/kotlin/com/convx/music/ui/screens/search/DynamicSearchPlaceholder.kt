@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.search
+package com.hdemirbassmusic.music.ui.screens.search
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -23,9 +23,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
-import com.convx.music.LocalDatabase
-import com.convx.music.R
-import com.convx.music.constants.SearchSource
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.SearchSource
 import kotlinx.coroutines.flow.first
 
 @Composable

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationSpec
@@ -42,15 +42,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.graphicsLayer
-import com.convx.music.ui.player.PlayerMorph
-import com.convx.music.ui.player.SCREEN_CORNER_EXPANSION_MILLIS
-import com.convx.music.ui.player.recordPlayerLayer
-import com.convx.music.ui.player.sharedContainerCornerRadius
-import com.convx.music.playback.presentation.PLAYER_MORPH_CONTENT_APPEAR_END
-import com.convx.music.playback.presentation.PLAYER_MORPH_CONTENT_APPEAR_START
-import com.convx.music.playback.presentation.PLAYER_MORPH_LAYER_HANDOFF_PROGRESS
-import com.convx.music.playback.presentation.PLAYER_MORPH_MINI_FADE_END
-import com.convx.music.designsystem.MotionTokens
+import com.hdemirbassmusic.music.ui.player.PlayerMorph
+import com.hdemirbassmusic.music.ui.player.SCREEN_CORNER_EXPANSION_MILLIS
+import com.hdemirbassmusic.music.ui.player.recordPlayerLayer
+import com.hdemirbassmusic.music.ui.player.sharedContainerCornerRadius
+import com.hdemirbassmusic.music.playback.presentation.PLAYER_MORPH_CONTENT_APPEAR_END
+import com.hdemirbassmusic.music.playback.presentation.PLAYER_MORPH_CONTENT_APPEAR_START
+import com.hdemirbassmusic.music.playback.presentation.PLAYER_MORPH_LAYER_HANDOFF_PROGRESS
+import com.hdemirbassmusic.music.playback.presentation.PLAYER_MORPH_MINI_FADE_END
+import com.hdemirbassmusic.music.designsystem.MotionTokens
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.pointer.pointerInput
@@ -62,8 +62,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.isSpecified
-import com.convx.music.constants.NavigationBarAnimationSpec
-import com.convx.music.ui.utils.nearestProjectedSnap
+import com.hdemirbassmusic.music.constants.NavigationBarAnimationSpec
+import com.hdemirbassmusic.music.ui.utils.nearestProjectedSnap
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlin.math.pow

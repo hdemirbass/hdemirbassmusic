@@ -1,6 +1,6 @@
-package com.convx.music.eq
+package com.hdemirbassmusic.music.eq
 
-import com.convx.music.eq.data.EQProfileImport
+import com.hdemirbassmusic.music.eq.data.EQProfileImport
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

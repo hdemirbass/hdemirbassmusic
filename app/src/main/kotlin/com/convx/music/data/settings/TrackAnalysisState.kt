@@ -1,6 +1,6 @@
-package com.convx.music.data.settings
+package com.hdemirbassmusic.music.data.settings
 
-import com.convx.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
 
 /**
  * Smart-analysis state of a media item, surfaced in the player UI so the

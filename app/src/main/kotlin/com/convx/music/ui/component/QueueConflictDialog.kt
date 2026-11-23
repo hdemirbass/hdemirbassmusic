@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
@@ -14,11 +14,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.res.stringResource
-import com.convx.music.R
-import com.convx.music.constants.AskBeforeReplacingQueueKey
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AskBeforeReplacingQueueKey
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 /**

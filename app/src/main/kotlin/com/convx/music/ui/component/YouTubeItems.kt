@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.utils.sharedTitleSource
+import com.hdemirbassmusic.music.ui.utils.sharedTitleSource
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,23 +27,23 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.exoplayer.offline.Download
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.constants.GridCardArtShape
-import com.convx.music.constants.ListRowArtShape
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.additiveChrome
-import com.convx.music.ui.utils.resize
-import com.convx.music.utils.joinByBullet
-import com.convx.music.utils.makeTimeString
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.constants.GridCardArtShape
+import com.hdemirbassmusic.music.constants.ListRowArtShape
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.utils.joinByBullet
+import com.hdemirbassmusic.music.utils.makeTimeString
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
@@ -156,8 +156,8 @@ fun YouTubeListItem(
                 ItemThumbnail(
                     thumbnailUrl = item.thumbnail,
                     appleArtQuery = when (item) {
-                        is AlbumItem -> com.convx.music.utils.AppleArtQuery.Album(item.title, item.artists?.joinToString { it.name })
-                        is ArtistItem -> com.convx.music.utils.AppleArtQuery.Artist(item.title)
+                        is AlbumItem -> com.hdemirbassmusic.music.utils.AppleArtQuery.Album(item.title, item.artists?.joinToString { it.name })
+                        is ArtistItem -> com.hdemirbassmusic.music.utils.AppleArtQuery.Artist(item.title)
                         else -> null
                     },
                     albumIndex = albumIndex,
@@ -270,8 +270,8 @@ fun YouTubeGridItem(
             ItemThumbnail(
                 thumbnailUrl = item.thumbnail,
                 appleArtQuery = when (item) {
-                    is AlbumItem -> com.convx.music.utils.AppleArtQuery.Album(item.title, item.artists?.joinToString { it.name })
-                    is ArtistItem -> com.convx.music.utils.AppleArtQuery.Artist(item.title)
+                    is AlbumItem -> com.hdemirbassmusic.music.utils.AppleArtQuery.Album(item.title, item.artists?.joinToString { it.name })
+                    is ArtistItem -> com.hdemirbassmusic.music.utils.AppleArtQuery.Artist(item.title)
                     else -> null
                 },
                 isActive = isActive,

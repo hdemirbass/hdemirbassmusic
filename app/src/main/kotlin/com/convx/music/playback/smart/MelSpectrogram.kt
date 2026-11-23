@@ -2,7 +2,7 @@
  * Ported from Orchard (https://github.com/SFG5453/Orchard).
  *
  * Copyright (C) 2026 SFG545 (original Orchard implementation)
- * Copyright (C) 2026 Convx contributors (adapted from an open-source base)
+ * Copyright (C) 2026 hdemirbassmusic contributors (adapted from an open-source base)
  *
  * Orchard's original source is licensed under the GNU Affero General Public
  * License, version 3 or later. Per AGPLv3 section 13, this file is combined
@@ -19,13 +19,13 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 /** Native log-mel front end for Beat This. Its sample rate and tensor shape must match the trained model. */
 object MelSpectrogram {
 
     /** True when the native library loaded. Analysis is optional, so this is a fact, not a fault. */
-    val available: Boolean = runCatching { System.loadLibrary("convx_analysis") }.isSuccess
+    val available: Boolean = runCatching { System.loadLibrary("hdemirbassmusic_analysis") }.isSuccess
 
     /** Mel bands per frame; the model's input width. */
     val mels: Int by lazy { if (available) nativeMelCount() else 128 }

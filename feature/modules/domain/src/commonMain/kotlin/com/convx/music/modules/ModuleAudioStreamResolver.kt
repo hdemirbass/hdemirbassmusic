@@ -1,8 +1,8 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
-import com.convx.music.playback.AudioStreamResolver
-import com.convx.music.playback.PlaybackAudioStream
-import com.convx.music.playback.PlaybackRequestTrack
+import com.hdemirbassmusic.music.playback.AudioStreamResolver
+import com.hdemirbassmusic.music.playback.PlaybackAudioStream
+import com.hdemirbassmusic.music.playback.PlaybackRequestTrack
 import com.music.spine.ModuleStreamResponse
 import io.ktor.http.Url
 import kotlinx.coroutines.CancellationException

@@ -1,4 +1,4 @@
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import android.content.ContentValues
 import android.content.Context
@@ -20,7 +20,7 @@ import java.io.File
 
 /**
  * Debug tool: splits one song with every separator available and saves each stem as its own file
- * in `Music/Convx Stem Lab/<song>/`, so the two can be listened to side by side.
+ * in `Music/hdemirbassmusic Stem Lab/<song>/`, so the two can be listened to side by side.
  */
 @UnstableApi
 object StemLab {
@@ -88,10 +88,10 @@ object StemLab {
 
     /** Copies [files] into the shared Music folder; returns where a file manager will find them. */
     private fun publish(context: Context, folder: String, files: List<File>): String {
-        val relative = "${Environment.DIRECTORY_MUSIC}/Convx Stem Lab/$folder"
+        val relative = "${Environment.DIRECTORY_MUSIC}/hdemirbassmusic Stem Lab/$folder"
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
             // Without scoped storage the shared folder needs a permission this debug tool does not ask for.
-            val dir = File(context.getExternalFilesDir(Environment.DIRECTORY_MUSIC), "Convx Stem Lab/$folder").apply { mkdirs() }
+            val dir = File(context.getExternalFilesDir(Environment.DIRECTORY_MUSIC), "hdemirbassmusic Stem Lab/$folder").apply { mkdirs() }
             files.forEach { it.copyTo(File(dir, it.name), overwrite = true) }
             return dir.absolutePath
         }

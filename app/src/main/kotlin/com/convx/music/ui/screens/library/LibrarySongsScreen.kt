@@ -1,19 +1,19 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.library
+package com.hdemirbassmusic.music.ui.screens.library
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.Manifest
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.ExperimentalFoundationApi
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -30,16 +30,16 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.FilterChip
+import com.hdemirbassmusic.music.ui.ios.compat.FilterChip
 import androidx.compose.material3.FilterChipDefaults
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFArrowClockwise
 import com.composables.sfsymbols.monochrome.SFXmark
@@ -61,44 +61,44 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.CONTENT_TYPE_HEADER
-import com.convx.music.constants.CONTENT_TYPE_SONG
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.LibraryIconsOnlyKey
-import com.convx.music.constants.SongFilter
-import com.convx.music.constants.SongFilterKey
-import com.convx.music.constants.SongSortDescendingKey
-import com.convx.music.constants.SongSortType
-import com.convx.music.constants.SongSortTypeKey
-import com.convx.music.constants.YtmSyncKey
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.ListScrollRail
-import com.convx.music.ui.component.LargeScreenTitle
-import com.convx.music.ui.component.TopFadeBlur
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.CONTENT_TYPE_HEADER
+import com.hdemirbassmusic.music.constants.CONTENT_TYPE_SONG
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.LibraryIconsOnlyKey
+import com.hdemirbassmusic.music.constants.SongFilter
+import com.hdemirbassmusic.music.constants.SongFilterKey
+import com.hdemirbassmusic.music.constants.SongSortDescendingKey
+import com.hdemirbassmusic.music.constants.SongSortType
+import com.hdemirbassmusic.music.constants.SongSortTypeKey
+import com.hdemirbassmusic.music.constants.YtmSyncKey
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.ListScrollRail
+import com.hdemirbassmusic.music.ui.component.LargeScreenTitle
+import com.hdemirbassmusic.music.ui.component.TopFadeBlur
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
-import com.convx.music.ui.component.buildAlphabetSectionIndex
-import com.convx.music.ui.component.ChipsRow
-import com.convx.music.ui.component.HideOnScrollFAB
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.SongListItem
-import com.convx.music.ui.component.SortOption
-import com.convx.music.ui.component.SortPopupButton
-import com.convx.music.ui.menu.SongMenu
-import com.convx.music.utils.listItemShape
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.LibrarySongsViewModel
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.heroPullZoom
-import com.convx.music.ui.utils.listOverscroll
-import com.convx.music.ui.utils.rememberHeroZoom
+import com.hdemirbassmusic.music.ui.component.buildAlphabetSectionIndex
+import com.hdemirbassmusic.music.ui.component.ChipsRow
+import com.hdemirbassmusic.music.ui.component.HideOnScrollFAB
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.SongListItem
+import com.hdemirbassmusic.music.ui.component.SortOption
+import com.hdemirbassmusic.music.ui.component.SortPopupButton
+import com.hdemirbassmusic.music.ui.menu.SongMenu
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.LibrarySongsViewModel
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.heroPullZoom
+import com.hdemirbassmusic.music.ui.utils.listOverscroll
+import com.hdemirbassmusic.music.ui.utils.rememberHeroZoom
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
@@ -131,7 +131,7 @@ fun LibrarySongsScreen(
     val scanResult by viewModel.scanResult.collectAsStateWithLifecycle()
 
     var storedFilter by rememberEnumPreference(SongFilterKey, SongFilter.LIKED)
-    val localOnly = com.convx.music.LocalLocalOnlyMode.current
+    val localOnly = com.hdemirbassmusic.music.LocalLocalOnlyMode.current
     // Mirrors what the view model actually queries while local-only mode is on.
     val filter = if (localOnly) SongFilter.LOCAL else storedFilter
     // Pull-to-refresh only: no hero artwork on this screen, so heroZoom.scale

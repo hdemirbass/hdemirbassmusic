@@ -1,9 +1,9 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.compose.runtime.Immutable
@@ -25,35 +25,35 @@ import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.pages.ExplorePage
 import com.music.innertube.pages.HomePage
 import com.music.innertube.utils.completed
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.HideYoutubeShortsKey
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.constants.QuickPicks
-import com.convx.music.constants.QuickPicksKey
-import com.convx.music.constants.ShowWrappedCardKey
-import com.convx.music.constants.WrappedSeenKey
-import com.convx.music.R
-import com.convx.music.db.MusicDatabase
-import com.convx.music.history.ListenHistoryRepository
-import com.convx.music.history.ListenHistorySettingsRepository
-import com.convx.music.history.ListenHistorySettingsState
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.LocalItem
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.Song
-import com.convx.music.db.entities.SpeedDialItem
-import com.convx.music.extensions.filterVideoSongs
-import com.convx.music.extensions.toEnum
-import com.convx.music.models.SimilarRecommendation
-import com.convx.music.ui.screens.wrapped.WrappedAudioService
-import com.convx.music.ui.screens.wrapped.WrappedManager
-import com.convx.music.utils.SyncUtils
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.reportException
-import com.convx.music.di.ValueProvider
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.HideYoutubeShortsKey
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.constants.QuickPicks
+import com.hdemirbassmusic.music.constants.QuickPicksKey
+import com.hdemirbassmusic.music.constants.ShowWrappedCardKey
+import com.hdemirbassmusic.music.constants.WrappedSeenKey
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.history.ListenHistoryRepository
+import com.hdemirbassmusic.music.history.ListenHistorySettingsRepository
+import com.hdemirbassmusic.music.history.ListenHistorySettingsState
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.LocalItem
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.db.entities.SpeedDialItem
+import com.hdemirbassmusic.music.extensions.filterVideoSongs
+import com.hdemirbassmusic.music.extensions.toEnum
+import com.hdemirbassmusic.music.models.SimilarRecommendation
+import com.hdemirbassmusic.music.ui.screens.wrapped.WrappedAudioService
+import com.hdemirbassmusic.music.ui.screens.wrapped.WrappedManager
+import com.hdemirbassmusic.music.utils.SyncUtils
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.reportException
+import com.hdemirbassmusic.music.di.ValueProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

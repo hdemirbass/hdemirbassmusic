@@ -2,11 +2,11 @@
  * Copyright 2026, compose-miuix-ui contributors
  * SPDX-License-Identifier: Apache-2.0
  *
- * Ported one-to-one from the reference app's DampedDragAnimation. The only Convx extension is
+ * Ported one-to-one from the reference app's DampedDragAnimation. The only hdemirbassmusic extension is
  * snapValue(), used when an external pager already owns the position animation;
  * it is not used by pointer drag/press/release behavior.
  */
-package com.convx.music.ui.component.backdrop.catalog.utils
+package com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
@@ -180,7 +180,7 @@ class DampedDragAnimation(
         }
     }
 
-    /** Convx pager extension; pointer drag behavior remains identical to the reference app. */
+    /** hdemirbassmusic pager extension; pointer drag behavior remains identical to the reference app. */
     suspend fun snapValue(value: Float) {
         valueAnimation.snapTo(if (value.isFinite()) value.coerceIn(valueRange) else valueAnimation.value)
     }

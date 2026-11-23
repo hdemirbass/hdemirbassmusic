@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -33,25 +33,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import com.convx.music.LocalDatabase
-import com.convx.music.R
-import com.convx.music.constants.GridCardArtShape
-import com.convx.music.constants.GridThumbnailHeight
-import com.convx.music.constants.ListRowArtShape
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.Song
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.playback.displayDownloadState
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.resize
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.ui.utils.sharedTitleSource
-import com.convx.music.utils.joinByBullet
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.GridCardArtShape
+import com.hdemirbassmusic.music.constants.GridThumbnailHeight
+import com.hdemirbassmusic.music.constants.ListRowArtShape
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.playback.displayDownloadState
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.sharedTitleSource
+import com.hdemirbassmusic.music.utils.joinByBullet
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -95,8 +95,8 @@ fun ArtistListItem(
         } else {
             val context = LocalContext.current
             val targetPx = thumbnailPx(ListThumbnailSize)
-            val displayUrl = com.convx.music.utils.rememberAppleArtworkUrl(
-                com.convx.music.utils.AppleArtQuery.Artist(artist.artist.name), artist.artist.thumbnailUrl, targetPx,
+            val displayUrl = com.hdemirbassmusic.music.utils.rememberAppleArtworkUrl(
+                com.hdemirbassmusic.music.utils.AppleArtQuery.Artist(artist.artist.name), artist.artist.thumbnailUrl, targetPx,
             )
             val imageRequest = remember(displayUrl, targetPx) {
                 ImageRequest.Builder(context)
@@ -152,8 +152,8 @@ fun ArtistGridItem(
         } else {
             val context = LocalContext.current
             val targetPx = thumbnailPx(GridThumbnailHeight)
-            val displayUrl = com.convx.music.utils.rememberAppleArtworkUrl(
-                com.convx.music.utils.AppleArtQuery.Artist(artist.artist.name), artist.artist.thumbnailUrl, targetPx,
+            val displayUrl = com.hdemirbassmusic.music.utils.rememberAppleArtworkUrl(
+                com.hdemirbassmusic.music.utils.AppleArtQuery.Artist(artist.artist.name), artist.artist.thumbnailUrl, targetPx,
             )
             val imageRequest = remember(displayUrl, targetPx) {
                 ImageRequest.Builder(context)
@@ -242,7 +242,7 @@ fun AlbumListItem(
         } else {
             ItemThumbnail(
                 thumbnailUrl = album.album.thumbnailUrl,
-                appleArtQuery = com.convx.music.utils.AppleArtQuery.Album(album.album.title, album.artists.joinToString { it.name }),
+                appleArtQuery = com.hdemirbassmusic.music.utils.AppleArtQuery.Album(album.album.title, album.artists.joinToString { it.name }),
                 isActive = isActive,
                 isPlaying = isPlaying,
                 shape = ListRowArtShape,
@@ -331,7 +331,7 @@ fun AlbumGridItem(
         } else {
             ItemThumbnail(
                 thumbnailUrl = album.album.thumbnailUrl,
-                appleArtQuery = com.convx.music.utils.AppleArtQuery.Album(album.album.title, album.artists.joinToString { it.name }),
+                appleArtQuery = com.hdemirbassmusic.music.utils.AppleArtQuery.Album(album.album.title, album.artists.joinToString { it.name }),
                 isActive = isActive,
                 isPlaying = isPlaying,
                 shape = GridCardArtShape,

@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  * 
  * Snap utilities for Thumbnail grid navigation
  * Copyright (C) the reference app Project - Custom SnapLayoutInfoProvider idea belongs to the reference app
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.Orientation

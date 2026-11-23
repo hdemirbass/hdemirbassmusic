@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,15 +16,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.LinearProgressIndicator
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.LinearProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -42,25 +42,25 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
-import com.convx.music.playback.ExoDownloadService
+import com.hdemirbassmusic.music.playback.ExoDownloadService
 import coil3.SingletonImageLoader
 import coil3.annotation.DelicateCoilApi
 import coil3.annotation.ExperimentalCoilApi
 import coil3.imageLoader
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.MaxImageCacheSizeKey
-import com.convx.music.constants.MaxSongCacheSizeKey
-import com.convx.music.extensions.tryOrNull
-import com.convx.music.ui.component.ActionPromptDialog
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.ui.utils.formatFileSize
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.MaxImageCacheSizeKey
+import com.hdemirbassmusic.music.constants.MaxSongCacheSizeKey
+import com.hdemirbassmusic.music.extensions.tryOrNull
+import com.hdemirbassmusic.music.ui.component.ActionPromptDialog
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.ui.utils.formatFileSize
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
@@ -70,7 +70,7 @@ import okio.ByteString.Companion.encodeUtf8
 import kotlin.math.roundToInt
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.Alignment
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
 

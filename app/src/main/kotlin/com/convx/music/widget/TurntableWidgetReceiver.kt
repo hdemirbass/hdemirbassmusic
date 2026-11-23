@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.widget
+package com.hdemirbassmusic.music.widget
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat
-import com.convx.music.playback.MusicService
+import com.hdemirbassmusic.music.playback.MusicService
 
 class TurntableWidgetReceiver : MusicWidgetReceiver() {
 
@@ -48,9 +48,9 @@ class TurntableWidgetReceiver : MusicWidgetReceiver() {
     }
 
     companion object {
-        const val ACTION_TURNTABLE_PLAY_PAUSE = "com.convx.music.widget.TURNTABLE_PLAY_PAUSE"
-        const val ACTION_TURNTABLE_NEXT = "com.convx.music.widget.TURNTABLE_NEXT"
-        const val ACTION_TURNTABLE_PREVIOUS = "com.convx.music.widget.TURNTABLE_PREVIOUS"
-        const val ACTION_UPDATE_TURNTABLE_WIDGET = "com.convx.music.widget.UPDATE_TURNTABLE_WIDGET"
+        const val ACTION_TURNTABLE_PLAY_PAUSE = "com.hdemirbassmusic.music.widget.TURNTABLE_PLAY_PAUSE"
+        const val ACTION_TURNTABLE_NEXT = "com.hdemirbassmusic.music.widget.TURNTABLE_NEXT"
+        const val ACTION_TURNTABLE_PREVIOUS = "com.hdemirbassmusic.music.widget.TURNTABLE_PREVIOUS"
+        const val ACTION_UPDATE_TURNTABLE_WIDGET = "com.hdemirbassmusic.music.widget.UPDATE_TURNTABLE_WIDGET"
     }
 }

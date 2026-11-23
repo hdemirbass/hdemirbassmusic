@@ -1,7 +1,7 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.WordTimestamp
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.WordTimestamp
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,8 +1,8 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.LyricsAppearanceViewModel
-import com.convx.music.viewmodels.LyricsMenuViewModel
-import com.convx.music.viewmodels.LyricsProviderViewModel
+import com.hdemirbassmusic.music.viewmodels.LyricsAppearanceViewModel
+import com.hdemirbassmusic.music.viewmodels.LyricsMenuViewModel
+import com.hdemirbassmusic.music.viewmodels.LyricsProviderViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

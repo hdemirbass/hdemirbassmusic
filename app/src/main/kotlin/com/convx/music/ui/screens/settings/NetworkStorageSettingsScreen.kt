@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,22 +32,22 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.convx.music.R
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.ios.compat.AlertDialog
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.viewmodels.NetworkStorageViewModel
-import com.convx.storage.domain.NetworkProtocol
-import com.convx.storage.domain.NetworkServer
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.viewmodels.NetworkStorageViewModel
+import com.hdemirbassmusic.storage.domain.NetworkProtocol
+import com.hdemirbassmusic.storage.domain.NetworkServer
 
 /** SMB and WebDAV music sources: add a server, test it, and scan its audio into the library. */
 @Composable

@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import android.net.Uri
 import androidx.media3.common.C

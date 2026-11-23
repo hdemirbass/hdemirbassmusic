@@ -1,5 +1,5 @@
 /** Adapted from BitChord (kushagrasinghx/BitChord), GPL-3.0. See NOTICE. */
-package com.convx.music.lyrics.bitchord
+package com.hdemirbassmusic.music.lyrics.bitchord
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
@@ -24,7 +24,7 @@ import kotlin.math.abs
 object LrcLib {
 
     private const val BASE = "https://lrclib.net/api"
-    private const val AGENT = "Convx (https://github.com/cosmictaserdev-creator/Convx)"
+    private const val AGENT = "hdemirbassmusic (https://github.com/cosmictaserdev-creator/hdemirbassmusic)"
 
     private val json = Json { ignoreUnknownKeys = true }
 

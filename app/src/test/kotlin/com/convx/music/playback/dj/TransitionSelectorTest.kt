@@ -1,6 +1,6 @@
-package com.convx.music.playback.dj
+package com.hdemirbassmusic.music.playback.dj
 
-import com.convx.music.playback.audio.DjMixTier
+import com.hdemirbassmusic.music.playback.audio.DjMixTier
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
 import org.junit.Test

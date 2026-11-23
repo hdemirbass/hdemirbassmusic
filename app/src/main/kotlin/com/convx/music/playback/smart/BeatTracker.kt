@@ -2,7 +2,7 @@
  * Ported from Orchard (https://github.com/SFG5453/Orchard).
  *
  * Copyright (C) 2026 SFG545 (original Orchard implementation)
- * Copyright (C) 2026 Convx contributors (adapted from an open-source base)
+ * Copyright (C) 2026 hdemirbassmusic contributors (adapted from an open-source base)
  *
  * Orchard's original source is licensed under the GNU Affero General Public
  * License, version 3 or later. Per AGPLv3 section 13, this file is combined
@@ -19,7 +19,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import ai.onnxruntime.OnnxTensor
 import ai.onnxruntime.OrtEnvironment
@@ -201,7 +201,7 @@ class BeatTracker(private val context: Context) {
     }
 
     companion object {
-        private const val TAG = "ConvxBeatTracker"
+        private const val TAG = "hdemirbassmusicBeatTracker"
         // ConvInteger weights shifted int8 -> uint8 (+128, zero points too; exact): the
         // shipped onnxruntime-android has no int8-weight ConvInteger kernel, so the
         // original failed createSession with ORT_NOT_IMPLEMENTED and DJ ran gridless.

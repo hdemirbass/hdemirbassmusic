@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -41,13 +41,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.MutableState
@@ -104,34 +104,34 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.GridItemSize
-import com.convx.music.constants.GridThumbnailHeight
-import com.convx.music.constants.ListItemHeight
-import com.convx.music.constants.GridCardArtShape
-import com.convx.music.constants.ListRowArtShape
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.constants.SmallGridThumbnailHeight
-import com.convx.music.constants.ThumbnailCornerRadius
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.models.MediaMetadata
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.additiveChrome
-import com.convx.music.ui.utils.marqueeWhenVisible
-import com.convx.music.ui.utils.rememberGridSpacing
-import com.convx.music.ui.utils.resize
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.ui.utils.ArtworkSourceHost
-import com.convx.music.ui.utils.sharedTitleSource
-import com.convx.music.utils.joinByBullet
-import com.convx.music.utils.makeTimeString
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.GridItemSize
+import com.hdemirbassmusic.music.constants.GridThumbnailHeight
+import com.hdemirbassmusic.music.constants.ListItemHeight
+import com.hdemirbassmusic.music.constants.GridCardArtShape
+import com.hdemirbassmusic.music.constants.ListRowArtShape
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.constants.SmallGridThumbnailHeight
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadius
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.marqueeWhenVisible
+import com.hdemirbassmusic.music.ui.utils.rememberGridSpacing
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost
+import com.hdemirbassmusic.music.ui.utils.sharedTitleSource
+import com.hdemirbassmusic.music.utils.joinByBullet
+import com.hdemirbassmusic.music.utils.makeTimeString
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

@@ -1,7 +1,7 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.WordTimestamp
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.WordTimestamp
 import com.mocharealm.accompanist.lyrics.core.model.karaoke.KaraokeAlignment
 import com.mocharealm.accompanist.lyrics.core.model.karaoke.KaraokeLine
 import com.mocharealm.accompanist.lyrics.core.model.synced.SyncedLine
@@ -11,7 +11,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /**
- * Guards the conversion from Convx's own lyrics model into the karaoke renderer's.
+ * Guards the conversion from hdemirbassmusic's own lyrics model into the karaoke renderer's.
  * Everything the Apple-style view can show that the plain styles cannot — duet sides,
  * background vocals, per-syllable lighting — is decided here rather than in the library,
  * so this is where those decisions have to be pinned.

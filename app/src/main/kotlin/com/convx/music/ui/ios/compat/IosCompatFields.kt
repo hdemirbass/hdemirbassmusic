@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:Suppress("FunctionName", "UNUSED_PARAMETER")
 
-package com.convx.music.ui.ios.compat
+package com.hdemirbassmusic.music.ui.ios.compat
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -34,11 +34,11 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.component.IosCheckmark
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.component.IosCheckmark
 import zone.ien.hig.CupertinoCheckBox
 import zone.ien.hig.CupertinoAlertDialog
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 
 /**
  * The OutlinedTextField call shape, drawn the iOS way: a filled rounded field with the

@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.compose.foundation.ExperimentalFoundationApi
 
 import androidx.compose.foundation.layout.asPaddingValues
@@ -14,9 +14,9 @@ import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -30,34 +30,34 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.ui.utils.rememberGridColumns
-import com.convx.music.constants.GridItemSize
-import com.convx.music.constants.GridItemsSizeKey
-import com.convx.music.constants.GridThumbnailHeight
-import com.convx.music.ui.component.ChipsRow
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.YouTubeGridItem
-import com.convx.music.ui.component.shimmer.GridItemPlaceHolder
-import com.convx.music.ui.component.shimmer.ShimmerHost
-import com.convx.music.ui.menu.YouTubeAlbumMenu
-import com.convx.music.ui.menu.YouTubeArtistMenu
-import com.convx.music.ui.menu.YouTubePlaylistMenu
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.onlinePlaylistRoute
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.viewmodels.AccountContentType
-import com.convx.music.viewmodels.AccountViewModel
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.utils.rememberGridColumns
+import com.hdemirbassmusic.music.constants.GridItemSize
+import com.hdemirbassmusic.music.constants.GridItemsSizeKey
+import com.hdemirbassmusic.music.constants.GridThumbnailHeight
+import com.hdemirbassmusic.music.ui.component.ChipsRow
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.YouTubeGridItem
+import com.hdemirbassmusic.music.ui.component.shimmer.GridItemPlaceHolder
+import com.hdemirbassmusic.music.ui.component.shimmer.ShimmerHost
+import com.hdemirbassmusic.music.ui.menu.YouTubeAlbumMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeArtistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubePlaylistMenu
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.onlinePlaylistRoute
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.viewmodels.AccountContentType
+import com.hdemirbassmusic.music.viewmodels.AccountViewModel
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
-import com.convx.music.ui.component.ScreenLargeTitle
-import com.convx.music.ui.component.ScreenScaffold
-import com.convx.music.ui.component.rememberTitleCollapseProgressState
+import com.hdemirbassmusic.music.ui.component.ScreenLargeTitle
+import com.hdemirbassmusic.music.ui.component.ScreenScaffold
+import com.hdemirbassmusic.music.ui.component.rememberTitleCollapseProgressState
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)

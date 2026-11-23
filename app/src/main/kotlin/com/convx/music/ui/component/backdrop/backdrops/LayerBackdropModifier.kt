@@ -7,7 +7,7 @@
  * scale for cheaper effect rendering. KMP expect/actual declarations were
  * merged into this single Android source set. Package renamed accordingly.
  */
-package com.convx.music.ui.component.backdrop.backdrops
+package com.hdemirbassmusic.music.ui.component.backdrop.backdrops
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope
@@ -18,7 +18,7 @@ import androidx.compose.ui.node.GlobalPositionAwareModifierNode
 import androidx.compose.ui.node.ModifierNodeElement
 import androidx.compose.ui.node.invalidateDraw
 import androidx.compose.ui.platform.InspectorInfo
-import com.convx.music.ui.component.backdrop.internal.recordLayer
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.recordLayer
 
 /**
  * @param frozen no longer read by the source (see [LayerBackdropNode.draw]); kept so

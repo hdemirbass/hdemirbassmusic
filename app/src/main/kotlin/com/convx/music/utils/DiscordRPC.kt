@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.Context
-import com.convx.music.R
-import com.convx.music.db.entities.Song
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.Song
 import com.my.kizzy.rpc.KizzyRPC
 import com.my.kizzy.rpc.RpcImage
 
@@ -52,17 +52,17 @@ class DiscordRPC(
         val buttonsList = mutableListOf<Pair<String, String>>()
         if (button1Visible) {
             val resolvedText = resolveVariables(
-                button1Text.ifEmpty { "Listen on Convx" },
+                button1Text.ifEmpty { "Listen on hdemirbassmusic" },
                 song
             )
             buttonsList.add(resolvedText to ShareUtils.songUrl(song.song.id))
         }
         if (button2Visible) {
             val resolvedText = resolveVariables(
-                button2Text.ifEmpty { "Visit Convx" },
+                button2Text.ifEmpty { "Visit hdemirbassmusic" },
                 song
             )
-            buttonsList.add(resolvedText to "https://github.com/cosmictaserdev-creator/Convx")
+            buttonsList.add(resolvedText to "https://github.com/cosmictaserdev-creator/hdemirbassmusic")
         }
 
         val type = when (activityType) {

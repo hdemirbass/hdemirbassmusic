@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import android.app.Activity
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -13,7 +13,7 @@ import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.AnimatedVisibilityScope
-import com.convx.music.ui.utils.Motion
+import com.hdemirbassmusic.music.ui.utils.Motion
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.AnimatedContentScope
@@ -33,83 +33,83 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.navArgument
-import com.convx.music.constants.DarkModeKey
-import com.convx.music.constants.PureBlackKey
-import com.convx.music.ui.screens.settings.DarkMode
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
-import com.convx.music.ui.utils.LocalNavAnimatedVisibilityScope
+import com.hdemirbassmusic.music.constants.DarkModeKey
+import com.hdemirbassmusic.music.constants.PureBlackKey
+import com.hdemirbassmusic.music.ui.screens.settings.DarkMode
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.ui.utils.LocalNavAnimatedVisibilityScope
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.graphics.graphicsLayer
-import com.convx.music.ui.utils.LocalMorphArtworkId
-import com.convx.music.ui.utils.isMorphRoute
-import com.convx.music.ui.utils.morphArtworkId
-import com.convx.music.ui.screens.settings.HomeFeedOrderScreen
-import com.convx.music.ui.screens.artist.ArtistAlbumsScreen
-import com.convx.music.ui.screens.artist.ArtistItemsScreen
-import com.convx.music.ui.screens.artist.ArtistScreen
-import com.convx.music.ui.screens.artist.ArtistSongsScreen
-import com.convx.music.ui.screens.equalizer.EqScreen
-import com.convx.music.ui.screens.library.AiDjSetScreen
-import com.convx.music.ui.screens.library.LocalFolderScreen
-import com.convx.music.ui.screens.library.LocalMusicScreen
-import com.convx.music.ui.screens.library.LibraryScreen
-import com.convx.music.ui.screens.library.LocalSongsScreen
-import com.convx.music.ui.screens.settings.SettingsScreen
-import com.convx.music.ui.screens.playlist.AutoPlaylistScreen
-import com.convx.music.ui.screens.playlist.CachePlaylistScreen
-import com.convx.music.ui.screens.playlist.LocalPlaylistScreen
-import com.convx.music.ui.screens.playlist.OnlinePlaylistScreen
-import com.convx.music.ui.screens.playlist.TopPlaylistScreen
-import com.convx.music.ui.screens.search.OnlineSearchResult
-import com.convx.music.ui.screens.search.SearchScreen
-import com.convx.music.ui.screens.settings.AboutScreen
-import com.convx.music.ui.screens.settings.AppearanceSettings
-import com.convx.music.ui.screens.settings.CanvasSelection
-import com.convx.music.ui.screens.settings.AppIconScreen
-import com.convx.music.ui.screens.settings.diy.DiyEditorScreen
-import com.convx.music.ui.screens.settings.diy.PlayerIconsScreen
-import com.convx.music.ui.screens.settings.diy.PresetsScreen
-import com.convx.music.ui.screens.settings.FontSelectionScreen
-import com.convx.music.ui.screens.settings.GlassEffectSettings
-import com.convx.music.ui.screens.settings.PlayerThemeScreen
-import com.convx.music.ui.screens.settings.BackupAndRestore
-import com.convx.music.ui.screens.settings.CrashLogsSettingsScreen
-import com.convx.music.ui.screens.settings.SpotifyScreen
-import com.convx.music.viewmodels.SpotifyImportViewModel
-import com.convx.music.ui.screens.settings.ContentSettings
-import com.convx.music.ui.screens.settings.DiscordLoginScreen
-import com.convx.music.ui.screens.settings.PlayerSettings
-import com.convx.music.ui.screens.settings.PlayerAdvancedSettings
-import com.convx.music.ui.screens.settings.AppearanceAdvancedSettings
-import com.convx.music.ui.screens.settings.ContentAdvancedSettings
-import com.convx.music.ui.screens.settings.JioSettings
-import com.convx.music.ui.screens.settings.LocalFoldersSettingsScreen
-import com.convx.music.ui.screens.settings.ScanMusicScreen
-import com.convx.music.ui.screens.settings.SongTransitionsScreen
-import com.convx.music.ui.screens.settings.PrivacySettings
-import com.convx.music.ui.screens.settings.RomanizationSettings
-import com.convx.music.ui.screens.settings.AccountSettingsScreen
-import com.convx.music.ui.screens.settings.StorageSettings
-import com.convx.music.ui.screens.settings.ThemeScreen
-import com.convx.music.ui.screens.settings.AiSettings
-import com.convx.music.ui.screens.settings.integrations.DiscordSettings
-import com.convx.music.ui.screens.settings.integrations.IntegrationScreen
-import com.convx.music.ui.screens.settings.integrations.LastFMSettings
-import com.convx.music.ui.screens.settings.integrations.ListenTogetherSettings
-import com.convx.music.ui.screens.ambient.AmbientModeScreen
-import com.convx.music.ui.screens.settings.AmbientModeSettings
-import com.convx.music.ui.screens.recognition.RecognitionScreen
-import com.convx.music.ui.screens.recognition.RecognitionHistoryScreen
-import com.convx.music.ui.screens.settings.ModuleSourceScreen
-import com.convx.music.ui.screens.settings.ModuleDetailScreen
-import com.convx.music.ui.screens.settings.UpdateSettings
-import com.convx.music.ui.screens.wrapped.WrappedScreen
-import com.convx.music.core.updater.UpdateScreen
-import com.convx.music.core.changelog.ChangelogScreen
-import com.convx.music.core.commitscreen.CommitScreen
-import com.convx.music.ui.screens.equalizer.axion.AxionEqScreen
+import com.hdemirbassmusic.music.ui.utils.LocalMorphArtworkId
+import com.hdemirbassmusic.music.ui.utils.isMorphRoute
+import com.hdemirbassmusic.music.ui.utils.morphArtworkId
+import com.hdemirbassmusic.music.ui.screens.settings.HomeFeedOrderScreen
+import com.hdemirbassmusic.music.ui.screens.artist.ArtistAlbumsScreen
+import com.hdemirbassmusic.music.ui.screens.artist.ArtistItemsScreen
+import com.hdemirbassmusic.music.ui.screens.artist.ArtistScreen
+import com.hdemirbassmusic.music.ui.screens.artist.ArtistSongsScreen
+import com.hdemirbassmusic.music.ui.screens.equalizer.EqScreen
+import com.hdemirbassmusic.music.ui.screens.library.AiDjSetScreen
+import com.hdemirbassmusic.music.ui.screens.library.LocalFolderScreen
+import com.hdemirbassmusic.music.ui.screens.library.LocalMusicScreen
+import com.hdemirbassmusic.music.ui.screens.library.LibraryScreen
+import com.hdemirbassmusic.music.ui.screens.library.LocalSongsScreen
+import com.hdemirbassmusic.music.ui.screens.settings.SettingsScreen
+import com.hdemirbassmusic.music.ui.screens.playlist.AutoPlaylistScreen
+import com.hdemirbassmusic.music.ui.screens.playlist.CachePlaylistScreen
+import com.hdemirbassmusic.music.ui.screens.playlist.LocalPlaylistScreen
+import com.hdemirbassmusic.music.ui.screens.playlist.OnlinePlaylistScreen
+import com.hdemirbassmusic.music.ui.screens.playlist.TopPlaylistScreen
+import com.hdemirbassmusic.music.ui.screens.search.OnlineSearchResult
+import com.hdemirbassmusic.music.ui.screens.search.SearchScreen
+import com.hdemirbassmusic.music.ui.screens.settings.AboutScreen
+import com.hdemirbassmusic.music.ui.screens.settings.AppearanceSettings
+import com.hdemirbassmusic.music.ui.screens.settings.CanvasSelection
+import com.hdemirbassmusic.music.ui.screens.settings.AppIconScreen
+import com.hdemirbassmusic.music.ui.screens.settings.diy.DiyEditorScreen
+import com.hdemirbassmusic.music.ui.screens.settings.diy.PlayerIconsScreen
+import com.hdemirbassmusic.music.ui.screens.settings.diy.PresetsScreen
+import com.hdemirbassmusic.music.ui.screens.settings.FontSelectionScreen
+import com.hdemirbassmusic.music.ui.screens.settings.GlassEffectSettings
+import com.hdemirbassmusic.music.ui.screens.settings.PlayerThemeScreen
+import com.hdemirbassmusic.music.ui.screens.settings.BackupAndRestore
+import com.hdemirbassmusic.music.ui.screens.settings.CrashLogsSettingsScreen
+import com.hdemirbassmusic.music.ui.screens.settings.SpotifyScreen
+import com.hdemirbassmusic.music.viewmodels.SpotifyImportViewModel
+import com.hdemirbassmusic.music.ui.screens.settings.ContentSettings
+import com.hdemirbassmusic.music.ui.screens.settings.DiscordLoginScreen
+import com.hdemirbassmusic.music.ui.screens.settings.PlayerSettings
+import com.hdemirbassmusic.music.ui.screens.settings.PlayerAdvancedSettings
+import com.hdemirbassmusic.music.ui.screens.settings.AppearanceAdvancedSettings
+import com.hdemirbassmusic.music.ui.screens.settings.ContentAdvancedSettings
+import com.hdemirbassmusic.music.ui.screens.settings.JioSettings
+import com.hdemirbassmusic.music.ui.screens.settings.LocalFoldersSettingsScreen
+import com.hdemirbassmusic.music.ui.screens.settings.ScanMusicScreen
+import com.hdemirbassmusic.music.ui.screens.settings.SongTransitionsScreen
+import com.hdemirbassmusic.music.ui.screens.settings.PrivacySettings
+import com.hdemirbassmusic.music.ui.screens.settings.RomanizationSettings
+import com.hdemirbassmusic.music.ui.screens.settings.AccountSettingsScreen
+import com.hdemirbassmusic.music.ui.screens.settings.StorageSettings
+import com.hdemirbassmusic.music.ui.screens.settings.ThemeScreen
+import com.hdemirbassmusic.music.ui.screens.settings.AiSettings
+import com.hdemirbassmusic.music.ui.screens.settings.integrations.DiscordSettings
+import com.hdemirbassmusic.music.ui.screens.settings.integrations.IntegrationScreen
+import com.hdemirbassmusic.music.ui.screens.settings.integrations.LastFMSettings
+import com.hdemirbassmusic.music.ui.screens.settings.integrations.ListenTogetherSettings
+import com.hdemirbassmusic.music.ui.screens.ambient.AmbientModeScreen
+import com.hdemirbassmusic.music.ui.screens.settings.AmbientModeSettings
+import com.hdemirbassmusic.music.ui.screens.recognition.RecognitionScreen
+import com.hdemirbassmusic.music.ui.screens.recognition.RecognitionHistoryScreen
+import com.hdemirbassmusic.music.ui.screens.settings.ModuleSourceScreen
+import com.hdemirbassmusic.music.ui.screens.settings.ModuleDetailScreen
+import com.hdemirbassmusic.music.ui.screens.settings.UpdateSettings
+import com.hdemirbassmusic.music.ui.screens.wrapped.WrappedScreen
+import com.hdemirbassmusic.music.core.updater.UpdateScreen
+import com.hdemirbassmusic.music.core.changelog.ChangelogScreen
+import com.hdemirbassmusic.music.core.commitscreen.CommitScreen
+import com.hdemirbassmusic.music.ui.screens.equalizer.axion.AxionEqScreen
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 fun NavGraphBuilder.navigationBuilder(
@@ -188,7 +188,7 @@ fun NavGraphBuilder.navigationBuilder(
     sharedComposable(
         route = "listen_together_from_topbar",
     ) {
-        com.convx.music.ui.screens.JamScreen(navController)
+        com.hdemirbassmusic.music.ui.screens.JamScreen(navController)
     }
 
     sharedComposable("listen_together/chat") {
@@ -262,7 +262,7 @@ fun NavGraphBuilder.navigationBuilder(
             fadeOut(Motion.appearExit())
         },
     ) {
-        com.convx.music.ui.theme.ForcedDarkScope { OnlineSearchResult(navController) }
+        com.hdemirbassmusic.music.ui.theme.ForcedDarkScope { OnlineSearchResult(navController) }
     }
 
     sharedComposable(
@@ -398,7 +398,7 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
     sharedComposable("local_folders") {
-        com.convx.music.ui.screens.library.LocalFoldersScreen(navController)
+        com.hdemirbassmusic.music.ui.screens.library.LocalFoldersScreen(navController)
     }
 
     sharedComposable(
@@ -533,12 +533,12 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
     sharedComposable("settings/lyrics") {
-        com.convx.music.ui.screens.settings.LyricsSettingsScreen(navController)
+        com.hdemirbassmusic.music.ui.screens.settings.LyricsSettingsScreen(navController)
     }
 
-    com.convx.music.ui.screens.settings.SettingsHubs.all.forEach { hub ->
+    com.hdemirbassmusic.music.ui.screens.settings.SettingsHubs.all.forEach { hub ->
         sharedComposable(hub.route) {
-            com.convx.music.ui.screens.settings.SettingsHubScreen(navController, hub)
+            com.hdemirbassmusic.music.ui.screens.settings.SettingsHubScreen(navController, hub)
         }
     }
 
@@ -579,18 +579,18 @@ fun NavGraphBuilder.navigationBuilder(
     }
 
     sharedComposable("listen_together/party") {
-        com.convx.music.ui.screens.JamScreen(navController)
+        com.hdemirbassmusic.music.ui.screens.JamScreen(navController)
     }
 
     sharedComposable(
         route = "network_browse/{serverId}",
         arguments = listOf(navArgument("serverId") { type = NavType.StringType }),
     ) {
-        com.convx.music.ui.screens.library.NetworkBrowserScreen(navController, it.arguments?.getString("serverId").orEmpty())
+        com.hdemirbassmusic.music.ui.screens.library.NetworkBrowserScreen(navController, it.arguments?.getString("serverId").orEmpty())
     }
 
     sharedComposable("settings/network_storage") {
-        com.convx.music.ui.screens.settings.NetworkStorageSettingsScreen(navController, scrollBehavior)
+        com.hdemirbassmusic.music.ui.screens.settings.NetworkStorageSettingsScreen(navController, scrollBehavior)
     }
 
     sharedComposable("settings/storage") {
@@ -604,7 +604,7 @@ fun NavGraphBuilder.navigationBuilder(
         route = "song_insight/{songId}",
         arguments = listOf(navArgument("songId") { type = NavType.StringType }),
     ) {
-        com.convx.music.ui.screens.library.SongInsightScreen(navController)
+        com.hdemirbassmusic.music.ui.screens.library.SongInsightScreen(navController)
     }
 
     sharedComposable("settings/privacy") {
@@ -750,13 +750,13 @@ private fun NavGraphBuilder.sharedComposable(
 ): Unit {
     val detail = isMorphRoute(route)
     val collection = route.startsWith("album/") || route.contains("playlist/")
-    val darkRoute = com.convx.music.ui.theme.isForcedDarkRoute(route)
+    val darkRoute = com.hdemirbassmusic.music.ui.theme.isForcedDarkRoute(route)
     composable(
         route = route,
         arguments = arguments,
         enterTransition = {
             if (collection) {
-                if (com.convx.music.ui.utils.isLibraryArtworkMorph()) fadeIn(tween(PageEnterMillis))
+                if (com.hdemirbassmusic.music.ui.utils.isLibraryArtworkMorph()) fadeIn(tween(PageEnterMillis))
                 else slideInHorizontally(Motion.collectionPush()) { it }
             } else if (detail) {
                 slideInHorizontally(tween(PageEnterMillis, easing = FastOutSlowInEasing)) { it } +
@@ -767,17 +767,17 @@ private fun NavGraphBuilder.sharedComposable(
         },
         exitTransition = {
             val nextCollection = targetState.destination.route?.let { it.startsWith("album/") || it.contains("playlist/") } == true
-            if (nextCollection) fadeOut(tween(PageExitMillis), targetAlpha = if (com.convx.music.ui.utils.isLibraryArtworkMorph()) 0f else .999f)
+            if (nextCollection) fadeOut(tween(PageExitMillis), targetAlpha = if (com.hdemirbassmusic.music.ui.utils.isLibraryArtworkMorph()) 0f else .999f)
             else fadeOut(tween(PageExitMillis), targetAlpha = 0.7f)
         },
         popEnterTransition = {
             val leavingCollection = initialState.destination.route?.let { it.startsWith("album/") || it.contains("playlist/") } == true
-            if (leavingCollection) fadeIn(tween(PageEnterMillis), initialAlpha = if (com.convx.music.ui.utils.isLibraryArtworkMorph()) 0f else .999f)
+            if (leavingCollection) fadeIn(tween(PageEnterMillis), initialAlpha = if (com.hdemirbassmusic.music.ui.utils.isLibraryArtworkMorph()) 0f else .999f)
             else fadeIn(tween(PageEnterMillis), initialAlpha = 0.7f)
         },
         popExitTransition = {
             if (collection) {
-                if (com.convx.music.ui.utils.isLibraryArtworkMorph()) fadeOut(tween(PageExitMillis))
+                if (com.hdemirbassmusic.music.ui.utils.isLibraryArtworkMorph()) fadeOut(tween(PageExitMillis))
                 else slideOutHorizontally(Motion.collectionPush()) { it }
             } else if (detail) {
                 // Tween, not spring: predictive back scrubs this by gesture progress.
@@ -793,16 +793,16 @@ private fun NavGraphBuilder.sharedComposable(
             LocalMorphArtworkId provides entry.morphArtworkId(),
         ) {
             if (collection) {
-                val corner = com.convx.music.ui.player.rememberScreenCornerRadius()
-                val shape = remember(corner) { com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(corner) }
+                val corner = com.hdemirbassmusic.music.ui.player.rememberScreenCornerRadius()
+                val shape = remember(corner) { com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(corner) }
                 val pageTransition = transition
                 androidx.compose.foundation.layout.Box(
                     Modifier.fillMaxSize().graphicsLayer {
                         clip = pageTransition.currentState != pageTransition.targetState
                         this.shape = shape
                     },
-                ) { com.convx.music.ui.theme.ForcedDarkScope(darkRoute) { content(entry) } }
-            } else com.convx.music.ui.theme.ForcedDarkScope(darkRoute) { content(entry) }
+                ) { com.hdemirbassmusic.music.ui.theme.ForcedDarkScope(darkRoute) { content(entry) } }
+            } else com.hdemirbassmusic.music.ui.theme.ForcedDarkScope(darkRoute) { content(entry) }
         }
     }
 }

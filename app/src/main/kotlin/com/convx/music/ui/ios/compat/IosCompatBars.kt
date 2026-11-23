@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:Suppress("FunctionName", "UNUSED_PARAMETER")
 @file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 
-package com.convx.music.ui.ios.compat
+package com.hdemirbassmusic.music.ui.ios.compat
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -38,14 +38,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.component.shapes.ContinuousCapsule
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
 import zone.ien.hig.CupertinoTopAppBar
 import zone.ien.hig.CupertinoTopAppBarDefaults
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
 
 /**
  * The TopAppBar call shape, drawn as the iOS inline navigation bar: 44pt tall, title

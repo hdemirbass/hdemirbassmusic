@@ -1,4 +1,4 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 import com.dokar.quickjs.QuickJs
 import com.dokar.quickjs.binding.AsyncFunctionBinding

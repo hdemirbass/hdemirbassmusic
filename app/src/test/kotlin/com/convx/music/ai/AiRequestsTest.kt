@@ -1,4 +1,4 @@
-package com.convx.music.ai
+package com.hdemirbassmusic.music.ai
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray

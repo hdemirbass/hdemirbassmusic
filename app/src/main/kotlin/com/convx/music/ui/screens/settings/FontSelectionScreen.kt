@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -20,15 +20,15 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.RadioButton
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.RadioButton
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.material3.SwitchDefaults
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -44,25 +44,25 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.AppFont
-import com.convx.music.constants.BrandFontEnabledKey
-import com.convx.music.constants.CustomFontEnabledKey
-import com.convx.music.constants.CustomFontNameKey
-import com.convx.music.constants.CustomFontPathKey
-import com.convx.music.constants.SelectedFontKey
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.theme.GoogleSansFontFamily
-import com.convx.music.ui.theme.OutfitFontFamily
-import com.convx.music.ui.theme.PlusJakartaSansFontFamily
-import com.convx.music.ui.theme.SansFlexFontFamily
-import com.convx.music.ui.theme.copyCustomFont
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AppFont
+import com.hdemirbassmusic.music.constants.BrandFontEnabledKey
+import com.hdemirbassmusic.music.constants.CustomFontEnabledKey
+import com.hdemirbassmusic.music.constants.CustomFontNameKey
+import com.hdemirbassmusic.music.constants.CustomFontPathKey
+import com.hdemirbassmusic.music.constants.SelectedFontKey
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.theme.GoogleSansFontFamily
+import com.hdemirbassmusic.music.ui.theme.OutfitFontFamily
+import com.hdemirbassmusic.music.ui.theme.PlusJakartaSansFontFamily
+import com.hdemirbassmusic.music.ui.theme.SansFlexFontFamily
+import com.hdemirbassmusic.music.ui.theme.copyCustomFont
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

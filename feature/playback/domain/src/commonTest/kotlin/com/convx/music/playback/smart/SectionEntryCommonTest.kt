@@ -1,4 +1,4 @@
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

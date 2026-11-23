@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.annotation.StringRes
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 /** A reorderable/hideable section of the full-screen Now Playing layout. */
 enum class PlayerSlot(@StringRes val labelRes: Int, val hideable: Boolean) {
@@ -35,11 +35,11 @@ object PlayerLayoutRegistry {
     fun deserializeOrder(orderString: String): List<PlayerSlot> {
         if (orderString.isBlank()) return getDefaultOrder()
         val parsed = orderString.split(",").mapNotNull { name ->
-            com.convx.music.playback.PlayerSection.entries.find { it.name == name.trim() }
+            com.hdemirbassmusic.music.playback.PlayerSection.entries.find { it.name == name.trim() }
         }
         // Any slot missing from a stale/corrupt string still needs to render
         // somewhere — append it rather than silently dropping it.
-        return com.convx.music.playback.PlayerCustomization(order = parsed).normalized().order.map { PlayerSlot.valueOf(it.name) }
+        return com.hdemirbassmusic.music.playback.PlayerCustomization(order = parsed).normalized().order.map { PlayerSlot.valueOf(it.name) }
     }
 
     fun serializeOrder(slots: List<PlayerSlot>): String = slots.joinToString(",") { it.name }

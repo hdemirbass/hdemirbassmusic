@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.component
+package com.hdemirbassmusic.music.ui.ios.component
 
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -50,15 +50,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.foundation.IosMenuColors
-import com.convx.music.ui.ios.foundation.IosMenuMaterial
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
-import com.convx.music.ui.ios.foundation.iosMenuSurface
-import com.convx.music.ui.ios.foundation.menuVibrancy
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMenuColors
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMenuMaterial
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.iosMenuSurface
+import com.hdemirbassmusic.music.ui.ios.foundation.menuVibrancy
 
 /** One entry of an [IosMenu]. */
 @Immutable
@@ -103,7 +103,7 @@ fun IosMenu(
     val maximumHeight = with(androidx.compose.ui.platform.LocalDensity.current) {
         (androidx.compose.ui.platform.LocalWindowInfo.current.containerSize.height.toDp() - 24.dp).coerceAtLeast(48.dp)
     }
-    val haptic = com.convx.music.ui.theme.rememberAppHaptics()
+    val haptic = com.hdemirbassmusic.music.ui.theme.rememberAppHaptics()
     val scope = rememberCoroutineScope()
     // Bloom radius ~ 0.6 of the panel width, far brighter than a button's sheen.
     val bloom = remember(scope) {

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import android.annotation.SuppressLint
 import android.webkit.CookieManager
@@ -22,9 +22,9 @@ import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -38,19 +38,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import com.music.innertube.YouTube
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.DataSyncIdKey
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.constants.SavedAccount
-import com.convx.music.constants.VisitorDataKey
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.ui.component.FrostedTopBar
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.utils.rememberPreference
-import com.convx.music.utils.reportException
-import com.convx.music.viewmodels.AccountSettingsViewModel
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.DataSyncIdKey
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.constants.SavedAccount
+import com.hdemirbassmusic.music.constants.VisitorDataKey
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.ui.component.FrostedTopBar
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.utils.reportException
+import com.hdemirbassmusic.music.viewmodels.AccountSettingsViewModel
 import org.koin.androidx.compose.koinViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.delay

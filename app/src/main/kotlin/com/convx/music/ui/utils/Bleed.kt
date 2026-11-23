@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.asPaddingValues
@@ -37,7 +37,7 @@ fun Modifier.bleedStart(inset: Dp): Modifier = layout { measurable, constraints 
 
 /** Width the floating side bar covers at the start edge; zero when there is none. */
 @Composable
-fun sideBarInset(): Dp = com.convx.music.LocalPlayerAwareWindowInsets.current
+fun sideBarInset(): Dp = com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets.current
     .asPaddingValues()
     .calculateStartPadding(LocalLayoutDirection.current)
     .coerceAtLeast(0.dp)

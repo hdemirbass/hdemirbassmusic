@@ -1,17 +1,17 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings.integrations
+package com.hdemirbassmusic.music.ui.screens.settings.integrations
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import android.widget.Toast
 import androidx.compose.foundation.background
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,19 +32,19 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.material3.SwitchDefaults
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -69,29 +69,29 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.ListenTogetherAutoAddSuggestionsKey
-import com.convx.music.constants.ListenTogetherAutoApprovalKey
-import com.convx.music.constants.ListenTogetherServerUrlKey
-import com.convx.music.constants.ListenTogetherSmartResyncKey
-import com.convx.music.constants.ListenTogetherSyncVolumeKey
-import com.convx.music.constants.ListenTogetherUsernameKey
-import com.convx.music.listentogether.ListenTogetherEvent
-import com.convx.music.listentogether.ListenTogetherServer
-import com.convx.music.listentogether.ListenTogetherServers
-import com.convx.music.listentogether.LogEntry
-import com.convx.music.listentogether.LogLevel
-import com.convx.music.listentogether.RoomRole
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IntegrationCard
-import com.convx.music.ui.component.IntegrationCardItem
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.ListenTogetherViewModel
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ListenTogetherAutoAddSuggestionsKey
+import com.hdemirbassmusic.music.constants.ListenTogetherAutoApprovalKey
+import com.hdemirbassmusic.music.constants.ListenTogetherServerUrlKey
+import com.hdemirbassmusic.music.constants.ListenTogetherSmartResyncKey
+import com.hdemirbassmusic.music.constants.ListenTogetherSyncVolumeKey
+import com.hdemirbassmusic.music.constants.ListenTogetherUsernameKey
+import com.hdemirbassmusic.music.listentogether.ListenTogetherEvent
+import com.hdemirbassmusic.music.listentogether.ListenTogetherServer
+import com.hdemirbassmusic.music.listentogether.ListenTogetherServers
+import com.hdemirbassmusic.music.listentogether.LogEntry
+import com.hdemirbassmusic.music.listentogether.LogLevel
+import com.hdemirbassmusic.music.listentogether.RoomRole
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IntegrationCard
+import com.hdemirbassmusic.music.ui.component.IntegrationCardItem
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.ListenTogetherViewModel
 import kotlinx.coroutines.flow.collectLatest
-import com.convx.music.ui.screens.settings.SettingsPage
+import com.hdemirbassmusic.music.ui.screens.settings.SettingsPage
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3Api::class)

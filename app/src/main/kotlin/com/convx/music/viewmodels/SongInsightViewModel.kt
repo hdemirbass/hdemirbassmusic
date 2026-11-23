@@ -1,16 +1,16 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.ai.AiChatClient
-import com.convx.music.ai.AiDefaults
-import com.convx.music.constants.AiProviderKey
-import com.convx.music.constants.OpenRouterApiKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.ai.AiChatClient
+import com.hdemirbassmusic.music.ai.AiDefaults
+import com.hdemirbassmusic.music.constants.AiProviderKey
+import com.hdemirbassmusic.music.constants.OpenRouterApiKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import com.convx.music.constants.AppBackgroundColorKey
-import com.convx.music.constants.AppTextColorKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.AppBackgroundColorKey
+import com.hdemirbassmusic.music.constants.AppTextColorKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.Arrangement
@@ -25,14 +25,14 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.NavigationRail
 import androidx.compose.material3.NavigationRailItem
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.LaunchedEffect
@@ -52,8 +52,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.screens.Screens
-import com.convx.music.ui.utils.pressWobble
+import com.hdemirbassmusic.music.ui.screens.Screens
+import com.hdemirbassmusic.music.ui.utils.pressWobble
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 
@@ -195,7 +195,7 @@ fun AppLandscapeRail(
         else -> AppTheme.colorScheme.surfaceContainerLow
     }
 
-    val selectedContentColor = com.convx.music.ui.theme.LocalAccentColor.current
+    val selectedContentColor = com.hdemirbassmusic.music.ui.theme.LocalAccentColor.current
     // Non-glass fell back to hardcoded white, which is invisible on a light
     // theme. resolvedTextColor is the adaptive monochromatic chrome color;
     // onSurface is its non-glass equivalent.

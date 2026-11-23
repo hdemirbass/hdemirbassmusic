@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animate
@@ -39,8 +39,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.input.pointer.pointerInput
-import com.convx.music.constants.IosOverscrollKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.IosOverscrollKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.currentCoroutineContext

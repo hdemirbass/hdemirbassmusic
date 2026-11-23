@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -25,24 +25,24 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.R
-import com.convx.music.constants.AppleMusicLyricsBlurKey
-import com.convx.music.constants.LyricsGlowEffectKey
-import com.convx.music.constants.FlamingoBrightSingingWordsKey
-import com.convx.music.constants.FlamingoWordSwellKey
-import com.convx.music.constants.FlamingoGlowColorKey
-import com.convx.music.constants.LyricsStandardBlurKey
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.utils.rememberPreference
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.constants.LyricsAnimationStyle
-import com.convx.music.constants.LyricsAnimationStyleKey
-import com.convx.music.ui.component.EnumDialog
-import com.convx.music.ui.component.ColorPickerDialog
-import com.convx.music.ui.component.lyricsStyleLabel
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AppleMusicLyricsBlurKey
+import com.hdemirbassmusic.music.constants.LyricsGlowEffectKey
+import com.hdemirbassmusic.music.constants.FlamingoBrightSingingWordsKey
+import com.hdemirbassmusic.music.constants.FlamingoWordSwellKey
+import com.hdemirbassmusic.music.constants.FlamingoGlowColorKey
+import com.hdemirbassmusic.music.constants.LyricsStandardBlurKey
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.constants.LyricsAnimationStyle
+import com.hdemirbassmusic.music.constants.LyricsAnimationStyleKey
+import com.hdemirbassmusic.music.ui.component.EnumDialog
+import com.hdemirbassmusic.music.ui.component.ColorPickerDialog
+import com.hdemirbassmusic.music.ui.component.lyricsStyleLabel
 import androidx.compose.runtime.saveable.rememberSaveable
 
 /** Lyrics look: glow and the two blur modes. Kept apart from the animation style and text layout. */
@@ -140,7 +140,7 @@ fun LyricsSettingsScreen(navController: NavController) {
                 onClick = { navController.navigate("settings/content/advanced") },
             ),
         ))
-        com.convx.music.ui.ios.compat.OutlinedTextField(
+        com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField(
             value = paxKey,
             onValueChange = {
                 paxKey = it

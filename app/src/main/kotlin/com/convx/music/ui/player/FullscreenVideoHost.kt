@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -13,11 +13,11 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.zIndex
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.ui.utils.Motion
-import com.convx.music.utils.rememberPreference
-import com.convx.music.utils.YTPlayerUtils
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.ui.utils.Motion
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.utils.YTPlayerUtils
 import kotlinx.coroutines.delay
 
 internal data class FullscreenVideoSession(

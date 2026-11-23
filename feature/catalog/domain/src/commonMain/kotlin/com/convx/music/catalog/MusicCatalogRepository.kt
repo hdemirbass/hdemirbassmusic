@@ -1,4 +1,4 @@
-package com.convx.music.catalog
+package com.hdemirbassmusic.music.catalog
 
 /** Read-only provider catalog used by browse, search, and detail screens. */
 interface MusicCatalogRepository {

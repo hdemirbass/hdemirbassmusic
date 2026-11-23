@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.screens.library
+package com.hdemirbassmusic.music.ui.screens.library
 
 import androidx.compose.foundation.background
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -19,10 +19,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import com.composables.sfsymbols.SfSymbols
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -39,31 +39,31 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.LocalSongSortDescendingKey
-import com.convx.music.constants.LocalSongSortTypeKey
-import com.convx.music.constants.SongSortType
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.HideOnScrollFAB
-import com.convx.music.ui.component.LargeScreenTitle
-import com.convx.music.ui.component.TopFadeBlur
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.LocalSongSortDescendingKey
+import com.hdemirbassmusic.music.constants.LocalSongSortTypeKey
+import com.hdemirbassmusic.music.constants.SongSortType
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.HideOnScrollFAB
+import com.hdemirbassmusic.music.ui.component.LargeScreenTitle
+import com.hdemirbassmusic.music.ui.component.TopFadeBlur
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
-import com.convx.music.ui.component.ListScrollRail
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.SongListItem
-import com.convx.music.ui.component.SortOption
-import com.convx.music.ui.component.SortPopupButton
-import com.convx.music.ui.component.buildAlphabetSectionIndex
-import com.convx.music.ui.menu.SongMenu
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.utils.listItemShape
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.ui.component.ListScrollRail
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.SongListItem
+import com.hdemirbassmusic.music.ui.component.SortOption
+import com.hdemirbassmusic.music.ui.component.SortPopupButton
+import com.hdemirbassmusic.music.ui.component.buildAlphabetSectionIndex
+import com.hdemirbassmusic.music.ui.menu.SongMenu
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /**
  * Every song on the device, in one flat list.
@@ -113,7 +113,7 @@ fun LocalSongsScreen(
 
     // Entering the tab is the natural moment to pick up files added since last time.
     // force = false, so bouncing to the player and back does not re-sweep MediaStore.
-    val audioPermission = com.convx.music.ui.component.rememberLocalAudioPermission { }
+    val audioPermission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { }
     LaunchedEffect(audioPermission.granted) {
         if (audioPermission.granted) viewModel.scanDevice(context, force = false)
     }
@@ -177,14 +177,14 @@ fun LocalSongsScreen(
 
             if (!audioPermission.granted) {
                 item(key = "permission", contentType = "local_access") {
-                    com.convx.music.ui.screens.library.apple.LocalAccessCard(
+                    com.hdemirbassmusic.music.ui.screens.library.apple.LocalAccessCard(
                         blocked = audioPermission.blocked,
                         onAllow = audioPermission.request,
                     )
                 }
             } else if (songs.isEmpty() && !isScanning) {
                 item(key = "empty", contentType = "local_access") {
-                    com.convx.music.ui.component.LocalMusicEmptyState(onScan = { viewModel.scanDevice(context) })
+                    com.hdemirbassmusic.music.ui.component.LocalMusicEmptyState(onScan = { viewModel.scanDevice(context) })
                 }
             } else if (songs.isEmpty()) {
                 item(key = "empty", contentType = "header") {

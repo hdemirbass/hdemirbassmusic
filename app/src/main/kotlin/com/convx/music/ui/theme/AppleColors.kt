@@ -1,8 +1,8 @@
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import android.graphics.Bitmap
 import androidx.compose.ui.graphics.Color
-import com.convx.music.canvas.ArtworkColors
+import com.hdemirbassmusic.music.canvas.ArtworkColors
 
 object AppleColors {
     const val WHITE = ArtworkColors.WHITE

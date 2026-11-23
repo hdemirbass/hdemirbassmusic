@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.foundation
+package com.hdemirbassmusic.music.ui.ios.foundation
 
 import androidx.compose.foundation.background
 import androidx.compose.runtime.Composable
@@ -16,20 +16,20 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.isSpecified
-import com.convx.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.ui.theme.isHueless
 import androidx.compose.ui.util.lerp
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.backdrop.drawBackdrop
-import com.convx.music.ui.component.backdrop.effects.blur
-import com.convx.music.ui.component.backdrop.effects.colorControls
-import com.convx.music.ui.component.backdrop.effects.lens
-import com.convx.music.ui.component.backdrop.highlight.Highlight
-import com.convx.music.ui.component.backdrop.isRenderEffectSupported
-import com.convx.music.ui.component.backdrop.shadow.Shadow
-import com.convx.music.ui.ios.foundation.IosTheme.colors
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.backdrop.drawBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.colorControls
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.lens
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.Highlight
+import com.hdemirbassmusic.music.ui.component.backdrop.isRenderEffectSupported
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.Shadow
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors
 
 /**
  * The two liquid-glass materials iOS 26 exposes: `.glass` (clear, lets the backdrop
@@ -94,16 +94,16 @@ fun Modifier.iosGlass(
 ): Modifier {
     val colors = IosTheme.colors
     val isDark = colors.isDark
-    val baseSurfaceColor = com.convx.music.ui.theme.GlassTintTokens.glassBaseColor(isDark)
+    val baseSurfaceColor = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassBaseColor(isDark)
     val baseOpacity = if (isDark) {
-        com.convx.music.ui.theme.GlassTintTokens.BaseSurfaceOpacityDark
+        com.hdemirbassmusic.music.ui.theme.GlassTintTokens.BaseSurfaceOpacityDark
     } else {
-        com.convx.music.ui.theme.GlassTintTokens.BaseSurfaceOpacityLight
+        com.hdemirbassmusic.music.ui.theme.GlassTintTokens.BaseSurfaceOpacityLight
     }
 
     val isHeroContext = tint.isSpecified && !tint.isHueless()
-    val activeTint = if (isHeroContext) tint else com.convx.music.ui.theme.GlassTintTokens.neutralTintColor(isDark)
-    val tintOpacity = if (isHeroContext) com.convx.music.ui.theme.GlassTintTokens.heroTintOpacity(isDark) else 1f
+    val activeTint = if (isHeroContext) tint else com.hdemirbassmusic.music.ui.theme.GlassTintTokens.neutralTintColor(isDark)
+    val tintOpacity = if (isHeroContext) com.hdemirbassmusic.music.ui.theme.GlassTintTokens.heroTintOpacity(isDark) else 1f
     // Neutral tint carries its own spec alpha; copy(alpha=1) would go opaque.
     val effectiveTintAlpha = (activeTint.alpha * tintOpacity).coerceIn(0f, 1f)
 
@@ -176,7 +176,7 @@ fun iosGlassContentColor(style: IosGlassStyle, tint: Color = Color.Unspecified):
     val colors = IosTheme.colors
     return when (style) {
         IosGlassStyle.Prominent -> Color.White
-        IosGlassStyle.Regular -> com.convx.music.ui.theme.GlassTintTokens.glassContentColor(
+        IosGlassStyle.Regular -> com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassContentColor(
             isDark = colors.isDark,
             activeTint = tint,
             isSelected = false,

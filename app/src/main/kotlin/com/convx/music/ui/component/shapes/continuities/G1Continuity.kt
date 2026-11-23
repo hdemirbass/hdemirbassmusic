@@ -4,9 +4,9 @@
  * capsule/src/main/java/com/kyant/capsule/continuities/G1Continuity.kt
  *
  * Vendored so the shape ships as source with this app. Package renamed
- * accordingly (com.kyant.capsule -> com.convx.music.ui.component.shapes).
+ * accordingly (com.kyant.capsule -> com.hdemirbassmusic.music.ui.component.shapes).
  */
-package com.convx.music.ui.component.shapes.continuities
+package com.hdemirbassmusic.music.ui.component.shapes.continuities
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.geometry.CornerRadius
@@ -14,10 +14,10 @@ import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.RoundRect
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Outline
-import com.convx.music.ui.component.shapes.Continuity
-import com.convx.music.ui.component.shapes.core.Point
-import com.convx.music.ui.component.shapes.path.PathSegments
-import com.convx.music.ui.component.shapes.path.buildPathSegments
+import com.hdemirbassmusic.music.ui.component.shapes.Continuity
+import com.hdemirbassmusic.music.ui.component.shapes.core.Point
+import com.hdemirbassmusic.music.ui.component.shapes.path.PathSegments
+import com.hdemirbassmusic.music.ui.component.shapes.path.buildPathSegments
 import kotlin.math.PI
 
 @Immutable

@@ -1,4 +1,4 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext

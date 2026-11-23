@@ -1,8 +1,8 @@
-package com.convx.music.ui.screens.library
+package com.hdemirbassmusic.music.ui.screens.library
 
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
@@ -25,25 +25,25 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
-import com.convx.music.constants.ThumbnailRoundedShape
+import com.hdemirbassmusic.music.constants.ThumbnailRoundedShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.component.LocalMusicEmptyState
-import com.convx.music.ui.component.LocalMusicPermissionPrompt
-import com.convx.music.ui.component.hasLocalAudioPermission
-import com.convx.music.ui.component.rememberLocalAudioPermission
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.component.LocalMusicEmptyState
+import com.hdemirbassmusic.music.ui.component.LocalMusicPermissionPrompt
+import com.hdemirbassmusic.music.ui.component.hasLocalAudioPermission
+import com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.DropdownMenu
-import com.convx.music.ui.ios.compat.DropdownMenuItem
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenu
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFArrowClockwise
 import com.composables.sfsymbols.monochrome.SFListBullet
@@ -73,20 +73,20 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.size.Size as CoilSize
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.ui.theme.rememberGlobalAccentColors
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.ListScrollRail
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.menu.SongMenu
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.theme.rememberGlobalAccentColors
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.ListScrollRail
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.menu.SongMenu
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
 import java.time.LocalDateTime
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
@@ -507,8 +507,8 @@ private fun SongListItem(
     onClick: () -> Unit,
     onLongClick: () -> Unit,
 ) {
-    com.convx.music.ui.utils.ArtworkSourceHost(Modifier) { sourceModifier ->
-    val artworkOwner = com.convx.music.ui.utils.rememberArtworkSourceOwner()
+    com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost(Modifier) { sourceModifier ->
+    val artworkOwner = com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner()
     val albumArtworkId = song.album?.id ?: song.song.albumId
     Row(
         modifier = sourceModifier
@@ -522,7 +522,7 @@ private fun SongListItem(
                 .data(song.thumbnailUrl)
                 .size(CoilSize(96, 96))
                 .build(),
-            onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(artworkOwner, song.thumbnailUrl),
+            onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(artworkOwner, song.thumbnailUrl),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             placeholder = painterResource(R.drawable.thumbnail_fallback),
@@ -570,8 +570,8 @@ private fun AlbumListItem(
     album: Album,
     onClick: () -> Unit,
 ) {
-    com.convx.music.ui.utils.ArtworkSourceHost(Modifier) { sourceModifier ->
-    val artworkOwner = com.convx.music.ui.utils.rememberArtworkSourceOwner()
+    com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost(Modifier) { sourceModifier ->
+    val artworkOwner = com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner()
     Row(
         modifier = sourceModifier
             .fillMaxWidth()
@@ -584,7 +584,7 @@ private fun AlbumListItem(
                 .data(album.thumbnailUrl)
                 .size(CoilSize(112, 112))
                 .build(),
-            onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(artworkOwner, album.thumbnailUrl),
+            onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(artworkOwner, album.thumbnailUrl),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             placeholder = painterResource(R.drawable.thumbnail_fallback),

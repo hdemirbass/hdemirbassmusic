@@ -1,4 +1,4 @@
-package com.convx.music.catalog.presentation
+package com.hdemirbassmusic.music.catalog.presentation
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibilityScope
@@ -15,8 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.Modifier
-import com.convx.music.catalog.CatalogId
-import com.convx.music.designsystem.MotionTokens
+import com.hdemirbassmusic.music.catalog.CatalogId
+import com.hdemirbassmusic.music.designsystem.MotionTokens
 
 private val LocalCatalogSharedScope = compositionLocalOf<SharedTransitionScope?> { null }
 private val LocalCatalogVisibilityScope = compositionLocalOf<AnimatedVisibilityScope?> { null }

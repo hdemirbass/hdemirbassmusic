@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.menuBottomInset
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.menuBottomInset
 import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.PaddingValues
@@ -20,11 +20,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CardDefaults
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -44,30 +44,30 @@ import androidx.media3.common.Player
 import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.offline.Download
 import com.music.innertube.YouTube
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.LocalSyncUtils
-import com.convx.music.R
-import com.convx.music.db.entities.PlaylistSongMap
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
-import com.convx.music.ui.component.NewAction
-import com.convx.music.ui.component.NewActionGrid
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.LocalSyncUtils
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.PlaylistSongMap
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.ui.component.NewAction
+import com.hdemirbassmusic.music.ui.component.NewActionGrid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
-import com.convx.music.playback.DownloadTarget
-import com.convx.music.playback.combinedDownloadState
-import com.convx.music.playback.cancelDownloads
-import com.convx.music.playback.downloadSongs
-import com.convx.music.playback.removeDownloads
+import com.hdemirbassmusic.music.playback.DownloadTarget
+import com.hdemirbassmusic.music.playback.combinedDownloadState
+import com.hdemirbassmusic.music.playback.cancelDownloads
+import com.hdemirbassmusic.music.playback.downloadSongs
+import com.hdemirbassmusic.music.playback.removeDownloads
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @SuppressLint("MutableCollectionMutableState")
@@ -84,7 +84,7 @@ fun SelectionSongMenu(
     val coroutineScope = rememberCoroutineScope()
     val playerConnection = LocalPlayerConnection.current ?: return
     val syncUtils = LocalSyncUtils.current.get()
-    val listenTogetherManager = com.convx.music.LocalListenTogetherManager.current
+    val listenTogetherManager = com.hdemirbassmusic.music.LocalListenTogetherManager.current
     val isGuest = listenTogetherManager?.isInRoom == true && listenTogetherManager.isHost == false
 
     val allInLibrary by remember {
@@ -465,7 +465,7 @@ fun SelectionMediaMetadataMenu(
     val downloadUtil = LocalDownloadUtil.current.get()
     val coroutineScope = rememberCoroutineScope()
     val playerConnection = LocalPlayerConnection.current ?: return
-    val listenTogetherManager = com.convx.music.LocalListenTogetherManager.current
+    val listenTogetherManager = com.hdemirbassmusic.music.LocalListenTogetherManager.current
     val isGuest = listenTogetherManager?.isInRoom == true && listenTogetherManager.isHost == false
 
     val allLiked by remember(songSelection) {

@@ -1,21 +1,21 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import com.convx.music.R
-import com.convx.music.constants.BrandFontEnabledKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.BrandFontEnabledKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /** The product wordmark, always set in caps. */
-const val BrandName = "CONVX"
+const val BrandName = "hdemirbassmusic"
 
 /** Chillax — the display face used for the wordmark and artist names. */
 val ChillaxFontFamily = FontFamily(

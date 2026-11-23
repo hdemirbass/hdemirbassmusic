@@ -1,18 +1,18 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 import android.content.Context
-import com.convx.music.api.DeepLService
-import com.convx.music.api.MistralService
-import com.convx.music.api.OpenRouterService
-import com.convx.music.api.OpenRouterStreamingService
-import com.convx.music.constants.LanguageCodeToName
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.api.DeepLService
+import com.hdemirbassmusic.music.api.MistralService
+import com.hdemirbassmusic.music.api.OpenRouterService
+import com.hdemirbassmusic.music.api.OpenRouterStreamingService
+import com.hdemirbassmusic.music.constants.LanguageCodeToName
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -207,7 +207,7 @@ object LyricsTranslationHelper {
         mode: String,
         scope: CoroutineScope,
         context: Context,
-        provider: String = com.convx.music.ai.AiDefaults.PROVIDER,
+        provider: String = com.hdemirbassmusic.music.ai.AiDefaults.PROVIDER,
         deeplApiKey: String = "",
         deeplFormality: String = "default",
         useStreaming: Boolean = true,
@@ -223,12 +223,12 @@ object LyricsTranslationHelper {
             try {
                 val effectiveApiKey = if (provider == "DeepL") deeplApiKey else apiKey
                 if (effectiveApiKey.isBlank()) {
-                    _status.value = TranslationStatus.Error(context.getString(com.convx.music.R.string.ai_error_api_key_required))
+                    _status.value = TranslationStatus.Error(context.getString(com.hdemirbassmusic.music.R.string.ai_error_api_key_required))
                     return@launch
                 }
 
                 if (lyrics.isEmpty()) {
-                    _status.value = TranslationStatus.Error(context.getString(com.convx.music.R.string.ai_error_no_lyrics))
+                    _status.value = TranslationStatus.Error(context.getString(com.hdemirbassmusic.music.R.string.ai_error_no_lyrics))
                     return@launch
                 }
 
@@ -237,7 +237,7 @@ object LyricsTranslationHelper {
                 }
 
                 if (nonEmptyEntries.isEmpty()) {
-                    _status.value = TranslationStatus.Error(context.getString(com.convx.music.R.string.ai_error_lyrics_empty))
+                    _status.value = TranslationStatus.Error(context.getString(com.hdemirbassmusic.music.R.string.ai_error_lyrics_empty))
                     return@launch
                 }
 
@@ -257,7 +257,7 @@ object LyricsTranslationHelper {
                 ) return@launch
 
                 if (targetLanguage.isBlank()) {
-                    _status.value = TranslationStatus.Error(context.getString(com.convx.music.R.string.ai_error_language_required))
+                    _status.value = TranslationStatus.Error(context.getString(com.hdemirbassmusic.music.R.string.ai_error_language_required))
                     return@launch
                 }
 
@@ -335,12 +335,12 @@ object LyricsTranslationHelper {
                         return@onFailure
                     }
 
-                    val errorMessage = error.message ?: context.getString(com.convx.music.R.string.ai_error_unknown)
+                    val errorMessage = error.message ?: context.getString(com.hdemirbassmusic.music.R.string.ai_error_unknown)
                     _status.value = TranslationStatus.Error(errorMessage)
                 }
             } catch (e: Exception) {
                 if (e !is kotlinx.coroutines.CancellationException && isCompositionActive) {
-                    val errorMessage = e.message ?: context.getString(com.convx.music.R.string.ai_error_translation_failed)
+                    val errorMessage = e.message ?: context.getString(com.hdemirbassmusic.music.R.string.ai_error_translation_failed)
                     _status.value = TranslationStatus.Error(errorMessage)
                 }
             }

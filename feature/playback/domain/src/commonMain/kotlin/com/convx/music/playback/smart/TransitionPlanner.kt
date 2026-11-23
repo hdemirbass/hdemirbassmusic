@@ -3,7 +3,7 @@
  * TransitionPlanner.kt and WsolaPlanner.kt into one file.
  *
  * Copyright (C) 2026 SFG545 (original Orchard implementation)
- * Copyright (C) 2026 Convx contributors (adapted from an open-source base)
+ * Copyright (C) 2026 hdemirbassmusic contributors (adapted from an open-source base)
  *
  * Orchard's original source is licensed under the GNU Affero General Public
  * License, version 3 or later. Per AGPLv3 section 13, this file is combined
@@ -20,7 +20,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import kotlin.math.abs
 import kotlin.math.ceil
@@ -311,7 +311,7 @@ private const val BASS_SWAP_MAX_SECONDS = 6.0
 /**
  * How far the outgoing track's low-pass sweep travels by the end of the
  * overlap, as a fraction of a full ride. 1.0 is the whole way down to
- * [com.convx.music.playback.CrossfadeController.FILTER_FLOOR_HZ].
+ * [com.hdemirbassmusic.music.playback.CrossfadeController.FILTER_FLOOR_HZ].
  */
 // Keep a broad shared frequency range through the equal-power overlap so the
 // outgoing low-pass and incoming high-pass do not create a perceived volume dip.

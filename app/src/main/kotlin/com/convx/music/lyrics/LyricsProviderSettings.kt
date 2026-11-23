@@ -1,20 +1,20 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 import android.content.Context
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
-import com.convx.music.constants.EnableBetterLyricsKey
-import com.convx.music.constants.EnableKugouKey
-import com.convx.music.constants.EnableLrcLibKey
-import com.convx.music.constants.EnableMusixmatchKey
-import com.convx.music.constants.EnablePaxsenixKey
-import com.convx.music.constants.EnableSimpMusicKey
-import com.convx.music.constants.EnableUnisonKey
-import com.convx.music.constants.EnableYouLyPlusKey
-import com.convx.music.constants.PreferredLyricsProvider
-import com.convx.music.lyrics.bitchord.PaxSenix
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.constants.EnableBetterLyricsKey
+import com.hdemirbassmusic.music.constants.EnableKugouKey
+import com.hdemirbassmusic.music.constants.EnableLrcLibKey
+import com.hdemirbassmusic.music.constants.EnableMusixmatchKey
+import com.hdemirbassmusic.music.constants.EnablePaxsenixKey
+import com.hdemirbassmusic.music.constants.EnableSimpMusicKey
+import com.hdemirbassmusic.music.constants.EnableUnisonKey
+import com.hdemirbassmusic.music.constants.EnableYouLyPlusKey
+import com.hdemirbassmusic.music.constants.PreferredLyricsProvider
+import com.hdemirbassmusic.music.lyrics.bitchord.PaxSenix
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
 
 object LyricsProviderSettings {
     fun idForLegacyPreference(provider: PreferredLyricsProvider): String = when (provider) {

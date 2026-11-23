@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
@@ -12,11 +12,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import com.convx.music.constants.HomeCardCornerRadiusOverrideKey
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.rimLight
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.HomeCardCornerRadiusOverrideKey
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.rimLight
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /**
  * The single card shape Home draws with.

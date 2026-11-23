@@ -1,4 +1,4 @@
-package com.convx.music.eq.data
+package com.hdemirbassmusic.music.eq.data
 
 import android.content.Context
 import com.tencent.mmkv.MMKV

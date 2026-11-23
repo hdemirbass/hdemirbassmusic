@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -110,7 +110,7 @@ fun GlassSwitch(
  * [GlassSwitch] by aliasing its import rather than rewriting every call site:
  *
  * ```
- * import com.convx.music.ui.component.GlassSwitchCompat as Switch
+ * import com.hdemirbassmusic.music.ui.component.GlassSwitchCompat as Switch
  * ```
  *
  * [thumbContent] and [colors] are accepted and deliberately ignored — the glass

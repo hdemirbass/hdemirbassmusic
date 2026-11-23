@@ -1,7 +1,7 @@
-package com.convx.storage.presentation
+package com.hdemirbassmusic.storage.presentation
 
-import com.convx.music.playback.*
-import com.convx.storage.domain.*
+import com.hdemirbassmusic.music.playback.*
+import com.hdemirbassmusic.storage.domain.*
 import kotlinx.coroutines.CancellationException
 
 const val NETWORK_MUSIC_PROVIDER = "network_music"

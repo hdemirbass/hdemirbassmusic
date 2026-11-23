@@ -1,4 +1,4 @@
-package com.convx.music.utils.tidal
+package com.hdemirbassmusic.music.utils.tidal
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

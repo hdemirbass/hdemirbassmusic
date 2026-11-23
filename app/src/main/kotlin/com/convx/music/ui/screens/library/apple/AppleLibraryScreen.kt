@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.library.apple
+package com.hdemirbassmusic.music.ui.screens.library.apple
 
-import com.convx.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.sf
 import android.content.Intent
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -78,25 +78,25 @@ import com.composables.sfsymbols.monochrome.SFStarFill
 import com.composables.sfsymbols.monochrome.SFTextBadgePlus
 import com.composables.sfsymbols.monochrome.SFTextLineFirstAndArrowtriangleForward
 import com.composables.sfsymbols.monochrome.SFTextLineLastAndArrowtriangleForward
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.LocalItem
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.library.PlaylistSummary
-import com.convx.music.library.LocalPlaylistSongDataSource
-import com.convx.music.playback.DownloadTarget
-import com.convx.music.playback.downloadSongs
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.component.AppleContextMenu
-import com.convx.music.ui.ios.component.rememberAppleMenuController
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.LocalItem
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.library.PlaylistSummary
+import com.hdemirbassmusic.music.library.LocalPlaylistSongDataSource
+import com.hdemirbassmusic.music.playback.DownloadTarget
+import com.hdemirbassmusic.music.playback.downloadSongs
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.component.AppleContextMenu
+import com.hdemirbassmusic.music.ui.ios.component.rememberAppleMenuController
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
@@ -123,17 +123,17 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.zIndex
 import androidx.compose.runtime.key
 import androidx.compose.runtime.LaunchedEffect
-import com.convx.music.ui.ios.component.IosGlyph
-import com.convx.music.ui.ios.component.IosMenuItem
-import com.convx.music.ui.ios.component.IosMenuSection
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.menu.AddToPlaylistDialog
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.localPlaylistRoute
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.ui.theme.SfProFontFamily
+import com.hdemirbassmusic.music.ui.ios.component.IosGlyph
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuItem
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuSection
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.menu.AddToPlaylistDialog
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.localPlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.theme.SfProFontFamily
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -159,7 +159,7 @@ fun AppleLibraryScreen(
     val pinned by viewModel.pinned.collectAsStateWithLifecycle()
     val recent by viewModel.recentlyAdded.collectAsStateWithLifecycle()
     val localOnly by viewModel.localOnly.collectAsStateWithLifecycle()
-    val permission = com.convx.music.ui.component.rememberLocalAudioPermission { }
+    val permission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { }
     // Online library needs no storage permission; only local-only mode is gated on it.
     val needsAccess = localOnly && !permission.granted
     LaunchedEffect(permission.granted) { if (permission.granted) viewModel.scanDevice() }
@@ -222,7 +222,7 @@ fun AppleLibraryScreen(
             }
         } else {
             item(key = "library_empty", contentType = "placeholder") {
-                com.convx.music.ui.component.LocalMusicEmptyState(onScan = viewModel::scanDevice)
+                com.hdemirbassmusic.music.ui.component.LocalMusicEmptyState(onScan = viewModel::scanDevice)
             }
         }
     }
@@ -316,8 +316,8 @@ internal fun Cover(model: Any?, radius: androidx.compose.ui.unit.Dp, modifier: M
     val shape = ContinuousRoundedRectangle(radius)
     AsyncImage(
         model = model,
-        onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(
-            com.convx.music.ui.utils.rememberArtworkSourceOwner(), model as? String,
+        onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(
+            com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner(), model as? String,
         ),
         contentDescription = null,
         contentScale = ContentScale.Crop,
@@ -534,7 +534,7 @@ internal fun LibraryItemMenu(
     onOpen: () -> Unit,
     onTogglePin: suspend () -> Unit,
     modifier: Modifier = Modifier,
-    controller: com.convx.music.ui.ios.component.AppleMenuController? = null,
+    controller: com.hdemirbassmusic.music.ui.ios.component.AppleMenuController? = null,
     content: @Composable () -> Unit,
 ) {
     val localPlaylistSongDataSource = koinInject<LocalPlaylistSongDataSource>()
@@ -562,7 +562,7 @@ internal fun LibraryItemMenu(
     item: LocalItem,
     onOpen: () -> Unit,
     modifier: Modifier = Modifier,
-    controller: com.convx.music.ui.ios.component.AppleMenuController? = null,
+    controller: com.hdemirbassmusic.music.ui.ios.component.AppleMenuController? = null,
     content: @Composable () -> Unit,
 ) {
     val database = LocalDatabase.current.get()
@@ -587,7 +587,7 @@ internal fun LibraryItemMenu(
                 }
             },
             shareUrl = when (item) {
-                is Album -> item.album.playlistId?.let { com.convx.music.utils.ShareUtils.albumUrl(it) }
+                is Album -> item.album.playlistId?.let { com.hdemirbassmusic.music.utils.ShareUtils.albumUrl(it) }
                 is Playlist -> item.playlist.shareLink
                 else -> null
             },
@@ -636,7 +636,7 @@ private fun LibraryItemMenu(
     item: LibraryMenuItem,
     onOpen: () -> Unit,
     modifier: Modifier,
-    controller: com.convx.music.ui.ios.component.AppleMenuController?,
+    controller: com.hdemirbassmusic.music.ui.ios.component.AppleMenuController?,
     content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
@@ -705,7 +705,7 @@ private fun LibraryItemMenu(
         ),
     )
 
-    com.convx.music.ui.utils.ArtworkSourceHost(modifier, fromLibrary = true) { sourceModifier ->
+    com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost(modifier, fromLibrary = true) { sourceModifier ->
         AppleContextMenu(
             sections = sections,
             quickActions = quick,

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.ContentValues
 import android.content.Context
@@ -32,8 +32,8 @@ import coil3.ImageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.R
-import com.convx.music.ui.component.LyricsBackgroundStyle
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.LyricsBackgroundStyle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -549,7 +549,7 @@ object ComposeToImage {
             val contentValues = ContentValues().apply {
                 put(MediaStore.MediaColumns.DISPLAY_NAME, "$fileName.png")
                 put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
-                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + "/Convx")
+                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + "/hdemirbassmusic")
             }
             val uri = context.contentResolver.insert(
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI,

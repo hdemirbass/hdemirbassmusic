@@ -1,4 +1,4 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 enum class PcmEncoding { SIGNED_INTEGER, UNSIGNED_INTEGER, FLOAT }
 

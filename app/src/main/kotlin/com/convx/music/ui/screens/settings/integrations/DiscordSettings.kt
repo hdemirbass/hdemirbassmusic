@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings.integrations
+package com.hdemirbassmusic.music.ui.screens.settings.integrations
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import android.content.Intent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
@@ -29,21 +29,21 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.LinearProgressIndicator
-import com.convx.music.ui.ios.compat.LinearWavyProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.LinearProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.LinearWavyProgressIndicator
 import androidx.compose.material3.SnackbarHostState
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -72,37 +72,37 @@ import androidx.core.net.toUri
 import androidx.media3.common.Player.STATE_READY
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.DiscordActivityNameKey
-import com.convx.music.constants.DiscordActivityTypeKey
-import com.convx.music.constants.DiscordAdvancedModeKey
-import com.convx.music.constants.DiscordAvatarKey
-import com.convx.music.constants.DiscordButton1TextKey
-import com.convx.music.constants.DiscordButton1VisibleKey
-import com.convx.music.constants.DiscordButton2TextKey
-import com.convx.music.constants.DiscordButton2VisibleKey
-import com.convx.music.constants.DiscordInfoDismissedKey
-import com.convx.music.constants.DiscordNameKey
-import com.convx.music.constants.DiscordStatusKey
-import com.convx.music.constants.DiscordTokenKey
-import com.convx.music.constants.DiscordUseDetailsKey
-import com.convx.music.constants.DiscordUsernameKey
-import com.convx.music.constants.EnableDiscordRPCKey
-import com.convx.music.db.entities.Song
-import com.convx.music.ui.component.EnumDialog
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.InfoLabel
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.component.TextFieldDialog
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.DiscordRPC
-import com.convx.music.utils.SuperProperties
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.makeTimeString
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.DiscordActivityNameKey
+import com.hdemirbassmusic.music.constants.DiscordActivityTypeKey
+import com.hdemirbassmusic.music.constants.DiscordAdvancedModeKey
+import com.hdemirbassmusic.music.constants.DiscordAvatarKey
+import com.hdemirbassmusic.music.constants.DiscordButton1TextKey
+import com.hdemirbassmusic.music.constants.DiscordButton1VisibleKey
+import com.hdemirbassmusic.music.constants.DiscordButton2TextKey
+import com.hdemirbassmusic.music.constants.DiscordButton2VisibleKey
+import com.hdemirbassmusic.music.constants.DiscordInfoDismissedKey
+import com.hdemirbassmusic.music.constants.DiscordNameKey
+import com.hdemirbassmusic.music.constants.DiscordStatusKey
+import com.hdemirbassmusic.music.constants.DiscordTokenKey
+import com.hdemirbassmusic.music.constants.DiscordUseDetailsKey
+import com.hdemirbassmusic.music.constants.DiscordUsernameKey
+import com.hdemirbassmusic.music.constants.EnableDiscordRPCKey
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.ui.component.EnumDialog
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.InfoLabel
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.component.TextFieldDialog
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.DiscordRPC
+import com.hdemirbassmusic.music.utils.SuperProperties
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.makeTimeString
+import com.hdemirbassmusic.music.utils.rememberPreference
 import com.my.kizzy.rpc.KizzyRPC
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -110,7 +110,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import com.convx.music.ui.screens.settings.SettingsPage
+import com.hdemirbassmusic.music.ui.screens.settings.SettingsPage
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 private enum class DiscordStatus { ONLINE, IDLE, DND }
@@ -655,7 +655,7 @@ fun DiscordSettings(
                         IosSettingsItem(
                             title = { Text(stringResource(R.string.discord_button_2)) },
                             description = {
-                                Text(button2Text.ifEmpty { "Visit Convx" })
+                                Text(button2Text.ifEmpty { "Visit hdemirbassmusic" })
                             },
                             trailingContent = {
                                 Switch(
@@ -737,10 +737,10 @@ fun RichPresence(
     val context = LocalContext.current
 
     val activityLabel = when (activityType) {
-        "playing" -> stringResource(R.string.discord_playing_convx)
-        "watching" -> stringResource(R.string.discord_watching_convx)
-        "competing" -> stringResource(R.string.discord_competing_convx)
-        else -> stringResource(R.string.listening_to_convx)
+        "playing" -> stringResource(R.string.discord_playing_hdemirbassmusic)
+        "watching" -> stringResource(R.string.discord_watching_hdemirbassmusic)
+        "competing" -> stringResource(R.string.discord_competing_hdemirbassmusic)
+        else -> stringResource(R.string.listening_to_hdemirbassmusic)
     }
 
     Surface(
@@ -863,7 +863,7 @@ fun RichPresence(
                     onClick = {
                         val intent = Intent(
                             Intent.ACTION_VIEW,
-                            com.convx.music.utils.ShareUtils.songUrl(song?.id ?: "").toUri()
+                            com.hdemirbassmusic.music.utils.ShareUtils.songUrl(song?.id ?: "").toUri()
                         )
                         context.startActivity(intent)
                     },
@@ -876,16 +876,16 @@ fun RichPresence(
             if (button2Visible) {
                 val resolvedButton2 = if (song != null) {
                     DiscordRPC.resolveVariables(
-                        button2Text.ifEmpty { "Visit Convx" }, song
+                        button2Text.ifEmpty { "Visit hdemirbassmusic" }, song
                     )
                 } else {
-                    button2Text.ifEmpty { "Visit Convx" }
+                    button2Text.ifEmpty { "Visit hdemirbassmusic" }
                 }
                 OutlinedButton(
                     onClick = {
                         val intent = Intent(
                             Intent.ACTION_VIEW,
-                            "https://github.com/cosmictaserdev-creator/Convx".toUri()
+                            "https://github.com/cosmictaserdev-creator/hdemirbassmusic".toUri()
                         )
                         context.startActivity(intent)
                     },

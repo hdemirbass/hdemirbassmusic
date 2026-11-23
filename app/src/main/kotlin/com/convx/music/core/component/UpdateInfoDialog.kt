@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.core.component
+package com.hdemirbassmusic.music.core.component
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,13 +15,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
-import com.convx.music.ui.ios.compat.BasicAlertDialog
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.BasicAlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,7 +32,7 @@ import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFChevronRight
 import com.composables.sfsymbols.monochrome.SFInfoCircle
 import com.composables.sfsymbols.monochrome.SFMagnifyingglass
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
 @OptIn(ExperimentalMaterial3Api::class)

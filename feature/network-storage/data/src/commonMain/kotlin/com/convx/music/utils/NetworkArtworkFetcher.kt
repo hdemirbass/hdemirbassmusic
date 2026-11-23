@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import coil3.ImageLoader
 import coil3.decode.DataSource
@@ -12,11 +12,11 @@ import coil3.fetch.FetchResult
 import coil3.fetch.Fetcher
 import coil3.fetch.SourceFetchResult
 import coil3.request.Options
-import com.convx.storage.domain.NetworkLibraryRepository
-import com.convx.storage.domain.NetworkMediaUri
+import com.hdemirbassmusic.storage.domain.NetworkLibraryRepository
+import com.hdemirbassmusic.storage.domain.NetworkMediaUri
 import okio.Buffer
 
-/** Loads `convx-network://` cover art through the SMB or WebDAV source it lives on. */
+/** Loads `hdemirbassmusic-network://` cover art through the SMB or WebDAV source it lives on. */
 class NetworkArtworkFetcher(
     private val uri: String,
     private val options: Options,

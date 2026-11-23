@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.audio
+package com.hdemirbassmusic.music.playback.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.audio.BaseAudioProcessor
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.playback.dj.Biquad
+import com.hdemirbassmusic.music.playback.dj.Biquad
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlin.math.abs

@@ -1,8 +1,8 @@
 package com.music.innertube
 
-import com.convx.music.playback.AudioStreamResolver
-import com.convx.music.playback.PlaybackAudioStream
-import com.convx.music.playback.PlaybackRequestTrack
+import com.hdemirbassmusic.music.playback.AudioStreamResolver
+import com.hdemirbassmusic.music.playback.PlaybackAudioStream
+import com.hdemirbassmusic.music.playback.PlaybackRequestTrack
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YouTubeClient
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR

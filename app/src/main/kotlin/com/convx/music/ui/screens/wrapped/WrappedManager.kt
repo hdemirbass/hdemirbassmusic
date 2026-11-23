@@ -1,20 +1,20 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.wrapped
+package com.hdemirbassmusic.music.ui.screens.wrapped
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import com.music.innertube.YouTube
 import com.music.innertube.models.AccountInfo
-import com.convx.music.constants.ArtistSongSortType
-import com.convx.music.db.DatabaseDao
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.db.entities.SongWithStats
+import com.hdemirbassmusic.music.constants.ArtistSongSortType
+import com.hdemirbassmusic.music.db.DatabaseDao
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.db.entities.SongWithStats
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -219,7 +219,7 @@ class WrappedManager(
             @Suppress("UNCHECKED_CAST")
             val topSongsResult = results[1] as List<SongWithStats>
             @Suppress("UNCHECKED_CAST")
-            val topAlbumsResult = results[3] as List<com.convx.music.db.entities.Album>
+            val topAlbumsResult = results[3] as List<com.hdemirbassmusic.music.db.entities.Album>
             @Suppress("UNCHECKED_CAST")
             val topArtistsResult = results[2] as List<Artist>
             _state.update {

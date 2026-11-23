@@ -1,4 +1,4 @@
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -36,9 +36,9 @@ import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.lyrics.LyricsDocument
-import com.convx.music.lyrics.bitchord.LyricAlignment
-import com.convx.music.lyrics.bitchord.LyricLine
+import com.hdemirbassmusic.music.lyrics.LyricsDocument
+import com.hdemirbassmusic.music.lyrics.bitchord.LyricAlignment
+import com.hdemirbassmusic.music.lyrics.bitchord.LyricLine
 import kotlinx.coroutines.flow.first
 import kotlin.math.floor
 

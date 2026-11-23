@@ -1,4 +1,4 @@
-package com.convx.music.client.ios
+package com.hdemirbassmusic.music.client.ios
 
 import androidx.room.Room
 import androidx.compose.foundation.clickable
@@ -21,32 +21,32 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.ComposeUIViewController
 import androidx.compose.ui.window.Dialog
-import com.convx.music.account.MusicAccountState
-import com.convx.music.account.SecureSessionStore
-import com.convx.music.library.libraryCoreModule
-import com.convx.music.library.data.libraryDataModule
-import com.convx.music.library.data.MusicLibraryDatabase
-import com.convx.music.library.data.buildMusicLibraryDatabase
-import com.convx.music.account.presentation.MusicAccountPresentationState
-import com.convx.music.account.presentation.MusicAccountStateHolder
-import com.convx.music.account.presentation.musicAccountPresentationModule
-import com.convx.music.catalog.presentation.ConvxMusicClientShell
-import com.convx.music.catalog.presentation.MusicBrowserScreen
-import com.convx.music.catalog.presentation.catalogPresentationModule
-import com.convx.music.playback.AudioStreamResolver
-import com.convx.music.modules.IosModuleStore
-import com.convx.music.modules.ModuleEnvironment
-import com.convx.music.modules.ModuleAudioStreamResolver
-import com.convx.music.modules.ModulesScreen
-import com.convx.music.playback.PlaybackController
-import com.convx.music.playback.PlaybackSettingsRepository
-import com.convx.music.playback.PlaybackCheckpointRepository
-import com.convx.music.playback.PlaybackTrackAnalysisRepository
-import com.convx.music.playback.data.PlaybackSettingsDatabase
-import com.convx.music.playback.data.buildPlaybackSettingsDatabase
-import com.convx.music.playback.data.playbackDataModule
-import com.convx.music.playback.presentation.playbackPresentationModule
-import com.convx.music.playback.presentation.PlaybackSleepTimerSheet
+import com.hdemirbassmusic.music.account.MusicAccountState
+import com.hdemirbassmusic.music.account.SecureSessionStore
+import com.hdemirbassmusic.music.library.libraryCoreModule
+import com.hdemirbassmusic.music.library.data.libraryDataModule
+import com.hdemirbassmusic.music.library.data.MusicLibraryDatabase
+import com.hdemirbassmusic.music.library.data.buildMusicLibraryDatabase
+import com.hdemirbassmusic.music.account.presentation.MusicAccountPresentationState
+import com.hdemirbassmusic.music.account.presentation.MusicAccountStateHolder
+import com.hdemirbassmusic.music.account.presentation.musicAccountPresentationModule
+import com.hdemirbassmusic.music.catalog.presentation.hdemirbassmusicMusicClientShell
+import com.hdemirbassmusic.music.catalog.presentation.MusicBrowserScreen
+import com.hdemirbassmusic.music.catalog.presentation.catalogPresentationModule
+import com.hdemirbassmusic.music.playback.AudioStreamResolver
+import com.hdemirbassmusic.music.modules.IosModuleStore
+import com.hdemirbassmusic.music.modules.ModuleEnvironment
+import com.hdemirbassmusic.music.modules.ModuleAudioStreamResolver
+import com.hdemirbassmusic.music.modules.ModulesScreen
+import com.hdemirbassmusic.music.playback.PlaybackController
+import com.hdemirbassmusic.music.playback.PlaybackSettingsRepository
+import com.hdemirbassmusic.music.playback.PlaybackCheckpointRepository
+import com.hdemirbassmusic.music.playback.PlaybackTrackAnalysisRepository
+import com.hdemirbassmusic.music.playback.data.PlaybackSettingsDatabase
+import com.hdemirbassmusic.music.playback.data.buildPlaybackSettingsDatabase
+import com.hdemirbassmusic.music.playback.data.playbackDataModule
+import com.hdemirbassmusic.music.playback.presentation.playbackPresentationModule
+import com.hdemirbassmusic.music.playback.presentation.PlaybackSleepTimerSheet
 import com.music.innertube.innertubeDataModule
 import org.koin.compose.KoinApplication
 import org.koin.compose.koinInject
@@ -69,7 +69,7 @@ private val iosHostModule = module {
 
 @OptIn(ExperimentalForeignApi::class)
 private fun iosDatabasePath(fileName: String): String {
-    val directory = "${NSHomeDirectory()}/Library/Application Support/Convx"
+    val directory = "${NSHomeDirectory()}/Library/Application Support/hdemirbassmusic"
     val fileManager = NSFileManager.defaultManager
     check(
         fileManager.fileExistsAtPath(directory) ||
@@ -79,7 +79,7 @@ private fun iosDatabasePath(fileName: String): String {
                 attributes = null,
                 error = null,
             ),
-    ) { "Unable to create the Convx application support directory." }
+    ) { "Unable to create the hdemirbassmusic application support directory." }
     return "$directory/$fileName"
 }
 
@@ -120,11 +120,11 @@ private fun iosMusicController(runKeychainProbe: Boolean) = ComposeUIViewControl
             musicAccountPresentationModule,
             catalogPresentationModule,
             iosHostModule,
-            com.convx.music.client.watch.watchCompanionModule(),
+            com.hdemirbassmusic.music.client.watch.watchCompanionModule(),
         )
     }) {
         val playbackController = koinInject<PlaybackController>()
-        val watch = koinInject<com.convx.music.client.watch.WatchCompanion>()
+        val watch = koinInject<com.hdemirbassmusic.music.client.watch.WatchCompanion>()
         DisposableEffect(watch) {
             val connection = IosWatchCompanion(watch)
             onDispose(connection::close)
@@ -175,7 +175,7 @@ private fun iosMusicController(runKeychainProbe: Boolean) = ComposeUIViewControl
             is MusicAccountState.ChoosingChannel -> "Cancel"
             is MusicAccountState.SignedIn -> "Sign out"
         }
-        ConvxMusicClientShell(
+        hdemirbassmusicMusicClientShell(
             onModulesAction = { showModules = !showModules },
             accountSubtitle = accountSubtitle,
             accountActionLabel = accountActionLabel,

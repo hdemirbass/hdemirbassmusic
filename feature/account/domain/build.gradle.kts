@@ -3,12 +3,12 @@ plugins {
     alias(libs.plugins.android.kmp.library)
 }
 
-group = "com.convx.shared"
+group = "com.hdemirbassmusic.shared"
 version = "0.1.0"
 
 kotlin {
     android {
-        namespace = "com.convx.shared.account"
+        namespace = "com.hdemirbassmusic.shared.account"
         compileSdk = 37
         minSdk = 26
     }

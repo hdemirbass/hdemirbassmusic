@@ -1,9 +1,9 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.content.ContentResolver
 import android.content.Context
@@ -35,21 +35,21 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
-import com.convx.music.R
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.MediaSessionConstants
-import com.convx.music.constants.SongSortType
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.extensions.toggleRepeatMode
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.MediaSessionConstants
+import com.hdemirbassmusic.music.constants.SongSortType
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.extensions.toggleRepeatMode
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -750,7 +750,7 @@ class MediaLibrarySessionCallback(
         singleItemStyle = MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_CATEGORY_LIST_ITEM,
     )
 
-    private fun com.convx.music.db.entities.Playlist.toBrowsableMediaItem() = browsableMediaItem(
+    private fun com.hdemirbassmusic.music.db.entities.Playlist.toBrowsableMediaItem() = browsableMediaItem(
         "${MusicService.PLAYLIST}/$id",
         playlist.name,
         context.resources.getQuantityString(

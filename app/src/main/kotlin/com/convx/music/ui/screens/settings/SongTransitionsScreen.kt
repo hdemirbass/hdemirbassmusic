@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -28,41 +28,41 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.R
-import com.convx.music.constants.AutoDjMixingEnabledKey
-import com.convx.music.constants.CreativeTransitionsEnabledKey
-import com.convx.music.constants.CrossfadeDurationKey
-import com.convx.music.constants.CrossfadeEnabledKey
-import com.convx.music.constants.BitPerfectKey
-import com.convx.music.constants.DjReverbTypeKey
-import com.convx.music.constants.DjDelayTypeKey
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AutoDjMixingEnabledKey
+import com.hdemirbassmusic.music.constants.CreativeTransitionsEnabledKey
+import com.hdemirbassmusic.music.constants.CrossfadeDurationKey
+import com.hdemirbassmusic.music.constants.CrossfadeEnabledKey
+import com.hdemirbassmusic.music.constants.BitPerfectKey
+import com.hdemirbassmusic.music.constants.DjReverbTypeKey
+import com.hdemirbassmusic.music.constants.DjDelayTypeKey
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.convx.music.playback.dj.LibraryAnalysis
-import com.convx.music.playback.smart.DemucsInstall
-import com.convx.music.playback.smart.DemucsModel
-import com.convx.music.playback.smart.StemQuality
-import com.convx.music.playback.smart.StemStore
-import com.convx.music.constants.DemucsModelUrlKey
-import com.convx.music.constants.DemucsAutoDownloadKey
-import com.convx.music.playback.smart.StemLab
+import com.hdemirbassmusic.music.playback.dj.LibraryAnalysis
+import com.hdemirbassmusic.music.playback.smart.DemucsInstall
+import com.hdemirbassmusic.music.playback.smart.DemucsModel
+import com.hdemirbassmusic.music.playback.smart.StemQuality
+import com.hdemirbassmusic.music.playback.smart.StemStore
+import com.hdemirbassmusic.music.constants.DemucsModelUrlKey
+import com.hdemirbassmusic.music.constants.DemucsAutoDownloadKey
+import com.hdemirbassmusic.music.playback.smart.StemLab
 import androidx.compose.runtime.LaunchedEffect
-import com.convx.music.constants.StemQualityKey
-import com.convx.music.ui.component.TextFieldDialog
+import com.hdemirbassmusic.music.constants.StemQualityKey
+import com.hdemirbassmusic.music.ui.component.TextFieldDialog
 import androidx.compose.ui.text.input.TextFieldValue
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import com.convx.music.playback.audio.ReverbType
-import com.convx.music.playback.audio.DelayType
-import com.convx.music.ui.component.EnumDialog
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.utils.rememberPreference
-import com.convx.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.playback.audio.ReverbType
+import com.hdemirbassmusic.music.playback.audio.DelayType
+import com.hdemirbassmusic.music.ui.component.EnumDialog
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
 
 /** Apple's slider runs 1s to 12s; older installs may have stored up to 15s, so clamp on read. */
 private const val MinFadeSeconds = 1f
@@ -82,7 +82,7 @@ fun SongTransitionsScreen(navController: NavController) {
     var showDelayDialog by rememberSaveable { mutableStateOf(false) }
     val transitionsAvailable = enabled && !bitPerfect
     val context = androidx.compose.ui.platform.LocalContext.current
-    val database = com.convx.music.LocalDatabase.current.get()
+    val database = com.hdemirbassmusic.music.LocalDatabase.current.get()
     val analysis by LibraryAnalysis.progress.collectAsStateWithLifecycle()
     val scope = androidx.compose.runtime.rememberCoroutineScope()
     var stemBytes by remember { mutableStateOf(StemStore.totalBytes(context)) }
@@ -98,11 +98,11 @@ fun SongTransitionsScreen(navController: NavController) {
     val modelProgress by DemucsModel.progress.collectAsStateWithLifecycle()
     LaunchedEffect(modelProgress) { if (modelProgress == null) modelInstalled = DemucsModel.isInstalled(context) }
     val stemLab by StemLab.state.collectAsStateWithLifecycle()
-    val playerConnection = com.convx.music.LocalPlayerConnection.current
+    val playerConnection = com.hdemirbassmusic.music.LocalPlayerConnection.current
     val nowPlaying by (playerConnection?.mediaMetadata ?: kotlinx.coroutines.flow.MutableStateFlow(null)).collectAsStateWithLifecycle()
 
     stemLab?.takeIf { it !is StemLab.State.Running }?.let { result ->
-        com.convx.music.ui.ios.compat.AlertDialog(
+        com.hdemirbassmusic.music.ui.ios.compat.AlertDialog(
             onDismissRequest = { StemLab.dismiss() },
             title = { Text(stringResource(R.string.stem_lab)) },
             text = {
@@ -115,13 +115,13 @@ fun SongTransitionsScreen(navController: NavController) {
                 )
             },
             confirmButton = {
-                com.convx.music.ui.ios.compat.TextButton(onClick = { StemLab.dismiss() }) { Text(stringResource(android.R.string.ok)) }
+                com.hdemirbassmusic.music.ui.ios.compat.TextButton(onClick = { StemLab.dismiss() }) { Text(stringResource(android.R.string.ok)) }
             },
         )
     }
 
     if (showLibraryStemNotice) {
-        com.convx.music.ui.component.StemNoticeDialog(
+        com.hdemirbassmusic.music.ui.component.StemNoticeDialog(
             bytes = libraryStemBytes,
             onDismiss = { showLibraryStemNotice = false },
             onConfirm = {
@@ -353,7 +353,7 @@ fun SongTransitionsScreen(navController: NavController) {
                             ),
                         ),
                     )
-                    if (com.convx.music.BuildConfig.DEBUG) {
+                    if (com.hdemirbassmusic.music.BuildConfig.DEBUG) {
                         Spacer(Modifier.height(16.dp))
                         IosSettingsGroup(
                             title = stringResource(R.string.stem_lab),

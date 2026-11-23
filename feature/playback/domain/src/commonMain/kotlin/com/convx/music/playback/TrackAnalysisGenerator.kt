@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
-import com.convx.music.playback.dj.BeatTracker
-import com.convx.music.playback.dj.KeyDetector
-import com.convx.music.playback.smart.EnergySample
-import com.convx.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.playback.dj.BeatTracker
+import com.hdemirbassmusic.music.playback.dj.KeyDetector
+import com.hdemirbassmusic.music.playback.smart.EnergySample
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
 import kotlin.math.abs
 
 /**

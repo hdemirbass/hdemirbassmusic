@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -45,9 +45,9 @@ import androidx.compose.ui.text.style.LineBreak
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.primaryLyricLineIndex
-import com.convx.music.lyrics.wordsWithSpacing
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.primaryLyricLineIndex
+import com.hdemirbassmusic.music.lyrics.wordsWithSpacing
 import kotlin.math.abs
 
 private val CrawlInk = Color.White

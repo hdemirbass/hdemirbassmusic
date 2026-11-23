@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import android.app.Activity
 import android.content.Context
@@ -28,13 +28,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -47,64 +47,64 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.AppBackgroundColorKey
-import com.convx.music.constants.AppTextColorKey
-import com.convx.music.constants.ChipSortTypeKey
-import com.convx.music.constants.DensityScale
-import com.convx.music.constants.DensityScaleKey
-import com.convx.music.constants.EnableSettingsPopupKey
-import com.convx.music.constants.FullscreenLyricsCollapseTopKey
-import com.convx.music.constants.GridCardHeightOverrideKey
-import com.convx.music.constants.GridColumnsOverrideKey
-import com.convx.music.constants.GridItemSize
-import com.convx.music.constants.GridItemsSizeKey
-import com.convx.music.constants.GridSpacingKey
-import com.convx.music.constants.HideHomeFavoriteIconKey
-import com.convx.music.constants.HiddenNavigationRoutesKey
-import com.convx.music.constants.HidePlayerThumbnailKey
-import com.convx.music.constants.HomeCardCornerRadiusOverrideKey
-import com.convx.music.constants.HomeGridColumnsOverrideKey
-import com.convx.music.constants.HomeHeroCardHeightOverrideKey
-import com.convx.music.constants.IosOverscrollKey
-import com.convx.music.constants.LibraryFilter
-import com.convx.music.constants.LibraryIconsOnlyKey
-import com.convx.music.constants.LocalAlbumsByYearKey
-import com.convx.music.constants.EnableLyricsThumbnailPlayPauseKey
-import com.convx.music.constants.MiniBarTabStyleKey
-import com.convx.music.constants.NavBarMeltTransitionKey
-import com.convx.music.constants.PureBlackKey
-import com.convx.music.constants.PureBlackMiniPlayerKey
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.constants.TopBarBlurStyle
-import com.convx.music.constants.TopBarBlurStyleKey
-import com.convx.music.constants.ShowAudioQualityBadgeKey
-import com.convx.music.constants.ShowCommentButtonKey
-import com.convx.music.constants.ShowHomeFabKey
-import com.convx.music.constants.SpeedDialCardHeightOverrideKey
-import com.convx.music.constants.SpeedDialColumnsOverrideKey
-import com.convx.music.constants.SheetCornerRadiusKey
-import com.convx.music.constants.ThumbnailCornerRadiusKey
-import com.convx.music.ui.component.ColorPickerDialog
-import com.convx.music.ui.screens.Screens
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.EnumDialog
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.component.MenuSheetCornerRadius
-import com.convx.music.ui.component.SheetCornerRadiusModal
-import com.convx.music.ui.component.ThumbnailCornerRadiusModal
-import com.convx.music.ui.utils.GridCardHeightChoices
-import com.convx.music.ui.utils.GridColumnChoices
-import com.convx.music.ui.utils.GridSpacingChoices
-import com.convx.music.ui.utils.HomeCardCornerRadiusChoices
-import com.convx.music.ui.utils.HomeHeroCardHeightChoices
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AppBackgroundColorKey
+import com.hdemirbassmusic.music.constants.AppTextColorKey
+import com.hdemirbassmusic.music.constants.ChipSortTypeKey
+import com.hdemirbassmusic.music.constants.DensityScale
+import com.hdemirbassmusic.music.constants.DensityScaleKey
+import com.hdemirbassmusic.music.constants.EnableSettingsPopupKey
+import com.hdemirbassmusic.music.constants.FullscreenLyricsCollapseTopKey
+import com.hdemirbassmusic.music.constants.GridCardHeightOverrideKey
+import com.hdemirbassmusic.music.constants.GridColumnsOverrideKey
+import com.hdemirbassmusic.music.constants.GridItemSize
+import com.hdemirbassmusic.music.constants.GridItemsSizeKey
+import com.hdemirbassmusic.music.constants.GridSpacingKey
+import com.hdemirbassmusic.music.constants.HideHomeFavoriteIconKey
+import com.hdemirbassmusic.music.constants.HiddenNavigationRoutesKey
+import com.hdemirbassmusic.music.constants.HidePlayerThumbnailKey
+import com.hdemirbassmusic.music.constants.HomeCardCornerRadiusOverrideKey
+import com.hdemirbassmusic.music.constants.HomeGridColumnsOverrideKey
+import com.hdemirbassmusic.music.constants.HomeHeroCardHeightOverrideKey
+import com.hdemirbassmusic.music.constants.IosOverscrollKey
+import com.hdemirbassmusic.music.constants.LibraryFilter
+import com.hdemirbassmusic.music.constants.LibraryIconsOnlyKey
+import com.hdemirbassmusic.music.constants.LocalAlbumsByYearKey
+import com.hdemirbassmusic.music.constants.EnableLyricsThumbnailPlayPauseKey
+import com.hdemirbassmusic.music.constants.MiniBarTabStyleKey
+import com.hdemirbassmusic.music.constants.NavBarMeltTransitionKey
+import com.hdemirbassmusic.music.constants.PureBlackKey
+import com.hdemirbassmusic.music.constants.PureBlackMiniPlayerKey
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.constants.TopBarBlurStyle
+import com.hdemirbassmusic.music.constants.TopBarBlurStyleKey
+import com.hdemirbassmusic.music.constants.ShowAudioQualityBadgeKey
+import com.hdemirbassmusic.music.constants.ShowCommentButtonKey
+import com.hdemirbassmusic.music.constants.ShowHomeFabKey
+import com.hdemirbassmusic.music.constants.SpeedDialCardHeightOverrideKey
+import com.hdemirbassmusic.music.constants.SpeedDialColumnsOverrideKey
+import com.hdemirbassmusic.music.constants.SheetCornerRadiusKey
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadiusKey
+import com.hdemirbassmusic.music.ui.component.ColorPickerDialog
+import com.hdemirbassmusic.music.ui.screens.Screens
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.EnumDialog
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.component.MenuSheetCornerRadius
+import com.hdemirbassmusic.music.ui.component.SheetCornerRadiusModal
+import com.hdemirbassmusic.music.ui.component.ThumbnailCornerRadiusModal
+import com.hdemirbassmusic.music.ui.utils.GridCardHeightChoices
+import com.hdemirbassmusic.music.ui.utils.GridColumnChoices
+import com.hdemirbassmusic.music.ui.utils.GridSpacingChoices
+import com.hdemirbassmusic.music.ui.utils.HomeCardCornerRadiusChoices
+import com.hdemirbassmusic.music.ui.utils.HomeHeroCardHeightChoices
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlin.math.roundToInt
 
 /**
@@ -133,7 +133,7 @@ fun AppearanceAdvancedSettings(
     val hiddenTabs = remember(hiddenNavigationRoutes) {
         hiddenNavigationRoutes.lineSequence().map(String::trim).filter(String::isNotEmpty).toSet()
     }
-    val (localOnlyMode) = rememberPreference(com.convx.music.constants.LocalOnlyModeKey, false)
+    val (localOnlyMode) = rememberPreference(com.hdemirbassmusic.music.constants.LocalOnlyModeKey, false)
     val optionalTabs = Screens.mainScreens(localOnlyMode).filter { it != Screens.Search } +
         if (localOnlyMode) emptyList() else listOf(Screens.Explore)
     val onTabVisibilityChange: (Screens, Boolean) -> Unit = { tab, visible ->

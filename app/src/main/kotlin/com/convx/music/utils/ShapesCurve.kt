@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ListItemColors
 import androidx.compose.material3.ListItemDefaults
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp

@@ -1,4 +1,4 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 import com.music.spine.EclipseAddon
 import com.music.spine.ModuleManifest

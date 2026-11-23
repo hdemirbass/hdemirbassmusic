@@ -1,9 +1,9 @@
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.DownloadRingIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.menuBottomInset
+import com.hdemirbassmusic.music.ui.component.DownloadRingIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.menuBottomInset
 import android.content.Intent
 import android.widget.Toast
 import androidx.compose.foundation.clickable
@@ -23,11 +23,11 @@ import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -54,26 +54,26 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import com.music.innertube.YouTube
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.ListItemHeight
-import com.convx.music.listentogether.RoomRole
-import com.convx.music.models.MediaMetadata
-import com.convx.music.playback.ExoDownloadService
-import com.convx.music.playback.PlaybackRepeatMode
-import com.convx.music.ui.component.BottomSheetState
-import com.convx.music.ui.component.ListDialog
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
-import com.convx.music.ui.component.NewAction
-import com.convx.music.ui.component.NewActionGrid
-import com.convx.music.ui.component.VolumeSlider
-import com.convx.music.ui.theme.rememberGlobalAccentColors
-import com.convx.music.constants.EnableSaavnStreamingKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ListItemHeight
+import com.hdemirbassmusic.music.listentogether.RoomRole
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.playback.ExoDownloadService
+import com.hdemirbassmusic.music.playback.PlaybackRepeatMode
+import com.hdemirbassmusic.music.ui.component.BottomSheetState
+import com.hdemirbassmusic.music.ui.component.ListDialog
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.ui.component.NewAction
+import com.hdemirbassmusic.music.ui.component.NewActionGrid
+import com.hdemirbassmusic.music.ui.component.VolumeSlider
+import com.hdemirbassmusic.music.ui.theme.rememberGlobalAccentColors
+import com.hdemirbassmusic.music.constants.EnableSaavnStreamingKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -88,7 +88,7 @@ fun OldPlayerMenu(
 ) {
     mediaMetadata ?: return
     val context = LocalContext.current
-    val ringtoneViewModel = com.convx.music.LocalRingtoneViewModel.current
+    val ringtoneViewModel = com.hdemirbassmusic.music.LocalRingtoneViewModel.current
     val database = LocalDatabase.current.get()
     val playerConnection = LocalPlayerConnection.current ?: return
     val coroutineScope = rememberCoroutineScope()
@@ -272,7 +272,7 @@ fun OldPlayerMenu(
                                 type = "text/plain"
                                 putExtra(
                                     android.content.Intent.EXTRA_TEXT,
-                                    com.convx.music.utils.ShareUtils.songUrl(mediaMetadata.id)
+                                    com.hdemirbassmusic.music.utils.ShareUtils.songUrl(mediaMetadata.id)
                                 )
                             }
                             context.startActivity(android.content.Intent.createChooser(intent, null))

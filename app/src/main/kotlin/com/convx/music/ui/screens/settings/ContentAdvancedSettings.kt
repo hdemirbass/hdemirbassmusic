@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.edit
-import com.convx.music.lyrics.LyricsProviderSettings
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.lyrics.LyricsProviderSettings
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.launch
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -28,22 +28,22 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.AlertDialog
-import com.convx.music.ui.ios.compat.BasicAlertDialog
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.DropdownMenuItem
-import com.convx.music.ui.ios.compat.ExposedDropdownMenuBox
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.BasicAlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenuItem
+import com.hdemirbassmusic.music.ui.ios.compat.ExposedDropdownMenuBox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuAnchorType
 import androidx.compose.material3.ExposedDropdownMenuDefaults
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -64,43 +64,43 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.EnableBetterLyricsKey
-import com.convx.music.constants.EnableKugouKey
-import com.convx.music.constants.EnableLrcLibKey
-import com.convx.music.constants.EnableMusixmatchKey
-import com.convx.music.constants.EnablePaxsenixKey
-import com.convx.music.constants.EnableSimpMusicKey
-import com.convx.music.constants.EnableUnisonKey
-import com.convx.music.constants.EnableYouLyPlusKey
-import com.convx.music.constants.IpVersionKey
-import com.convx.music.constants.LyricsProviderOrderKey
-import com.convx.music.constants.ProxyEnabledKey
-import com.convx.music.constants.ProxyPasswordKey
-import com.convx.music.constants.ProxyTypeKey
-import com.convx.music.constants.ProxyUrlKey
-import com.convx.music.constants.ProxyUsernameKey
-import com.convx.music.constants.QuickPicks
-import com.convx.music.constants.QuickPicksKey
-import com.convx.music.constants.ShowArtistBackgroundVideoKey
-import com.convx.music.constants.TopSize
-import com.convx.music.lyrics.LyricsProviderRegistry
-import com.convx.music.ui.component.DraggableLyricsProviderItem
-import com.convx.music.ui.component.DraggableLyricsProviderList
-import com.convx.music.ui.component.EnumDialog
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.component.PlaybackLogsDialog
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.PlaybackLogManager
-import com.convx.music.utils.YTPlayerUtils
-import com.convx.music.utils.YouTubeClientProbe
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.EnableBetterLyricsKey
+import com.hdemirbassmusic.music.constants.EnableKugouKey
+import com.hdemirbassmusic.music.constants.EnableLrcLibKey
+import com.hdemirbassmusic.music.constants.EnableMusixmatchKey
+import com.hdemirbassmusic.music.constants.EnablePaxsenixKey
+import com.hdemirbassmusic.music.constants.EnableSimpMusicKey
+import com.hdemirbassmusic.music.constants.EnableUnisonKey
+import com.hdemirbassmusic.music.constants.EnableYouLyPlusKey
+import com.hdemirbassmusic.music.constants.IpVersionKey
+import com.hdemirbassmusic.music.constants.LyricsProviderOrderKey
+import com.hdemirbassmusic.music.constants.ProxyEnabledKey
+import com.hdemirbassmusic.music.constants.ProxyPasswordKey
+import com.hdemirbassmusic.music.constants.ProxyTypeKey
+import com.hdemirbassmusic.music.constants.ProxyUrlKey
+import com.hdemirbassmusic.music.constants.ProxyUsernameKey
+import com.hdemirbassmusic.music.constants.QuickPicks
+import com.hdemirbassmusic.music.constants.QuickPicksKey
+import com.hdemirbassmusic.music.constants.ShowArtistBackgroundVideoKey
+import com.hdemirbassmusic.music.constants.TopSize
+import com.hdemirbassmusic.music.lyrics.LyricsProviderRegistry
+import com.hdemirbassmusic.music.ui.component.DraggableLyricsProviderItem
+import com.hdemirbassmusic.music.ui.component.DraggableLyricsProviderList
+import com.hdemirbassmusic.music.ui.component.EnumDialog
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.component.PlaybackLogsDialog
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.PlaybackLogManager
+import com.hdemirbassmusic.music.utils.YTPlayerUtils
+import com.hdemirbassmusic.music.utils.YouTubeClientProbe
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import com.music.innertube.YouTube
 import com.music.innertube.models.IpVersion
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
@@ -405,7 +405,7 @@ fun ContentAdvancedSettings(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.End,
                     ) {
-                        com.convx.music.ui.ios.compat.Button(
+                        com.hdemirbassmusic.music.ui.ios.compat.Button(
                             onClick = { showProviderPriorityDialog = false },
                             shape = actionShape,
                         ) {
@@ -506,7 +506,7 @@ fun ContentAdvancedSettings(
                     onClick = {
                         clientProbeOutput?.let { text ->
                             val clipboard = context.getSystemService(ClipboardManager::class.java)
-                            clipboard?.setPrimaryClip(ClipData.newPlainText("Convx client probe", text))
+                            clipboard?.setPrimaryClip(ClipData.newPlainText("hdemirbassmusic client probe", text))
                         }
                         showClientProbeDialog = false
                     },

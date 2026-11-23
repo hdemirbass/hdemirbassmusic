@@ -1,4 +1,4 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.util.Log
 import androidx.media3.common.C
@@ -207,7 +207,7 @@ class TransitionFilterProcessor : BaseAudioProcessor() {
         value.coerceIn(Short.MIN_VALUE.toFloat(), Short.MAX_VALUE.toFloat()).toInt().toShort()
 
     companion object {
-        private const val TAG = "ConvxTransitionFilter"
+        private const val TAG = "hdemirbassmusicTransitionFilter"
 
         const val OPEN_HZ = 20_000f
 

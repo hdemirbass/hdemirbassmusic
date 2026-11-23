@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.MutableIntState
 import androidx.compose.runtime.MutableFloatState
-import com.convx.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.PlayerConnection
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -34,8 +34,8 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
-import com.convx.music.core.ActiveAudioOutput
-import com.convx.music.core.getActiveAudioOutput
+import com.hdemirbassmusic.music.core.ActiveAudioOutput
+import com.hdemirbassmusic.music.core.getActiveAudioOutput
 import kotlin.math.max
 
 /** The connected Bluetooth, USB or wired output, kept live from broadcasts and device callbacks. */

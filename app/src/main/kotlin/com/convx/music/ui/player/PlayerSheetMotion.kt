@@ -1,17 +1,17 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.ui.geometry.Rect
-import com.convx.music.playback.presentation.PLAYER_MORPH_ARTWORK_VERTICAL_LINEAR_WEIGHT
-import com.convx.music.playback.presentation.PLAYER_MORPH_CORNER_EXPANSION_PROGRESS_BAND
-import com.convx.music.playback.presentation.PLAYER_MORPH_INPUT_MINI_END_PROGRESS
-import com.convx.music.playback.presentation.PLAYER_MORPH_SCREEN_CORNER_EXPANSION_MILLIS
-import com.convx.music.playback.presentation.PlayerMorphCornerRadii
-import com.convx.music.playback.presentation.PlayerMorphGeometry
-import com.convx.music.playback.presentation.PlayerMorphInputOwner
+import com.hdemirbassmusic.music.playback.presentation.PLAYER_MORPH_ARTWORK_VERTICAL_LINEAR_WEIGHT
+import com.hdemirbassmusic.music.playback.presentation.PLAYER_MORPH_CORNER_EXPANSION_PROGRESS_BAND
+import com.hdemirbassmusic.music.playback.presentation.PLAYER_MORPH_INPUT_MINI_END_PROGRESS
+import com.hdemirbassmusic.music.playback.presentation.PLAYER_MORPH_SCREEN_CORNER_EXPANSION_MILLIS
+import com.hdemirbassmusic.music.playback.presentation.PlayerMorphCornerRadii
+import com.hdemirbassmusic.music.playback.presentation.PlayerMorphGeometry
+import com.hdemirbassmusic.music.playback.presentation.PlayerMorphInputOwner
 
 const val ARTWORK_VERTICAL_LINEAR_WEIGHT = PLAYER_MORPH_ARTWORK_VERTICAL_LINEAR_WEIGHT
 const val SCREEN_CORNER_EXPANSION_MILLIS = PLAYER_MORPH_SCREEN_CORNER_EXPANSION_MILLIS

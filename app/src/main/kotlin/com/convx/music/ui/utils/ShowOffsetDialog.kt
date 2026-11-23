@@ -1,7 +1,7 @@
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,12 +13,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.text.KeyboardOptions
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.OutlinedTextField as TextField
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField as TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -41,9 +41,9 @@ import com.composables.sfsymbols.monochrome.SFArrowCounterclockwise
 import com.composables.sfsymbols.monochrome.SFForwardFill
 import com.composables.sfsymbols.monochrome.SFMinus
 import com.composables.sfsymbols.monochrome.SFPlus
-import com.convx.music.LocalDatabase
-import com.convx.music.R
-import com.convx.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.SongEntity
 import kotlinx.coroutines.FlowPreview
 
 @OptIn(FlowPreview::class)

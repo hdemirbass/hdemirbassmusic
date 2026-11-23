@@ -1,16 +1,16 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.LyricsEntity
-import com.convx.music.lyrics.LyricsSyncLevel
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.lyrics.LyricsSyncLevel
 import kotlinx.coroutines.flow.combine
-import com.convx.music.lyrics.LyricsProviderRegistry
-import com.convx.music.lyrics.LyricsProviderRepository
-import com.convx.music.lyrics.LyricsProviderStatus
-import com.convx.music.lyrics.LyricsTranslationHelper
-import com.convx.music.models.MediaMetadata
+import com.hdemirbassmusic.music.lyrics.LyricsProviderRegistry
+import com.hdemirbassmusic.music.lyrics.LyricsProviderRepository
+import com.hdemirbassmusic.music.lyrics.LyricsProviderStatus
+import com.hdemirbassmusic.music.lyrics.LyricsTranslationHelper
+import com.hdemirbassmusic.music.models.MediaMetadata
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

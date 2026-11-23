@@ -1,9 +1,9 @@
 @file:OptIn(ExperimentalTextApi::class)
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.Manifest
 import android.app.NotificationManager
 import android.content.Context
@@ -77,17 +77,17 @@ import androidx.compose.material.icons.rounded.BlurOn
 import androidx.compose.material.icons.rounded.Forum
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFEllipsisBubble
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.Card
 import androidx.compose.material3.CardDefaults
-import com.convx.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
 import androidx.compose.material3.LargeFloatingActionButton
-import com.convx.music.ui.ios.compat.ListItem
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.ListItem
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -132,11 +132,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
-import com.convx.music.constants.IsFirstRunKey
-import com.convx.music.ui.theme.ConvxTheme
-import com.convx.music.ui.utils.safeOpenUri
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.constants.IsFirstRunKey
+import com.hdemirbassmusic.music.ui.theme.hdemirbassmusicTheme
+import com.hdemirbassmusic.music.ui.utils.safeOpenUri
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlin.math.absoluteValue
@@ -161,7 +161,7 @@ class WelcomeActivity : ComponentActivity() {
 
         enableEdgeToEdge()
         setContent {
-            ConvxTheme {
+            hdemirbassmusicTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = AppTheme.colorScheme.background
@@ -193,7 +193,7 @@ class WelcomeActivity : ComponentActivity() {
 @OptIn(ExperimentalTextApi::class)
 val GoogleSansFlex = FontFamily(
     Font(
-        resId = com.convx.music.R.font.google_sans_flex,
+        resId = com.hdemirbassmusic.music.R.font.google_sans_flex,
         weight = FontWeight.Normal,
         style = FontStyle.Normal,
         variationSettings = FontVariation.Settings(
@@ -221,7 +221,7 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
 
     val customWelcomeFontFamily = FontFamily(
         Font(
-            resId = com.convx.music.R.font.sans_flex,
+            resId = com.hdemirbassmusic.music.R.font.sans_flex,
             variationSettings = FontVariation.Settings(
                 FontVariation.slant(-9f),
                 FontVariation.width(111f),
@@ -302,12 +302,12 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                     Spacer(modifier = Modifier.height(80.dp))
 
                     Text(
-                        text = stringResource(com.convx.music.R.string.welcome_to),
+                        text = stringResource(com.hdemirbassmusic.music.R.string.welcome_to),
                         style = thinHeaderStyle,
                         color = AppTheme.colorScheme.onBackground
                     )
                     Text(
-                        text = stringResource(com.convx.music.R.string.app_name).uppercase(),
+                        text = stringResource(com.hdemirbassmusic.music.R.string.app_name).uppercase(),
                         fontFamily = GoogleSansFlex,
                         fontWeight = FontWeight.Bold,
                         fontSize = 48.sp,
@@ -356,7 +356,7 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                         Spacer(modifier = Modifier.height(32.dp))
 
                         Text(
-                            text = stringResource(com.convx.music.R.string.welcome_preparing_subtitle),
+                            text = stringResource(com.hdemirbassmusic.music.R.string.welcome_preparing_subtitle),
                             fontFamily = GoogleSansFlex,
                             style = AppTheme.typography.bodyLarge,
                             color = AppTheme.colorScheme.onSurfaceVariant,
@@ -376,12 +376,12 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                     Spacer(modifier = Modifier.height(80.dp))
 
                     Text(
-                        text = stringResource(com.convx.music.R.string.perm_required),
+                        text = stringResource(com.hdemirbassmusic.music.R.string.perm_required),
                         style = thinHeaderStyle,
                         color = AppTheme.colorScheme.onBackground
                     )
                     Text(
-                        text = stringResource(com.convx.music.R.string.perm_permissions),
+                        text = stringResource(com.hdemirbassmusic.music.R.string.perm_permissions),
                         fontFamily = GoogleSansFlex,
                         fontWeight = FontWeight.Bold,
                         fontSize = 48.sp,
@@ -392,7 +392,7 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                     Spacer(modifier = Modifier.height(16.dp))
 
                     Text(
-                        text = stringResource(com.convx.music.R.string.perm_intro_text),
+                        text = stringResource(com.hdemirbassmusic.music.R.string.perm_intro_text),
                         style = AppTheme.typography.bodyLarge.copy(
                             fontFamily = GoogleSansFlex
                         ),
@@ -410,8 +410,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                             icon = rememberVectorPainter(Icons.Rounded.Notifications),
                             iconColor = Color(0xFFffaee4),
                             iconTint = Color(0xFF8d0053),
-                            title = stringResource(com.convx.music.R.string.perm_notif_title),
-                            description = stringResource(com.convx.music.R.string.perm_notif_desc),
+                            title = stringResource(com.hdemirbassmusic.music.R.string.perm_notif_title),
+                            description = stringResource(com.hdemirbassmusic.music.R.string.perm_notif_desc),
                             shape = if (BuildConfig.FLAVOR.contains("gms", ignoreCase = true)) topCardShape else RoundedCornerShape(20.dp),
                             control = {
                                 Switch(
@@ -459,8 +459,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                 icon = rememberVectorPainter(Icons.Rounded.SystemUpdate),
                                 iconColor = Color(0xFFffb683),
                                 iconTint = Color(0xFF753403),
-                                title = stringResource(com.convx.music.R.string.perm_install_title),
-                                description = stringResource(com.convx.music.R.string.perm_install_desc),
+                                title = stringResource(com.hdemirbassmusic.music.R.string.perm_install_title),
+                                description = stringResource(com.hdemirbassmusic.music.R.string.perm_install_desc),
                                 shape = bottomCardShape,
                                 control = {
                                     SymbolIcon(symbol = if (canInstallPackages) sf("checkmark") else sf("chevron.right"), contentDescription = null, tint = if (canInstallPackages) AppTheme.colorScheme.primary else AppTheme.colorScheme.onSurfaceVariant)
@@ -507,7 +507,7 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                     Spacer(modifier = Modifier.height(16.dp))
 
                     Text(
-                        text = "Convx is open-source and depends on community support to grow. Your help makes a difference!",
+                        text = "hdemirbassmusic is open-source and depends on community support to grow. Your help makes a difference!",
                         style = AppTheme.typography.bodyLarge.copy(
                             fontFamily = GoogleSansFlex
                         ),
@@ -532,7 +532,7 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                 SymbolIcon(symbol = sf("chevron.right"), contentDescription = null, tint = AppTheme.colorScheme.onSurfaceVariant)
                             },
                             onClick = {
-                                uriHandler.safeOpenUri(context, "https://github.com/cosmictaserdev-creator/Convx")
+                                uriHandler.safeOpenUri(context, "https://github.com/cosmictaserdev-creator/hdemirbassmusic")
                             }
                         )
 
@@ -568,12 +568,12 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
 
                     Column(modifier = Modifier.padding(bottom = 16.dp)) {
                         Text(
-                            text = stringResource(com.convx.music.R.string.feat_discover),
+                            text = stringResource(com.hdemirbassmusic.music.R.string.feat_discover),
                             style = thinHeaderStyle,
                             color = AppTheme.colorScheme.onBackground
                         )
                         Text(
-                            text = stringResource(com.convx.music.R.string.feat_features),
+                            text = stringResource(com.hdemirbassmusic.music.R.string.feat_features),
                             fontFamily = GoogleSansFlex,
                             fontWeight = FontWeight.Bold,
                             fontSize = 48.sp,
@@ -584,7 +584,7 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                         Spacer(modifier = Modifier.height(16.dp))
 
                         Text(
-                            text = stringResource(com.convx.music.R.string.feat_intro),
+                            text = stringResource(com.hdemirbassmusic.music.R.string.feat_intro),
                             style = AppTheme.typography.bodyLarge.copy(
                                 fontFamily = GoogleSansFlex
                             ),
@@ -615,8 +615,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                 icon = rememberVectorPainter(Icons.Rounded.Lyrics),
                                 iconColor = Color(0xFFffaee4),
                                 iconTint = Color(0xFF8d0053),
-                                title = stringResource(com.convx.music.R.string.feat_lyrics_title),
-                                description = stringResource(com.convx.music.R.string.feat_lyrics_desc),
+                                title = stringResource(com.hdemirbassmusic.music.R.string.feat_lyrics_title),
+                                description = stringResource(com.hdemirbassmusic.music.R.string.feat_lyrics_desc),
                                 shape = topCardShape
                             )
 
@@ -627,8 +627,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                 iconColor = Color(0xFF80da88),
                                 iconTint = Color(0xFF00522c),
                                 shape = middleCardShape,
-                                title = stringResource(com.convx.music.R.string.feat_download_title),
-                                description = stringResource(com.convx.music.R.string.feat_download_desc)
+                                title = stringResource(com.hdemirbassmusic.music.R.string.feat_download_title),
+                                description = stringResource(com.hdemirbassmusic.music.R.string.feat_download_desc)
                             )
 
                             Spacer(modifier = Modifier.height(2.dp))
@@ -637,8 +637,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                 icon = rememberVectorPainter(Icons.Rounded.HighQuality),
                                 iconColor = Color(0xFFffb683),
                                 iconTint = Color(0xFF753403),
-                                title = stringResource(com.convx.music.R.string.feat_quality_title),
-                                description = stringResource(com.convx.music.R.string.feat_quality_desc),
+                                title = stringResource(com.hdemirbassmusic.music.R.string.feat_quality_title),
+                                description = stringResource(com.hdemirbassmusic.music.R.string.feat_quality_desc),
                                 shape = middleCardShape
                             )
 
@@ -648,8 +648,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                 icon = rememberVectorPainter(Icons.Rounded.BlurOn),
                                 iconColor = Color(0xFFcabeff),
                                 iconTint = Color(0xFF1c0062),
-                                title = stringResource(com.convx.music.R.string.feat_glass_title),
-                                description = stringResource(com.convx.music.R.string.feat_glass_desc),
+                                title = stringResource(com.hdemirbassmusic.music.R.string.feat_glass_title),
+                                description = stringResource(com.hdemirbassmusic.music.R.string.feat_glass_desc),
                                 shape = middleCardShape
                             )
 
@@ -659,8 +659,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                 icon = rememberVectorPainter(Icons.Rounded.Forum),
                                 iconColor = Color(0xFF67d4ff),
                                 iconTint = Color(0xFF004e5d),
-                                title = stringResource(com.convx.music.R.string.feat_discord_title),
-                                description = stringResource(com.convx.music.R.string.feat_discord_desc),
+                                title = stringResource(com.hdemirbassmusic.music.R.string.feat_discord_title),
+                                description = stringResource(com.hdemirbassmusic.music.R.string.feat_discord_desc),
                                 shape = middleCardShape
                             )
 
@@ -671,8 +671,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                     icon = rememberVectorPainter(Icons.Rounded.SystemUpdate),
                                     iconColor = Color(0xFF67d4ff),
                                     iconTint = Color(0xFF004e5d),
-                                    title = stringResource(com.convx.music.R.string.feat_update_title),
-                                    description = stringResource(com.convx.music.R.string.feat_update_desc),
+                                    title = stringResource(com.hdemirbassmusic.music.R.string.feat_update_title),
+                                    description = stringResource(com.hdemirbassmusic.music.R.string.feat_update_desc),
                                     shape = middleCardShape
                                 )
                             }
@@ -683,8 +683,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                 icon = rememberVectorPainter(Icons.Rounded.Gavel),
                                 iconColor = Color(0xFFb6c6ed),
                                 iconTint = Color(0xFF001b3f),
-                                title = stringResource(com.convx.music.R.string.feat_license_title),
-                                description = stringResource(com.convx.music.R.string.feat_license_desc),
+                                title = stringResource(com.hdemirbassmusic.music.R.string.feat_license_title),
+                                description = stringResource(com.hdemirbassmusic.music.R.string.feat_license_desc),
                                 shape = middleCardShape
                             )
 
@@ -694,8 +694,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                                 icon = rememberVectorPainter(Icons.Rounded.Terminal),
                                 iconColor = Color(0xFFcabeff),
                                 iconTint = Color(0xFF1c0062),
-                                title = stringResource(com.convx.music.R.string.feat_github_title),
-                                description = stringResource(com.convx.music.R.string.feat_github_desc),
+                                title = stringResource(com.hdemirbassmusic.music.R.string.feat_github_title),
+                                description = stringResource(com.hdemirbassmusic.music.R.string.feat_github_desc),
                                 shape = bottomCardShape
                             )
 
@@ -827,7 +827,7 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                         .alpha(alphaBack)
                 ) {
                     WelcomeExpressiveButton(
-                        text = stringResource(com.convx.music.R.string.back_button_desc),
+                        text = stringResource(com.hdemirbassmusic.music.R.string.back_button_desc),
                         onClick = {
                             if (!isFirstPage) {
                                 scope.launch {
@@ -860,8 +860,8 @@ fun WelcomePagerScreen(onFinished: () -> Unit) {
                     )
 
                     WelcomeExpressiveButton(
-                        text = if (isLastPage) stringResource(com.convx.music.R.string.get_started) else stringResource(
-                            com.convx.music.R.string.next
+                        text = if (isLastPage) stringResource(com.hdemirbassmusic.music.R.string.get_started) else stringResource(
+                            com.hdemirbassmusic.music.R.string.next
                         ),
                         onClick = {
                             if (isLastPage) {
@@ -906,7 +906,7 @@ fun RotatingShapeContainer(modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center
     ) {
         Icon(
-            painter = painterResource(id = com.convx.music.R.drawable.ic_ten_sided_cookie),
+            painter = painterResource(id = com.hdemirbassmusic.music.R.drawable.ic_ten_sided_cookie),
             contentDescription = null,
             tint = primaryColor,
             modifier = Modifier
@@ -915,7 +915,7 @@ fun RotatingShapeContainer(modifier: Modifier = Modifier) {
         )
 
         Icon(
-            painter = painterResource(com.convx.music.R.drawable.convx_logo),
+            painter = painterResource(com.hdemirbassmusic.music.R.drawable.convx_logo),
             contentDescription = null,
             modifier = Modifier.size(150.dp),
             tint = backgroundColor

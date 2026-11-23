@@ -1,4 +1,4 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.os.SystemClock
 import android.util.Log
@@ -10,18 +10,18 @@ import androidx.media3.common.Player
 import androidx.media3.common.Timeline
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
-import com.convx.music.data.settings.AppSettings
-import com.convx.music.data.settings.SmartAnalysis
-import com.convx.music.data.settings.TrackAnalysisState
-import com.convx.music.data.settings.TransitionWindow
-import com.convx.music.playback.smart.CrossfadeMode
-import com.convx.music.playback.smart.TrackAnalysis
-import com.convx.music.playback.smart.TransitionPlan
-import com.convx.music.playback.smart.TransitionStyle
-import com.convx.music.playback.smart.TransitionTrackInfo
-import com.convx.music.playback.smart.planTransition
-import com.convx.music.playback.audio.DjMixTier
-import com.convx.music.playback.audio.DjFilterAudioProcessor
+import com.hdemirbassmusic.music.data.settings.AppSettings
+import com.hdemirbassmusic.music.data.settings.SmartAnalysis
+import com.hdemirbassmusic.music.data.settings.TrackAnalysisState
+import com.hdemirbassmusic.music.data.settings.TransitionWindow
+import com.hdemirbassmusic.music.playback.smart.CrossfadeMode
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.playback.smart.TransitionPlan
+import com.hdemirbassmusic.music.playback.smart.TransitionStyle
+import com.hdemirbassmusic.music.playback.smart.TransitionTrackInfo
+import com.hdemirbassmusic.music.playback.smart.planTransition
+import com.hdemirbassmusic.music.playback.audio.DjMixTier
+import com.hdemirbassmusic.music.playback.audio.DjFilterAudioProcessor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -41,7 +41,7 @@ class CrossfadeController(
     private val requestAnalysis: (MediaItem, Long) -> Unit = { _, _ -> },
     private val filters: TransitionFilters = TransitionFilters.None,
     private val analysisRunningFor: (MediaItem) -> Boolean = { false },
-    private val djEngine: com.convx.music.playback.dj.DjEngine? = null,
+    private val djEngine: com.hdemirbassmusic.music.playback.dj.DjEngine? = null,
     private val warmUpcoming: () -> Unit = {},
     private val allowed: () -> Boolean = { true },
 ) {
@@ -749,7 +749,7 @@ class CrossfadeController(
     private fun fallGain(progress: Float): Float = CrossfadeEnvelope.outgoingGain(progress)
 
     private companion object {
-        const val TAG = "ConvxCrossfade"
+        const val TAG = "hdemirbassmusicCrossfade"
 
         const val DEFAULT_SMART_FALLBACK_SECONDS = 6.0
 

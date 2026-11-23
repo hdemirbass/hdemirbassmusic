@@ -1,4 +1,4 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

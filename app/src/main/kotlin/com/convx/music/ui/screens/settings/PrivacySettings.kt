@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsetsSides
@@ -17,11 +17,11 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.Composable
@@ -35,18 +35,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.DisableScreenshotKey
-import com.convx.music.history.ListenHistoryRepository
-import com.convx.music.history.ListenHistorySettingsRepository
-import com.convx.music.history.ListenHistorySettingsState
-import com.convx.music.search.SearchHistoryCommands
-import com.convx.music.search.SearchHistorySettingsRepository
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.DisableScreenshotKey
+import com.hdemirbassmusic.music.history.ListenHistoryRepository
+import com.hdemirbassmusic.music.history.ListenHistorySettingsRepository
+import com.hdemirbassmusic.music.history.ListenHistorySettingsState
+import com.hdemirbassmusic.music.search.SearchHistoryCommands
+import com.hdemirbassmusic.music.search.SearchHistorySettingsRepository
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
 

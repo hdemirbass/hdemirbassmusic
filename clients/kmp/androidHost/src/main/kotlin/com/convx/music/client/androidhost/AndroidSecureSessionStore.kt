@@ -1,10 +1,10 @@
-package com.convx.music.client.androidhost
+package com.hdemirbassmusic.music.client.androidhost
 
 import android.content.Context
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import android.util.Base64
-import com.convx.music.account.SecureSessionStore
+import com.hdemirbassmusic.music.account.SecureSessionStore
 import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
@@ -63,7 +63,7 @@ internal class AndroidSecureSessionStore(context: Context) : SecureSessionStore 
 
     private companion object {
         const val ANDROID_KEY_STORE = "AndroidKeyStore"
-        const val KEY_ALIAS = "com.convx.music.youtube-session"
+        const val KEY_ALIAS = "com.hdemirbassmusic.music.youtube-session"
         const val PREFERENCES = "secure-youtube-session"
         const val SESSION_KEY = "session"
         const val TRANSFORMATION = "AES/GCM/NoPadding"

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -11,10 +11,10 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.Timeline
-import com.convx.music.db.entities.LyricsEntity
-import com.convx.music.db.entities.Song
-import com.convx.music.models.MediaMetadata
-import com.convx.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.playback.PlayerConnection
 
 /** Shared state collected once for player skins. Fields remain [State] handles so each skin
  * observes only the values it reads. [connection] also provides imperative player actions.
@@ -67,5 +67,5 @@ fun rememberPlayerUiState(connection: PlayerConnection): PlayerUiState {
 
 /** Collects the result of an explicit video request. */
 @Composable
-fun PlayerUiState.rememberVideoStreamLookup(): State<com.convx.music.playback.VideoStreamLookup> =
+fun PlayerUiState.rememberVideoStreamLookup(): State<com.hdemirbassmusic.music.playback.VideoStreamLookup> =
     connection.videoStreamLookup.collectAsStateWithLifecycle()

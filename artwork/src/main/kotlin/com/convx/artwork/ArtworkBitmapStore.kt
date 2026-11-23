@@ -1,4 +1,4 @@
-package com.convx.artwork
+package com.hdemirbassmusic.artwork
 
 import android.graphics.Bitmap
 import androidx.compose.runtime.Stable

@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.constants
+package com.hdemirbassmusic.music.constants
 
-import com.convx.music.ui.screens.OptionStats
+import com.hdemirbassmusic.music.ui.screens.OptionStats
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 

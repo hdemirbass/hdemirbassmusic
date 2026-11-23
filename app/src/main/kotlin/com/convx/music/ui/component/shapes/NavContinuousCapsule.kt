@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.component.shapes
+package com.hdemirbassmusic.music.ui.component.shapes
 
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.foundation.shape.CornerSize

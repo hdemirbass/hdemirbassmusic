@@ -1,4 +1,4 @@
-package com.convx.music.catalog.presentation
+package com.hdemirbassmusic.music.catalog.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -14,16 +14,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.convx.music.designsystem.ConvxDesignTokens
-import com.convx.music.ui.ios.component.IosText
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.ProvideIosTheme
-import com.convx.music.ui.ios.foundation.darkIosColors
-import com.convx.music.ui.ios.foundation.iosTypography
+import com.hdemirbassmusic.music.designsystem.hdemirbassmusicDesignTokens
+import com.hdemirbassmusic.music.ui.ios.component.IosText
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.ProvideIosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.darkIosColors
+import com.hdemirbassmusic.music.ui.ios.foundation.iosTypography
 
 /** Shared client chrome used by the iOS and Android KMP hosts. */
 @Composable
-fun ConvxMusicClientShell(
+fun hdemirbassmusicMusicClientShell(
     accountSubtitle: String,
     accountActionLabel: String,
     accountActionEnabled: Boolean,
@@ -32,11 +32,11 @@ fun ConvxMusicClientShell(
     onModulesAction: (() -> Unit)? = null,
     content: @Composable (Modifier) -> Unit,
 ) {
-    ProvideIosTheme(colors = darkIosColors(), typography = iosTypography(com.convx.music.designsystem.convxFontFamily())) {
+    ProvideIosTheme(colors = darkIosColors(), typography = iosTypography(com.hdemirbassmusic.music.designsystem.hdemirbassmusicFontFamily())) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(ConvxDesignTokens.Colors.Background),
+                .background(hdemirbassmusicDesignTokens.Colors.Background),
         ) {
             Row(
                 modifier = Modifier
@@ -47,7 +47,7 @@ fun ConvxMusicClientShell(
             ) {
                 Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
                     IosText(
-                        text = "Convx Music",
+                        text = "hdemirbassmusic Music",
                         style = IosTheme.typography.title2,
                         color = IosTheme.colors.label,
                     )
@@ -67,8 +67,8 @@ fun ConvxMusicClientShell(
                 Row(
                     modifier = Modifier
                         .background(
-                            color = if (accountActionEnabled) ConvxDesignTokens.Colors.AccentRed
-                            else ConvxDesignTokens.Colors.CardSecondary,
+                            color = if (accountActionEnabled) hdemirbassmusicDesignTokens.Colors.AccentRed
+                            else hdemirbassmusicDesignTokens.Colors.CardSecondary,
                             shape = RoundedCornerShape(18.dp),
                         )
                         .clickable(enabled = accountActionEnabled, onClick = onAccountAction)

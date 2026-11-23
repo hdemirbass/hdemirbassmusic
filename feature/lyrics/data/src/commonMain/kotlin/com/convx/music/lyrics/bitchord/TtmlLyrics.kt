@@ -1,5 +1,5 @@
 /** Adapted from BitChord (kushagrasinghx/BitChord), GPL-3.0. See NOTICE. */
-package com.convx.music.lyrics.bitchord
+package com.hdemirbassmusic.music.lyrics.bitchord
 
 import com.fleeksoft.ksoup.Ksoup
 import com.fleeksoft.ksoup.nodes.Document

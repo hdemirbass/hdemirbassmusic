@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -28,12 +28,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.convx.music.R
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.utils.CrashHandler
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.utils.CrashHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -54,7 +54,7 @@ fun CrashLogsSettingsScreen(navController: NavController) {
         horizontalPadding = 16.dp,
     ) {
         Text(
-            text = "If Convx closes unexpectedly, its latest crash report appears here. You can copy or share it when asking for help.",
+            text = "If hdemirbassmusic closes unexpectedly, its latest crash report appears here. You can copy or share it when asking for help.",
             style = IosTheme.typography.body,
             color = IosTheme.colors.secondaryLabel,
             modifier = Modifier.padding(horizontal = 4.dp, vertical = 8.dp),
@@ -115,13 +115,13 @@ fun CrashLogsSettingsScreen(navController: NavController) {
 
 private fun copyReport(context: Context, report: String) {
     val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-    clipboard.setPrimaryClip(ClipData.newPlainText("Convx crash report", report))
+    clipboard.setPrimaryClip(ClipData.newPlainText("hdemirbassmusic crash report", report))
 }
 
 private fun shareReport(context: Context, report: String) {
     val send = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"
-        putExtra(Intent.EXTRA_SUBJECT, "Convx crash report")
+        putExtra(Intent.EXTRA_SUBJECT, "hdemirbassmusic crash report")
         putExtra(Intent.EXTRA_TEXT, report)
     }
     context.startActivity(Intent.createChooser(send, "Share crash report"))

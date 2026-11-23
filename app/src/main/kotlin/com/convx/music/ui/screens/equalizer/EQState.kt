@@ -1,6 +1,6 @@
-package com.convx.music.ui.screens.equalizer
+package com.hdemirbassmusic.music.ui.screens.equalizer
 
-import com.convx.music.eq.data.SavedEQProfile
+import com.hdemirbassmusic.music.eq.data.SavedEQProfile
 
 /**
  * UI State for EQ Screen

@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.menuBottomInset
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.menuBottomInset
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.Configuration
@@ -28,13 +28,13 @@ import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -65,31 +65,31 @@ import androidx.media3.exoplayer.offline.Download.STATE_STOPPED
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.ListItemHeight
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.SpeedDialItem
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.DownloadTarget
-import com.convx.music.playback.combinedDownloadState
-import com.convx.music.playback.cancelDownloads
-import com.convx.music.playback.downloadSongs
-import com.convx.music.playback.removeDownloads
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.AlbumListItem
-import com.convx.music.ui.component.ListDialog
-import com.convx.music.ui.component.ListItem
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
-import com.convx.music.ui.component.NewAction
-import com.convx.music.ui.component.NewActionGrid
-import com.convx.music.ui.component.SongListItem
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ListItemHeight
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.SpeedDialItem
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.DownloadTarget
+import com.hdemirbassmusic.music.playback.combinedDownloadState
+import com.hdemirbassmusic.music.playback.cancelDownloads
+import com.hdemirbassmusic.music.playback.downloadSongs
+import com.hdemirbassmusic.music.playback.removeDownloads
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.AlbumListItem
+import com.hdemirbassmusic.music.ui.component.ListDialog
+import com.hdemirbassmusic.music.ui.component.ListItem
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.ui.component.NewAction
+import com.hdemirbassmusic.music.ui.component.NewActionGrid
+import com.hdemirbassmusic.music.ui.component.SongListItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -116,24 +116,24 @@ fun AlbumMenu(
     var showSplitNotice by androidx.compose.runtime.saveable.rememberSaveable { androidx.compose.runtime.mutableStateOf(false) }
     var showCoverSearch by androidx.compose.runtime.saveable.rememberSaveable { androidx.compose.runtime.mutableStateOf(false) }
     if (showCoverSearch) {
-        com.convx.music.ui.component.CoverSearchDialog(
+        com.hdemirbassmusic.music.ui.component.CoverSearchDialog(
             initialQuery = "${album.album.title} ${album.artists.firstOrNull()?.name.orEmpty()}".trim(),
             onDismiss = { showCoverSearch = false },
-            apply = { url -> com.convx.music.utils.SongBundle.applyAlbumCover(context, database, album.id, url) },
+            apply = { url -> com.hdemirbassmusic.music.utils.SongBundle.applyAlbumCover(context, database, album.id, url) },
         )
     }
-    val (stemQuality) = com.convx.music.utils.rememberEnumPreference(com.convx.music.constants.StemQualityKey, com.convx.music.playback.smart.StemQuality.FAST)
-    val stemCount = if (stemQuality == com.convx.music.playback.smart.StemQuality.DEMUCS && com.convx.music.playback.smart.DemucsModel.isInstalled(context)) 4 else 2
+    val (stemQuality) = com.hdemirbassmusic.music.utils.rememberEnumPreference(com.hdemirbassmusic.music.constants.StemQualityKey, com.hdemirbassmusic.music.playback.smart.StemQuality.FAST)
+    val stemCount = if (stemQuality == com.hdemirbassmusic.music.playback.smart.StemQuality.DEMUCS && com.hdemirbassmusic.music.playback.smart.DemucsModel.isInstalled(context)) 4 else 2
     if (showSplitNotice) {
-        val eligible = songs.filter { (it.song.isLocal || it.song.isDownloaded) && it.song.duration in 1..com.convx.music.playback.smart.StemSeparator.MAX_SECONDS }
-        com.convx.music.ui.component.StemNoticeDialog(
-            bytes = eligible.sumOf { com.convx.music.playback.smart.StemStore.estimatedBytes(it.song.duration, stemCount) },
+        val eligible = songs.filter { (it.song.isLocal || it.song.isDownloaded) && it.song.duration in 1..com.hdemirbassmusic.music.playback.smart.StemSeparator.MAX_SECONDS }
+        com.hdemirbassmusic.music.ui.component.StemNoticeDialog(
+            bytes = eligible.sumOf { com.hdemirbassmusic.music.playback.smart.StemStore.estimatedBytes(it.song.duration, stemCount) },
             onDismiss = { showSplitNotice = false },
             onConfirm = {
                 showSplitNotice = false
-                com.convx.music.playback.dj.LibraryAnalysis.analyze(
+                com.hdemirbassmusic.music.playback.dj.LibraryAnalysis.analyze(
                     context,
-                    eligible.map { com.convx.music.playback.dj.LibraryAnalysis.Target(it.id, it.song.duration, it.song.title, stems = true) },
+                    eligible.map { com.hdemirbassmusic.music.playback.dj.LibraryAnalysis.Target(it.id, it.song.duration, it.song.title, stems = true) },
                 )
                 onDismiss()
             },
@@ -363,10 +363,10 @@ fun AlbumMenu(
                         },
                         text = stringResource(R.string.analyze_album),
                         onClick = {
-                            com.convx.music.playback.dj.LibraryAnalysis.analyze(
+                            com.hdemirbassmusic.music.playback.dj.LibraryAnalysis.analyze(
                                 context,
                                 songs.filter { it.song.isLocal || it.song.isDownloaded }.map {
-                                    com.convx.music.playback.dj.LibraryAnalysis.Target(it.id, it.song.duration, it.song.title)
+                                    com.hdemirbassmusic.music.playback.dj.LibraryAnalysis.Target(it.id, it.song.duration, it.song.title)
                                 },
                             )
                             onDismiss()
@@ -389,7 +389,7 @@ fun AlbumMenu(
                             val intent = Intent().apply {
                                 action = Intent.ACTION_SEND
                                 type = "text/plain"
-                                putExtra(Intent.EXTRA_TEXT, com.convx.music.utils.ShareUtils.albumUrl(album.album.playlistId ?: album.id))
+                                putExtra(Intent.EXTRA_TEXT, com.hdemirbassmusic.music.utils.ShareUtils.albumUrl(album.album.playlistId ?: album.id))
                             }
                             context.startActivity(Intent.createChooser(intent, null))
                         }

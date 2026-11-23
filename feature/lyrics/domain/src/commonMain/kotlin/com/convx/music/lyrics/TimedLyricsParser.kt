@@ -1,6 +1,6 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
-/** Parses Convx's standard and rich-sync lyric rows without Android APIs. */
+/** Parses hdemirbassmusic's standard and rich-sync lyric rows without Android APIs. */
 object TimedLyricsParser {
     val LINE_REGEX = "((\\[\\d\\d:\\d\\d\\.\\d{2,3}\\] ?)+)(.+)".toRegex()
     val TIME_REGEX = "\\[(\\d\\d):(\\d\\d)\\.(\\d{2,3})\\]".toRegex()

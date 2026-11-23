@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -37,9 +37,9 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
-import com.convx.music.ui.component.MenuAnchor
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.ios.foundation.LocalIosBackdrop
+import com.hdemirbassmusic.music.ui.component.MenuAnchor
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosBackdrop
 import kotlin.math.roundToInt
 import kotlinx.coroutines.launch
 

@@ -1,9 +1,9 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.ui.screens.library.LocalMusicViewModel
-import com.convx.music.ui.screens.library.apple.AppleLibraryViewModel
-import com.convx.music.ui.screens.library.apple.AppleLocalSongsViewModel
-import com.convx.music.viewmodels.LocalHomeViewModel
+import com.hdemirbassmusic.music.ui.screens.library.LocalMusicViewModel
+import com.hdemirbassmusic.music.ui.screens.library.apple.AppleLibraryViewModel
+import com.hdemirbassmusic.music.ui.screens.library.apple.AppleLocalSongsViewModel
+import com.hdemirbassmusic.music.viewmodels.LocalHomeViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

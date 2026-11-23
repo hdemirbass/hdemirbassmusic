@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -37,22 +37,22 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.fastForEachIndexed
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import com.convx.music.R
-import com.convx.music.constants.GridCardArtShape
-import com.convx.music.constants.ListRowArtShape
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.db.entities.Song
-import com.convx.music.library.PlaylistCardData
-import com.convx.music.library.LocalPlaylistSongDataSource
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.playback.displayDownloadState
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.resize
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.ui.utils.sharedTitleSource
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.GridCardArtShape
+import com.hdemirbassmusic.music.constants.ListRowArtShape
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.library.PlaylistCardData
+import com.hdemirbassmusic.music.library.LocalPlaylistSongDataSource
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.playback.displayDownloadState
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.sharedTitleSource
 import org.koin.compose.koinInject
 
 @Composable
@@ -123,8 +123,8 @@ fun PlaylistListItem(
             if (thumbnailOverrideUrl != null) {
                 AsyncImage(
                     model = thumbnailOverrideUrl,
-                    onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(
-                        com.convx.music.ui.utils.rememberArtworkSourceOwner(), thumbnailOverrideUrl,
+                    onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(
+                        com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner(), thumbnailOverrideUrl,
                     ),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
@@ -248,8 +248,8 @@ fun PlaylistGridItem(
             if (thumbnailOverrideUrl != null) {
                 AsyncImage(
                     model = thumbnailOverrideUrl,
-                    onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(
-                        com.convx.music.ui.utils.rememberArtworkSourceOwner(), thumbnailOverrideUrl,
+                    onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(
+                        com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner(), thumbnailOverrideUrl,
                     ),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
@@ -323,8 +323,8 @@ fun PlaylistThumbnail(
             placeHolder()
         }
         1 -> AsyncImage(
-            onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(
-                com.convx.music.ui.utils.rememberArtworkSourceOwner(), thumbnails[0],
+            onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(
+                com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner(), thumbnails[0],
             ),
             model = remember(thumbnails, targetPx) {
                 val resolvedUrl = thumbnails[0].resize(targetPx, targetPx)

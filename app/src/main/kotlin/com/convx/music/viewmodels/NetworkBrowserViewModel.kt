@@ -1,21 +1,21 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.common.MediaItem
-import com.convx.music.db.MusicDatabase
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.utils.NetworkLibraryImporter
-import com.convx.storage.data.NetworkMusicRepository
-import com.convx.storage.domain.NetworkEntry
-import com.convx.storage.domain.NetworkMedia
-import com.convx.storage.domain.NetworkServer
-import com.convx.storage.domain.RemotePath
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.utils.NetworkLibraryImporter
+import com.hdemirbassmusic.storage.data.NetworkMusicRepository
+import com.hdemirbassmusic.storage.domain.NetworkEntry
+import com.hdemirbassmusic.storage.domain.NetworkMedia
+import com.hdemirbassmusic.storage.domain.NetworkServer
+import com.hdemirbassmusic.storage.domain.RemotePath
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.artist
+package com.hdemirbassmusic.music.ui.screens.artist
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.R
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.R
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -40,18 +40,18 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.ui.component.ArtistBlendStart
-import com.convx.music.ui.component.ArtistHeroImage
-import com.convx.music.ui.component.ContrastCircleButton
-import com.convx.music.ui.component.ListItem
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.theme.LocalAccentTextColor
-import com.convx.music.ui.theme.LocalMetadataColor
-import com.convx.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.component.ArtistBlendStart
+import com.hdemirbassmusic.music.ui.component.ArtistHeroImage
+import com.hdemirbassmusic.music.ui.component.ContrastCircleButton
+import com.hdemirbassmusic.music.ui.component.ListItem
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.theme.LocalAccentTextColor
+import com.hdemirbassmusic.music.ui.theme.LocalMetadataColor
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
 
 /**
  * Static preview of the artist header treatment — reference-style hero with the

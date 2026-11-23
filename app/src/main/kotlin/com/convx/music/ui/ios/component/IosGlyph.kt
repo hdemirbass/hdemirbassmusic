@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.component
+package com.hdemirbassmusic.music.ui.ios.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size
@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import com.composables.sfsymbols.SfSymbol
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 
 /**
  * An SF Symbol (or any glyph) fitted inside a [box] square *without* stretching it.
@@ -46,5 +46,5 @@ fun IosGlyph(symbol: SfSymbol, tint: Color, box: Dp, modifier: Modifier = Modifi
         symbol, contentDescription = null, modifier = modifier, size = box, tint = tint,
         bounceOnEnter = enterOnly, enterKey = if (enterOnly) symbol.name else null,
         // Same chrome as the tab bar, unless an enclosing menu already picked its own strength.
-        chrome = com.convx.music.ui.component.LocalSymbolChrome.current.takeIf { it > 0f } ?: com.convx.music.ui.utils.MenuIconChrome,
+        chrome = com.hdemirbassmusic.music.ui.component.LocalSymbolChrome.current.takeIf { it > 0f } ?: com.hdemirbassmusic.music.ui.utils.MenuIconChrome,
     )

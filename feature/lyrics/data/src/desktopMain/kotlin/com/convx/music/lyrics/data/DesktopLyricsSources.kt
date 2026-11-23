@@ -1,8 +1,8 @@
-package com.convx.music.lyrics.data
+package com.hdemirbassmusic.music.lyrics.data
 
-import com.convx.music.lyrics.bitchord.*
-import com.convx.music.lyrics.LyricsQuery
-import com.convx.music.lyrics.SharedLyricsSource
+import com.hdemirbassmusic.music.lyrics.bitchord.*
+import com.hdemirbassmusic.music.lyrics.LyricsQuery
+import com.hdemirbassmusic.music.lyrics.SharedLyricsSource
 import com.music.innertube.InnertubeRepository
 import com.music.innertube.models.WatchEndpoint
 import kotlinx.coroutines.Dispatchers

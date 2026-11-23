@@ -1,4 +1,4 @@
-package com.convx.music.search
+package com.hdemirbassmusic.music.search
 
 import kotlin.test.Test
 import kotlin.test.assertFalse
@@ -7,17 +7,17 @@ import kotlin.test.assertTrue
 class SearchHistorySettingsTest {
     @Test
     fun recordsNonemptyQueriesWhenHistoryIsEnabled() {
-        assertTrue(shouldRecordSearchQuery("convx", SearchHistorySettings()))
+        assertTrue(shouldRecordSearchQuery("hdemirbassmusic", SearchHistorySettings()))
     }
 
     @Test
     fun doesNotRecordQueriesWhenHistoryIsPaused() {
-        assertFalse(shouldRecordSearchQuery("convx", SearchHistorySettings(paused = true)))
+        assertFalse(shouldRecordSearchQuery("hdemirbassmusic", SearchHistorySettings(paused = true)))
     }
 
     @Test
     fun doesNotRecordQueriesBeforeSettingsAreLoaded() {
-        assertFalse(shouldRecordSearchQuery("convx", null))
+        assertFalse(shouldRecordSearchQuery("hdemirbassmusic", null))
     }
 
     @Test

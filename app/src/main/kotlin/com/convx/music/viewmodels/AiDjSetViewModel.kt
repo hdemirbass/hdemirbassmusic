@@ -1,17 +1,17 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.ai.AiDjSetBuilder
-import com.convx.music.ai.AiDjSetResult
-import com.convx.music.db.MusicDatabase
+import com.hdemirbassmusic.music.ai.AiDjSetBuilder
+import com.hdemirbassmusic.music.ai.AiDjSetResult
+import com.hdemirbassmusic.music.db.MusicDatabase
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

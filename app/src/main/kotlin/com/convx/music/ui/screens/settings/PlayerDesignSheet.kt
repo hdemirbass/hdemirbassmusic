@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import android.os.Build
 import androidx.compose.animation.AnimatedContent
@@ -59,42 +59,42 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.PlayerArtworkStyle
-import com.convx.music.constants.PlayerArtworkStyleKey
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.PlayerBackgroundStyleKey
-import com.convx.music.constants.PlayerGradientAngleKey
-import com.convx.music.constants.PlayerGradientStopsKey
-import com.convx.music.constants.PlayerLook
-import com.convx.music.constants.PlayerLookKey
-import com.convx.music.constants.PlayerStaticColorKey
-import com.convx.music.constants.ShowPlayerThumbnailShadowKey
-import com.convx.music.constants.ShowUpNextKey
-import com.convx.music.constants.HideVolumeBarKey
-import com.convx.music.constants.SliderStyle
-import com.convx.music.constants.SliderStyleKey
-import com.convx.music.constants.UseAppleMusicPlayerKey
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.MenuState
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.player.PlayerBackdropPreview
-import com.convx.music.ui.player.PlayerDesign
-import com.convx.music.ui.player.PlayerLookSpec
-import com.convx.music.ui.player.PlayerPhonePreview
-import com.convx.music.ui.player.PlayerSeekBarSample
-import com.convx.music.ui.player.PreviewTrack
-import com.convx.music.ui.player.rememberPreviewPosition
-import com.convx.music.ui.theme.decodeGradientStops
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyle
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyleKey
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyleKey
+import com.hdemirbassmusic.music.constants.PlayerGradientAngleKey
+import com.hdemirbassmusic.music.constants.PlayerGradientStopsKey
+import com.hdemirbassmusic.music.constants.PlayerLook
+import com.hdemirbassmusic.music.constants.PlayerLookKey
+import com.hdemirbassmusic.music.constants.PlayerStaticColorKey
+import com.hdemirbassmusic.music.constants.ShowPlayerThumbnailShadowKey
+import com.hdemirbassmusic.music.constants.ShowUpNextKey
+import com.hdemirbassmusic.music.constants.HideVolumeBarKey
+import com.hdemirbassmusic.music.constants.SliderStyle
+import com.hdemirbassmusic.music.constants.SliderStyleKey
+import com.hdemirbassmusic.music.constants.UseAppleMusicPlayerKey
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.MenuState
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.player.PlayerBackdropPreview
+import com.hdemirbassmusic.music.ui.player.PlayerDesign
+import com.hdemirbassmusic.music.ui.player.PlayerLookSpec
+import com.hdemirbassmusic.music.ui.player.PlayerPhonePreview
+import com.hdemirbassmusic.music.ui.player.PlayerSeekBarSample
+import com.hdemirbassmusic.music.ui.player.PreviewTrack
+import com.hdemirbassmusic.music.ui.player.rememberPreviewPosition
+import com.hdemirbassmusic.music.ui.theme.decodeGradientStops
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch

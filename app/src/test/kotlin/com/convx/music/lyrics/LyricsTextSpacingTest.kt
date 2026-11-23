@@ -1,4 +1,4 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

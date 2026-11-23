@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.extensions
+package com.hdemirbassmusic.music.extensions
 
 import androidx.sqlite.db.SimpleSQLiteQuery
 import java.net.InetSocketAddress
@@ -12,8 +12,8 @@ import java.net.InetSocketAddress.createUnresolved
 /** Enum names persisted before their constants were renamed, mapped to the current names. */
 @PublishedApi
 internal val legacyEnumNames = mapOf(
-    "VIVIMUSIC_1" to "CONVX_1",
-    "VIVIMUSIC" to "CONVX",
+    "VIVIMUSIC_1" to "hdemirbassmusic_1",
+    "VIVIMUSIC" to "hdemirbassmusic",
     "BITCHORD_MESH" to "FLUID_MESH",
 )
 

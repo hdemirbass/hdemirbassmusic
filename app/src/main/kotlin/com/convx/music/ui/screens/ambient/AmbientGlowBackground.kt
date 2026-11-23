@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.ambient
+package com.hdemirbassmusic.music.ui.screens.ambient
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.LinearEasing
@@ -35,7 +35,7 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.MediaMetadata
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

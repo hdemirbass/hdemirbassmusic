@@ -1,6 +1,6 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
-import com.convx.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.db.entities.SongEntity
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

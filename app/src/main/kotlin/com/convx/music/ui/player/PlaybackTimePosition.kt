@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 internal fun elapsedPlaybackSeconds(positionMillis: Long): Long = positionMillis.coerceAtLeast(0) / 1000
 

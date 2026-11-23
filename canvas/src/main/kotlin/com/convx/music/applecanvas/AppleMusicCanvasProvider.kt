@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-// Ported from cosmictaserdev-creator/convx (https://github.com/cosmictaserdev-creator/Convx), GPL-3.0.
+// Ported from cosmictaserdev-creator/hdemirbassmusic (https://github.com/cosmictaserdev-creator/hdemirbassmusic), GPL-3.0.
 
-package com.convx.music.applecanvas
+package com.hdemirbassmusic.music.applecanvas
 
-import com.convx.music.canvas.CanvasArtwork
+import com.hdemirbassmusic.music.canvas.CanvasArtwork
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

@@ -1,9 +1,9 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.compose.runtime.getValue
@@ -19,18 +19,18 @@ import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
 import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.pages.SearchSummaryPage
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.HideYoutubeShortsKey
-import com.convx.music.models.ItemsPage
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.HideYoutubeShortsKey
+import com.hdemirbassmusic.music.models.ItemsPage
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import java.net.URLDecoder
-import com.convx.music.utils.PageCaches
+import com.hdemirbassmusic.music.utils.PageCaches
 
 class OnlineSearchViewModel(
     val context: Context,
@@ -59,7 +59,7 @@ class OnlineSearchViewModel(
             PageCaches.searchSummaries
                 .get(query) { YouTube.searchSummary(query).onFailure { reportException(it) }.getOrNull() }
                 ?.let {
-                    com.convx.music.utils.AppleArt.prefetchArtistIds(it.summaries.flatMap { summary -> summary.items })
+                    com.hdemirbassmusic.music.utils.AppleArt.prefetchArtistIds(it.summaries.flatMap { summary -> summary.items })
                     val hideExplicit = context.dataStore.get(HideExplicitKey, false)
                     val hideVideoSongs = context.dataStore.get(HideVideoSongsKey, false) || context.dataStore.get(DataSaverEnabledKey, false)
                     val hideYoutubeShorts = context.dataStore.get(HideYoutubeShortsKey, false)
@@ -73,7 +73,7 @@ class OnlineSearchViewModel(
             PageCaches.searchResults
                 .get("$query|${filter.value}") { YouTube.search(query, filter).onFailure { reportException(it) }.getOrNull() }
                 ?.let { result ->
-                    com.convx.music.utils.AppleArt.prefetchArtistIds(result.items)
+                    com.hdemirbassmusic.music.utils.AppleArt.prefetchArtistIds(result.items)
                     val hideExplicit = context.dataStore.get(HideExplicitKey, false)
                     val hideVideoSongs = context.dataStore.get(HideVideoSongsKey, false) || context.dataStore.get(DataSaverEnabledKey, false)
                     val hideYoutubeShorts = context.dataStore.get(HideYoutubeShortsKey, false)

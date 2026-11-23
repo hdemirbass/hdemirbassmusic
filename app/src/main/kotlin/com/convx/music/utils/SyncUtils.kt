@@ -1,10 +1,10 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * the reference app Project Copyright (C) 2025
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
@@ -16,24 +16,24 @@ import com.music.innertube.models.SongItem
 import com.music.innertube.utils.completed
 import com.music.innertube.utils.parseCookieString
 import com.music.lastfm.LastFM
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.constants.LastFMUseSendLikes
-import com.convx.music.constants.LastFullSyncKey
-import com.convx.music.constants.SYNC_COOLDOWN
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.ArtistEntity
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.extensions.isInternetConnected
-import com.convx.music.extensions.isSyncEnabled
-import com.convx.music.library.PlaylistSyncAlbum
-import com.convx.music.library.PlaylistSyncArtist
-import com.convx.music.library.PlaylistSyncResult
-import com.convx.music.library.PlaylistSyncTrack
-import com.convx.music.library.PendingPlaylistDeletionRepository
-import com.convx.music.library.SyncPlaylistTracks
-import com.convx.music.library.planPlaylistDeletionSync
-import com.convx.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.constants.LastFMUseSendLikes
+import com.hdemirbassmusic.music.constants.LastFullSyncKey
+import com.hdemirbassmusic.music.constants.SYNC_COOLDOWN
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.ArtistEntity
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.extensions.isInternetConnected
+import com.hdemirbassmusic.music.extensions.isSyncEnabled
+import com.hdemirbassmusic.music.library.PlaylistSyncAlbum
+import com.hdemirbassmusic.music.library.PlaylistSyncArtist
+import com.hdemirbassmusic.music.library.PlaylistSyncResult
+import com.hdemirbassmusic.music.library.PlaylistSyncTrack
+import com.hdemirbassmusic.music.library.PendingPlaylistDeletionRepository
+import com.hdemirbassmusic.music.library.SyncPlaylistTracks
+import com.hdemirbassmusic.music.library.planPlaylistDeletionSync
+import com.hdemirbassmusic.music.models.toMediaMetadata
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope

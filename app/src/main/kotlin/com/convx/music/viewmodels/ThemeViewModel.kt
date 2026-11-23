@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import androidx.lifecycle.ViewModel
-import com.convx.music.ui.screens.settings.DarkMode
-import com.convx.music.ui.theme.DefaultThemeColor
+import com.hdemirbassmusic.music.ui.screens.settings.DarkMode
+import com.hdemirbassmusic.music.ui.theme.DefaultThemeColor
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -28,23 +28,23 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.core.view.doOnPreDraw
 import androidx.lifecycle.lifecycleScope
-import com.convx.music.constants.AppLanguageKey
-import com.convx.music.constants.DisableScreenshotKey
-import com.convx.music.constants.SYSTEM_DEFAULT
-import com.convx.music.constants.StopMusicOnTaskClearKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.di.ValueProvider
-import com.convx.music.history.ListenHistoryRepository
-import com.convx.music.history.ListenHistorySettingsRepository
-import com.convx.music.library.ObservePlaylists
-import com.convx.music.playback.DownloadUtil
-import com.convx.music.playback.MusicService
-import com.convx.music.playback.PlaybackServiceConnector
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.utils.SyncUtils
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.setAppLocale
+import com.hdemirbassmusic.music.constants.AppLanguageKey
+import com.hdemirbassmusic.music.constants.DisableScreenshotKey
+import com.hdemirbassmusic.music.constants.SYSTEM_DEFAULT
+import com.hdemirbassmusic.music.constants.StopMusicOnTaskClearKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.di.ValueProvider
+import com.hdemirbassmusic.music.history.ListenHistoryRepository
+import com.hdemirbassmusic.music.history.ListenHistorySettingsRepository
+import com.hdemirbassmusic.music.library.ObservePlaylists
+import com.hdemirbassmusic.music.playback.DownloadUtil
+import com.hdemirbassmusic.music.playback.MusicService
+import com.hdemirbassmusic.music.playback.PlaybackServiceConnector
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.utils.SyncUtils
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.setAppLocale
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
@@ -54,9 +54,9 @@ import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
     companion object {
-        const val EXTRA_PLAY_INTRO = "com.convx.music.extra.PLAY_INTRO"
-        internal const val ACTION_SEARCH = "com.convx.music.action.SEARCH"
-        internal const val ACTION_LIBRARY = "com.convx.music.action.LIBRARY"
+        const val EXTRA_PLAY_INTRO = "com.hdemirbassmusic.music.extra.PLAY_INTRO"
+        internal const val ACTION_SEARCH = "com.hdemirbassmusic.music.action.SEARCH"
+        internal const val ACTION_LIBRARY = "com.hdemirbassmusic.music.action.LIBRARY"
     }
 
     private val database: MusicDatabase by inject()
@@ -65,8 +65,8 @@ class MainActivity : ComponentActivity() {
     private val listenHistoryRepository: ListenHistoryRepository by inject()
     private val listenHistorySettingsRepository: ListenHistorySettingsRepository by inject()
     private val observePlaylists: ObservePlaylists by inject()
-    private val listenTogetherManager: com.convx.music.listentogether.ListenTogetherManager by inject()
-    private val partyManager: com.convx.music.jam.JamManager by inject()
+    private val listenTogetherManager: com.hdemirbassmusic.music.listentogether.ListenTogetherManager by inject()
+    private val partyManager: com.hdemirbassmusic.music.jam.JamManager by inject()
     private val playbackServiceConnector: PlaybackServiceConnector by inject()
 
     private var pendingIntent: Intent? = null
@@ -134,7 +134,7 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
     override fun dispatchTouchEvent(ev: android.view.MotionEvent): Boolean {
         if (ev.actionMasked == android.view.MotionEvent.ACTION_DOWN) {
-            com.convx.music.ui.component.MenuAnchor.lastDown =
+            com.hdemirbassmusic.music.ui.component.MenuAnchor.lastDown =
                 androidx.compose.ui.geometry.Offset(ev.x, ev.y)
         }
         return super.dispatchTouchEvent(ev)
@@ -187,7 +187,7 @@ class MainActivity : ComponentActivity() {
                     listenHistorySettingsRepository = ValueProvider { listenHistorySettingsRepository },
                     observePlaylists = observePlaylists,
                 )
-                if (showIntro) com.convx.music.ui.component.ConvxIntro(onFinished = { showIntro = false })
+                if (showIntro) com.hdemirbassmusic.music.ui.component.hdemirbassmusicIntro(onFinished = { showIntro = false })
             }
         }
         window.decorView.doOnPreDraw {

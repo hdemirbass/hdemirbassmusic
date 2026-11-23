@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -47,15 +47,15 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.crossfade
-import com.convx.music.R
-import com.convx.music.constants.PureBlackHeroBackgroundKey
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.HeroPalette
-import com.convx.music.ui.utils.sharedArtworkTarget
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.PureBlackHeroBackgroundKey
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.HeroPalette
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkTarget
+import com.hdemirbassmusic.music.utils.rememberPreference
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
 

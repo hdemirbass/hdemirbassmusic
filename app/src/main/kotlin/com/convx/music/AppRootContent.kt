@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -87,119 +87,119 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.convx.music.constants.AppBackgroundColorKey
-import com.convx.music.constants.AppBarHeight
-import com.convx.music.constants.AppleMusicUiKey
-import com.convx.music.constants.DarkModeKey
-import com.convx.music.constants.DefaultOpenTabKey
-import com.convx.music.constants.DockedAccessoryHeight
-import com.convx.music.constants.EnableSettingsPopupKey
-import com.convx.music.constants.ForceTabletLayoutKey
-import com.convx.music.constants.IosOverscrollKey
-import com.convx.music.constants.MiniPlayerHeight
-import com.convx.music.constants.NavigationBarAnimationSpec
-import com.convx.music.constants.NavigationBarHeight
-import com.convx.music.constants.PureBlackKey
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.PlayerBackgroundStyleKey
-import com.convx.music.constants.SelectedThemeColorKey
-import com.convx.music.constants.ShowHistoryButtonKey
-import com.convx.music.constants.ShowStatsButtonKey
-import com.convx.music.constants.SideBarCollapsedKey
-import com.convx.music.constants.SlimNavBarHeight
-import com.convx.music.constants.SlimNavBarKey
-import com.convx.music.constants.UseNewMiniPlayerDesignKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.di.ValueProvider
-import com.convx.music.history.ListenHistoryRepository
-import com.convx.music.history.ListenHistorySettingsRepository
-import com.convx.music.history.ListenHistorySettingsState
-import com.convx.music.library.ObservePlaylists
-import com.convx.music.extensions.toEnum
-import com.convx.music.playback.DownloadUtil
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.ui.component.AppFloatingNavBar
-import com.convx.music.ui.component.AppFloatingNowPlayingPill
-import com.convx.music.ui.component.AppFloatingSideBar
-import com.convx.music.ui.component.BottomSheetPage
-import com.convx.music.ui.component.FloatingMiniPlayerWidthFraction
-import com.convx.music.ui.component.ListenTogetherOverlay
-import com.convx.music.ui.component.LocalAppBackdrop
-import com.convx.music.ui.component.LocalAppBackdropFrozen
-import com.convx.music.ui.component.LocalAppMotionFrozen
-import com.convx.music.ui.component.LocalAppleMusicUi
-import com.convx.music.ui.component.LocalBottomSheetPageState
-import com.convx.music.ui.component.LocalDownloads
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.LocalItemPrefs
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.LocalNavSearchState
-import com.convx.music.ui.component.LocalPooledGlass
-import com.convx.music.ui.component.LocalSheetPresentation
-import com.convx.music.ui.component.NavBarSearchInputBar
-import com.convx.music.ui.component.OverlayMenu
-import com.convx.music.ui.component.PooledGlass
-import com.convx.music.ui.component.QueueConflictDialog
-import com.convx.music.ui.component.QueueReplacedUndoSnackbar
-import com.convx.music.ui.component.SheetPresentationState
-import com.convx.music.ui.component.SideBarAccountRow
-import com.convx.music.ui.component.AppTabViewTopPill
-import com.convx.music.ui.component.NavMorph
-import com.convx.music.ui.component.SideBarCollapsedWidth
-import com.convx.music.ui.component.SideBarContentInset
-import com.convx.music.ui.component.SideBarMargin
-import com.convx.music.ui.component.TabletWidthThreshold
-import com.convx.music.ui.component.backdrop.BackdropEffectScope
-import com.convx.music.ui.component.backdrop.GlassPoolScale
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.backdrop.effects.blur
-import com.convx.music.ui.component.backdrop.effects.colorControls
-import com.convx.music.ui.component.backdrop.glassPool
-import com.convx.music.ui.component.backdrop.rememberGlassPool
-import com.convx.music.ui.component.floatingtabbar.FloatingTabBarInlineBehavior
-import com.convx.music.ui.component.floatingtabbar.rememberFloatingTabBarScrollConnection
-import com.convx.music.ui.component.glassSaturation
-import com.convx.music.ui.component.iosSheetPresentation
-import com.convx.music.ui.component.isGlassAllowed
-import com.convx.music.ui.component.rememberBottomSheetState
-import com.convx.music.ui.component.rememberItemPrefs
-import com.convx.music.ui.component.rememberSheetPresentation
-import com.convx.music.ui.component.shimmer.ShimmerTheme
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.Scaffold
-import com.convx.music.ui.ios.compat.SnackbarHost
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.foundation.LocalIosBackdrop
-import com.convx.music.ui.menu.PlayerMenu
-import com.convx.music.ui.menu.YouTubeSongMenu
-import com.convx.music.ui.player.BottomSheetPlayer
-import com.convx.music.ui.player.InstallPlayerMorphLayers
-import com.convx.music.ui.screens.Screens
-import com.convx.music.ui.screens.SettingDialoge
-import com.convx.music.ui.screens.settings.DarkMode
-import com.convx.music.ui.screens.settings.NavigationTab
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.ConvxTheme
-import com.convx.music.ui.theme.ForcedDarkScope
-import com.convx.music.ui.theme.DefaultThemeColor
-import com.convx.music.ui.utils.LocalSharedTransitionScope
-import com.convx.music.ui.utils.ShowMediaInfo
-import com.convx.music.ui.utils.appBarScrollBehavior
-import com.convx.music.ui.utils.rememberIosOverscrollFactory
-import com.convx.music.ui.utils.resetHeightOffset
-import com.convx.music.utils.SyncUtils
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.AccountImageState
+import com.hdemirbassmusic.music.constants.AppBackgroundColorKey
+import com.hdemirbassmusic.music.constants.AppBarHeight
+import com.hdemirbassmusic.music.constants.AppleMusicUiKey
+import com.hdemirbassmusic.music.constants.DarkModeKey
+import com.hdemirbassmusic.music.constants.DefaultOpenTabKey
+import com.hdemirbassmusic.music.constants.DockedAccessoryHeight
+import com.hdemirbassmusic.music.constants.EnableSettingsPopupKey
+import com.hdemirbassmusic.music.constants.ForceTabletLayoutKey
+import com.hdemirbassmusic.music.constants.IosOverscrollKey
+import com.hdemirbassmusic.music.constants.MiniPlayerHeight
+import com.hdemirbassmusic.music.constants.NavigationBarAnimationSpec
+import com.hdemirbassmusic.music.constants.NavigationBarHeight
+import com.hdemirbassmusic.music.constants.PureBlackKey
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyleKey
+import com.hdemirbassmusic.music.constants.SelectedThemeColorKey
+import com.hdemirbassmusic.music.constants.ShowHistoryButtonKey
+import com.hdemirbassmusic.music.constants.ShowStatsButtonKey
+import com.hdemirbassmusic.music.constants.SideBarCollapsedKey
+import com.hdemirbassmusic.music.constants.SlimNavBarHeight
+import com.hdemirbassmusic.music.constants.SlimNavBarKey
+import com.hdemirbassmusic.music.constants.UseNewMiniPlayerDesignKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.di.ValueProvider
+import com.hdemirbassmusic.music.history.ListenHistoryRepository
+import com.hdemirbassmusic.music.history.ListenHistorySettingsRepository
+import com.hdemirbassmusic.music.history.ListenHistorySettingsState
+import com.hdemirbassmusic.music.library.ObservePlaylists
+import com.hdemirbassmusic.music.extensions.toEnum
+import com.hdemirbassmusic.music.playback.DownloadUtil
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.ui.component.AppFloatingNavBar
+import com.hdemirbassmusic.music.ui.component.AppFloatingNowPlayingPill
+import com.hdemirbassmusic.music.ui.component.AppFloatingSideBar
+import com.hdemirbassmusic.music.ui.component.BottomSheetPage
+import com.hdemirbassmusic.music.ui.component.FloatingMiniPlayerWidthFraction
+import com.hdemirbassmusic.music.ui.component.ListenTogetherOverlay
+import com.hdemirbassmusic.music.ui.component.LocalAppBackdrop
+import com.hdemirbassmusic.music.ui.component.LocalAppBackdropFrozen
+import com.hdemirbassmusic.music.ui.component.LocalAppMotionFrozen
+import com.hdemirbassmusic.music.ui.component.LocalAppleMusicUi
+import com.hdemirbassmusic.music.ui.component.LocalBottomSheetPageState
+import com.hdemirbassmusic.music.ui.component.LocalDownloads
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.LocalItemPrefs
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.LocalNavSearchState
+import com.hdemirbassmusic.music.ui.component.LocalPooledGlass
+import com.hdemirbassmusic.music.ui.component.LocalSheetPresentation
+import com.hdemirbassmusic.music.ui.component.NavBarSearchInputBar
+import com.hdemirbassmusic.music.ui.component.OverlayMenu
+import com.hdemirbassmusic.music.ui.component.PooledGlass
+import com.hdemirbassmusic.music.ui.component.QueueConflictDialog
+import com.hdemirbassmusic.music.ui.component.QueueReplacedUndoSnackbar
+import com.hdemirbassmusic.music.ui.component.SheetPresentationState
+import com.hdemirbassmusic.music.ui.component.SideBarAccountRow
+import com.hdemirbassmusic.music.ui.component.AppTabViewTopPill
+import com.hdemirbassmusic.music.ui.component.NavMorph
+import com.hdemirbassmusic.music.ui.component.SideBarCollapsedWidth
+import com.hdemirbassmusic.music.ui.component.SideBarContentInset
+import com.hdemirbassmusic.music.ui.component.SideBarMargin
+import com.hdemirbassmusic.music.ui.component.TabletWidthThreshold
+import com.hdemirbassmusic.music.ui.component.backdrop.BackdropEffectScope
+import com.hdemirbassmusic.music.ui.component.backdrop.GlassPoolScale
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.colorControls
+import com.hdemirbassmusic.music.ui.component.backdrop.glassPool
+import com.hdemirbassmusic.music.ui.component.backdrop.rememberGlassPool
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.FloatingTabBarInlineBehavior
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.rememberFloatingTabBarScrollConnection
+import com.hdemirbassmusic.music.ui.component.glassSaturation
+import com.hdemirbassmusic.music.ui.component.iosSheetPresentation
+import com.hdemirbassmusic.music.ui.component.isGlassAllowed
+import com.hdemirbassmusic.music.ui.component.rememberBottomSheetState
+import com.hdemirbassmusic.music.ui.component.rememberItemPrefs
+import com.hdemirbassmusic.music.ui.component.rememberSheetPresentation
+import com.hdemirbassmusic.music.ui.component.shimmer.ShimmerTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.Scaffold
+import com.hdemirbassmusic.music.ui.ios.compat.SnackbarHost
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosBackdrop
+import com.hdemirbassmusic.music.ui.menu.PlayerMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeSongMenu
+import com.hdemirbassmusic.music.ui.player.BottomSheetPlayer
+import com.hdemirbassmusic.music.ui.player.InstallPlayerMorphLayers
+import com.hdemirbassmusic.music.ui.screens.Screens
+import com.hdemirbassmusic.music.ui.screens.SettingDialoge
+import com.hdemirbassmusic.music.ui.screens.settings.DarkMode
+import com.hdemirbassmusic.music.ui.screens.settings.NavigationTab
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.hdemirbassmusicTheme
+import com.hdemirbassmusic.music.ui.theme.ForcedDarkScope
+import com.hdemirbassmusic.music.ui.theme.DefaultThemeColor
+import com.hdemirbassmusic.music.ui.utils.LocalSharedTransitionScope
+import com.hdemirbassmusic.music.ui.utils.ShowMediaInfo
+import com.hdemirbassmusic.music.ui.utils.appBarScrollBehavior
+import com.hdemirbassmusic.music.ui.utils.rememberIosOverscrollFactory
+import com.hdemirbassmusic.music.ui.utils.resetHeightOffset
+import com.hdemirbassmusic.music.utils.SyncUtils
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.AccountImageState
 import com.music.innertube.models.SongItem
 import com.valentinilk.shimmer.LocalShimmerTheme
 import dev.chrisbanes.haze.HazeState
-import com.convx.music.constants.TopBarBlurStyle
-import com.convx.music.constants.TopBarBlurStyleKey
+import com.hdemirbassmusic.music.constants.TopBarBlurStyle
+import com.hdemirbassmusic.music.constants.TopBarBlurStyleKey
 import dev.chrisbanes.haze.hazeSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.map
@@ -243,7 +243,7 @@ internal fun AppRootContent(
 
     val artworkChromeDark = useDarkTheme || LocalAmbientDarkChrome.current.value
     LaunchedEffect(artworkChromeDark) {
-        com.convx.music.utils.setSystemBarAppearance(activity.window, artworkChromeDark)
+        com.hdemirbassmusic.music.utils.setSystemBarAppearance(activity.window, artworkChromeDark)
     }
 
     val pureBlackEnabled by rememberPreference(PureBlackKey, defaultValue = false)
@@ -255,7 +255,7 @@ internal fun AppRootContent(
     val (selectedThemeColorInt) = rememberPreference(SelectedThemeColorKey, defaultValue = DefaultThemeColor.toArgb())
     val themeColor = Color(selectedThemeColorInt)
 
-    ConvxTheme(
+    hdemirbassmusicTheme(
         darkTheme = useDarkTheme,
         pureBlack = pureBlack,
         themeColor = themeColor,
@@ -283,11 +283,11 @@ internal fun AppRootContent(
 
             val navController = rememberNavController()
 
-            val navigationArtwork = remember(navController) { com.convx.music.ui.utils.NavigationArtworkState() }
+            val navigationArtwork = remember(navController) { com.hdemirbassmusic.music.ui.utils.NavigationArtworkState() }
             InstallMorphNavListener(navController, navigationArtwork)
 
             val accountImageUrl by AccountImageState.url.collectAsStateWithLifecycle()
-            val (sidebarAccountName) = rememberPreference(com.convx.music.constants.AccountNameKey, "")
+            val (sidebarAccountName) = rememberPreference(com.hdemirbassmusic.music.constants.AccountNameKey, "")
             val navBackStackEntry by navController.currentBackStackEntryAsState()
             val (previousTab, setPreviousTab) = rememberSaveable { mutableStateOf("home") }
 
@@ -636,15 +636,15 @@ internal fun AppRootContent(
 
             // React to pager tab changes and leave Library subpages to draw their own toolbar.
             val (libraryFilter, onLibraryFilterChange) = rememberEnumPreference(
-                com.convx.music.constants.ChipSortTypeKey,
-                com.convx.music.constants.LibraryFilter.LIBRARY,
+                com.hdemirbassmusic.music.constants.ChipSortTypeKey,
+                com.hdemirbassmusic.music.constants.LibraryFilter.LIBRARY,
             )
             LaunchedEffect(effectiveRoute, listenTogetherInTopBar, showRail, libraryFilter) {
                 val isListenTogetherScreen = effectiveRoute == Screens.ListenTogether.route ||
                     currentRoute == "listen_together_from_topbar"
                 shouldShowTopBar = effectiveRoute in topLevelScreens &&
                     effectiveRoute != "settings" &&
-                    !(effectiveRoute == Screens.Library.route && libraryFilter != com.convx.music.constants.LibraryFilter.LIBRARY) &&
+                    !(effectiveRoute == Screens.Library.route && libraryFilter != com.hdemirbassmusic.music.constants.LibraryFilter.LIBRARY) &&
                     !(isListenTogetherScreen && listenTogetherInTopBar)
             }
 
@@ -671,7 +671,7 @@ internal fun AppRootContent(
                 }
             }
 
-            val ringtoneViewModel: com.convx.music.ui.screens.settings.RingtoneViewModel = viewModel()
+            val ringtoneViewModel: com.hdemirbassmusic.music.ui.screens.settings.RingtoneViewModel = viewModel()
             val ringtoneUiState by ringtoneViewModel.uiState.collectAsStateWithLifecycle()
 
             LaunchedEffect(Unit) {
@@ -694,13 +694,13 @@ internal fun AppRootContent(
 
             val currentTitleRes = remember(effectiveRoute) {
                 when (effectiveRoute) {
-                    Screens.Home.route -> com.convx.music.R.string.home
-                    Screens.Search.route -> com.convx.music.R.string.search
-                    Screens.Library.route -> com.convx.music.R.string.filter_library
-                    Screens.Radio.route -> com.convx.music.R.string.radio
-                    Screens.Songs.route -> com.convx.music.R.string.songs
-                    Screens.ListenTogether.route -> com.convx.music.R.string.together
-                    Screens.Explore.route -> com.convx.music.R.string.tab_explore
+                    Screens.Home.route -> com.hdemirbassmusic.music.R.string.home
+                    Screens.Search.route -> com.hdemirbassmusic.music.R.string.search
+                    Screens.Library.route -> com.hdemirbassmusic.music.R.string.filter_library
+                    Screens.Radio.route -> com.hdemirbassmusic.music.R.string.radio
+                    Screens.Songs.route -> com.hdemirbassmusic.music.R.string.songs
+                    Screens.ListenTogether.route -> com.hdemirbassmusic.music.R.string.together
+                    Screens.Explore.route -> com.hdemirbassmusic.music.R.string.tab_explore
                     else -> null
                 }
             }
@@ -748,9 +748,9 @@ internal fun AppRootContent(
             // itself through the shared presenter -- see PresentingSheetEffect.
             val sheetPresentationState = remember { SheetPresentationState() }
 
-            val fullscreenVideo = remember { com.convx.music.ui.player.FullscreenVideoState() }
+            val fullscreenVideo = remember { com.hdemirbassmusic.music.ui.player.FullscreenVideoState() }
             CompositionLocalProvider(
-                com.convx.music.ui.player.LocalFullscreenVideo provides fullscreenVideo,
+                com.hdemirbassmusic.music.ui.player.LocalFullscreenVideo provides fullscreenVideo,
                 LocalOverscrollFactory provides
                     if (iosOverscroll) iosOverscrollFactory else LocalOverscrollFactory.current,
                 LocalDatabase provides database,
@@ -769,7 +769,7 @@ internal fun AppRootContent(
                 // Disable Listen Together until ready; current entry points handle a missing manager.
                 LocalListenTogetherManager provides null,
                 LocalGlassEffectConfig provides glassEffectConfig,
-                com.convx.music.ui.theme.LocalDarkGlassEffectConfig provides darkGlassEffectConfig,
+                com.hdemirbassmusic.music.ui.theme.LocalDarkGlassEffectConfig provides darkGlassEffectConfig,
                 LocalAppleMusicUi provides appleMusicUi,
                 LocalTabView provides showRail,
                 LocalAppBackdrop provides appBackdrop,
@@ -832,7 +832,7 @@ internal fun AppRootContent(
                 val showFallbackTopHaze = !shouldShowTopBar &&
                     AppRoutePolicy.showsFallbackTopHaze(currentRoute)
                 val menuBackdrop = rememberLayerBackdrop()
-                val playerBackdropHolder = remember { com.convx.music.ui.player.PlayerBackdropHolder() }
+                val playerBackdropHolder = remember { com.hdemirbassmusic.music.ui.player.PlayerBackdropHolder() }
                 val menuSourceBackdrop = (if (playerBottomSheetState.isExpanded) playerBackdropHolder.backdrop else null) ?: menuBackdrop
 
                 // Capture the page and chrome behind the menu. Keep the menu as a sibling
@@ -878,11 +878,11 @@ internal fun AppRootContent(
                     SharedTransitionLayout(Modifier.fillMaxSize()) {
                     CompositionLocalProvider(
                         LocalSharedTransitionScope provides this@SharedTransitionLayout,
-                        com.convx.music.ui.utils.LocalNavigationArtwork provides navigationArtwork,
+                        com.hdemirbassmusic.music.ui.utils.LocalNavigationArtwork provides navigationArtwork,
                     ) {
                     Box(Modifier.fillMaxSize()) {
                         val onRailItemClick = onNavItemClick
-                        com.convx.music.ui.component.AnalysisBanner(
+                        com.hdemirbassmusic.music.ui.component.AnalysisBanner(
                             Modifier.align(Alignment.TopCenter).zIndex(10f),
                         )
 
@@ -948,7 +948,7 @@ internal fun AppRootContent(
                             }
                         }
 
-                        com.convx.music.ui.component.RingtoneTrimmerDialog(
+                        com.hdemirbassmusic.music.ui.component.RingtoneTrimmerDialog(
                             isVisible = ringtoneUiState.showTrimmer,
                             songId = ringtoneUiState.targetSongId,
                             songTitle = ringtoneUiState.targetSongTitle,
@@ -959,7 +959,7 @@ internal fun AppRootContent(
                         )
 
                         if (ringtoneUiState.showProgress) {
-                            com.convx.music.ui.component.RingtoneProgressDialog(
+                            com.hdemirbassmusic.music.ui.component.RingtoneProgressDialog(
                                 isVisible = ringtoneUiState.showProgress,
                                 progress = ringtoneUiState.progress,
                                 statusMessage = ringtoneUiState.statusMessage,
@@ -970,7 +970,7 @@ internal fun AppRootContent(
                             )
                         }
 
-                        com.convx.music.ui.component.DonationPromptHost()
+                        com.hdemirbassmusic.music.ui.component.DonationPromptHost()
                         // Keep full-screen tools clear of the rail overlay.
 
                         if (showRail && !isSettingsRoute && currentRoute != "ambient_mode") {
@@ -989,7 +989,7 @@ internal fun AppRootContent(
                             val visibleRailItems = railItems.filter { it in floatingNavigationItems }
                             val onRailClick: (Screens, Boolean) -> Unit = { screen, selected ->
                                 if (screen == Screens.Library) {
-                                    onLibraryFilterChange(com.convx.music.constants.LibraryFilter.LIBRARY)
+                                    onLibraryFilterChange(com.hdemirbassmusic.music.constants.LibraryFilter.LIBRARY)
                                 }
                                 onRailItemClick(screen, selected)
                             }
@@ -1003,7 +1003,7 @@ internal fun AppRootContent(
                                     label = "navMorph",
                                 ) { asPill ->
                                     CompositionLocalProvider(
-                                        com.convx.music.ui.utils.LocalNavAnimatedVisibilityScope provides this,
+                                        com.hdemirbassmusic.music.ui.utils.LocalNavAnimatedVisibilityScope provides this,
                                     ) {
                                     val morph = NavMorph(this@SharedTransitionLayout, this)
                                     Box(Modifier.fillMaxSize()) {
@@ -1172,7 +1172,7 @@ internal fun AppRootContent(
                                 modifier = Modifier.zIndex(if (playerAboveBars) 1f else 0f),
                             ) {
                                 ForcedDarkScope {
-                                    CompositionLocalProvider(com.convx.music.ui.player.LocalPlayerBackdropHolder provides playerBackdropHolder) {
+                                    CompositionLocalProvider(com.hdemirbassmusic.music.ui.player.LocalPlayerBackdropHolder provides playerBackdropHolder) {
                                     BottomSheetPlayer(
                                         state = playerBottomSheetState,
                                         navController = navController,
@@ -1183,7 +1183,7 @@ internal fun AppRootContent(
                             }
 
                             // Album, artist and playlist routes keep the floating nav bar and its mini player in the dark palette.
-                val darkRouteActive = com.convx.music.ui.theme.isForcedDarkRoute(currentRoute)
+                val darkRouteActive = com.hdemirbassmusic.music.ui.theme.isForcedDarkRoute(currentRoute)
                 // Keep glass chrome outside its captured content to avoid a recursive RenderNode draw.
                             ForcedDarkScope(enabled = darkRouteActive) {
                             CompositionLocalProvider(LocalPooledGlass provides pooledGlass) {
@@ -1247,7 +1247,7 @@ internal fun AppRootContent(
                     } else {
                         if (AppRoutePolicy.showsBottomSheetPlayer(currentRoute) && !isSettingsRoute) {
                             ForcedDarkScope {
-                                CompositionLocalProvider(com.convx.music.ui.player.LocalPlayerBackdropHolder provides playerBackdropHolder) {
+                                CompositionLocalProvider(com.hdemirbassmusic.music.ui.player.LocalPlayerBackdropHolder provides playerBackdropHolder) {
                                     BottomSheetPlayer(
                                         state = playerBottomSheetState,
                                         navController = navController,
@@ -1272,7 +1272,7 @@ internal fun AppRootContent(
                 }
             } // Box end
 
-                com.convx.music.core.updater.FloatingUpdaterHost(
+                com.hdemirbassmusic.music.core.updater.FloatingUpdaterHost(
                     visible = currentRoute == "home" && playerBottomSheetState.progress == 0f &&
                         !LocalMenuState.current.isVisible && !LocalBottomSheetPageState.current.isVisible,
                     backdrop = menuBackdrop,
@@ -1282,7 +1282,7 @@ internal fun AppRootContent(
             // menuBackdrop records the entire preceding Box, including the player.
             // Keep the same glass material over the expanded player as over Home.
                 // Menus on album, artist, playlist and player surfaces use the dark palette too.
-                val menuDark = com.convx.music.ui.theme.isForcedDarkRoute(currentRoute) || currentRoute?.startsWith("search") == true ||
+                val menuDark = com.hdemirbassmusic.music.ui.theme.isForcedDarkRoute(currentRoute) || currentRoute?.startsWith("search") == true ||
                     playerBottomSheetState.progress > 0f
                 ForcedDarkScope(enabled = menuDark) {
                 OverlayMenu(
@@ -1312,7 +1312,7 @@ internal fun AppRootContent(
                 QueueConflictDialog(playerConnection = playerConnection)
 
                 // Player design and Lyrics style open as full-screen page sheets from anywhere.
-                com.convx.music.ui.screens.settings.SettingsSheetHost(navController)
+                com.hdemirbassmusic.music.ui.screens.settings.SettingsSheetHost(navController)
                 QueueReplacedUndoSnackbar(
                     playerConnection = playerConnection,
                     snackbarHostState = snackbarHostState,
@@ -1353,7 +1353,7 @@ internal fun AppRootContent(
                         },
                     )
                 }
-                com.convx.music.ui.player.FullscreenVideoOverlay(fullscreenVideo)
+                com.hdemirbassmusic.music.ui.player.FullscreenVideoOverlay(fullscreenVideo)
             }
         }
     }

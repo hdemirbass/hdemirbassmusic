@@ -27,9 +27,9 @@
  *   the puck. See [DampedDragAnimation] and [InteractiveHighlight].
  */
 
-package com.convx.music.ui.component.floatingtabbar
+package com.hdemirbassmusic.music.ui.component.floatingtabbar
 
-import com.convx.music.ui.component.shapes.shadowShape
+import com.hdemirbassmusic.music.ui.component.shapes.shadowShape
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.EnterExitState
@@ -77,8 +77,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.theme.LocalAccentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.theme.LocalAccentColor
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.CompositionLocalProvider
@@ -126,28 +126,28 @@ import androidx.compose.ui.util.fastRoundToInt
 import androidx.compose.ui.util.lerp
 import androidx.compose.ui.graphics.isSpecified
 import androidx.compose.ui.graphics.luminance
-import com.convx.music.LocalAmbientBackgroundColor
-import com.convx.music.ui.component.asPuckTint
-import com.convx.music.constants.NavBarMeltTransitionKey
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.elasticStretchLayerBlock
-import com.convx.music.ui.component.glassResolutionScale
-import com.convx.music.utils.rememberPreference
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.catalog.utils.DampedDragAnimation
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberCombinedBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.backdrop.drawBackdrop
-import com.convx.music.ui.component.backdrop.highlight.Highlight
-import com.convx.music.ui.component.backdrop.shadow.InnerShadow
-import com.convx.music.ui.component.backdrop.effects.blur
-import com.convx.music.ui.component.backdrop.effects.lens
-import com.convx.music.ui.component.backdrop.effects.vibrancy
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.player.PlayerMorph
-import com.convx.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.ui.component.asPuckTint
+import com.hdemirbassmusic.music.constants.NavBarMeltTransitionKey
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.elasticStretchLayerBlock
+import com.hdemirbassmusic.music.ui.component.glassResolutionScale
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.DampedDragAnimation
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberCombinedBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.drawBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.Highlight
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.InnerShadow
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.lens
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.vibrancy
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.player.PlayerMorph
+import com.hdemirbassmusic.music.ui.theme.isHueless
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.launch

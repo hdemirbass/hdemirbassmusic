@@ -1,4 +1,4 @@
-package com.convx.music.canvas
+package com.hdemirbassmusic.music.canvas
 
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals

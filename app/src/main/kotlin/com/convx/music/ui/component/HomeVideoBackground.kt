@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.view.TextureView
 import android.view.ViewGroup
@@ -12,7 +12,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -42,7 +42,7 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
  * counterpart to [HomeImageBackground]. Renders through a [TextureView] (not
  * PlayerView/SurfaceView): a TextureView is a normal View Compose can apply
  * [Modifier.blur] and alpha to correctly, same reasoning as the player's own
- * [com.convx.music.ui.player.BackgroundVideoView].
+ * [com.hdemirbassmusic.music.ui.player.BackgroundVideoView].
  *
  * Local file only — the background video is copied into app storage the same
  * way the image is (see HomeBackgroundControls), so this needs none of the

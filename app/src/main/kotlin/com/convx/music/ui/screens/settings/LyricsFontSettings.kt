@@ -1,4 +1,4 @@
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -12,9 +12,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.convx.music.lyrics.rememberLyricsFont
-import com.convx.music.ui.ios.compat.*
-import com.convx.music.viewmodels.LyricsAppearanceViewModel
+import com.hdemirbassmusic.music.lyrics.rememberLyricsFont
+import com.hdemirbassmusic.music.ui.ios.compat.*
+import com.hdemirbassmusic.music.viewmodels.LyricsAppearanceViewModel
 
 @Composable
 fun LyricsFontSettings(viewModel: LyricsAppearanceViewModel = koinViewModel()) {

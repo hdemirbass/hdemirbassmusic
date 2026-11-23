@@ -1,11 +1,11 @@
-package com.convx.music.client.androidhost
+package com.hdemirbassmusic.music.client.androidhost
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.playback.EqualizerBiquadFilter
-import com.convx.music.playback.EqualizerFilterType
-import com.convx.music.playback.PlaybackSettings
+import com.hdemirbassmusic.music.playback.EqualizerBiquadFilter
+import com.hdemirbassmusic.music.playback.EqualizerFilterType
+import com.hdemirbassmusic.music.playback.PlaybackSettings
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlin.math.pow
@@ -100,11 +100,11 @@ internal class PlaybackEqualizerAudioProcessor : AudioProcessor {
                     gain = band.gain,
                     q = band.q,
                     filterType = when (band.filterType) {
-                        com.convx.music.playback.EqualizerFilterType.PK -> EqualizerFilterType.PK
-                        com.convx.music.playback.EqualizerFilterType.LSC -> EqualizerFilterType.LSC
-                        com.convx.music.playback.EqualizerFilterType.HSC -> EqualizerFilterType.HSC
-                        com.convx.music.playback.EqualizerFilterType.LPQ -> EqualizerFilterType.LPQ
-                        com.convx.music.playback.EqualizerFilterType.HPQ -> EqualizerFilterType.HPQ
+                        com.hdemirbassmusic.music.playback.EqualizerFilterType.PK -> EqualizerFilterType.PK
+                        com.hdemirbassmusic.music.playback.EqualizerFilterType.LSC -> EqualizerFilterType.LSC
+                        com.hdemirbassmusic.music.playback.EqualizerFilterType.HSC -> EqualizerFilterType.HSC
+                        com.hdemirbassmusic.music.playback.EqualizerFilterType.LPQ -> EqualizerFilterType.LPQ
+                        com.hdemirbassmusic.music.playback.EqualizerFilterType.HPQ -> EqualizerFilterType.HPQ
                     },
                 )
             }

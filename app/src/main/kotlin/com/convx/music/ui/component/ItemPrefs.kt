@@ -1,23 +1,23 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
-import com.convx.music.constants.CropAlbumArtKey
-import com.convx.music.constants.GridCardHeightOverrideKey
-import com.convx.music.constants.GridItemSize
-import com.convx.music.constants.GridItemsSizeKey
-import com.convx.music.constants.SwipeToRemoveSongKey
-import com.convx.music.constants.SwipeToSongKey
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.CropAlbumArtKey
+import com.hdemirbassmusic.music.constants.GridCardHeightOverrideKey
+import com.hdemirbassmusic.music.constants.GridItemSize
+import com.hdemirbassmusic.music.constants.GridItemsSizeKey
+import com.hdemirbassmusic.music.constants.SwipeToRemoveSongKey
+import com.hdemirbassmusic.music.constants.SwipeToSongKey
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /** Preferences shared by item rows; read once to avoid blocking DataStore reads per lazy item. */
 @Immutable

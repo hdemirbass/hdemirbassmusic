@@ -1,17 +1,17 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.core
+package com.hdemirbassmusic.music.core
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.remember
 import com.composables.sfsymbols.SfSymbol
-import com.convx.music.constants.AudioDeviceIconsKey
-import com.convx.music.constants.AudioDeviceNamesKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.AudioDeviceIconsKey
+import com.hdemirbassmusic.music.constants.AudioDeviceNamesKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 import org.json.JSONObject
 
 /** Symbols offered by the icon picker, most likely first; names the bundled library lacks are dropped (sf() throws on them). */

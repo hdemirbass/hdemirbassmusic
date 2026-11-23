@@ -1,6 +1,6 @@
-package com.convx.music.playback.audio
+package com.hdemirbassmusic.music.playback.audio
 
-import com.convx.music.playback.dj.BeatGrid
+import com.hdemirbassmusic.music.playback.dj.BeatGrid
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -29,44 +29,44 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.AmbientAutoHideBackButtonEnabledKey
-import com.convx.music.constants.AmbientCanvasAnchorSide
-import com.convx.music.constants.AmbientCanvasAnchorSideKey
-import com.convx.music.constants.AmbientCanvasEdgeFeatherKey
-import com.convx.music.constants.AmbientCanvasFarVeilKey
-import com.convx.music.constants.AmbientCanvasFitMode
-import com.convx.music.constants.AmbientCanvasFitModeKey
-import com.convx.music.constants.AmbientCanvasGradientSpreadKey
-import com.convx.music.constants.AmbientCanvasSideFitEnabledKey
-import com.convx.music.constants.AmbientCanvasSideGradientKey
-import com.convx.music.constants.AmbientCanvasSideWidthKey
-import com.convx.music.constants.AmbientCanvasSourceKey
-import com.convx.music.ui.screens.ambient.AmbientCanvasFitDefaults
-import com.convx.music.ui.screens.ambient.AmbientCanvasFitPreview
-import com.convx.music.constants.AmbientLyricsTextSizeKey
-import com.convx.music.constants.AmbientProgressRingEnabledKey
-import com.convx.music.constants.AmbientPlaybackFeedbackEnabledKey
-import com.convx.music.constants.AmbientSeekHapticsEnabledKey
-import com.convx.music.constants.AmbientSeekTimeEnabledKey
-import com.convx.music.constants.AmbientSwipeNavigationEnabledKey
-import com.convx.music.constants.AmbientTapToPlayPauseEnabledKey
-import com.convx.music.constants.AmbientTrackInfoEnabledKey
-import com.convx.music.constants.AmbientTrackTransitionsEnabledKey
-import com.convx.music.constants.AmbientVideoCanvasBlurKey
-import com.convx.music.constants.AmbientVideoCanvasDimKey
-import com.convx.music.constants.AmbientVideoCanvasEnabledKey
-import com.convx.music.constants.CanvasSource
-import com.convx.music.constants.LyricsTextSizeKey
-import com.convx.music.ui.component.GlassSwitchCompat as Switch
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AmbientAutoHideBackButtonEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasAnchorSide
+import com.hdemirbassmusic.music.constants.AmbientCanvasAnchorSideKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasEdgeFeatherKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasFarVeilKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasFitMode
+import com.hdemirbassmusic.music.constants.AmbientCanvasFitModeKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasGradientSpreadKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasSideFitEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasSideGradientKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasSideWidthKey
+import com.hdemirbassmusic.music.constants.AmbientCanvasSourceKey
+import com.hdemirbassmusic.music.ui.screens.ambient.AmbientCanvasFitDefaults
+import com.hdemirbassmusic.music.ui.screens.ambient.AmbientCanvasFitPreview
+import com.hdemirbassmusic.music.constants.AmbientLyricsTextSizeKey
+import com.hdemirbassmusic.music.constants.AmbientProgressRingEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientPlaybackFeedbackEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientSeekHapticsEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientSeekTimeEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientSwipeNavigationEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientTapToPlayPauseEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientTrackInfoEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientTrackTransitionsEnabledKey
+import com.hdemirbassmusic.music.constants.AmbientVideoCanvasBlurKey
+import com.hdemirbassmusic.music.constants.AmbientVideoCanvasDimKey
+import com.hdemirbassmusic.music.constants.AmbientVideoCanvasEnabledKey
+import com.hdemirbassmusic.music.constants.CanvasSource
+import com.hdemirbassmusic.music.constants.LyricsTextSizeKey
+import com.hdemirbassmusic.music.ui.component.GlassSwitchCompat as Switch
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -218,12 +218,12 @@ fun AmbientModeSettings(
                     description = R.string.canvas_source_auto_desc,
                 ),
                 canvasSourceItem(
-                    source = CanvasSource.CONVX,
+                    source = CanvasSource.hdemirbassmusic,
                     canvasSource = canvasSource,
                     enabled = videoCanvasEnabled,
                     onCanvasSourceChange = onCanvasSourceChange,
-                    title = R.string.canvas_source_convx,
-                    description = R.string.canvas_source_convx_desc,
+                    title = R.string.canvas_source_hdemirbassmusic,
+                    description = R.string.canvas_source_hdemirbassmusic_desc,
                 ),
                 canvasSourceItem(
                     source = CanvasSource.APPLE_MUSIC,

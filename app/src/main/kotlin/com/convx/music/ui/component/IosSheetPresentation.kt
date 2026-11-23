@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -24,7 +24,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
 
 /** How far back the presenting screen sits once a sheet is fully open. */
 private const val PresentedScale = 0.91f
@@ -126,7 +126,7 @@ val LocalSheetPresentation = staticCompositionLocalOf { SheetPresentationState()
  * Registers the calling sheet as on screen for as long as it stays composed.
  *
  * Called from the one place every sheet in the app already routes through
- * ([com.convx.music.ui.ios.compat.ModalBottomSheet]), so a new sheet gets the presentation
+ * ([com.hdemirbassmusic.music.ui.ios.compat.ModalBottomSheet]), so a new sheet gets the presentation
  * without its author having to know this exists — which is how the six that predate it
  * ended up without it.
  */

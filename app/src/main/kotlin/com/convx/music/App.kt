@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import android.app.Application
 import android.app.NotificationChannel
@@ -28,28 +28,28 @@ import android.graphics.Bitmap
 import coil3.request.allowHardware
 import coil3.request.bitmapConfig
 import coil3.request.crossfade
-import com.convx.music.utils.ArtworkQualityInterceptor
+import com.hdemirbassmusic.music.utils.ArtworkQualityInterceptor
 import com.music.innertube.YouTube
 import com.music.innertube.InnertubeProxySettings
 import com.music.innertube.ProxyType
 import com.music.innertube.models.IpVersion
 import com.music.innertube.models.YouTubeLocale
 import com.music.lastfm.LastFM
-import com.convx.music.constants.*
-import com.convx.music.di.ValueProvider
-import com.convx.music.di.appModules
-import com.convx.music.extensions.toEnum
-import com.convx.music.extensions.toInetSocketAddress
-import com.convx.music.utils.CrashHandler
-import com.convx.music.utils.DebugLogs
-import com.convx.music.utils.cipher.CipherDeobfuscator
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.migrateSharedPreferencesToMMKV
-import com.convx.music.utils.warmPreferenceMirror
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.constants.*
+import com.hdemirbassmusic.music.di.ValueProvider
+import com.hdemirbassmusic.music.di.appModules
+import com.hdemirbassmusic.music.extensions.toEnum
+import com.hdemirbassmusic.music.extensions.toInetSocketAddress
+import com.hdemirbassmusic.music.utils.CrashHandler
+import com.hdemirbassmusic.music.utils.DebugLogs
+import com.hdemirbassmusic.music.utils.cipher.CipherDeobfuscator
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.migrateSharedPreferencesToMMKV
+import com.hdemirbassmusic.music.utils.warmPreferenceMirror
+import com.hdemirbassmusic.music.utils.reportException
 import com.tencent.mmkv.MMKV
-import com.convx.storage.data.NetworkMusicRepository
+import com.hdemirbassmusic.storage.data.NetworkMusicRepository
 import org.koin.core.context.GlobalContext
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -93,10 +93,10 @@ class App : Application(), SingletonImageLoader.Factory {
                 .runningAppProcesses?.firstOrNull { it.pid == android.os.Process.myPid() }?.processName
         }
         if (processName == "$packageName:crash") return
-        com.convx.music.canvas.AppleMusicCatalog.cacheDir = filesDir.resolve("apple_catalog")
-        com.convx.music.core.UpdateNotificationHelper.cancelUpdateNotification(this)
-        // Eclipse addons identify clients by UA; they require "Convx/<app-version>".
-        com.music.spine.ModuleManager.userAgent = "Convx/${BuildConfig.VERSION_NAME}"
+        com.hdemirbassmusic.music.canvas.AppleMusicCatalog.cacheDir = filesDir.resolve("apple_catalog")
+        com.hdemirbassmusic.music.core.UpdateNotificationHelper.cancelUpdateNotification(this)
+        // Eclipse addons identify clients by UA; they require "hdemirbassmusic/<app-version>".
+        com.music.spine.ModuleManager.userAgent = "hdemirbassmusic/${BuildConfig.VERSION_NAME}"
 
         // StrictMode: debug-only, catches main-thread IO before it ships.
         // Release untouched — zero behavior change there.
@@ -121,9 +121,9 @@ class App : Application(), SingletonImageLoader.Factory {
 
         // Initialize MMKV before migrating preferences or restoring session state.
         MMKV.initialize(this)
-        com.convx.music.ui.theme.colorengine.ColorEngine.init(this)
+        com.hdemirbassmusic.music.ui.theme.colorengine.ColorEngine.init(this)
         // Avoid per-artwork diagnostic work in release builds.
-        com.convx.music.ui.theme.colorengine.ColorEngine.setDebugEnabled(BuildConfig.DEBUG)
+        com.hdemirbassmusic.music.ui.theme.colorengine.ColorEngine.setDebugEnabled(BuildConfig.DEBUG)
         migrateSharedPreferencesToMMKV(this, "widget_config")
         migrateSharedPreferencesToMMKV(this, "nanosonic_eq_profiles")
         migrateSharedPreferencesToMMKV(this, "vivi_eq_prefs")
@@ -138,7 +138,7 @@ class App : Application(), SingletonImageLoader.Factory {
 
         // Warm the preference mirror off Main so the first composition avoids its blocking read.
         applicationScope.launch(Dispatchers.IO) { dataStore.warmPreferenceMirror() }
-        applicationScope.launch(Dispatchers.IO) { com.convx.music.ai.AiDefaults.keepLegacyProvider(this@App) }
+        applicationScope.launch(Dispatchers.IO) { com.hdemirbassmusic.music.ai.AiDefaults.keepLegacyProvider(this@App) }
 
         CrashHandler.install(this)
 
@@ -171,7 +171,7 @@ class App : Application(), SingletonImageLoader.Factory {
             Timber.tag("SpotifyEngine").i(
                 if (loaded.isSuccess) "native engine loaded" else "native engine unavailable: ${loaded.exceptionOrNull()}",
             )
-            com.convx.music.playback.smart.DemucsModel.autoDownloadIfWanted(this@App)
+            com.hdemirbassmusic.music.playback.smart.DemucsModel.autoDownloadIfWanted(this@App)
         }
     }
 
@@ -356,7 +356,7 @@ class App : Application(), SingletonImageLoader.Factory {
             dataStore.data
                 .map { (it[AppleArtworkKey] ?: true) && it[DataSaverEnabledKey] != true }
                 .distinctUntilChanged()
-                .collect { com.convx.music.utils.AppleArt.enabled = it }
+                .collect { com.hdemirbassmusic.music.utils.AppleArt.enabled = it }
         }
     }
 
@@ -386,7 +386,7 @@ class App : Application(), SingletonImageLoader.Factory {
                 // asking for maxresdefault is safe on the videos that do not have one.
                 add(ArtworkQualityInterceptor())
                 // Cover art that lives on an SMB or WebDAV source.
-                add(com.convx.music.utils.NetworkArtworkFetcher.Factory { networkRepository.get() })
+                add(com.hdemirbassmusic.music.utils.NetworkArtworkFetcher.Factory { networkRepository.get() })
             }
             // Reuse decoded images while scrolling.
             memoryCache {

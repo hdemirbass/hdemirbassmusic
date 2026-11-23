@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player.customize
+package com.hdemirbassmusic.music.ui.player.customize
 
 import androidx.compose.ui.unit.dp
 import android.content.Context
@@ -37,13 +37,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import coil3.compose.rememberAsyncImagePainter
 import coil3.request.ImageRequest
-import com.convx.music.R
-import com.convx.music.constants.PlayerIconsKey
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.PlayerIconsKey
 import androidx.datastore.preferences.core.Preferences
-import com.convx.music.constants.V2PlayerIconsKey
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.V2PlayerIconsKey
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.rememberPreference
 import org.json.JSONObject
 import java.io.File
 
@@ -305,14 +305,14 @@ fun PlayerGlyph(
     } else {
         // The caller's modifier sizes the slot; the symbol sits centred inside it at [size].
         androidx.compose.foundation.layout.Box(modifier, contentAlignment = androidx.compose.ui.Alignment.Center) {
-            com.convx.music.ui.component.SymbolIcon(
+            com.hdemirbassmusic.music.ui.component.SymbolIcon(
                 symbol = fallbackSymbol,
                 contentDescription = contentDescription,
                 size = size,
                 tint = tint,
                 bounceOnTouch = bounce,
                 // Black is the DstOut cut-out of an active tab disc: it must stay a plain mask.
-                chrome = if (tint == androidx.compose.ui.graphics.Color.Black) 0f else com.convx.music.ui.utils.MenuIconChrome,
+                chrome = if (tint == androidx.compose.ui.graphics.Color.Black) 0f else com.hdemirbassmusic.music.ui.utils.MenuIconChrome,
             )
         }
     }

@@ -1,4 +1,4 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

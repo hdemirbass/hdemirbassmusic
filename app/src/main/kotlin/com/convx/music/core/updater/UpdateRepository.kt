@@ -1,4 +1,4 @@
-package com.convx.music.core.updater
+package com.hdemirbassmusic.music.core.updater
 
 import android.content.Context
 import android.os.Build
@@ -10,9 +10,9 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import androidx.work.workDataOf
-import com.convx.music.BuildConfig
-import com.convx.music.core.UpdateNotificationHelper
-import com.convx.music.core.updater.downloadmanager.UpdateDownloadWorker
+import com.hdemirbassmusic.music.BuildConfig
+import com.hdemirbassmusic.music.core.UpdateNotificationHelper
+import com.hdemirbassmusic.music.core.updater.downloadmanager.UpdateDownloadWorker
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

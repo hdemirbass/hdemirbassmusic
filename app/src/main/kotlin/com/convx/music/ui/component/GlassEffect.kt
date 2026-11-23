@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.app.ActivityManager
 import android.os.Build
-import com.convx.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.State
@@ -24,42 +24,42 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawOutline
 import androidx.compose.ui.graphics.isSpecified
-import com.convx.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.ui.theme.isHueless
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.graphics.luminance
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.BackdropEffectScope
-import com.convx.music.ui.component.backdrop.backdrops.LayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.BackdropEffectScope
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.LayerBackdrop
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.component.backdrop.drawBackdrop
-import com.convx.music.ui.component.backdrop.isRenderEffectSupported
-import com.convx.music.ui.component.backdrop.effects.blur
-import com.convx.music.ui.component.backdrop.effects.colorControls
-import com.convx.music.ui.component.backdrop.effects.lens
-import com.convx.music.ui.component.backdrop.poolLens
-import com.convx.music.ui.component.backdrop.highlight.Highlight
-import com.convx.music.ui.component.backdrop.highlight.HighlightStyle
-import com.convx.music.ui.component.backdrop.shadow.Shadow
-import com.convx.music.ui.utils.outerDarkRim
-import com.convx.music.designsystem.ConvxDesignTokens
+import com.hdemirbassmusic.music.ui.component.backdrop.drawBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.isRenderEffectSupported
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.colorControls
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.lens
+import com.hdemirbassmusic.music.ui.component.backdrop.poolLens
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.Highlight
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.HighlightStyle
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.Shadow
+import com.hdemirbassmusic.music.ui.utils.outerDarkRim
+import com.hdemirbassmusic.music.designsystem.hdemirbassmusicDesignTokens
 
 /**
  * User-configurable parameters of the liquid glass effect, sourced from DataStore
- * preferences in [com.convx.music.MainActivity] and distributed through
+ * preferences in [com.hdemirbassmusic.music.MainActivity] and distributed through
  * [LocalGlassEffectConfig].
  */
 @Stable
 data class GlassEffectConfig(
     val globalEnabled: Boolean = true,
-    val vibrancy: Float = ConvxDesignTokens.Glass.MiniPlayerSaturation,
+    val vibrancy: Float = hdemirbassmusicDesignTokens.Glass.MiniPlayerSaturation,
     /** Blur in dp applied to glass pills. Nav spec = 3dp (Q16). */
-    val blurRadius: Float = ConvxDesignTokens.Glass.MiniPlayerBlurDp,
+    val blurRadius: Float = hdemirbassmusicDesignTokens.Glass.MiniPlayerBlurDp,
     /** 0..1, mapped to 0..[LENS_MAX_DP] dp of lens refraction height. Nav spec .60 (Q16). */
-    val lensHeight: Float = ConvxDesignTokens.Glass.MiniPlayerLensHeight,
+    val lensHeight: Float = hdemirbassmusicDesignTokens.Glass.MiniPlayerLensHeight,
     /** 0..1, mapped to 0..[LENS_MAX_DP] dp of lens refraction amount. Nav spec .69 (Q16). */
-    val lensAmount: Float = ConvxDesignTokens.Glass.MiniPlayerLensAmount,
+    val lensAmount: Float = hdemirbassmusicDesignTokens.Glass.MiniPlayerLensAmount,
     val chromaticAberration: Boolean = false,
     val depthEffect: Boolean = false,
     /** [Color.Unspecified] means adaptive: derived from the theme surface. */
@@ -74,7 +74,7 @@ data class GlassEffectConfig(
      *  to the theme: a dark wash on dark, a light one on light. */
     val puckColor: Color = Color.Unspecified,
     /** Puck wash opacity at rest. It eases toward clear while pressed. */
-    val puckOpacity: Float = ConvxDesignTokens.Glass.DarkSelectedPuckOpacity,
+    val puckOpacity: Float = hdemirbassmusicDesignTokens.Glass.DarkSelectedPuckOpacity,
     val surfaceOpacity: Float = 0.5f,
     /** [Color.Unspecified] means adaptive monochromatic label (dark over light
      *  content, light over dark) — resolved by [resolvedTextColor]. */
@@ -88,12 +88,12 @@ data class GlassEffectConfig(
      *  which all share [vibrancy]/[blurRadius]/[lensHeight]/[lensAmount]) —
      *  defaults match those shared values so it looks identical until
      *  explicitly customized. */
-    val sidePanelVibrancy: Float = ConvxDesignTokens.Glass.SidePanelSaturation,
-    val sidePanelBlurRadius: Float = ConvxDesignTokens.Glass.SidePanelBlurDp,
-    val sidePanelLensHeight: Float = ConvxDesignTokens.Glass.SidePanelLensHeight,
-    val sidePanelLensAmount: Float = ConvxDesignTokens.Glass.SidePanelLensAmount,
+    val sidePanelVibrancy: Float = hdemirbassmusicDesignTokens.Glass.SidePanelSaturation,
+    val sidePanelBlurRadius: Float = hdemirbassmusicDesignTokens.Glass.SidePanelBlurDp,
+    val sidePanelLensHeight: Float = hdemirbassmusicDesignTokens.Glass.SidePanelLensHeight,
+    val sidePanelLensAmount: Float = hdemirbassmusicDesignTokens.Glass.SidePanelLensAmount,
     val sidePanelColor: Color = Color.Unspecified,
-    val sidePanelSurfaceOpacity: Float = ConvxDesignTokens.Glass.SidePanelTintOpacity,
+    val sidePanelSurfaceOpacity: Float = hdemirbassmusicDesignTokens.Glass.SidePanelTintOpacity,
     val sidePanelTextColor: Color = Color.Unspecified,
 ) {
     /** Copies the side panel's effect settings into the shared fields. */
@@ -147,7 +147,7 @@ enum class GlassComponent {
 }
 
 /** Maximum lens height and amount at a preference value of 1. */
-internal const val LENS_MAX_DP = ConvxDesignTokens.Glass.MaxLensDp
+internal const val LENS_MAX_DP = hdemirbassmusicDesignTokens.Glass.MaxLensDp
 
 /** Extra blur applied to the full-screen player's background. */
 internal const val PLAYER_BLUR_MULTIPLIER = 4f
@@ -218,7 +218,7 @@ val LocalGlassEffectConfig = staticCompositionLocalOf { GlassEffectConfig() }
 @Composable
 fun glassUsesDarkAppearance(): Boolean =
     LocalSampledChromeDark.current
-        ?: (com.convx.music.LocalAmbientDarkChrome.current.value ||
+        ?: (com.hdemirbassmusic.music.LocalAmbientDarkChrome.current.value ||
             AppTheme.colorScheme.surface.luminance() <= 0.5f)
 
 /** Forces glass on for fixed controls such as floating buttons. */
@@ -237,7 +237,7 @@ fun GlassEffectConfig.resolvedTextColor(
     val ambient = if (activeTint.isSpecified) activeTint else LocalAmbientBackgroundColor.current.value
     // Use sampled backdrop appearance when available; otherwise account for artwork tint.
     val effectiveDark = LocalSampledChromeDark.current ?: (isDark || (ambient.isSpecified && !ambient.isHueless()))
-    return com.convx.music.ui.theme.GlassTintTokens.glassContentColor(
+    return com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassContentColor(
         isDark = effectiveDark,
         activeTint = ambient,
         isSelected = isSelected,
@@ -301,7 +301,7 @@ fun Modifier.liquidGlass(
 ): Modifier {
     if (!isGlassAllowed()) {
         val dark = glassUsesDarkAppearance()
-        val base = com.convx.music.ui.theme.GlassTintTokens.glassBaseColor(dark)
+        val base = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassBaseColor(dark)
         val tint = config.surfaceTintColor.takeIf { it.isSpecified }
         return this.clip(shape)
             .background(base.copy(alpha = 0.85f))
@@ -329,25 +329,25 @@ fun Modifier.liquidGlass(
     val lensAmountPx = with(density) { (config.lensAmount * LENS_MAX_DP).dp.toPx() } * resolutionScale
     val ambientColor = LocalAmbientBackgroundColor.current.value
     val isDark = glassUsesDarkAppearance()
-    val baseSurfaceColor = com.convx.music.ui.theme.GlassTintTokens.glassBaseColor(isDark)
+    val baseSurfaceColor = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassBaseColor(isDark)
     // A configured tint already carries the chosen opacity. Painting the base
     // beneath it made the transparency slider barely visible, especially when
     // the default tint and base were the same color.
     val baseSurfaceOpacity = if (config.surfaceTintColor.isSpecified) 0f else if (isDark) {
-        com.convx.music.ui.theme.GlassTintTokens.BaseSurfaceOpacityDark
+        com.hdemirbassmusic.music.ui.theme.GlassTintTokens.BaseSurfaceOpacityDark
     } else {
-        com.convx.music.ui.theme.GlassTintTokens.BaseSurfaceOpacityLight
+        com.hdemirbassmusic.music.ui.theme.GlassTintTokens.BaseSurfaceOpacityLight
     }
 
     val isHeroContext = ambientColor.isSpecified && !ambientColor.isHueless()
     val tintColor = when {
         config.surfaceTintColor.isSpecified -> config.surfaceTintColor
         isHeroContext -> ambientColor
-        else -> com.convx.music.ui.theme.GlassTintTokens.neutralTintColor(isDark)
+        else -> com.hdemirbassmusic.music.ui.theme.GlassTintTokens.neutralTintColor(isDark)
     }
     val tintOpacity = when {
         config.surfaceTintColor.isSpecified -> config.surfaceOpacity.coerceIn(0f, 1f)
-        isHeroContext -> com.convx.music.ui.theme.GlassTintTokens.heroTintOpacity(isDark)
+        isHeroContext -> com.hdemirbassmusic.music.ui.theme.GlassTintTokens.heroTintOpacity(isDark)
         else -> 1f
     }
     // Neutral tints carry their own spec alpha (0.06/0.05); copy(alpha=1) would
@@ -427,11 +427,11 @@ fun Modifier.liquidGlass(
     val rimColor = when {
         config.highlightColor.isSpecified -> config.highlightColor
         rimTintColor.isSpecified -> rimTintColor
-        else -> com.convx.music.ui.theme.GlassTintTokens.pluckColor(isDark, ambientColor)
+        else -> com.hdemirbassmusic.music.ui.theme.GlassTintTokens.pluckColor(isDark, ambientColor)
     }
     val baseHighlightAlpha = when {
         highlightAlpha != EdgeHighlightAlpha -> highlightAlpha
-        else -> com.convx.music.ui.theme.GlassTintTokens.pluckOpacity(isDark, isHeroContextForPluck)
+        else -> com.hdemirbassmusic.music.ui.theme.GlassTintTokens.pluckOpacity(isDark, isHeroContextForPluck)
     }
     // Apply both component-specific and preference opacity.
     val rimAlpha = (baseHighlightAlpha * (config.highlightOpacity / EdgeHighlightAlpha)).coerceIn(0f, 1f)

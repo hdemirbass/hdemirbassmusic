@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.net.ConnectivityManager
 
@@ -12,7 +12,7 @@ import com.music.innertube.NewPipeExtractor
 import com.music.innertube.YouTube
 import com.music.innertube.models.YouTubeClient
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
-import com.convx.music.utils.BotDetectionMitigator
+import com.hdemirbassmusic.music.utils.BotDetectionMitigator
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_65_10
@@ -27,33 +27,33 @@ import com.music.innertube.models.YouTubeClient.Companion.WEB
 import com.music.innertube.models.YouTubeClient.Companion.WEB_CREATOR
 import com.music.innertube.models.YouTubeClient.Companion.WEB_REMIX
 import com.music.innertube.models.response.PlayerResponse
-import com.convx.music.constants.AudioQuality
-import com.convx.music.constants.EnableSaavnStreamingKey
-import com.convx.music.constants.ForceSelectedQualityKey
-import com.convx.music.constants.SaavnFallbackToYouTubeKey
-import com.convx.music.constants.EnableTidalStreamingKey
-import com.convx.music.constants.EnabledModulesKey
-import com.convx.music.constants.ModuleSourcesKey
-import com.convx.music.constants.ModuleSettingsKey
-import com.convx.music.constants.SaavnAudioQuality
-import com.convx.music.constants.SaavnAudioQualityKey
-import com.convx.music.constants.TidalInstanceUrlKey
-import com.convx.music.constants.TidalQuality
-import com.convx.music.constants.TidalQualityKey
-import com.convx.music.utils.tidal.TidalService
-import com.convx.music.utils.tidal.TidalTrack
+import com.hdemirbassmusic.music.constants.AudioQuality
+import com.hdemirbassmusic.music.constants.EnableSaavnStreamingKey
+import com.hdemirbassmusic.music.constants.ForceSelectedQualityKey
+import com.hdemirbassmusic.music.constants.SaavnFallbackToYouTubeKey
+import com.hdemirbassmusic.music.constants.EnableTidalStreamingKey
+import com.hdemirbassmusic.music.constants.EnabledModulesKey
+import com.hdemirbassmusic.music.constants.ModuleSourcesKey
+import com.hdemirbassmusic.music.constants.ModuleSettingsKey
+import com.hdemirbassmusic.music.constants.SaavnAudioQuality
+import com.hdemirbassmusic.music.constants.SaavnAudioQualityKey
+import com.hdemirbassmusic.music.constants.TidalInstanceUrlKey
+import com.hdemirbassmusic.music.constants.TidalQuality
+import com.hdemirbassmusic.music.constants.TidalQualityKey
+import com.hdemirbassmusic.music.utils.tidal.TidalService
+import com.hdemirbassmusic.music.utils.tidal.TidalTrack
 import com.music.spine.ModuleManager
 import org.json.JSONArray
-import com.convx.music.utils.cipher.CipherDeobfuscator
-import com.convx.music.utils.YTPlayerUtils.MAIN_CLIENT
-import com.convx.music.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
-import com.convx.music.utils.YTPlayerUtils.validateStatus
+import com.hdemirbassmusic.music.utils.cipher.CipherDeobfuscator
+import com.hdemirbassmusic.music.utils.YTPlayerUtils.MAIN_CLIENT
+import com.hdemirbassmusic.music.utils.YTPlayerUtils.STREAM_FALLBACK_CLIENTS
+import com.hdemirbassmusic.music.utils.YTPlayerUtils.validateStatus
 import com.music.innertube.AudioStreamProbeResult
-import com.convx.music.utils.potoken.PoTokenGenerator
-import com.convx.music.utils.potoken.PoTokenResult
-import com.convx.music.utils.sabr.EjsNTransformSolver
-import com.convx.music.utils.PlaybackLogLevel
-import com.convx.music.utils.PlaybackLogManager
+import com.hdemirbassmusic.music.utils.potoken.PoTokenGenerator
+import com.hdemirbassmusic.music.utils.potoken.PoTokenResult
+import com.hdemirbassmusic.music.utils.sabr.EjsNTransformSolver
+import com.hdemirbassmusic.music.utils.PlaybackLogLevel
+import com.hdemirbassmusic.music.utils.PlaybackLogManager
 import com.music.innertube.models.IpVersion
 import com.music.innertube.models.WatchEndpoint
 import com.music.jiosaavn.SaavnService

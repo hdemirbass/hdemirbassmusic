@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -28,8 +28,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.R
-import com.convx.music.ui.utils.Motion
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.utils.Motion
 import kotlinx.coroutines.delay
 
 @Composable

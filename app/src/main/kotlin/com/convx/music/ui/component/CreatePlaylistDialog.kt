@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.net.Uri
 import android.widget.Toast
@@ -69,18 +69,18 @@ import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFCheckmark
 import com.composables.sfsymbols.monochrome.SFXmark
 import com.music.innertube.YouTube
-import com.convx.music.LocalDatabase
-import com.convx.music.R
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.extensions.isSyncEnabled
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.extensions.isSyncEnabled
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

@@ -4,17 +4,17 @@
  * capsule/src/main/java/com/kyant/capsule/Continuity.kt
  *
  * Vendored so the shape ships as source with this app. Package renamed
- * accordingly (com.kyant.capsule -> com.convx.music.ui.component.shapes).
+ * accordingly (com.kyant.capsule -> com.hdemirbassmusic.music.ui.component.shapes).
  */
-package com.convx.music.ui.component.shapes
+package com.hdemirbassmusic.music.ui.component.shapes
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Outline
-import com.convx.music.ui.component.shapes.continuities.G2Continuity
-import com.convx.music.ui.component.shapes.path.PathSegments
-import com.convx.music.ui.component.shapes.path.toPath
+import com.hdemirbassmusic.music.ui.component.shapes.continuities.G2Continuity
+import com.hdemirbassmusic.music.ui.component.shapes.path.PathSegments
+import com.hdemirbassmusic.music.ui.component.shapes.path.toPath
 
 @Immutable
 interface Continuity {

@@ -1,10 +1,10 @@
-package com.convx.music.playback.data
+package com.hdemirbassmusic.music.playback.data
 
 import androidx.room.Room
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import com.convx.music.playback.smart.EnergySample
-import com.convx.music.playback.smart.MixCandidate
-import com.convx.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.playback.smart.EnergySample
+import com.hdemirbassmusic.music.playback.smart.MixCandidate
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals

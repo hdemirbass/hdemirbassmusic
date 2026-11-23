@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:Suppress("DEPRECATION")
 
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -44,10 +44,10 @@ import androidx.media3.common.PlaybackException
 import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
 import androidx.media3.common.Player.EVENT_POSITION_DISCONTINUITY
-import com.convx.music.playback.smart.TrackAnalyzer
-import com.convx.music.playback.smart.TrackAnalysis
-import com.convx.music.utils.toJavaProxy
-import com.convx.music.data.settings.AppSettings
+import com.hdemirbassmusic.music.playback.smart.TrackAnalyzer
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.utils.toJavaProxy
+import com.hdemirbassmusic.music.data.settings.AppSettings
 import androidx.media3.common.Player.EVENT_TIMELINE_CHANGED
 import androidx.media3.common.Player.REPEAT_MODE_ALL
 import androidx.media3.common.Player.REPEAT_MODE_OFF
@@ -90,154 +90,154 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import com.music.lastfm.LastFM
-import com.convx.music.MainActivity
-import com.convx.music.R
-import com.convx.music.lyrics.LyricsSyncLevel
-import com.convx.music.lyrics.LyricsWithProvider
-import com.convx.music.lyrics.LyricsProviderRegistry
-import com.convx.music.lyrics.LyricsProviderSettings
-import com.convx.music.constants.LyricsProviderOrderKey
-import com.convx.music.constants.AudioNormalizationKey
-import com.convx.music.constants.AudioOffload
-import com.convx.music.constants.AudioQualityKey
-import com.convx.music.constants.AutoDownloadOnLikeKey
-import com.convx.music.constants.EnableTidalStreamingKey
-import com.convx.music.constants.EnabledModulesKey
-import com.convx.music.constants.ModuleSettingsKey
-import com.convx.music.constants.ModuleSourcesKey
-import com.convx.music.constants.ForceSelectedQualityKey
-import com.convx.music.constants.EnableSaavnStreamingKey
-import com.convx.music.constants.SaavnAudioQualityKey
-import com.convx.music.constants.SaavnFallbackToYouTubeKey
-import com.convx.music.constants.TidalQualityKey
-import com.convx.music.constants.TidalInstanceUrlKey
-import com.convx.music.constants.AutoLoadMoreKey
-import com.convx.music.constants.AutoSkipNextOnErrorKey
-import com.convx.music.constants.AutoDjMixingEnabledKey
-import com.convx.music.constants.CreativeTransitionsEnabledKey
-import com.convx.music.constants.DjReverbTypeKey
-import com.convx.music.constants.DjDelayTypeKey
-import com.convx.music.constants.CrossfadeDurationKey
-import com.convx.music.constants.CrossfadeEnabledKey
-import com.convx.music.constants.DisableLoadMoreWhenRepeatAllKey
+import com.hdemirbassmusic.music.MainActivity
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.lyrics.LyricsSyncLevel
+import com.hdemirbassmusic.music.lyrics.LyricsWithProvider
+import com.hdemirbassmusic.music.lyrics.LyricsProviderRegistry
+import com.hdemirbassmusic.music.lyrics.LyricsProviderSettings
+import com.hdemirbassmusic.music.constants.LyricsProviderOrderKey
+import com.hdemirbassmusic.music.constants.AudioNormalizationKey
+import com.hdemirbassmusic.music.constants.AudioOffload
+import com.hdemirbassmusic.music.constants.AudioQualityKey
+import com.hdemirbassmusic.music.constants.AutoDownloadOnLikeKey
+import com.hdemirbassmusic.music.constants.EnableTidalStreamingKey
+import com.hdemirbassmusic.music.constants.EnabledModulesKey
+import com.hdemirbassmusic.music.constants.ModuleSettingsKey
+import com.hdemirbassmusic.music.constants.ModuleSourcesKey
+import com.hdemirbassmusic.music.constants.ForceSelectedQualityKey
+import com.hdemirbassmusic.music.constants.EnableSaavnStreamingKey
+import com.hdemirbassmusic.music.constants.SaavnAudioQualityKey
+import com.hdemirbassmusic.music.constants.SaavnFallbackToYouTubeKey
+import com.hdemirbassmusic.music.constants.TidalQualityKey
+import com.hdemirbassmusic.music.constants.TidalInstanceUrlKey
+import com.hdemirbassmusic.music.constants.AutoLoadMoreKey
+import com.hdemirbassmusic.music.constants.AutoSkipNextOnErrorKey
+import com.hdemirbassmusic.music.constants.AutoDjMixingEnabledKey
+import com.hdemirbassmusic.music.constants.CreativeTransitionsEnabledKey
+import com.hdemirbassmusic.music.constants.DjReverbTypeKey
+import com.hdemirbassmusic.music.constants.DjDelayTypeKey
+import com.hdemirbassmusic.music.constants.CrossfadeDurationKey
+import com.hdemirbassmusic.music.constants.CrossfadeEnabledKey
+import com.hdemirbassmusic.music.constants.DisableLoadMoreWhenRepeatAllKey
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import com.convx.music.constants.DiscordActivityNameKey
-import com.convx.music.constants.DiscordActivityTypeKey
-import com.convx.music.constants.DiscordAdvancedModeKey
-import com.convx.music.constants.DiscordButton1TextKey
-import com.convx.music.constants.DiscordButton1VisibleKey
-import com.convx.music.constants.DiscordButton2TextKey
-import com.convx.music.constants.DiscordButton2VisibleKey
-import com.convx.music.constants.DiscordStatusKey
-import com.convx.music.constants.DiscordTokenKey
-import com.convx.music.constants.DiscordUseDetailsKey
-import com.convx.music.constants.EnableDiscordRPCKey
-import com.convx.music.constants.EnableLastFMScrobblingKey
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.ListenBrainzEnabledKey
-import com.convx.music.constants.ListenBrainzTokenKey
-import com.convx.music.constants.HistoryDuration
-import com.convx.music.constants.LastFMUseNowPlaying
-import com.convx.music.constants.MediaSessionConstants.CommandToggleLike
-import com.convx.music.constants.MediaSessionConstants.CommandToggleRepeatMode
-import com.convx.music.constants.MediaSessionConstants.CommandToggleShuffle
-import com.convx.music.constants.MediaSessionConstants.CommandToggleStartRadio
-import com.convx.music.constants.PauseListenHistoryKey
-import com.convx.music.history.ListenHistorySettings
-import com.convx.music.history.ListenHistorySettingsState
-import com.convx.music.history.shouldRecordListenEvent
-import com.convx.music.constants.PauseOnMute
-import com.convx.music.constants.PersistentQueueKey
-import com.convx.music.constants.PersistentShuffleAcrossQueuesKey
-import com.convx.music.constants.PlayerVolumeKey
-import com.convx.music.constants.RememberShuffleAndRepeatKey
-import com.convx.music.constants.RepeatModeKey
-import com.convx.music.constants.ResumeOnBluetoothConnectKey
-import com.convx.music.constants.ScrobbleDelayPercentKey
-import com.convx.music.constants.ScrobbleDelaySecondsKey
-import com.convx.music.constants.ScrobbleMinSongDurationKey
-import com.convx.music.constants.ShuffleModeKey
-import com.convx.music.constants.ShufflePlaylistFirstKey
-import com.convx.music.constants.PreventDuplicateTracksInQueueKey
-import com.convx.music.constants.SimilarContent
-import com.convx.music.constants.SkipSilenceInstantKey
-import com.convx.music.constants.BitPerfectKey
-import com.convx.music.constants.SpatialAudioKey
-import com.convx.music.constants.VocalSuppressionKey
-import com.convx.music.constants.SkipSilenceKey
-import com.convx.music.constants.IpVersionKey
+import com.hdemirbassmusic.music.constants.DiscordActivityNameKey
+import com.hdemirbassmusic.music.constants.DiscordActivityTypeKey
+import com.hdemirbassmusic.music.constants.DiscordAdvancedModeKey
+import com.hdemirbassmusic.music.constants.DiscordButton1TextKey
+import com.hdemirbassmusic.music.constants.DiscordButton1VisibleKey
+import com.hdemirbassmusic.music.constants.DiscordButton2TextKey
+import com.hdemirbassmusic.music.constants.DiscordButton2VisibleKey
+import com.hdemirbassmusic.music.constants.DiscordStatusKey
+import com.hdemirbassmusic.music.constants.DiscordTokenKey
+import com.hdemirbassmusic.music.constants.DiscordUseDetailsKey
+import com.hdemirbassmusic.music.constants.EnableDiscordRPCKey
+import com.hdemirbassmusic.music.constants.EnableLastFMScrobblingKey
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.ListenBrainzEnabledKey
+import com.hdemirbassmusic.music.constants.ListenBrainzTokenKey
+import com.hdemirbassmusic.music.constants.HistoryDuration
+import com.hdemirbassmusic.music.constants.LastFMUseNowPlaying
+import com.hdemirbassmusic.music.constants.MediaSessionConstants.CommandToggleLike
+import com.hdemirbassmusic.music.constants.MediaSessionConstants.CommandToggleRepeatMode
+import com.hdemirbassmusic.music.constants.MediaSessionConstants.CommandToggleShuffle
+import com.hdemirbassmusic.music.constants.MediaSessionConstants.CommandToggleStartRadio
+import com.hdemirbassmusic.music.constants.PauseListenHistoryKey
+import com.hdemirbassmusic.music.history.ListenHistorySettings
+import com.hdemirbassmusic.music.history.ListenHistorySettingsState
+import com.hdemirbassmusic.music.history.shouldRecordListenEvent
+import com.hdemirbassmusic.music.constants.PauseOnMute
+import com.hdemirbassmusic.music.constants.PersistentQueueKey
+import com.hdemirbassmusic.music.constants.PersistentShuffleAcrossQueuesKey
+import com.hdemirbassmusic.music.constants.PlayerVolumeKey
+import com.hdemirbassmusic.music.constants.RememberShuffleAndRepeatKey
+import com.hdemirbassmusic.music.constants.RepeatModeKey
+import com.hdemirbassmusic.music.constants.ResumeOnBluetoothConnectKey
+import com.hdemirbassmusic.music.constants.ScrobbleDelayPercentKey
+import com.hdemirbassmusic.music.constants.ScrobbleDelaySecondsKey
+import com.hdemirbassmusic.music.constants.ScrobbleMinSongDurationKey
+import com.hdemirbassmusic.music.constants.ShuffleModeKey
+import com.hdemirbassmusic.music.constants.ShufflePlaylistFirstKey
+import com.hdemirbassmusic.music.constants.PreventDuplicateTracksInQueueKey
+import com.hdemirbassmusic.music.constants.SimilarContent
+import com.hdemirbassmusic.music.constants.SkipSilenceInstantKey
+import com.hdemirbassmusic.music.constants.BitPerfectKey
+import com.hdemirbassmusic.music.constants.SpatialAudioKey
+import com.hdemirbassmusic.music.constants.VocalSuppressionKey
+import com.hdemirbassmusic.music.constants.SkipSilenceKey
+import com.hdemirbassmusic.music.constants.IpVersionKey
 import com.music.innertube.models.IpVersion
 import okhttp3.Dns
 import java.net.InetAddress
 import java.net.Inet4Address
 import java.net.Inet6Address
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.Event
-import com.convx.music.db.entities.FormatEntity
-import com.convx.music.db.entities.LyricsEntity
-import com.convx.music.db.entities.RelatedSongMap
-import com.convx.music.db.entities.Song
-import com.convx.music.eq.EqualizerService
-import com.convx.music.playback.audio.BitPerfectAudio
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.Event
+import com.hdemirbassmusic.music.db.entities.FormatEntity
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.db.entities.RelatedSongMap
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.eq.EqualizerService
+import com.hdemirbassmusic.music.playback.audio.BitPerfectAudio
 import io.github.anilbeesetti.nextlib.media3ext.ffdecoder.NextRenderersFactory
-import com.convx.music.eq.audio.CustomEqualizerAudioProcessor
-import com.convx.music.eq.data.EQProfileRepository
-import com.convx.music.extensions.SilentHandler
-import com.convx.music.extensions.collect
-import com.convx.music.extensions.collectLatest
-import com.convx.music.extensions.currentMetadata
-import com.convx.music.extensions.findNextMediaItemById
-import com.convx.music.extensions.mediaItems
-import com.convx.music.extensions.metadata
-import com.convx.music.extensions.setOffloadEnabled
-import com.convx.music.extensions.toEnum
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.extensions.toPersistQueue
-import com.convx.music.extensions.toQueue
-import com.convx.music.lyrics.LyricsHelper
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.PersistedPlaybackSnapshot
-import com.convx.music.models.PersistPlayerState
-import com.convx.music.models.PersistQueue
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.audio.TrackAnalyzerAudioProcessor
-import com.convx.music.playback.dj.BeatGrid
-import com.convx.music.playback.dj.DjEngine
-import com.convx.music.playback.audio.DelayAudioProcessor
-import com.convx.music.playback.audio.DjFilterAudioProcessor
-import com.convx.music.playback.audio.DjTailAudioProcessor
-import com.convx.music.playback.audio.DjAmbienceAudioProcessor
-import com.convx.music.playback.audio.ReverbType
-import com.convx.music.playback.audio.DelayType
-import com.convx.music.playback.audio.DjMixPlan
-import com.convx.music.playback.audio.DjMixTier
-import com.convx.music.playback.audio.LosslessStallWatchdogAudioProcessor
-import com.convx.music.playback.audio.SilenceDetectorAudioProcessor
-import com.convx.music.playback.audio.SpatialAudioProcessor
-import com.convx.music.playback.audio.VocalSuppressionAudioProcessor
-import com.convx.music.playback.queues.EmptyQueue
-import com.convx.music.playback.queues.Queue
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.playback.queues.filterExplicit
-import com.convx.music.playback.queues.filterVideoSongs
-import com.convx.music.utils.CoilBitmapLoader
-import com.convx.music.utils.DiscordRPC
-import com.convx.music.utils.NetworkConnectivityObserver
-import com.convx.music.utils.ScrobbleManager
-import com.convx.music.utils.SyncUtils
-import com.convx.music.utils.YTPlayerUtils
-import com.convx.music.constants.StopMusicOnTaskClearKey
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.reportException
-import com.convx.music.widget.ConvxWidgetManager
-import com.convx.music.widget.LyricsWidgetReceiver
-import com.convx.music.widget.MusicWidgetReceiver
-import com.convx.music.widget.NowPlayingWidgetReceiver
+import com.hdemirbassmusic.music.eq.audio.CustomEqualizerAudioProcessor
+import com.hdemirbassmusic.music.eq.data.EQProfileRepository
+import com.hdemirbassmusic.music.extensions.SilentHandler
+import com.hdemirbassmusic.music.extensions.collect
+import com.hdemirbassmusic.music.extensions.collectLatest
+import com.hdemirbassmusic.music.extensions.currentMetadata
+import com.hdemirbassmusic.music.extensions.findNextMediaItemById
+import com.hdemirbassmusic.music.extensions.mediaItems
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.extensions.setOffloadEnabled
+import com.hdemirbassmusic.music.extensions.toEnum
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.extensions.toPersistQueue
+import com.hdemirbassmusic.music.extensions.toQueue
+import com.hdemirbassmusic.music.lyrics.LyricsHelper
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.PersistedPlaybackSnapshot
+import com.hdemirbassmusic.music.models.PersistPlayerState
+import com.hdemirbassmusic.music.models.PersistQueue
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.audio.TrackAnalyzerAudioProcessor
+import com.hdemirbassmusic.music.playback.dj.BeatGrid
+import com.hdemirbassmusic.music.playback.dj.DjEngine
+import com.hdemirbassmusic.music.playback.audio.DelayAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.DjFilterAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.DjTailAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.DjAmbienceAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.ReverbType
+import com.hdemirbassmusic.music.playback.audio.DelayType
+import com.hdemirbassmusic.music.playback.audio.DjMixPlan
+import com.hdemirbassmusic.music.playback.audio.DjMixTier
+import com.hdemirbassmusic.music.playback.audio.LosslessStallWatchdogAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.SilenceDetectorAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.SpatialAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.VocalSuppressionAudioProcessor
+import com.hdemirbassmusic.music.playback.queues.EmptyQueue
+import com.hdemirbassmusic.music.playback.queues.Queue
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.playback.queues.filterExplicit
+import com.hdemirbassmusic.music.playback.queues.filterVideoSongs
+import com.hdemirbassmusic.music.utils.CoilBitmapLoader
+import com.hdemirbassmusic.music.utils.DiscordRPC
+import com.hdemirbassmusic.music.utils.NetworkConnectivityObserver
+import com.hdemirbassmusic.music.utils.ScrobbleManager
+import com.hdemirbassmusic.music.utils.SyncUtils
+import com.hdemirbassmusic.music.utils.YTPlayerUtils
+import com.hdemirbassmusic.music.constants.StopMusicOnTaskClearKey
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.reportException
+import com.hdemirbassmusic.music.widget.hdemirbassmusicWidgetManager
+import com.hdemirbassmusic.music.widget.LyricsWidgetReceiver
+import com.hdemirbassmusic.music.widget.MusicWidgetReceiver
+import com.hdemirbassmusic.music.widget.NowPlayingWidgetReceiver
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
@@ -325,17 +325,17 @@ class MusicService :
     PlaybackStatsListener.Callback {
     private val database: MusicDatabase by inject()
     private val lyricsHelper: LyricsHelper by inject()
-    private val networkRepository: com.convx.storage.data.NetworkMusicRepository by inject()
+    private val networkRepository: com.hdemirbassmusic.storage.data.NetworkMusicRepository by inject()
     private val syncUtils: SyncUtils by inject()
     private val downloadUtil: DownloadUtil by inject()
     private val mediaLibrarySessionCallback: MediaLibrarySessionCallback by inject()
     private val equalizerService: EqualizerService by inject()
     private val eqProfileRepository: EQProfileRepository by inject()
-    private val widgetManager: ConvxWidgetManager by inject()
-    private val roomPlaybackBridge: com.convx.music.listentogether.ListenTogetherPlayerConnectionBridge by inject()
+    private val widgetManager: hdemirbassmusicWidgetManager by inject()
+    private val roomPlaybackBridge: com.hdemirbassmusic.music.listentogether.ListenTogetherPlayerConnectionBridge by inject()
 
     private var jamRetryMediaId: String? = null
-    private val jamRecoveryBudget = com.convx.music.jam.JamRecoveryBudget()
+    private val jamRecoveryBudget = com.hdemirbassmusic.music.jam.JamRecoveryBudget()
     private var jamRetryVersion = 0L
     private var jamStableJob: Job? = null
 
@@ -346,12 +346,12 @@ class MusicService :
         jamRetryMediaId = null
         retryJob?.cancel()
         jamStableJob?.cancel()
-        roomPlaybackBridge.setJamRecovery(com.convx.music.listentogether.JamMediaRecovery.NONE)
+        roomPlaybackBridge.setJamRecovery(com.hdemirbassmusic.music.listentogether.JamMediaRecovery.NONE)
     }
 
     private fun stopJamAudio() {
         retryJob?.cancel()
-        roomPlaybackBridge.setJamRecovery(com.convx.music.listentogether.JamMediaRecovery.UNAVAILABLE)
+        roomPlaybackBridge.setJamRecovery(com.hdemirbassmusic.music.listentogether.JamMediaRecovery.UNAVAILABLE)
         player.pause()
     }
 
@@ -364,7 +364,7 @@ class MusicService :
         val queueVersion = queueRequestVersion
         val type = PlaybackErrorClassifier.classify(error, isNetworkConnected.value)
         val httpCode = PlaybackErrorClassifier.getHttpResponseCode(error)
-        roomPlaybackBridge.setJamRecovery(com.convx.music.listentogether.JamMediaRecovery.RECOVERING)
+        roomPlaybackBridge.setJamRecovery(com.hdemirbassmusic.music.listentogether.JamMediaRecovery.RECOVERING)
         player.pause()
         retryJob?.cancel()
         retryJob = scope.launch {
@@ -445,14 +445,14 @@ class MusicService :
     val waitingForNetworkConnection = MutableStateFlow(false)
     private val isNetworkConnected = MutableStateFlow(false)
 
-    private lateinit var audioQuality: com.convx.music.constants.AudioQuality
+    private lateinit var audioQuality: com.hdemirbassmusic.music.constants.AudioQuality
     private lateinit var ipVersion: IpVersion
 
     private var currentQueue: Queue = EmptyQueue
     private var queueRequestVersion = 0L
     var queueTitle: String? = null
 
-    val currentMediaMetadata = MutableStateFlow<com.convx.music.models.MediaMetadata?>(null)
+    val currentMediaMetadata = MutableStateFlow<com.hdemirbassmusic.music.models.MediaMetadata?>(null)
     private val currentSong =
         currentMediaMetadata
             .flatMapLatest { mediaMetadata ->
@@ -747,7 +747,7 @@ class MusicService :
         audioManager.registerAudioDeviceCallback(audioDeviceCallback, null)
         onOutputChanged()
 
-        audioQuality = dataStore.get(AudioQualityKey).toEnum(com.convx.music.constants.AudioQuality.AUTO)
+        audioQuality = dataStore.get(AudioQualityKey).toEnum(com.hdemirbassmusic.music.constants.AudioQuality.AUTO)
         ipVersion = dataStore.get(IpVersionKey).toEnum(IpVersion.AUTO)
         // A saved volume of ~0 would come back silent on every launch with no on-screen way to tell
         // (the system volume does not touch this one), so only an audible value is restored.
@@ -1211,11 +1211,11 @@ class MusicService :
             dataStore.data
                 .map { prefs ->
                     if (prefs[DataSaverEnabledKey] ?: false) {
-                        com.convx.music.constants.AudioQuality.LOW
+                        com.hdemirbassmusic.music.constants.AudioQuality.LOW
                     } else {
                         prefs[AudioQualityKey]?.let { value ->
-                            com.convx.music.constants.AudioQuality.entries.find { it.name == value }
-                        } ?: com.convx.music.constants.AudioQuality.AUTO
+                            com.hdemirbassmusic.music.constants.AudioQuality.entries.find { it.name == value }
+                        } ?: com.hdemirbassmusic.music.constants.AudioQuality.AUTO
                     }
                 }
                 .distinctUntilChanged()
@@ -1651,7 +1651,7 @@ class MusicService :
                 val wifiManager = applicationContext.getSystemService(android.net.wifi.WifiManager::class.java)
                 wifiLock = wifiManager?.createWifiLock(
                     android.net.wifi.WifiManager.WIFI_MODE_FULL_HIGH_PERF,
-                    "convx_music:wifi_lock"
+                    "hdemirbassmusic_music:wifi_lock"
                 )
             }
             if (wifiLock?.isHeld == false) {
@@ -2749,7 +2749,7 @@ class MusicService :
         // resolver has definitely run for the current item.
         if (playbackState == Player.STATE_READY) {
             if (roomPlaybackBridge.jamActive.value) {
-                roomPlaybackBridge.setJamRecovery(com.convx.music.listentogether.JamMediaRecovery.NONE)
+                roomPlaybackBridge.setJamRecovery(com.hdemirbassmusic.music.listentogether.JamMediaRecovery.NONE)
                 jamStableJob?.cancel()
                 val stableId = player.currentMediaItem?.mediaId
                 jamStableJob = scope.launch {
@@ -3203,7 +3203,7 @@ class MusicService :
         val isDecoderFailure = errorCode in DECODER_FAILURE_CODES
         val isLosslessAudioFailure = errorCode in LOSSLESS_AUDIO_FAILURE_CODES
         val isLocalMedia = mediaId.startsWith("content://") || mediaId.startsWith("file://") ||
-            mediaId.startsWith(com.convx.storage.domain.NetworkMediaUri.Scheme + "://")
+            mediaId.startsWith(com.hdemirbassmusic.storage.domain.NetworkMediaUri.Scheme + "://")
         val isOpus = failedFormat?.sampleMimeType == androidx.media3.common.MimeTypes.AUDIO_OPUS ||
             failedFormat?.codecs?.contains("opus", ignoreCase = true) == true
         val canRetryOpusAsAac = !isLocalMedia &&
@@ -3307,7 +3307,7 @@ class MusicService :
                     CacheDataSource
                         .Factory()
                         .setCache(playerCache)
-                        // SMB / WebDAV songs (convx-network://) are read by the network source;
+                        // SMB / WebDAV songs (hdemirbassmusic-network://) are read by the network source;
                         // every other URI falls through to the normal upstream.
                         .setUpstreamDataSourceFactory(networkRepository.dataSourceFactory(youtubeUpstreamFactory())),
                 ).setCacheWriteDataSinkFactory(null)
@@ -3850,7 +3850,7 @@ class MusicService :
                             SonicAudioProcessor(),
                         ),
                     ).build().let { sink ->
-                        com.convx.music.playback.audio.PcmProcessingAudioSink(sink) { cachedOffloadEnabled && !analysisOnly }
+                        com.hdemirbassmusic.music.playback.audio.PcmProcessingAudioSink(sink) { cachedOffloadEnabled && !analysisOnly }
                     }
             }.apply {
                 // Platform MediaCodec has no ALAC decoder on most Android devices (no AOSP
@@ -4211,7 +4211,7 @@ class MusicService :
 
         val shareIntent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
-            putExtra(Intent.EXTRA_TEXT, com.convx.music.utils.ShareUtils.songUrl(songId))
+            putExtra(Intent.EXTRA_TEXT, com.hdemirbassmusic.music.utils.ShareUtils.songUrl(songId))
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
         startActivity(Intent.createChooser(shareIntent, null).apply {
@@ -4238,7 +4238,7 @@ class MusicService :
     }
 
     private fun initializeCast() {
-        if (dataStore.get(com.convx.music.constants.EnableGoogleCastKey, true)) {
+        if (dataStore.get(com.hdemirbassmusic.music.constants.EnableGoogleCastKey, true)) {
             try {
                 castConnectionHandler = CastConnectionHandler(this, scope, this)
                 castConnectionHandler?.initialize()
@@ -4272,7 +4272,7 @@ class MusicService :
     private var seekTarget = 0L
 
     private fun logSeekTiming() {
-        if (!com.convx.music.BuildConfig.DEBUG || seekStartedAt == 0L) return
+        if (!com.hdemirbassmusic.music.BuildConfig.DEBUG || seekStartedAt == 0L) return
         val ms = android.os.SystemClock.elapsedRealtime() - seekStartedAt
         seekStartedAt = 0L
         val mediaId = player.currentMediaItem?.mediaId ?: return
@@ -4356,7 +4356,7 @@ class MusicService :
             if (!listenBrainzEnabled || cleanToken.isBlank()) return
             scope.launch {
                 if (isFinished) {
-                    com.convx.music.ui.screens.settings.ListenBrainzManager.submitFinished(
+                    com.hdemirbassmusic.music.ui.screens.settings.ListenBrainzManager.submitFinished(
                         context = this@MusicService,
                         token = cleanToken,
                         title = title,
@@ -4367,7 +4367,7 @@ class MusicService :
                         endMs = endMs
                     )
                 } else {
-                    com.convx.music.ui.screens.settings.ListenBrainzManager.submitPlayingNow(
+                    com.hdemirbassmusic.music.ui.screens.settings.ListenBrainzManager.submitPlayingNow(
                         context = this@MusicService,
                         token = cleanToken,
                         title = title,

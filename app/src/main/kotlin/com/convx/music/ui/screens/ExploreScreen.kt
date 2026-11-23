@@ -1,26 +1,26 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.utils.plusStart
-import com.convx.music.ui.utils.bleedStart
+import com.hdemirbassmusic.music.ui.utils.plusStart
+import com.hdemirbassmusic.music.ui.utils.bleedStart
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.convx.music.ui.screens.library.apple.SfStyle
-import com.convx.music.ui.screens.library.apple.YtPopTile
+import com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle
+import com.hdemirbassmusic.music.ui.screens.library.apple.YtPopTile
 import com.music.innertube.pages.ChartsPage.ChartType
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.ui.utils.youtubeBrowseRoute
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.youtubeBrowseRoute
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
-import com.convx.music.ui.utils.rememberEdgeAwareFlingBehavior
+import com.hdemirbassmusic.music.ui.utils.rememberEdgeAwareFlingBehavior
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -50,11 +50,11 @@ import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
@@ -66,7 +66,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import dev.chrisbanes.haze.hazeSource
-import com.convx.music.ui.component.TopFadeBlur
+import com.hdemirbassmusic.music.ui.component.TopFadeBlur
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -92,43 +92,43 @@ import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.models.YTItem
 import com.music.innertube.pages.BrowseResult
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
 import com.composables.sfsymbols.SfSymbols
-import com.convx.music.constants.ListItemHeight
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.MenuState
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.YouTubeGridItem
-import com.convx.music.ui.component.YouTubeListItem
-import com.convx.music.ui.component.rememberAppBackgroundColor
-import com.convx.music.ui.component.SpotlightCard
-import com.convx.music.ui.component.SpotlightCardArtworkSize
-import com.convx.music.ui.component.SpotlightCardHeight
-import com.convx.music.ui.component.SpotlightCardSpacing
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.LocalAccentTextColor
-import com.convx.music.ui.component.shimmer.GridItemPlaceHolder
-import com.convx.music.ui.component.shimmer.ShimmerHost
-import com.convx.music.ui.component.shimmer.TextPlaceholder
-import com.convx.music.ui.menu.YouTubeAlbumMenu
-import com.convx.music.ui.menu.YouTubeArtistMenu
-import com.convx.music.ui.menu.YouTubePlaylistMenu
-import com.convx.music.ui.menu.YouTubeSongMenu
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.onlinePlaylistRoute
-import com.convx.music.ui.utils.SnapLayoutInfoProvider
-import com.convx.music.utils.listItemShape
-import com.convx.music.utils.reportException
-import com.convx.music.viewmodels.ChartsViewModel
-import com.convx.music.viewmodels.ExploreViewModel
+import com.hdemirbassmusic.music.constants.ListItemHeight
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.MenuState
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.YouTubeGridItem
+import com.hdemirbassmusic.music.ui.component.YouTubeListItem
+import com.hdemirbassmusic.music.ui.component.rememberAppBackgroundColor
+import com.hdemirbassmusic.music.ui.component.SpotlightCard
+import com.hdemirbassmusic.music.ui.component.SpotlightCardArtworkSize
+import com.hdemirbassmusic.music.ui.component.SpotlightCardHeight
+import com.hdemirbassmusic.music.ui.component.SpotlightCardSpacing
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.LocalAccentTextColor
+import com.hdemirbassmusic.music.ui.component.shimmer.GridItemPlaceHolder
+import com.hdemirbassmusic.music.ui.component.shimmer.ShimmerHost
+import com.hdemirbassmusic.music.ui.component.shimmer.TextPlaceholder
+import com.hdemirbassmusic.music.ui.menu.YouTubeAlbumMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeArtistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubePlaylistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeSongMenu
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.onlinePlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.SnapLayoutInfoProvider
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.utils.reportException
+import com.hdemirbassmusic.music.viewmodels.ChartsViewModel
+import com.hdemirbassmusic.music.viewmodels.ExploreViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 /**
@@ -142,7 +142,7 @@ fun ExploreScreen(
     navController: NavController,
     exploreViewModel: ExploreViewModel = koinViewModel(),
     chartsViewModel: ChartsViewModel = koinViewModel(),
-    tilesViewModel: com.convx.music.ui.screens.search.AppleSearchViewModel = koinViewModel(),
+    tilesViewModel: com.hdemirbassmusic.music.ui.screens.search.AppleSearchViewModel = koinViewModel(),
 ) {
     val menuState = LocalMenuState.current
     val playerConnection = LocalPlayerConnection.current ?: return
@@ -153,7 +153,7 @@ fun ExploreScreen(
     val art by tilesViewModel.art.collectAsStateWithLifecycle()
     LaunchedEffect(Unit) { if (chartsPage == null) chartsViewModel.loadCharts() }
 
-    val colors = com.convx.music.ui.ios.foundation.IosTheme.colors
+    val colors = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors
     val pageInsets = LocalPlayerAwareWindowInsets.current.asPaddingValues()
     val sideInset = pageInsets.calculateStartPadding(androidx.compose.ui.platform.LocalLayoutDirection.current)
     val bottom = LocalPlayerAwareWindowInsets.current.asPaddingValues().calculateBottomPadding()
@@ -246,7 +246,7 @@ fun ExploreScreen(
                         contentType = { "mood_tile" },
                     ) { mood ->
                         LaunchedEffect(mood) { tilesViewModel.loadArt(mood) }
-                        com.convx.music.ui.screens.search.CategoryTile(
+                        com.hdemirbassmusic.music.ui.screens.search.CategoryTile(
                             title = mood.title,
                             color = Color(mood.stripeColor),
                             art = art[mood.endpoint.browseId + "|" + mood.endpoint.params],
@@ -288,7 +288,7 @@ private fun ShelfTitle(title: String) {
     Text(
         text = title,
         style = SfStyle(22.sp, 28.sp, FontWeight.Bold, (-0.26).sp),
-        color = com.convx.music.ui.ios.foundation.IosTheme.colors.label,
+        color = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label,
         maxLines = 1,
         modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 18.dp, bottom = 10.dp),
     )

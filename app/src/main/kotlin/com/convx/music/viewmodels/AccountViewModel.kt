@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -14,11 +14,11 @@ import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.utils.completed
-import com.convx.music.constants.HideYoutubeShortsKey
-import com.convx.music.ui.utils.resize
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.constants.HideYoutubeShortsKey
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged

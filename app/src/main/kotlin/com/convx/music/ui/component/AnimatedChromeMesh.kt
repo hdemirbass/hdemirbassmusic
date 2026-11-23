@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.graphics.ComposeShader
 import android.graphics.Color as AndroidColor
@@ -36,9 +36,9 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.isActive

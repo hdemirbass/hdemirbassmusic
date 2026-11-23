@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -17,11 +17,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalSyncUtils
-import com.convx.music.R
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.ui.component.TextFieldDialog
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalSyncUtils
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.ui.component.TextFieldDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch

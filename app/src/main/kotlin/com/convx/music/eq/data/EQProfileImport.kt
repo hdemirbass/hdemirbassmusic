@@ -1,6 +1,6 @@
-package com.convx.music.eq.data
+package com.hdemirbassmusic.music.eq.data
 
-import com.convx.music.playback.EqualizerProfileParser
+import com.hdemirbassmusic.music.playback.EqualizerProfileParser
 import java.io.InputStream
 
 internal object EQProfileImport {

@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -32,13 +32,13 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.text.input.TextFieldValue
 import coil3.compose.AsyncImage
-import com.convx.music.R
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.screens.library.apple.SfStyle
-import com.convx.music.ui.utils.SharedArtworkSeedImage
-import com.convx.music.ui.utils.sharedArtworkTarget
-import com.convx.music.ui.utils.sharedTitleTarget
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle
+import com.hdemirbassmusic.music.ui.utils.SharedArtworkSeedImage
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkTarget
+import com.hdemirbassmusic.music.ui.utils.sharedTitleTarget
 
 @Composable
 fun CollectionDetailHeader(

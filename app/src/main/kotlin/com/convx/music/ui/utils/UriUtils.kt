@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.ui.platform.UriHandler
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 /**
  * Safely opens a URI using the provided [UriHandler].

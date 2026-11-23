@@ -1,4 +1,4 @@
-package com.convx.music.canvas
+package com.hdemirbassmusic.music.canvas
 
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString

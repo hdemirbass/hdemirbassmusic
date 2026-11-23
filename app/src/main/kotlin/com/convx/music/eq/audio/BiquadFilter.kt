@@ -1,5 +1,5 @@
-package com.convx.music.eq.audio
+package com.hdemirbassmusic.music.eq.audio
 
-import com.convx.music.playback.EqualizerBiquadFilter
+import com.hdemirbassmusic.music.playback.EqualizerBiquadFilter
 
 typealias BiquadFilter = EqualizerBiquadFilter

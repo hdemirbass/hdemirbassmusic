@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf

@@ -2,7 +2,7 @@
  * Based on Orchard's TrackAnalyzer (https://github.com/SFG5453/Orchard). Beat and vocal
  * analysis runs over the track head and tail, which transition logic reads.
  *
- * Copyright (C) 2026 Convx contributors
+ * Copyright (C) 2026 hdemirbassmusic contributors
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -18,7 +18,7 @@
  * with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import android.content.Context
 import android.media.MediaDataSource
@@ -27,7 +27,7 @@ import android.os.Process
 import android.os.SystemClock
 import android.util.Log
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.playback.AudioCache
+import com.hdemirbassmusic.music.playback.AudioCache
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CancellationException
 import java.util.concurrent.LinkedBlockingQueue
@@ -105,10 +105,10 @@ class TrackAnalyzer(context: Context, private val cache: AudioCache) {
     }.apply { allowCoreThreadTimeOut(true) }
 
     /** First measurement of a track; a transition is waiting on this one. */
-    private val headExecutor = lane("convx-smart-analysis", Process.THREAD_PRIORITY_BACKGROUND)
+    private val headExecutor = lane("hdemirbassmusic-smart-analysis", Process.THREAD_PRIORITY_BACKGROUND)
 
     /** Whole-track refinement of a track that already has a result; minutes long and never urgent. */
-    private val refineExecutor = lane("convx-smart-refine", Process.THREAD_PRIORITY_LOWEST)
+    private val refineExecutor = lane("hdemirbassmusic-smart-refine", Process.THREAD_PRIORITY_LOWEST)
 
     fun analysisFor(trackId: String): TrackAnalysis = results[trackId] ?: TrackAnalysis(trackId = trackId)
 
@@ -743,7 +743,7 @@ class TrackAnalyzer(context: Context, private val cache: AudioCache) {
     }
 
     private companion object {
-        const val TAG = "ConvxTrackAnalyzer"
+        const val TAG = "hdemirbassmusicTrackAnalyzer"
         const val REQUEST_RETRY_MS = 1000L
 
         /**

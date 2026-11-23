@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
@@ -11,8 +11,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
-import com.convx.music.db.MusicDatabase
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.first
@@ -22,9 +22,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.withTimeoutOrNull
-import com.convx.music.utils.Wikipedia
-import com.convx.music.utils.AppleMusicAboutAlbum
-import com.convx.music.utils.ArtistWordmarkAssets
+import com.hdemirbassmusic.music.utils.Wikipedia
+import com.hdemirbassmusic.music.utils.AppleMusicAboutAlbum
+import com.hdemirbassmusic.music.utils.ArtistWordmarkAssets
 import java.io.File
 
 class AlbumViewModel(

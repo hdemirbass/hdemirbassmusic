@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp

@@ -1,4 +1,4 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import kotlinx.coroutines.CoroutineScope

@@ -1,6 +1,6 @@
-package com.convx.storage.data
+package com.hdemirbassmusic.storage.data
 
-import com.convx.storage.domain.*
+import com.hdemirbassmusic.storage.domain.*
 import com.hierynomus.msdtyp.AccessMask
 import com.hierynomus.msfscc.FileAttributes
 import com.hierynomus.mssmb2.SMB2CreateDisposition

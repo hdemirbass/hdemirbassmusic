@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.component.backdrop
+package com.hdemirbassmusic.music.ui.component.backdrop
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,10 +20,10 @@ import androidx.compose.ui.node.requireLayoutDirection
 import androidx.compose.ui.unit.dp
 import kotlin.math.ceil
 import android.os.Build
-import com.convx.music.ui.component.backdrop.internal.MultiRefractionMaxShapes
-import com.convx.music.ui.component.backdrop.internal.MultiRefractionShaderString
-import com.convx.music.ui.component.backdrop.internal.RuntimeShaderEffect
-import com.convx.music.ui.component.backdrop.internal.chain
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.MultiRefractionMaxShapes
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.MultiRefractionShaderString
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.RuntimeShaderEffect
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.chain
 import androidx.compose.ui.graphics.layer.GraphicsLayer
 import androidx.compose.ui.graphics.layer.drawLayer
 import androidx.compose.ui.layout.LayoutCoordinates
@@ -33,8 +33,8 @@ import androidx.compose.ui.node.ModifierNodeElement
 import androidx.compose.ui.node.requireGraphicsContext
 import androidx.compose.ui.platform.InspectorInfo
 import androidx.compose.ui.unit.IntSize
-import com.convx.music.ui.component.backdrop.backdrops.LayerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.LayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
 
 /** Fraction of screen size the shared blur is computed at; the blur hides the upscale. */
 // Lowered from 0.5 after scrolling profiles showed fewer janky frames.

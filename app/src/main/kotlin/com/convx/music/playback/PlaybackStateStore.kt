@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.util.AtomicFile
-import com.convx.music.models.PersistedPlaybackSnapshot
+import com.hdemirbassmusic.music.models.PersistedPlaybackSnapshot
 import java.io.File
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream

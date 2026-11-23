@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import android.app.Activity
 import android.content.Context
@@ -29,23 +29,23 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.ViewCompat
-import com.convx.music.R
-import com.convx.music.extensions.togglePlayPause
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.ui.component.AnimatedPlayPauseIcon
-import com.convx.music.ui.component.elasticStretchLayerBlock
-import com.convx.music.ui.component.rememberElasticStretch
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.GlassStyle
-import com.convx.music.ui.component.liquidGlass
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.ios.compat.DropdownMenu
-import com.convx.music.ui.ios.compat.DropdownMenuItem
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.extensions.togglePlayPause
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.ui.component.AnimatedPlayPauseIcon
+import com.hdemirbassmusic.music.ui.component.elasticStretchLayerBlock
+import com.hdemirbassmusic.music.ui.component.rememberElasticStretch
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.GlassStyle
+import com.hdemirbassmusic.music.ui.component.liquidGlass
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenu
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenuItem
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 

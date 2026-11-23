@@ -1,5 +1,5 @@
 /** Adapted from BitChord (kushagrasinghx/BitChord), GPL-3.0. See NOTICE. */
-package com.convx.music.lyrics.bitchord
+package com.hdemirbassmusic.music.lyrics.bitchord
 
 /**
  * Enhanced ("A2") LRC — a normal LRC line with a stamp in front of each word:

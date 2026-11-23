@@ -1,7 +1,7 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.library.libraryCoreModule
-import com.convx.music.search.searchHistoryModule
+import com.hdemirbassmusic.music.library.libraryCoreModule
+import com.hdemirbassmusic.music.search.searchHistoryModule
 
 val appModules = listOf(
     chartsPresentationModule,

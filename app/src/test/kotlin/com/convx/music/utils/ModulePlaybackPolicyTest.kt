@@ -1,4 +1,4 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import com.music.spine.ModuleManager
 import com.music.spine.ModuleManifest

@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
- * Ported from Convx PR #53 (MeYashverma/Convxy) — agent-id parsing only.
+ * Ported from hdemirbassmusic PR #53 (MeYashverma/hdemirbassmusicy) — agent-id parsing only.
  */
 
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 /**
  * Returns the canonical id of the (possibly composite) [agent] string.

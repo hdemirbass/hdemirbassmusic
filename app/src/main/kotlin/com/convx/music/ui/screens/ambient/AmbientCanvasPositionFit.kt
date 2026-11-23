@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.ambient
+package com.hdemirbassmusic.music.ui.screens.ambient
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,8 +15,8 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
-import com.convx.music.constants.AmbientCanvasAnchorSide
-import com.convx.music.constants.AmbientCanvasFitMode
+import com.hdemirbassmusic.music.constants.AmbientCanvasAnchorSide
+import com.hdemirbassmusic.music.constants.AmbientCanvasFitMode
 
 /**
  * Canvas Position & Fit for Ambient Mode.

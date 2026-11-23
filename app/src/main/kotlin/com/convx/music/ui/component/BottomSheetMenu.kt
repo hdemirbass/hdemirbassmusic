@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
@@ -41,10 +41,10 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.foundation.IosMenuMaterial
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.utils.concentricRadius
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMenuMaterial
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.utils.concentricRadius
 import kotlin.math.tanh
 import kotlinx.coroutines.launch
 import zone.ien.hig.CupertinoModalBottomSheet
@@ -53,9 +53,9 @@ import zone.ien.hig.PresentationStyle
 import zone.ien.hig.rememberCupertinoSheetState
 
 import androidx.compose.ui.Alignment
-import com.convx.music.constants.SheetCornerRadiusKey
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.SheetCornerRadiusKey
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 val LocalMenuState = compositionLocalOf { MenuState() }
 

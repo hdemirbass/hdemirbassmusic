@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.os.Build
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -53,18 +53,18 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.ModalBottomSheet
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.ModalBottomSheet
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.material3.SwitchDefaults
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
-import com.convx.music.ui.ios.compat.rememberIosModalSheetState
+import com.hdemirbassmusic.music.ui.ios.compat.rememberIosModalSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
@@ -99,42 +99,42 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.PlayerArtworkStyle
-import com.convx.music.constants.PlayerArtworkStyleKey
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.PlayerBackgroundStyleKey
-import com.convx.music.constants.UseAppleMusicPlayerKey
-import com.convx.music.constants.PlayerLook
-import com.convx.music.constants.PlayerLookKey
-import com.convx.music.constants.ShowPlayerThumbnailShadowKey
-import com.convx.music.constants.ShowUpNextKey
-import com.convx.music.constants.PlayerThumbnailShadowElevationKey
-import com.convx.music.constants.PlayerGradientAngleKey
-import com.convx.music.constants.PlayerGradientStopsKey
-import com.convx.music.constants.PlayerLayoutHiddenSlotsKey
-import com.convx.music.constants.PlayerLayoutOrderKey
-import com.convx.music.constants.PlayerStaticColorKey
-import com.convx.music.constants.SliderStyle
-import com.convx.music.constants.SliderStyleKey
-import com.convx.music.models.MediaMetadata
-import com.convx.music.ui.component.ColorPickerDialog
-import com.convx.music.ui.component.SwitchPreference
-import com.convx.music.ui.component.SliderPreference
-import com.convx.music.ui.component.IconButton as AppIconButton
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.player.PlayerLayoutRegistry
-import com.convx.music.ui.player.PlayerSlot
-import com.convx.music.ui.theme.DefaultGradientStops
-import com.convx.music.ui.theme.decodeGradientStops
-import com.convx.music.ui.theme.encodeGradientStops
-import com.convx.music.ui.theme.tiltedGradient
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyle
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyleKey
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyleKey
+import com.hdemirbassmusic.music.constants.UseAppleMusicPlayerKey
+import com.hdemirbassmusic.music.constants.PlayerLook
+import com.hdemirbassmusic.music.constants.PlayerLookKey
+import com.hdemirbassmusic.music.constants.ShowPlayerThumbnailShadowKey
+import com.hdemirbassmusic.music.constants.ShowUpNextKey
+import com.hdemirbassmusic.music.constants.PlayerThumbnailShadowElevationKey
+import com.hdemirbassmusic.music.constants.PlayerGradientAngleKey
+import com.hdemirbassmusic.music.constants.PlayerGradientStopsKey
+import com.hdemirbassmusic.music.constants.PlayerLayoutHiddenSlotsKey
+import com.hdemirbassmusic.music.constants.PlayerLayoutOrderKey
+import com.hdemirbassmusic.music.constants.PlayerStaticColorKey
+import com.hdemirbassmusic.music.constants.SliderStyle
+import com.hdemirbassmusic.music.constants.SliderStyleKey
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.ui.component.ColorPickerDialog
+import com.hdemirbassmusic.music.ui.component.SwitchPreference
+import com.hdemirbassmusic.music.ui.component.SliderPreference
+import com.hdemirbassmusic.music.ui.component.IconButton as AppIconButton
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.player.PlayerLayoutRegistry
+import com.hdemirbassmusic.music.ui.player.PlayerSlot
+import com.hdemirbassmusic.music.ui.theme.DefaultGradientStops
+import com.hdemirbassmusic.music.ui.theme.decodeGradientStops
+import com.hdemirbassmusic.music.ui.theme.encodeGradientStops
+import com.hdemirbassmusic.music.ui.theme.tiltedGradient
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
@@ -1034,7 +1034,7 @@ private fun SeekBarPreview(style: SliderStyle, color: Color, progress: Float = 0
             val slot = size.width / bars
             val barW = slot * 0.5f
             val mid = size.height / 2f
-            val heights = com.convx.music.ui.component.waveformBars(7, bars)
+            val heights = com.hdemirbassmusic.music.ui.component.waveformBars(7, bars)
             for (i in 0 until bars) {
                 val h = (heights[i] * size.height).coerceAtLeast(size.height * 0.2f)
                 val x = i * slot + slot / 2f

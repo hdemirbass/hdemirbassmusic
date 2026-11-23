@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -23,11 +23,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuDefaults
-import com.convx.music.ui.ios.compat.DropdownMenuItem
-import com.convx.music.ui.ios.compat.ExposedDropdownMenuBox
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenuItem
+import com.hdemirbassmusic.music.ui.ios.compat.ExposedDropdownMenuBox
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -43,15 +43,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.EnabledModulesKey
-import com.convx.music.constants.ModuleSettingsKey
-import com.convx.music.constants.FetchedModulesKey
-import com.convx.music.ui.component.ModernSwitch
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.EnabledModulesKey
+import com.hdemirbassmusic.music.constants.ModuleSettingsKey
+import com.hdemirbassmusic.music.constants.FetchedModulesKey
+import com.hdemirbassmusic.music.ui.component.ModernSwitch
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberPreference
 import org.json.JSONArray
 import org.json.JSONObject
 import com.music.spine.ModuleManager
@@ -205,7 +205,7 @@ fun ModuleDetailScreen(
                 if (isEnabled) stringResource(R.string.enabled) else stringResource(R.string.disabled)
             )
             module?.takeIf { it.download.startsWith("https://") }?.let { descriptor ->
-                com.convx.music.ui.ios.compat.TextButton(
+                com.hdemirbassmusic.music.ui.ios.compat.TextButton(
                     enabled = !checking,
                     onClick = {
                         scope.launch {

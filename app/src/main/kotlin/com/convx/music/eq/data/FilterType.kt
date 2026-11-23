@@ -1,5 +1,5 @@
-package com.convx.music.eq.data
+package com.hdemirbassmusic.music.eq.data
 
-import com.convx.music.playback.EqualizerFilterType
+import com.hdemirbassmusic.music.playback.EqualizerFilterType
 
 typealias FilterType = EqualizerFilterType

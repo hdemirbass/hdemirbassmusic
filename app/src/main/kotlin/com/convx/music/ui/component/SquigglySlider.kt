@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  * 
  * Squiggly Slider - ported from mpvEx project
  * https://github.com/marlboro-advance/mpvEx
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
@@ -42,8 +42,8 @@ import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.player.customize.PlayerIconSlot
-import com.convx.music.ui.player.customize.rememberPlayerIcon
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot
+import com.hdemirbassmusic.music.ui.player.customize.rememberPlayerIcon
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch

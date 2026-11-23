@@ -1,4 +1,4 @@
-package com.convx.storage.domain
+package com.hdemirbassmusic.storage.domain
 
 import io.ktor.http.Url
 import io.ktor.http.decodeURLPart

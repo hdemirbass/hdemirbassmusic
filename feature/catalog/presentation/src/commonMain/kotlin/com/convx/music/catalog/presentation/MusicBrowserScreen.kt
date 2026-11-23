@@ -1,4 +1,4 @@
-package com.convx.music.catalog.presentation
+package com.hdemirbassmusic.music.catalog.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -31,27 +31,27 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.ui.window.Dialog
-import com.convx.music.playback.presentation.PlaybackFullPlayer
-import com.convx.music.playback.presentation.PlaybackEqualizerSheet
-import com.convx.music.playback.presentation.PlaybackMiniPlayer
-import com.convx.music.playback.presentation.PlaybackPlayerMorph
+import com.hdemirbassmusic.music.playback.presentation.PlaybackFullPlayer
+import com.hdemirbassmusic.music.playback.presentation.PlaybackEqualizerSheet
+import com.hdemirbassmusic.music.playback.presentation.PlaybackMiniPlayer
+import com.hdemirbassmusic.music.playback.presentation.PlaybackPlayerMorph
 import com.kyant.backdrop.backdrops.layerBackdrop
 import com.kyant.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.catalog.CatalogEntry
-import com.convx.music.catalog.CatalogLibraryCollection
-import com.convx.music.catalog.YOUTUBE_MUSIC_PROVIDER
-import com.convx.music.playback.PlaybackController
-import com.convx.music.playback.PlaybackQueueController
-import com.convx.music.playback.PlaybackQueueSnapshot
-import com.convx.music.playback.PlaybackRequestTrack
-import com.convx.music.playback.PlaybackTransitionMode
-import com.convx.music.playback.presentation.PlaybackSettingsStateHolder
-import com.convx.music.designsystem.ConvxDesignTokens
-import com.convx.music.ui.ios.component.IosText
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.ProvideIosTheme
-import com.convx.music.ui.ios.foundation.iosTypography
-import com.convx.music.ui.ios.foundation.darkIosColors
+import com.hdemirbassmusic.music.catalog.CatalogEntry
+import com.hdemirbassmusic.music.catalog.CatalogLibraryCollection
+import com.hdemirbassmusic.music.catalog.YOUTUBE_MUSIC_PROVIDER
+import com.hdemirbassmusic.music.playback.PlaybackController
+import com.hdemirbassmusic.music.playback.PlaybackQueueController
+import com.hdemirbassmusic.music.playback.PlaybackQueueSnapshot
+import com.hdemirbassmusic.music.playback.PlaybackRequestTrack
+import com.hdemirbassmusic.music.playback.PlaybackTransitionMode
+import com.hdemirbassmusic.music.playback.presentation.PlaybackSettingsStateHolder
+import com.hdemirbassmusic.music.designsystem.hdemirbassmusicDesignTokens
+import com.hdemirbassmusic.music.ui.ios.component.IosText
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.ProvideIosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosTypography
+import com.hdemirbassmusic.music.ui.ios.foundation.darkIosColors
 import kotlinx.coroutines.flow.collect
 import org.koin.compose.koinInject
 
@@ -91,7 +91,7 @@ fun MusicBrowserScreen(
     }
     LaunchedEffect(catalog) { catalog.loadHome() }
     ProvideIosTheme(colors = darkIosColors(), typography = iosTypography()) {
-        Box(modifier.fillMaxSize().background(ConvxDesignTokens.Colors.Background).layerBackdrop(playerBackdrop)) {
+        Box(modifier.fillMaxSize().background(hdemirbassmusicDesignTokens.Colors.Background).layerBackdrop(playerBackdrop)) {
         CatalogSharedTransitionPage(state = state, modifier = Modifier.fillMaxSize()) { pageState ->
             val listState = rememberLazyListState()
             val queue = remember(pageState.sections) {

@@ -1,7 +1,7 @@
-package com.convx.storage.data
+package com.hdemirbassmusic.storage.data
 
-import com.convx.storage.domain.*
-import com.convx.storage.playback.ReadWindow
+import com.hdemirbassmusic.storage.domain.*
+import com.hdemirbassmusic.storage.playback.ReadWindow
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpServer
 import java.io.EOFException
@@ -16,7 +16,7 @@ class NetworkMediaHttpServer(private val media: NetworkMediaAccess) : AutoClosea
         override fun removeEldestEntry(eldest: MutableMap.MutableEntry<String, Entry>?) = size > 64
     }
     private val executor = Executors.newFixedThreadPool(4) { job ->
-        Thread(job, "convx-network-media").apply { isDaemon = true }
+        Thread(job, "hdemirbassmusic-network-media").apply { isDaemon = true }
     }
     private var server: HttpServer? = null
     private var closed = false

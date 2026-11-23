@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.app.Activity
 import android.content.Context
@@ -15,7 +15,7 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.isSystemInDarkTheme
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -26,13 +26,13 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.FileProvider
 import com.music.innertube.YouTube
-import com.convx.music.R
-import com.convx.music.constants.DarkModeKey
-import com.convx.music.library.PlaylistCommands
-import com.convx.music.ui.screens.settings.DarkMode
-import com.convx.music.ui.screens.playlist.uriToByteArray
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.DarkModeKey
+import com.hdemirbassmusic.music.library.PlaylistCommands
+import com.hdemirbassmusic.music.ui.screens.settings.DarkMode
+import com.hdemirbassmusic.music.ui.screens.playlist.uriToByteArray
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.reportException
 import com.yalantis.ucrop.UCrop
 import io.ktor.client.plugins.ClientRequestException
 import kotlinx.coroutines.Dispatchers

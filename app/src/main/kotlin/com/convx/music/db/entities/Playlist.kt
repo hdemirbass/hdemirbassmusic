@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.db.entities
+package com.hdemirbassmusic.music.db.entities
 
 import androidx.compose.runtime.Immutable
 import androidx.room.Embedded
 import androidx.room.Junction
 import androidx.room.Relation
-import com.convx.music.library.PlaylistCardData
+import com.hdemirbassmusic.music.library.PlaylistCardData
 import java.time.ZoneId
 
 @Immutable

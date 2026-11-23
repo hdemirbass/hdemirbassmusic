@@ -1,4 +1,4 @@
-package com.convx.music.library.data
+package com.hdemirbassmusic.music.library.data
 
 import androidx.room.ConstructedBy
 import androidx.room.ColumnInfo
@@ -20,15 +20,15 @@ import androidx.room.Transaction
 import androidx.room.Update
 import androidx.room.Upsert
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import com.convx.music.library.PlaylistSyncTrack
+import com.hdemirbassmusic.music.library.PlaylistSyncTrack
 import kotlinx.coroutines.flow.Flow
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer
 import kotlinx.serialization.json.Json
 import org.koin.core.module.Module
 import org.koin.dsl.module
-import com.convx.music.library.PlaylistRepository
-import com.convx.music.library.MusicLibraryWriter
+import com.hdemirbassmusic.music.library.PlaylistRepository
+import com.hdemirbassmusic.music.library.MusicLibraryWriter
 import kotlin.time.Clock
 
 @Entity(tableName = "music_library_playlist")

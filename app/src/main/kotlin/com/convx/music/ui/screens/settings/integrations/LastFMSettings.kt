@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings.integrations
+package com.hdemirbassmusic.music.ui.screens.settings.integrations
 
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.component.GlassSwitchCompat as Switch
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.component.GlassSwitchCompat as Switch
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -22,16 +22,16 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.AlertDialog
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -53,28 +53,28 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.music.lastfm.LastFM
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.EnableLastFMScrobblingKey
-import com.convx.music.constants.LastFMSessionKey
-import com.convx.music.constants.LastFMUseNowPlaying
-import com.convx.music.constants.LastFMUseSendLikes
-import com.convx.music.constants.LastFMUsernameKey
-import com.convx.music.constants.ScrobbleDelayPercentKey
-import com.convx.music.constants.ScrobbleDelaySecondsKey
-import com.convx.music.constants.ScrobbleMinSongDurationKey
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.makeTimeString
-import com.convx.music.utils.rememberPreference
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.EnableLastFMScrobblingKey
+import com.hdemirbassmusic.music.constants.LastFMSessionKey
+import com.hdemirbassmusic.music.constants.LastFMUseNowPlaying
+import com.hdemirbassmusic.music.constants.LastFMUseSendLikes
+import com.hdemirbassmusic.music.constants.LastFMUsernameKey
+import com.hdemirbassmusic.music.constants.ScrobbleDelayPercentKey
+import com.hdemirbassmusic.music.constants.ScrobbleDelaySecondsKey
+import com.hdemirbassmusic.music.constants.ScrobbleMinSongDurationKey
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.makeTimeString
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-import com.convx.music.ui.screens.settings.SettingsPage
+import com.hdemirbassmusic.music.ui.screens.settings.SettingsPage
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,17 +1,17 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.audio
+package com.hdemirbassmusic.music.playback.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.playback.dj.BeatGrid
-import com.convx.music.playback.dj.BeatTracker
-import com.convx.music.playback.dj.KeyDetector
-import com.convx.music.playback.dj.MusicalKey
+import com.hdemirbassmusic.music.playback.dj.BeatGrid
+import com.hdemirbassmusic.music.playback.dj.BeatTracker
+import com.hdemirbassmusic.music.playback.dj.KeyDetector
+import com.hdemirbassmusic.music.playback.dj.MusicalKey
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 

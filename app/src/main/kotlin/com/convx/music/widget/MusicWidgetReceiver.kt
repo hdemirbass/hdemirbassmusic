@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.widget
+package com.hdemirbassmusic.music.widget
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -12,7 +12,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.core.content.ContextCompat
-import com.convx.music.playback.MusicService
+import com.hdemirbassmusic.music.playback.MusicService
 import org.koin.core.context.GlobalContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -40,9 +40,9 @@ open class MusicWidgetReceiver : AppWidgetProvider() {
             val pendingResult = goAsync()
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    GlobalContext.get().get<ConvxWidgetManager>().updateWidgets(
-                        title = context.getString(com.convx.music.R.string.app_name),
-                        artist = context.getString(com.convx.music.R.string.widget_open_app),
+                    GlobalContext.get().get<hdemirbassmusicWidgetManager>().updateWidgets(
+                        title = context.getString(com.hdemirbassmusic.music.R.string.app_name),
+                        artist = context.getString(com.hdemirbassmusic.music.R.string.widget_open_app),
                         artworkUri = null, isPlaying = false, isLiked = false,
                     )
                 } catch (error: Exception) {
@@ -100,10 +100,10 @@ open class MusicWidgetReceiver : AppWidgetProvider() {
     }
 
     companion object {
-        const val ACTION_PLAY_PAUSE = "com.convx.music.widget.PLAY_PAUSE"
-        const val ACTION_LIKE = "com.convx.music.widget.LIKE"
-        const val ACTION_NEXT = "com.convx.music.widget.NEXT"
-        const val ACTION_PREVIOUS = "com.convx.music.widget.PREVIOUS"
-        const val ACTION_UPDATE_WIDGET = "com.convx.music.widget.UPDATE_WIDGET"
+        const val ACTION_PLAY_PAUSE = "com.hdemirbassmusic.music.widget.PLAY_PAUSE"
+        const val ACTION_LIKE = "com.hdemirbassmusic.music.widget.LIKE"
+        const val ACTION_NEXT = "com.hdemirbassmusic.music.widget.NEXT"
+        const val ACTION_PREVIOUS = "com.hdemirbassmusic.music.widget.PREVIOUS"
+        const val ACTION_UPDATE_WIDGET = "com.hdemirbassmusic.music.widget.UPDATE_WIDGET"
     }
 }

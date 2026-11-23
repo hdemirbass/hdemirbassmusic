@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.ui.geometry.Rect
 import org.junit.Assert.assertEquals

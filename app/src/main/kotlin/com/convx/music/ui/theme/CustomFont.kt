@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import android.content.Context
 import android.net.Uri
@@ -13,10 +13,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import com.convx.music.constants.CustomFontArtistOnlyKey
-import com.convx.music.constants.CustomFontEnabledKey
-import com.convx.music.constants.CustomFontPathKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.CustomFontArtistOnlyKey
+import com.hdemirbassmusic.music.constants.CustomFontEnabledKey
+import com.hdemirbassmusic.music.constants.CustomFontPathKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 import java.io.File
 
 /** Where installed custom fonts live, one file per install (old one is deleted on replace). */

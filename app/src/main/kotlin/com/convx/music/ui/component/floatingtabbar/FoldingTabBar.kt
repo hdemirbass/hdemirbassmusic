@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component.floatingtabbar
+package com.hdemirbassmusic.music.ui.component.floatingtabbar
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -35,11 +35,11 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
-import com.convx.music.ui.component.backdrop.backdrops.LayerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.elasticStretchLayerBlock
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.LayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.elasticStretchLayerBlock
 import kotlin.math.roundToInt
 
 /**

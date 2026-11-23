@@ -1,4 +1,4 @@
-package com.convx.music.ui.screens.equalizer.axion
+package com.hdemirbassmusic.music.ui.screens.equalizer.axion
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.awaitEachGesture
@@ -6,7 +6,7 @@ import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -27,7 +27,7 @@ import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 import kotlin.math.PI
 import kotlin.math.atan2
 import kotlin.math.cos

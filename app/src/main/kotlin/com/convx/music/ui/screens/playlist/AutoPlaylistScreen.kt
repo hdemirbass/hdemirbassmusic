@@ -1,17 +1,17 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.playlist
+package com.hdemirbassmusic.music.ui.screens.playlist
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.chromeShadow
-import com.convx.music.ui.component.LocalMusicEmptyState
-import com.convx.music.ui.component.LocalMusicPermissionPrompt
-import com.convx.music.ui.component.rememberLocalAudioPermission
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.chromeShadow
+import com.hdemirbassmusic.music.ui.component.LocalMusicEmptyState
+import com.hdemirbassmusic.music.ui.component.LocalMusicPermissionPrompt
+import com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -43,18 +43,18 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import android.Manifest
 import android.os.Build
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.Checkbox
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.OutlinedTextField as TextField
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField as TextField
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFArrowClockwise
 import com.composables.sfsymbols.monochrome.SFShuffle
@@ -99,70 +99,70 @@ import androidx.compose.ui.util.fastForEachReversed
 import androidx.compose.ui.util.fastSumBy
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.LocalDownloadUtil
 import androidx.media3.exoplayer.offline.Download
-import com.convx.music.playback.DownloadTarget
-import com.convx.music.playback.combinedDownloadState
-import com.convx.music.playback.downloadSongs
-import com.convx.music.playback.cancelDownloads
-import com.convx.music.playback.removeDownloads
-import com.convx.music.R
-import com.convx.music.constants.SongSortDescendingKey
-import com.convx.music.constants.SongSortType
-import com.convx.music.constants.SongSortTypeKey
-import com.convx.music.constants.YtmSyncKey
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.buildAlphabetSectionIndex
-import com.convx.music.ui.component.ListScrollRail
-import com.convx.music.ui.component.AnimatedPlayPauseIcon
-import com.convx.music.ui.component.EmptyPlaceholder
-import com.convx.music.ui.component.ExpandableText
-import com.convx.music.ui.component.GlassCircleButton
-import com.convx.music.ui.component.ChromeScrim
-import com.convx.music.ui.component.rememberChromeScrimProgress
-import com.convx.music.ui.player.MeshGradientBackground
-import com.convx.music.ui.player.dimmed
+import com.hdemirbassmusic.music.playback.DownloadTarget
+import com.hdemirbassmusic.music.playback.combinedDownloadState
+import com.hdemirbassmusic.music.playback.downloadSongs
+import com.hdemirbassmusic.music.playback.cancelDownloads
+import com.hdemirbassmusic.music.playback.removeDownloads
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.SongSortDescendingKey
+import com.hdemirbassmusic.music.constants.SongSortType
+import com.hdemirbassmusic.music.constants.SongSortTypeKey
+import com.hdemirbassmusic.music.constants.YtmSyncKey
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.buildAlphabetSectionIndex
+import com.hdemirbassmusic.music.ui.component.ListScrollRail
+import com.hdemirbassmusic.music.ui.component.AnimatedPlayPauseIcon
+import com.hdemirbassmusic.music.ui.component.EmptyPlaceholder
+import com.hdemirbassmusic.music.ui.component.ExpandableText
+import com.hdemirbassmusic.music.ui.component.GlassCircleButton
+import com.hdemirbassmusic.music.ui.component.ChromeScrim
+import com.hdemirbassmusic.music.ui.component.rememberChromeScrimProgress
+import com.hdemirbassmusic.music.ui.player.MeshGradientBackground
+import com.hdemirbassmusic.music.ui.player.dimmed
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
-import com.convx.music.ui.utils.rememberHeroZoom
-import com.convx.music.ui.utils.heroPullZoom
-import com.convx.music.ui.utils.listOverscroll
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.MenuState
-import com.convx.music.ui.component.SongListItem
-import com.convx.music.ui.component.SortHeader
-import com.convx.music.ui.component.rememberHeroTint
-import com.convx.music.ui.component.GlassComponent
-import com.convx.music.ui.component.LocalAppBackdrop
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.withFixedStyle
-import com.convx.music.ui.component.isGlassAllowed
+import com.hdemirbassmusic.music.ui.utils.rememberHeroZoom
+import com.hdemirbassmusic.music.ui.utils.heroPullZoom
+import com.hdemirbassmusic.music.ui.utils.listOverscroll
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.MenuState
+import com.hdemirbassmusic.music.ui.component.SongListItem
+import com.hdemirbassmusic.music.ui.component.SortHeader
+import com.hdemirbassmusic.music.ui.component.rememberHeroTint
+import com.hdemirbassmusic.music.ui.component.GlassComponent
+import com.hdemirbassmusic.music.ui.component.LocalAppBackdrop
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.withFixedStyle
+import com.hdemirbassmusic.music.ui.component.isGlassAllowed
 import androidx.compose.ui.graphics.isSpecified
-import com.convx.music.LocalAmbientBackgroundColor
-import com.convx.music.ui.component.asSoftIconTint
-import com.convx.music.ui.utils.additiveChrome
-import com.convx.music.ui.component.liquidGlass
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.menu.AutoPlaylistMenu
-import com.convx.music.ui.menu.SelectionSongMenu
-import com.convx.music.ui.menu.SongMenu
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.HeroTintedContent
-import com.convx.music.ui.theme.LocalMetadataColor
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.utils.listItemShape
-import com.convx.music.utils.makeTimeString
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.AutoPlaylistViewModel
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.ui.component.asSoftIconTint
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.component.liquidGlass
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.menu.AutoPlaylistMenu
+import com.hdemirbassmusic.music.ui.menu.SelectionSongMenu
+import com.hdemirbassmusic.music.ui.menu.SongMenu
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.HeroTintedContent
+import com.hdemirbassmusic.music.ui.theme.LocalMetadataColor
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.utils.makeTimeString
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.AutoPlaylistViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
@@ -285,16 +285,16 @@ fun AutoPlaylistScreen(
     val heroUrl = filteredSongs.firstOrNull()?.thumbnailUrl
     // Instant seed: route thumb -> live tile thumb. Paints mesh bg frame one
     // while the song flow (and its first-song hero) loads.
-    val instantAutoThumb = com.convx.music.ui.component.detailSeed(
+    val instantAutoThumb = com.hdemirbassmusic.music.ui.component.detailSeed(
         viewModel.thumbArg,
-        com.convx.music.ui.utils.pendingSharedArtworkThumbFor(viewModel.playlist),
+        com.hdemirbassmusic.music.ui.utils.pendingSharedArtworkThumbFor(viewModel.playlist),
         heroUrl,
     )
     val bgAutoUrl = instantAutoThumb ?: heroUrl
-    val autoChrome = com.convx.music.ui.component.rememberDetailChromeEntrance(iconCount = 1)
-    val appearance = com.convx.music.ui.component.rememberPlaylistAppearance(bgAutoUrl, autoPlaylistSeed(viewModel.playlist))
+    val autoChrome = com.hdemirbassmusic.music.ui.component.rememberDetailChromeEntrance(iconCount = 1)
+    val appearance = com.hdemirbassmusic.music.ui.component.rememberPlaylistAppearance(bgAutoUrl, autoPlaylistSeed(viewModel.playlist))
     val tint = appearance.background
-    com.convx.music.PublishAmbientBackgroundColor(tint)
+    com.hdemirbassmusic.music.PublishAmbientBackgroundColor(tint)
     val onTint = appearance.foreground
 
     val heroBackdrop = rememberLayerBackdrop()
@@ -327,7 +327,7 @@ fun AutoPlaylistScreen(
             .layerBackdrop(listBackdrop, frozen = backdropFreeze.frozen)
             .graphicsLayer()
             .hazeSource(hazeState)) {
-                com.convx.music.ui.component.ArtworkMeshBackground(bgAutoUrl, paused = { lazyListState.isScrollInProgress }, appearance = appearance)
+                com.hdemirbassmusic.music.ui.component.ArtworkMeshBackground(bgAutoUrl, paused = { lazyListState.isScrollInProgress }, appearance = appearance)
                 LazyColumn(
                     state = lazyListState,
                     overscrollEffect = heroZoom.listOverscroll(),
@@ -525,7 +525,7 @@ fun AutoPlaylistScreen(
                 // heroBackdrop, whose drawBackdrop early-returns and left this
                 // chrome flat with no real blur behind it.
                 CompositionLocalProvider(LocalAppBackdrop provides listBackdrop) {
-            com.convx.music.ui.component.TopFadeBlur(hazeState, tint, Modifier.align(Alignment.TopCenter))
+            com.hdemirbassmusic.music.ui.component.TopFadeBlur(hazeState, tint, Modifier.align(Alignment.TopCenter))
                 // Built inside the provider so liquidGlass captures listBackdrop
                 // at composition time, not the ambient unattached backdrop.
                 // Keep top-bar glass fixed; the global preference controls the nav bar and mini player.
@@ -604,7 +604,7 @@ fun AutoPlaylistScreen(
                             onClick = { if (isSearching) exitSearch() else navController.navigateUp() },
                             onLongClick = { if (isSearching) exitSearch() else navController.backToMain() },
                             modifier = with(autoChrome) {
-                                Modifier.backEnter().then(com.convx.music.ui.component.backExitModifier())
+                                Modifier.backEnter().then(com.hdemirbassmusic.music.ui.component.backExitModifier())
                             },
                         ) {
                             SymbolIcon(symbol = sf("chevron.left"), contentDescription = null)
@@ -681,10 +681,10 @@ private fun AutoPlaylistHeader(
     val mediaMetadata by playerConnection.mediaMetadata.collectAsStateWithLifecycle()
 val totalLength = remember(songs) { songs.fastSumBy { it.song.duration } }
     val title = context.getString(titleRes)
-    val artwork = com.convx.music.ui.utils.pendingSharedArtworkThumbFor(com.convx.music.ui.utils.LocalMorphArtworkId.current)
+    val artwork = com.hdemirbassmusic.music.ui.utils.pendingSharedArtworkThumbFor(com.hdemirbassmusic.music.ui.utils.LocalMorphArtworkId.current)
         ?: songs.firstOrNull()?.thumbnailUrl
-    val appearance = com.convx.music.ui.component.rememberPlaylistAppearance(artwork)
-    com.convx.music.ui.component.CollectionDetailHeader(
+    val appearance = com.hdemirbassmusic.music.ui.component.rememberPlaylistAppearance(artwork)
+    com.hdemirbassmusic.music.ui.component.CollectionDetailHeader(
         title = title,
         artwork = artwork,
         metadata = pluralStringResource(R.plurals.n_song, songs.size, songs.size) +
@@ -727,6 +727,6 @@ val totalLength = remember(songs) { songs.fastSumBy { it.song.duration } }
                         )
                     }
                 },
-        modifier = modifier.padding(top = com.convx.music.ui.component.topBarContentPadding()),
+        modifier = modifier.padding(top = com.hdemirbassmusic.music.ui.component.topBarContentPadding()),
     )
 }

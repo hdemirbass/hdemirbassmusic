@@ -1,6 +1,6 @@
-package com.convx.music.data.settings
+package com.hdemirbassmusic.music.data.settings
 
-import com.convx.music.playback.smart.TransitionPlan
+import com.hdemirbassmusic.music.playback.smart.TransitionPlan
 
 /**
  * Automix overlap the planner lined up for the playing track, exposed to the UI so the seek

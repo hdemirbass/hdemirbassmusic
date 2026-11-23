@@ -1,4 +1,4 @@
-package com.convx.music.designsystem
+package com.hdemirbassmusic.music.designsystem
 
 import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.Easing
@@ -9,7 +9,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.ui.unit.IntOffset
 import kotlin.math.exp
 
-/** Shared timing and curves for Convx navigation, artwork morphs, and selection motion. */
+/** Shared timing and curves for hdemirbassmusic navigation, artwork morphs, and selection motion. */
 object MotionTokens {
     const val ArtworkMillis = 350
     const val SharedArtworkMillis = 500

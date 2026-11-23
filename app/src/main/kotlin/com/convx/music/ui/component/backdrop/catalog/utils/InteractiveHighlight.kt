@@ -2,10 +2,10 @@
  * Copyright 2026, compose-miuix-ui contributors
  * SPDX-License-Identifier: Apache-2.0
  *
- * the reference app InteractiveHighlight behavior, shared by Convx glass controls. The optional
+ * the reference app InteractiveHighlight behavior, shared by hdemirbassmusic glass controls. The optional
  * radiusScale retains existing component-specific sizing; the default is the reference app's 1.2x.
  */
-package com.convx.music.ui.component.backdrop.catalog.utils
+package com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.VectorConverter

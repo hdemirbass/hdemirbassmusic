@@ -1,9 +1,9 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.AppleMusicImportViewModel
-import com.convx.music.viewmodels.AutoPlaylistViewModel
-import com.convx.music.viewmodels.PlaylistsViewModel
-import com.convx.music.viewmodels.SpotifyImportViewModel
+import com.hdemirbassmusic.music.viewmodels.AppleMusicImportViewModel
+import com.hdemirbassmusic.music.viewmodels.AutoPlaylistViewModel
+import com.hdemirbassmusic.music.viewmodels.PlaylistsViewModel
+import com.hdemirbassmusic.music.viewmodels.SpotifyImportViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

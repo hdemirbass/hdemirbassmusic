@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
@@ -28,7 +28,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Person
-import com.convx.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
@@ -51,11 +51,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /**
  * The bar's own height, above whatever inset it is sitting under.
@@ -138,23 +138,23 @@ fun FrostedTopBar(
     )
 
     // In tab view the side bar floats over the left edge; the back button starts to its right.
-    val sideInset = com.convx.music.LocalPlayerAwareWindowInsets.current.asPaddingValues()
+    val sideInset = com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets.current.asPaddingValues()
         .calculateStartPadding(androidx.compose.ui.platform.LocalLayoutDirection.current)
-    val ambientColor = com.convx.music.LocalAmbientBackgroundColor.current.value
+    val ambientColor = com.hdemirbassmusic.music.LocalAmbientBackgroundColor.current.value
     val isDark = AppTheme.colorScheme.surface.luminance() <= 0.5f
     val activeTint = if (titleColor.isSpecified) titleColor else ambientColor
     val resolvedTitleColor = if (titleColor.isSpecified) {
         titleColor
     } else {
-        com.convx.music.ui.theme.GlassTintTokens.glassContentColor(isDark = isDark, activeTint = activeTint, isTitle = true)
+        com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassContentColor(isDark = isDark, activeTint = activeTint, isTitle = true)
     }
-    val resolvedIconColor = com.convx.music.ui.theme.GlassTintTokens.glassContentColor(isDark = isDark, activeTint = activeTint, isTitle = false)
+    val resolvedIconColor = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassContentColor(isDark = isDark, activeTint = activeTint, isTitle = false)
 
     Column(
         modifier = modifier
             .fillMaxWidth()
             .then(
-                if (reduceDynamicBlur) Modifier.background(com.convx.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark))
+                if (reduceDynamicBlur) Modifier.background(com.hdemirbassmusic.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark))
                 else Modifier,
             ),
     ) {
@@ -199,7 +199,7 @@ fun FrostedTopBar(
                     SymbolIcon(symbol = sf("chevron.left"), contentDescription = "Back")
                 }
             } else {
-                androidx.compose.runtime.CompositionLocalProvider(com.convx.music.ui.ios.compat.LocalContentColor provides resolvedIconColor) {
+                androidx.compose.runtime.CompositionLocalProvider(com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides resolvedIconColor) {
                     Box(
                         modifier = Modifier
                             .align(if (largeTitle) Alignment.TopStart else Alignment.CenterStart)
@@ -209,7 +209,7 @@ fun FrostedTopBar(
                     }
                 }
             }
-            androidx.compose.runtime.CompositionLocalProvider(com.convx.music.ui.ios.compat.LocalContentColor provides resolvedIconColor) {
+            androidx.compose.runtime.CompositionLocalProvider(com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides resolvedIconColor) {
                 Row(
                     modifier = Modifier
                         .align(if (largeTitle) Alignment.TopEnd else Alignment.CenterEnd)

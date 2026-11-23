@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.menuBottomInset
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.menuBottomInset
+import com.hdemirbassmusic.music.utils.reportException
 import android.content.Intent
 import android.content.res.Configuration
 import androidx.compose.foundation.clickable
@@ -22,14 +22,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -51,50 +51,50 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import com.convx.music.ui.ios.compat.CircularWavyProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.CircularWavyProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.ui.Alignment
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.utils.dataStore
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import com.music.innertube.utils.parseCookieString
 import androidx.media3.exoplayer.offline.Download
 import com.music.innertube.YouTube
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.SpeedDialItem
-import com.convx.music.library.ObservePlaylist
-import com.convx.music.library.ObservePlaylists
-import com.convx.music.library.LocalPlaylistSongDataSource
-import com.convx.music.library.LocalPlaylistSong
-import com.convx.music.library.PlaylistCommands
-import com.convx.music.library.PendingPlaylistDeletionRepository
-import com.convx.music.library.PlaylistDetail
-import com.convx.music.library.PlaylistOrder
-import com.convx.music.library.toPlaylistDetail
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.DownloadTarget
-import com.convx.music.playback.combinedDownloadState
-import com.convx.music.playback.cancelDownloads
-import com.convx.music.playback.downloadSongs
-import com.convx.music.playback.removeDownloads
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
-import com.convx.music.ui.component.rememberPlaylistCoverPicker
-import com.convx.music.ui.component.NewAction
-import com.convx.music.ui.component.NewActionGrid
-import com.convx.music.ui.component.PlaylistListItem
-import com.convx.music.ui.component.TextFieldDialog
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.SpeedDialItem
+import com.hdemirbassmusic.music.library.ObservePlaylist
+import com.hdemirbassmusic.music.library.ObservePlaylists
+import com.hdemirbassmusic.music.library.LocalPlaylistSongDataSource
+import com.hdemirbassmusic.music.library.LocalPlaylistSong
+import com.hdemirbassmusic.music.library.PlaylistCommands
+import com.hdemirbassmusic.music.library.PendingPlaylistDeletionRepository
+import com.hdemirbassmusic.music.library.PlaylistDetail
+import com.hdemirbassmusic.music.library.PlaylistOrder
+import com.hdemirbassmusic.music.library.toPlaylistDetail
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.DownloadTarget
+import com.hdemirbassmusic.music.playback.combinedDownloadState
+import com.hdemirbassmusic.music.playback.cancelDownloads
+import com.hdemirbassmusic.music.playback.downloadSongs
+import com.hdemirbassmusic.music.playback.removeDownloads
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.ui.component.rememberPlaylistCoverPicker
+import com.hdemirbassmusic.music.ui.component.NewAction
+import com.hdemirbassmusic.music.ui.component.NewActionGrid
+import com.hdemirbassmusic.music.ui.component.PlaylistListItem
+import com.hdemirbassmusic.music.ui.component.TextFieldDialog
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -224,7 +224,7 @@ fun PlaylistMenu(
     if (showMergeDialog) {
         val targets by observePlaylists(PlaylistOrder.NAME, false)
             .collectAsState(initial = emptyList())
-        com.convx.music.ui.component.ListDialog(onDismiss = { showMergeDialog = false }) {
+        com.hdemirbassmusic.music.ui.component.ListDialog(onDismiss = { showMergeDialog = false }) {
             item { Text(text = stringResource(R.string.merge_playlist_into), modifier = Modifier.padding(16.dp)) }
             targets.filter { it.id != playlist.id && it.isEditable }.forEach { target ->
                 item(key = target.id) {

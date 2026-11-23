@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import android.app.PictureInPictureParams
 import android.util.Rational
@@ -33,14 +33,14 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
 import androidx.compose.ui.layout.ContentScale
-import com.convx.music.R
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.ui.component.GlassCircleButton
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.utils.Motion
-import com.convx.music.utils.YTPlayerUtils
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.ui.component.GlassCircleButton
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.utils.Motion
+import com.hdemirbassmusic.music.utils.YTPlayerUtils
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlin.math.roundToInt
@@ -61,7 +61,7 @@ internal fun YouTubeVideoPane(
     val fullscreenHost = LocalFullscreenVideo.current
     val coveredByFullscreen = !fullscreenOnly && fullscreenHost?.session?.stream?.mediaId == stream.mediaId
     val metadata by connection.mediaMetadata.collectAsStateWithLifecycle()
-    val reduceMotion by com.convx.music.utils.rememberPreference(com.convx.music.constants.ReduceDynamicBlurKey, false)
+    val reduceMotion by com.hdemirbassmusic.music.utils.rememberPreference(com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey, false)
     var inPictureInPicture by remember(activity) { mutableStateOf(activity?.isInPictureInPictureMode == true) }
     var cropVideo by rememberSaveable(stream.mediaId) { mutableStateOf(false) }
     var controlsVisible by remember(stream.mediaId) { mutableStateOf(true) }
@@ -180,7 +180,7 @@ internal fun YouTubeVideoPane(
     if (fullscreenOnly) {
         BackHandler(onBack = onClose)
         FullscreenVideoOrientation()
-        val videoBackdrop = com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop()
+        val videoBackdrop = com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop()
         Box(
             modifier.background(Color.Black)
                 .pointerInput(stream.mediaId) {
@@ -195,7 +195,7 @@ internal fun YouTubeVideoPane(
                 val frameHeight = if (cropVideo) maxHeight else frameWidth / ratio
                 Box(Modifier.size(frameWidth, frameHeight))
             }
-            CompositionLocalProvider(com.convx.music.ui.component.LocalAppBackdrop provides videoBackdrop) {
+            CompositionLocalProvider(com.hdemirbassmusic.music.ui.component.LocalAppBackdrop provides videoBackdrop) {
                 AnimatedVisibility(
                     visible = controlsVisible && !inPictureInPicture,
                     enter = fadeIn(Motion.gate(reduceMotion, Motion.swapEnter())),

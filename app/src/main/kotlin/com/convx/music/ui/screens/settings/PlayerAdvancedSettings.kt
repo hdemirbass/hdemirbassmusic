@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.constants.ShowVideoSwitchKey
+import com.hdemirbassmusic.music.constants.ShowVideoSwitchKey
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,11 +16,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -31,34 +31,34 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.playback.audio.BitPerfectAudio
-import com.convx.music.constants.AudioOffload
-import com.convx.music.constants.BitPerfectKey
-import com.convx.music.constants.AutoLoadMoreKey
-import com.convx.music.constants.CompactPlayerInTabViewKey
-import com.convx.music.constants.CrossfadeEnabledKey
-import com.convx.music.constants.CrossfadeGaplessKey
-import com.convx.music.constants.DisableLoadMoreWhenRepeatAllKey
-import com.convx.music.constants.EnableSaavnStreamingKey
-import com.convx.music.constants.HistoryDuration
-import com.convx.music.constants.PersistentShuffleAcrossQueuesKey
-import com.convx.music.constants.PreventDuplicateTracksInQueueKey
-import com.convx.music.constants.SaavnAudioQuality
-import com.convx.music.constants.SaavnAudioQualityKey
-import com.convx.music.constants.SeekExtraSeconds
-import com.convx.music.constants.ShufflePlaylistFirstKey
-import com.convx.music.constants.SkipSilenceInstantKey
-import com.convx.music.constants.SkipSilenceKey
-import com.convx.music.constants.StopMusicOnTaskClearKey
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.playback.audio.BitPerfectAudio
+import com.hdemirbassmusic.music.constants.AudioOffload
+import com.hdemirbassmusic.music.constants.BitPerfectKey
+import com.hdemirbassmusic.music.constants.AutoLoadMoreKey
+import com.hdemirbassmusic.music.constants.CompactPlayerInTabViewKey
+import com.hdemirbassmusic.music.constants.CrossfadeEnabledKey
+import com.hdemirbassmusic.music.constants.CrossfadeGaplessKey
+import com.hdemirbassmusic.music.constants.DisableLoadMoreWhenRepeatAllKey
+import com.hdemirbassmusic.music.constants.EnableSaavnStreamingKey
+import com.hdemirbassmusic.music.constants.HistoryDuration
+import com.hdemirbassmusic.music.constants.PersistentShuffleAcrossQueuesKey
+import com.hdemirbassmusic.music.constants.PreventDuplicateTracksInQueueKey
+import com.hdemirbassmusic.music.constants.SaavnAudioQuality
+import com.hdemirbassmusic.music.constants.SaavnAudioQualityKey
+import com.hdemirbassmusic.music.constants.SeekExtraSeconds
+import com.hdemirbassmusic.music.constants.ShufflePlaylistFirstKey
+import com.hdemirbassmusic.music.constants.SkipSilenceInstantKey
+import com.hdemirbassmusic.music.constants.SkipSilenceKey
+import com.hdemirbassmusic.music.constants.StopMusicOnTaskClearKey
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlin.math.roundToInt
 
 /**
@@ -145,7 +145,7 @@ fun PlayerAdvancedSettings(
     SettingsLazyPage(
         navController = navController,
         title = stringResource(R.string.advanced),
-        pageColor = com.convx.music.ui.ios.compat.AppTheme.colorScheme.background,
+        pageColor = com.hdemirbassmusic.music.ui.ios.compat.AppTheme.colorScheme.background,
         horizontalPadding = 16.dp,
     ) {
         item(key = "player_advanced_settings_content") {

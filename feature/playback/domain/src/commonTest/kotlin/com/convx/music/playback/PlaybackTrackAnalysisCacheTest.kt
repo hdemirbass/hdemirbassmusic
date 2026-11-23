@@ -1,6 +1,6 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
-import com.convx.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test

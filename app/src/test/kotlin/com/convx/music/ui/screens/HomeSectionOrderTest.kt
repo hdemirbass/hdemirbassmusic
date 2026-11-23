@@ -1,6 +1,6 @@
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.viewmodels.HomeUiState
+import com.hdemirbassmusic.music.viewmodels.HomeUiState
 import com.music.innertube.pages.HomePage
 import org.junit.Assert.assertEquals
 import org.junit.Test

@@ -1,14 +1,14 @@
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.designsystem.ConvxDesignTokens
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.designsystem.hdemirbassmusicDesignTokens
 import androidx.compose.material3.Shapes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.compositionLocalOf
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.toArgb
@@ -19,13 +19,13 @@ import androidx.compose.ui.unit.sp
  * Apple Music design tokens — single source of truth for colors, shapes, motion, and contrast helpers.
  */
 object AppleTokens {
-    val AccentRed = ConvxDesignTokens.Colors.AccentRed
+    val AccentRed = hdemirbassmusicDesignTokens.Colors.AccentRed
 
     // Surfaces — Apple-style soft dark greys, not pure black (pure black is an OLED opt-in via PureBlack).
-    val Bg = ConvxDesignTokens.Colors.Background
-    val BgElevated = ConvxDesignTokens.Colors.BackgroundElevated
-    val Card = ConvxDesignTokens.Colors.Card
-    val CardSecondary = ConvxDesignTokens.Colors.CardSecondary
+    val Bg = hdemirbassmusicDesignTokens.Colors.Background
+    val BgElevated = hdemirbassmusicDesignTokens.Colors.BackgroundElevated
+    val Card = hdemirbassmusicDesignTokens.Colors.Card
+    val CardSecondary = hdemirbassmusicDesignTokens.Colors.CardSecondary
 
     /**
      * Hairline rule derived from the current content color, so it stays visible on light and
@@ -39,39 +39,39 @@ object AppleTokens {
         @Composable get() = LocalMetadataColor.current
 
     /** Horizontal screen gutter. The only gutter. */
-    val Gutter = ConvxDesignTokens.Metrics.ContentGutter
+    val Gutter = hdemirbassmusicDesignTokens.Metrics.ContentGutter
     /** Gap between siblings in a grid or list. */
-    val ItemGap = ConvxDesignTokens.Metrics.ItemGap
+    val ItemGap = hdemirbassmusicDesignTokens.Metrics.ItemGap
     /** Gap between a section and the next section's header. */
-    val SectionGap = ConvxDesignTokens.Metrics.SectionGap
+    val SectionGap = hdemirbassmusicDesignTokens.Metrics.SectionGap
     /** Gap between stacked text lines inside one item. */
-    val TextGap = ConvxDesignTokens.Metrics.TextGap
+    val TextGap = hdemirbassmusicDesignTokens.Metrics.TextGap
 
     // Type scale — design-pinned sizes, not Material scale: tile-grid alignment depends on title/subtitle matching exactly.
 
     // Each size carries its own line height — Compose's derived leading lands taller than the design at every step.
 
     /** Screen title ("Listen Now"). */
-    val TitleLarge = ConvxDesignTokens.Type.ScreenTitle
-    val TitleLargeLineHeight = ConvxDesignTokens.Type.ScreenTitleLineHeight
+    val TitleLarge = hdemirbassmusicDesignTokens.Type.ScreenTitle
+    val TitleLargeLineHeight = hdemirbassmusicDesignTokens.Type.ScreenTitleLineHeight
     /** Section header ("Recently Played"). */
-    val SectionHeader = ConvxDesignTokens.Type.SectionHeader
-    val SectionHeaderLineHeight = ConvxDesignTokens.Type.SectionHeaderLineHeight
+    val SectionHeader = hdemirbassmusicDesignTokens.Type.SectionHeader
+    val SectionHeaderLineHeight = hdemirbassmusicDesignTokens.Type.SectionHeaderLineHeight
     /** Tile title and list-row primary text. */
-    val ItemTitle = ConvxDesignTokens.Type.ItemTitle
-    val ItemTitleLineHeight = ConvxDesignTokens.Type.ItemTitleLineHeight
+    val ItemTitle = hdemirbassmusicDesignTokens.Type.ItemTitle
+    val ItemTitleLineHeight = hdemirbassmusicDesignTokens.Type.ItemTitleLineHeight
     /** Tile subtitle, row metadata. */
-    val ItemSubtitle = ConvxDesignTokens.Type.ItemSubtitle
-    val ItemSubtitleLineHeight = ConvxDesignTokens.Type.ItemSubtitleLineHeight
+    val ItemSubtitle = hdemirbassmusicDesignTokens.Type.ItemSubtitle
+    val ItemSubtitleLineHeight = hdemirbassmusicDesignTokens.Type.ItemSubtitleLineHeight
     /** Speed dial captions. */
-    val Caption = ConvxDesignTokens.Type.Caption
-    val CaptionLineHeight = ConvxDesignTokens.Type.CaptionLineHeight
+    val Caption = hdemirbassmusicDesignTokens.Type.Caption
+    val CaptionLineHeight = hdemirbassmusicDesignTokens.Type.CaptionLineHeight
 
     // Shapes — four corners, no more. All continuous (squircle) curvature — see [AppShapes].
-    val Artwork = ConvxDesignTokens.Metrics.ArtworkCorner
+    val Artwork = hdemirbassmusicDesignTokens.Metrics.ArtworkCorner
     val Control = 8.dp
-    val CardCorner = ConvxDesignTokens.Metrics.CardCorner
-    val CardCornerLarge = ConvxDesignTokens.Metrics.LargeCardCorner
+    val CardCorner = hdemirbassmusicDesignTokens.Metrics.CardCorner
+    val CardCornerLarge = hdemirbassmusicDesignTokens.Metrics.LargeCardCorner
 
     // Motion — modelled on SwiftUI `.smooth` (0.5s natural period, zero bounce).
     // Compose takes stiffness where SwiftUI takes a period: stiffness = (2*pi / period)^2.

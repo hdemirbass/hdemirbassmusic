@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.component
+package com.hdemirbassmusic.music.ui.ios.component
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
@@ -30,10 +30,10 @@ import androidx.compose.ui.input.pointer.util.VelocityTracker
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.utils.nearestProjectedSnap
-import com.convx.music.ui.utils.projectedEndpoint
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.utils.nearestProjectedSnap
+import com.hdemirbassmusic.music.ui.utils.projectedEndpoint
 import kotlin.math.abs
 import kotlinx.coroutines.launch
 

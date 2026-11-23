@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -16,17 +16,17 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
 import androidx.compose.material3.IconButtonDefaults
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.material3.Snackbar
-import com.convx.music.ui.ios.compat.SnackbarHost
+import com.hdemirbassmusic.music.ui.ios.compat.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -44,7 +44,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.core.content.ContextCompat
-import com.convx.music.core.updater.extractUrls
+import com.hdemirbassmusic.music.core.updater.extractUrls
 @Composable
 fun AnimatedActionButton(
     text: String,

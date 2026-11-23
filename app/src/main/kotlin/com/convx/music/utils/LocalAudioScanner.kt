@@ -1,23 +1,23 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.ContentUris
 import android.content.Context
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
-import com.convx.music.constants.LocalExcludedFoldersKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.AlbumEntity
-import com.convx.music.db.entities.ArtistEntity
-import com.convx.music.db.entities.SongAlbumMap
-import com.convx.music.db.entities.SongArtistMap
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.playback.DownloadExporter
+import com.hdemirbassmusic.music.constants.LocalExcludedFoldersKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.AlbumEntity
+import com.hdemirbassmusic.music.db.entities.ArtistEntity
+import com.hdemirbassmusic.music.db.entities.SongAlbumMap
+import com.hdemirbassmusic.music.db.entities.SongArtistMap
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.playback.DownloadExporter
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -74,7 +74,7 @@ object LocalAudioScanner {
             val downloadExclusion = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 " AND (${MediaStore.MediaColumns.RELATIVE_PATH} IS NULL OR (" +
                     "${MediaStore.MediaColumns.RELATIVE_PATH} NOT LIKE '${DownloadExporter.FOLDER}/%'" +
-                    " AND ${MediaStore.MediaColumns.RELATIVE_PATH} NOT LIKE 'Music/Convx/%'))"
+                    " AND ${MediaStore.MediaColumns.RELATIVE_PATH} NOT LIKE 'Music/hdemirbassmusic/%'))"
             } else {
                 ""
             }

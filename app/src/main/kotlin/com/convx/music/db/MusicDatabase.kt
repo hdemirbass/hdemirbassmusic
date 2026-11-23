@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.db
+package com.hdemirbassmusic.music.db
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -22,29 +22,29 @@ import androidx.room.migration.Migration
 import androidx.room.withTransaction as roomWithTransaction
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.sqlite.db.SupportSQLiteOpenHelper
-import com.convx.music.db.daos.SpeedDialDao
-import com.convx.music.db.entities.AlbumArtistMap
-import com.convx.music.db.entities.AlbumEntity
-import com.convx.music.db.entities.ArtistEntity
-import com.convx.music.db.entities.Event
-import com.convx.music.db.entities.FormatEntity
-import com.convx.music.db.entities.LyricsEntity
-import com.convx.music.db.entities.PlayCountEntity
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.db.entities.PlaylistSongMap
-import com.convx.music.db.entities.PlaylistSongMapPreview
-import com.convx.music.db.entities.RecognitionHistory
-import com.convx.music.db.entities.RelatedSongMap
-import com.convx.music.db.entities.SearchHistory
-import com.convx.music.db.entities.SetVideoIdEntity
-import com.convx.music.db.entities.SongAlbumMap
-import com.convx.music.db.entities.SongAnalysisEntity
-import com.convx.music.db.entities.SongArtistMap
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.db.entities.SpeedDialItem
-import com.convx.music.db.entities.SortedSongAlbumMap
-import com.convx.music.db.entities.SortedSongArtistMap
-import com.convx.music.extensions.toSQLiteQuery
+import com.hdemirbassmusic.music.db.daos.SpeedDialDao
+import com.hdemirbassmusic.music.db.entities.AlbumArtistMap
+import com.hdemirbassmusic.music.db.entities.AlbumEntity
+import com.hdemirbassmusic.music.db.entities.ArtistEntity
+import com.hdemirbassmusic.music.db.entities.Event
+import com.hdemirbassmusic.music.db.entities.FormatEntity
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.db.entities.PlayCountEntity
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.db.entities.PlaylistSongMap
+import com.hdemirbassmusic.music.db.entities.PlaylistSongMapPreview
+import com.hdemirbassmusic.music.db.entities.RecognitionHistory
+import com.hdemirbassmusic.music.db.entities.RelatedSongMap
+import com.hdemirbassmusic.music.db.entities.SearchHistory
+import com.hdemirbassmusic.music.db.entities.SetVideoIdEntity
+import com.hdemirbassmusic.music.db.entities.SongAlbumMap
+import com.hdemirbassmusic.music.db.entities.SongAnalysisEntity
+import com.hdemirbassmusic.music.db.entities.SongArtistMap
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.db.entities.SpeedDialItem
+import com.hdemirbassmusic.music.db.entities.SortedSongAlbumMap
+import com.hdemirbassmusic.music.db.entities.SortedSongArtistMap
+import com.hdemirbassmusic.music.extensions.toSQLiteQuery
 import timber.log.Timber
 import java.time.Instant
 import java.time.LocalDateTime

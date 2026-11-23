@@ -5,12 +5,12 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-group = "com.convx.shared.data"
+group = "com.hdemirbassmusic.shared.data"
 version = "0.1.0"
 
 kotlin {
     android {
-        namespace = "com.convx.music.playback.data"
+        namespace = "com.hdemirbassmusic.music.playback.data"
         compileSdk = 37
         minSdk = 26
     }

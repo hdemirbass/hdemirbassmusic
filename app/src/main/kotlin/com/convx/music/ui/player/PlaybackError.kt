@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,12 +17,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -41,7 +41,7 @@ import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFArrowCounterclockwise
 import com.composables.sfsymbols.monochrome.SFExclamationmarkTriangle
 import com.composables.sfsymbols.monochrome.SFSquareOnSquare
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 @Composable
 fun PlaybackError(
@@ -76,7 +76,7 @@ fun PlaybackError(
     // Copy the full error details, even when the on-screen message is truncated.
     val copyDetails = remember(error, rawErrorMessage) {
         buildString {
-            appendLine("Convx playback error")
+            appendLine("hdemirbassmusic playback error")
             appendLine("code: ${getErrorCodeName(error.errorCode)} (${error.errorCode})")
             httpStatus?.let { appendLine("http: $it") }
             appendLine("detail: $rawErrorMessage")

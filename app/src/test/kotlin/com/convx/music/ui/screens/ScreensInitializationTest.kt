@@ -1,4 +1,4 @@
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -10,7 +10,7 @@ class ScreensInitializationTest {
         for ((destination, route) in listOf("Home" to "home", "Library" to "library", "Songs" to "songs", "Explore" to "explore", "Search" to "search_input", "Settings" to "settings")) {
             val isolated = object : ClassLoader(parent) {
                 override fun loadClass(name: String, resolve: Boolean): Class<*> {
-                    if (!name.startsWith("com.convx.music.ui.screens.Screens")) return super.loadClass(name, resolve)
+                    if (!name.startsWith("com.hdemirbassmusic.music.ui.screens.Screens")) return super.loadClass(name, resolve)
                     synchronized(this) {
                         val loaded = findLoadedClass(name) ?: parent.getResourceAsStream(name.replace('.', '/') + ".class")!!.use {
                             val bytes = it.readBytes()
@@ -21,7 +21,7 @@ class ScreensInitializationTest {
                     }
                 }
             }
-            val baseName = "com.convx.music.ui.screens.Screens"
+            val baseName = "com.hdemirbassmusic.music.ui.screens.Screens"
             val type = Class.forName(baseName + "$" + destination, true, isolated)
             val instance = type.getField("INSTANCE").get(null)
             assertEquals(route, type.getMethod("getRoute").invoke(instance))

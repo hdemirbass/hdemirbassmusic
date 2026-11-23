@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
@@ -7,9 +7,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.volumeBars
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.volumeBars
 
 private val PlayerVolumeGlyphSize = 20.dp
 private val PlayerQuietGlyphSize = 12.dp

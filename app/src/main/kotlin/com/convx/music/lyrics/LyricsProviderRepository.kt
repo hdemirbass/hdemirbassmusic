@@ -1,10 +1,10 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 import android.content.Context
-import com.convx.music.db.entities.LyricsEntity
-import com.convx.music.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.convx.music.models.MediaMetadata
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope

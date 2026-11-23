@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils.preset
+package com.hdemirbassmusic.music.utils.preset
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -16,24 +16,24 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
-import com.convx.music.constants.CustomFontPathKey
-import com.convx.music.constants.DiyLayoutKey
-import com.convx.music.constants.HomeBackgroundPathKey
-import com.convx.music.constants.PlayerIconsKey
-import com.convx.music.constants.V2PlayerIconsKey
-import com.convx.music.constants.PrefType
-import com.convx.music.constants.PresetCategory
-import com.convx.music.constants.PresetKeys
-import com.convx.music.constants.presetKeyTypes
-import com.convx.music.ui.player.customize.DIY_MAX_STICKERS
-import com.convx.music.ui.player.customize.DiyLayout
-import com.convx.music.ui.player.customize.DiyStickerKind
-import com.convx.music.ui.player.customize.DiyStore
-import com.convx.music.ui.player.customize.PlayerIconSet
-import com.convx.music.ui.player.customize.PlayerIconStore
-import com.convx.music.ui.theme.customFontDir
-import com.convx.music.utils.MediaImport
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.constants.CustomFontPathKey
+import com.hdemirbassmusic.music.constants.DiyLayoutKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundPathKey
+import com.hdemirbassmusic.music.constants.PlayerIconsKey
+import com.hdemirbassmusic.music.constants.V2PlayerIconsKey
+import com.hdemirbassmusic.music.constants.PrefType
+import com.hdemirbassmusic.music.constants.PresetCategory
+import com.hdemirbassmusic.music.constants.PresetKeys
+import com.hdemirbassmusic.music.constants.presetKeyTypes
+import com.hdemirbassmusic.music.ui.player.customize.DIY_MAX_STICKERS
+import com.hdemirbassmusic.music.ui.player.customize.DiyLayout
+import com.hdemirbassmusic.music.ui.player.customize.DiyStickerKind
+import com.hdemirbassmusic.music.ui.player.customize.DiyStore
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconSet
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconStore
+import com.hdemirbassmusic.music.ui.theme.customFontDir
+import com.hdemirbassmusic.music.utils.MediaImport
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.flow.first
 import org.json.JSONArray
 import org.json.JSONObject
@@ -53,7 +53,7 @@ import java.util.zip.ZipOutputStream
  */
 object PresetStore {
 
-    const val FILE_EXTENSION = "convxpreset"
+    const val FILE_EXTENSION = "hdemirbassmusicpreset"
     private const val MANIFEST = "manifest.json"
     private const val THUMB = "thumb.webp"
     private const val ASSETS = "assets"

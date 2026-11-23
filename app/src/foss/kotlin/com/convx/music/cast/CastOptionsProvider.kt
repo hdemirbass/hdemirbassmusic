@@ -1,4 +1,4 @@
-package com.convx.music.cast
+package com.hdemirbassmusic.music.cast
 
 /**
  * Stub CastOptionsProvider for F-Droid builds.

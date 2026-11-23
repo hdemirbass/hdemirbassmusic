@@ -1,10 +1,10 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.LibraryAlbumsViewModel
-import com.convx.music.viewmodels.LibraryArtistsViewModel
-import com.convx.music.viewmodels.LibraryMixViewModel
-import com.convx.music.viewmodels.LibraryPlaylistsViewModel
-import com.convx.music.viewmodels.LibrarySongsViewModel
+import com.hdemirbassmusic.music.viewmodels.LibraryAlbumsViewModel
+import com.hdemirbassmusic.music.viewmodels.LibraryArtistsViewModel
+import com.hdemirbassmusic.music.viewmodels.LibraryMixViewModel
+import com.hdemirbassmusic.music.viewmodels.LibraryPlaylistsViewModel
+import com.hdemirbassmusic.music.viewmodels.LibrarySongsViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

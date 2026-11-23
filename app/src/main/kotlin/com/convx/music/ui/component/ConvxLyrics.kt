@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -18,8 +18,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.derivedStateOf
@@ -43,15 +43,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.constants.AppleMusicLyricsBlurKey
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.wordsWithSpacing
-import com.convx.music.ui.screens.settings.LyricsPosition
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.AppleMusicLyricsBlurKey
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.wordsWithSpacing
+import com.hdemirbassmusic.music.ui.screens.settings.LyricsPosition
+import com.hdemirbassmusic.music.utils.rememberPreference
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 /**
- * Exact Apple Music style lyrics animation ported from convx-5.0.3
+ * Exact Apple Music style lyrics animation ported from hdemirbassmusic-5.0.3
  * Features:
  * - Word-by-word filling gradient animation
  * - Blur effect for inactive lines (configurable)
@@ -60,7 +60,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun ConvxLyricsLine(
+fun hdemirbassmusicLyricsLine(
     fontFamily: androidx.compose.ui.text.font.FontFamily = androidx.compose.ui.text.font.FontFamily.Default,
     entry: LyricsEntry,
     nextEntryTime: Long?,
@@ -114,7 +114,7 @@ fun ConvxLyricsLine(
     // Segment the line into words with their own time windows
     val entryWords = entry.words.orEmpty()
     val wordData = remember(entry.text, entryWords, activeDuration) {
-        val isHindiText = com.convx.music.lyrics.LyricsUtils.isHindi(entry.text)
+        val isHindiText = com.hdemirbassmusic.music.lyrics.LyricsUtils.isHindi(entry.text)
         if (!isHindiText && entryWords.isNotEmpty()) {
             // Use precise word timestamps if available
             entry.wordsWithSpacing().mapIndexed { index, word ->

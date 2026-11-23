@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:Suppress("FunctionName", "UNUSED_PARAMETER")
 @file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 
-package com.convx.music.ui.ios.compat
+package com.hdemirbassmusic.music.ui.ios.compat
 
 import androidx.compose.foundation.Indication
 import androidx.compose.foundation.background
@@ -39,8 +39,8 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.compose.ui.window.DialogWindowProvider
 import androidx.compose.ui.platform.LocalView
-import com.convx.music.ui.component.shapes.ContinuousCapsule
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
 import androidx.compose.runtime.MutableIntState
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.rememberCoroutineScope
@@ -56,10 +56,10 @@ import zone.ien.hig.rememberCupertinoSheetState
 import zone.ien.hig.CupertinoScaffold
 import zone.ien.hig.CupertinoSegmentedControl
 import zone.ien.hig.CupertinoSegmentedControlTab
-import com.convx.music.ui.component.PresentingSheetEffect
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.component.PresentingSheetEffect
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
 
 /**
  * The Scaffold call shape. The layout is kept — slots, insets and nested scroll are not
@@ -130,7 +130,7 @@ fun ModalBottomSheet(
     contentColor: Color = Color.Unspecified,
     scrimColor: Color = Color.Unspecified,
     tonalElevation: Dp = 0.dp,
-    dragHandle: (@Composable () -> Unit)? = { com.convx.music.ui.component.IosGrabber() },
+    dragHandle: (@Composable () -> Unit)? = { com.hdemirbassmusic.music.ui.component.IosGrabber() },
     contentWindowInsets: @Composable () -> WindowInsets = { WindowInsets(0, 0, 0, 0) },
     properties: DialogProperties = DialogProperties(
         usePlatformDefaultWidth = false,

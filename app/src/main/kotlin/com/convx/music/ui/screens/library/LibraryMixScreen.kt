@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.library
+package com.hdemirbassmusic.music.ui.screens.library
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -32,12 +32,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.SegmentedButton
-import com.convx.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.SegmentedButton
+import com.hdemirbassmusic.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFListBullet
 import com.composables.sfsymbols.monochrome.SFSquareGrid2x2
@@ -66,64 +66,64 @@ import androidx.compose.ui.unit.sp
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.ui.utils.rememberGridColumns
-import com.convx.music.constants.AlbumViewTypeKey
-import com.convx.music.constants.CONTENT_TYPE_HEADER
-import com.convx.music.constants.CONTENT_TYPE_PLAYLIST
-import com.convx.music.constants.GridItemSize
-import com.convx.music.constants.GridItemsSizeKey
-import com.convx.music.constants.GridThumbnailHeight
-import com.convx.music.constants.LibraryBackgroundMode
-import com.convx.music.constants.LibraryBackgroundModeKey
-import com.convx.music.constants.LibraryIconsOnlyKey
-import com.convx.music.constants.LibraryViewType
-import com.convx.music.constants.MixSortDescendingKey
-import com.convx.music.constants.MixSortType
-import com.convx.music.constants.MixSortTypeKey
-import com.convx.music.constants.ShowCachedPlaylistKey
-import com.convx.music.constants.ShowDownloadedPlaylistKey
-import com.convx.music.constants.ShowLikedPlaylistKey
-import com.convx.music.constants.ShowLocalPlaylistKey
-import com.convx.music.constants.ShowTopPlaylistKey
-import com.convx.music.constants.ShowUploadedPlaylistKey
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.extensions.reversed
-import com.convx.music.ui.component.AlbumGridItem
-import com.convx.music.ui.component.AlbumListItem
-import com.convx.music.ui.component.ArtistGridItem
-import com.convx.music.ui.component.ArtistListItem
-import com.convx.music.ui.component.HeroBackground
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.PlaylistGridItem
-import com.convx.music.ui.component.CreatePlaylistDialog
-import com.convx.music.ui.component.HideOnScrollFAB
-import com.convx.music.ui.component.hasCustomHomeBackground
-import com.convx.music.ui.component.rememberAppBackgroundColor
-import com.convx.music.ui.component.PlaylistListItem
-import com.convx.music.ui.component.SortHeader
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.rememberHeroSource
-import com.convx.music.ui.component.rememberHeroTint
-import com.convx.music.ui.menu.AlbumMenu
-import com.convx.music.ui.menu.ArtistMenu
-import com.convx.music.ui.menu.PlaylistMenu
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.HeroTintedContent
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.localPlaylistRoute
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.utils.rememberGridColumns
+import com.hdemirbassmusic.music.constants.AlbumViewTypeKey
+import com.hdemirbassmusic.music.constants.CONTENT_TYPE_HEADER
+import com.hdemirbassmusic.music.constants.CONTENT_TYPE_PLAYLIST
+import com.hdemirbassmusic.music.constants.GridItemSize
+import com.hdemirbassmusic.music.constants.GridItemsSizeKey
+import com.hdemirbassmusic.music.constants.GridThumbnailHeight
+import com.hdemirbassmusic.music.constants.LibraryBackgroundMode
+import com.hdemirbassmusic.music.constants.LibraryBackgroundModeKey
+import com.hdemirbassmusic.music.constants.LibraryIconsOnlyKey
+import com.hdemirbassmusic.music.constants.LibraryViewType
+import com.hdemirbassmusic.music.constants.MixSortDescendingKey
+import com.hdemirbassmusic.music.constants.MixSortType
+import com.hdemirbassmusic.music.constants.MixSortTypeKey
+import com.hdemirbassmusic.music.constants.ShowCachedPlaylistKey
+import com.hdemirbassmusic.music.constants.ShowDownloadedPlaylistKey
+import com.hdemirbassmusic.music.constants.ShowLikedPlaylistKey
+import com.hdemirbassmusic.music.constants.ShowLocalPlaylistKey
+import com.hdemirbassmusic.music.constants.ShowTopPlaylistKey
+import com.hdemirbassmusic.music.constants.ShowUploadedPlaylistKey
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.extensions.reversed
+import com.hdemirbassmusic.music.ui.component.AlbumGridItem
+import com.hdemirbassmusic.music.ui.component.AlbumListItem
+import com.hdemirbassmusic.music.ui.component.ArtistGridItem
+import com.hdemirbassmusic.music.ui.component.ArtistListItem
+import com.hdemirbassmusic.music.ui.component.HeroBackground
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.PlaylistGridItem
+import com.hdemirbassmusic.music.ui.component.CreatePlaylistDialog
+import com.hdemirbassmusic.music.ui.component.HideOnScrollFAB
+import com.hdemirbassmusic.music.ui.component.hasCustomHomeBackground
+import com.hdemirbassmusic.music.ui.component.rememberAppBackgroundColor
+import com.hdemirbassmusic.music.ui.component.PlaylistListItem
+import com.hdemirbassmusic.music.ui.component.SortHeader
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.rememberHeroSource
+import com.hdemirbassmusic.music.ui.component.rememberHeroTint
+import com.hdemirbassmusic.music.ui.menu.AlbumMenu
+import com.hdemirbassmusic.music.ui.menu.ArtistMenu
+import com.hdemirbassmusic.music.ui.menu.PlaylistMenu
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.HeroTintedContent
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.localPlaylistRoute
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.LibraryMixViewModel
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.LibraryMixViewModel
 import java.text.Collator
 import java.time.LocalDateTime
 import java.util.Locale
@@ -247,7 +247,7 @@ fun LibraryMixScreen(
 
     // Every auto playlist except Local is built from YouTube state (likes, YT
     // downloads, listening history, uploads), so local-only mode leaves just the one.
-    val localOnly = com.convx.music.LocalLocalOnlyMode.current
+    val localOnly = com.hdemirbassmusic.music.LocalLocalOnlyMode.current
     val (showLikedPref) = rememberPreference(ShowLikedPlaylistKey, true)
     val (showDownloadedPref) = rememberPreference(ShowDownloadedPlaylistKey, true)
     val (showTopPref) = rememberPreference(ShowTopPlaylistKey, true)

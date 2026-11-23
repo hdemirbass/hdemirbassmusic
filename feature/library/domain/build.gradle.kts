@@ -3,12 +3,12 @@ plugins {
     alias(libs.plugins.android.kmp.library)
 }
 
-group = "com.convx.shared"
+group = "com.hdemirbassmusic.shared"
 version = "0.1.0"
 
 kotlin {
     android {
-        namespace = "com.convx.shared.library"
+        namespace = "com.hdemirbassmusic.shared.library"
         compileSdk = 37
         minSdk = 26
     }
@@ -19,7 +19,7 @@ kotlin {
 
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
         binaries.framework {
-            baseName = "ConvxLibrary"
+            baseName = "hdemirbassmusicLibrary"
             isStatic = true
         }
     }

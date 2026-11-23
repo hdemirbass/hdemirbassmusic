@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 // Apple Music player UI adapted from an open-source (GPL-3.0) base.
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.content.res.Configuration
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
@@ -25,10 +25,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -58,21 +58,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.Player
 import coil3.compose.AsyncImage
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.*
-import com.convx.music.listentogether.ListenTogetherManager
-import com.convx.music.models.MediaMetadata
-import com.convx.music.playback.CastConnectionHandler
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.ui.screens.settings.DarkMode
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.*
+import com.hdemirbassmusic.music.listentogether.ListenTogetherManager
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.playback.CastConnectionHandler
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.ui.screens.settings.DarkMode
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.launch
 import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
-import com.convx.music.ui.component.Icon as MIcon
+import com.hdemirbassmusic.music.ui.component.Icon as MIcon
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -90,7 +90,7 @@ fun AppleMiniPlayer(
     val preferredDark = remember(darkTheme, isSystemInDarkTheme) {
         if (darkTheme == DarkMode.AUTO) isSystemInDarkTheme else darkTheme == DarkMode.ON
     }
-    val useDarkTheme = com.convx.music.ui.theme.LocalForcedDark.current || preferredDark
+    val useDarkTheme = com.hdemirbassmusic.music.ui.theme.LocalForcedDark.current || preferredDark
     
     val miniPlayerBackground by rememberEnumPreference(MiniPlayerBackgroundStyleKey, defaultValue = PlayerBackgroundStyle.DEFAULT)
     

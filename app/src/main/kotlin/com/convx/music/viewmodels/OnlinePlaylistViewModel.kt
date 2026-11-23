@@ -1,4 +1,4 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import android.util.LruCache
@@ -10,12 +10,12 @@ import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.YTItem
 import com.music.innertube.models.filterVideoSongs
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -110,7 +110,7 @@ class OnlinePlaylistViewModel(
         if (cached != null) {
             playlist.value = cached.playlist
             playlistSongs.value = applySongFilters(cached.songs)
-            com.convx.music.utils.AppleArt.prefetchArtistIds(playlistSongs.value)
+            com.hdemirbassmusic.music.utils.AppleArt.prefetchArtistIds(playlistSongs.value)
             relatedItems.value = cached.related
             continuation = cached.continuation
             _isLoading.value = false
@@ -149,7 +149,7 @@ class OnlinePlaylistViewModel(
                     playlist.value = playlistPage.playlist
                     val filteredSongs = applySongFilters(playlistPage.songs)
                     playlistSongs.value = filteredSongs
-                    com.convx.music.utils.AppleArt.prefetchArtistIds(filteredSongs)
+                    com.hdemirbassmusic.music.utils.AppleArt.prefetchArtistIds(filteredSongs)
                     val related = playlistPage.related ?: emptyList()
                     relatedItems.value = related
                     continuation = playlistPage.songsContinuation

@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings.diy
+package com.hdemirbassmusic.music.ui.screens.settings.diy
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -32,17 +32,17 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.AlertDialog
-import com.convx.music.ui.ios.compat.Checkbox
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.ExtendedFloatingActionButton
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Scaffold
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.ExtendedFloatingActionButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Scaffold
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -69,15 +69,15 @@ import androidx.core.content.FileProvider
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import com.convx.music.R
-import com.convx.music.constants.PresetCategory
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.player.customize.DiyOrientation
-import com.convx.music.ui.player.customize.DiyPlayerMockup
-import com.convx.music.ui.player.customize.rememberDiyLayout
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.preset.PresetStore
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.PresetCategory
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.player.customize.DiyOrientation
+import com.hdemirbassmusic.music.ui.player.customize.DiyPlayerMockup
+import com.hdemirbassmusic.music.ui.player.customize.rememberDiyLayout
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.preset.PresetStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -238,7 +238,7 @@ fun PresetsScreen(
         )
     }
 
-    com.convx.music.ui.screens.settings.SettingsScaffold(
+    com.hdemirbassmusic.music.ui.screens.settings.SettingsScaffold(
         navController = navController,
         title = stringResource(R.string.presets),
         // A grid behind a Scaffold with its own FAB — no large title to hand off
@@ -246,7 +246,7 @@ fun PresetsScreen(
         titleAlpha = 1f,
         pageColor = AppTheme.colorScheme.background,
         actions = {
-            com.convx.music.ui.component.GlassCircleButton(
+            com.hdemirbassmusic.music.ui.component.GlassCircleButton(
                 onClick = { importLauncher.launch(arrayOf("*/*")) },
                 size = 36.dp,
             ) {

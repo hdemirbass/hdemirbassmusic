@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -12,9 +12,9 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.draw.dropShadow
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.ripple
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
@@ -26,16 +26,16 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.isSpecified
 import androidx.compose.ui.graphics.luminance
-import com.convx.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.ui.theme.isHueless
 import androidx.compose.ui.graphics.GraphicsLayerScope
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.fastCoerceAtMost
 import androidx.compose.ui.util.lerp
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
 import dev.chrisbanes.haze.ExperimentalHazeApi
 import dev.chrisbanes.haze.HazeInputScale
 import dev.chrisbanes.haze.HazeState
@@ -55,7 +55,7 @@ private val GlassCircleShape = ContinuousRoundedRectangle(percent = 50)
 
 /**
  * Same tanh-damped press/drag-out scale+translate distortion as
- * [com.convx.music.ui.component.backdrop.catalog.components.LiquidButton], reused
+ * [com.hdemirbassmusic.music.ui.component.backdrop.catalog.components.LiquidButton], reused
  * (not duplicated) here so every small floating glass button — top bar back/share/
  * search, selection-mode exit — gets the same "elastic stretch" liquid feel on
  * press. Cheap: a per-frame graphicsLayer transform, no extra backdrop re-capture.
@@ -140,17 +140,17 @@ fun GlassCircleButton(
     val useGlass = !forceFlat && hazeState == null &&
         glassConfig.isEnabledFor(GlassComponent.NAV_BAR) && isGlassAllowed()
 
-    val ambientColor = com.convx.music.LocalAmbientBackgroundColor.current.value
+    val ambientColor = com.hdemirbassmusic.music.LocalAmbientBackgroundColor.current.value
     // Single limelight: no local rim computation — pass an explicit caller tint
     // through, otherwise Unspecified so liquidGlass derives the same shared
     // ambient rim every other glass surface on this screen uses.
     val isDark = glassUsesDarkAppearance()
     val isHeroContext = (ambientColor.isSpecified && !ambientColor.isHueless()) || rimTintColor.isSpecified
-    val highlightAlpha = com.convx.music.ui.theme.GlassTintTokens.pluckOpacity(isDark, isHeroContext)
-    val effectiveRimTintColor = if (rimTintColor.isSpecified) rimTintColor else com.convx.music.ui.theme.GlassTintTokens.pluckColor(isDark, ambientColor)
+    val highlightAlpha = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.pluckOpacity(isDark, isHeroContext)
+    val effectiveRimTintColor = if (rimTintColor.isSpecified) rimTintColor else com.hdemirbassmusic.music.ui.theme.GlassTintTokens.pluckColor(isDark, ambientColor)
 
-    val fallbackFill = com.convx.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark).copy(
-        alpha = if (isDark) com.convx.music.ui.theme.GlassTintTokens.NavPillFillOpacityDark else com.convx.music.ui.theme.GlassTintTokens.NavPillFillOpacityLight
+    val fallbackFill = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark).copy(
+        alpha = if (isDark) com.hdemirbassmusic.music.ui.theme.GlassTintTokens.NavPillFillOpacityDark else com.hdemirbassmusic.music.ui.theme.GlassTintTokens.NavPillFillOpacityLight
     )
 
     val backgroundModifier = if (useGlass) {
@@ -179,7 +179,7 @@ fun GlassCircleButton(
     val contentColor = if (useGlass) {
         glassConfig.resolvedTextColor(activeTint = ambientColor)
     } else {
-        com.convx.music.ui.theme.GlassTintTokens.glassContentColor(isDark = effectiveDark, activeTint = ambientColor)
+        com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassContentColor(isDark = effectiveDark, activeTint = ambientColor)
     }
 
     val interactionSource = remember { MutableInteractionSource() }

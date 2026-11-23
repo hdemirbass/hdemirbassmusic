@@ -1,4 +1,4 @@
-package com.convx.storage.domain
+package com.hdemirbassmusic.storage.domain
 
 import io.ktor.http.decodeURLPart
 
@@ -21,7 +21,7 @@ object RemotePath {
 data class NetworkMediaLocation(val serverId: String, val path: String)
 
 object NetworkMediaUri {
-    const val Scheme = "convx-network"
+    const val Scheme = "hdemirbassmusic-network"
 
     fun create(serverId: String, path: String): String {
         require(serverId.matches(Regex("[A-Za-z0-9_-]{1,80}"))) { "Invalid server identifier" }

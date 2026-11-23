@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.listentogether
+package com.hdemirbassmusic.music.listentogether
 
 import com.google.protobuf.MessageLite
-import com.convx.music.listentogether.proto.Listentogether
+import com.hdemirbassmusic.music.listentogether.proto.Listentogether
 import kotlinx.serialization.json.Json
 import timber.log.Timber
 import java.io.ByteArrayInputStream

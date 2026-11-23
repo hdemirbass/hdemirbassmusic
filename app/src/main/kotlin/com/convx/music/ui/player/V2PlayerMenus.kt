@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
-import com.convx.music.ui.ios.foundation.iosMenuSurface
+import com.hdemirbassmusic.music.ui.ios.foundation.iosMenuSurface
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.height
@@ -44,15 +44,15 @@ import com.composables.sfsymbols.monochrome.SFSquareStack
 import com.composables.sfsymbols.monochrome.SFStar
 import com.composables.sfsymbols.monochrome.SFStarFill
 import com.composables.sfsymbols.monochrome.SFTextBadgePlus
-import com.convx.music.R
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.component.IosMenu
-import com.convx.music.ui.ios.component.IosMenuItem
-import com.convx.music.ui.ios.component.IosMenuSection
-import com.convx.music.ui.ios.foundation.IosMenuMaterial
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.component.IosMenu
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuItem
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuSection
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMenuMaterial
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
 
 /** Panel, no sheet (a sheet ducked the player), drawn in-window over the player -- see [V2Floating]. */
 @Composable
@@ -63,7 +63,7 @@ private fun V2MenuPopup(
 ) {
     V2Floating(onDismiss = onDismiss, placement = AboveEnd) {
         // Liquid glass, like every other floating player control.
-        CompositionLocalProvider(com.convx.music.ui.ios.foundation.LocalMenuLiquid provides true) {
+        CompositionLocalProvider(com.hdemirbassmusic.music.ui.ios.foundation.LocalMenuLiquid provides true) {
             CompositionLocalProvider(
                 LocalIosTextStyle provides IosTheme.typography.body,
                 LocalIosContentColor provides IosMenuMaterial.colors.label,
@@ -79,7 +79,7 @@ private fun glyph(vector: ImageVector): @Composable (Color) -> Unit = { tint ->
 }
 
 private fun symbolGlyph(symbol: SfSymbol): @Composable (Color) -> Unit = { tint ->
-    com.convx.music.ui.component.SymbolIcon(symbol, null, size = 17.dp, tint = tint)
+    com.hdemirbassmusic.music.ui.component.SymbolIcon(symbol, null, size = 17.dp, tint = tint)
 }
 
 /**
@@ -142,8 +142,8 @@ fun V2OptionsMenu(
                 IosMenuItem(stringResource(R.string.v2_menu_share_lyrics), icon = glyph(SfSymbols.Monochrome.SFQuoteBubble), onClick = onShareLyrics),
             )),
             IosMenuSection(listOf(
-                IosMenuItem(stringResource(R.string.sleep_timer), description = sleepTimerLabel(), icon = symbolGlyph(com.convx.music.ui.component.sf("moon.zzz.fill")), onClick = { onDismiss(); onOpenSleepTimer() }),
-                IosMenuItem(stringResource(R.string.audio_devices), icon = symbolGlyph(com.convx.music.ui.component.sf("airplayaudio")), onClick = { onDismiss(); onOpenAudioDevices() }),
+                IosMenuItem(stringResource(R.string.sleep_timer), description = sleepTimerLabel(), icon = symbolGlyph(com.hdemirbassmusic.music.ui.component.sf("moon.zzz.fill")), onClick = { onDismiss(); onOpenSleepTimer() }),
+                IosMenuItem(stringResource(R.string.audio_devices), icon = symbolGlyph(com.hdemirbassmusic.music.ui.component.sf("airplayaudio")), onClick = { onDismiss(); onOpenAudioDevices() }),
             )),
             IosMenuSection(listOf(
                 IosMenuItem(stringResource(R.string.v2_menu_more), onClick = onMore),
@@ -192,11 +192,11 @@ fun V2GoToMenu(
 fun V2OptionsMenuHost(
     expanded: Boolean,
     onDismiss: () -> Unit,
-    mediaMetadata: com.convx.music.models.MediaMetadata,
+    mediaMetadata: com.hdemirbassmusic.music.models.MediaMetadata,
     isLiked: Boolean,
-    playerConnection: com.convx.music.playback.PlayerConnection,
+    playerConnection: com.hdemirbassmusic.music.playback.PlayerConnection,
     navController: androidx.navigation.NavController,
-    playerBottomSheetState: com.convx.music.ui.component.BottomSheetState,
+    playerBottomSheetState: com.hdemirbassmusic.music.ui.component.BottomSheetState,
     onViewCredits: () -> Unit,
     onShareLyrics: () -> Unit,
     onMore: () -> Unit,
@@ -205,7 +205,7 @@ fun V2OptionsMenuHost(
     onOpenAudioDevices: () -> Unit,
 ) {
     val context = androidx.compose.ui.platform.LocalContext.current
-    val database = com.convx.music.LocalDatabase.current.get()
+    val database = com.hdemirbassmusic.music.LocalDatabase.current.get()
     val coroutineScope = androidx.compose.runtime.rememberCoroutineScope()
     val librarySong by database.song(mediaMetadata.id).collectAsState(initial = null)
     var showGoTo by remember { mutableStateOf(false) }
@@ -222,7 +222,7 @@ fun V2OptionsMenuHost(
                 {
                     val intent = android.content.Intent(android.content.Intent.ACTION_SEND).apply {
                         type = "text/plain"
-                        putExtra(android.content.Intent.EXTRA_TEXT, com.convx.music.utils.ShareUtils.songUrl(mediaMetadata.id))
+                        putExtra(android.content.Intent.EXTRA_TEXT, com.hdemirbassmusic.music.utils.ShareUtils.songUrl(mediaMetadata.id))
                     }
                     context.startActivity(android.content.Intent.createChooser(intent, null))
                 }
@@ -257,7 +257,7 @@ fun V2OptionsMenuHost(
             },
         )
     }
-    com.convx.music.ui.menu.AddToPlaylistDialog(
+    com.hdemirbassmusic.music.ui.menu.AddToPlaylistDialog(
         isVisible = showAddToPlaylist,
         onGetSong = { playlist ->
             database.transaction { insert(mediaMetadata) }
@@ -283,27 +283,27 @@ fun V2RoutePopover(
     onMore: () -> Unit,
 ) {
     val context = androidx.compose.ui.platform.LocalContext.current
-    val service = com.convx.music.LocalPlayerConnection.current?.service
-    val deviceIcons = com.convx.music.core.rememberAudioDeviceIcons()
-    val deviceNames = com.convx.music.core.rememberAudioDeviceNames()
+    val service = com.hdemirbassmusic.music.LocalPlayerConnection.current?.service
+    val deviceIcons = com.hdemirbassmusic.music.core.rememberAudioDeviceIcons()
+    val deviceNames = com.hdemirbassmusic.music.core.rememberAudioDeviceNames()
     val audioManager = remember { context.getSystemService(android.content.Context.AUDIO_SERVICE) as android.media.AudioManager }
-    var devices by remember { mutableStateOf<List<com.convx.music.core.AudioDevice>>(emptyList()) }
-    fun reload() = com.convx.music.core.loadDevices(context, service?.preferredDeviceId, onSuccess = { devices = it }, onError = {})
+    var devices by remember { mutableStateOf<List<com.hdemirbassmusic.music.core.AudioDevice>>(emptyList()) }
+    fun reload() = com.hdemirbassmusic.music.core.loadDevices(context, service?.preferredDeviceId, onSuccess = { devices = it }, onError = {})
     androidx.compose.runtime.LaunchedEffect(Unit) { reload() }
     val maxSystemVolume = remember { audioManager.getStreamMaxVolume(android.media.AudioManager.STREAM_MUSIC).coerceAtLeast(1) }
     var routeVolume by remember {
         mutableFloatStateOf(audioManager.getStreamVolume(android.media.AudioManager.STREAM_MUSIC).toFloat())
     }
     val menuStretch = androidx.compose.runtime.rememberCoroutineScope().let { scope ->
-        remember(scope) { com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight(animationScope = scope, radiusScale = 0.6f, sheenAlpha = 0.06f, spotAlpha = 0.32f, releasePulse = true) }
+        remember(scope) { com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight(animationScope = scope, radiusScale = 0.6f, sheenAlpha = 0.06f, spotAlpha = 0.32f, releasePulse = true) }
     }
     V2Floating(onDismiss = onDismiss, placement = AboveCenter) {
-        CompositionLocalProvider(com.convx.music.ui.ios.foundation.LocalMenuLiquid provides true) {
+        CompositionLocalProvider(com.hdemirbassmusic.music.ui.ios.foundation.LocalMenuLiquid provides true) {
         androidx.compose.foundation.layout.Column(
             verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(8.dp),
             modifier = Modifier
                 .width(300.dp)
-                .iosMenuSurface(com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(34.dp), menuStretch)
+                .iosMenuSurface(com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(34.dp), menuStretch)
                 .padding(14.dp),
         ) {
             androidx.compose.foundation.layout.Row(
@@ -316,12 +316,12 @@ fun V2RoutePopover(
                     contentScale = androidx.compose.ui.layout.ContentScale.Crop,
                     modifier = Modifier
                         .size(48.dp)
-                        .clip(com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(7.dp)),
+                        .clip(com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(7.dp)),
                 )
                 androidx.compose.foundation.layout.Spacer(Modifier.width(10.dp))
                 androidx.compose.foundation.layout.Column {
-                    com.convx.music.ui.ios.compat.Text(title, color = Color.White, fontSize = 17.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold, maxLines = 1)
-                    com.convx.music.ui.ios.compat.Text(artist, color = Color.White, fontSize = 17.sp, maxLines = 1)
+                    com.hdemirbassmusic.music.ui.ios.compat.Text(title, color = Color.White, fontSize = 17.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold, maxLines = 1)
+                    com.hdemirbassmusic.music.ui.ios.compat.Text(artist, color = Color.White, fontSize = 17.sp, maxLines = 1)
                 }
             }
             val automatic = service?.preferredDeviceId == null
@@ -330,7 +330,7 @@ fun V2RoutePopover(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(48.dp)
-                    .clip(com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(percent = 50))
+                    .clip(com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(percent = 50))
                     .background(Color.White.copy(alpha = if (automatic) 0.35f else 0.12f))
                     .clickable {
                         service?.setPreferredAudioDevice(null)
@@ -349,21 +349,21 @@ fun V2RoutePopover(
                     verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
                     modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                 ) {
-                    com.convx.music.ui.component.SymbolIcon(
-                        symbol = com.convx.music.ui.component.sf("speaker.wave.2.fill"),
+                    com.hdemirbassmusic.music.ui.component.SymbolIcon(
+                        symbol = com.hdemirbassmusic.music.ui.component.sf("speaker.wave.2.fill"),
                         contentDescription = null,
                         size = 20.dp,
                         tint = if (automatic) Color.Black else Color.White.copy(alpha = 0.82f),
                     )
                     androidx.compose.foundation.layout.Spacer(Modifier.width(10.dp))
-                    com.convx.music.ui.ios.compat.Text(
+                    com.hdemirbassmusic.music.ui.ios.compat.Text(
                         "Automatic",
                         color = if (automatic) Color.Black else Color.White,
                         fontSize = 17.sp,
                         fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold,
                         modifier = Modifier.weight(1f),
                     )
-                    if (automatic) com.convx.music.ui.ios.component.IosCheckmark(color = Color.Black)
+                    if (automatic) com.hdemirbassmusic.music.ui.ios.component.IosCheckmark(color = Color.Black)
                 }
             }
             devices.forEach { device ->
@@ -374,7 +374,7 @@ fun V2RoutePopover(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(48.dp)
-                        .clip(com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(percent = 50))
+                        .clip(com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(percent = 50))
                         .background(Color.White.copy(alpha = if (selected) 0.35f else 0.12f))
                         .clickable {
                             service?.setPreferredAudioDevice(device.deviceId)
@@ -392,14 +392,14 @@ fun V2RoutePopover(
                         verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
                         modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
                     ) {
-                        com.convx.music.ui.component.SymbolIcon(
-                            symbol = com.convx.music.ui.component.sf(deviceIcons.symbol(device.name, device.type)),
+                        com.hdemirbassmusic.music.ui.component.SymbolIcon(
+                            symbol = com.hdemirbassmusic.music.ui.component.sf(deviceIcons.symbol(device.name, device.type)),
                             contentDescription = null,
                             size = 20.dp,
                             tint = if (selected) Color.Black else Color.White.copy(alpha = 0.82f),
                         )
                         androidx.compose.foundation.layout.Spacer(Modifier.width(10.dp))
-                        com.convx.music.ui.ios.compat.Text(
+                        com.hdemirbassmusic.music.ui.ios.compat.Text(
                             deviceNames.displayName(device.name),
                             color = if (selected) Color.Black else Color.White,
                             fontSize = 17.sp,
@@ -407,11 +407,11 @@ fun V2RoutePopover(
                             maxLines = 1,
                             modifier = Modifier.weight(1f),
                         )
-                        if (selected) com.convx.music.ui.ios.component.IosCheckmark(color = Color.Black)
+                        if (selected) com.hdemirbassmusic.music.ui.ios.component.IosCheckmark(color = Color.Black)
                     }
                 }
             }
-            com.convx.music.core.VolumeControlRow(
+            com.hdemirbassmusic.music.core.VolumeControlRow(
                 label = stringResource(R.string.volume),
                 icon = androidx.compose.material.icons.Icons.Filled.VolumeUp,
                 volume = routeVolume,
@@ -421,7 +421,7 @@ fun V2RoutePopover(
                     audioManager.setStreamVolume(android.media.AudioManager.STREAM_MUSIC, newVolume.toInt(), 0)
                 },
             )
-            com.convx.music.ui.ios.compat.Text(
+            com.hdemirbassmusic.music.ui.ios.compat.Text(
                 stringResource(R.string.v2_route_more),
                 color = Color.White.copy(alpha = 0.6f),
                 fontSize = 15.sp,

@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings.diy
+package com.hdemirbassmusic.music.ui.screens.settings.diy
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -36,13 +36,13 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -62,24 +62,24 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.datastore.preferences.core.edit
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.PlayerIconsKey
-import com.convx.music.constants.UseAppleMusicPlayerKey
-import com.convx.music.constants.V2PlayerIconsKey
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.player.customize.DiyOrientation
-import com.convx.music.ui.player.customize.DiyPlayerMockup
-import com.convx.music.ui.player.customize.PlayerIconOverride
-import com.convx.music.ui.player.customize.PlayerIconSet
-import com.convx.music.ui.player.customize.PlayerIconSlot
-import com.convx.music.ui.player.customize.PlayerIconStore
-import com.convx.music.ui.player.customize.rememberPlayerIcon
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.MediaImport
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.PlayerIconsKey
+import com.hdemirbassmusic.music.constants.UseAppleMusicPlayerKey
+import com.hdemirbassmusic.music.constants.V2PlayerIconsKey
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.player.customize.DiyOrientation
+import com.hdemirbassmusic.music.ui.player.customize.DiyPlayerMockup
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconOverride
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconSet
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconStore
+import com.hdemirbassmusic.music.ui.player.customize.rememberPlayerIcon
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.MediaImport
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -88,7 +88,7 @@ import kotlinx.coroutines.sync.withLock
 import coil3.compose.rememberAsyncImagePainter
 import coil3.request.ImageRequest
 import java.io.File
-import com.convx.music.ui.screens.settings.SettingsPage
+import com.hdemirbassmusic.music.ui.screens.settings.SettingsPage
 
 /**
  * Swaps the player's control glyphs for the user's own artwork.

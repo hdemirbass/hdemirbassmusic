@@ -1,25 +1,25 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.LocalOnlyModeKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.LocalItem
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.Song
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.fuzzyScore
-import com.convx.music.utils.LocalAudioScanner
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.LocalOnlyModeKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.LocalItem
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.fuzzyScore
+import com.hdemirbassmusic.music.utils.LocalAudioScanner
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

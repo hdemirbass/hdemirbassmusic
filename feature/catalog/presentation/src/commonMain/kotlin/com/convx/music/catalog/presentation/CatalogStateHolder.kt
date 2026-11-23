@@ -1,13 +1,13 @@
-package com.convx.music.catalog.presentation
+package com.hdemirbassmusic.music.catalog.presentation
 
-import com.convx.music.catalog.CatalogEntry
-import com.convx.music.catalog.CatalogError
-import com.convx.music.catalog.CatalogHomePage
-import com.convx.music.catalog.CatalogLibraryCollection
-import com.convx.music.catalog.CatalogResult
-import com.convx.music.catalog.CatalogSection
-import com.convx.music.catalog.CatalogSearchFilter
-import com.convx.music.catalog.MusicCatalogRepository
+import com.hdemirbassmusic.music.catalog.CatalogEntry
+import com.hdemirbassmusic.music.catalog.CatalogError
+import com.hdemirbassmusic.music.catalog.CatalogHomePage
+import com.hdemirbassmusic.music.catalog.CatalogLibraryCollection
+import com.hdemirbassmusic.music.catalog.CatalogResult
+import com.hdemirbassmusic.music.catalog.CatalogSection
+import com.hdemirbassmusic.music.catalog.CatalogSearchFilter
+import com.hdemirbassmusic.music.catalog.MusicCatalogRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -146,7 +146,7 @@ class CatalogStateHolder(
     fun loadExplore() = loadCatalogPage("Explore", catalog::explore)
 
     fun loadRadio() = loadCatalogPage("Radio", load = {
-        when (val result = catalog.search("music radio", com.convx.music.catalog.CatalogSearchFilter.PLAYLISTS)) {
+        when (val result = catalog.search("music radio", com.hdemirbassmusic.music.catalog.CatalogSearchFilter.PLAYLISTS)) {
             is CatalogResult.Success -> CatalogResult.Success(CatalogHomePage(result.value.sections))
             is CatalogResult.Failure -> result
         }

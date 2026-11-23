@@ -1,26 +1,26 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.SongSortDescendingKey
-import com.convx.music.constants.SongSortType
-import com.convx.music.constants.SongSortTypeKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.extensions.filterExplicit
-import com.convx.music.extensions.filterVideoSongs
-import com.convx.music.extensions.toEnum
-import com.convx.music.utils.SyncUtils
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.SongSortDescendingKey
+import com.hdemirbassmusic.music.constants.SongSortType
+import com.hdemirbassmusic.music.constants.SongSortTypeKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.extensions.filterExplicit
+import com.hdemirbassmusic.music.extensions.filterVideoSongs
+import com.hdemirbassmusic.music.extensions.toEnum
+import com.hdemirbassmusic.music.utils.SyncUtils
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -109,7 +109,7 @@ class AutoPlaylistViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             _isScanning.value = true
             try {
-                com.convx.music.utils.LocalAudioScanner.scanAndInsert(context, database)
+                com.hdemirbassmusic.music.utils.LocalAudioScanner.scanAndInsert(context, database)
             } catch (e: Exception) {
                 Timber.tag("AutoPlaylistViewModel").e(e, "local scan failed")
             } finally {

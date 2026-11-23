@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.DownloadRingIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.menuBottomInset
+import com.hdemirbassmusic.music.ui.component.DownloadRingIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.menuBottomInset
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.Configuration
@@ -27,14 +27,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.ListItem
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.ListItem
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -62,33 +62,33 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.LocalSyncUtils
-import com.convx.music.R
-import com.convx.music.constants.ListItemHeight
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.constants.ThumbnailCornerRadius
-import com.convx.music.constants.ThumbnailRoundedShape
-import com.convx.music.db.entities.SpeedDialItem
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.ExoDownloadService
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.ui.component.ListDialog
-import com.convx.music.ui.component.LocalBottomSheetPageState
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
-import com.convx.music.ui.component.NewAction
-import com.convx.music.ui.component.NewActionGrid
-import com.convx.music.ui.utils.ShowMediaInfo
-import com.convx.music.ui.utils.resize
-import com.convx.music.utils.joinByBullet
-import com.convx.music.utils.makeTimeString
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.LocalSyncUtils
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ListItemHeight
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadius
+import com.hdemirbassmusic.music.constants.ThumbnailRoundedShape
+import com.hdemirbassmusic.music.db.entities.SpeedDialItem
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.ExoDownloadService
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.ui.component.ListDialog
+import com.hdemirbassmusic.music.ui.component.LocalBottomSheetPageState
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.ui.component.NewAction
+import com.hdemirbassmusic.music.ui.component.NewActionGrid
+import com.hdemirbassmusic.music.ui.utils.ShowMediaInfo
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.utils.joinByBullet
+import com.hdemirbassmusic.music.utils.makeTimeString
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -103,7 +103,7 @@ fun YouTubeSongMenu(
     onHistoryRemoved: () -> Unit = {}
 ) {
     val context = LocalContext.current
-    val ringtoneViewModel = com.convx.music.LocalRingtoneViewModel.current
+    val ringtoneViewModel = com.hdemirbassmusic.music.LocalRingtoneViewModel.current
     val database = LocalDatabase.current.get()
     val playerConnection = LocalPlayerConnection.current ?: return
     val librarySong by database.song(song.id).collectAsState(initial = null)
@@ -317,7 +317,7 @@ fun YouTubeSongMenu(
                             },
                             onClick = {
                                 val durationMs = song.duration?.takeIf { it > 0 }?.times(1000L) ?: 180000L
-                                val trackInfo = com.convx.music.listentogether.TrackInfo(
+                                val trackInfo = com.hdemirbassmusic.music.listentogether.TrackInfo(
                                     id = song.id,
                                     title = song.title,
                                     artist = artists.joinToString(", ") { it.name },

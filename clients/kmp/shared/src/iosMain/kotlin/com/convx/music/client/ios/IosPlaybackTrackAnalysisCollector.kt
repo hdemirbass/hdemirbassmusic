@@ -1,15 +1,15 @@
 @file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
 
-package com.convx.music.client.ios
+package com.hdemirbassmusic.music.client.ios
 
-import com.convx.music.client.ios.equalizeraudiotapcompat.convx_av_player_analysis_dropped_samples
-import com.convx.music.client.ios.equalizeraudiotapcompat.convx_av_player_analysis_sample_rate
-import com.convx.music.client.ios.equalizeraudiotapcompat.convx_av_player_read_analysis_samples
-import com.convx.music.playback.PlaybackRequestTrack
-import com.convx.music.playback.PlaybackTrackAnalysisCache
-import com.convx.music.playback.PlaybackTrackAnalysisRepository
-import com.convx.music.playback.TrackAnalysisGenerator
-import com.convx.music.playback.analysisIdentity
+import com.hdemirbassmusic.music.client.ios.equalizeraudiotapcompat.hdemirbassmusic_av_player_analysis_dropped_samples
+import com.hdemirbassmusic.music.client.ios.equalizeraudiotapcompat.hdemirbassmusic_av_player_analysis_sample_rate
+import com.hdemirbassmusic.music.client.ios.equalizeraudiotapcompat.hdemirbassmusic_av_player_read_analysis_samples
+import com.hdemirbassmusic.music.playback.PlaybackRequestTrack
+import com.hdemirbassmusic.music.playback.PlaybackTrackAnalysisCache
+import com.hdemirbassmusic.music.playback.PlaybackTrackAnalysisRepository
+import com.hdemirbassmusic.music.playback.TrackAnalysisGenerator
+import com.hdemirbassmusic.music.playback.analysisIdentity
 import kotlinx.atomicfu.atomic
 import kotlinx.cinterop.addressOf
 import kotlinx.cinterop.usePinned
@@ -127,7 +127,7 @@ internal class IosPlaybackTrackAnalysisCollector(
         if (released || analysisBlocked[slot] || runs[slot] != null) return
         val track = tracks[slot] ?: return
         if (trackAnalysisCache.analysisFor(track.identity)?.isUsable == true) return
-        val sampleRate = convx_av_player_analysis_sample_rate(player).toInt()
+        val sampleRate = hdemirbassmusic_av_player_analysis_sample_rate(player).toInt()
         if (sampleRate !in MIN_SAMPLE_RATE..MAX_SAMPLE_RATE) return
 
         val run = AnalysisRun(++nextRunId, track, sampleRate)
@@ -144,7 +144,7 @@ internal class IosPlaybackTrackAnalysisCollector(
         val samples = FloatArray(READ_CHUNK_SAMPLES)
         while (true) {
             val count = samples.usePinned { pinned ->
-                convx_av_player_read_analysis_samples(player, pinned.addressOf(0), samples.size)
+                hdemirbassmusic_av_player_read_analysis_samples(player, pinned.addressOf(0), samples.size)
             }
             if (count <= 0) break
             if (run == null || run.invalidated.value) continue
@@ -160,7 +160,7 @@ internal class IosPlaybackTrackAnalysisCollector(
                 run.invalidated.value = true
             }
         }
-        if (run != null && convx_av_player_analysis_dropped_samples(player) > 0U) {
+        if (run != null && hdemirbassmusic_av_player_analysis_dropped_samples(player) > 0U) {
             run.invalidated.value = true
         }
     }

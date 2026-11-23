@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.listentogether
+package com.hdemirbassmusic.music.listentogether
 
 /** Client-side control checks; the server remains authoritative for room actions. */
 object RoomPermissions {

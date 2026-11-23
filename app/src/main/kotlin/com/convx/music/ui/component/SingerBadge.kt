@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
  * Shows which credited artist is singing the current lyric line.
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
@@ -30,9 +30,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.lyrics.GROUP_AGENT_ID
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.primaryAgentId
+import com.hdemirbassmusic.music.lyrics.GROUP_AGENT_ID
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.primaryAgentId
 
 /**
  * Resolves a display name for every lead voice of a song by matching voices

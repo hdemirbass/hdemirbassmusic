@@ -7,7 +7,7 @@
  * Special thanks to Aleksey Saenko for the music recognition implementation.
  */
 
-package com.convx.music.recognition
+package com.hdemirbassmusic.music.recognition
 
 import android.Manifest
 import android.annotation.SuppressLint

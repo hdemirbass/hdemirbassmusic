@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.foundation
+package com.hdemirbassmusic.music.ui.ios.foundation
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
-import com.convx.music.designsystem.ConvxDesignTokens
+import com.hdemirbassmusic.music.designsystem.hdemirbassmusicDesignTokens
 
 /**
  * The iOS system palette, split into the light and dark variants Apple ships.
@@ -75,7 +75,7 @@ data class IosColors(
     val onAccent: Color get() = Color.White
 }
 
-fun lightIosColors(accent: Color = ConvxDesignTokens.Colors.AccentRed): IosColors = IosColors(
+fun lightIosColors(accent: Color = hdemirbassmusicDesignTokens.Colors.AccentRed): IosColors = IosColors(
     isDark = false,
     systemRed = Color(0xFFFF3B30),
     systemOrange = Color(0xFFFF9500),
@@ -115,7 +115,7 @@ fun lightIosColors(accent: Color = ConvxDesignTokens.Colors.AccentRed): IosColor
     accent = accent,
 )
 
-fun darkIosColors(accent: Color = ConvxDesignTokens.Colors.AccentRed): IosColors = IosColors(
+fun darkIosColors(accent: Color = hdemirbassmusicDesignTokens.Colors.AccentRed): IosColors = IosColors(
     isDark = true,
     systemRed = Color(0xFFFF453A),
     systemOrange = Color(0xFFFF9F0A),

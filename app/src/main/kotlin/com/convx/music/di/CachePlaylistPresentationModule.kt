@@ -1,7 +1,7 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.CachePlaylistViewModel
-import com.convx.music.viewmodels.OnlinePlaylistViewModel
+import com.hdemirbassmusic.music.viewmodels.CachePlaylistViewModel
+import com.hdemirbassmusic.music.viewmodels.OnlinePlaylistViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.core.module.dsl.viewModelOf

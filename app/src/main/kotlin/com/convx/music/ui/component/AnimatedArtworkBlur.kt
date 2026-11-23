@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.graphics.Bitmap
 import android.graphics.Matrix
@@ -26,8 +26,8 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.ui.utils.stackBlur
-import com.convx.music.utils.ArtworkProcessing
+import com.hdemirbassmusic.music.ui.utils.stackBlur
+import com.hdemirbassmusic.music.utils.ArtworkProcessing
 import kotlin.math.cos
 import kotlin.math.max
 import kotlin.math.sin

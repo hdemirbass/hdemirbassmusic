@@ -1,9 +1,9 @@
-package com.convx.music.catalog.presentation
+package com.hdemirbassmusic.music.catalog.presentation
 
-import com.convx.music.catalog.CatalogEntry
-import com.convx.music.catalog.CatalogLibraryCollection
-import com.convx.music.catalog.CatalogResult
-import com.convx.music.catalog.MusicCatalogRepository
+import com.hdemirbassmusic.music.catalog.CatalogEntry
+import com.hdemirbassmusic.music.catalog.CatalogLibraryCollection
+import com.hdemirbassmusic.music.catalog.CatalogResult
+import com.hdemirbassmusic.music.catalog.MusicCatalogRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -18,12 +18,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /** Account navigation stays independent of the currently browsed catalog page. */
-class CatalogSidebarStateHolder(private val catalog: MusicCatalogRepository, library: com.convx.music.library.PlaylistRepository? = null) {
+class CatalogSidebarStateHolder(private val catalog: MusicCatalogRepository, library: com.hdemirbassmusic.music.library.PlaylistRepository? = null) {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
     private val mutablePlaylists = MutableStateFlow<List<CatalogEntry.Playlist>>(emptyList())
     private var request: Job? = null
     val playlists = mutablePlaylists.asStateFlow()
-    val localPlaylists = (library?.observePlaylists(com.convx.music.library.PlaylistOrder.NAME, false)
+    val localPlaylists = (library?.observePlaylists(com.hdemirbassmusic.music.library.PlaylistOrder.NAME, false)
         ?: flowOf(emptyList())).stateIn(scope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
     fun refresh(signedIn: Boolean) {

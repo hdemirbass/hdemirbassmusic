@@ -1,4 +1,4 @@
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring

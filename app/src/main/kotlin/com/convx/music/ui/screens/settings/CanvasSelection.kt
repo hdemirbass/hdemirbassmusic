@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.compose.animation.animateColorAsState
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,14 +24,14 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.RadioButton
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.RadioButton
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.ui.graphics.Color
@@ -44,19 +44,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.CanvasSource
-import com.convx.music.constants.CanvasSourceKey
-import com.convx.music.constants.CanvasThumbnailAnimationKey
-import com.convx.music.ui.component.ExpressiveIconButton
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.component.ModernSwitch
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.CanvasSource
+import com.hdemirbassmusic.music.constants.CanvasSourceKey
+import com.hdemirbassmusic.music.constants.CanvasThumbnailAnimationKey
+import com.hdemirbassmusic.music.ui.component.ExpressiveIconButton
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.component.ModernSwitch
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -75,12 +75,12 @@ fun CanvasSelection(
 
     SettingsPage(
         navController = navController,
-        title = stringResource(R.string.convx_canvas),
+        title = stringResource(R.string.hdemirbassmusic_canvas),
         pageColor = AppTheme.colorScheme.background,
         horizontalPadding = 24.dp,
     ) {
         Text(
-            text = stringResource(R.string.convx_canvas_desc),
+            text = stringResource(R.string.hdemirbassmusic_canvas_desc),
             style = AppTheme.typography.bodyMedium,
             color = AppTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = 24.dp, top = 16.dp)
@@ -161,15 +161,15 @@ fun CanvasSelection(
                 IosSettingsItem(
                     leadingContent = {
                         RadioButton(
-                            selected = canvasSource == CanvasSource.CONVX,
+                            selected = canvasSource == CanvasSource.hdemirbassmusic,
                             onClick = null,
                             enabled = canvasThumbnailAnimation
                         )
                     },
-                    title = { Text(stringResource(R.string.canvas_source_convx)) },
-                    description = { Text(stringResource(R.string.canvas_source_convx_desc)) },
+                    title = { Text(stringResource(R.string.canvas_source_hdemirbassmusic)) },
+                    description = { Text(stringResource(R.string.canvas_source_hdemirbassmusic_desc)) },
                     enabled = canvasThumbnailAnimation,
-                    onClick = { onCanvasSourceChange(CanvasSource.CONVX) }
+                    onClick = { onCanvasSourceChange(CanvasSource.hdemirbassmusic) }
                 ),
                 IosSettingsItem(
                     leadingContent = {

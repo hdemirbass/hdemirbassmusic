@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
@@ -23,7 +23,7 @@ private val DEFAULT_HOME_SECTION_ORDER = mapOf(
 
 /** Builds Home's ordered section list: default weights, a saved custom order, or a seeded shuffle. */
 internal fun buildHomeSections(
-    homeState: com.convx.music.viewmodels.HomeUiState,
+    homeState: com.hdemirbassmusic.music.viewmodels.HomeUiState,
     heroCardEnabled: Boolean,
     randomizeHomeOrder: Boolean,
     savedSectionOrder: String,

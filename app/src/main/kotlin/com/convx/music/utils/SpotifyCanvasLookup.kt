@@ -1,8 +1,8 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.Context
-import com.convx.music.canvas.CanvasArtwork
-import com.convx.music.constants.SpotifySessionKey
+import com.hdemirbassmusic.music.canvas.CanvasArtwork
+import com.hdemirbassmusic.music.constants.SpotifySessionKey
 import com.music.spotify.SpotifyAuth
 import com.music.spotify.SpotifyCanvas
 import com.music.spotify.models.SpotifyInternalToken

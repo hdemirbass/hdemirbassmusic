@@ -1,12 +1,12 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.ui.screens.search.AppleSearchViewModel
-import com.convx.music.ui.screens.search.suggestions.SuggestionsViewModel
-import com.convx.music.viewmodels.MoodAndGenresViewModel
-import com.convx.music.viewmodels.OnlineSearchViewModel
-import com.convx.music.viewmodels.OnlineSearchSuggestionViewModel
-import com.convx.music.viewmodels.ExploreViewModel
-import com.convx.music.viewmodels.LocalSearchViewModel
+import com.hdemirbassmusic.music.ui.screens.search.AppleSearchViewModel
+import com.hdemirbassmusic.music.ui.screens.search.suggestions.SuggestionsViewModel
+import com.hdemirbassmusic.music.viewmodels.MoodAndGenresViewModel
+import com.hdemirbassmusic.music.viewmodels.OnlineSearchViewModel
+import com.hdemirbassmusic.music.viewmodels.OnlineSearchSuggestionViewModel
+import com.hdemirbassmusic.music.viewmodels.ExploreViewModel
+import com.hdemirbassmusic.music.viewmodels.LocalSearchViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

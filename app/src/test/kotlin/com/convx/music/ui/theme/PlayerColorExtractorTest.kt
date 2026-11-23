@@ -1,4 +1,4 @@
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

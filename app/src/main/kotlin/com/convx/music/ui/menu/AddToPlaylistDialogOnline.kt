@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
@@ -15,14 +15,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
-import com.convx.music.utils.listItemShape
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -46,24 +46,24 @@ import org.koin.androidx.compose.koinViewModel
 import com.music.innertube.SearchFilter
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalSyncUtils
-import com.convx.music.R
-import com.convx.music.constants.AddToPlaylistSortDescendingKey
-import com.convx.music.constants.AddToPlaylistSortTypeKey
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.constants.PlaylistSortType
-import com.convx.music.db.entities.Song
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.ui.component.CreatePlaylistDialog
-import com.convx.music.ui.component.ListDialog
-import com.convx.music.ui.component.ListItem
-import com.convx.music.ui.component.PlaylistListItem
-import com.convx.music.ui.component.SortHeader
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
-import com.convx.music.utils.reportException
-import com.convx.music.viewmodels.PlaylistsViewModel
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalSyncUtils
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AddToPlaylistSortDescendingKey
+import com.hdemirbassmusic.music.constants.AddToPlaylistSortTypeKey
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.constants.PlaylistSortType
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.ui.component.CreatePlaylistDialog
+import com.hdemirbassmusic.music.ui.component.ListDialog
+import com.hdemirbassmusic.music.ui.component.ListItem
+import com.hdemirbassmusic.music.ui.component.PlaylistListItem
+import com.hdemirbassmusic.music.ui.component.SortHeader
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.utils.reportException
+import com.hdemirbassmusic.music.viewmodels.PlaylistsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

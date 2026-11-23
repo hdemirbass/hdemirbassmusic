@@ -1,4 +1,4 @@
-package com.convx.music.utils.potoken
+package com.hdemirbassmusic.music.utils.potoken
 
 class PoTokenResult(
     val playerRequestPoToken: String,

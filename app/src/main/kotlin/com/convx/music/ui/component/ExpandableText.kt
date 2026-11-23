@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
@@ -13,8 +13,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -33,7 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 data class LinkSegment(
     val text: String,
@@ -51,7 +51,7 @@ fun ExpandableText(
     var hasOverflow by rememberSaveable { mutableStateOf(false) }
     val uriHandler = LocalUriHandler.current
     val linkColor = AppTheme.colorScheme.primary
-    val bodyColor = com.convx.music.ui.ios.compat.LocalContentColor.current
+    val bodyColor = com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor.current
 
     val annotatedText: AnnotatedString = remember(text, runs, linkColor) {
         if (runs.isNullOrEmpty()) {

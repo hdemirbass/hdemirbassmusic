@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
@@ -17,10 +17,10 @@ import com.composables.sfsymbols.monochrome.SFPlayRectangle
 import com.composables.sfsymbols.monochrome.SFEyeSlashFill
 import com.composables.sfsymbols.monochrome.SFShuffle
 import com.composables.sfsymbols.monochrome.SFSliderHorizontal3
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,17 +33,17 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.material3.SwitchDefaults
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -60,30 +60,30 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.ContentCountryKey
-import com.convx.music.constants.ContentLanguageKey
-import com.convx.music.constants.SuggestionRegionKey
-import com.convx.music.constants.SuggestionRegionSlugToName
-import com.convx.music.ui.screens.search.suggestions.SuggestionRegionSheet
-import com.convx.music.constants.CountryCodeToName
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.HideYoutubeShortsKey
-import com.convx.music.constants.LanguageCodeToName
-import com.convx.music.constants.RandomizeHomeOrderKey
-import com.convx.music.constants.ShowHomeMoodFiltersKey
-import com.convx.music.constants.SYSTEM_DEFAULT
-import com.convx.music.constants.ShowWrappedCardKey
-import com.convx.music.ui.component.EnumDialog
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ContentCountryKey
+import com.hdemirbassmusic.music.constants.ContentLanguageKey
+import com.hdemirbassmusic.music.constants.SuggestionRegionKey
+import com.hdemirbassmusic.music.constants.SuggestionRegionSlugToName
+import com.hdemirbassmusic.music.ui.screens.search.suggestions.SuggestionRegionSheet
+import com.hdemirbassmusic.music.constants.CountryCodeToName
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.HideYoutubeShortsKey
+import com.hdemirbassmusic.music.constants.LanguageCodeToName
+import com.hdemirbassmusic.music.constants.RandomizeHomeOrderKey
+import com.hdemirbassmusic.music.constants.ShowHomeMoodFiltersKey
+import com.hdemirbassmusic.music.constants.SYSTEM_DEFAULT
+import com.hdemirbassmusic.music.constants.ShowWrappedCardKey
+import com.hdemirbassmusic.music.ui.component.EnumDialog
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 import androidx.compose.runtime.mutableStateListOf
 import com.music.innertube.YouTube

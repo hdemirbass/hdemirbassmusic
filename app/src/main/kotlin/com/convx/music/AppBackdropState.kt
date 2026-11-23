@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -19,12 +19,12 @@ import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.runtime.MutableState
-import com.convx.music.ui.component.backdrop.backdrops.LayerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberNavTransitionFreeze
-import com.convx.music.ui.component.floatingtabbar.FloatingTabBarScrollConnection
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.LayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberNavTransitionFreeze
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.FloatingTabBarScrollConnection
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import kotlinx.coroutines.delay
 
 /** State shared by the app backdrop and its freeze controls. */

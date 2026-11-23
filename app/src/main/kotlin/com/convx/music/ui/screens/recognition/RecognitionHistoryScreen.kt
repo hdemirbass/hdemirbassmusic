@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.recognition
+package com.hdemirbassmusic.music.ui.screens.recognition
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.utils.openSearchResults
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.utils.openSearchResults
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -16,15 +16,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
-import com.convx.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.OutlinedTextField as TextField
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField as TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -46,18 +46,18 @@ import com.composables.sfsymbols.monochrome.SFClock
 import com.composables.sfsymbols.monochrome.SFMagnifyingglass
 import com.composables.sfsymbols.monochrome.SFTrash
 import com.composables.sfsymbols.monochrome.SFXmark
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.ThumbnailRoundedShape
-import com.convx.music.db.entities.RecognitionHistory
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.component.ScreenScaffold
-import com.convx.music.ui.component.topBarContentPadding
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ThumbnailRoundedShape
+import com.hdemirbassmusic.music.db.entities.RecognitionHistory
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.component.ScreenScaffold
+import com.hdemirbassmusic.music.ui.component.topBarContentPadding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDate

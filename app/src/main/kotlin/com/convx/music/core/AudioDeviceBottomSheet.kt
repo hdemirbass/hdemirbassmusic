@@ -1,21 +1,21 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package com.convx.music.core
+package com.hdemirbassmusic.music.core
 
-import com.convx.music.ui.component.volumeBars
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.iosMenuSurface
-import com.convx.music.ui.player.Centered
-import com.convx.music.ui.player.V2Floating
-import com.convx.music.ui.ios.foundation.LocalMenuLiquid
+import com.hdemirbassmusic.music.ui.component.volumeBars
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosMenuSurface
+import com.hdemirbassmusic.music.ui.player.Centered
+import com.hdemirbassmusic.music.ui.player.V2Floating
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalMenuLiquid
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.CompositionLocalProvider
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
 import android.Manifest
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice
@@ -54,7 +54,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.runtime.key
-import com.convx.music.core.shapes.RoundedStarShape
+import com.hdemirbassmusic.music.core.shapes.RoundedStarShape
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -93,24 +93,24 @@ import androidx.compose.material.icons.filled.Usb
 import androidx.compose.material.icons.filled.VolumeOff
 import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material.icons.outlined.Error
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonGroupDefaults
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
 import androidx.compose.material3.AlertDialogDefaults
-import com.convx.music.ui.ios.compat.BasicAlertDialog
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.BasicAlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
 import androidx.compose.material3.SliderDefaults
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.ToggleButton
-import com.convx.music.ui.ios.compat.SegmentedButton
-import com.convx.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
-import com.convx.music.ui.ios.compat.CircularWavyProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.ToggleButton
+import com.hdemirbassmusic.music.ui.ios.compat.SegmentedButton
+import com.hdemirbassmusic.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
+import com.hdemirbassmusic.music.ui.ios.compat.CircularWavyProgressIndicator
 import androidx.compose.material3.rememberSliderState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -139,11 +139,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.convx.music.R
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.constants.AudioQuality
-import com.convx.music.constants.AudioQualityKey
-import com.convx.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.constants.AudioQuality
+import com.hdemirbassmusic.music.constants.AudioQualityKey
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
@@ -357,7 +357,7 @@ fun AudioDeviceMenu(onDismiss: () -> Unit, modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier.weight(1f),
                 )
-                com.convx.music.ui.ios.compat.TextButton(onClick = onDismiss) { Text(stringResource(R.string.done)) }
+                com.hdemirbassmusic.music.ui.ios.compat.TextButton(onClick = onDismiss) { Text(stringResource(R.string.done)) }
             }
             Spacer(Modifier.height(12.dp))
             when {
@@ -1004,7 +1004,7 @@ private fun AudioDeviceIconPicker(
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.weight(1f),
             )
-            com.convx.music.ui.ios.compat.TextButton(onClick = onDismiss) {
+            com.hdemirbassmusic.music.ui.ios.compat.TextButton(onClick = onDismiss) {
                 Text(stringResource(R.string.done))
             }
         }
@@ -1013,20 +1013,20 @@ private fun AudioDeviceIconPicker(
             style = AppTheme.typography.labelMedium,
             color = AppTheme.colorScheme.onSurfaceVariant,
         )
-        com.convx.music.ui.ios.compat.OutlinedTextField(
+        com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField(
             value = editedName,
             onValueChange = { editedName = it },
             singleLine = true,
             label = { Text("Device name") },
             modifier = Modifier.fillMaxWidth(),
         )
-        com.convx.music.ui.ios.compat.TextButton(
+        com.hdemirbassmusic.music.ui.ios.compat.TextButton(
             onClick = { onSave(editedName, selectedIcon) },
             modifier = Modifier.align(Alignment.End),
         ) {
             Text("Save")
         }
-        com.convx.music.ui.ios.compat.OutlinedTextField(
+        com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField(
             value = query,
             onValueChange = { query = it },
             singleLine = true,

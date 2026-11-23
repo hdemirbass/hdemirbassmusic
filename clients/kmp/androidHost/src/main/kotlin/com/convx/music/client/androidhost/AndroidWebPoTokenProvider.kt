@@ -1,4 +1,4 @@
-package com.convx.music.client.androidhost
+package com.hdemirbassmusic.music.client.androidhost
 
 import android.content.Context
 import android.os.Looper
@@ -197,7 +197,7 @@ private class AndroidBotGuardSession(
     }
 
     private companion object {
-        const val JAVASCRIPT_BRIDGE = "ConvxPoToken"
+        const val JAVASCRIPT_BRIDGE = "hdemirbassmusicPoToken"
         const val INITIALIZATION_TIMEOUT_MS = 60_000L
         const val TOKEN_TIMEOUT_MS = 30_000L
         const val TOKEN_EXPIRY_SAFETY_SECONDS = 10 * 60L

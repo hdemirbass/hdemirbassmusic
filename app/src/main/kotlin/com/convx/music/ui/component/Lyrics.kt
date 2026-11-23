@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -54,17 +54,17 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.BasicAlertDialog
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.BasicAlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.FilledTonalButton
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.utils.VibrantChromeInk
-import com.convx.music.ui.utils.vibrantChrome
+import com.hdemirbassmusic.music.ui.ios.compat.FilledTonalButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.utils.VibrantChromeInk
+import com.hdemirbassmusic.music.ui.utils.vibrantChrome
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -118,81 +118,81 @@ import coil3.ImageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.DarkModeKey
-import com.convx.music.constants.LyricsAnimationStyle
-import com.convx.music.constants.LyricsAnimationStyleKey
-import com.convx.music.constants.LyricsClickKey
-import com.convx.music.constants.LyricsGlowEffectKey
-import com.convx.music.constants.FlamingoBrightSingingWordsKey
-import com.convx.music.constants.FlamingoWordSwellKey
-import com.convx.music.constants.FlamingoGlowColorKey
-import com.convx.music.constants.LyricsLineSpacingKey
-import com.convx.music.constants.LyricsRomanizeAsMainKey
-import com.convx.music.constants.LyricsRomanizeBelarusianKey
-import com.convx.music.constants.LyricsRomanizeBulgarianKey
-import com.convx.music.constants.LyricsRomanizeChineseKey
-import com.convx.music.constants.LyricsRomanizeCyrillicByLineKey
-import com.convx.music.constants.LyricsRomanizeHindiKey
-import com.convx.music.constants.LyricsRomanizePunjabiKey
-import com.convx.music.constants.LyricsRomanizeJapaneseKey
-import com.convx.music.constants.LyricsRomanizeKoreanKey
-import com.convx.music.constants.LyricsRomanizeKyrgyzKey
-import com.convx.music.constants.LyricsRomanizeMacedonianKey
-import com.convx.music.constants.LyricsRomanizeRussianKey
-import com.convx.music.constants.LyricsRomanizeSerbianKey
-import com.convx.music.constants.LyricsRomanizeUkrainianKey
-import com.convx.music.constants.LyricsStandardBlurKey
-import com.convx.music.constants.LyricsScrollKey
-import com.convx.music.constants.LyricsTextPositionKey
-import com.convx.music.constants.LyricsTextSizeKey
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.OpenRouterApiKey
-import com.convx.music.constants.DeeplApiKey
-import com.convx.music.constants.AiProviderKey
-import com.convx.music.constants.OpenRouterBaseUrlKey
-import com.convx.music.constants.OpenRouterModelKey
-import com.convx.music.constants.TranslateLanguageKey
-import com.convx.music.constants.TranslateModeKey
-import com.convx.music.constants.DeeplFormalityKey
-import com.convx.music.constants.PlayerBackgroundStyleKey
-import com.convx.music.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.isSingerSectionStart
-import com.convx.music.lyrics.primaryAgentId
-import com.convx.music.lyrics.LyricsUtils.findCurrentLineIndex
-import com.convx.music.lyrics.LyricsUtils.isBelarusian
-import com.convx.music.lyrics.LyricsUtils.isBulgarian
-import com.convx.music.lyrics.LyricsUtils.isChinese
-import com.convx.music.lyrics.LyricsUtils.isHindi
-import com.convx.music.lyrics.LyricsUtils.isPunjabi
-import com.convx.music.lyrics.LyricsUtils.isJapanese
-import com.convx.music.lyrics.LyricsUtils.isKorean
-import com.convx.music.lyrics.LyricsUtils.isKyrgyz
-import com.convx.music.lyrics.LyricsUtils.isMacedonian
-import com.convx.music.lyrics.LyricsUtils.isRussian
-import com.convx.music.lyrics.LyricsUtils.isSerbian
-import com.convx.music.lyrics.LyricsUtils.isUkrainian
-import com.convx.music.lyrics.LyricsUtils.parseLyrics
-import com.convx.music.lyrics.LyricsUtils.romanizeChinese
-import com.convx.music.lyrics.LyricsUtils.romanizeHindi
-import com.convx.music.lyrics.LyricsUtils.romanizePunjabi
-import com.convx.music.lyrics.LyricsUtils.romanizeCyrillic
-import com.convx.music.lyrics.LyricsUtils.romanizeJapanese
-import com.convx.music.lyrics.LyricsUtils.romanizeKorean
-import com.convx.music.lyrics.LyricsTranslationHelper
-import com.convx.music.ui.component.shimmer.ShimmerHost
-import com.convx.music.ui.component.shimmer.TextPlaceholder
-import com.convx.music.ui.screens.settings.DarkMode
-import com.convx.music.ui.screens.settings.LyricsPosition
-import com.convx.music.ui.utils.Motion
-import com.convx.music.ui.utils.fadingEdge
-import com.convx.music.utils.ComposeToImage
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.DarkModeKey
+import com.hdemirbassmusic.music.constants.LyricsAnimationStyle
+import com.hdemirbassmusic.music.constants.LyricsAnimationStyleKey
+import com.hdemirbassmusic.music.constants.LyricsClickKey
+import com.hdemirbassmusic.music.constants.LyricsGlowEffectKey
+import com.hdemirbassmusic.music.constants.FlamingoBrightSingingWordsKey
+import com.hdemirbassmusic.music.constants.FlamingoWordSwellKey
+import com.hdemirbassmusic.music.constants.FlamingoGlowColorKey
+import com.hdemirbassmusic.music.constants.LyricsLineSpacingKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeAsMainKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeBelarusianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeBulgarianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeChineseKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeCyrillicByLineKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeHindiKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizePunjabiKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeJapaneseKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeKoreanKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeKyrgyzKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeMacedonianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeRussianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeSerbianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeUkrainianKey
+import com.hdemirbassmusic.music.constants.LyricsStandardBlurKey
+import com.hdemirbassmusic.music.constants.LyricsScrollKey
+import com.hdemirbassmusic.music.constants.LyricsTextPositionKey
+import com.hdemirbassmusic.music.constants.LyricsTextSizeKey
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.OpenRouterApiKey
+import com.hdemirbassmusic.music.constants.DeeplApiKey
+import com.hdemirbassmusic.music.constants.AiProviderKey
+import com.hdemirbassmusic.music.constants.OpenRouterBaseUrlKey
+import com.hdemirbassmusic.music.constants.OpenRouterModelKey
+import com.hdemirbassmusic.music.constants.TranslateLanguageKey
+import com.hdemirbassmusic.music.constants.TranslateModeKey
+import com.hdemirbassmusic.music.constants.DeeplFormalityKey
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyleKey
+import com.hdemirbassmusic.music.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.isSingerSectionStart
+import com.hdemirbassmusic.music.lyrics.primaryAgentId
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.findCurrentLineIndex
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isBelarusian
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isBulgarian
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isChinese
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isHindi
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isPunjabi
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isJapanese
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isKorean
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isKyrgyz
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isMacedonian
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isRussian
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isSerbian
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.isUkrainian
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.parseLyrics
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.romanizeChinese
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.romanizeHindi
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.romanizePunjabi
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.romanizeCyrillic
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.romanizeJapanese
+import com.hdemirbassmusic.music.lyrics.LyricsUtils.romanizeKorean
+import com.hdemirbassmusic.music.lyrics.LyricsTranslationHelper
+import com.hdemirbassmusic.music.ui.component.shimmer.ShimmerHost
+import com.hdemirbassmusic.music.ui.component.shimmer.TextPlaceholder
+import com.hdemirbassmusic.music.ui.screens.settings.DarkMode
+import com.hdemirbassmusic.music.ui.screens.settings.LyricsPosition
+import com.hdemirbassmusic.music.ui.utils.Motion
+import com.hdemirbassmusic.music.ui.utils.fadingEdge
+import com.hdemirbassmusic.music.utils.ComposeToImage
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -459,8 +459,8 @@ fun Lyrics(
     val flamingoWordSwell by rememberPreference(FlamingoWordSwellKey, true)
     val flamingoGlowColor by rememberPreference(FlamingoGlowColorKey, 0xFFFFFFFF.toInt())
     val lyricsAnimationStyle by rememberEnumPreference(LyricsAnimationStyleKey, LyricsAnimationStyle.FLAMINGO)
-    val lyricsFontSelection by rememberPreference(com.convx.music.constants.LyricsFontKey, "default")
-    val lyricsFontFamily = com.convx.music.lyrics.rememberLyricsFont(lyricsFontSelection)
+    val lyricsFontSelection by rememberPreference(com.hdemirbassmusic.music.constants.LyricsFontKey, "default")
+    val lyricsFontFamily = com.hdemirbassmusic.music.lyrics.rememberLyricsFont(lyricsFontSelection)
     val storedLyricsTextSize by rememberPreference(LyricsTextSizeKey, 30f)
     val lyricsTextSize = textSizeOverride ?: storedLyricsTextSize
     val lyricsLineSpacing by rememberPreference(LyricsLineSpacingKey, 1.3f)
@@ -468,9 +468,9 @@ fun Lyrics(
     
     val openRouterApiKey by rememberPreference(OpenRouterApiKey, "")
     val deeplApiKey by rememberPreference(DeeplApiKey, "")
-    val aiProvider by rememberPreference(AiProviderKey, com.convx.music.ai.AiDefaults.PROVIDER)
-    val openRouterBaseUrl by rememberPreference(OpenRouterBaseUrlKey, com.convx.music.ai.AiDefaults.BASE_URL)
-    val openRouterModel by rememberPreference(OpenRouterModelKey, com.convx.music.ai.AiDefaults.MODEL)
+    val aiProvider by rememberPreference(AiProviderKey, com.hdemirbassmusic.music.ai.AiDefaults.PROVIDER)
+    val openRouterBaseUrl by rememberPreference(OpenRouterBaseUrlKey, com.hdemirbassmusic.music.ai.AiDefaults.BASE_URL)
+    val openRouterModel by rememberPreference(OpenRouterModelKey, com.hdemirbassmusic.music.ai.AiDefaults.MODEL)
     val translateLanguage by rememberPreference(TranslateLanguageKey, "en")
     val translateMode by rememberPreference(TranslateModeKey, "Literal")
     val deeplFormality by rememberPreference(DeeplFormalityKey, "default")
@@ -689,7 +689,7 @@ fun Lyrics(
         lyricsAnimationStyle == LyricsAnimationStyle.ARCHIVE_TUNE &&
         lines.hasKaraokeTimings()
     val usesFlamingoRenderer = (lyricsAnimationStyle == LyricsAnimationStyle.FLAMINGO ||
-            lyricsAnimationStyle == LyricsAnimationStyle.CONVX_1 ||
+            lyricsAnimationStyle == LyricsAnimationStyle.hdemirbassmusic_1 ||
             lyricsAnimationStyle == LyricsAnimationStyle.BITCHORD) && lines.isNotEmpty()
     val usesCrawlRenderer = lyricsAnimationStyle == LyricsAnimationStyle.STAR_CRAWL && lines.isNotEmpty()
     val hasProviderRow = isLyricsProviderShown && !usesArchiveTuneRenderer && !usesFlamingoRenderer && !usesCrawlRenderer
@@ -768,7 +768,7 @@ fun Lyrics(
             val position = sliderPosition ?: playerConnection.player.currentPosition
             currentPlaybackPosition = position
             val lyricsOffset = currentSong?.song?.lyricsOffset ?: 0
-            val newLineIndex = com.convx.music.lyrics.primaryLyricLineIndex(lines, position + lyricsOffset)
+            val newLineIndex = com.hdemirbassmusic.music.lyrics.primaryLyricLineIndex(lines, position + lyricsOffset)
             if (newLineIndex != currentLineIndex) {
                 currentLineIndex = newLineIndex
             }
@@ -985,7 +985,7 @@ fun Lyrics(
                     run {
                     val isSelected = selectedIndices.contains(index)
                     if ((lyricsAnimationStyle == LyricsAnimationStyle.BITCHORD ||
-                            lyricsAnimationStyle == LyricsAnimationStyle.CONVX_1) &&
+                            lyricsAnimationStyle == LyricsAnimationStyle.hdemirbassmusic_1) &&
                         itemWords.isNotEmpty()
                     ) {
                         val currentLineTime = if (displayedCurrentLineIndex >= 0 && displayedCurrentLineIndex < lines.size) {
@@ -995,7 +995,7 @@ fun Lyrics(
                         val isActiveByIndex = index == displayedCurrentLineIndex
                         val isActiveByTime = isLineAtSameTime && displayedCurrentLineIndex >= 0
 
-                        ConvxLyricsLine(
+                        hdemirbassmusicLyricsLine(
                 fontFamily = lyricsFontFamily,
                             entry = item,
                             nextEntryTime = lines.getOrNull(index + 1)?.time,
@@ -1904,7 +1904,7 @@ fun Lyrics(
                 val shareIntent = Intent().apply {
                     action = Intent.ACTION_SEND
                     type = "text/plain"
-                    val songLink = com.convx.music.utils.ShareUtils.songUrl(mediaMetadata?.id ?: "")
+                    val songLink = com.hdemirbassmusic.music.utils.ShareUtils.songUrl(mediaMetadata?.id ?: "")
                     putExtra(Intent.EXTRA_TEXT, "\"$lyricsText\"\n\n$songTitle - $artists\n$songLink")
                 }
                 context.startActivity(

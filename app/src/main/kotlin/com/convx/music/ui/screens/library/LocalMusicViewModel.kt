@@ -1,14 +1,14 @@
-package com.convx.music.ui.screens.library
+package com.hdemirbassmusic.music.ui.screens.library
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.Song
-import com.convx.music.utils.LocalAudioScanner
-import com.convx.music.utils.LocalFolderIndex
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.utils.LocalAudioScanner
+import com.hdemirbassmusic.music.utils.LocalFolderIndex
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.MutableStateFlow

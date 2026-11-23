@@ -1,11 +1,11 @@
-package com.convx.music.client.androidhost
+package com.hdemirbassmusic.music.client.androidhost
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.playback.EqualizerBand
-import com.convx.music.playback.EqualizerProfile
-import com.convx.music.playback.PlaybackSettings
+import com.hdemirbassmusic.music.playback.EqualizerBand
+import com.hdemirbassmusic.music.playback.EqualizerProfile
+import com.hdemirbassmusic.music.playback.PlaybackSettings
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlin.math.PI

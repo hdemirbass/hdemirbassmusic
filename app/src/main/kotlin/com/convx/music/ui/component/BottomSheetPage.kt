@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
@@ -37,11 +37,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.isSpecified
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
-import com.convx.music.constants.SheetCornerRadiusKey
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.SheetCornerRadiusKey
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.launch
 import zone.ien.hig.CupertinoModalBottomSheet
 import zone.ien.hig.PresentationDetent
@@ -129,7 +129,7 @@ fun BottomSheetPage(
                 val capturedBackdrop = if (liquidGlassPlayerMode) liveBackdrop else null
                 CompositionLocalProvider(
                     LocalAppBackdrop provides (capturedBackdrop ?: LocalAppBackdrop.current),
-                    com.convx.music.ui.ios.foundation.LocalIosBackdrop provides (capturedBackdrop ?: com.convx.music.ui.ios.foundation.LocalIosBackdrop.current),
+                    com.hdemirbassmusic.music.ui.ios.foundation.LocalIosBackdrop provides (capturedBackdrop ?: com.hdemirbassmusic.music.ui.ios.foundation.LocalIosBackdrop.current),
                 ) {
                     Box(
                         modifier = Modifier

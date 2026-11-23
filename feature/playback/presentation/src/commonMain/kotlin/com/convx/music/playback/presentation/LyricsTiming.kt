@@ -1,4 +1,4 @@
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
 /** Positive offsets advance the lyric clock; seeking applies the inverse adjustment. */
 fun lyricDisplayPosition(playbackPositionMs: Long, offsetMs: Long): Long =

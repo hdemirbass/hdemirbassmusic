@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.listentogether
+package com.hdemirbassmusic.music.listentogether
 
 import android.util.Base64
 import android.Manifest
@@ -21,18 +21,18 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.getSystemService
 import androidx.datastore.preferences.core.edit
-import com.convx.music.R
-import com.convx.music.constants.ListenTogetherAutoAddSuggestionsKey
-import com.convx.music.constants.ListenTogetherAutoApprovalKey
-import com.convx.music.constants.ListenTogetherIsHostKey
-import com.convx.music.constants.ListenTogetherRoomCodeKey
-import com.convx.music.constants.ListenTogetherServerUrlKey
-import com.convx.music.constants.ListenTogetherSessionTimestampKey
-import com.convx.music.constants.ListenTogetherSessionTokenKey
-import com.convx.music.constants.ListenTogetherUserIdKey
-import com.convx.music.utils.NetworkConnectivityObserver
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ListenTogetherAutoAddSuggestionsKey
+import com.hdemirbassmusic.music.constants.ListenTogetherAutoApprovalKey
+import com.hdemirbassmusic.music.constants.ListenTogetherIsHostKey
+import com.hdemirbassmusic.music.constants.ListenTogetherRoomCodeKey
+import com.hdemirbassmusic.music.constants.ListenTogetherServerUrlKey
+import com.hdemirbassmusic.music.constants.ListenTogetherSessionTimestampKey
+import com.hdemirbassmusic.music.constants.ListenTogetherSessionTokenKey
+import com.hdemirbassmusic.music.constants.ListenTogetherUserIdKey
+import com.hdemirbassmusic.music.utils.NetworkConnectivityObserver
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -152,10 +152,10 @@ class ListenTogetherClient(
         private const val SESSION_GRACE_PERIOD_MS = 10 * 60 * 1000L
 
         private const val NOTIFICATION_CHANNEL_ID = "listen_together_channel"
-        const val ACTION_APPROVE_JOIN = "com.convx.music.LISTEN_TOGETHER_APPROVE_JOIN"
-        const val ACTION_REJECT_JOIN = "com.convx.music.LISTEN_TOGETHER_REJECT_JOIN"
-        const val ACTION_APPROVE_SUGGESTION = "com.convx.music.LISTEN_TOGETHER_APPROVE_SUGGESTION"
-        const val ACTION_REJECT_SUGGESTION = "com.convx.music.LISTEN_TOGETHER_REJECT_SUGGESTION"
+        const val ACTION_APPROVE_JOIN = "com.hdemirbassmusic.music.LISTEN_TOGETHER_APPROVE_JOIN"
+        const val ACTION_REJECT_JOIN = "com.hdemirbassmusic.music.LISTEN_TOGETHER_REJECT_JOIN"
+        const val ACTION_APPROVE_SUGGESTION = "com.hdemirbassmusic.music.LISTEN_TOGETHER_APPROVE_SUGGESTION"
+        const val ACTION_REJECT_SUGGESTION = "com.hdemirbassmusic.music.LISTEN_TOGETHER_REJECT_SUGGESTION"
         const val EXTRA_USER_ID = "extra_user_id"
         const val EXTRA_SUGGESTION_ID = "extra_suggestion_id"
         const val EXTRA_NOTIFICATION_ID = "extra_notification_id"
@@ -301,7 +301,7 @@ class ListenTogetherClient(
     
     private fun loadBlockedUsernames() {
         try {
-            val blockedJson = context.dataStore.get(com.convx.music.constants.ListenTogetherBlockedUsersKey, "")
+            val blockedJson = context.dataStore.get(com.hdemirbassmusic.music.constants.ListenTogetherBlockedUsersKey, "")
             val blockedList = if (blockedJson.isNotEmpty()) {
                 json.decodeFromString<List<String>>(blockedJson)
             } else {
@@ -318,7 +318,7 @@ class ListenTogetherClient(
         try {
             val blockedJson = json.encodeToString(_blockedUsernames.value.toList())
             context.dataStore.edit { preferences ->
-                preferences[com.convx.music.constants.ListenTogetherBlockedUsersKey] = blockedJson
+                preferences[com.hdemirbassmusic.music.constants.ListenTogetherBlockedUsersKey] = blockedJson
             }
         } catch (e: Exception) {
             log(LogLevel.ERROR, "Failed to save blocked usernames", e.message)
@@ -596,7 +596,7 @@ class ListenTogetherClient(
             val powerManager = context.getSystemService<PowerManager>()
             wakeLock = powerManager?.newWakeLock(
                 PowerManager.PARTIAL_WAKE_LOCK,
-                "convx:ListenTogether"
+                "hdemirbassmusic:ListenTogether"
             )
         }
         if (wakeLock?.isHeld == false) {

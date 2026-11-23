@@ -1,27 +1,27 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import android.content.Intent
 import android.webkit.CookieManager
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.App
-import com.convx.music.constants.AccountChannelHandleKey
-import com.convx.music.constants.AccountEmailKey
-import com.convx.music.constants.AccountNameKey
-import com.convx.music.constants.DataSyncIdKey
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.constants.SavedAccount
-import com.convx.music.constants.SavedAccountsKey
-import com.convx.music.constants.VisitorDataKey
-import com.convx.music.constants.toJson
-import com.convx.music.utils.SyncUtils
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.App
+import com.hdemirbassmusic.music.constants.AccountChannelHandleKey
+import com.hdemirbassmusic.music.constants.AccountEmailKey
+import com.hdemirbassmusic.music.constants.AccountNameKey
+import com.hdemirbassmusic.music.constants.DataSyncIdKey
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.constants.SavedAccount
+import com.hdemirbassmusic.music.constants.SavedAccountsKey
+import com.hdemirbassmusic.music.constants.VisitorDataKey
+import com.hdemirbassmusic.music.constants.toJson
+import com.hdemirbassmusic.music.utils.SyncUtils
+import com.hdemirbassmusic.music.utils.dataStore
 import com.music.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

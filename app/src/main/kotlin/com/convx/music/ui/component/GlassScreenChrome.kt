@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -12,10 +12,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import com.convx.music.ui.component.backdrop.backdrops.LayerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.LayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
 
@@ -24,7 +24,7 @@ import dev.chrisbanes.haze.hazeSource
 class GlassScreenChrome internal constructor(
     val backdrop: LayerBackdrop,
     val hazeState: HazeState,
-    private val freeze: com.convx.music.ui.component.backdrop.backdrops.BackdropFreeze,
+    private val freeze: com.hdemirbassmusic.music.ui.component.backdrop.backdrops.BackdropFreeze,
 ) {
     // Reuse the scrolling content's frozen state to avoid re-running its effects on every scroll frame.
     val frozen: () -> Boolean get() = freeze.frozen

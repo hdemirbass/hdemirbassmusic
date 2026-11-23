@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -144,7 +144,7 @@ object PlayerMorph {
     val glassFrozen: Boolean get() = glassFrozenState.value
 
     private val glassFrozenState = androidx.compose.runtime.derivedStateOf {
-        activeState.value && progress < com.convx.music.ui.component.PLAYER_GLASS_UNFREEZE_PROGRESS
+        activeState.value && progress < com.hdemirbassmusic.music.ui.component.PLAYER_GLASS_UNFREEZE_PROGRESS
     }
 
     /**

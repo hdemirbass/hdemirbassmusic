@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.utils.MenuItemChrome
-import com.convx.music.ui.utils.MenuIconChrome
-import com.convx.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.MenuItemChrome
+import com.hdemirbassmusic.music.ui.utils.MenuIconChrome
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -37,19 +37,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.isSpecified
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
 import kotlinx.coroutines.launch
 import androidx.compose.ui.unit.sp
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.ProvideTextStyle
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.IosMenuMaterial
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.iosMenuSurface
-import com.convx.music.ui.ios.foundation.menuVibrancy
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.ProvideTextStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMenuMaterial
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosMenuSurface
+import com.hdemirbassmusic.music.ui.ios.foundation.menuVibrancy
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
 
 /** Corner radius shared by grouped menu cards. */
 val MenuGroupCornerRadius = 32.dp
@@ -192,7 +192,7 @@ private fun IosMenuItemRow(item: IosMenuItemData) {
 
 /**
  * Pushes a colour and text style into both the iOS locals and the Material ones, so a
- * row's slot content lands the same whether it was written with [com.convx.music.ui.ios.component.IosText]
+ * row's slot content lands the same whether it was written with [com.hdemirbassmusic.music.ui.ios.component.IosText]
  * or a still-Material `Text`.
  */
 @Composable
@@ -204,7 +204,7 @@ private fun ProvideIosContent(
     androidx.compose.runtime.CompositionLocalProvider(
         LocalIosContentColor provides color,
         LocalIosTextStyle provides style,
-        com.convx.music.ui.ios.compat.LocalContentColor provides color,
+        com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides color,
     ) {
         ProvideTextStyle(style, content)
     }

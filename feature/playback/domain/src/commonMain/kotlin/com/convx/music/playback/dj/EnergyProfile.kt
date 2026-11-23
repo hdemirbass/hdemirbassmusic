@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.dj
+package com.hdemirbassmusic.music.playback.dj
 
 /** Unsigned energy bytes: one per second, normalized to a peak of 255. */
 object EnergyProfile {

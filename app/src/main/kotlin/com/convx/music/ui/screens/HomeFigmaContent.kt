@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.utils.plusStart
-import com.convx.music.ui.utils.bleedStart
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.utils.plusStart
+import com.hdemirbassmusic.music.ui.utils.bleedStart
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -54,22 +54,22 @@ import coil3.request.crossfade
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFMusicNote
 import com.composables.sfsymbols.monochrome.SFXmark
-import com.convx.music.R
-import com.convx.music.models.MediaMetadata
-import com.convx.music.ui.component.ArtworkBlurMesh
-import com.convx.music.ui.component.LocalItemPrefs
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.YouTubeGridItem
-import com.convx.music.ui.component.flipAndMultiply
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.screens.library.apple.Cover
-import com.convx.music.ui.theme.LocalPageMetrics
-import com.convx.music.ui.utils.rememberGridSpacing
-import com.convx.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.ui.component.ArtworkBlurMesh
+import com.hdemirbassmusic.music.ui.component.LocalItemPrefs
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.YouTubeGridItem
+import com.hdemirbassmusic.music.ui.component.flipAndMultiply
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.screens.library.apple.Cover
+import com.hdemirbassmusic.music.ui.theme.LocalPageMetrics
+import com.hdemirbassmusic.music.ui.utils.rememberGridSpacing
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem

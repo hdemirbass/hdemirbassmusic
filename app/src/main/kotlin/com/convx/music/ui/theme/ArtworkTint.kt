@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -14,8 +14,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import android.util.LruCache
-import com.convx.music.ui.theme.colorengine.ColorEngine
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.ui.theme.colorengine.ColorEngine
+import com.hdemirbassmusic.music.utils.reportException
 import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
@@ -35,7 +35,7 @@ private val artworkTintCache = LruCache<String, List<Color>>(128)
  * Extracts a three-stop gradient (primary color, darker variant, black) from an
  * arbitrary artwork URL via [ColorEngine] — the "single color from the image"
  * background tint used by the Artist/Album/Playlist detail screens, and by
- * [com.convx.music.ui.component.AlbumGradient], which delegates here rather than
+ * [com.hdemirbassmusic.music.ui.component.AlbumGradient], which delegates here rather than
  * re-extracting the same artwork a second time.
  *
  * Returns an empty list until extraction finishes, if [thumbnailUrl] is null, or

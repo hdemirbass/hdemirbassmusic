@@ -1,11 +1,11 @@
-package com.convx.music.eq.audio
+package com.hdemirbassmusic.music.eq.audio
 
-import com.convx.music.playback.EqualizerProfileParser
+import com.hdemirbassmusic.music.playback.EqualizerProfileParser
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.eq.data.ParametricEQ
-import com.convx.music.eq.data.ParametricEQBand
+import com.hdemirbassmusic.music.eq.data.ParametricEQ
+import com.hdemirbassmusic.music.eq.data.ParametricEQBand
 import timber.log.Timber
 import java.nio.ByteBuffer
 import java.nio.ByteOrder

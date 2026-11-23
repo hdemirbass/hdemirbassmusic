@@ -1,4 +1,4 @@
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import ai.onnxruntime.OnnxTensor
 import ai.onnxruntime.OrtEnvironment
@@ -8,10 +8,10 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.util.Log
-import com.convx.music.constants.DemucsAutoDownloadKey
-import com.convx.music.constants.DemucsModelUrlKey
-import com.convx.music.utils.YTPlayerUtils
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.constants.DemucsAutoDownloadKey
+import com.hdemirbassmusic.music.constants.DemucsModelUrlKey
+import com.hdemirbassmusic.music.utils.YTPlayerUtils
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -114,7 +114,7 @@ object DemucsModel {
             }
             total <= 0 || done == total
         }
-    }.onFailure { Log.w("ConvxDemucs", "Model download failed", it) }.getOrDefault(false)
+    }.onFailure { Log.w("hdemirbassmusicDemucs", "Model download failed", it) }.getOrDefault(false)
 
     private fun sha256(file: File): String {
         val digest = java.security.MessageDigest.getInstance("SHA-256")
@@ -381,7 +381,7 @@ internal class DemucsSeparator(private val context: Context) : AutoCloseable {
     }
 
     companion object {
-        private const val TAG = "ConvxDemucs"
+        private const val TAG = "hdemirbassmusicDemucs"
 
         /** htdemucs was trained at 44.1 kHz; any other rate gives it the wrong pitch and tempo. */
         const val SAMPLE_RATE = 44_100.0

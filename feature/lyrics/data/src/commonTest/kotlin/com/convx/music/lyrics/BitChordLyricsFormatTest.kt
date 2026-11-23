@@ -1,6 +1,6 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
-import com.convx.music.lyrics.bitchord.*
+import com.hdemirbassmusic.music.lyrics.bitchord.*
 import kotlin.test.*
 
 class BitChordLyricsFormatTest {
@@ -9,7 +9,7 @@ class BitChordLyricsFormatTest {
             LyricWord(1250, 1800, "Stay"), LyricWord(2000, 2500, "here")),
             alignment = LyricAlignment.End,
             background = LyricLine(2000, "Oh", words = listOf(LyricWord(2000, 2400, "Oh"))))
-        val encoded = listOf(line).toConvxLyrics()
+        val encoded = listOf(line).tohdemirbassmusicLyrics()
         assertTrue(encoded.contains("{agent:v2}"))
         assertTrue(encoded.contains("<00:01.250|00:01.800>Stay"))
         assertTrue(encoded.contains("<00:02.000|00:02.500>here"))

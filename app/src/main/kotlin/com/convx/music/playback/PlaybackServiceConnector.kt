@@ -1,4 +1,4 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.content.ComponentName
 import android.content.Context
@@ -6,15 +6,15 @@ import android.content.Intent
 import android.content.ServiceConnection
 import android.os.IBinder
 import androidx.lifecycle.LifecycleCoroutineScope
-import com.convx.music.db.MusicDatabase
-import com.convx.music.listentogether.ListenTogetherPlayerConnectionBridge
-import com.convx.music.playback.MusicService.MusicBinder
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.listentogether.ListenTogetherPlayerConnectionBridge
+import com.hdemirbassmusic.music.playback.MusicService.MusicBinder
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import com.convx.music.di.ValueProvider
+import com.hdemirbassmusic.music.di.ValueProvider
 
 /** Owns the activity-bound connection between the UI and the playback service. */
 class PlaybackServiceConnector(

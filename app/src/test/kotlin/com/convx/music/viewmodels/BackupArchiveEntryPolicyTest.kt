@@ -1,4 +1,4 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

@@ -1,4 +1,4 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex

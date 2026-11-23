@@ -1,4 +1,4 @@
-package com.convx.music.canvas
+package com.hdemirbassmusic.music.canvas
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.audio
+package com.hdemirbassmusic.music.playback.audio
 
-import com.convx.music.playback.dj.BeatGrid
-import com.convx.music.playback.dj.MusicalKey
+import com.hdemirbassmusic.music.playback.dj.BeatGrid
+import com.hdemirbassmusic.music.playback.dj.MusicalKey
 import kotlin.math.abs
 import kotlin.math.pow
 

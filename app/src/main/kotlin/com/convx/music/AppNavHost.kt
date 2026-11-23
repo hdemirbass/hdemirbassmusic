@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExperimentalSharedTransitionApi
@@ -23,9 +23,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.convx.music.ui.screens.navigationBuilder
-import com.convx.music.ui.utils.Motion
-import com.convx.music.ui.utils.isMorphRoute
+import com.hdemirbassmusic.music.ui.screens.navigationBuilder
+import com.hdemirbassmusic.music.ui.utils.Motion
+import com.hdemirbassmusic.music.ui.utils.isMorphRoute
 import kotlinx.coroutines.launch
 
 /** The app's NavHost: push/pop motion plus the destination graph. */

@@ -1,10 +1,10 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.core.updater.ApkVerifier
-import com.convx.music.core.updater.GitHubReleaseSource
-import com.convx.music.core.updater.UpdateInstaller
-import com.convx.music.core.updater.UpdateRepository
-import com.convx.music.core.updater.UpdateStore
+import com.hdemirbassmusic.music.core.updater.ApkVerifier
+import com.hdemirbassmusic.music.core.updater.GitHubReleaseSource
+import com.hdemirbassmusic.music.core.updater.UpdateInstaller
+import com.hdemirbassmusic.music.core.updater.UpdateRepository
+import com.hdemirbassmusic.music.core.updater.UpdateStore
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module

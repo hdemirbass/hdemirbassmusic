@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import android.content.Intent
 import androidx.compose.animation.AnimatedVisibility
@@ -55,30 +55,30 @@ import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.convx.music.R
-import com.convx.music.jam.JamManager
-import com.convx.music.jam.JamSession
-import com.convx.music.jam.PartyActivity
-import com.convx.music.jam.PartyMember
-import com.convx.music.jam.PartyPreview
-import com.convx.music.jam.PartyStats
-import com.convx.music.ui.component.AccountAvatar
-import com.convx.music.ui.component.ScreenPage
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.viewmodels.HomeViewModel
-import com.convx.music.viewmodels.JamViewModel
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.jam.JamManager
+import com.hdemirbassmusic.music.jam.JamSession
+import com.hdemirbassmusic.music.jam.PartyActivity
+import com.hdemirbassmusic.music.jam.PartyMember
+import com.hdemirbassmusic.music.jam.PartyPreview
+import com.hdemirbassmusic.music.jam.PartyStats
+import com.hdemirbassmusic.music.ui.component.AccountAvatar
+import com.hdemirbassmusic.music.ui.component.ScreenPage
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.viewmodels.HomeViewModel
+import com.hdemirbassmusic.music.viewmodels.JamViewModel
 import kotlinx.coroutines.delay
 
 private const val CODE_LENGTH = 6
@@ -259,7 +259,7 @@ private fun StepButton(symbol: String, description: String, enabled: Boolean, on
 }
 
 @Composable
-private fun AvatarStack(members: List<com.convx.music.jam.PartyPreviewMember>) {
+private fun AvatarStack(members: List<com.hdemirbassmusic.music.jam.PartyPreviewMember>) {
     Row(horizontalArrangement = Arrangement.spacedBy((-10).dp)) {
         members.take(4).forEach { AccountAvatar(imageUrl = it.avatarUrl, name = it.displayName, size = 32.dp) }
     }
@@ -477,7 +477,7 @@ private fun StartParty(viewModel: JamViewModel, busy: Boolean, avatarUrl: String
 private fun InParty(session: JamSession, activity: List<PartyActivity>, viewModel: JamViewModel) {
     PartyHeader(session, viewModel)
 
-    if (session.localPlayback == com.convx.music.jam.JamLocalPlayback.UNAVAILABLE) {
+    if (session.localPlayback == com.hdemirbassmusic.music.jam.JamLocalPlayback.UNAVAILABLE) {
         Text(stringResource(R.string.jam_audio_unavailable), color = IosTheme.colors.secondaryLabel)
         OutlinedButton(onClick = viewModel::retryAudio) { Text(stringResource(R.string.jam_retry_audio)) }
     }
@@ -599,11 +599,11 @@ private fun PartyHeader(session: JamSession, viewModel: JamViewModel) {
                     stringResource(when {
                         !session.connected -> R.string.jam_reconnecting
                         session.controlPending -> R.string.jam_control_pending
-                        session.localPlayback == com.convx.music.jam.JamLocalPlayback.PREPARING -> R.string.jam_preparing_audio
-                        session.localPlayback == com.convx.music.jam.JamLocalPlayback.SCHEDULED -> R.string.jam_waiting_start
-                        session.localPlayback == com.convx.music.jam.JamLocalPlayback.RECOVERING -> R.string.jam_recovering_audio
-                        session.localPlayback == com.convx.music.jam.JamLocalPlayback.UNAVAILABLE -> R.string.jam_audio_unavailable
-                        session.localPlayback == com.convx.music.jam.JamLocalPlayback.LOCALLY_PAUSED -> R.string.jam_locally_paused
+                        session.localPlayback == com.hdemirbassmusic.music.jam.JamLocalPlayback.PREPARING -> R.string.jam_preparing_audio
+                        session.localPlayback == com.hdemirbassmusic.music.jam.JamLocalPlayback.SCHEDULED -> R.string.jam_waiting_start
+                        session.localPlayback == com.hdemirbassmusic.music.jam.JamLocalPlayback.RECOVERING -> R.string.jam_recovering_audio
+                        session.localPlayback == com.hdemirbassmusic.music.jam.JamLocalPlayback.UNAVAILABLE -> R.string.jam_audio_unavailable
+                        session.localPlayback == com.hdemirbassmusic.music.jam.JamLocalPlayback.LOCALLY_PAUSED -> R.string.jam_locally_paused
                         else -> R.string.jam_connected
                     }),
                     style = IosTheme.typography.footnote,

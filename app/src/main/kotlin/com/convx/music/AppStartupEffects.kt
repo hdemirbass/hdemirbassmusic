@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import android.os.Build
 import android.widget.Toast
@@ -13,10 +13,10 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import com.convx.music.R
-import com.convx.music.constants.EnableHighRefreshRateKey
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.EnableHighRefreshRateKey
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /** One-shot app effects: update check, refresh-rate request, and the owner-room toast. */
 @OptIn(

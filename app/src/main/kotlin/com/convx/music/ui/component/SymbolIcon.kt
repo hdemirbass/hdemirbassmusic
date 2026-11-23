@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.utils.MenuIconChrome
-import com.convx.music.ui.utils.additiveChrome
-import com.convx.music.ui.utils.vibrantChrome
+import com.hdemirbassmusic.music.ui.utils.MenuIconChrome
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.vibrantChrome
 import androidx.compose.ui.unit.isSpecified
 import androidx.compose.foundation.gestures.waitForUpOrCancellation
 import androidx.compose.ui.Alignment
@@ -20,7 +20,7 @@ import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.interaction.InteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.ui.graphics.isSpecified
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -206,7 +206,7 @@ private const val LightChromeMax = 0.3f
 /** Room around a chromed glyph for its bounce to scale into without being cut off. */
 private val ChromeBleed = 12.dp
 
-/** Ink for chromed glyphs: lighter than [com.convx.music.ui.utils.VibrantChromeInk] (about 3.6x dodge) so they stay readable. */
+/** Ink for chromed glyphs: lighter than [com.hdemirbassmusic.music.ui.utils.VibrantChromeInk] (about 3.6x dodge) so they stay readable. */
 internal val VibrantIconInk = Color(0xFFB4B4B4)
 
 /** True for a clearly saturated colour; greys, whites and blacks count as neutral. */

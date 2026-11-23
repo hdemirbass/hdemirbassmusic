@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.provider.Settings
 import android.view.HapticFeedbackConstants
@@ -34,7 +34,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 import kotlin.math.PI
 import kotlin.math.hypot
 import kotlin.math.pow
@@ -52,7 +52,7 @@ import kotlin.math.sin
  * it instead. Skipped outright when the system animator scale is 0 (reduced motion).
  */
 @Composable
-fun ConvxIntro(onFinished: () -> Unit) {
+fun hdemirbassmusicIntro(onFinished: () -> Unit) {
     val context = LocalContext.current
     val view = LocalView.current
     val reducedMotion = remember {

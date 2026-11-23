@@ -1,21 +1,21 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.extensions
+package com.hdemirbassmusic.music.extensions
 
 import com.music.innertube.models.WatchEndpoint
-import com.convx.music.db.MusicDatabase
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.PersistQueue
-import com.convx.music.models.QueueData
-import com.convx.music.models.QueueType
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.playback.queues.LocalAlbumRadio
-import com.convx.music.playback.queues.Queue
-import com.convx.music.playback.queues.YouTubeAlbumRadio
-import com.convx.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.PersistQueue
+import com.hdemirbassmusic.music.models.QueueData
+import com.hdemirbassmusic.music.models.QueueType
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.playback.queues.LocalAlbumRadio
+import com.hdemirbassmusic.music.playback.queues.Queue
+import com.hdemirbassmusic.music.playback.queues.YouTubeAlbumRadio
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString

@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.animation.ValueAnimator
 import androidx.compose.animation.core.CubicBezierEasing

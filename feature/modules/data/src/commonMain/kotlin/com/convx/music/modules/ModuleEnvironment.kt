@@ -1,4 +1,4 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 /** Client-owned services. One instance is shared by settings, search, downloads and playback. */
 class ModuleEnvironment(store: ModuleStore) {
@@ -10,7 +10,7 @@ class ModuleEnvironment(store: ModuleStore) {
         val scriptTransport = ModuleTransport { url, method, headers, body ->
             client.request(url, method, headers, body)
         }
-        client = ModuleClient(KtorModuleTransport(http), QuickJsModuleRuntime(scriptTransport), "Convx/2.0")
+        client = ModuleClient(KtorModuleTransport(http), QuickJsModuleRuntime(scriptTransport), "hdemirbassmusic/2.0")
         repository = ModuleRepository(client, store)
     }
 

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme.colorengine
+package com.hdemirbassmusic.music.ui.theme.colorengine
 
 import android.content.Context
 import android.util.Log
@@ -15,7 +15,7 @@ import java.io.File
 /**
  * Disk tier of [ColorEngine]'s cache, mirroring `ColorEngineCache.swift`'s two-tier
  * design: an in-memory [android.util.LruCache] in front (see `ColorEngine.kt`), this
- * behind it. One JSON file per key, temp-write-then-rename like [com.convx.music
+ * behind it. One JSON file per key, temp-write-then-rename like [com.hdemirbassmusic.music
  * .playback.smart.AnalysisStore], a 7-day TTL, and a prune to [MaximumFileCount] on
  * every store — the same numbers the Swift `JoiColorAnalysisCache` used.
  */

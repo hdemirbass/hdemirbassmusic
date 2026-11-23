@@ -1,11 +1,11 @@
-package com.convx.music.eq
+package com.hdemirbassmusic.music.eq
 
-import com.convx.music.playback.EqualizerProfileParser
+import com.hdemirbassmusic.music.playback.EqualizerProfileParser
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
-import com.convx.music.eq.audio.CustomEqualizerAudioProcessor
-import com.convx.music.eq.data.ParametricEQ
-import com.convx.music.eq.data.ParametricEQBand
+import com.hdemirbassmusic.music.eq.audio.CustomEqualizerAudioProcessor
+import com.hdemirbassmusic.music.eq.data.ParametricEQ
+import com.hdemirbassmusic.music.eq.data.ParametricEQBand
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

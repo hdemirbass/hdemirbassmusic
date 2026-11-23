@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -15,12 +15,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.withFrameNanos
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.convx.music.R
-import com.convx.music.library.ObservePlaylists
-import com.convx.music.library.PlaylistOrder
-import com.convx.music.ui.component.SideBarLink
-import com.convx.music.ui.component.SideBarSection
-import com.convx.music.ui.screens.Screens
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.library.ObservePlaylists
+import com.hdemirbassmusic.music.library.PlaylistOrder
+import com.hdemirbassmusic.music.ui.component.SideBarLink
+import com.hdemirbassmusic.music.ui.component.SideBarSection
+import com.hdemirbassmusic.music.ui.screens.Screens
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 
@@ -37,7 +37,7 @@ fun rememberSideBarSections(
     showStatsButton: Boolean,
     listenTogetherInTopBar: Boolean,
     navController: androidx.navigation.NavHostController,
-    onLibraryFilterChange: (com.convx.music.constants.LibraryFilter) -> Unit,
+    onLibraryFilterChange: (com.hdemirbassmusic.music.constants.LibraryFilter) -> Unit,
 ): List<SideBarSection> {
     val context = androidx.compose.ui.platform.LocalContext.current
         val sidebarPlaylists by remember(observePlaylists) {
@@ -55,7 +55,7 @@ fun rememberSideBarSections(
             onLibraryFilterChange,
         ) {
             buildList {
-                fun openLibrary(filter: com.convx.music.constants.LibraryFilter) {
+                fun openLibrary(filter: com.hdemirbassmusic.music.constants.LibraryFilter) {
                     onLibraryFilterChange(filter)
                     navController.navigate(Screens.Library.route) {
                         popUpTo(navController.graph.startDestinationId) { saveState = true }
@@ -67,13 +67,13 @@ fun rememberSideBarSections(
                     title = context.getString(R.string.filter_library),
                     links = listOf(
                         SideBarLink(context.getString(R.string.recently_added), R.drawable.music_history,
-                            onClick = { openLibrary(com.convx.music.constants.LibraryFilter.LIBRARY) }),
+                            onClick = { openLibrary(com.hdemirbassmusic.music.constants.LibraryFilter.LIBRARY) }),
                         SideBarLink(context.getString(R.string.filter_artists), R.drawable.artist,
-                            onClick = { openLibrary(com.convx.music.constants.LibraryFilter.ARTISTS) }),
+                            onClick = { openLibrary(com.hdemirbassmusic.music.constants.LibraryFilter.ARTISTS) }),
                         SideBarLink(context.getString(R.string.filter_albums), R.drawable.album,
-                            onClick = { openLibrary(com.convx.music.constants.LibraryFilter.ALBUMS) }),
+                            onClick = { openLibrary(com.hdemirbassmusic.music.constants.LibraryFilter.ALBUMS) }),
                         SideBarLink(context.getString(R.string.filter_songs), R.drawable.music_note,
-                            onClick = { openLibrary(com.convx.music.constants.LibraryFilter.SONGS) }),
+                            onClick = { openLibrary(com.hdemirbassmusic.music.constants.LibraryFilter.SONGS) }),
                         SideBarLink(context.getString(R.string.filter_downloaded), R.drawable.download,
                             onClick = { navController.navigate("auto_playlist/downloaded") }),
                     ),
@@ -81,7 +81,7 @@ fun rememberSideBarSections(
                 add(SideBarSection(
                     title = context.getString(R.string.playlists),
                     links = listOf(SideBarLink(context.getString(R.string.filter_playlists), R.drawable.playlist_play,
-                        onClick = { openLibrary(com.convx.music.constants.LibraryFilter.PLAYLISTS) })) +
+                        onClick = { openLibrary(com.hdemirbassmusic.music.constants.LibraryFilter.PLAYLISTS) })) +
                         sidebarPlaylists.map { playlist ->
                             SideBarLink(label = playlist.name,
                                 thumbnailUrl = playlist.artworkUrls.firstOrNull(),

@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,8 +13,8 @@ import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import com.convx.music.ui.screens.library.LibraryScreen
-import com.convx.music.ui.screens.settings.SettingsScreen
+import com.hdemirbassmusic.music.ui.screens.library.LibraryScreen
+import com.hdemirbassmusic.music.ui.screens.settings.SettingsScreen
 
 /** Main pager pages in tab-bar order. Search is an overlay, not a pager page. */
 val MainTabsScreens = listOf(

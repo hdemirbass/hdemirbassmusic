@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
  * Ported from the reference app (`ui/components/Skeletons.kt`): grey shimmer
  * placeholders replacing the app's red/black spinner-based loading state.
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloat
@@ -34,7 +34,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 
 /** How long one highlight sweep takes to cross a placeholder. */
 private const val SHIMMER_PERIOD_MS = 1400

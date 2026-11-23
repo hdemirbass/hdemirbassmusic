@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import android.view.WindowManager
 import androidx.compose.animation.core.spring
@@ -17,9 +17,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.ui.component.BottomSheetState
-import com.convx.music.designsystem.MotionTokens
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.ui.component.BottomSheetState
+import com.hdemirbassmusic.music.designsystem.MotionTokens
 import kotlinx.coroutines.launch
 
 /** Status-bar icon colour and keep-screen-on while the sheet is expanded; skipped for the DIY preview copy. */

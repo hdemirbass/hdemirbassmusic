@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.audio
+package com.hdemirbassmusic.music.playback.audio
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor
@@ -22,7 +22,7 @@ import kotlin.math.PI
  *
  * Deliberately alters the signal, so [enabled] must be forced false while Bit
  * Perfect is on — same reasoning as the EQ bypass in
- * [com.convx.music.eq.EqualizerService.setBitPerfectBypass].
+ * [com.hdemirbassmusic.music.eq.EqualizerService.setBitPerfectBypass].
  */
 @UnstableApi
 class SpatialAudioProcessor : BaseAudioProcessor() {

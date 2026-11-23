@@ -6,13 +6,13 @@ plugins {
 }
 
 compose.resources {
-    packageOfResClass = "com.convx.music.designsystem.resources"
+    packageOfResClass = "com.hdemirbassmusic.music.designsystem.resources"
     generateResClass = always
 }
 
 kotlin {
     android {
-        namespace = "com.convx.shared.design.system"
+        namespace = "com.hdemirbassmusic.shared.design.system"
         compileSdk = 37
         minSdk = 26
     }

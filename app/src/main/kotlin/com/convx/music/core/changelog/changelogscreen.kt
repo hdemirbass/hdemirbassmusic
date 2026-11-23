@@ -1,9 +1,9 @@
-package com.convx.music.core.changelog
+package com.hdemirbassmusic.music.core.changelog
 
 
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -33,21 +33,21 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Error
 import androidx.compose.material3.ButtonGroupDefaults
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.material3.OutlinedCard
-import com.convx.music.ui.ios.compat.Scaffold
-import com.convx.music.ui.ios.compat.SegmentedButton
-import com.convx.music.ui.ios.compat.SegmentedButtonDefaults
-import com.convx.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.ToggleButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Scaffold
+import com.hdemirbassmusic.music.ui.ios.compat.SegmentedButton
+import com.hdemirbassmusic.music.ui.ios.compat.SegmentedButtonDefaults
+import com.hdemirbassmusic.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.ToggleButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.pullToRefresh
@@ -80,10 +80,10 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.convx.music.BuildConfig
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.core.updater.extractUrls
+import com.hdemirbassmusic.music.BuildConfig
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.core.updater.extractUrls
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -143,9 +143,9 @@ fun ChangelogScreen(
                         showingCached = true
                     }
                 } else {
-                    val changelogUrl = URL("https://github.com/cosmictaserdev-creator/Convx/releases/download/$tag/changelog.json")
+                    val changelogUrl = URL("https://github.com/cosmictaserdev-creator/hdemirbassmusic/releases/download/$tag/changelog.json")
                     val connection = changelogUrl.openConnection() as HttpURLConnection
-                    connection.setRequestProperty("User-Agent", "Convx-Changelog-App")
+                    connection.setRequestProperty("User-Agent", "hdemirbassmusic-Changelog-App")
                     connection.setRequestProperty("Accept", "application/json")
                     
                     if (connection.responseCode == 200) {
@@ -216,9 +216,9 @@ fun ChangelogScreen(
         isFetchingOldReleases = true
         coroutineScope.launch(Dispatchers.IO) {
             try {
-                val releasesUrl = URL("https://api.github.com/repos/cosmictaserdev-creator/Convx/releases")
+                val releasesUrl = URL("https://api.github.com/repos/cosmictaserdev-creator/hdemirbassmusic/releases")
                 val connection = releasesUrl.openConnection() as HttpURLConnection
-                connection.setRequestProperty("User-Agent", "Convx-Changelog-App")
+                connection.setRequestProperty("User-Agent", "hdemirbassmusic-Changelog-App")
                 connection.setRequestProperty("Accept", "application/vnd.github+json")
                 
                 if (connection.responseCode == 200) {

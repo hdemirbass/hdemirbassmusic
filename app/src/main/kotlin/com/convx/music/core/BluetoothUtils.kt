@@ -1,4 +1,4 @@
-package com.convx.music.core
+package com.hdemirbassmusic.music.core
 
 import android.content.Context
 import android.media.AudioDeviceInfo
@@ -120,7 +120,7 @@ fun getActiveAudioOutput(context: Context): ActiveAudioOutput? {
     devices.firstOrNull {
         it.type == AudioDeviceInfo.TYPE_WIRED_HEADPHONES || it.type == AudioDeviceInfo.TYPE_WIRED_HEADSET
     }?.let {
-        return ActiveAudioOutput(context.getString(com.convx.music.R.string.wired_headphones), AudioDeviceType.WIRED_HEADPHONES)
+        return ActiveAudioOutput(context.getString(com.hdemirbassmusic.music.R.string.wired_headphones), AudioDeviceType.WIRED_HEADPHONES)
     }
     return null
 }

@@ -1,7 +1,7 @@
-package com.convx.music.core.updater
+package com.hdemirbassmusic.music.core.updater
 
 import android.os.Build
-import com.convx.music.BuildConfig
+import com.hdemirbassmusic.music.BuildConfig
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -31,7 +31,7 @@ class GitHubReleaseSource {
             try {
                 val metadata = JSONObject(read(manifest.getString("browser_download_url")))
                 require(metadata.getInt("schemaVersion") == 1)
-                require(metadata.getString("packageName") == "com.convx.music")
+                require(metadata.getString("packageName") == "com.hdemirbassmusic.music")
                 val variant = if (BuildConfig.CAST_AVAILABLE) "gms" else "foss"
                 val assetArray = metadata.getJSONArray("assets")
                 val candidates = (0 until assetArray.length()).map { i ->
@@ -126,7 +126,7 @@ class GitHubReleaseSource {
     }
 
     companion object {
-        private const val RELEASES_URL = "https://api.github.com/repos/cosmictaserdev-creator/Convx/releases?per_page=30"
+        private const val RELEASES_URL = "https://api.github.com/repos/cosmictaserdev-creator/hdemirbassmusic/releases?per_page=30"
         fun isTrustedUrl(value: String): Boolean = runCatching {
             val uri = URI(value)
             uri.scheme == "https" && uri.userInfo == null && (uri.port == -1 || uri.port == 443) &&

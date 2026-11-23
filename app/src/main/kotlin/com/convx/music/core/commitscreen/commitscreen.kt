@@ -1,7 +1,7 @@
-package com.convx.music.core.commitscreen
+package com.hdemirbassmusic.music.core.commitscreen
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.content.Intent
 import android.net.Uri
 import timber.log.Timber
@@ -30,14 +30,14 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Error
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Scaffold
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Scaffold
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.pullToRefresh
@@ -63,8 +63,8 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -108,7 +108,7 @@ fun CommitScreen(
         hasError = false
         coroutineScope.launch(Dispatchers.IO) {
             try {
-                val url = URL("https://api.github.com/repos/cosmictaserdev-creator/Convx/commits?branch=main&per_page=50")
+                val url = URL("https://api.github.com/repos/cosmictaserdev-creator/hdemirbassmusic/commits?branch=main&per_page=50")
                 val json = url.openStream().bufferedReader().use { it.readText() }
                 val array = JSONArray(json)
                 val outputFormatter = DateTimeFormatter.ofPattern("MMM d, yyyy", Locale.getDefault())

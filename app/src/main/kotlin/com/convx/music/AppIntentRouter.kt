@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
-import com.convx.music.utils.openSearchResults
+import com.hdemirbassmusic.music.utils.openSearchResults
 
 import ai.onnxruntime.BuildConfig
 import android.content.Intent
@@ -15,15 +15,15 @@ import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.coroutineScope
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavHostController
-import com.convx.music.constants.ListenTogetherUsernameKey
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.listentogether.ListenTogetherManager
-import com.convx.music.di.ValueProvider
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.constants.ListenTogetherUsernameKey
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.listentogether.ListenTogetherManager
+import com.hdemirbassmusic.music.di.ValueProvider
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.reportException
 import com.music.innertube.YouTube
 import com.music.innertube.models.WatchEndpoint
 import kotlinx.coroutines.Dispatchers
@@ -36,7 +36,7 @@ internal class AppIntentRouter(
     private val activity: MainActivity,
     private val currentPlayerConnection: () -> PlayerConnection?,
     private val listenTogetherManagerProvider: ValueProvider<ListenTogetherManager>,
-    private val partyManagerProvider: ValueProvider<com.convx.music.jam.JamManager>,
+    private val partyManagerProvider: ValueProvider<com.hdemirbassmusic.music.jam.JamManager>,
 ) {
 
     private val allowedIdPattern = Regex("^[A-Za-z0-9_\\-]+$")
@@ -81,9 +81,9 @@ internal class AppIntentRouter(
         }
     }
 
-    /** `convx://party/CODE?server=...` opens the Party screen, which joins the code on arrival. */
+    /** `hdemirbassmusic://party/CODE?server=...` opens the Party screen, which joins the code on arrival. */
     private fun openPartyInvite(uri: Uri, navController: NavHostController): Boolean {
-        if (!uri.scheme.equals("convx", ignoreCase = true) || !uri.host.equals("party", ignoreCase = true)) return false
+        if (!uri.scheme.equals("hdemirbassmusic", ignoreCase = true) || !uri.host.equals("party", ignoreCase = true)) return false
         val code = cleanId(uri.pathSegments.firstOrNull(), min = 4, max = 16) ?: return true
         partyManagerProvider.get().offerInvite(code, uri.getQueryParameter("server"))
         navController.navigate("listen_together/party") { launchSingleTop = true }
@@ -169,7 +169,7 @@ internal class AppIntentRouter(
             activity.lifecycleScope.launch {
                 if (libraryFilter != null) {
                     activity.dataStore.edit {
-                        it[com.convx.music.constants.ChipSortTypeKey] = libraryFilter
+                        it[com.hdemirbassmusic.music.constants.ChipSortTypeKey] = libraryFilter
                     }
                 }
                 runCatching {

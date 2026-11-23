@@ -1,30 +1,30 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.content.Context
 import android.content.Intent
 import androidx.compose.foundation.layout.size
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.Download
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.R
-import com.convx.music.library.PlaylistDetail
-import com.convx.music.library.LocalPlaylistSong
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.library.PlaylistDetail
+import com.hdemirbassmusic.music.library.LocalPlaylistSong
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
 
 /**
  * Menu for Local Playlist Screen
@@ -165,7 +165,7 @@ fun LocalPlaylistMenu(
                 },
                 onClick = {
                     val shareText = playlist.browseId?.let { browseId ->
-                        com.convx.music.utils.ShareUtils.playlistUrl(browseId)
+                        com.hdemirbassmusic.music.utils.ShareUtils.playlistUrl(browseId)
                     } ?: songs.joinToString("\n") { it.song.song.title }
                     val sendIntent: Intent = Intent().apply {
                         action = Intent.ACTION_SEND

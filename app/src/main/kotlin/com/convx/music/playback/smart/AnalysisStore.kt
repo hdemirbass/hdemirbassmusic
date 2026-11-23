@@ -1,4 +1,4 @@
-﻿package com.convx.music.playback.smart
+﻿package com.hdemirbassmusic.music.playback.smart
 
 import android.content.Context
 import android.util.Log
@@ -223,7 +223,7 @@ class AnalysisStore(private val context: Context) {
     }
 
     private companion object {
-        const val TAG = "ConvxAnalysisStore"
+        const val TAG = "hdemirbassmusicAnalysisStore"
         const val DIRECTORY = "smart_analysis"
 
         /**

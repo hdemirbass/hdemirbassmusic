@@ -1,17 +1,17 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ai
+package com.hdemirbassmusic.music.ai
 
 import android.content.Context
-import com.convx.music.constants.AiProviderKey
-import com.convx.music.constants.OpenRouterApiKey
-import com.convx.music.constants.OpenRouterBaseUrlKey
-import com.convx.music.constants.OpenRouterModelKey
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.constants.AiProviderKey
+import com.hdemirbassmusic.music.constants.OpenRouterApiKey
+import com.hdemirbassmusic.music.constants.OpenRouterBaseUrlKey
+import com.hdemirbassmusic.music.constants.OpenRouterModelKey
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.CancellationException

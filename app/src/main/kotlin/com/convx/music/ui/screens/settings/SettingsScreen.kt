@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
@@ -63,23 +63,23 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.core.updater.getAutoUpdateCheckSetting
-import com.convx.music.core.updater.getUpdateAvailableState
-import com.convx.music.ui.component.AccountAvatar
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.shapes.ContinuousCapsule
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.constants.LocalOnlyModeKey
-import com.convx.music.utils.rememberPreference
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.core.updater.getAutoUpdateCheckSetting
+import com.hdemirbassmusic.music.core.updater.getUpdateAvailableState
+import com.hdemirbassmusic.music.ui.component.AccountAvatar
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.constants.LocalOnlyModeKey
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
@@ -90,7 +90,7 @@ import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.background
 import androidx.compose.ui.res.painterResource
-import com.convx.music.viewmodels.HomeViewModel
+import com.hdemirbassmusic.music.viewmodels.HomeViewModel
 
 /** Root rows that open a page directly rather than a category. */
 private val historyLink = SettingsLink("History", R.drawable.music_history, { systemCyan }, SettingsAction.Route("history"))

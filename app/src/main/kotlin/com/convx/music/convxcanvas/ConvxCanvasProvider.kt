@@ -1,10 +1,10 @@
-package com.convx.music.convxcanvas
+package com.hdemirbassmusic.music.hdemirbassmusiccanvas
 
-import com.convx.music.artistvideo.ArtistVideoCanvasProvider
-import com.convx.music.artistvideo.ArtistVideoResponse
-import com.convx.music.canvas.CanvasArtwork
+import com.hdemirbassmusic.music.artistvideo.ArtistVideoCanvasProvider
+import com.hdemirbassmusic.music.artistvideo.ArtistVideoResponse
+import com.hdemirbassmusic.music.canvas.CanvasArtwork
 
-object ConvxCanvasProvider {
+object hdemirbassmusicCanvasProvider {
     suspend fun getBySongArtist(
         song: String,
         artist: String,

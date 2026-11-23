@@ -1,6 +1,6 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
-import com.convx.storage.domain.NetworkMediaUri
+import com.hdemirbassmusic.storage.domain.NetworkMediaUri
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

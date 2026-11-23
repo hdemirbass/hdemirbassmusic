@@ -1,9 +1,9 @@
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
-import com.convx.music.lyrics.LyricsQuery
-import com.convx.music.lyrics.LyricsDocument
-import com.convx.music.lyrics.SharedLyricsSource
-import com.convx.music.lyrics.bitchord.LyricLine
+import com.hdemirbassmusic.music.lyrics.LyricsQuery
+import com.hdemirbassmusic.music.lyrics.LyricsDocument
+import com.hdemirbassmusic.music.lyrics.SharedLyricsSource
+import com.hdemirbassmusic.music.lyrics.bitchord.LyricLine
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope

@@ -1,4 +1,4 @@
-﻿package com.convx.music.playback.smart
+﻿package com.hdemirbassmusic.music.playback.smart
 
 import androidx.media3.common.C
 import androidx.media3.common.util.UnstableApi

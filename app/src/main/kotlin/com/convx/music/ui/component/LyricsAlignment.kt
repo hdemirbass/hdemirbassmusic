@@ -1,20 +1,20 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
- * Ported from Convx PR #53 (MeYashverma/Convxy) — Apple Music-style duet
+ * Ported from hdemirbassmusic PR #53 (MeYashverma/hdemirbassmusicy) — Apple Music-style duet
  * left/right alignment only, generalized beyond the hardcoded v1/v2/v1000
  * checks so any "vN" pair alternates sides and composite/group agents
  * (see [primaryAgentId]) center.
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.style.TextAlign
-import com.convx.music.lyrics.GROUP_AGENT_ID
-import com.convx.music.lyrics.primaryAgentId
-import com.convx.music.ui.screens.settings.LyricsPosition
+import com.hdemirbassmusic.music.lyrics.GROUP_AGENT_ID
+import com.hdemirbassmusic.music.lyrics.primaryAgentId
+import com.hdemirbassmusic.music.ui.screens.settings.LyricsPosition
 
 /** Per-line horizontal alignment: background/group agents center, vN leads alternate sides. */
 fun singerLineAlignment(

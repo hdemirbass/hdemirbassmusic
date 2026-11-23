@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.LinearEasing
@@ -80,22 +80,22 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.R
-import com.convx.music.constants.PlayerArtworkStyle
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.PlayerHorizontalPadding
-import com.convx.music.constants.PlayerLook
-import com.convx.music.constants.SliderStyle
-import com.convx.music.ui.component.BlurredBackdropImage
-import com.convx.music.ui.component.ScrollingWaveformSeekBar
-import com.convx.music.ui.component.WavySlider
-import com.convx.music.ui.component.PlayerSliderTrack
-import com.convx.music.ui.component.heroFadeOutBrush
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.theme.PlayerColorExtractor
-import com.convx.music.ui.theme.PlayerSliderColors
-import com.convx.music.ui.theme.tiltedGradient
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyle
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.PlayerHorizontalPadding
+import com.hdemirbassmusic.music.constants.PlayerLook
+import com.hdemirbassmusic.music.constants.SliderStyle
+import com.hdemirbassmusic.music.ui.component.BlurredBackdropImage
+import com.hdemirbassmusic.music.ui.component.ScrollingWaveformSeekBar
+import com.hdemirbassmusic.music.ui.component.WavySlider
+import com.hdemirbassmusic.music.ui.component.PlayerSliderTrack
+import com.hdemirbassmusic.music.ui.component.heroFadeOutBrush
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.theme.PlayerColorExtractor
+import com.hdemirbassmusic.music.ui.theme.PlayerSliderColors
+import com.hdemirbassmusic.music.ui.theme.tiltedGradient
+import com.hdemirbassmusic.music.ui.utils.resize
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext

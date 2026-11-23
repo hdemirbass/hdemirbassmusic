@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.graphics.Bitmap
 import androidx.compose.foundation.Canvas
@@ -28,12 +28,12 @@ import coil3.request.ImageRequest
 import coil3.request.SuccessResult
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.artwork.ArtworkMesh
-import com.convx.artwork.ArtworkMeshPalette
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.ui.utils.selectedArtworkImage
-import com.convx.music.ui.utils.artworkTransitionRunning
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.artwork.ArtworkMesh
+import com.hdemirbassmusic.artwork.ArtworkMeshPalette
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.ui.utils.selectedArtworkImage
+import com.hdemirbassmusic.music.ui.utils.artworkTransitionRunning
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.currentCoroutineContext
@@ -188,7 +188,7 @@ fun ArtworkMeshBackground(
 private const val PlaylistMeshLift = 0.12f
 
 private fun ArtworkMeshPalette.lifted(amount: Float): ArtworkMeshPalette {
-    fun lift(c: com.convx.artwork.MeshColor) = com.convx.artwork.MeshColor(
+    fun lift(c: com.hdemirbassmusic.artwork.MeshColor) = com.hdemirbassmusic.artwork.MeshColor(
         c.red + (1f - c.red) * amount,
         c.green + (1f - c.green) * amount,
         c.blue + (1f - c.blue) * amount,

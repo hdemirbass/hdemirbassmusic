@@ -1,4 +1,4 @@
-package com.convx.music.canvas
+package com.hdemirbassmusic.music.canvas
 
 /** A validated Apple Music playlist catalog identifier. */
 data class ApplePlaylistLink(val storefront: String, val id: String) {

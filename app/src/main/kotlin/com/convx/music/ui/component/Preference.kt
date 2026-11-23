@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -20,20 +20,20 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.runtime.CompositionLocalProvider
-import com.convx.music.ui.ios.component.IosChevron
-import com.convx.music.ui.ios.component.IosCheckmark
-import com.convx.music.ui.ios.component.IosSlider
-import com.convx.music.ui.ios.component.IosToggle
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.ProvideTextStyle
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.component.IosChevron
+import com.hdemirbassmusic.music.ui.ios.component.IosCheckmark
+import com.hdemirbassmusic.music.ui.ios.component.IosSlider
+import com.hdemirbassmusic.music.ui.ios.component.IosToggle
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.ProvideTextStyle
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -50,7 +50,7 @@ import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 import kotlin.math.roundToInt
 
 @Composable
@@ -333,7 +333,7 @@ fun SliderPreference(
 
                     Spacer(Modifier.height(16.dp))
 
-                    com.convx.music.ui.ios.compat.Slider(
+                    com.hdemirbassmusic.music.ui.ios.compat.Slider(
                         value = sliderValue,
                         onValueChange = { sliderValue = it },
                         valueRange = valueRange,

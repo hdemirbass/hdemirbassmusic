@@ -1,4 +1,4 @@
-package com.convx.music.ui.screens.library
+package com.hdemirbassmusic.music.ui.screens.library
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,13 +13,13 @@ import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.convx.music.R
-import com.convx.music.ui.component.ScreenPage
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.viewmodels.SongInsightViewModel
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.ScreenPage
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.viewmodels.SongInsightViewModel
 
 @Composable
 fun SongInsightScreen(navController: NavController, viewModel: SongInsightViewModel = koinViewModel()) {

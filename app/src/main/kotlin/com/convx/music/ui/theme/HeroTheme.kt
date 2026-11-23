@@ -1,19 +1,19 @@
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
-import com.convx.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
 import androidx.compose.material3.MaterialTheme
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosColors
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.core.graphics.ColorUtils
-import com.convx.music.constants.AppTextColorKey
-import com.convx.music.ui.component.LocalAppBackdrop
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.AppTextColorKey
+import com.hdemirbassmusic.music.ui.component.LocalAppBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /** saturation floor shared with [AppleTokens.shiftedForContrast] (0.08f). */
 fun Color.isHueless(): Boolean {
@@ -42,7 +42,7 @@ fun HeroTintedContent(
 ) {
     val onDark = AppleTokens.prefersLightContent(tint)
     // Glass over a tint that needs light content takes the dark appearance; a light tint keeps the light one.
-    com.convx.music.PublishAmbientBackgroundColor(tint, darkChrome || onDark)
+    com.hdemirbassmusic.music.PublishAmbientBackgroundColor(tint, darkChrome || onDark)
     val base = MaterialTheme.colorScheme
 
     // Hero screens replace the scheme, so restore the explicit text-color override.

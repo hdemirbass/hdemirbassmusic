@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.net.Uri
 import android.os.Build
 import android.provider.DocumentsContract
@@ -25,15 +25,15 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -51,15 +51,15 @@ import androidx.compose.ui.unit.dp
 import androidx.datastore.preferences.core.edit
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.LocalExcludedFoldersKey
-import com.convx.music.ui.screens.library.LocalMusicViewModel
-import com.convx.music.utils.LocalFolderIndex
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.decodeExcludedFolders
-import com.convx.music.utils.encodeExcludedFolders
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.LocalExcludedFoldersKey
+import com.hdemirbassmusic.music.ui.screens.library.LocalMusicViewModel
+import com.hdemirbassmusic.music.utils.LocalFolderIndex
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.decodeExcludedFolders
+import com.hdemirbassmusic.music.utils.encodeExcludedFolders
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.launch
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
@@ -82,7 +82,7 @@ fun LocalFoldersSettingsScreen(
     val coroutineScope = rememberCoroutineScope()
     val isScanning by viewModel.isScanning.collectAsStateWithLifecycle()
 
-    val permission = com.convx.music.ui.component.rememberLocalAudioPermission { }
+    val permission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { }
     val hasPermission = permission.granted
     LaunchedEffect(hasPermission) { if (hasPermission) viewModel.scanDevice(context, force = false) }
 
@@ -152,7 +152,7 @@ fun LocalFoldersSettingsScreen(
         )
 
         if (!hasPermission) {
-            com.convx.music.ui.component.LocalMusicPermissionPrompt(permission)
+            com.hdemirbassmusic.music.ui.component.LocalMusicPermissionPrompt(permission)
             Spacer(Modifier.height(24.dp))
             return@SettingsPage
         }

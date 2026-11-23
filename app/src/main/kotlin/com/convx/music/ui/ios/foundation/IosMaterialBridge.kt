@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.foundation
+package com.hdemirbassmusic.music.ui.ios.foundation
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.Typography

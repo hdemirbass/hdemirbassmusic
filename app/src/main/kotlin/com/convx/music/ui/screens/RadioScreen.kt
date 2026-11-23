@@ -1,6 +1,6 @@
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.sf
 import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -51,24 +51,24 @@ import coil3.compose.AsyncImage
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFDotRadiowavesLeftAndRight
 import com.composables.sfsymbols.monochrome.SFPlayFill
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.db.entities.Song
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.ui.component.GlassCircleButton
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.YouTubeListItem
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.component.IosGlyph
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.screens.library.apple.AppleSubpage
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.viewmodels.RadioStationViewModel
-import com.convx.music.viewmodels.RadioViewModel
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.ui.component.GlassCircleButton
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.YouTubeListItem
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.component.IosGlyph
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.screens.library.apple.AppleSubpage
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.viewmodels.RadioStationViewModel
+import com.hdemirbassmusic.music.viewmodels.RadioViewModel
 import com.music.innertube.models.SongItem
 
 /** Cards stay near this width, so a wide tab-view screen gets more columns, not bigger tiles. */

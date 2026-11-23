@@ -1,4 +1,4 @@
-package com.convx.music.core.updater
+package com.hdemirbassmusic.music.core.updater
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -9,7 +9,7 @@ import android.content.Intent
 import android.content.pm.PackageInstaller
 import android.os.Build
 import androidx.core.app.NotificationCompat
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

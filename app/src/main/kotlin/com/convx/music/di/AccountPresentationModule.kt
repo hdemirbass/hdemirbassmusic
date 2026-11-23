@@ -1,7 +1,7 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.AccountViewModel
-import com.convx.music.viewmodels.AccountSettingsViewModel
+import com.hdemirbassmusic.music.viewmodels.AccountViewModel
+import com.hdemirbassmusic.music.viewmodels.AccountSettingsViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

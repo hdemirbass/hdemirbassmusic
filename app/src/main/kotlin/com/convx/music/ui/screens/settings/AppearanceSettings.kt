@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.lazy.LazyRow
@@ -22,12 +22,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.ModalBottomSheet
-import com.convx.music.ui.ios.compat.rememberIosModalSheetState
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.compat.ModalBottomSheet
+import com.hdemirbassmusic.music.ui.ios.compat.rememberIosModalSheetState
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import android.app.Activity
 import android.os.Build
 import android.content.Intent
@@ -35,7 +35,7 @@ import android.provider.Settings
 import androidx.core.net.toUri
 import android.content.Context
 import androidx.core.content.edit
-import com.convx.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -47,8 +47,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.ui.graphics.compositeOver
@@ -58,15 +58,15 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.ui.layout.layout
-import com.convx.music.ui.component.shapes.ContinuousCapsule
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.material3.SwitchDefaults
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -88,56 +88,56 @@ import com.composables.sfsymbols.monochrome.SFStar
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.CanvasSource
-import com.convx.music.constants.CanvasSourceKey
-import com.convx.music.constants.CanvasThumbnailAnimationKey
-import com.convx.music.constants.CropAlbumArtKey
-import com.convx.music.constants.DefaultOpenTabKey
-import com.convx.music.constants.DynamicThemeKey
-import com.convx.music.constants.EnableHighRefreshRateKey
-import com.convx.music.constants.OneTapFullscreenLyricsKey
-import com.convx.music.constants.HomeHeroCardEnabledKey
-import com.convx.music.constants.PureBlackHeroBackgroundKey
-import com.convx.music.constants.LiquidGlassGlobalEnabledKey
-import com.convx.music.constants.AlbumCanvasEnabledKey
-import com.convx.music.constants.AppLanguageKey
-import com.convx.music.constants.LanguageCodeToName
-import com.convx.music.constants.SYSTEM_DEFAULT
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.constants.ListenTogetherInTopBarKey
-import com.convx.music.constants.LyricsAnimationStyle
-import com.convx.music.constants.LyricsAnimationStyleKey
-import com.convx.music.constants.LyricsTextPositionKey
-import com.convx.music.constants.LyricsTextSizeKey
-import com.convx.music.constants.ShowCachedPlaylistKey
-import com.convx.music.constants.ShowDownloadedPlaylistKey
-import com.convx.music.constants.ShowLikedPlaylistKey
-import com.convx.music.constants.ShowTopPlaylistKey
-import com.convx.music.constants.ShowUploadedPlaylistKey
-import com.convx.music.constants.SlimNavBarKey
-import com.convx.music.constants.SwipeSensitivityKey
-import com.convx.music.constants.SwipeThumbnailKey
-import com.convx.music.constants.SwipeLyricsKey
-import com.convx.music.constants.SwipeToRemoveSongKey
-import com.convx.music.constants.SwipeToSongKey
-import com.convx.music.constants.UseNewMiniPlayerDesignKey
-import com.convx.music.constants.UseNewPlayerDesignKey
-import com.convx.music.ui.component.EnumDialog
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.CanvasSource
+import com.hdemirbassmusic.music.constants.CanvasSourceKey
+import com.hdemirbassmusic.music.constants.CanvasThumbnailAnimationKey
+import com.hdemirbassmusic.music.constants.CropAlbumArtKey
+import com.hdemirbassmusic.music.constants.DefaultOpenTabKey
+import com.hdemirbassmusic.music.constants.DynamicThemeKey
+import com.hdemirbassmusic.music.constants.EnableHighRefreshRateKey
+import com.hdemirbassmusic.music.constants.OneTapFullscreenLyricsKey
+import com.hdemirbassmusic.music.constants.HomeHeroCardEnabledKey
+import com.hdemirbassmusic.music.constants.PureBlackHeroBackgroundKey
+import com.hdemirbassmusic.music.constants.LiquidGlassGlobalEnabledKey
+import com.hdemirbassmusic.music.constants.AlbumCanvasEnabledKey
+import com.hdemirbassmusic.music.constants.AppLanguageKey
+import com.hdemirbassmusic.music.constants.LanguageCodeToName
+import com.hdemirbassmusic.music.constants.SYSTEM_DEFAULT
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.constants.ListenTogetherInTopBarKey
+import com.hdemirbassmusic.music.constants.LyricsAnimationStyle
+import com.hdemirbassmusic.music.constants.LyricsAnimationStyleKey
+import com.hdemirbassmusic.music.constants.LyricsTextPositionKey
+import com.hdemirbassmusic.music.constants.LyricsTextSizeKey
+import com.hdemirbassmusic.music.constants.ShowCachedPlaylistKey
+import com.hdemirbassmusic.music.constants.ShowDownloadedPlaylistKey
+import com.hdemirbassmusic.music.constants.ShowLikedPlaylistKey
+import com.hdemirbassmusic.music.constants.ShowTopPlaylistKey
+import com.hdemirbassmusic.music.constants.ShowUploadedPlaylistKey
+import com.hdemirbassmusic.music.constants.SlimNavBarKey
+import com.hdemirbassmusic.music.constants.SwipeSensitivityKey
+import com.hdemirbassmusic.music.constants.SwipeThumbnailKey
+import com.hdemirbassmusic.music.constants.SwipeLyricsKey
+import com.hdemirbassmusic.music.constants.SwipeToRemoveSongKey
+import com.hdemirbassmusic.music.constants.SwipeToSongKey
+import com.hdemirbassmusic.music.constants.UseNewMiniPlayerDesignKey
+import com.hdemirbassmusic.music.constants.UseNewPlayerDesignKey
+import com.hdemirbassmusic.music.ui.component.EnumDialog
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlin.math.roundToInt
-import com.convx.music.constants.LyricsClickKey
-import com.convx.music.constants.LyricsLineSpacingKey
-import com.convx.music.constants.LyricsScrollKey
-import com.convx.music.constants.MiniPlayerWaveformKey
-import com.convx.music.constants.AppFont
-import com.convx.music.constants.SelectedFontKey
+import com.hdemirbassmusic.music.constants.LyricsClickKey
+import com.hdemirbassmusic.music.constants.LyricsLineSpacingKey
+import com.hdemirbassmusic.music.constants.LyricsScrollKey
+import com.hdemirbassmusic.music.constants.MiniPlayerWaveformKey
+import com.hdemirbassmusic.music.constants.AppFont
+import com.hdemirbassmusic.music.constants.SelectedFontKey
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -485,7 +485,7 @@ fun AppearanceSettings(
                 ),
                     IosSettingsItem(
                         icon = painterResource(R.drawable.canvas_art),
-                        title = { Text(stringResource(R.string.convx_canvas)) },
+                        title = { Text(stringResource(R.string.hdemirbassmusic_canvas)) },
                     description = {
                         val summary = if (!canvasThumbnailAnimation) {
                             stringResource(R.string.disable)
@@ -493,7 +493,7 @@ fun AppearanceSettings(
                             when (canvasSource) {
                                 CanvasSource.AUTO -> stringResource(R.string.canvas_source_auto)
                                 CanvasSource.APPLE_MUSIC -> stringResource(R.string.canvas_source_apple_music)
-                                CanvasSource.CONVX -> stringResource(R.string.canvas_source_convx)
+                                CanvasSource.hdemirbassmusic -> stringResource(R.string.canvas_source_hdemirbassmusic)
                                 CanvasSource.TIDAL -> stringResource(R.string.canvas_source_tidal)
                                 CanvasSource.SPOTIFY -> stringResource(R.string.canvas_source_spotify)
                             }
@@ -541,7 +541,7 @@ fun AppearanceSettings(
                     title = { Text(stringResource(R.string.lyrics_animation_style)) },
                     description = {
                         Text(
-                            com.convx.music.ui.component.lyricsStyleLabel(lyricsAnimationStyle)
+                            com.hdemirbassmusic.music.ui.component.lyricsStyleLabel(lyricsAnimationStyle)
                         )
                     },
                     onClick = { showLyricsAnimationStyleDialog = true }
@@ -841,7 +841,7 @@ fun ColumnScope.LyricsAnimationSheetContent() {
 
             // The playing song's own lyrics, through the player's own lyrics view: what is
             // seen here is exactly what the player shows in the chosen style.
-            val lyricsConnection = com.convx.music.LocalPlayerConnection.current
+            val lyricsConnection = com.hdemirbassmusic.music.LocalPlayerConnection.current
             val lyricsTrack by remember(lyricsConnection) {
                 lyricsConnection?.mediaMetadata ?: kotlinx.coroutines.flow.MutableStateFlow(null)
             }.collectAsStateWithLifecycle()
@@ -871,12 +871,12 @@ fun ColumnScope.LyricsAnimationSheetContent() {
                         .height(360.dp)
                         .clip(ContinuousRoundedRectangle(24.dp)),
                 ) {
-                    com.convx.music.ui.player.NowPlayingBackground(
+                    com.hdemirbassmusic.music.ui.player.NowPlayingBackground(
                         artworkUrl = lyricsTrack?.thumbnailUrl,
                         hero = false,
                         modifier = Modifier.fillMaxSize(),
                     )
-                    com.convx.music.ui.player.InlineLyricsView(
+                    com.hdemirbassmusic.music.ui.player.InlineLyricsView(
                         mediaMetadata = lyricsTrack,
                         showLyrics = true,
                         positionProvider = previewClock,
@@ -987,7 +987,7 @@ fun ColumnScope.LyricsAnimationSheetContent() {
                 items(LyricsAnimationStyle.entries) { style ->
                     val active = style == selected
                     Text(
-                        text = com.convx.music.ui.component.lyricsStyleLabel(style),
+                        text = com.hdemirbassmusic.music.ui.component.lyricsStyleLabel(style),
                         color = if (active) Color.White else IosTheme.colors.label,
                         style = IosTheme.typography.subheadline,
                         fontWeight = if (active) FontWeight.SemiBold else FontWeight.Normal,

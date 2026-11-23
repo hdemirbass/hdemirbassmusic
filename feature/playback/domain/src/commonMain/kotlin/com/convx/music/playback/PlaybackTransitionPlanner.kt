@@ -1,10 +1,10 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
-import com.convx.music.playback.smart.CrossfadeMode
-import com.convx.music.playback.smart.TrackAnalysis
-import com.convx.music.playback.smart.TransitionTrackInfo
-import com.convx.music.playback.smart.TransitionStyle
-import com.convx.music.playback.smart.planTransition
+import com.hdemirbassmusic.music.playback.smart.CrossfadeMode
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.playback.smart.TransitionTrackInfo
+import com.hdemirbassmusic.music.playback.smart.TransitionStyle
+import com.hdemirbassmusic.music.playback.smart.planTransition
 import kotlin.math.roundToLong
 
 /** Platform-neutral timing selected for one outgoing/incoming playback pair. */

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,9 +19,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.wordsWithSpacing
-import com.convx.music.lyrics.WordTimestamp
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.wordsWithSpacing
+import com.hdemirbassmusic.music.lyrics.WordTimestamp
 import com.mocharealm.accompanist.lyrics.core.model.ISyncedLine
 import com.mocharealm.accompanist.lyrics.core.model.SyncedLyrics
 import com.mocharealm.accompanist.lyrics.core.model.karaoke.KaraokeAlignment
@@ -129,7 +129,7 @@ fun List<LyricsEntry>.hasKaraokeTimings(): Boolean =
     any { !it.words.isNullOrEmpty() }
 
 /**
- * Convx's own [LyricsEntry] list, in the shape the renderer wants.
+ * hdemirbassmusic's own [LyricsEntry] list, in the shape the renderer wants.
  *
  * Entries flagged `isBackground` are not emitted as lines. They are attached to the last
  * main line as accompaniment, which is where they belong — a background vocal is sung

@@ -1,10 +1,10 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 // Apple Music player UI adapted from an open-source (GPL-3.0) base.
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -36,8 +36,8 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.ui.AspectRatioFrameLayout
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.utils.toJavaProxy
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.utils.toJavaProxy
 import com.music.innertube.YouTube
 import com.music.innertube.models.YouTubeClient
 import okhttp3.OkHttpClient

@@ -1,22 +1,22 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import com.convx.music.ui.ios.compat.AlertDialog
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -31,15 +31,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.datastore.preferences.core.edit
-import com.convx.music.R
-import com.convx.music.constants.DonationKofiUrl
-import com.convx.music.constants.DonationPromptDismissedKey
-import com.convx.music.constants.DonationPromptLastShownKey
-import com.convx.music.constants.DonationUpiUri
-import com.convx.music.constants.FirstLaunchTimestampKey
-import com.convx.music.ui.utils.safeOpenUri
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.DonationKofiUrl
+import com.hdemirbassmusic.music.constants.DonationPromptDismissedKey
+import com.hdemirbassmusic.music.constants.DonationPromptLastShownKey
+import com.hdemirbassmusic.music.constants.DonationUpiUri
+import com.hdemirbassmusic.music.constants.FirstLaunchTimestampKey
+import com.hdemirbassmusic.music.ui.utils.safeOpenUri
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.rememberPreference
 import java.util.concurrent.TimeUnit
 
 private val MIN_DAYS_BEFORE_FIRST_PROMPT = TimeUnit.DAYS.toMillis(3)

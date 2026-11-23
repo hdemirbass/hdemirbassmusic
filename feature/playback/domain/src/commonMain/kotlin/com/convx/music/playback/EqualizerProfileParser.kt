@@ -1,4 +1,4 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 /**
  * Parser for AutoEq ParametricEQ.txt text.

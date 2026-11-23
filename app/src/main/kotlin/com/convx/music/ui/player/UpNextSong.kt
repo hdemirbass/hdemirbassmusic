@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -12,8 +12,8 @@ import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -28,11 +28,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.convx.music.R
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.extensions.metadata
-import com.convx.music.ui.utils.additiveChrome
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.resize
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable

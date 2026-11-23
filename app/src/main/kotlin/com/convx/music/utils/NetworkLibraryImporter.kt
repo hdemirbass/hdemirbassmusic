@@ -1,25 +1,25 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import androidx.room.withTransaction
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.AlbumEntity
-import com.convx.music.db.entities.ArtistEntity
-import com.convx.music.db.entities.SongAlbumMap
-import com.convx.music.db.entities.SongArtistMap
-import com.convx.music.db.entities.SongEntity
-import com.convx.storage.domain.NetworkLibraryRepository
-import com.convx.storage.domain.NetworkTrack
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.AlbumEntity
+import com.hdemirbassmusic.music.db.entities.ArtistEntity
+import com.hdemirbassmusic.music.db.entities.SongAlbumMap
+import com.hdemirbassmusic.music.db.entities.SongArtistMap
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.storage.domain.NetworkLibraryRepository
+import com.hdemirbassmusic.storage.domain.NetworkTrack
 import java.time.LocalDateTime
 import timber.log.Timber
 
 /**
  * Puts the audio found on an SMB or WebDAV source into the library as local songs.
- * A song's id is its `convx-network://` URI, which the player routes back through the
+ * A song's id is its `hdemirbassmusic-network://` URI, which the player routes back through the
  * network data source, so nothing is copied to the phone.
  */
 object NetworkLibraryImporter {

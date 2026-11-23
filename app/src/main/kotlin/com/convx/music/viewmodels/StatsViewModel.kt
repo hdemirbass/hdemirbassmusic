@@ -1,21 +1,21 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.statToPeriod
-import com.convx.music.db.MusicDatabase
-import com.convx.music.ui.screens.OptionStats
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.statToPeriod
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.ui.screens.OptionStats
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

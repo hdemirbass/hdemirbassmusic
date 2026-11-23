@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
  * Selector adapted from the Backdrop catalog's LiquidBottomTabs (Kyant0/AndroidLiquidGlass,
  * Apache-2.0). The group draws no shell: [FoldingTabBar] owns the surface.
  */
 
-package com.convx.music.ui.component.floatingtabbar
+package com.hdemirbassmusic.music.ui.component.floatingtabbar
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.EaseOut
@@ -64,21 +64,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.fastCoerceIn
 import androidx.compose.ui.util.fastRoundToInt
 import androidx.compose.ui.util.lerp
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.BackdropEffectScope
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.backdrop.catalog.components.LocalLiquidBottomTabScale
-import com.convx.music.ui.component.backdrop.catalog.utils.DampedDragAnimation
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.backdrop.drawBackdrop
-import com.convx.music.ui.component.backdrop.effects.blur
-import com.convx.music.ui.component.backdrop.effects.lens
-import com.convx.music.ui.component.backdrop.effects.vibrancy
-import com.convx.music.ui.component.backdrop.highlight.Highlight
-import com.convx.music.ui.component.backdrop.shadow.InnerShadow
-import com.convx.music.ui.component.backdrop.shadow.Shadow
-import com.convx.music.ui.component.shapes.ContinuousCapsule
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.BackdropEffectScope
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.components.LocalLiquidBottomTabScale
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.DampedDragAnimation
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.backdrop.drawBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.lens
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.vibrancy
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.Highlight
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.InnerShadow
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.Shadow
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.launch
@@ -104,7 +104,7 @@ internal fun FoldingTabGroup(
     indicatorVisible: Boolean = true,
     content: @Composable RowScope.() -> Unit,
 ) {
-    val isLightTheme = !com.convx.music.ui.component.glassUsesDarkAppearance()
+    val isLightTheme = !com.hdemirbassmusic.music.ui.component.glassUsesDarkAppearance()
     val tabsBackdrop = rememberLayerBackdrop()
     val widthPx = remember { mutableFloatStateOf(0f) }
     val onSelected by rememberUpdatedState(onTabSelected)

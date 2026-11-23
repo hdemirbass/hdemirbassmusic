@@ -1,34 +1,34 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.fillMaxWidth
-import com.convx.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.WatchEndpoint
-import com.convx.music.R
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.library.PlaylistCardData
-import com.convx.music.library.PlaylistDetail
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.localPlaylistRoute
-import com.convx.music.ui.utils.onlinePlaylistRoute
-import com.convx.music.ui.menu.AlbumMenu
-import com.convx.music.ui.menu.ArtistMenu
-import com.convx.music.ui.menu.PlaylistMenu
-import com.convx.music.ui.menu.YouTubePlaylistMenu
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.library.PlaylistCardData
+import com.hdemirbassmusic.music.library.PlaylistDetail
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.localPlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.onlinePlaylistRoute
+import com.hdemirbassmusic.music.ui.menu.AlbumMenu
+import com.hdemirbassmusic.music.ui.menu.ArtistMenu
+import com.hdemirbassmusic.music.ui.menu.PlaylistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubePlaylistMenu
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

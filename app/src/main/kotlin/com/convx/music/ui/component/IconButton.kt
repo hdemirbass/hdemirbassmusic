@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -19,10 +19,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.graphicsLayer
-import com.convx.music.ui.utils.Motion
+import com.hdemirbassmusic.music.ui.utils.Motion
 import androidx.compose.foundation.shape.CircleShape
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
@@ -37,8 +37,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.player.customize.PlayerIconSlot
-import com.convx.music.ui.player.customize.rememberPlayerIcon
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot
+import com.hdemirbassmusic.music.ui.player.customize.rememberPlayerIcon
 
 /**
  * @param slot when non-null, the button honours the user's custom glyph for that player control

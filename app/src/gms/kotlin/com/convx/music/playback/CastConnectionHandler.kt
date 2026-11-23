@@ -1,4 +1,4 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.content.Context
 import android.net.Uri
@@ -20,9 +20,9 @@ import com.google.android.gms.cast.framework.SessionManager
 import com.google.android.gms.cast.framework.SessionManagerListener
 import com.google.android.gms.cast.framework.media.RemoteMediaClient
 import com.google.android.gms.common.images.WebImage
-import com.convx.music.extensions.metadata
-import com.convx.music.models.MediaMetadata as AppMediaMetadata
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.models.MediaMetadata as AppMediaMetadata
+import com.hdemirbassmusic.music.ui.utils.resize
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

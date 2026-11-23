@@ -1,7 +1,7 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.Context
-import com.convx.music.canvas.AppleMusicCatalog
+import com.hdemirbassmusic.music.canvas.AppleMusicCatalog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob

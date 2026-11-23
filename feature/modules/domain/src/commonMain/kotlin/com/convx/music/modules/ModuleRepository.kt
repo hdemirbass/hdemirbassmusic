@@ -1,10 +1,10 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 import com.music.spine.ModuleManifest
 import com.music.spine.ModuleSearchResult
 import com.music.spine.ModuleStreamResponse
 import com.music.spine.SpineModule
-import com.convx.music.playback.PlaybackRequestTrack
+import com.hdemirbassmusic.music.playback.PlaybackRequestTrack
 import kotlin.math.abs
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.queues
+package com.hdemirbassmusic.music.playback.queues
 
 import androidx.media3.common.MediaItem
 import com.music.innertube.YouTube
 import com.music.innertube.models.WatchEndpoint
-import com.convx.music.db.entities.AlbumWithSongs
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.models.MediaMetadata
+import com.hdemirbassmusic.music.db.entities.AlbumWithSongs
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.models.MediaMetadata
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.withContext
 

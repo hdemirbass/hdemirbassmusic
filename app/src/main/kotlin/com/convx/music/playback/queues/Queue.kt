@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.queues
+package com.hdemirbassmusic.music.playback.queues
 
 import androidx.media3.common.MediaItem
-import com.convx.music.extensions.metadata
-import com.convx.music.models.MediaMetadata
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.models.MediaMetadata
 
 interface Queue {
     val preloadItem: MediaMetadata?

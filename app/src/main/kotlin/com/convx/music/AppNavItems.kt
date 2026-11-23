@@ -1,18 +1,18 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
-import com.convx.music.constants.ListenTogetherInTopBarKey
-import com.convx.music.constants.LocalOnlyModeKey
-import com.convx.music.constants.HiddenNavigationRoutesKey
-import com.convx.music.ui.screens.Screens
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.ListenTogetherInTopBarKey
+import com.hdemirbassmusic.music.constants.LocalOnlyModeKey
+import com.hdemirbassmusic.music.constants.HiddenNavigationRoutesKey
+import com.hdemirbassmusic.music.ui.screens.Screens
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /** Whether the app runs on device files only. Provided once at the root; screens read this instead of the preference. */
 val LocalLocalOnlyMode = androidx.compose.runtime.staticCompositionLocalOf { false }

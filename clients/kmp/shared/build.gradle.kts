@@ -7,13 +7,13 @@ plugins {
 }
 
 compose.resources {
-    packageOfResClass = "com.convx.music.client.shared.generated.resources"
+    packageOfResClass = "com.hdemirbassmusic.music.client.shared.generated.resources"
     generateResClass = always
 }
 
 kotlin {
     android {
-        namespace = "com.convx.music.client.shared"
+        namespace = "com.hdemirbassmusic.music.client.shared"
         compileSdk = 37
         minSdk = 26
     }
@@ -38,7 +38,7 @@ kotlin {
 
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().configureEach {
         binaries.framework {
-            baseName = "ConvxShared"
+            baseName = "hdemirbassmusicShared"
             isStatic = true
         }
     }

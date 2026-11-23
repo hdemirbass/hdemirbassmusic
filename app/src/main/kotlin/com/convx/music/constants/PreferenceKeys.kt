@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.constants
+package com.hdemirbassmusic.music.constants
 
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.floatPreferencesKey
@@ -195,7 +195,7 @@ val AudioOffload = booleanPreferencesKey("enableOffload")
 val BitPerfectKey = booleanPreferencesKey("bitPerfect")
 
 /** Spatial audio: stereo widening + cross-feed inside the player's own processor
- *  chain ([com.convx.music.playback.audio.SpatialAudioProcessor]). Bypassed while
+ *  chain ([com.hdemirbassmusic.music.playback.audio.SpatialAudioProcessor]). Bypassed while
  *  Bit Perfect is on — it rewrites every sample, same as the EQ. */
 val SpatialAudioKey = booleanPreferencesKey("spatialAudio")
 
@@ -260,7 +260,7 @@ val AudioNormalizationKey = booleanPreferencesKey("audioNormalization")
 val AutoLoadMoreKey = booleanPreferencesKey("autoLoadMore")
 val DisableLoadMoreWhenRepeatAllKey = booleanPreferencesKey("disableLoadMoreWhenRepeatAll")
 val AutoDownloadOnLikeKey = booleanPreferencesKey("autoDownloadOnLike")
-/** Copy finished downloads into Music/Convx as real .m4a files (Android 10+). */
+/** Copy finished downloads into Music/hdemirbassmusic as real .m4a files (Android 10+). */
 val SaveDownloadsToMusicFolderKey = booleanPreferencesKey("saveDownloadsToMusicFolder")
 val SimilarContent = booleanPreferencesKey("similarContent")
 val AutoSkipNextOnErrorKey = booleanPreferencesKey("autoSkipNextOnError")
@@ -643,7 +643,7 @@ val LiquidGlassTextColorKey = intPreferencesKey("liquidGlassTextColor")
 val LiquidGlassSurfaceTintColorKey = intPreferencesKey("liquidGlassSurfaceTintColor")
 val LiquidGlassSurfaceOpacityKey = floatPreferencesKey("liquidGlassSurfaceOpacity")
 
-/** Which [com.convx.music.ui.component.GlassStyle] every glass surface uses. */
+/** Which [com.hdemirbassmusic.music.ui.component.GlassStyle] every glass surface uses. */
 val LiquidGlassStyleKey = stringPreferencesKey("liquidGlassStyle")
 
 /** Selection puck wash colour as an ARGB int. 0 = adaptive to the theme. */
@@ -789,7 +789,7 @@ enum class LyricsAnimationStyle {
     APPLE,
     APPLE_V2,
     BITCHORD,
-    CONVX_1,
+    hdemirbassmusic_1,
     LYRICS_V2,
     METRO_LYRICS,
 
@@ -857,7 +857,7 @@ enum class AmbientCanvasFitMode {
 enum class CanvasSource {
     AUTO,
     APPLE_MUSIC,
-    CONVX,
+    hdemirbassmusic,
     TIDAL,
     SPOTIFY,
 }

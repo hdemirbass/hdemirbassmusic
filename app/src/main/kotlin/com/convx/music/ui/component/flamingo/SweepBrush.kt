@@ -1,4 +1,4 @@
-package com.convx.music.ui.component.flamingo
+package com.hdemirbassmusic.music.ui.component.flamingo
 
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color

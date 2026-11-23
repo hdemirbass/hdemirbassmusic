@@ -1,9 +1,9 @@
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
-import com.convx.music.lyrics.LyricsQuery
-import com.convx.music.lyrics.SharedLyricsSource
-import com.convx.music.lyrics.bitchord.LyricLine
-import com.convx.music.lyrics.bitchord.LyricWord
+import com.hdemirbassmusic.music.lyrics.LyricsQuery
+import com.hdemirbassmusic.music.lyrics.SharedLyricsSource
+import com.hdemirbassmusic.music.lyrics.bitchord.LyricLine
+import com.hdemirbassmusic.music.lyrics.bitchord.LyricWord
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.test.StandardTestDispatcher

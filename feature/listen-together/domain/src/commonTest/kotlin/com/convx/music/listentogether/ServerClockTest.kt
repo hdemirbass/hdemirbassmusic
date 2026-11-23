@@ -1,4 +1,4 @@
-package com.convx.music.listentogether
+package com.hdemirbassmusic.music.listentogether
 
 import kotlin.test.assertEquals
 import kotlin.test.assertNull

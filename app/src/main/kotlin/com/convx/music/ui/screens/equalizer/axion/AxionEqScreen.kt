@@ -1,11 +1,11 @@
-package com.convx.music.ui.screens.equalizer.axion
+package com.hdemirbassmusic.music.ui.screens.equalizer.axion
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.SegmentedButton
-import com.convx.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
-import com.convx.music.ui.ios.compat.OutlinedTextField as IosOutlinedTextField
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.SegmentedButton
+import com.hdemirbassmusic.music.ui.ios.compat.SingleChoiceSegmentedButtonRow
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField as IosOutlinedTextField
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -19,10 +19,10 @@ import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.Replay
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.material3.*
-import com.convx.music.ui.component.GlassSwitchCompat as Switch
+import com.hdemirbassmusic.music.ui.component.GlassSwitchCompat as Switch
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -35,26 +35,26 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
-import com.convx.music.R
-import com.convx.music.eq.data.SavedEQProfile
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.eq.data.SavedEQProfile
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.utils.backToMain
 import kotlin.math.abs
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
-import com.convx.music.ui.component.ScreenPage
-import com.convx.music.constants.BitPerfectKey
-import com.convx.music.constants.SpatialAudioKey
-import com.convx.music.utils.rememberPreference
-import com.convx.music.eq.data.ParametricEQBand
+import com.hdemirbassmusic.music.ui.component.ScreenPage
+import com.hdemirbassmusic.music.constants.BitPerfectKey
+import com.hdemirbassmusic.music.constants.SpatialAudioKey
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.eq.data.ParametricEQBand
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.ios.compat.Text as Text
-import com.convx.music.ui.ios.compat.TextButton as TextButton
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Text as Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton as TextButton
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -87,7 +87,7 @@ fun AxionEqScreen(
     }
 
     ScreenPage(
-        title = stringResource(R.string.convx_equalizer),
+        title = stringResource(R.string.hdemirbassmusic_equalizer),
         onBack = onBackClick,
         horizontalPadding = 16.dp,
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -251,9 +251,9 @@ private fun SimpleEqMode(
         syncFromBands()
     }
 
-    val convxPresets = listOf(
+    val hdemirbassmusicPresets = listOf(
         R.string.eq_preset_flat to floatArrayOf(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f),
-        R.string.eq_preset_convx_signature to floatArrayOf(150f, 100f, 50f, 0f, -20f, 0f, 80f, 150f, 200f, 150f),
+        R.string.eq_preset_hdemirbassmusic_signature to floatArrayOf(150f, 100f, 50f, 0f, -20f, 0f, 80f, 150f, 200f, 150f),
         R.string.eq_preset_acoustic to floatArrayOf(150f, 150f, 50f, 75f, 100f, 75f, 125f, 175f, 150f, 75f),
         R.string.eq_preset_spatial to floatArrayOf(75f, 50f, 25f, -50f, -25f, 0f, 50f, 75f, 100f, 75f),
         R.string.eq_preset_bass_boost to floatArrayOf(500f, 400f, 250f, 100f, 0f, -50f, 0f, 100f, 200f, 300f),
@@ -342,9 +342,9 @@ private fun SimpleEqMode(
             )
         }
 
-        convxPresets.chunked(4).forEach { chunk ->
+        hdemirbassmusicPresets.chunked(4).forEach { chunk ->
             PresetSection(
-                title = if (convxPresets.first() in chunk) stringResource(R.string.eq_label_convx) else "",
+                title = if (hdemirbassmusicPresets.first() in chunk) stringResource(R.string.eq_label_hdemirbassmusic) else "",
                 presets = chunk,
                 enabled = enabled,
                 viewModel = viewModel,

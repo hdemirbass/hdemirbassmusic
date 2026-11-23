@@ -1,4 +1,4 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
 import android.content.Context
 import androidx.media3.database.DatabaseProvider
@@ -6,53 +6,53 @@ import androidx.media3.database.StandaloneDatabaseProvider
 import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.NoOpCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
-import com.convx.music.constants.MaxSongCacheSizeKey
-import com.convx.music.db.DatabaseDao
-import com.convx.music.db.InternalDatabase
-import com.convx.music.db.MusicDatabase
-import com.convx.music.eq.EqualizerService
-import com.convx.music.eq.data.EQProfileRepository
-import com.convx.music.history.HistoryLocalDataSource
-import com.convx.music.history.DataStoreListenHistorySettingsRepository
-import com.convx.music.history.ListenHistoryRepository
-import com.convx.music.history.ListenHistorySettingsRepository
-import com.convx.music.history.RoomHistoryLocalDataSource
-import com.convx.music.library.LocalPlaylistSongDataSource
-import com.convx.music.library.MusicLibraryRemoteDataSource
-import com.convx.music.library.MusicPlaylistRemoteDataSource
+import com.hdemirbassmusic.music.constants.MaxSongCacheSizeKey
+import com.hdemirbassmusic.music.db.DatabaseDao
+import com.hdemirbassmusic.music.db.InternalDatabase
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.eq.EqualizerService
+import com.hdemirbassmusic.music.eq.data.EQProfileRepository
+import com.hdemirbassmusic.music.history.HistoryLocalDataSource
+import com.hdemirbassmusic.music.history.DataStoreListenHistorySettingsRepository
+import com.hdemirbassmusic.music.history.ListenHistoryRepository
+import com.hdemirbassmusic.music.history.ListenHistorySettingsRepository
+import com.hdemirbassmusic.music.history.RoomHistoryLocalDataSource
+import com.hdemirbassmusic.music.library.LocalPlaylistSongDataSource
+import com.hdemirbassmusic.music.library.MusicLibraryRemoteDataSource
+import com.hdemirbassmusic.music.library.MusicPlaylistRemoteDataSource
 import com.music.innertube.InnertubeRepository
 import com.music.innertube.YouTube
 import com.music.innertube.library.InnertubeMusicLibraryDataSource
 import com.music.innertube.library.InnertubeMusicPlaylistDataSource
-import com.convx.music.library.DataStorePlaylistDisplayPreferencesRepository
-import com.convx.music.library.DataStorePendingPlaylistDeletionRepository
-import com.convx.music.library.PendingPlaylistDeletionRepository
-import com.convx.music.library.PlaylistDisplayPreferencesRepository
-import com.convx.music.library.PlaylistRepository
-import com.convx.music.library.RoomPlaylistRepository
-import com.convx.music.search.RoomSearchHistoryRepository
-import com.convx.music.search.SearchHistoryRepository
-import com.convx.music.search.DataStoreSearchHistorySettingsRepository
-import com.convx.music.search.SearchHistorySettingsRepository
-import com.convx.music.jam.JamManager
-import com.convx.music.listentogether.ListenTogetherClient
-import com.convx.music.listentogether.ListenTogetherManager
-import com.convx.music.listentogether.ListenTogetherPlayerConnectionBridge
-import com.convx.music.lyrics.LyricsHelper
-import com.convx.music.lyrics.LyricsProviderRepository
-import com.convx.music.playback.DownloadUtil
-import com.convx.music.playback.MediaLibrarySessionCallback
-import com.convx.music.playback.PlaybackServiceConnector
-import com.convx.music.utils.NetworkConnectivityObserver
-import com.convx.music.utils.SyncUtils
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.widget.ConvxWidgetManager
-import com.convx.storage.data.EncryptedNetworkServerStore
-import com.convx.storage.data.NetworkMusicRepository
-import com.convx.storage.domain.NetworkServerStore
-import com.convx.music.ui.screens.wrapped.WrappedAudioService
-import com.convx.music.ui.screens.wrapped.WrappedManager
+import com.hdemirbassmusic.music.library.DataStorePlaylistDisplayPreferencesRepository
+import com.hdemirbassmusic.music.library.DataStorePendingPlaylistDeletionRepository
+import com.hdemirbassmusic.music.library.PendingPlaylistDeletionRepository
+import com.hdemirbassmusic.music.library.PlaylistDisplayPreferencesRepository
+import com.hdemirbassmusic.music.library.PlaylistRepository
+import com.hdemirbassmusic.music.library.RoomPlaylistRepository
+import com.hdemirbassmusic.music.search.RoomSearchHistoryRepository
+import com.hdemirbassmusic.music.search.SearchHistoryRepository
+import com.hdemirbassmusic.music.search.DataStoreSearchHistorySettingsRepository
+import com.hdemirbassmusic.music.search.SearchHistorySettingsRepository
+import com.hdemirbassmusic.music.jam.JamManager
+import com.hdemirbassmusic.music.listentogether.ListenTogetherClient
+import com.hdemirbassmusic.music.listentogether.ListenTogetherManager
+import com.hdemirbassmusic.music.listentogether.ListenTogetherPlayerConnectionBridge
+import com.hdemirbassmusic.music.lyrics.LyricsHelper
+import com.hdemirbassmusic.music.lyrics.LyricsProviderRepository
+import com.hdemirbassmusic.music.playback.DownloadUtil
+import com.hdemirbassmusic.music.playback.MediaLibrarySessionCallback
+import com.hdemirbassmusic.music.playback.PlaybackServiceConnector
+import com.hdemirbassmusic.music.utils.NetworkConnectivityObserver
+import com.hdemirbassmusic.music.utils.SyncUtils
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.widget.hdemirbassmusicWidgetManager
+import com.hdemirbassmusic.storage.data.EncryptedNetworkServerStore
+import com.hdemirbassmusic.storage.data.NetworkMusicRepository
+import com.hdemirbassmusic.storage.domain.NetworkServerStore
+import com.hdemirbassmusic.music.ui.screens.wrapped.WrappedAudioService
+import com.hdemirbassmusic.music.ui.screens.wrapped.WrappedManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -127,6 +127,6 @@ val androidAppDependenciesModule = module {
         )
     }
     single { MediaLibrarySessionCallback(androidContext(), get(), get()) }
-    single { ConvxWidgetManager(androidContext(), get()) }
+    single { hdemirbassmusicWidgetManager(androidContext(), get()) }
     factory { PlaybackServiceConnector(ValueProvider { getKoin().get() }, get()) }
 }

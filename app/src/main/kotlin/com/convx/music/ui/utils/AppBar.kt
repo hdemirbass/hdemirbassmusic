@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.DecayAnimationSpec
@@ -31,7 +31,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.unit.dp
-import com.convx.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
 
 /**
  * Window insets for a screen's TopAppBar so its title/back button clear the

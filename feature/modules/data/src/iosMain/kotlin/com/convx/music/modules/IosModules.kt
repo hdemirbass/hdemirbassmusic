@@ -1,4 +1,4 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.darwin.Darwin
@@ -8,6 +8,6 @@ internal actual fun moduleHttpClient() = HttpClient(Darwin) { configureModuleHtt
 
 class IosModuleStore : ModuleStore {
     private val defaults = NSUserDefaults.standardUserDefaults
-    override suspend fun read(): String? = defaults.stringForKey("convx.modules.snapshot")
-    override suspend fun write(value: String) { defaults.setObject(value, forKey = "convx.modules.snapshot") }
+    override suspend fun read(): String? = defaults.stringForKey("hdemirbassmusic.modules.snapshot")
+    override suspend fun write(value: String) { defaults.setObject(value, forKey = "hdemirbassmusic.modules.snapshot") }
 }

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -14,39 +14,39 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
-import com.convx.music.constants.LiquidGlassAdaptiveContrastKey
-import com.convx.music.constants.LiquidGlassBlurRadiusKey
-import com.convx.music.constants.LiquidGlassChromaticAberrationKey
-import com.convx.music.constants.LiquidGlassDepthEffectKey
-import com.convx.music.constants.LiquidGlassGlobalEnabledKey
-import com.convx.music.constants.LiquidGlassHighlightColorKey
-import com.convx.music.constants.LiquidGlassHighlightOpacityKey
-import com.convx.music.constants.LiquidGlassLensAmountKey
-import com.convx.music.constants.LiquidGlassLensHeightKey
-import com.convx.music.constants.LiquidGlassMiniPlayerEnabledKey
-import com.convx.music.constants.LiquidGlassNavBarEnabledKey
-import com.convx.music.constants.LiquidGlassPuckColorKey
-import com.convx.music.constants.LiquidGlassPuckOpacityKey
-import com.convx.music.constants.LiquidGlassSidePanelBlurRadiusKey
-import com.convx.music.constants.LiquidGlassSidePanelColorKey
-import com.convx.music.constants.LiquidGlassSidePanelEnabledKey
-import com.convx.music.constants.LiquidGlassSidePanelLensAmountKey
-import com.convx.music.constants.LiquidGlassSidePanelLensHeightKey
-import com.convx.music.constants.LiquidGlassSidePanelSurfaceOpacityKey
-import com.convx.music.constants.LiquidGlassSidePanelTextColorKey
-import com.convx.music.constants.LiquidGlassSidePanelVibrancyKey
-import com.convx.music.constants.LiquidGlassStyleKey
-import com.convx.music.constants.LiquidGlassSurfaceOpacityKey
-import com.convx.music.constants.LiquidGlassSurfaceTintColorKey
-import com.convx.music.constants.LiquidGlassTextColorKey
-import com.convx.music.constants.LiquidGlassVibrancyKey
-import com.convx.music.ui.component.GlassEffectConfig
-import com.convx.music.ui.component.GlassStyle
-import com.convx.music.ui.component.glassContentColorFor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.theme.GlassTintTokens
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.LiquidGlassAdaptiveContrastKey
+import com.hdemirbassmusic.music.constants.LiquidGlassBlurRadiusKey
+import com.hdemirbassmusic.music.constants.LiquidGlassChromaticAberrationKey
+import com.hdemirbassmusic.music.constants.LiquidGlassDepthEffectKey
+import com.hdemirbassmusic.music.constants.LiquidGlassGlobalEnabledKey
+import com.hdemirbassmusic.music.constants.LiquidGlassHighlightColorKey
+import com.hdemirbassmusic.music.constants.LiquidGlassHighlightOpacityKey
+import com.hdemirbassmusic.music.constants.LiquidGlassLensAmountKey
+import com.hdemirbassmusic.music.constants.LiquidGlassLensHeightKey
+import com.hdemirbassmusic.music.constants.LiquidGlassMiniPlayerEnabledKey
+import com.hdemirbassmusic.music.constants.LiquidGlassNavBarEnabledKey
+import com.hdemirbassmusic.music.constants.LiquidGlassPuckColorKey
+import com.hdemirbassmusic.music.constants.LiquidGlassPuckOpacityKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSidePanelBlurRadiusKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSidePanelColorKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSidePanelEnabledKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSidePanelLensAmountKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSidePanelLensHeightKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSidePanelSurfaceOpacityKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSidePanelTextColorKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSidePanelVibrancyKey
+import com.hdemirbassmusic.music.constants.LiquidGlassStyleKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSurfaceOpacityKey
+import com.hdemirbassmusic.music.constants.LiquidGlassSurfaceTintColorKey
+import com.hdemirbassmusic.music.constants.LiquidGlassTextColorKey
+import com.hdemirbassmusic.music.constants.LiquidGlassVibrancyKey
+import com.hdemirbassmusic.music.ui.component.GlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.GlassStyle
+import com.hdemirbassmusic.music.ui.component.glassContentColorFor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.theme.GlassTintTokens
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /** App-wide glass settings resolved from preferences, plus the raw flag the side bar needs. */
 @Stable

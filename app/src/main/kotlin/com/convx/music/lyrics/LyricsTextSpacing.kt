@@ -1,4 +1,4 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 /** Background vocals and simultaneous duet rows must not move the scroll anchor backwards. */
 internal fun primaryLyricLineIndex(lines: List<LyricsEntry>, positionMs: Long): Int =

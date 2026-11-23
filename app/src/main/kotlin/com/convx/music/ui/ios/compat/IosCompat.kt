@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:Suppress("FunctionName")
 
-package com.convx.music.ui.ios.compat
+package com.hdemirbassmusic.music.ui.ios.compat
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.animation.core.LinearEasing
@@ -63,22 +63,22 @@ import zone.ien.hig.CupertinoIconButton
 import zone.ien.hig.CupertinoText
 import zone.ien.hig.CupertinoVerticalDivider
 import androidx.compose.runtime.remember
-import com.convx.music.ui.ios.foundation.IosCapsule
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosCapsule
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
 
 /*
  * Drop-in iOS replacements for the Material 3 widgets, with byte-identical parameter
  * lists so a screen converts by rewriting its imports rather than its call sites:
  *
- *     import androidx.compose.material3.Text   ->   import com.convx.music.ui.ios.compat.Text
+ *     import androidx.compose.material3.Text   ->   import com.hdemirbassmusic.music.ui.ios.compat.Text
  *
  * Everything here draws with the iOS palette, iOS type and iOS geometry. Nothing here
  * pulls in `androidx.compose.material3`.
  *
  * The widget underneath is compose-hig's (vendored in the `:hig` module) wherever it ships
- * one — see [com.convx.music.ui.ios.foundation.ProvideHigTheme], which feeds it this app's
+ * one — see [com.hdemirbassmusic.music.ui.ios.foundation.ProvideHigTheme], which feeds it this app's
  * palette so a compose-hig control and a hand-drawn one agree on colour. What stays
  * hand-drawn is what compose-hig has no counterpart for.
  */

@@ -1,22 +1,22 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.search
+package com.hdemirbassmusic.music.ui.screens.search
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.chromeShadow
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.chromeShadow
 import androidx.compose.ui.res.painterResource
 import android.content.res.Configuration
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.localPlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.localPlaylistRoute
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -34,11 +34,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -56,44 +56,44 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
 import com.composables.sfsymbols.SfSymbols
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.CONTENT_TYPE_LIST
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.AlbumListItem
-import com.convx.music.ui.component.ArtistListItem
-import com.convx.music.ui.component.ChipsRow
-import com.convx.music.ui.component.EmptyPlaceholder
-import com.convx.music.ui.component.HeroBackground
-import com.convx.music.ui.component.HomeImageBackground
-import com.convx.music.ui.component.rememberAppBackgroundColor
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.CONTENT_TYPE_LIST
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.AlbumListItem
+import com.hdemirbassmusic.music.ui.component.ArtistListItem
+import com.hdemirbassmusic.music.ui.component.ChipsRow
+import com.hdemirbassmusic.music.ui.component.EmptyPlaceholder
+import com.hdemirbassmusic.music.ui.component.HeroBackground
+import com.hdemirbassmusic.music.ui.component.HomeImageBackground
+import com.hdemirbassmusic.music.ui.component.rememberAppBackgroundColor
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.ui.text.font.FontWeight
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.rememberHeroSource
-import com.convx.music.ui.component.rememberHeroTint
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.HeroTintedContent
-import com.convx.music.ui.component.GlassComponent
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.withFixedStyle
-import com.convx.music.ui.component.isGlassAllowed
-import com.convx.music.ui.component.liquidGlass
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.PlaylistListItem
-import com.convx.music.ui.component.SongListItem
-import com.convx.music.ui.menu.SongMenu
-import com.convx.music.utils.listItemShape
-import com.convx.music.viewmodels.LocalFilter
-import com.convx.music.viewmodels.LocalSearchViewModel
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.rememberHeroSource
+import com.hdemirbassmusic.music.ui.component.rememberHeroTint
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.HeroTintedContent
+import com.hdemirbassmusic.music.ui.component.GlassComponent
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.withFixedStyle
+import com.hdemirbassmusic.music.ui.component.isGlassAllowed
+import com.hdemirbassmusic.music.ui.component.liquidGlass
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.PlaylistListItem
+import com.hdemirbassmusic.music.ui.component.SongListItem
+import com.hdemirbassmusic.music.ui.menu.SongMenu
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.viewmodels.LocalFilter
+import com.hdemirbassmusic.music.viewmodels.LocalSearchViewModel
 import kotlinx.coroutines.flow.drop
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
@@ -121,14 +121,14 @@ fun LocalSearchScreen(
     LaunchedEffect(query) {
         viewModel.query.value = query
     }
-    val localOnly = com.convx.music.LocalLocalOnlyMode.current
-    val audioPermission = com.convx.music.ui.component.rememberLocalAudioPermission { }
+    val localOnly = com.hdemirbassmusic.music.LocalLocalOnlyMode.current
+    val audioPermission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { }
     LaunchedEffect(localOnly, audioPermission.granted) {
         if (localOnly && audioPermission.granted) viewModel.scanLocalFiles()
     }
     if (localOnly && !audioPermission.granted) {
         Box(Modifier.fillMaxSize()) {
-            com.convx.music.ui.screens.library.apple.LocalAccessCard(
+            com.hdemirbassmusic.music.ui.screens.library.apple.LocalAccessCard(
                 blocked = audioPermission.blocked,
                 onAllow = audioPermission.request,
             )
@@ -213,7 +213,7 @@ fun LocalSearchScreen(
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(com.convx.music.ui.ios.foundation.IosTheme.colors.systemBackground)
+                        .background(com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.systemBackground)
                 ) {
                     AppleScopePills(
                         pills = listOf(

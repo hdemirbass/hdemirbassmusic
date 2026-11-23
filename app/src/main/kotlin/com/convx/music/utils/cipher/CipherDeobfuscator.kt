@@ -1,4 +1,4 @@
-package com.convx.music.utils.cipher
+package com.hdemirbassmusic.music.utils.cipher
 
 import android.content.Context
 import android.net.Uri
@@ -7,7 +7,7 @@ import kotlinx.coroutines.withContext
 import timber.log.Timber
 
 object CipherDeobfuscator {
-    private const val TAG = "convx_CipherDeobfusc"
+    private const val TAG = "hdemirbassmusic_CipherDeobfusc"
 
     lateinit var appContext: Context
         private set

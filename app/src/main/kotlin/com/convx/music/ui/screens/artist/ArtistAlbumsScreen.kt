@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.artist
+package com.hdemirbassmusic.music.ui.screens.artist
 
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
@@ -21,12 +21,12 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.SnackbarHost
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -46,25 +46,25 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.ui.utils.rememberGridColumns
-import com.convx.music.constants.CONTENT_TYPE_ALBUM
-import com.convx.music.constants.CONTENT_TYPE_HEADER
-import com.convx.music.constants.GridItemSize
-import com.convx.music.constants.GridItemsSizeKey
-import com.convx.music.constants.GridThumbnailHeight
-import com.convx.music.ui.component.ListScrollRail
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.LibraryAlbumGridItem
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.viewmodels.ArtistAlbumsViewModel
-import com.convx.music.ui.component.ScreenLargeTitle
-import com.convx.music.ui.component.ScreenScaffold
-import com.convx.music.ui.component.rememberTitleCollapseProgressState
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.utils.rememberGridColumns
+import com.hdemirbassmusic.music.constants.CONTENT_TYPE_ALBUM
+import com.hdemirbassmusic.music.constants.CONTENT_TYPE_HEADER
+import com.hdemirbassmusic.music.constants.GridItemSize
+import com.hdemirbassmusic.music.constants.GridItemsSizeKey
+import com.hdemirbassmusic.music.constants.GridThumbnailHeight
+import com.hdemirbassmusic.music.ui.component.ListScrollRail
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.LibraryAlbumGridItem
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.viewmodels.ArtistAlbumsViewModel
+import com.hdemirbassmusic.music.ui.component.ScreenLargeTitle
+import com.hdemirbassmusic.music.ui.component.ScreenScaffold
+import com.hdemirbassmusic.music.ui.component.rememberTitleCollapseProgressState
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)

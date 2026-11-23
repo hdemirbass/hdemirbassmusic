@@ -1,9 +1,9 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -14,14 +14,14 @@ import com.music.innertube.models.YTItem
 import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
 import com.music.innertube.utils.YouTubeUrlParser
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.search.SearchHistoryEntry
-import com.convx.music.search.SearchHistoryRepository
-import com.convx.music.search.mergeSearchSuggestions
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.search.SearchHistoryEntry
+import com.hdemirbassmusic.music.search.SearchHistoryRepository
+import com.hdemirbassmusic.music.search.mergeSearchSuggestions
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

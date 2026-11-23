@@ -1,7 +1,7 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.YouTubeBrowseViewModel
-import com.convx.music.viewmodels.BrowseViewModel
+import com.hdemirbassmusic.music.viewmodels.YouTubeBrowseViewModel
+import com.hdemirbassmusic.music.viewmodels.BrowseViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

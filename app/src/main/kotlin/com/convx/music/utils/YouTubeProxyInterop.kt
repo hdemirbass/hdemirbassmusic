@@ -1,4 +1,4 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import com.music.innertube.InnertubeProxySettings
 import java.net.InetSocketAddress

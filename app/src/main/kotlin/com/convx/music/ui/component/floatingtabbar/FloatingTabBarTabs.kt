@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:OptIn(ExperimentalSharedTransitionApi::class)
 
-package com.convx.music.ui.component.floatingtabbar
+package com.hdemirbassmusic.music.ui.component.floatingtabbar
 
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.AnimatedVisibilityScope
@@ -67,24 +67,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.fastCoerceIn
 import androidx.compose.ui.util.fastRoundToInt
 import androidx.compose.ui.util.lerp
-import com.convx.music.LocalAmbientBackgroundColor
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.asPuckTint
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberCombinedBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.backdrop.catalog.utils.DampedDragAnimation
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.backdrop.drawBackdrop
-import com.convx.music.ui.component.backdrop.effects.blur
-import com.convx.music.ui.component.backdrop.effects.lens
-import com.convx.music.ui.component.backdrop.effects.vibrancy
-import com.convx.music.ui.component.backdrop.highlight.Highlight
-import com.convx.music.ui.component.backdrop.shadow.InnerShadow
-import com.convx.music.ui.component.shapes.shadowShape
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.asPuckTint
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberCombinedBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.DampedDragAnimation
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.backdrop.drawBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.lens
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.vibrancy
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.Highlight
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.InnerShadow
+import com.hdemirbassmusic.music.ui.component.shapes.shadowShape
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.theme.isHueless
 import kotlin.math.abs
 import kotlin.math.sign
 import kotlinx.coroutines.flow.collectLatest
@@ -131,7 +131,7 @@ internal fun SharedTransitionScope.ExpandedTabs(
     } else if (ambientPuckColor.isSpecified && !ambientPuckColor.isHueless()) {
         ambientPuckColor.asPuckTint(themeDark)
     } else {
-        com.convx.music.ui.theme.GlassTintTokens.neutralTintColor(themeDark)
+        com.hdemirbassmusic.music.ui.theme.GlassTintTokens.neutralTintColor(themeDark)
     }
     // Spec Q3/Q4: select pill .80 dark / .67 light at rest; hero keeps .80/.70.
     val puckRestAlpha = if (!glassConfig.puckColor.isSpecified) {

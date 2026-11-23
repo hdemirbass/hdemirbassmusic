@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.ambient
+package com.hdemirbassmusic.music.ui.screens.ambient
 
 import androidx.annotation.StringRes
 import androidx.compose.animation.core.LinearEasing
@@ -53,10 +53,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
-import com.convx.music.constants.AmbientCanvasAnchorSide
-import com.convx.music.constants.AmbientCanvasFitMode
-import com.convx.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AmbientCanvasAnchorSide
+import com.hdemirbassmusic.music.constants.AmbientCanvasFitMode
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
 import kotlin.math.roundToInt
 
 /**

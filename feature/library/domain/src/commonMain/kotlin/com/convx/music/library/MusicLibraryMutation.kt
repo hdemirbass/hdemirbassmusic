@@ -1,4 +1,4 @@
-package com.convx.music.library
+package com.hdemirbassmusic.music.library
 
 enum class MusicLibraryMutationError {
     UNAUTHORIZED,

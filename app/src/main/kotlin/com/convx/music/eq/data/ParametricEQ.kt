@@ -1,7 +1,7 @@
-package com.convx.music.eq.data
+package com.hdemirbassmusic.music.eq.data
 
-import com.convx.music.playback.EqualizerBand
-import com.convx.music.playback.EqualizerProfile
+import com.hdemirbassmusic.music.playback.EqualizerBand
+import com.hdemirbassmusic.music.playback.EqualizerProfile
 
 typealias ParametricEQBand = EqualizerBand
 typealias ParametricEQ = EqualizerProfile

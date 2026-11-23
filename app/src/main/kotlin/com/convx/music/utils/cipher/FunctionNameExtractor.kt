@@ -1,9 +1,9 @@
-package com.convx.music.utils.cipher
+package com.hdemirbassmusic.music.utils.cipher
 
 import timber.log.Timber
 
 object FunctionNameExtractor {
-    private const val TAG = "convx_CipherFnExtract"
+    private const val TAG = "hdemirbassmusic_CipherFnExtract"
 
     // Modern 2025+ signature deobfuscation function patterns
     // The sig function is called as: FUNC(NUMBER, decodeURIComponent(encryptedSig))

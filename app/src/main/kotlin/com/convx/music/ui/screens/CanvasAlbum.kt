@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -13,12 +13,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import com.convx.music.applecanvas.AppleMusicCanvasProvider
-import com.convx.music.canvas.CanvasArtwork
-import com.convx.music.canvas.TidalCanvasProvider
-import com.convx.music.ui.player.CanvasArtworkPlaybackCache
-import com.convx.music.utils.SpotifyCanvasLookup
-import com.convx.music.convxcanvas.ConvxCanvasProvider
+import com.hdemirbassmusic.music.applecanvas.AppleMusicCanvasProvider
+import com.hdemirbassmusic.music.canvas.CanvasArtwork
+import com.hdemirbassmusic.music.canvas.TidalCanvasProvider
+import com.hdemirbassmusic.music.ui.player.CanvasArtworkPlaybackCache
+import com.hdemirbassmusic.music.utils.SpotifyCanvasLookup
+import com.hdemirbassmusic.music.hdemirbassmusiccanvas.hdemirbassmusicCanvasProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.Locale
@@ -35,7 +35,7 @@ class AlbumCanvasState(
 
 /**
  * Album hero canvas, same priority order and dead-link fallback as the full
- * player background (see Player.kt): Echo/Convx are song-keyed so they're
+ * player background (see Player.kt): Echo/hdemirbassmusic are song-keyed so they're
  * queried with [firstSongTitle] and validated by artist only (they don't
  * report an album name); Apple/Tidal are queried by album and validated
  * strictly on both artist and album.
@@ -71,7 +71,7 @@ fun rememberAlbumCanvas(
             val spotify = firstSongTitle?.takeIf { it.isNotBlank() }
                 ?.let { SpotifyCanvasLookup.getBySongArtist(context, it, artistName) }
 
-            val convx = ConvxCanvasProvider.getBySongArtist(songQuery, artistName)
+            val hdemirbassmusic = hdemirbassmusicCanvasProvider.getBySongArtist(songQuery, artistName)
                 ?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
                 ?.takeIf { artistOnlyMatches(it.artist, artistName) }
 
@@ -88,7 +88,7 @@ fun rememberAlbumCanvas(
             )?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
                 ?.takeIf { artistAndAlbumMatch(it, albumTitle, artistName) }
 
-            listOfNotNull(spotify, apple, convx, tidal)
+            listOfNotNull(spotify, apple, hdemirbassmusic, tidal)
         }
 
         candidates = fetched

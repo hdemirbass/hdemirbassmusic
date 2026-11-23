@@ -1,6 +1,6 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
-import com.convx.music.lyrics.bitchord.LyricLine
+import com.hdemirbassmusic.music.lyrics.bitchord.LyricLine
 
 data class LyricsQuery(val id: String, val title: String, val artist: String, val durationMs: Long, val album: String? = null)
 

@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -9,10 +9,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.convx.music.models.MediaMetadata
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.playback.VideoStreamLookup
-import com.convx.music.utils.YTPlayerUtils
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.VideoStreamLookup
+import com.hdemirbassmusic.music.utils.YTPlayerUtils
 
 /** The song/video choice for the classic cover, sharing V2's selection so both skins agree. */
 @Stable

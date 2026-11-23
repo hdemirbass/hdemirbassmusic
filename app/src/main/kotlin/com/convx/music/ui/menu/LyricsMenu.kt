@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.menuBottomInset
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.menuBottomInset
 import android.app.SearchManager
 import android.content.Intent
 import android.content.res.Configuration
@@ -31,18 +31,18 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.CircularWavyProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.CircularWavyProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -64,32 +64,32 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
-import com.convx.music.LocalDatabase
-import com.convx.music.R
-import com.convx.music.db.entities.LyricsEntity
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.models.MediaMetadata
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.ListDialog
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
-import com.convx.music.ui.component.NewAction
-import com.convx.music.ui.component.NewActionGrid
-import com.convx.music.ui.component.LyricsProviderSelector
-import com.convx.music.ui.component.LyricsProviderMenu
-import com.convx.music.ui.component.TextFieldDialog
-import com.convx.music.viewmodels.LyricsMenuViewModel
-import com.convx.music.constants.OpenRouterApiKey
-import com.convx.music.constants.DeeplApiKey
-import com.convx.music.constants.AiProviderKey
-import com.convx.music.constants.TranslateLanguageKey
-import com.convx.music.constants.TranslateModeKey
-import com.convx.music.constants.VocalSuppressionKey
-import com.convx.music.constants.OpenRouterBaseUrlKey
-import com.convx.music.constants.OpenRouterModelKey
-import com.convx.music.constants.DeeplFormalityKey
-import com.convx.music.lyrics.LyricsTranslationHelper
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.ListDialog
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.ui.component.NewAction
+import com.hdemirbassmusic.music.ui.component.NewActionGrid
+import com.hdemirbassmusic.music.ui.component.LyricsProviderSelector
+import com.hdemirbassmusic.music.ui.component.LyricsProviderMenu
+import com.hdemirbassmusic.music.ui.component.TextFieldDialog
+import com.hdemirbassmusic.music.viewmodels.LyricsMenuViewModel
+import com.hdemirbassmusic.music.constants.OpenRouterApiKey
+import com.hdemirbassmusic.music.constants.DeeplApiKey
+import com.hdemirbassmusic.music.constants.AiProviderKey
+import com.hdemirbassmusic.music.constants.TranslateLanguageKey
+import com.hdemirbassmusic.music.constants.TranslateModeKey
+import com.hdemirbassmusic.music.constants.VocalSuppressionKey
+import com.hdemirbassmusic.music.constants.OpenRouterBaseUrlKey
+import com.hdemirbassmusic.music.constants.OpenRouterModelKey
+import com.hdemirbassmusic.music.constants.DeeplFormalityKey
+import com.hdemirbassmusic.music.lyrics.LyricsTranslationHelper
+import com.hdemirbassmusic.music.utils.rememberPreference
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -107,11 +107,11 @@ fun LyricsMenu(
     
     val openRouterApiKey by rememberPreference(OpenRouterApiKey, "")
     val deeplApiKey by rememberPreference(DeeplApiKey, "")
-    val aiProvider by rememberPreference(AiProviderKey, com.convx.music.ai.AiDefaults.PROVIDER)
+    val aiProvider by rememberPreference(AiProviderKey, com.hdemirbassmusic.music.ai.AiDefaults.PROVIDER)
     val translateLanguage by rememberPreference(TranslateLanguageKey, "en")
     val translateMode by rememberPreference(TranslateModeKey, "Literal")
-    val openRouterBaseUrl by rememberPreference(OpenRouterBaseUrlKey, com.convx.music.ai.AiDefaults.BASE_URL)
-    val openRouterModel by rememberPreference(OpenRouterModelKey, com.convx.music.ai.AiDefaults.MODEL)
+    val openRouterBaseUrl by rememberPreference(OpenRouterBaseUrlKey, com.hdemirbassmusic.music.ai.AiDefaults.BASE_URL)
+    val openRouterModel by rememberPreference(OpenRouterModelKey, com.hdemirbassmusic.music.ai.AiDefaults.MODEL)
     val deeplFormality by rememberPreference(DeeplFormalityKey, "default")
 
     val hasApiKey = if (aiProvider == "DeepL") deeplApiKey.isNotBlank() else openRouterApiKey.isNotBlank()

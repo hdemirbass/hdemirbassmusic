@@ -1,6 +1,6 @@
-package com.convx.storage
+package com.hdemirbassmusic.storage
 
-import com.convx.storage.domain.*
+import com.hdemirbassmusic.storage.domain.*
 import java.net.URI
 import java.io.IOException
 import kotlin.test.*
@@ -10,7 +10,7 @@ class AndroidNetworkCompatibilityTest {
         val paths = listOf("Artist/Track #1 50% + ?.mp3", "Album/a:b@c[1];=x&y.flac",
             "A/e\u0301/\u97f3\u697d.flac", "Symbols/" + (1..126).map(Int::toChar).filter { it != '/' && it != '\\' }.joinToString(""))
         for (path in paths) {
-            assertEquals(URI("convx-network", "NAS_source", "/" + RemotePath.normalize(path), null, null).toASCIIString(),
+            assertEquals(URI("hdemirbassmusic-network", "NAS_source", "/" + RemotePath.normalize(path), null, null).toASCIIString(),
                 NetworkMediaUri.create("NAS_source", path), path)
         }
     }

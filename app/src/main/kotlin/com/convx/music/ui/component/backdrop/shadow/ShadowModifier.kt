@@ -7,7 +7,7 @@
  * scale for cheaper effect rendering. KMP expect/actual declarations were
  * merged into this single Android source set. Package renamed accordingly.
  */
-package com.convx.music.ui.component.backdrop.shadow
+package com.hdemirbassmusic.music.ui.component.backdrop.shadow
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ClipOp
@@ -28,8 +28,8 @@ import androidx.compose.ui.node.requireGraphicsContext
 import androidx.compose.ui.platform.InspectorInfo
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.IntSize
-import com.convx.music.ui.component.backdrop.internal.ShapeProvider
-import com.convx.music.ui.component.backdrop.internal.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.ShapeProvider
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.blur
 import kotlin.math.ceil
 
 internal class ShadowElement(

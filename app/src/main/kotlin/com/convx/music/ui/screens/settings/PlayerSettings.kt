@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -20,31 +20,31 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.BuildConfig
-import com.convx.music.R
-import com.convx.music.constants.AskBeforeReplacingQueueKey
-import com.convx.music.constants.AudioNormalizationKey
-import com.convx.music.constants.AudioQuality
-import com.convx.music.constants.AudioQualityKey
-import com.convx.music.constants.AutoDjMixingEnabledKey
-import com.convx.music.constants.AutoDownloadOnLikeKey
-import com.convx.music.constants.AutoSkipNextOnErrorKey
-import com.convx.music.constants.CrossfadeEnabledKey
-import com.convx.music.constants.EnableGoogleCastKey
-import com.convx.music.constants.KeepScreenOn
-import com.convx.music.constants.PauseOnMute
-import com.convx.music.constants.PersistentQueueKey
-import com.convx.music.constants.RememberShuffleAndRepeatKey
-import com.convx.music.constants.ResumeOnBluetoothConnectKey
-import com.convx.music.constants.SimilarContent
-import com.convx.music.constants.SkipSilenceKey
-import com.convx.music.ui.component.EnumDialog
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.ios.compat.Switch
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.BuildConfig
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AskBeforeReplacingQueueKey
+import com.hdemirbassmusic.music.constants.AudioNormalizationKey
+import com.hdemirbassmusic.music.constants.AudioQuality
+import com.hdemirbassmusic.music.constants.AudioQualityKey
+import com.hdemirbassmusic.music.constants.AutoDjMixingEnabledKey
+import com.hdemirbassmusic.music.constants.AutoDownloadOnLikeKey
+import com.hdemirbassmusic.music.constants.AutoSkipNextOnErrorKey
+import com.hdemirbassmusic.music.constants.CrossfadeEnabledKey
+import com.hdemirbassmusic.music.constants.EnableGoogleCastKey
+import com.hdemirbassmusic.music.constants.KeepScreenOn
+import com.hdemirbassmusic.music.constants.PauseOnMute
+import com.hdemirbassmusic.music.constants.PersistentQueueKey
+import com.hdemirbassmusic.music.constants.RememberShuffleAndRepeatKey
+import com.hdemirbassmusic.music.constants.ResumeOnBluetoothConnectKey
+import com.hdemirbassmusic.music.constants.SimilarContent
+import com.hdemirbassmusic.music.constants.SkipSilenceKey
+import com.hdemirbassmusic.music.ui.component.EnumDialog
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -87,7 +87,7 @@ fun PlayerSettings(
         defaultValue = false
     )
     val (saveDownloadsToMusic, onSaveDownloadsToMusicChange) = rememberPreference(
-        com.convx.music.constants.SaveDownloadsToMusicFolderKey,
+        com.hdemirbassmusic.music.constants.SaveDownloadsToMusicFolderKey,
         defaultValue = true
     )
     val (similarContentEnabled, similarContentEnabledChange) = rememberPreference(
@@ -191,8 +191,8 @@ fun PlayerSettings(
                         ))
                         add(IosSettingsItem(
                             icon = painterResource(R.drawable.convx_equalizer_icon),
-                            title = { Text(stringResource(R.string.convx_equalizer)) },
-                            description = { Text(stringResource(R.string.convx_equalizer_desc)) },
+                            title = { Text(stringResource(R.string.hdemirbassmusic_equalizer)) },
+                            description = { Text(stringResource(R.string.hdemirbassmusic_equalizer_desc)) },
                             onClick = { navController.navigate("settings/equalizer") }
                         ))
                     }

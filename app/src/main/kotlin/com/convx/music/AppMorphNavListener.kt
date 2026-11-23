@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -14,12 +14,12 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
-import com.convx.music.ui.component.prewarmHeroTint
-import com.convx.music.ui.player.prewarmMeshPalette
-import com.convx.music.ui.utils.markMorphDirection
-import com.convx.music.ui.utils.markSharedArtworkSource
-import com.convx.music.ui.utils.isMorphRoute
-import com.convx.music.ui.utils.morphArtworkId
+import com.hdemirbassmusic.music.ui.component.prewarmHeroTint
+import com.hdemirbassmusic.music.ui.player.prewarmMeshPalette
+import com.hdemirbassmusic.music.ui.utils.markMorphDirection
+import com.hdemirbassmusic.music.ui.utils.markSharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.isMorphRoute
+import com.hdemirbassmusic.music.ui.utils.morphArtworkId
 
 /** Sets the shared artwork source and preloads its colors when navigation changes. */
 @OptIn(
@@ -28,7 +28,7 @@ import com.convx.music.ui.utils.morphArtworkId
     ExperimentalFoundationApi::class,
 )
 @Composable
-fun InstallMorphNavListener(navController: NavHostController, artworkState: com.convx.music.ui.utils.NavigationArtworkState) {
+fun InstallMorphNavListener(navController: NavHostController, artworkState: com.hdemirbassmusic.music.ui.utils.NavigationArtworkState) {
     val context = LocalContext.current
     DisposableEffect(navController, artworkState) {
         var previousBackStackSize = -1

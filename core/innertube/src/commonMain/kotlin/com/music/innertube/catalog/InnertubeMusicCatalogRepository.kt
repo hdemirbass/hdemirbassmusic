@@ -1,22 +1,22 @@
 package com.music.innertube.catalog
 
-import com.convx.music.catalog.CatalogAlbumPage
-import com.convx.music.catalog.CatalogArtist
-import com.convx.music.catalog.CatalogArtistPage
-import com.convx.music.catalog.CatalogEntry
-import com.convx.music.catalog.CatalogError
-import com.convx.music.catalog.CatalogHomePage
-import com.convx.music.catalog.CatalogId
-import com.convx.music.catalog.CatalogLibraryCollection
-import com.convx.music.catalog.CatalogLibraryPage
-import com.convx.music.catalog.CatalogPlaylistPage
-import com.convx.music.catalog.CatalogResult
-import com.convx.music.catalog.CatalogSection
-import com.convx.music.catalog.CatalogSearchFilter
-import com.convx.music.catalog.CatalogSearchPage
-import com.convx.music.catalog.CatalogTrackPage
-import com.convx.music.catalog.MusicCatalogRepository
-import com.convx.music.catalog.YOUTUBE_MUSIC_PROVIDER
+import com.hdemirbassmusic.music.catalog.CatalogAlbumPage
+import com.hdemirbassmusic.music.catalog.CatalogArtist
+import com.hdemirbassmusic.music.catalog.CatalogArtistPage
+import com.hdemirbassmusic.music.catalog.CatalogEntry
+import com.hdemirbassmusic.music.catalog.CatalogError
+import com.hdemirbassmusic.music.catalog.CatalogHomePage
+import com.hdemirbassmusic.music.catalog.CatalogId
+import com.hdemirbassmusic.music.catalog.CatalogLibraryCollection
+import com.hdemirbassmusic.music.catalog.CatalogLibraryPage
+import com.hdemirbassmusic.music.catalog.CatalogPlaylistPage
+import com.hdemirbassmusic.music.catalog.CatalogResult
+import com.hdemirbassmusic.music.catalog.CatalogSection
+import com.hdemirbassmusic.music.catalog.CatalogSearchFilter
+import com.hdemirbassmusic.music.catalog.CatalogSearchPage
+import com.hdemirbassmusic.music.catalog.CatalogTrackPage
+import com.hdemirbassmusic.music.catalog.MusicCatalogRepository
+import com.hdemirbassmusic.music.catalog.YOUTUBE_MUSIC_PROVIDER
 import com.music.innertube.InnertubeRepository
 import com.music.innertube.SearchFilter
 import com.music.innertube.models.AlbumItem
@@ -41,7 +41,7 @@ class InnertubeMusicCatalogRepository(
     private val innertube: InnertubeRepository,
 ) : MusicCatalogRepository {
     override suspend fun searchSuggestions(query: String) = innertube.searchSuggestions(query).toCatalogResult {
-        com.convx.music.catalog.CatalogSearchSuggestions(
+        com.hdemirbassmusic.music.catalog.CatalogSearchSuggestions(
             queries = it.queries.distinct(),
             entries = it.recommendedItems.mapNotNull { entry -> entry.toCatalogEntry() },
         )
@@ -299,7 +299,7 @@ private fun YTItem.toCatalogEntry(): CatalogEntry? = when (this) {
         artworkUrls = listOf(thumbnail),
         artists = artists.map(InnertubeArtist::toCatalogArtist),
         album = album?.let {
-            com.convx.music.catalog.CatalogAlbumReference(
+            com.hdemirbassmusic.music.catalog.CatalogAlbumReference(
                 id = CatalogId(YOUTUBE_MUSIC_PROVIDER, it.id),
                 title = it.name,
             )

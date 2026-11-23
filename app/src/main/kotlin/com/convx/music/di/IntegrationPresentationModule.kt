@@ -1,7 +1,7 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.JamViewModel
-import com.convx.music.viewmodels.ListenTogetherViewModel
+import com.hdemirbassmusic.music.viewmodels.JamViewModel
+import com.hdemirbassmusic.music.viewmodels.ListenTogetherViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

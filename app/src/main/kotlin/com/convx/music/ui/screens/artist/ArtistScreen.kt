@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.artist
+package com.hdemirbassmusic.music.ui.screens.artist
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import android.content.Context
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -19,27 +19,27 @@ import androidx.compose.foundation.combinedClickable
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.ui.unit.Dp
-import com.convx.music.ui.theme.AppleColors
-import com.convx.music.ui.component.GlassPillRow
-import com.convx.music.ui.component.StretchPillIcon
-import com.convx.music.ui.component.pillGlassBackground
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.resolvedTextColor
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.onlinePlaylistRoute
-import com.convx.music.ui.utils.bleedStart
-import com.convx.music.ui.utils.plusStart
+import com.hdemirbassmusic.music.ui.theme.AppleColors
+import com.hdemirbassmusic.music.ui.component.GlassPillRow
+import com.hdemirbassmusic.music.ui.component.StretchPillIcon
+import com.hdemirbassmusic.music.ui.component.pillGlassBackground
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.resolvedTextColor
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.onlinePlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.bleedStart
+import com.hdemirbassmusic.music.ui.utils.plusStart
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.ui.graphics.luminance
-import com.convx.music.ui.component.BlurredBackdropImage
-import com.convx.music.ui.component.bakeRamp
+import com.hdemirbassmusic.music.ui.component.BlurredBackdropImage
+import com.hdemirbassmusic.music.ui.component.bakeRamp
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -66,17 +66,17 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.ripple
-import com.convx.music.ui.ios.compat.SnackbarHost
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.ripple
+import com.hdemirbassmusic.music.ui.ios.compat.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
@@ -132,88 +132,88 @@ import com.composables.sfsymbols.monochrome.SFStar
 import com.composables.sfsymbols.monochrome.SFStarFill
 import com.composables.sfsymbols.monochrome.SFInfo
 import com.composables.sfsymbols.monochrome.SFChevronRight
-import com.convx.music.LocalTabView
+import com.hdemirbassmusic.music.LocalTabView
 import androidx.compose.material.icons.Icons
-import com.convx.music.ui.component.ArtistHeroImage
-import com.convx.music.ui.component.TopFadeBlur
+import com.hdemirbassmusic.music.ui.component.ArtistHeroImage
+import com.hdemirbassmusic.music.ui.component.TopFadeBlur
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
 import coil3.compose.AsyncImage
-import com.convx.music.ui.utils.additiveChrome
-import com.convx.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.AppBarHeight
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.db.entities.ArtistEntity
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.ui.component.AnimatedPlayPauseIcon
-import com.convx.music.ui.component.AlbumGridItem
-import com.convx.music.ui.component.ExpandableText
-import com.convx.music.ui.component.GlassCircleButton
-import com.convx.music.ui.component.HideOnScrollFAB
-import com.convx.music.ui.component.LinkSegment
-import com.convx.music.ui.component.LocalAppBackdrop
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.SongListItem
-import com.convx.music.ui.component.YouTubeGridItem
-import com.convx.music.ui.component.YouTubeListItem
-import com.convx.music.ui.theme.HeroTintedContent
-import com.convx.music.ui.component.rememberHeroTint
-import com.convx.music.ui.component.shimmer.ButtonPlaceholder
-import com.convx.music.ui.component.shimmer.ListItemPlaceHolder
-import com.convx.music.ui.component.shimmer.ShimmerHost
-import com.convx.music.ui.component.shimmer.TextPlaceholder
-import com.convx.music.ui.menu.AlbumMenu
-import com.convx.music.ui.menu.SongMenu
-import com.convx.music.ui.menu.YouTubeAlbumMenu
-import com.convx.music.ui.menu.YouTubeArtistMenu
-import com.convx.music.ui.menu.YouTubePlaylistMenu
-import com.convx.music.ui.menu.YouTubeSongMenu
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AppBarHeight
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.db.entities.ArtistEntity
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.ui.component.AnimatedPlayPauseIcon
+import com.hdemirbassmusic.music.ui.component.AlbumGridItem
+import com.hdemirbassmusic.music.ui.component.ExpandableText
+import com.hdemirbassmusic.music.ui.component.GlassCircleButton
+import com.hdemirbassmusic.music.ui.component.HideOnScrollFAB
+import com.hdemirbassmusic.music.ui.component.LinkSegment
+import com.hdemirbassmusic.music.ui.component.LocalAppBackdrop
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.SongListItem
+import com.hdemirbassmusic.music.ui.component.YouTubeGridItem
+import com.hdemirbassmusic.music.ui.component.YouTubeListItem
+import com.hdemirbassmusic.music.ui.theme.HeroTintedContent
+import com.hdemirbassmusic.music.ui.component.rememberHeroTint
+import com.hdemirbassmusic.music.ui.component.shimmer.ButtonPlaceholder
+import com.hdemirbassmusic.music.ui.component.shimmer.ListItemPlaceHolder
+import com.hdemirbassmusic.music.ui.component.shimmer.ShimmerHost
+import com.hdemirbassmusic.music.ui.component.shimmer.TextPlaceholder
+import com.hdemirbassmusic.music.ui.menu.AlbumMenu
+import com.hdemirbassmusic.music.ui.menu.SongMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeAlbumMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeArtistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubePlaylistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeSongMenu
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosColors
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.LocalAccentTextColor
-import com.convx.music.ui.theme.LocalMetadataColor
-import com.convx.music.ui.theme.rememberBrandFontFamily
-import com.convx.music.ui.theme.rememberCustomArtistFontFamily
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.ui.utils.rememberHeroZoom
-import com.convx.music.ui.utils.heroPullZoom
-import com.convx.music.ui.utils.listOverscroll
-import com.convx.music.ui.utils.fadingEdge
-import com.convx.music.ui.utils.resize
-import com.convx.music.utils.listItemShape
-import com.convx.music.constants.PureBlackHeroBackgroundKey
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.ArtistViewModel
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosColors
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.LocalAccentTextColor
+import com.hdemirbassmusic.music.ui.theme.LocalMetadataColor
+import com.hdemirbassmusic.music.ui.theme.rememberBrandFontFamily
+import com.hdemirbassmusic.music.ui.theme.rememberCustomArtistFontFamily
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.ui.utils.rememberHeroZoom
+import com.hdemirbassmusic.music.ui.utils.heroPullZoom
+import com.hdemirbassmusic.music.ui.utils.listOverscroll
+import com.hdemirbassmusic.music.ui.utils.fadingEdge
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.constants.PureBlackHeroBackgroundKey
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.ArtistViewModel
 import com.valentinilk.shimmer.shimmer
-import com.convx.music.artistvideo.ArtistVideo
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.ShowArtistBackgroundVideoKey
+import com.hdemirbassmusic.music.artistvideo.ArtistVideo
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.ShowArtistBackgroundVideoKey
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.convx.music.ui.component.floatingtabbar.gooey
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.gooey
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 /** Apple Music artist page type: white, with the secondary tiers as plain alpha steps. */
@@ -301,12 +301,12 @@ fun ArtistScreen(
 
     // Seed the hero with the fastest available artwork while page data loads.
     val artistThumbnail = artistPage?.artist?.thumbnail ?: libraryArtist?.artist?.thumbnailUrl
-    val instantArtistThumb = com.convx.music.ui.component.detailSeed(
+    val instantArtistThumb = com.hdemirbassmusic.music.ui.component.detailSeed(
         viewModel.thumbArg,
-        com.convx.music.ui.utils.pendingSharedArtworkThumbFor(viewModel.artistId),
+        com.hdemirbassmusic.music.ui.utils.pendingSharedArtworkThumbFor(viewModel.artistId),
         artistThumbnail,
     )
-    val artistChrome = com.convx.music.ui.component.rememberDetailChromeEntrance(iconCount = 2)
+    val artistChrome = com.hdemirbassmusic.music.ui.component.rememberDetailChromeEntrance(iconCount = 2)
 
     // Avoid attaching a backdrop inside the root NavHost layer; that would capture itself.
     // This unattached backdrop keeps hero chrome translucent without live refraction.
@@ -316,18 +316,18 @@ fun ArtistScreen(
     val heroZoom = rememberHeroZoom()
 
     // Prefer Apple's artwork color, then estimate it from the displayed image.
-    val appleArtistState = com.convx.music.utils.rememberAppleArtist(
+    val appleArtistState = com.hdemirbassmusic.music.utils.rememberAppleArtist(
         artistPage?.artist?.title ?: libraryArtist?.artist?.name,
     )
     val appleLoading = appleArtistState.loading
     val appleArtist = appleArtistState.artist
-    val estimatedArtworkBg = com.convx.music.utils.rememberEstimatedArtworkBg(
+    val estimatedArtworkBg = com.hdemirbassmusic.music.utils.rememberEstimatedArtworkBg(
         (appleArtist?.hero?.sized(256) ?: instantArtistThumb ?: artistThumbnail)
             .takeIf { !appleLoading && appleArtist?.hero?.bgColor == null },
     )
     // Keep the video player outside the lazy header so scrolling does not recreate it.
     val motionUrl = appleArtist?.motionVideoUrl?.takeIf { showArtistBackgroundVideo }
-    val motionPlayer = motionUrl?.let { com.convx.music.artistvideo.rememberArtistVideoPlayer(it) }
+    val motionPlayer = motionUrl?.let { com.hdemirbassmusic.music.artistvideo.rememberArtistVideoPlayer(it) }
     if (motionPlayer != null) {
         val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
         val resumed by lifecycleOwner.lifecycle.currentStateFlow.collectAsStateWithLifecycle()
@@ -368,7 +368,7 @@ fun ArtistScreen(
     val wideHero = inTabView && (appleLoading || appleArtist?.hero != null)
     val sideBySide = wideHero && wideArtistHeader
     val heroSide = when {
-        wideHero -> fullBleedHeroHeight / com.convx.music.ui.component.ArtistHeroExtent
+        wideHero -> fullBleedHeroHeight / com.hdemirbassmusic.music.ui.component.ArtistHeroExtent
         wideArtistHeader -> (maxWidth * 0.42f).coerceAtMost(360.dp)
         else -> maxWidth
     }
@@ -597,7 +597,7 @@ fun ArtistScreen(
                     if (tabView) {
                         val topCover = with(density) { (-headerOffset).toDp() }
                         Box(modifier = Modifier.fillMaxWidth().height(fullBleedHeroHeight)) {
-                            com.convx.music.ui.component.ArtistWideHero(
+                            com.hdemirbassmusic.music.ui.component.ArtistWideHero(
                                 artworkUrl = appleArtist?.hero?.sized(1600) ?: thumbnail ?: instantArtistThumb,
                                 pageColor = tint,
                                 modifier = Modifier
@@ -1069,9 +1069,9 @@ fun ArtistScreen(
                         } else {
                             item(key = "section_list_${section.title}") {
                                 val isVideoShelf = section.items.firstOrNull() is SongItem
-                                val itemPrefs = com.convx.music.ui.component.LocalItemPrefs.current
+                                val itemPrefs = com.hdemirbassmusic.music.ui.component.LocalItemPrefs.current
                                 CompositionLocalProvider(
-                                    com.convx.music.ui.component.LocalItemPrefs provides itemPrefs.copy(
+                                    com.hdemirbassmusic.music.ui.component.LocalItemPrefs provides itemPrefs.copy(
                                         gridCardHeightOverrideDp = if (isVideoShelf) 87 else 154,
                                     ),
                                 ) {
@@ -1249,7 +1249,7 @@ fun ArtistScreen(
                 onClick = navController::navigateUp,
                 onLongClick = navController::backToMain,
                 modifier = with(artistChrome) {
-                    Modifier.backEnter().then(com.convx.music.ui.component.backExitModifier())
+                    Modifier.backEnter().then(com.hdemirbassmusic.music.ui.component.backExitModifier())
                 },
             ) {
                 SymbolIcon(symbol = sf("chevron.left"), contentDescription = null)
@@ -1312,7 +1312,7 @@ private val ArtistWordmarkMaxWidth = 286.dp
 /** Gap between the wordmark box and the hero foot. */
 private val ArtistWordmarkFootInset = 4.dp
 
-private val ArtistCapsuleShape = com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(percent = 50)
+private val ArtistCapsuleShape = com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(percent = 50)
 
 private fun com.music.innertube.pages.ArtistSection.isFeaturedLatest(): Boolean =
     title.contains("Latest", ignoreCase = true) && items.firstOrNull() is AlbumItem
@@ -1329,7 +1329,7 @@ private fun List<com.music.innertube.pages.ArtistSection>.featuredRelease(): Pai
 /** Apple Music logo first, then a signature image, then the artist name. */
 @Composable
 internal fun ArtistWordmark(
-    logo: com.convx.music.canvas.AppleArtwork?,
+    logo: com.hdemirbassmusic.music.canvas.AppleArtwork?,
     name: String,
     signatureUrl: String? = null,
     bundledLogo: java.io.File? = null,
@@ -1339,7 +1339,7 @@ internal fun ArtistWordmark(
     var signatureFailed by remember(signatureUrl) { mutableStateOf(false) }
     if (logo != null && !logoFailed) {
         AsyncImage(
-            model = logo.sized(com.convx.music.utils.AppleArt.logoWidthPx(LocalContext.current), png = true),
+            model = logo.sized(com.hdemirbassmusic.music.utils.AppleArt.logoWidthPx(LocalContext.current), png = true),
             contentDescription = name,
             contentScale = ContentScale.Fit,
             alignment = Alignment.BottomCenter,
@@ -1455,8 +1455,8 @@ private fun FeaturedReleaseCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val shape = com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(22.dp)
-    com.convx.music.ui.utils.ArtworkSourceHost(modifier) { sourceModifier ->
+    val shape = com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(22.dp)
+    com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost(modifier) { sourceModifier ->
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = sourceModifier
@@ -1470,8 +1470,8 @@ private fun FeaturedReleaseCard(
     ) {
         AsyncImage(
             model = album.thumbnail.resize(300, 300),
-            onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(
-                com.convx.music.ui.utils.rememberArtworkSourceOwner(), album.thumbnail,
+            onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(
+                com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner(), album.thumbnail,
             ),
             contentDescription = null,
             contentScale = ContentScale.Crop,

@@ -2,7 +2,7 @@
  * Ported from Orchard (https://github.com/SFG5453/Orchard).
  *
  * Copyright (C) 2026 SFG545 (original Orchard implementation)
- * Copyright (C) 2026 Convx contributors (adapted from an open-source base)
+ * Copyright (C) 2026 hdemirbassmusic contributors (adapted from an open-source base)
  *
  * Orchard's original source is licensed under the GNU Affero General Public
  * License, version 3 or later. Per AGPLv3 section 13, this file is combined
@@ -19,7 +19,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import android.util.Log
 import org.json.JSONArray
@@ -29,7 +29,7 @@ import org.json.JSONObject
 object TrackFeatures {
 
     /** True when the native library loaded. Analysis is optional, so this is a fact, not a fault. */
-    val available: Boolean = runCatching { System.loadLibrary("convx_analysis") }.isSuccess
+    val available: Boolean = runCatching { System.loadLibrary("hdemirbassmusic_analysis") }.isSuccess
 
     /** Sample rate used by the native analyzer. */
     val sampleRate: Double by lazy { if (available) nativeSampleRate() else 11_025.0 }
@@ -147,7 +147,7 @@ object TrackFeatures {
         }
     }
 
-    private const val TAG = "ConvxTrackFeatures"
+    private const val TAG = "hdemirbassmusicTrackFeatures"
 
     @JvmStatic private external fun nativeAnalyze(
         samples: FloatArray,

@@ -1,10 +1,10 @@
 @file:OptIn(ExperimentalSharedTransitionApi::class)
 
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import android.net.Uri
 import android.os.Bundle
@@ -30,7 +30,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import coil3.Image
 import coil3.toBitmap
 import coil3.compose.AsyncImagePainter
-import com.convx.artwork.ArtworkSourceRegistry
+import com.hdemirbassmusic.artwork.ArtworkSourceRegistry
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.onPlaced
 import androidx.navigation.NavBackStackEntry

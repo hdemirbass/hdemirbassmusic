@@ -1,6 +1,6 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
-import com.convx.music.canvas.ApplePlaylistTrack
+import com.hdemirbassmusic.music.canvas.ApplePlaylistTrack
 import com.music.innertube.models.Artist
 import com.music.innertube.models.SongItem
 import org.junit.Assert.assertSame

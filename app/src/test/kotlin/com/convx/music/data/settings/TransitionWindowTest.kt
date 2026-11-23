@@ -1,6 +1,6 @@
-package com.convx.music.data.settings
+package com.hdemirbassmusic.music.data.settings
 
-import com.convx.music.playback.smart.TransitionPlan
+import com.hdemirbassmusic.music.playback.smart.TransitionPlan
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

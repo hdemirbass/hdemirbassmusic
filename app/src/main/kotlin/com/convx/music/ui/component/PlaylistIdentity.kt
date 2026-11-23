@@ -1,7 +1,7 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.utils.sharedArtworkTarget
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkTarget
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -27,12 +27,12 @@ import com.composables.sfsymbols.monochrome.SFMusicNoteList
 import com.composables.sfsymbols.monochrome.SFPlayFill
 import com.composables.sfsymbols.monochrome.SFPauseFill
 import com.composables.sfsymbols.monochrome.SFShuffle
-import com.convx.music.R
-import com.convx.music.ui.ios.component.IosGlyph
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.screens.library.apple.SfStyle
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.ios.component.IosGlyph
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle
 
 @Composable
 fun PlaylistIdentity(
@@ -47,14 +47,14 @@ fun PlaylistIdentity(
     val coverSize = minOf(maxWidth * .68f, 300.dp)
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         Box(
-            Modifier.sharedArtworkTarget().size(coverSize).clip(com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(12.dp))
+            Modifier.sharedArtworkTarget().size(coverSize).clip(com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(12.dp))
                 .background(colors.secondarySystemGroupedBackground),
             contentAlignment = Alignment.Center,
         ) {
             if (artwork.isNullOrBlank() || artworkFailed) {
                 IosGlyph(sf("SFMusicNoteList"), IosTheme.tint, 72.dp)
             } else {
-                val reused = com.convx.music.ui.utils.SharedArtworkSeedImage(Modifier.fillMaxSize(), ContentScale.Crop)
+                val reused = com.hdemirbassmusic.music.ui.utils.SharedArtworkSeedImage(Modifier.fillMaxSize(), ContentScale.Crop)
                 if (!reused) {
                     AsyncImage(onError = { if (!reused) artworkFailed = true }, model = artwork, contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize())
                 }
@@ -88,7 +88,7 @@ fun PlaylistPlaybackActions(
         for (shuffle in listOf(false, true)) {
             Row(
                 Modifier.weight(1f).height(48.dp)
-                    .clip(com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(12.dp))
+                    .clip(com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(12.dp))
                     .background(fill)
                     .clickable(enabled = enabled, role = Role.Button, onClick = if (shuffle) onShuffle else onPlay),
                 horizontalArrangement = Arrangement.Center,

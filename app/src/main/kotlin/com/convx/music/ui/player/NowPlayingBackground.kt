@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.ui.utils.resize
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

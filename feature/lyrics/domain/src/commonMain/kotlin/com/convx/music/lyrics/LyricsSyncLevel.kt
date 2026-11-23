@@ -1,4 +1,4 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 /** Capabilities come from real timestamps, never from a provider's advertised name. */
 enum class LyricsSyncLevel(val label: String) {
@@ -21,7 +21,7 @@ enum class LyricsSyncLevel(val label: String) {
                         (word.groupValues[4].isBlank() || word.time(4) > word.time())
                 }.map { it.time() }.toList()
                 if (words.size > 1 && words.distinct().size > 1 && words.zipWithNext().all { it.first <= it.second }) return WORD
-                // Older Convx providers store word runs on a separate <word:start:end> row.
+                // Older hdemirbassmusic providers store word runs on a separate <word:start:end> row.
                 if (line.startsWith('<') && line.endsWith('>') && !line.contains("</")) {
                     val starts = line.removeSurrounding("<", ">").split('|').mapNotNull { run ->
                         val pieces = run.split(':')

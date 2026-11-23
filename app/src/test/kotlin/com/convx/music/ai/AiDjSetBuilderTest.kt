@@ -1,4 +1,4 @@
-package com.convx.music.ai
+package com.hdemirbassmusic.music.ai
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

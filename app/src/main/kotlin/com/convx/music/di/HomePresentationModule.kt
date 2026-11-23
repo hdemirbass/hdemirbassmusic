@@ -1,12 +1,12 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.NewReleaseViewModel
-import com.convx.music.viewmodels.HomeViewModel
-import com.convx.music.history.ListenHistoryRepository
-import com.convx.music.history.ListenHistorySettingsRepository
-import com.convx.music.utils.SyncUtils
-import com.convx.music.ui.screens.wrapped.WrappedAudioService
-import com.convx.music.ui.screens.wrapped.WrappedManager
+import com.hdemirbassmusic.music.viewmodels.NewReleaseViewModel
+import com.hdemirbassmusic.music.viewmodels.HomeViewModel
+import com.hdemirbassmusic.music.history.ListenHistoryRepository
+import com.hdemirbassmusic.music.history.ListenHistorySettingsRepository
+import com.hdemirbassmusic.music.utils.SyncUtils
+import com.hdemirbassmusic.music.ui.screens.wrapped.WrappedAudioService
+import com.hdemirbassmusic.music.ui.screens.wrapped.WrappedManager
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module

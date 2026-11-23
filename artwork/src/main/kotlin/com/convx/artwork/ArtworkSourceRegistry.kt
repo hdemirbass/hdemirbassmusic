@@ -1,4 +1,4 @@
-package com.convx.artwork
+package com.hdemirbassmusic.artwork
 
 class ArtworkSourceRegistry<T> {
     data class Source<T>(val owner: Any, val id: String, val url: String?, val image: T?, val title: String?)

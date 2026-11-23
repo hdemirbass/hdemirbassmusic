@@ -1,4 +1,4 @@
-package com.convx.music.library
+package com.hdemirbassmusic.music.library
 
 /** Persistence boundary for remote playlist deletions awaiting confirmation from sync. */
 interface PendingPlaylistDeletionRepository {

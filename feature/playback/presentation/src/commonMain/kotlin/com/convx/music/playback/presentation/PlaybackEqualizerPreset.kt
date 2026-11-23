@@ -1,7 +1,7 @@
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
-import com.convx.music.playback.EqualizerBand
-import com.convx.music.playback.EqualizerProfile
+import com.hdemirbassmusic.music.playback.EqualizerBand
+import com.hdemirbassmusic.music.playback.EqualizerProfile
 
 enum class PlaybackEqualizerPreset(
     val title: String,

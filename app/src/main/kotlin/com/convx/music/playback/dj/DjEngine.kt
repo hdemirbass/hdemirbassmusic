@@ -1,27 +1,27 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.dj
+package com.hdemirbassmusic.music.playback.dj
 
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.SongAnalysisEntity
-import com.convx.music.playback.audio.DelayAudioProcessor
-import com.convx.music.playback.audio.DjFilterAudioProcessor
-import com.convx.music.playback.audio.DjAmbienceAudioProcessor
-import com.convx.music.playback.audio.ReverbType
-import com.convx.music.playback.audio.DelayType
-import com.convx.music.playback.audio.DjTailAudioProcessor
-import com.convx.music.playback.audio.DjMixPlan
-import com.convx.music.playback.audio.DjMixPlanner
-import com.convx.music.playback.audio.DjMixTier
-import com.convx.music.playback.audio.TrackAnalyzerAudioProcessor
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.SongAnalysisEntity
+import com.hdemirbassmusic.music.playback.audio.DelayAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.DjFilterAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.DjAmbienceAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.ReverbType
+import com.hdemirbassmusic.music.playback.audio.DelayType
+import com.hdemirbassmusic.music.playback.audio.DjTailAudioProcessor
+import com.hdemirbassmusic.music.playback.audio.DjMixPlan
+import com.hdemirbassmusic.music.playback.audio.DjMixPlanner
+import com.hdemirbassmusic.music.playback.audio.DjMixTier
+import com.hdemirbassmusic.music.playback.audio.TrackAnalyzerAudioProcessor
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlinx.coroutines.CoroutineScope

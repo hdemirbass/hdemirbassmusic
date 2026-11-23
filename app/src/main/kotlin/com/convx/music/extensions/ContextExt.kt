@@ -1,18 +1,18 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.extensions
+package com.hdemirbassmusic.music.extensions
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import com.music.innertube.utils.parseCookieString
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.constants.YtmSyncKey
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.constants.YtmSyncKey
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
 
 suspend fun Context.isSyncEnabled(): Boolean {
     return dataStore.get(YtmSyncKey, true) && isUserLoggedIn()

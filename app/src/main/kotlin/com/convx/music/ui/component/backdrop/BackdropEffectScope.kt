@@ -7,7 +7,7 @@
  * scale for cheaper effect rendering. KMP expect/actual declarations were
  * merged into this single Android source set. Package renamed accordingly.
  */
-package com.convx.music.ui.component.backdrop
+package com.hdemirbassmusic.music.ui.component.backdrop
 
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.ColorFilter

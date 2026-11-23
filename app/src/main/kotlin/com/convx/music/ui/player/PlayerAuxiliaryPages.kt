@@ -1,6 +1,6 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.ui.utils.resize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.draw.clip
@@ -37,11 +37,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.navigation.NavController
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.ui.component.BottomSheetState
-import com.convx.music.ui.player.customize.DiyOrientation
-import com.convx.music.ui.utils.Motion
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.ui.component.BottomSheetState
+import com.hdemirbassmusic.music.ui.player.customize.DiyOrientation
+import com.hdemirbassmusic.music.ui.utils.Motion
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /** Keeps the outgoing pane alive while returning to the classic cover. */
 @Stable
@@ -225,18 +225,18 @@ internal fun ClassicPageHeader(
         }
         androidx.compose.foundation.layout.Spacer(Modifier.size(12.dp))
         Column(Modifier.weight(1f)) {
-            com.convx.music.ui.ios.compat.Text(
+            com.hdemirbassmusic.music.ui.ios.compat.Text(
                 text = title,
-                style = com.convx.music.ui.ios.compat.AppTheme.typography.titleLarge,
+                style = com.hdemirbassmusic.music.ui.ios.compat.AppTheme.typography.titleLarge,
                 fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
                 color = textColor,
                 maxLines = 1,
                 overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
                 modifier = Modifier.auxiliaryBoundsMorph("title"),
             )
-            com.convx.music.ui.ios.compat.Text(
+            com.hdemirbassmusic.music.ui.ios.compat.Text(
                 text = artist,
-                style = com.convx.music.ui.ios.compat.AppTheme.typography.titleMedium,
+                style = com.hdemirbassmusic.music.ui.ios.compat.AppTheme.typography.titleMedium,
                 color = textColor,
                 maxLines = 1,
                 overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,

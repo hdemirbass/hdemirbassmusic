@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import androidx.compose.runtime.collectAsState
-import com.convx.music.ui.player.agreesWith
+import com.hdemirbassmusic.music.ui.player.agreesWith
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.text.format.Formatter
@@ -29,9 +29,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -55,16 +55,16 @@ import com.music.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import com.music.innertube.models.MediaInfo
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.utils.LocalAudioProperties
-import com.convx.music.utils.readLocalAudioProperties
-import com.convx.music.db.entities.FormatEntity
-import com.convx.music.db.entities.Song
-import com.convx.music.ui.component.LocalBottomSheetPageState
-import com.convx.music.ui.component.shimmer.ShimmerHost
-import com.convx.music.ui.component.shimmer.TextPlaceholder
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.utils.LocalAudioProperties
+import com.hdemirbassmusic.music.utils.readLocalAudioProperties
+import com.hdemirbassmusic.music.db.entities.FormatEntity
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.ui.component.LocalBottomSheetPageState
+import com.hdemirbassmusic.music.ui.component.shimmer.ShimmerHost
+import com.hdemirbassmusic.music.ui.component.shimmer.TextPlaceholder
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -94,7 +94,7 @@ fun ShowMediaInfo(videoId: String) {
 
     // While this song is the one playing, the decoder's format wins over a stale stored row.
     val playingId = playerConnection?.mediaMetadata?.collectAsStateWithLifecycle()?.value?.id
-    val liveFormat = com.convx.music.ui.player.rememberLiveAudioFormat(playerConnection.takeIf { playingId == videoId })
+    val liveFormat = com.hdemirbassmusic.music.ui.player.rememberLiveAudioFormat(playerConnection.takeIf { playingId == videoId })
     val shownFormat = currentFormat?.takeIf { it.agreesWith(liveFormat) }
         ?: liveFormat?.sampleMimeType?.let { mime ->
             FormatEntity(
@@ -371,7 +371,7 @@ fun ShowMediaInfo(videoId: String) {
                                 .height(100.dp),
                             contentAlignment = Alignment.CenterStart
                         ) {
-                            com.convx.music.ui.component.TextBlockSkeleton(lines = 3)
+                            com.hdemirbassmusic.music.ui.component.TextBlockSkeleton(lines = 3)
                         }
                     } else {
                         Text(

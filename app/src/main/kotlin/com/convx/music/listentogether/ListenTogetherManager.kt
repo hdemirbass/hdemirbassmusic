@@ -1,27 +1,27 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.listentogether
+package com.hdemirbassmusic.music.listentogether
 
 import android.content.Context
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import com.music.innertube.YouTube
 import com.music.innertube.models.WatchEndpoint
-import com.convx.music.constants.ListenTogetherSmartResyncKey
-import com.convx.music.constants.ListenTogetherSyncVolumeKey
-import com.convx.music.extensions.currentMetadata
-import com.convx.music.extensions.metadata
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.MediaMetadata.Album
-import com.convx.music.models.MediaMetadata.Artist
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.constants.ListenTogetherSmartResyncKey
+import com.hdemirbassmusic.music.constants.ListenTogetherSyncVolumeKey
+import com.hdemirbassmusic.music.extensions.currentMetadata
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.MediaMetadata.Album
+import com.hdemirbassmusic.music.models.MediaMetadata.Artist
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

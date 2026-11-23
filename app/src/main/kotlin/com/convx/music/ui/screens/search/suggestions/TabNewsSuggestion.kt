@@ -1,18 +1,18 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.search.suggestions
+package com.hdemirbassmusic.music.ui.screens.search.suggestions
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -22,12 +22,12 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -50,13 +50,13 @@ import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.compose.SubcomposeAsyncImage
-import com.convx.music.R
-import com.convx.music.constants.SuggestionRegionKey
-import com.convx.music.constants.SuggestionRegionSlugToName
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.SuggestionRegionKey
+import com.hdemirbassmusic.music.constants.SuggestionRegionSlugToName
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.utils.rememberPreference
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
@@ -89,7 +89,7 @@ fun SuggestionsTabContent(
     val isLoading by viewModel.isLoading.collectAsStateWithLifecycle()
     val isManualLoading by viewModel.isManualLoading.collectAsStateWithLifecycle()
     val uriHandler = androidx.compose.ui.platform.LocalUriHandler.current
-    val playerConnection = com.convx.music.LocalPlayerConnection.current
+    val playerConnection = com.hdemirbassmusic.music.LocalPlayerConnection.current
     val context = LocalContext.current
     val (regionCode, _) = rememberPreference(
         key = SuggestionRegionKey,
@@ -234,7 +234,7 @@ fun SuggestionsTabContent(
                             color = AppTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
                         )
                         Text(
-                            text = "convx",
+                            text = "hdemirbassmusic",
                             style = AppTheme.typography.labelSmall,
                             color = AppTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f),
                             fontWeight = FontWeight.Bold
@@ -302,7 +302,7 @@ fun TrendingAppleMusicSection(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clip(shape)
-                                .background(com.convx.music.ui.ios.foundation.IosTheme.colors.secondarySystemGroupedBackground)
+                                .background(com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.secondarySystemGroupedBackground)
                                 .bounceClick { onTrackClick(track) }
                                 .padding(horizontal = 16.dp, vertical = 10.dp),
                             verticalAlignment = Alignment.CenterVertically
@@ -314,16 +314,16 @@ fun TrendingAppleMusicSection(
                             ) {
                                 Text(
                                     text = track.title,
-                                    style = com.convx.music.ui.ios.foundation.IosTheme.typography.headline,
-                                    color = com.convx.music.ui.ios.foundation.IosTheme.colors.label,
+                                    style = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.typography.headline,
+                                    color = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label,
                                     maxLines = 1,
                                     overflow = TextOverflow.Ellipsis
                                 )
                                 Spacer(Modifier.height(2.dp))
                                 Text(
                                     text = track.artist,
-                                    style = com.convx.music.ui.ios.foundation.IosTheme.typography.subheadline,
-                                    color = com.convx.music.ui.ios.foundation.IosTheme.colors.secondaryLabel,
+                                    style = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.typography.subheadline,
+                                    color = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.secondaryLabel,
                                     maxLines = 1,
                                     overflow = TextOverflow.Ellipsis
                                 )
@@ -331,8 +331,8 @@ fun TrendingAppleMusicSection(
                                 Row(verticalAlignment = Alignment.CenterVertically) {
                                     Text(
                                         text = "#${track.rank}",
-                                        style = com.convx.music.ui.ios.foundation.IosTheme.typography.footnote,
-                                        color = com.convx.music.ui.ios.foundation.IosTheme.tint,
+                                        style = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.typography.footnote,
+                                        color = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.tint,
                                         fontWeight = FontWeight.Bold
                                     )
                                     Spacer(Modifier.width(8.dp))
@@ -343,8 +343,8 @@ fun TrendingAppleMusicSection(
                                     }
                                     Text(
                                         text = playCount,
-                                        style = com.convx.music.ui.ios.foundation.IosTheme.typography.caption,
-                                        color = com.convx.music.ui.ios.foundation.IosTheme.colors.tertiaryLabel
+                                        style = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.typography.caption,
+                                        color = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.tertiaryLabel
                                     )
                                 }
                             }
@@ -354,10 +354,10 @@ fun TrendingAppleMusicSection(
                                     contentDescription = null,
                                     contentScale = ContentScale.Crop,
                                     loading = {
-                                        com.convx.music.ui.component.ShimmerBox(Modifier.fillMaxSize())
+                                        com.hdemirbassmusic.music.ui.component.ShimmerBox(Modifier.fillMaxSize())
                                     },
                                     modifier = Modifier
-                                        .clip(com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(AppleTokens.Artwork))
+                                        .clip(com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(AppleTokens.Artwork))
                                         .size(68.dp)
                                 )
                             }
@@ -370,8 +370,8 @@ fun TrendingAppleMusicSection(
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
-                    .clip(com.convx.music.ui.component.shapes.ContinuousCapsule())
-                    .background(com.convx.music.ui.ios.foundation.IosTheme.colors.secondarySystemGroupedBackground)
+                    .clip(com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule())
+                    .background(com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.secondarySystemGroupedBackground)
                     .padding(horizontal = 8.dp, vertical = 4.dp)
             ) {
                 IconButton(
@@ -379,13 +379,13 @@ fun TrendingAppleMusicSection(
                     enabled = pagerState.currentPage > 0,
                     modifier = Modifier.size(32.dp)
                 ) {
-                    SymbolIcon(symbol = sf("chevron.left"), contentDescription = "Previous", tint = if (pagerState.currentPage > 0) com.convx.music.ui.ios.foundation.IosTheme.colors.label else com.convx.music.ui.ios.foundation.IosTheme.colors.tertiaryLabel)
+                    SymbolIcon(symbol = sf("chevron.left"), contentDescription = "Previous", tint = if (pagerState.currentPage > 0) com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label else com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.tertiaryLabel)
                 }
                 Spacer(Modifier.width(8.dp))
                 Text(
                     text = stringResource(R.string.page_indicator, pagerState.currentPage + 1, pagerState.pageCount),
-                    style = com.convx.music.ui.ios.foundation.IosTheme.typography.footnote,
-                    color = com.convx.music.ui.ios.foundation.IosTheme.colors.secondaryLabel
+                    style = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.typography.footnote,
+                    color = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.secondaryLabel
                 )
                 Spacer(Modifier.width(8.dp))
                 IconButton(
@@ -393,7 +393,7 @@ fun TrendingAppleMusicSection(
                     enabled = pagerState.currentPage < pagerState.pageCount - 1,
                     modifier = Modifier.size(32.dp)
                 ) {
-                    SymbolIcon(symbol = sf("chevron.right"), contentDescription = "Next", tint = if (pagerState.currentPage < pagerState.pageCount - 1) com.convx.music.ui.ios.foundation.IosTheme.colors.label else com.convx.music.ui.ios.foundation.IosTheme.colors.tertiaryLabel)
+                    SymbolIcon(symbol = sf("chevron.right"), contentDescription = "Next", tint = if (pagerState.currentPage < pagerState.pageCount - 1) com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label else com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.tertiaryLabel)
                 }
             }
         }
@@ -422,7 +422,7 @@ fun TopArtistsSection(
                             contentDescription = artist.name,
                             contentScale = ContentScale.Crop,
                             loading = {
-                                com.convx.music.ui.component.ShimmerBox(Modifier.fillMaxSize(), shape = CircleShape)
+                                com.hdemirbassmusic.music.ui.component.ShimmerBox(Modifier.fillMaxSize(), shape = CircleShape)
                             },
                             modifier = Modifier.size(100.dp).clip(CircleShape).background(AppTheme.colorScheme.surfaceVariant)
                         )
@@ -464,19 +464,19 @@ fun TrendingAlbumsSection(
             modifier = Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 16.dp)
         ) {
             items(albums, key = { it.rank }) { album ->
-                com.convx.music.ui.utils.ArtworkSourceHost(
+                com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost(
                     Modifier.width(120.dp).bounceClick { onAlbumClick(album) },
                 ) { sourceModifier ->
-                val artworkOwner = com.convx.music.ui.utils.rememberArtworkSourceOwner()
+                val artworkOwner = com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner()
                 Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = sourceModifier) {
                     Box(contentAlignment = Alignment.BottomEnd) {
                         SubcomposeAsyncImage(
                             model = album.thumbnailUrl,
-                            onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(artworkOwner, album.thumbnailUrl),
+                            onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(artworkOwner, album.thumbnailUrl),
                             contentDescription = album.title,
                             contentScale = ContentScale.Crop,
                             loading = {
-                                com.convx.music.ui.component.ShimmerBox(Modifier.fillMaxSize(), shape = RoundedCornerShape(12.dp))
+                                com.hdemirbassmusic.music.ui.component.ShimmerBox(Modifier.fillMaxSize(), shape = RoundedCornerShape(12.dp))
                             },
                             modifier = Modifier.sharedArtworkSource(album.sharedArtworkId, album.thumbnailUrl, artworkOwner)
                                 .size(120.dp).clip(RoundedCornerShape(12.dp)).background(AppTheme.colorScheme.surfaceVariant)

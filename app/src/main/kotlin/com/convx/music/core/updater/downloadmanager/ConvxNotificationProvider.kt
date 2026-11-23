@@ -1,4 +1,4 @@
-package com.convx.music.core.updater.downloadmanager
+package com.hdemirbassmusic.music.core.updater.downloadmanager
 
 import android.app.Notification
 import android.content.Context
@@ -13,7 +13,7 @@ import androidx.media3.session.DefaultMediaNotificationProvider
 import androidx.media3.session.MediaNotification
 import androidx.media3.session.MediaSession
 import com.google.common.collect.ImmutableList
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 import java.util.Locale
 
 /**
@@ -21,7 +21,7 @@ import java.util.Locale
  * and adds Android 16 Status Chips (Live Updates) support.
  */
 @OptIn(UnstableApi::class)
-class ConvxNotificationProvider(
+class hdemirbassmusicNotificationProvider(
     private val context: Context,
     notificationIdProvider: DefaultMediaNotificationProvider.NotificationIdProvider,
     channelId: String,
@@ -38,7 +38,7 @@ class ConvxNotificationProvider(
     /**
      * Set the small icon for the notification. This is used by MusicService.
      */
-    fun setSmallIcon(iconResId: Int): ConvxNotificationProvider {
+    fun setSmallIcon(iconResId: Int): hdemirbassmusicNotificationProvider {
         defaultProvider.setSmallIcon(iconResId)
         return this
     }

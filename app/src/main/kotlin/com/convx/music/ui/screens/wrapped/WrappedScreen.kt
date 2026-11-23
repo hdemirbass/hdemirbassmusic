@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.wrapped
+package com.hdemirbassmusic.music.ui.screens.wrapped
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
@@ -97,7 +97,7 @@ fun WrappedScreenContent(navController: NavController) {
             val text = "My Replay: ${nf.format(state.totalMinutes)} minutes, " +
                 "${nf.format(state.uniqueSongCount)} songs" +
                 (state.topArtists.firstOrNull()?.let { ", top artist ${it.artist.name}" } ?: "") +
-                " — Convx"
+                " — hdemirbassmusic"
             val send = android.content.Intent(android.content.Intent.ACTION_SEND)
                 .setType("text/plain")
                 .putExtra(android.content.Intent.EXTRA_TEXT, text)

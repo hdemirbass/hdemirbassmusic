@@ -1,9 +1,9 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
-import com.convx.music.lyrics.bitchord.*
+import com.hdemirbassmusic.music.lyrics.bitchord.*
 import kotlinx.coroutines.CancellationException
 
-/** BitChord's providers, adapted to Convx's persisted lyric format. */
+/** BitChord's providers, adapted to hdemirbassmusic's persisted lyric format. */
 class BitChordLyricsProvider(
     override val id: String,
     override val displayName: String,
@@ -14,7 +14,7 @@ class BitChordLyricsProvider(
     override suspend fun getLyrics(id: String, title: String, artist: String, duration: Int, album: String?): Result<String> = try {
         val lines = lookup(id, title.forLyricsSearch(), artist.artistForLyricsSearch(), duration.toLong() * 1000L, album)
         if (lines.isNullOrEmpty()) Result.failure(NoSuchElementException("No lyrics found"))
-        else Result.success(lines.toConvxLyrics())
+        else Result.success(lines.tohdemirbassmusicLyrics())
     } catch (cancelled: CancellationException) {
         throw cancelled
     } catch (error: Exception) {
@@ -22,7 +22,7 @@ class BitChordLyricsProvider(
     }
 }
 
-internal fun List<LyricLine>.toConvxLyrics(): String {
+internal fun List<LyricLine>.tohdemirbassmusicLyrics(): String {
     if (none { it.timeMs > 0 || it.words.isNotEmpty() }) return joinToString("\n") { it.text }
     fun stamp(ms: Long) = "${(ms / 60_000).toString().padStart(2, '0')}:" +
         "${(ms / 1000 % 60).toString().padStart(2, '0')}.${(ms % 1000).toString().padStart(3, '0')}"

@@ -1,4 +1,4 @@
-package com.convx.artwork
+package com.hdemirbassmusic.artwork
 
 import org.junit.Assert.*
 import org.junit.Test

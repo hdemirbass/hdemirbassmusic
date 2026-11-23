@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.content.Context
 import androidx.media3.common.MediaItem
@@ -17,20 +17,20 @@ import androidx.media3.common.Player.STATE_ENDED
 import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.ShuffleOrder.DefaultShuffleOrder
-import com.convx.music.db.MusicDatabase
-import com.convx.music.extensions.currentMetadata
-import com.convx.music.extensions.getCurrentQueueIndex
-import com.convx.music.extensions.getQueueWindows
-import com.convx.music.extensions.metadata
-import com.convx.music.extensions.togglePlayPause
-import com.convx.music.playback.MusicService.MusicBinder
-import com.convx.music.playback.PlaybackRepeatMode
-import com.convx.music.constants.AskBeforeReplacingQueueKey
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.playback.queues.Queue
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.extensions.currentMetadata
+import com.hdemirbassmusic.music.extensions.getCurrentQueueIndex
+import com.hdemirbassmusic.music.extensions.getQueueWindows
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.extensions.togglePlayPause
+import com.hdemirbassmusic.music.playback.MusicService.MusicBinder
+import com.hdemirbassmusic.music.playback.PlaybackRepeatMode
+import com.hdemirbassmusic.music.constants.AskBeforeReplacingQueueKey
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.playback.queues.Queue
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
@@ -52,7 +52,7 @@ sealed interface VideoStreamLookup {
     data object Idle : VideoStreamLookup
     data object Loading : VideoStreamLookup
     data object Unavailable : VideoStreamLookup
-    data class Ready(val stream: com.convx.music.utils.YTPlayerUtils.VideoStream) : VideoStreamLookup
+    data class Ready(val stream: com.hdemirbassmusic.music.utils.YTPlayerUtils.VideoStream) : VideoStreamLookup
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -159,7 +159,7 @@ class PlayerConnection(
                 emit(VideoStreamLookup.Loading)
                 val metadata = request.first
                 val video = officialVideos.resolve(metadata.id, metadata.title, metadata.artists.map { it.name }, metadata.duration, metadata.musicVideoType).getOrNull()
-                val stream = video?.let { com.convx.music.utils.YTPlayerUtils.videoStream(it.videoId)?.copy(mediaId = metadata.id) }
+                val stream = video?.let { com.hdemirbassmusic.music.utils.YTPlayerUtils.videoStream(it.videoId)?.copy(mediaId = metadata.id) }
                 emit(stream?.let(VideoStreamLookup::Ready) ?: VideoStreamLookup.Unavailable)
             }
         }

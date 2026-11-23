@@ -1,8 +1,8 @@
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -11,15 +11,15 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import com.convx.music.ui.ios.compat.rememberIosModalSheetState
-import com.convx.music.ui.ios.compat.Checkbox
-import com.convx.music.ui.ios.compat.HorizontalDivider
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.ModalBottomSheet
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.rememberIosModalSheetState
+import com.hdemirbassmusic.music.ui.ios.compat.Checkbox
+import com.hdemirbassmusic.music.ui.ios.compat.HorizontalDivider
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.ModalBottomSheet
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,13 +34,13 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
 import com.music.spotify.SpotifyMapper
 import com.music.spotify.models.SpotifyPlaylist
-import com.convx.music.R
-import com.convx.music.ui.component.AnimatedActionButton
-import com.convx.music.ui.component.detachedItemShape
-import com.convx.music.ui.component.endItemShape
-import com.convx.music.ui.component.leadingItemShape
-import com.convx.music.ui.component.middleItemShape
-import com.convx.music.viewmodels.SpotifyImportViewModel
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.AnimatedActionButton
+import com.hdemirbassmusic.music.ui.component.detachedItemShape
+import com.hdemirbassmusic.music.ui.component.endItemShape
+import com.hdemirbassmusic.music.ui.component.leadingItemShape
+import com.hdemirbassmusic.music.ui.component.middleItemShape
+import com.hdemirbassmusic.music.viewmodels.SpotifyImportViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

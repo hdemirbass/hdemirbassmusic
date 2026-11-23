@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -19,10 +19,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.R
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.utils.VibrantChromeInk
-import com.convx.music.ui.utils.vibrantChrome
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.utils.VibrantChromeInk
+import com.hdemirbassmusic.music.ui.utils.vibrantChrome
 
 /**
  * Song / Video switch that sits at the top of the player when a video exists for the track.

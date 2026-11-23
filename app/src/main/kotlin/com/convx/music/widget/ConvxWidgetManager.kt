@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.widget
+package com.hdemirbassmusic.music.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -34,24 +34,24 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.core.graphics.ColorUtils
 import androidx.palette.graphics.Palette
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
 import coil3.ImageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.toBitmap
-import com.convx.music.MainActivity
-import com.convx.music.R
-import com.convx.music.db.MusicDatabase
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.LyricsUtils
+import com.hdemirbassmusic.music.MainActivity
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.LyricsUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
-class ConvxWidgetManager(
+class hdemirbassmusicWidgetManager(
     private val context: Context,
     private val database: MusicDatabase
 ) {
@@ -960,7 +960,7 @@ class ConvxWidgetManager(
      *
      * RemoteViews has no animation, so this cannot reproduce the app's Apple-style
      * glide — it steps as the line changes, keeping the same visual language
-     * (active line solid, neighbours faded) that ConvxLyrics uses.
+     * (active line solid, neighbours faded) that hdemirbassmusicLyrics uses.
      */
     private fun createLyricsRemoteViews(
         options: Bundle,

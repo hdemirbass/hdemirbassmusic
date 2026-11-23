@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ai
+package com.hdemirbassmusic.music.ai
 
 import android.content.Context
 import androidx.media3.common.MediaItem
@@ -11,16 +11,16 @@ import com.music.innertube.SearchFilter
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.db.entities.PlaylistSongMap
-import com.convx.music.db.entities.Song
-import com.convx.music.db.entities.SongAnalysisEntity
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.audio.DjSetOrderer
-import com.convx.music.playback.dj.BeatGrid
-import com.convx.music.playback.dj.MusicalKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.db.entities.PlaylistSongMap
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.db.entities.SongAnalysisEntity
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.audio.DjSetOrderer
+import com.hdemirbassmusic.music.playback.dj.BeatGrid
+import com.hdemirbassmusic.music.playback.dj.MusicalKey
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

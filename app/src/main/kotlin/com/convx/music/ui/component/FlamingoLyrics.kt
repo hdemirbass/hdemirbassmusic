@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -11,10 +11,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.wordsWithSpacing
-import com.convx.music.lyrics.primaryLyricLineIndex
-import com.convx.music.ui.component.flamingo.*
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.wordsWithSpacing
+import com.hdemirbassmusic.music.lyrics.primaryLyricLineIndex
+import com.hdemirbassmusic.music.ui.component.flamingo.*
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.flow.combine
 

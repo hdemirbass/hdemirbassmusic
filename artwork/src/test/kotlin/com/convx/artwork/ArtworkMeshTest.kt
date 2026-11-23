@@ -1,4 +1,4 @@
-package com.convx.artwork
+package com.hdemirbassmusic.artwork
 
 import kotlin.math.abs
 import org.junit.Assert.*

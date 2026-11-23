@@ -1,4 +1,4 @@
-package com.convx.music.data.settings
+package com.hdemirbassmusic.music.data.settings
 
 /**
  * Convenience object that re-exports PlaybackSettings properties so

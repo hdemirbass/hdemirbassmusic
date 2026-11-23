@@ -2,11 +2,11 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.kmp.library)
 }
-group = "com.convx.shared.data"
+group = "com.hdemirbassmusic.shared.data"
 version = "0.1.0"
 kotlin {
     android {
-        namespace = "com.convx.music.modules.runtime"
+        namespace = "com.hdemirbassmusic.music.modules.runtime"
         compileSdk = 37
         minSdk = 26
     }

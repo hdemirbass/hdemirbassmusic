@@ -1,22 +1,22 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:OptIn(ExperimentalSharedTransitionApi::class)
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.utils.MenuIconChrome
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.utils.MenuIconChrome
 import com.composables.sfsymbols.SfRenderingMode
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.activity.compose.BackHandler
-import com.convx.music.LocalAmbientBackgroundColor
-import com.convx.music.constants.AppBackgroundColorKey
-import com.convx.music.constants.AppTextColorKey
-import com.convx.music.ui.theme.isHueless
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.constants.AppBackgroundColorKey
+import com.hdemirbassmusic.music.constants.AppTextColorKey
+import com.hdemirbassmusic.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.utils.rememberPreference
 import androidx.compose.ui.graphics.isSpecified
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.animation.AnimatedContent
@@ -41,13 +41,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.animation.animateColorAsState
-import com.convx.music.ui.utils.Motion
+import com.hdemirbassmusic.music.ui.utils.Motion
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -81,29 +81,29 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.R
-import com.convx.music.constants.SearchSource
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.elasticStretchLayerBlock
-import com.convx.music.ui.ios.component.IosContextMenuOverlay
-import com.convx.music.ui.ios.component.IosMenuSection
-import com.convx.music.ui.player.FloatingMiniPlayer
-import com.convx.music.ui.screens.Screens
-import com.convx.music.ui.screens.search.DynamicSearchPlaceholder
-import com.convx.music.ui.component.floatingtabbar.FloatingTabBarDefaults
-import com.convx.music.ui.component.floatingtabbar.FoldingTabBar
-import com.convx.music.ui.component.floatingtabbar.FoldingTabCell
-import com.convx.music.ui.component.floatingtabbar.FoldingTabGroup
-import com.convx.music.ui.component.floatingtabbar.FloatingTabBarScrollConnection
-import com.convx.music.ui.component.floatingtabbar.clipWhilePressed
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.additiveChrome
-import com.convx.music.ui.utils.vibrantChrome
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.SearchSource
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.elasticStretchLayerBlock
+import com.hdemirbassmusic.music.ui.ios.component.IosContextMenuOverlay
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuSection
+import com.hdemirbassmusic.music.ui.player.FloatingMiniPlayer
+import com.hdemirbassmusic.music.ui.screens.Screens
+import com.hdemirbassmusic.music.ui.screens.search.DynamicSearchPlaceholder
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.FloatingTabBarDefaults
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.FoldingTabBar
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.FoldingTabCell
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.FoldingTabGroup
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.FloatingTabBarScrollConnection
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.clipWhilePressed
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.vibrantChrome
 import kotlinx.coroutines.delay
 
 // Continuous capsule shape supports the tab puck morph and the bar glass.
-private val NavBarShape = com.convx.music.ui.component.shapes.NavContinuousCapsule
+private val NavBarShape = com.hdemirbassmusic.music.ui.component.shapes.NavContinuousCapsule
 
 // Keep search mode the same height as the expanded tab row.
 private val NavBarSearchBarHeight = 48.dp
@@ -137,7 +137,7 @@ fun AppFloatingNavBar(
 ) {
     val navSearch = LocalNavSearchState.current
     // Plain chrome: the old backdrop-pixel sampler flipped the bar between light and dark while scrolling.
-    androidx.compose.runtime.CompositionLocalProvider(LocalSampledChromeDark provides (if (com.convx.music.ui.theme.LocalForcedDark.current) true else null)) {
+    androidx.compose.runtime.CompositionLocalProvider(LocalSampledChromeDark provides (if (com.hdemirbassmusic.music.ui.theme.LocalForcedDark.current) true else null)) {
 
     AnimatedContent(
         targetState = navSearch.keyboardActive,
@@ -234,17 +234,17 @@ private fun AppFloatingNavBarChrome(
     val unselectedIconColor = AppTheme.colorScheme.onSurface.copy(alpha = 0.82f)
     val unselectedLabelColor = unselectedIconColor
 
-    val targetRimColor = com.convx.music.ui.theme.GlassTintTokens.pluckColor(isDark, ambientColor, glassConfig.highlightColor)
+    val targetRimColor = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.pluckColor(isDark, ambientColor, glassConfig.highlightColor)
     val rimTintColor by animateColorAsState(
         targetValue = targetRimColor,
         animationSpec = androidx.compose.animation.core.tween(300, easing = androidx.compose.animation.core.FastOutSlowInEasing),
         label = "navBarRimTint",
     )
-    val navHighlightAlpha = com.convx.music.ui.theme.GlassTintTokens.pluckOpacity(isDark, ambientColor.isSpecified && !ambientColor.isHueless())
+    val navHighlightAlpha = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.pluckOpacity(isDark, ambientColor.isSpecified && !ambientColor.isHueless())
 
     val backdropFrozen = LocalAppBackdropFrozen.current
     val combinedBackdropFrozen: () -> Boolean = remember(backdropFrozen) {
-        { com.convx.music.ui.player.PlayerMorph.glassFrozen || backdropFrozen() }
+        { com.hdemirbassmusic.music.ui.player.PlayerMorph.glassFrozen || backdropFrozen() }
     }
     val tabBarContentModifier = if (useGlass) {
         Modifier.liquidGlass(
@@ -523,12 +523,12 @@ fun NavBarSearchInputBar(
         else -> AppTheme.colorScheme.onSurface
     }
     val searchIconTint = when {
-        !isDark -> com.convx.music.ui.theme.GlassTintTokens.IconOpaqueBlackishLight
+        !isDark -> com.hdemirbassmusic.music.ui.theme.GlassTintTokens.IconOpaqueBlackishLight
         useGlass && ambientColor.isSpecified -> ambientColor.asSoftIconTint()
         else -> onTint
     }
-    val searchRimTint = com.convx.music.ui.theme.GlassTintTokens.pluckColor(isDark, ambientColor)
-    val searchHighlightAlpha = com.convx.music.ui.theme.GlassTintTokens.pluckOpacity(isDark, ambientColor.isSpecified && !ambientColor.isHueless())
+    val searchRimTint = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.pluckColor(isDark, ambientColor)
+    val searchHighlightAlpha = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.pluckOpacity(isDark, ambientColor.isSpecified && !ambientColor.isHueless())
     val pillShape = ContinuousRoundedRectangle(percent = 50)
     val coroutineScope = rememberCoroutineScope()
     // Finger-tracking glow, same as the nav bar puck's InteractiveHighlight: a

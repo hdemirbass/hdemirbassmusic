@@ -1,4 +1,4 @@
-package com.convx.music.jam
+package com.hdemirbassmusic.music.jam
 
 import kotlinx.coroutines.test.runTest
 import kotlin.test.assertEquals

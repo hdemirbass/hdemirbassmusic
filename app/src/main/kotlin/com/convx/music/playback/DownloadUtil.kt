@@ -1,10 +1,10 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback
-import com.convx.music.models.toMediaMetadata
+package com.hdemirbassmusic.music.playback
+import com.hdemirbassmusic.music.models.toMediaMetadata
 import timber.log.Timber
 import coil3.SingletonImageLoader
 import coil3.request.CachePolicy
@@ -32,17 +32,17 @@ import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.media3.exoplayer.offline.DownloadNotificationHelper
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
-import com.convx.music.constants.AudioQuality
-import com.convx.music.constants.AudioQualityKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.FormatEntity
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.ui.utils.resize
-import com.convx.music.constants.AutoDownloadOnLikeKey
-import com.convx.music.constants.SaveDownloadsToMusicFolderKey
-import com.convx.music.utils.YTPlayerUtils
-import com.convx.music.utils.enumPreference
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.constants.AudioQuality
+import com.hdemirbassmusic.music.constants.AudioQualityKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.FormatEntity
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.constants.AutoDownloadOnLikeKey
+import com.hdemirbassmusic.music.constants.SaveDownloadsToMusicFolderKey
+import com.hdemirbassmusic.music.utils.YTPlayerUtils
+import com.hdemirbassmusic.music.utils.enumPreference
+import com.hdemirbassmusic.music.utils.get
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -58,16 +58,16 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.first
-import com.convx.music.applecanvas.AppleMusicCanvasProvider
-import com.convx.music.utils.SpotifyCanvasLookup
-import com.convx.music.canvas.AppleMusicArtistBackgroundProvider
-import com.convx.music.constants.CanvasSource
-import com.convx.music.constants.CanvasSourceKey
-import com.convx.music.ui.player.normalizeCanvasArtistName
-import com.convx.music.ui.player.normalizeCanvasSongTitle
-import com.convx.music.utils.dataStore
-import com.convx.music.convxcanvas.ConvxCanvasProvider
-import com.convx.music.canvas.TidalCanvasProvider
+import com.hdemirbassmusic.music.applecanvas.AppleMusicCanvasProvider
+import com.hdemirbassmusic.music.utils.SpotifyCanvasLookup
+import com.hdemirbassmusic.music.canvas.AppleMusicArtistBackgroundProvider
+import com.hdemirbassmusic.music.constants.CanvasSource
+import com.hdemirbassmusic.music.constants.CanvasSourceKey
+import com.hdemirbassmusic.music.ui.player.normalizeCanvasArtistName
+import com.hdemirbassmusic.music.ui.player.normalizeCanvasSongTitle
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.hdemirbassmusiccanvas.hdemirbassmusicCanvasProvider
+import com.hdemirbassmusic.music.canvas.TidalCanvasProvider
 import java.util.Locale
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -82,7 +82,7 @@ class DownloadUtil(
     val databaseProvider: DatabaseProvider,
     val downloadCache: SimpleCache,
     val playerCache: SimpleCache,
-    private val lyricsHelper: com.convx.music.lyrics.LyricsHelper,
+    private val lyricsHelper: com.hdemirbassmusic.music.lyrics.LyricsHelper,
 ) {
     private val connectivityManager = context.getSystemService<ConnectivityManager>()!!
     private val audioQuality by enumPreference(context, AudioQualityKey, AudioQuality.AUTO)
@@ -289,11 +289,11 @@ class DownloadUtil(
                 CanvasSource.AUTO ->
                     SpotifyCanvasLookup.getBySongArtist(appContext, requestedTitle, requestedArtist)?.preferredAnimationUrl
                         ?: AppleMusicCanvasProvider.getBySongArtist(title, artist, "", storefront)?.preferredAnimationUrl
-                        ?: ConvxCanvasProvider.getBySongArtist(title, artist)?.preferredAnimationUrl
+                        ?: hdemirbassmusicCanvasProvider.getBySongArtist(title, artist)?.preferredAnimationUrl
                         ?: TidalCanvasProvider.getBySongArtist(title, artist, "")?.preferredAnimationUrl
                 CanvasSource.APPLE_MUSIC ->
                     AppleMusicCanvasProvider.getBySongArtist(title, artist, "", storefront)?.preferredAnimationUrl
-                CanvasSource.CONVX -> ConvxCanvasProvider.getBySongArtist(title, artist)?.preferredAnimationUrl
+                CanvasSource.hdemirbassmusic -> hdemirbassmusicCanvasProvider.getBySongArtist(title, artist)?.preferredAnimationUrl
                 CanvasSource.TIDAL -> TidalCanvasProvider.getBySongArtist(title, artist, "")?.preferredAnimationUrl
                 CanvasSource.SPOTIFY ->
                     SpotifyCanvasLookup.getBySongArtist(appContext, requestedTitle, requestedArtist)?.preferredAnimationUrl
@@ -504,7 +504,7 @@ class DownloadUtil(
                 artist = song.artists.joinToString { it.name },
                 album = song.album?.title,
                 audioMimeType = format?.mimeType,
-                lyrics = lyrics?.takeUnless { it == com.convx.music.db.entities.LyricsEntity.LYRICS_NOT_FOUND },
+                lyrics = lyrics?.takeUnless { it == com.hdemirbassmusic.music.db.entities.LyricsEntity.LYRICS_NOT_FOUND },
                 coverUrl = song.song.thumbnailUrl,
                 video = video,
             ),

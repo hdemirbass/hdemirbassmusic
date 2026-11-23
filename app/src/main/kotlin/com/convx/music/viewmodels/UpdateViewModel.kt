@@ -1,7 +1,7 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import androidx.lifecycle.ViewModel
-import com.convx.music.core.updater.UpdateRepository
+import com.hdemirbassmusic.music.core.updater.UpdateRepository
 
 class UpdateViewModel(private val repository: UpdateRepository) : ViewModel() {
     val state = repository.state

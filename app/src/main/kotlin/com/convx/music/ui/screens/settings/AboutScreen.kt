@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,9 +33,9 @@ import androidx.compose.material.icons.filled.History
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.MaterialShapes
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.toShape
 import androidx.compose.runtime.Composable
@@ -64,16 +64,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.convx.music.BuildConfig
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.constants.DonationKofiUrl
-import com.convx.music.constants.DonationUpiId
-import com.convx.music.constants.DonationUpiUri
-import com.convx.music.R
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.ui.utils.safeOpenUri
+import com.hdemirbassmusic.music.BuildConfig
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.constants.DonationKofiUrl
+import com.hdemirbassmusic.music.constants.DonationUpiId
+import com.hdemirbassmusic.music.constants.DonationUpiUri
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.ui.utils.safeOpenUri
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -115,7 +115,7 @@ fun AboutScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = stringResource(R.string.convx_title),
+                text = stringResource(R.string.hdemirbassmusic_title),
                 style = AppTheme.typography.displaySmall.copy(
                     fontWeight = FontWeight.Bold,
                     fontSize = 48.sp,
@@ -176,7 +176,7 @@ fun AboutScreen(
                     icon = rememberVectorPainter(SfSymbols.Monochrome.SFChevronLeftForwardslashChevronRight),
                     title = { Text(stringResource(R.string.github_repository)) },
                     description = { Text(stringResource(R.string.view_source_code)) },
-                    onClick = { uriHandler.safeOpenUri(context, "https://github.com/cosmictaserdev-creator/Convx") }
+                    onClick = { uriHandler.safeOpenUri(context, "https://github.com/cosmictaserdev-creator/hdemirbassmusic") }
                 ),
                 IosSettingsItem(
                     icon = rememberVectorPainter(SfSymbols.Monochrome.SFEllipsisBubble),
@@ -227,7 +227,7 @@ fun AboutScreen(
                     icon = rememberVectorPainter(SfSymbols.Monochrome.SFTextDocument),
                     title = { Text(stringResource(R.string.license)) },
                     description = { Text("GPL-3.0 • Free Open Source Software") },
-                    onClick = { uriHandler.safeOpenUri(context, "https://github.com/cosmictaserdev-creator/Convx/blob/main/LICENSE") }
+                    onClick = { uriHandler.safeOpenUri(context, "https://github.com/cosmictaserdev-creator/hdemirbassmusic/blob/main/LICENSE") }
                 ),
             )
         )

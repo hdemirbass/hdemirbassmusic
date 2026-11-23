@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.search
+package com.hdemirbassmusic.music.ui.screens.search
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.ui.res.painterResource
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 
@@ -30,11 +30,11 @@ import androidx.compose.foundation.lazy.LazyItemScope
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.ui.graphics.Brush
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -74,44 +74,44 @@ import com.music.innertube.models.YTItem
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.onlinePlaylistRoute
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.MiniPlayerBottomSpacing
-import com.convx.music.constants.MiniPlayerHeight
-import com.convx.music.constants.NavigationBarHeight
-import com.convx.music.playback.queues.searchResultQueue
-import com.convx.music.ui.component.ChipsRow
-import com.convx.music.ui.component.EmptyPlaceholder
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.LocalNavSearchState
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.YouTubeListItem
-import com.convx.music.ui.component.HomeImageBackground
-import com.convx.music.ui.component.hasCustomHomeBackground
-import com.convx.music.ui.component.rememberAppBackgroundColor
-import com.convx.music.ui.component.rememberHeroTint
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.HeroTintedContent
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.onlinePlaylistRoute
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.MiniPlayerBottomSpacing
+import com.hdemirbassmusic.music.constants.MiniPlayerHeight
+import com.hdemirbassmusic.music.constants.NavigationBarHeight
+import com.hdemirbassmusic.music.playback.queues.searchResultQueue
+import com.hdemirbassmusic.music.ui.component.ChipsRow
+import com.hdemirbassmusic.music.ui.component.EmptyPlaceholder
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.LocalNavSearchState
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.YouTubeListItem
+import com.hdemirbassmusic.music.ui.component.HomeImageBackground
+import com.hdemirbassmusic.music.ui.component.hasCustomHomeBackground
+import com.hdemirbassmusic.music.ui.component.rememberAppBackgroundColor
+import com.hdemirbassmusic.music.ui.component.rememberHeroTint
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.HeroTintedContent
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
 import androidx.compose.ui.text.font.FontWeight
-import com.convx.music.ui.component.shimmer.ListItemPlaceHolder
-import com.convx.music.ui.component.shimmer.ShimmerHost
-import com.convx.music.ui.menu.YouTubeAlbumMenu
-import com.convx.music.ui.menu.YouTubeArtistMenu
-import com.convx.music.ui.menu.YouTubePlaylistMenu
-import com.convx.music.ui.menu.YouTubeSongMenu
-import com.convx.music.utils.listItemShape
-import com.convx.music.viewmodels.OnlineSearchViewModel
+import com.hdemirbassmusic.music.ui.component.shimmer.ListItemPlaceHolder
+import com.hdemirbassmusic.music.ui.component.shimmer.ShimmerHost
+import com.hdemirbassmusic.music.ui.menu.YouTubeAlbumMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeArtistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubePlaylistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeSongMenu
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.viewmodels.OnlineSearchViewModel
 import kotlinx.coroutines.launch
 import java.net.URLDecoder
-import com.convx.music.ui.utils.heroPullZoom
-import com.convx.music.ui.utils.listOverscroll
-import com.convx.music.ui.utils.rememberHeroZoom
+import com.hdemirbassmusic.music.ui.utils.heroPullZoom
+import com.hdemirbassmusic.music.ui.utils.listOverscroll
+import com.hdemirbassmusic.music.ui.utils.rememberHeroZoom
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)

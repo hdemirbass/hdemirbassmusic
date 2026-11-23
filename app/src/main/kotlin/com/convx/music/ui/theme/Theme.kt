@@ -1,19 +1,19 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import android.graphics.Bitmap
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.darkIosColors
-import com.convx.music.ui.ios.foundation.iosColorScheme
-import com.convx.music.ui.ios.foundation.iosMaterialTypography
-import com.convx.music.ui.ios.foundation.lightIosColors
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.darkIosColors
+import com.hdemirbassmusic.music.ui.ios.foundation.iosColorScheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosMaterialTypography
+import com.hdemirbassmusic.music.ui.ios.foundation.lightIosColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -25,12 +25,12 @@ import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.font.FontFamily
 import androidx.palette.graphics.Palette
-import com.convx.music.constants.AppFont
-import com.convx.music.constants.AppTextColorKey
-import com.convx.music.constants.SelectedFontKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.AppFont
+import com.hdemirbassmusic.music.constants.AppTextColorKey
+import com.hdemirbassmusic.music.constants.SelectedFontKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 import com.materialkolor.score.Score
-import com.convx.music.ui.theme.colorengine.ColorEngine
+import com.hdemirbassmusic.music.ui.theme.colorengine.ColorEngine
 
 val DefaultThemeColor = AppleTokens.AccentRed
 
@@ -66,7 +66,7 @@ fun accentTextColor(accent: Color, dark: Boolean): Color {
 val LocalAccentTextColor = androidx.compose.runtime.compositionLocalOf { DefaultThemeColor }
 
 @Composable
-fun ConvxTheme(
+fun hdemirbassmusicTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     pureBlack: Boolean = false,
     themeColor: Color = DefaultThemeColor,
@@ -112,7 +112,7 @@ fun ConvxTheme(
         IosTheme(
             darkTheme = darkTheme,
             accent = themeColor,
-            typography = remember(appFont) { com.convx.music.ui.ios.foundation.iosTypography(appFont) },
+            typography = remember(appFont) { com.hdemirbassmusic.music.ui.ios.foundation.iosTypography(appFont) },
         ) {
             // Keeps unported screens on the app palette while they still use Material3.
             MaterialTheme(
@@ -188,7 +188,7 @@ private fun Bitmap.bottomEdgeMean(): Color {
 }
 
 /** True when the artwork carries no usable hue. Shares the tested rule in
- *  [com.convx.music.ui.theme.PlayerColorExtractor.isAchromatic]. */
+ *  [com.hdemirbassmusic.music.ui.theme.PlayerColorExtractor.isAchromatic]. */
 private fun List<Palette.Swatch>.isAchromatic(): Boolean {
     if (isEmpty()) return true
     val hsv = FloatArray(3)

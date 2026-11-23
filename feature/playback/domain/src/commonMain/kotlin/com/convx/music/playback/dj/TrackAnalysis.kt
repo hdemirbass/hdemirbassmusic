@@ -1,4 +1,4 @@
-package com.convx.music.playback.dj
+package com.hdemirbassmusic.music.playback.dj
 
 /** Result of portable beat, key, and energy analysis for a track. */
 class TrackAnalysis(

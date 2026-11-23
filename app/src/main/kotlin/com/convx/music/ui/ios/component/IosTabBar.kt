@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.component
+package com.hdemirbassmusic.music.ui.ios.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -39,13 +39,13 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.ios.foundation.IosCapsule
-import com.convx.music.ui.ios.foundation.IosGlassSpec
-import com.convx.music.ui.ios.foundation.IosGlassStyle
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
-import com.convx.music.ui.ios.foundation.iosGlass
+import com.hdemirbassmusic.music.ui.ios.foundation.IosCapsule
+import com.hdemirbassmusic.music.ui.ios.foundation.IosGlassSpec
+import com.hdemirbassmusic.music.ui.ios.foundation.IosGlassStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.iosGlass
 
 /** SwiftUI's TabRole. A Search tab breaks out into its own trailing capsule. */
 enum class IosTabRole { Standard, Search }
@@ -107,7 +107,7 @@ fun rememberIosTabBarState(
  * what iOS 26 does with `role: .search`.
  *
  * @param accessory SwiftUI's tabViewBottomAccessory — a second capsule that floats
- *   directly above the bar. Convx uses it for the mini player.
+ *   directly above the bar. hdemirbassmusic uses it for the mini player.
  */
 @Composable
 fun IosTabBar(

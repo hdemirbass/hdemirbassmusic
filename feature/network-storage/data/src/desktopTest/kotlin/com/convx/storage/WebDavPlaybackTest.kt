@@ -1,9 +1,9 @@
-package com.convx.storage
+package com.hdemirbassmusic.storage
 
-import com.convx.storage.data.WebDavFileSource
-import com.convx.storage.domain.NetworkProtocol
-import com.convx.storage.domain.NetworkServer
-import com.convx.storage.domain.SourceCredentials
+import com.hdemirbassmusic.storage.data.WebDavFileSource
+import com.hdemirbassmusic.storage.domain.NetworkProtocol
+import com.hdemirbassmusic.storage.domain.NetworkServer
+import com.hdemirbassmusic.storage.domain.SourceCredentials
 import okhttp3.Credentials
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer

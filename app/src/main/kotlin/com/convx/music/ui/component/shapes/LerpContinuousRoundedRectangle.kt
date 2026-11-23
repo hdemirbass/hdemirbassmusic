@@ -6,7 +6,7 @@
  * Vendored so the shape ships as source with this app. Package renamed
  * accordingly, and the Absolute variant was dropped (unused).
  */
-package com.convx.music.ui.component.shapes
+package com.hdemirbassmusic.music.ui.component.shapes
 
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.runtime.Immutable

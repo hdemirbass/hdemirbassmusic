@@ -1,6 +1,6 @@
-package com.convx.storage
+package com.hdemirbassmusic.storage
 
-import com.convx.storage.playback.ReadWindow
+import com.hdemirbassmusic.storage.playback.ReadWindow
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith

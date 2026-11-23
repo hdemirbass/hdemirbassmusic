@@ -1,5 +1,5 @@
 /** Adapted from BitChord (kushagrasinghx/BitChord), GPL-3.0. See NOTICE. */
-package com.convx.music.lyrics.bitchord
+package com.hdemirbassmusic.music.lyrics.bitchord
 
 /**
  * A YouTube title, as a lyrics database would have indexed it.

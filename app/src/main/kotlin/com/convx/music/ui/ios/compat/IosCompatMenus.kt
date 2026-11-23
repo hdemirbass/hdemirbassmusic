@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:Suppress("FunctionName")
 
-package com.convx.music.ui.ios.compat
+package com.hdemirbassmusic.music.ui.ios.compat
 
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -47,7 +47,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.PopupProperties
-import com.convx.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
 import androidx.compose.runtime.compositionLocalOf
 import android.os.Build
 import androidx.compose.animation.core.MutableTransitionState
@@ -70,15 +70,15 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupPositionProvider
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.foundation.IosMenuMaterial
-import com.convx.music.ui.ios.foundation.iosMenuSurface
-import com.convx.music.ui.ios.foundation.menuVibrancy
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMenuMaterial
+import com.hdemirbassmusic.music.ui.ios.foundation.iosMenuSurface
+import com.hdemirbassmusic.music.ui.ios.foundation.menuVibrancy
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
 
 /** Applies the shared menu panel colors to Material's anchored exposed-dropdown behavior. */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -197,7 +197,7 @@ fun DropdownMenu(
         // Press-and-slide from the trigger: the finger never leaves the trigger's window,
         // so its screen position is hit-tested against this panel's rows here.
         val rows = remember { MenuRows() }
-        val haptics = com.convx.music.ui.theme.rememberAppHaptics()
+        val haptics = com.hdemirbassmusic.music.ui.theme.rememberAppHaptics()
         val openedAtRelease = remember { MenuSlide.release }
         LaunchedEffect(rows) {
             snapshotFlow { MenuSlide.pointer }.collect { p ->
@@ -366,8 +366,8 @@ fun DropdownMenuItem(
                 leadingIcon?.let {
                     Box(Modifier.width(28.dp), contentAlignment = Alignment.Center) {
                         CompositionLocalProvider(
-                            com.convx.music.ui.component.LocalSymbolChrome provides com.convx.music.ui.utils.MenuItemChrome,
-                            com.convx.music.ui.component.LocalSymbolIconSize provides 22.dp,
+                            com.hdemirbassmusic.music.ui.component.LocalSymbolChrome provides com.hdemirbassmusic.music.ui.utils.MenuItemChrome,
+                            com.hdemirbassmusic.music.ui.component.LocalSymbolIconSize provides 22.dp,
                         ) { it() }
                     }
                     Spacer(Modifier.width(8.dp))
@@ -376,8 +376,8 @@ fun DropdownMenuItem(
                 trailingIcon?.let {
                     Spacer(Modifier.width(8.dp))
                     CompositionLocalProvider(
-                        com.convx.music.ui.component.LocalSymbolChrome provides com.convx.music.ui.utils.MenuItemChrome,
-                        com.convx.music.ui.component.LocalSymbolIconSize provides 22.dp,
+                        com.hdemirbassmusic.music.ui.component.LocalSymbolChrome provides com.hdemirbassmusic.music.ui.utils.MenuItemChrome,
+                        com.hdemirbassmusic.music.ui.component.LocalSymbolIconSize provides 22.dp,
                     ) { it() }
                 }
             }

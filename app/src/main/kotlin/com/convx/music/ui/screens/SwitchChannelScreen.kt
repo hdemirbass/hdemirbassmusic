@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import android.annotation.SuppressLint
 import android.webkit.CookieManager
@@ -15,9 +15,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -32,18 +32,18 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import android.widget.Toast
 import com.music.innertube.YouTube
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.DataSyncIdKey
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.constants.SavedAccount
-import com.convx.music.constants.SavedAccountsKey
-import com.convx.music.constants.toJson
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.DataSyncIdKey
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.constants.SavedAccount
+import com.hdemirbassmusic.music.constants.SavedAccountsKey
+import com.hdemirbassmusic.music.constants.toJson
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.launch
-import com.convx.music.ui.component.ScreenScaffold
+import com.hdemirbassmusic.music.ui.component.ScreenScaffold
 
 /**
  * Lets an already-logged-in user switch which YouTube channel on their Google

@@ -1,4 +1,4 @@
-﻿package com.convx.music.core.updater.downloadmanager
+﻿package com.hdemirbassmusic.music.core.updater.downloadmanager
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -13,9 +13,9 @@ import androidx.work.ForegroundInfo
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.convx.music.MainActivity
-import com.convx.music.R
-import com.convx.music.core.updater.*
+import com.hdemirbassmusic.music.MainActivity
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.core.updater.*
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.currentCoroutineContext

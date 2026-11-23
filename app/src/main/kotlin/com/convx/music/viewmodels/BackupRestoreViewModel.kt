@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import android.content.Intent
@@ -11,23 +11,23 @@ import android.database.sqlite.SQLiteDatabase as AndroidSQLiteDatabase
 import android.net.Uri
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
-import com.convx.music.MainActivity
-import com.convx.music.R
-import com.convx.music.db.InternalDatabase
-import com.convx.music.db.INTERNAL_DATABASE_VERSION
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.ArtistEntity
-import com.convx.music.db.entities.Song
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.extensions.div
-import com.convx.music.extensions.zipInputStream
-import com.convx.music.extensions.zipOutputStream
-import com.convx.music.playback.MusicService
-import com.convx.music.playback.MusicService.Companion.PERSISTENT_AUTOMIX_FILE
-import com.convx.music.playback.MusicService.Companion.PERSISTENT_PLAYBACK_SNAPSHOT_FILE
-import com.convx.music.playback.MusicService.Companion.PERSISTENT_QUEUE_FILE
-import com.convx.music.playback.MusicService.Companion.PERSISTENT_PLAYER_STATE_FILE
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.MainActivity
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.InternalDatabase
+import com.hdemirbassmusic.music.db.INTERNAL_DATABASE_VERSION
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.ArtistEntity
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.extensions.div
+import com.hdemirbassmusic.music.extensions.zipInputStream
+import com.hdemirbassmusic.music.extensions.zipOutputStream
+import com.hdemirbassmusic.music.playback.MusicService
+import com.hdemirbassmusic.music.playback.MusicService.Companion.PERSISTENT_AUTOMIX_FILE
+import com.hdemirbassmusic.music.playback.MusicService.Companion.PERSISTENT_PLAYBACK_SNAPSHOT_FILE
+import com.hdemirbassmusic.music.playback.MusicService.Companion.PERSISTENT_QUEUE_FILE
+import com.hdemirbassmusic.music.playback.MusicService.Companion.PERSISTENT_PLAYER_STATE_FILE
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import timber.log.Timber
@@ -128,7 +128,7 @@ class BackupRestoreViewModel(
                 if (stagedFiles.values.any { it.destinationFile.canonicalFile == databaseFile.canonicalFile }) {
                     appContext.stopService(Intent(appContext, MusicService::class.java))
                     runBlocking(Dispatchers.IO) { database.checkpoint() }
-                    com.convx.music.utils.CrashHandler.databaseCloseExpected = true
+                    com.hdemirbassmusic.music.utils.CrashHandler.databaseCloseExpected = true
                     databaseClosed = true
                     database.close()
                     deleteDatabaseSidecars(databaseFile, required = true)
@@ -190,7 +190,7 @@ class BackupRestoreViewModel(
             check(parent.isDirectory || parent.mkdirs()) { "Could not create restore directory: $parent" }
             val stagedFile = Files.createTempFile(
                 parent.toPath(),
-                "convx-restore-${canonicalDestination.name}-",
+                "hdemirbassmusic-restore-${canonicalDestination.name}-",
                 ".staged",
             ).toFile()
             StagedFileReplacement(stagedFile, canonicalDestination).also {

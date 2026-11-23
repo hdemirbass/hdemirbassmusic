@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableLongStateOf
@@ -11,7 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
-import com.convx.music.playback.PlaybackSleepTimer
+import com.hdemirbassmusic.music.playback.PlaybackSleepTimer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component.shimmer
+package com.hdemirbassmusic.music.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -14,21 +14,21 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import com.convx.music.constants.GridItemSize
-import com.convx.music.constants.GridItemsSizeKey
-import com.convx.music.constants.GridThumbnailHeight
-import com.convx.music.constants.SmallGridThumbnailHeight
-import com.convx.music.constants.ThumbnailCornerRadius
-import com.convx.music.constants.ThumbnailRoundedShape
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.constants.GridItemSize
+import com.hdemirbassmusic.music.constants.GridItemsSizeKey
+import com.hdemirbassmusic.music.constants.GridThumbnailHeight
+import com.hdemirbassmusic.music.constants.SmallGridThumbnailHeight
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadius
+import com.hdemirbassmusic.music.constants.ThumbnailRoundedShape
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
 
 @Composable
 fun GridItemPlaceHolder(

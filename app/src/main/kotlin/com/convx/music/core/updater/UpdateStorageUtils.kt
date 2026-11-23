@@ -1,4 +1,4 @@
-package com.convx.music.core.updater
+package com.hdemirbassmusic.music.core.updater
 
 import android.content.Context
 import java.io.File

@@ -5,7 +5,7 @@
  * only needs the fallback, since the reference app has no reason to carry a second
  * Opus decoder purely for background analysis.
  *
- * Copyright (C) 2026 Convx contributors
+ * Copyright (C) 2026 hdemirbassmusic contributors
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -21,7 +21,7 @@
  * with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import android.media.MediaCodec
 import android.media.MediaDataSource
@@ -36,7 +36,7 @@ import kotlin.math.max
 /** Decodes bounded audio regions for [TrackAnalyzer]; failures return null so callers can fall back. */
 object AudioDecoder {
 
-    private const val TAG = "ConvxAudioDecoder"
+    private const val TAG = "hdemirbassmusicAudioDecoder"
     private const val TIMEOUT_US = 10_000L
     private const val MAX_STALL_MS = 5_000L
 

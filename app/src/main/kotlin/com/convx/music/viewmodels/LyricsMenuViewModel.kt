@@ -1,21 +1,21 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.LyricsEntity
-import com.convx.music.db.entities.Song
-import com.convx.music.lyrics.LyricsHelper
-import com.convx.music.lyrics.LyricsResult
-import com.convx.music.models.MediaMetadata
-import com.convx.music.utils.NetworkConnectivityObserver
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.lyrics.LyricsHelper
+import com.hdemirbassmusic.music.lyrics.LyricsResult
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.utils.NetworkConnectivityObserver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow

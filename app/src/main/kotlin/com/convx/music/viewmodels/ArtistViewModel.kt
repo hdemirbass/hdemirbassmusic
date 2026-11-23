@@ -1,9 +1,9 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.compose.runtime.getValue
@@ -17,16 +17,16 @@ import com.music.innertube.models.filterExplicit
 import com.music.innertube.models.filterVideoSongs
 import com.music.innertube.models.filterYoutubeShorts
 import com.music.innertube.pages.ArtistPage
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.HideYoutubeShortsKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.extensions.filterExplicit
-import com.convx.music.extensions.filterExplicitAlbums
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.HideYoutubeShortsKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.extensions.filterExplicit
+import com.hdemirbassmusic.music.extensions.filterExplicitAlbums
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -35,10 +35,10 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import com.convx.music.utils.PageCaches
+import com.hdemirbassmusic.music.utils.PageCaches
 import java.io.File
-import com.convx.music.utils.ArtistWordmarkAssets
-import com.convx.music.extensions.filterVideoSongs as filterVideoSongsLocal
+import com.hdemirbassmusic.music.utils.ArtistWordmarkAssets
+import com.hdemirbassmusic.music.extensions.filterVideoSongs as filterVideoSongsLocal
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ArtistViewModel(
@@ -75,7 +75,7 @@ class ArtistViewModel(
     init {
         viewModelScope.launch {
             database.artist(artistId).first()?.artist?.name?.takeIf { it.isNotBlank() }?.let { name ->
-                com.convx.music.utils.AppleArt.prefetch(context, com.convx.music.utils.AppleArtQuery.Artist(name))
+                com.hdemirbassmusic.music.utils.AppleArt.prefetch(context, com.hdemirbassmusic.music.utils.AppleArtQuery.Artist(name))
             }
         }
         viewModelScope.launch {
@@ -99,7 +99,7 @@ class ArtistViewModel(
             val page = PageCaches.artistPages.get(artistId) {
                 YouTube.artist(artistId).onFailure { reportException(it) }.getOrNull()
             } ?: return@launch
-            com.convx.music.utils.AppleArt.prefetch(context, com.convx.music.utils.AppleArtQuery.Artist(page.artist.title))
+            com.hdemirbassmusic.music.utils.AppleArt.prefetch(context, com.hdemirbassmusic.music.utils.AppleArtQuery.Artist(page.artist.title))
             artistPage = page.filtered()
         }
     }

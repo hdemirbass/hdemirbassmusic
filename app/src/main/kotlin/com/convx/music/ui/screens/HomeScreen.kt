@@ -1,18 +1,18 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.ios.component.AppleContextMenu
-import com.convx.music.ui.ios.component.IosGlyph
-import com.convx.music.ui.ios.component.IosMenuItem
-import com.convx.music.ui.ios.component.IosMenuSection
-import com.convx.music.ui.screens.library.apple.Cover
-import com.convx.music.ui.screens.library.apple.SfStyle
-import com.convx.music.ui.screens.library.apple.songMenu
-import com.convx.music.ui.menu.AddToPlaylistDialog
+import com.hdemirbassmusic.music.ui.ios.component.AppleContextMenu
+import com.hdemirbassmusic.music.ui.ios.component.IosGlyph
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuItem
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuSection
+import com.hdemirbassmusic.music.ui.screens.library.apple.Cover
+import com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle
+import com.hdemirbassmusic.music.ui.screens.library.apple.songMenu
+import com.hdemirbassmusic.music.ui.menu.AddToPlaylistDialog
 import androidx.compose.ui.graphics.vector.ImageVector
 import android.content.Intent
 import com.composables.sfsymbols.monochrome.SFSquareAndArrowUp
@@ -24,7 +24,7 @@ import com.composables.sfsymbols.monochrome.SFShuffle
 import com.composables.sfsymbols.monochrome.SFSquareStack
 import com.composables.sfsymbols.monochrome.SFMusicMicrophone
 import com.composables.sfsymbols.monochrome.SFEllipsis
-import com.convx.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
 import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.annotation.StringRes
@@ -39,12 +39,12 @@ import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.draw.shadow
 import androidx.compose.foundation.border
-import com.convx.music.constants.GridCardArtShape
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.component.LocalItemPrefs
-import com.convx.music.ui.component.BlurredBackdropImage
-import com.convx.music.ui.component.flipAndMultiply
-import com.convx.music.ui.utils.rememberGridSpacing
+import com.hdemirbassmusic.music.constants.GridCardArtShape
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.LocalItemPrefs
+import com.hdemirbassmusic.music.ui.component.BlurredBackdropImage
+import com.hdemirbassmusic.music.ui.component.flipAndMultiply
+import com.hdemirbassmusic.music.ui.utils.rememberGridSpacing
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -73,21 +73,21 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ButtonDefaults
-import com.convx.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.surfaceColorAtElevation
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -146,99 +146,99 @@ import com.music.innertube.pages.ExplorePage
 import com.music.innertube.pages.MoodAndGenres
 import com.music.innertube.utils.parseCookieString
 import com.music.innertube.YouTube
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.constants.HomeSignInCardDismissedKey
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.constants.LocalSongSortDescendingKey
-import com.convx.music.constants.HideHomeFavoriteIconKey
-import com.convx.music.constants.LocalSongSortTypeKey
-import com.convx.music.constants.RandomizeHomeOrderKey
-import com.convx.music.constants.SongSortType
-import com.convx.music.constants.ShowHomeFabKey
-import com.convx.music.ui.component.homeCardRim
-import com.convx.music.ui.component.rememberHomeCardShape
-import com.convx.music.constants.HomeHeroCardEnabledKey
-import com.convx.music.constants.HomeSectionHiddenKey
-import com.convx.music.constants.HomeSectionOrderKey
-import com.convx.music.constants.ShowHomeMoodFiltersKey
-import com.convx.music.constants.ThumbnailCornerRadius
-import com.convx.music.db.MusicDatabase
-import com.convx.music.ui.component.SpotlightCard
-import com.convx.music.ui.component.SpotlightCardArtworkSize
-import com.convx.music.ui.component.SpotlightCardInfoHeight
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.ui.utils.bleedStart
-import com.convx.music.ui.utils.plusStart
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.utils.LocalFolderIndex
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.localPlaylistRoute
-import com.convx.music.ui.utils.onlinePlaylistRoute
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.SimilarRecommendation
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.playback.queues.LocalAlbumRadio
-import com.convx.music.playback.queues.YouTubeAlbumRadio
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.R
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.constants.HomeSignInCardDismissedKey
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.constants.LocalSongSortDescendingKey
+import com.hdemirbassmusic.music.constants.HideHomeFavoriteIconKey
+import com.hdemirbassmusic.music.constants.LocalSongSortTypeKey
+import com.hdemirbassmusic.music.constants.RandomizeHomeOrderKey
+import com.hdemirbassmusic.music.constants.SongSortType
+import com.hdemirbassmusic.music.constants.ShowHomeFabKey
+import com.hdemirbassmusic.music.ui.component.homeCardRim
+import com.hdemirbassmusic.music.ui.component.rememberHomeCardShape
+import com.hdemirbassmusic.music.constants.HomeHeroCardEnabledKey
+import com.hdemirbassmusic.music.constants.HomeSectionHiddenKey
+import com.hdemirbassmusic.music.constants.HomeSectionOrderKey
+import com.hdemirbassmusic.music.constants.ShowHomeMoodFiltersKey
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadius
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.ui.component.SpotlightCard
+import com.hdemirbassmusic.music.ui.component.SpotlightCardArtworkSize
+import com.hdemirbassmusic.music.ui.component.SpotlightCardInfoHeight
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.ui.utils.bleedStart
+import com.hdemirbassmusic.music.ui.utils.plusStart
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.utils.LocalFolderIndex
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.localPlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.onlinePlaylistRoute
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.SimilarRecommendation
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.playback.queues.LocalAlbumRadio
+import com.hdemirbassmusic.music.playback.queues.YouTubeAlbumRadio
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.R
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFXmark
 import com.composables.sfsymbols.monochrome.SFMusicNote
 import com.composables.sfsymbols.monochrome.SFPersonCropCircle
-import com.convx.music.ui.component.AlbumGridItem
-import com.convx.music.ui.component.ListItem
-import com.convx.music.ui.component.PlaylistListItem
-import com.convx.music.ui.component.ArtistGridItem
-import com.convx.music.ui.component.HideOnScrollFAB
-import com.convx.music.ui.component.HomeHeroCard
-import com.convx.music.ui.component.HomeImageBackground
-import com.convx.music.ui.component.hasCustomHomeBackground
-import com.convx.music.ui.component.LocalBottomSheetPageState
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.MenuState
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.YouTubeGridItem
+import com.hdemirbassmusic.music.ui.component.AlbumGridItem
+import com.hdemirbassmusic.music.ui.component.ListItem
+import com.hdemirbassmusic.music.ui.component.PlaylistListItem
+import com.hdemirbassmusic.music.ui.component.ArtistGridItem
+import com.hdemirbassmusic.music.ui.component.HideOnScrollFAB
+import com.hdemirbassmusic.music.ui.component.HomeHeroCard
+import com.hdemirbassmusic.music.ui.component.HomeImageBackground
+import com.hdemirbassmusic.music.ui.component.hasCustomHomeBackground
+import com.hdemirbassmusic.music.ui.component.LocalBottomSheetPageState
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.MenuState
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.YouTubeGridItem
 import com.music.innertube.pages.ChartsPage.ChartType
-import com.convx.music.viewmodels.ChartsViewModel
-import com.convx.music.viewmodels.NewReleaseViewModel
-import com.convx.music.ui.component.rememberAppBackgroundColor
-import com.convx.music.ui.component.rememberTitleCollapseProgress
-import com.convx.music.ui.component.shimmer.GridItemPlaceHolder
-import com.convx.music.ui.component.shimmer.ShimmerHost
-import com.convx.music.ui.component.shimmer.TextPlaceholder
-import com.convx.music.ui.component.SongGridItem
-import com.convx.music.ui.component.SortHeader
-import com.convx.music.ui.menu.AlbumMenu
-import com.convx.music.ui.menu.ArtistMenu
-import com.convx.music.ui.menu.SongMenu
-import com.convx.music.ui.menu.YouTubeAlbumMenu
-import com.convx.music.ui.menu.YouTubeArtistMenu
-import com.convx.music.ui.menu.YouTubePlaylistMenu
-import com.convx.music.ui.menu.YouTubeSongMenu
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.AppPage
-import com.convx.music.ui.theme.LocalPageMetrics
-import com.convx.music.ui.theme.LocalMetadataColor
-import com.convx.music.ui.theme.BrandName
-import com.convx.music.ui.theme.rememberBrandFontFamily
-import com.convx.music.ui.theme.rememberGlobalAccentColors
-import com.convx.music.utils.listItemShape
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.CommunityPlaylistItem
-import com.convx.music.viewmodels.HomeViewModel
+import com.hdemirbassmusic.music.viewmodels.ChartsViewModel
+import com.hdemirbassmusic.music.viewmodels.NewReleaseViewModel
+import com.hdemirbassmusic.music.ui.component.rememberAppBackgroundColor
+import com.hdemirbassmusic.music.ui.component.rememberTitleCollapseProgress
+import com.hdemirbassmusic.music.ui.component.shimmer.GridItemPlaceHolder
+import com.hdemirbassmusic.music.ui.component.shimmer.ShimmerHost
+import com.hdemirbassmusic.music.ui.component.shimmer.TextPlaceholder
+import com.hdemirbassmusic.music.ui.component.SongGridItem
+import com.hdemirbassmusic.music.ui.component.SortHeader
+import com.hdemirbassmusic.music.ui.menu.AlbumMenu
+import com.hdemirbassmusic.music.ui.menu.ArtistMenu
+import com.hdemirbassmusic.music.ui.menu.SongMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeAlbumMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeArtistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubePlaylistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeSongMenu
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.AppPage
+import com.hdemirbassmusic.music.ui.theme.LocalPageMetrics
+import com.hdemirbassmusic.music.ui.theme.LocalMetadataColor
+import com.hdemirbassmusic.music.ui.theme.BrandName
+import com.hdemirbassmusic.music.ui.theme.rememberBrandFontFamily
+import com.hdemirbassmusic.music.ui.theme.rememberGlobalAccentColors
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.CommunityPlaylistItem
+import com.hdemirbassmusic.music.viewmodels.HomeViewModel
 import kotlin.random.Random
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -247,7 +247,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.convx.music.viewmodels.DailyDiscoverItem
+import com.hdemirbassmusic.music.viewmodels.DailyDiscoverItem
 
 
 /** Maximum number of recommendation sections included in the home feed. */
@@ -281,7 +281,7 @@ sealed class HomeSection(val id: String, val baseWeight: Int) {
 /** Picks the Home for the current mode before either view model exists, so local mode never builds the online feed. */
 @Composable
 fun HomeRoute(navController: NavController, snackbarHostState: SnackbarHostState) {
-    if (com.convx.music.LocalLocalOnlyMode.current) {
+    if (com.hdemirbassmusic.music.LocalLocalOnlyMode.current) {
         LocalHomeScreen(navController)
     } else {
         HomeScreen(navController, snackbarHostState)
@@ -650,7 +650,7 @@ fun HomeScreen(
                                                 }
                                             }
                                         } else {
-                                            com.convx.music.ui.component.ShimmerBox(
+                                            com.hdemirbassmusic.music.ui.component.ShimmerBox(
                                                 modifier = Modifier
                                                     .fillMaxWidth()
                                                     .padding(16.dp)

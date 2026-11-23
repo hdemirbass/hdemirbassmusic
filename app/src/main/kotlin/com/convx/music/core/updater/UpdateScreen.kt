@@ -1,6 +1,6 @@
 @file:OptIn(zone.ien.hig.ExperimentalCupertinoApi::class, androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 
-package com.convx.music.core.updater
+package com.hdemirbassmusic.music.core.updater
 
 import android.content.Intent
 import android.net.Uri
@@ -27,16 +27,16 @@ import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import coil3.compose.AsyncImage
-import com.convx.music.BuildConfig
-import com.convx.music.R
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.utils.MenuItemChrome
-import com.convx.music.ui.utils.additiveChrome
-import com.convx.music.viewmodels.UpdateViewModel
+import com.hdemirbassmusic.music.BuildConfig
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.utils.MenuItemChrome
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.viewmodels.UpdateViewModel
 import zone.ien.hig.CupertinoButton
 import zone.ien.hig.CupertinoButtonDefaults
 

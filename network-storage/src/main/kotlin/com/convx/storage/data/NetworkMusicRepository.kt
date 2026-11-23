@@ -1,8 +1,8 @@
-package com.convx.storage.data
+package com.hdemirbassmusic.storage.data
 
 import androidx.media3.datasource.DataSource
-import com.convx.storage.domain.*
-import com.convx.storage.playback.NetworkDataSourceFactory
+import com.hdemirbassmusic.storage.domain.*
+import com.hdemirbassmusic.storage.playback.NetworkDataSourceFactory
 import kotlinx.coroutines.Dispatchers
 
 class NetworkMusicRepository(

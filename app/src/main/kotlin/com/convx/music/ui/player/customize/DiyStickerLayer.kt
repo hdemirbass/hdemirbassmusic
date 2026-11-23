@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player.customize
+package com.hdemirbassmusic.music.ui.player.customize
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -33,12 +33,12 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.foundation.shape.RoundedCornerShape
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
-import com.convx.music.constants.DiyLayoutKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.DiyLayoutKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlin.math.min
 import kotlin.math.roundToInt
 
@@ -98,7 +98,7 @@ private const val EntranceFirstStart = 0.2f
 private const val EntranceStartSpread = 0.2f
 private const val EntranceSpan = 0.6f
 /** Lively overshoot (~25%) that still settles exactly at the end of its window. */
-private val EntranceSpring = com.convx.music.ui.component.floatingtabbar.SpringEasing(zeta = 0.4f, omegaT = 9f)
+private val EntranceSpring = com.hdemirbassmusic.music.ui.component.floatingtabbar.SpringEasing(zeta = 0.4f, omegaT = 9f)
 
 /** 0..1(+overshoot) pop scale driver for the sticker at [rank] at sheet [progress]. */
 private fun stickerEntrance(progress: Float, rank: Float): Float {

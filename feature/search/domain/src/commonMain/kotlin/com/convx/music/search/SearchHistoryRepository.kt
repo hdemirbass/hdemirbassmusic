@@ -1,4 +1,4 @@
-package com.convx.music.search
+package com.hdemirbassmusic.music.search
 
 import kotlinx.coroutines.flow.Flow
 import org.koin.core.module.dsl.factoryOf

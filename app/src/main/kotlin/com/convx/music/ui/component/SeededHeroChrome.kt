@@ -1,5 +1,5 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
  * Shared instant-seed pattern for every hero-to-tint detail screen (Album,
@@ -8,9 +8,9 @@
  * loading state is a shimmer on the seeded bg instead of a spinner on black.
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.utils.sharedArtworkTarget
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkTarget
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -42,12 +42,12 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.convx.music.constants.GridThumbnailHeight
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.theme.GlassTintTokens
-import com.convx.music.ui.utils.LocalNavAnimatedVisibilityScope
-import com.convx.music.ui.utils.Motion
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.constants.GridThumbnailHeight
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.theme.GlassTintTokens
+import com.hdemirbassmusic.music.ui.utils.LocalNavAnimatedVisibilityScope
+import com.hdemirbassmusic.music.ui.utils.Motion
+import com.hdemirbassmusic.music.ui.utils.resize
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -83,7 +83,7 @@ fun ThumbThenFullHero(
                 .crossfade(false)
                 .build()
         }
-        val reused = com.convx.music.ui.utils.SharedArtworkSeedImage(Modifier.fillMaxSize(), contentScale)
+        val reused = com.hdemirbassmusic.music.ui.utils.SharedArtworkSeedImage(Modifier.fillMaxSize(), contentScale)
         if (!reused) AsyncImage(
             model = thumbRequest,
             contentDescription = null,
@@ -99,7 +99,7 @@ fun ThumbThenFullHero(
                 .crossfade(fullCrossfadeMillis)
                 .build()
         }
-        if (!reused || !com.convx.music.ui.utils.artworkTransitionRunning()) AsyncImage(
+        if (!reused || !com.hdemirbassmusic.music.ui.utils.artworkTransitionRunning()) AsyncImage(
             model = fullRequest,
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
@@ -127,7 +127,7 @@ fun SeededShimmerHero(
                 .crossfade(false)
                 .build()
         }
-        if (!com.convx.music.ui.utils.SharedArtworkSeedImage(Modifier.fillMaxSize(), ContentScale.Crop)) AsyncImage(
+        if (!com.hdemirbassmusic.music.ui.utils.SharedArtworkSeedImage(Modifier.fillMaxSize(), ContentScale.Crop)) AsyncImage(
             model = request,
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),

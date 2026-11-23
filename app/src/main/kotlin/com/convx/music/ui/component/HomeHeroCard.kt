@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -19,9 +19,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -46,13 +46,13 @@ import android.os.Build
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.convx.music.R
-import com.convx.music.constants.HomeHeroCardHeightOverrideKey
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.Motion
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.HomeHeroCardHeightOverrideKey
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.Motion
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
@@ -81,12 +81,12 @@ fun HomeHeroCard(
     meshPaused: () -> Boolean = { false },
 ) {
     // Apple Music's cover when the song matches (strict title + artist), YouTube's otherwise.
-    val artState = com.convx.music.utils.rememberAppleArtwork(
-        com.convx.music.utils.AppleArtQuery.Song(title, subtitle),
+    val artState = com.hdemirbassmusic.music.utils.rememberAppleArtwork(
+        com.hdemirbassmusic.music.utils.AppleArtQuery.Song(title, subtitle),
         thumbnailUrl,
         1200,
     )
-    val thumbnailUrl = (artState as? com.convx.music.utils.ArtState.Ready)?.url ?: thumbnailUrl
+    val thumbnailUrl = (artState as? com.hdemirbassmusic.music.utils.ArtState.Ready)?.url ?: thumbnailUrl
     val (heightOverride) = rememberPreference(HomeHeroCardHeightOverrideKey, 0)
     val cardShape = rememberHomeCardShape()
 

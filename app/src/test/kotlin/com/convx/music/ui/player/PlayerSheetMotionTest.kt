@@ -1,4 +1,4 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.util.lerp

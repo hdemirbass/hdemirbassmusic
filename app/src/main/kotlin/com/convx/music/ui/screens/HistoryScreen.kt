@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import android.annotation.SuppressLint
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -28,12 +28,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.text.KeyboardOptions
-import com.convx.music.ui.ios.compat.Checkbox
+import com.hdemirbassmusic.music.ui.ios.compat.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.OutlinedTextField as TextField
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField as TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -60,9 +60,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.utils.rememberHeroZoom
-import com.convx.music.ui.utils.heroPullZoom
-import com.convx.music.ui.utils.listOverscroll
+import com.hdemirbassmusic.music.ui.utils.rememberHeroZoom
+import com.hdemirbassmusic.music.ui.utils.heroPullZoom
+import com.hdemirbassmusic.music.ui.utils.listOverscroll
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.fastForEachReversed
 import androidx.activity.compose.LocalActivity
@@ -70,60 +70,60 @@ import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.navigation.NavController
 import com.music.innertube.utils.parseCookieString
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
 import com.composables.sfsymbols.SfSymbols
 import androidx.compose.ui.res.painterResource
 import com.composables.sfsymbols.monochrome.SFMagnifyingglass
 import com.composables.sfsymbols.monochrome.SFXmark
-import com.convx.music.constants.HistorySource
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.extensions.metadata
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.ui.component.ChipsRow
-import com.convx.music.ui.component.HideOnScrollFAB
-import com.convx.music.ui.ios.compat.IconButton as CupertinoIconButton
-import com.convx.music.ui.component.FrostedTopBar
-import com.convx.music.ui.component.LargeScreenTitle
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.rememberTitleCollapseProgressState
-import com.convx.music.ui.component.SongListItem
-import com.convx.music.ui.component.YouTubeListItem
-import com.convx.music.ui.component.GlassCircleButton
+import com.hdemirbassmusic.music.constants.HistorySource
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.ui.component.ChipsRow
+import com.hdemirbassmusic.music.ui.component.HideOnScrollFAB
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton as CupertinoIconButton
+import com.hdemirbassmusic.music.ui.component.FrostedTopBar
+import com.hdemirbassmusic.music.ui.component.LargeScreenTitle
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.rememberTitleCollapseProgressState
+import com.hdemirbassmusic.music.ui.component.SongListItem
+import com.hdemirbassmusic.music.ui.component.YouTubeListItem
+import com.hdemirbassmusic.music.ui.component.GlassCircleButton
 import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.draw.clip
-import com.convx.music.ui.component.HeroBackground
-import com.convx.music.ui.component.rememberHeroTopBlur
-import com.convx.music.ui.component.rememberHeroSource
-import com.convx.music.ui.component.rememberHeroTint
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.HeroTintedContent
-import com.convx.music.ui.component.GlassComponent
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.isGlassAllowed
-import com.convx.music.ui.component.liquidGlass
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.HeroBackground
+import com.hdemirbassmusic.music.ui.component.rememberHeroTopBlur
+import com.hdemirbassmusic.music.ui.component.rememberHeroSource
+import com.hdemirbassmusic.music.ui.component.rememberHeroTint
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.HeroTintedContent
+import com.hdemirbassmusic.music.ui.component.GlassComponent
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.isGlassAllowed
+import com.hdemirbassmusic.music.ui.component.liquidGlass
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import com.convx.music.ui.menu.SelectionMediaMetadataMenu
-import com.convx.music.ui.menu.SongMenu
-import com.convx.music.ui.menu.YouTubeSongMenu
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.listItemShape
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.DateAgo
-import com.convx.music.viewmodels.HistoryViewModel
+import com.hdemirbassmusic.music.ui.menu.SelectionMediaMetadataMenu
+import com.hdemirbassmusic.music.ui.menu.SongMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeSongMenu
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.DateAgo
+import com.hdemirbassmusic.music.viewmodels.HistoryViewModel
 import java.time.format.DateTimeFormatter
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.flow.collect
@@ -493,7 +493,7 @@ fun HistoryScreen(
                 }
             )
 
-            com.convx.music.ui.component.TopFadeBlur(
+            com.hdemirbassmusic.music.ui.component.TopFadeBlur(
                 hazeState = hazeState,
                 pageColor = tint,
                 modifier = Modifier.align(Alignment.TopCenter),

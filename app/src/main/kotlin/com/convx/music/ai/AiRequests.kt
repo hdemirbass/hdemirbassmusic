@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ai
+package com.hdemirbassmusic.music.ai
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
@@ -68,7 +68,7 @@ object AiRequests {
             }
         } else {
             if (apiKey.isNotBlank()) builder.header("Authorization", "Bearer ${apiKey.trim()}")
-            builder.header("HTTP-Referer", "https://github.com/cosmictaserdev-creator/Convx").header("X-Title", "convx")
+            builder.header("HTTP-Referer", "https://github.com/cosmictaserdev-creator/hdemirbassmusic").header("X-Title", "hdemirbassmusic")
             buildJsonObject {
                 if (model.isNotBlank()) put("model", model)
                 put("messages", buildJsonArray {

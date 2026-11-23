@@ -1,6 +1,6 @@
-package com.convx.storage
+package com.hdemirbassmusic.storage
 
-import com.convx.storage.domain.*
+import com.hdemirbassmusic.storage.domain.*
 import kotlin.test.*
 
 class NetworkSourceTest {
@@ -48,11 +48,11 @@ class NetworkSourceTest {
         assertEquals(NetworkMediaLocation("NAS_Source", path), NetworkMediaUri.parse(uri))
         assertTrue("%23" in uri && "%25" in uri)
         assertTrue("+" in uri)
-        assertNull(NetworkMediaUri.parse("convx-network://nas/../secret"))
-        assertNull(NetworkMediaUri.parse("convx-network://nas/%2e%2e/secret"))
-        assertNull(NetworkMediaUri.parse("convx-network://nas/song?password=hidden"))
-        assertNull(NetworkMediaUri.parse("convx-network://user:pass@nas/song"))
-        assertNull(NetworkMediaUri.parse("convx-network://nas:445/song"))
-        assertNull(NetworkMediaUri.parse("convx-network://nas/song#fragment"))
+        assertNull(NetworkMediaUri.parse("hdemirbassmusic-network://nas/../secret"))
+        assertNull(NetworkMediaUri.parse("hdemirbassmusic-network://nas/%2e%2e/secret"))
+        assertNull(NetworkMediaUri.parse("hdemirbassmusic-network://nas/song?password=hidden"))
+        assertNull(NetworkMediaUri.parse("hdemirbassmusic-network://user:pass@nas/song"))
+        assertNull(NetworkMediaUri.parse("hdemirbassmusic-network://nas:445/song"))
+        assertNull(NetworkMediaUri.parse("hdemirbassmusic-network://nas/song#fragment"))
     }
 }

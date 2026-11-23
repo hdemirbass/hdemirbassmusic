@@ -1,30 +1,30 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.library.apple
+package com.hdemirbassmusic.music.ui.screens.library.apple
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.constants.AlbumSortType
-import com.convx.music.constants.ArtistSortType
-import com.convx.music.constants.AlbumSortTypeKey
-import com.convx.music.constants.AlbumSortDescendingKey
-import com.convx.music.constants.ArtistSortTypeKey
-import com.convx.music.constants.ArtistSortDescendingKey
-import com.convx.music.constants.SongSortType
-import com.convx.music.constants.SongSortTypeKey
-import com.convx.music.constants.SongSortDescendingKey
-import com.convx.music.extensions.toEnum
-import com.convx.music.constants.PlaylistSortType
-import com.convx.music.constants.LocalOnlyModeKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.LocalItem
-import com.convx.music.db.entities.Playlist
-import com.convx.music.utils.SyncUtils
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.constants.AlbumSortType
+import com.hdemirbassmusic.music.constants.ArtistSortType
+import com.hdemirbassmusic.music.constants.AlbumSortTypeKey
+import com.hdemirbassmusic.music.constants.AlbumSortDescendingKey
+import com.hdemirbassmusic.music.constants.ArtistSortTypeKey
+import com.hdemirbassmusic.music.constants.ArtistSortDescendingKey
+import com.hdemirbassmusic.music.constants.SongSortType
+import com.hdemirbassmusic.music.constants.SongSortTypeKey
+import com.hdemirbassmusic.music.constants.SongSortDescendingKey
+import com.hdemirbassmusic.music.extensions.toEnum
+import com.hdemirbassmusic.music.constants.PlaylistSortType
+import com.hdemirbassmusic.music.constants.LocalOnlyModeKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.LocalItem
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.utils.SyncUtils
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -106,11 +106,11 @@ class AppleLibraryViewModel(
         if (scanJob?.isActive == true) return
         scanJob = viewModelScope.launch(Dispatchers.IO) {
             try {
-                com.convx.music.utils.LocalAudioScanner.scanAndInsert(context, database)
+                com.hdemirbassmusic.music.utils.LocalAudioScanner.scanAndInsert(context, database)
             } catch (cancelled: kotlinx.coroutines.CancellationException) {
                 throw cancelled
             } catch (error: Exception) {
-                com.convx.music.utils.reportException(error)
+                com.hdemirbassmusic.music.utils.reportException(error)
             }
         }
     }
@@ -127,7 +127,7 @@ class AppleLibraryViewModel(
                     val at = base.plusNanos(i * 1_000_000L)
                     when (item) {
                         is Playlist -> update(item.playlist.copy(pinnedAt = at))
-                        is com.convx.music.db.entities.Album -> update(item.album.copy(pinnedAt = at))
+                        is com.hdemirbassmusic.music.db.entities.Album -> update(item.album.copy(pinnedAt = at))
                         else -> Unit
                     }
                 }

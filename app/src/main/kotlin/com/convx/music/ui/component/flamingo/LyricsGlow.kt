@@ -1,4 +1,4 @@
-package com.convx.music.ui.component.flamingo
+package com.hdemirbassmusic.music.ui.component.flamingo
 
 import android.graphics.BlendMode
 import android.graphics.ColorMatrix

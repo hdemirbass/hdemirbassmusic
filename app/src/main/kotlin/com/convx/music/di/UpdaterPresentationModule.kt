@@ -1,6 +1,6 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.UpdateViewModel
+import com.hdemirbassmusic.music.viewmodels.UpdateViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

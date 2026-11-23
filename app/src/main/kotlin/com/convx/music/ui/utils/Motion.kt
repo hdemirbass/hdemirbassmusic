@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.utils
+package com.hdemirbassmusic.music.ui.utils
 
 import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.Easing
@@ -12,7 +12,7 @@ import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
-import com.convx.music.designsystem.MotionTokens
+import com.hdemirbassmusic.music.designsystem.MotionTokens
 
 /** Shared animation specs and motion tokens. Springs preserve velocity when interrupted; tweens are for fades. */
 object Motion {

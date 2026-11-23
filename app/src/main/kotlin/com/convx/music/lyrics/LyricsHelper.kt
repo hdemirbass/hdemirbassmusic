@@ -1,21 +1,21 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 import android.content.Context
 import android.util.LruCache
-import com.convx.music.constants.LyricsProviderOrderKey
-import com.convx.music.constants.PreferredLyricsProvider
-import com.convx.music.constants.PreferredLyricsProviderKey
-import com.convx.music.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.convx.music.extensions.toEnum
-import com.convx.music.models.MediaMetadata
-import com.convx.music.utils.NetworkConnectivityObserver
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.constants.LyricsProviderOrderKey
+import com.hdemirbassmusic.music.constants.PreferredLyricsProvider
+import com.hdemirbassmusic.music.constants.PreferredLyricsProviderKey
+import com.hdemirbassmusic.music.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.hdemirbassmusic.music.extensions.toEnum
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.utils.NetworkConnectivityObserver
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope

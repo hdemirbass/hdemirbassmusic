@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.foundation
+package com.hdemirbassmusic.music.ui.ios.foundation
 
 import androidx.compose.foundation.background
 import androidx.compose.runtime.Composable
@@ -20,25 +20,25 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.drawOutline
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalDensity
-import com.convx.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.backdrop.drawBackdrop
-import com.convx.music.ui.component.backdrop.effects.blur
-import com.convx.music.ui.component.backdrop.effects.colorControls
-import com.convx.music.ui.component.backdrop.effects.lens
-import com.convx.music.ui.component.backdrop.isRenderEffectSupported
-import com.convx.music.ui.component.backdrop.shadow.Shadow
-import com.convx.music.ui.component.backdrop.highlight.Highlight
-import com.convx.music.ui.component.backdrop.highlight.HighlightStyle
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.backdrop.drawBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.colorControls
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.lens
+import com.hdemirbassmusic.music.ui.component.backdrop.isRenderEffectSupported
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.Shadow
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.Highlight
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.HighlightStyle
 import androidx.compose.ui.graphics.isSpecified
-import com.convx.music.ui.theme.isHueless
-import com.convx.music.ui.component.elasticStretchLayerBlock
+import com.hdemirbassmusic.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.ui.component.elasticStretchLayerBlock
 
 /**
  * Colors for the iOS-style menu panel. Burn and dodge blends flatten to solid colors
@@ -63,10 +63,10 @@ object IosMenuMaterial {
     val CornerRadius = 32.dp
 
     /** Smoothed panel silhouette. */
-    val PanelShape = com.convx.music.ui.component.shapes.ContinuousRoundedRectangle(
+    val PanelShape = com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle(
         CornerRadius,
-        continuity = com.convx.music.ui.component.shapes.continuities.G2Continuity(
-            profile = com.convx.music.ui.component.shapes.continuities.G2ContinuityProfile.figmaSmoothing(0.6),
+        continuity = com.hdemirbassmusic.music.ui.component.shapes.continuities.G2Continuity(
+            profile = com.hdemirbassmusic.music.ui.component.shapes.continuities.G2ContinuityProfile.figmaSmoothing(0.6),
         ),
     )
     val Width = 238.dp
@@ -209,12 +209,12 @@ fun Modifier.iosMenuSurface(
         val density = LocalDensity.current
         val dark = IosTheme.colors.isDark
         // Keep a restrained highlight around the menu edge.
-        val rimColor = com.convx.music.ui.theme.GlassTintTokens.pluckColor(dark, Color.Unspecified)
+        val rimColor = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.pluckColor(dark, Color.Unspecified)
         val rimAlpha = MenuRimAlpha
         // User-set backdrop resolution (settings slider): pixel-sized params are pre-multiplied
         // by it so the look is the same at any scale.
-        val resolution by com.convx.music.utils.rememberPreference(
-            com.convx.music.constants.MenuBackdropResolutionKey, defaultValue = 1f,
+        val resolution by com.hdemirbassmusic.music.utils.rememberPreference(
+            com.hdemirbassmusic.music.constants.MenuBackdropResolutionKey, defaultValue = 1f,
         )
         val scale = resolution.coerceIn(0.3f, 1f)
         val blurPx = with(density) { IosMenuMaterial.LongPressBlurRadius.toPx() } * scale
@@ -232,10 +232,10 @@ fun Modifier.iosMenuSurface(
             frozen = { true },
             highlight = {
                 Highlight(
-                    width = com.convx.music.ui.component.EdgeHighlightWidth,
+                    width = com.hdemirbassmusic.music.ui.component.EdgeHighlightWidth,
                     style = HighlightStyle.Default(
                         color = rimColor.copy(alpha = rimAlpha),
-                        angle = com.convx.music.ui.component.HighlightAngleFrozen,
+                        angle = com.hdemirbassmusic.music.ui.component.HighlightAngleFrozen,
                     ),
                 )
             },

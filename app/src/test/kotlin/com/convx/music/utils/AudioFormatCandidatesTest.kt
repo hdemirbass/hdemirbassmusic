@@ -1,6 +1,6 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
-import com.convx.music.constants.AudioQuality
+import com.hdemirbassmusic.music.constants.AudioQuality
 import com.music.innertube.models.response.PlayerResponse.StreamingData.Format
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

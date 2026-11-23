@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.ui.res.painterResource
 import android.content.Intent
 import android.os.Bundle
@@ -30,9 +30,9 @@ import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -49,17 +49,17 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFSquareOnSquare
 import com.composables.sfsymbols.monochrome.SFXmark
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.IosControlSize
-import com.convx.music.ui.ios.component.IosButton
-import com.convx.music.ui.ios.component.IosButtonStyle
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.theme.SfProFontFamily
-import com.convx.music.utils.CrashHandler
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.IosControlSize
+import com.hdemirbassmusic.music.ui.ios.component.IosButton
+import com.hdemirbassmusic.music.ui.ios.component.IosButtonStyle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.theme.SfProFontFamily
+import com.hdemirbassmusic.music.utils.CrashHandler
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -101,7 +101,7 @@ class CrashActivity : ComponentActivity() {
         lifecycleScope.launch {
             try {
                 val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
-                val fileName = "convx_crash_$timestamp.txt"
+                val fileName = "hdemirbassmusic_crash_$timestamp.txt"
                 val crashFile = withContext(Dispatchers.IO) {
                     File(cacheDir, fileName).also { it.writeText(crashLog) }
                 }

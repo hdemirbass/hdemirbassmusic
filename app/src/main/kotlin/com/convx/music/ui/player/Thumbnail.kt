@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
@@ -21,7 +21,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
-import com.convx.music.ui.utils.rememberEdgeAwareFlingBehavior
+import com.hdemirbassmusic.music.ui.utils.rememberEdgeAwareFlingBehavior
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -41,10 +41,10 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import com.convx.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
 import androidx.compose.material3.MaterialShapes
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.toShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -102,42 +102,42 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.size.Size as CoilSize
 import coil3.toBitmap
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.CropAlbumArtKey
-import com.convx.music.constants.HidePlayerThumbnailKey
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.PlayerBackgroundStyleKey
-import com.convx.music.constants.PlayerHorizontalPadding
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.constants.PlayerArtworkStyle
-import com.convx.music.constants.PlayerArtworkStyleKey
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.CropAlbumArtKey
+import com.hdemirbassmusic.music.constants.HidePlayerThumbnailKey
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyleKey
+import com.hdemirbassmusic.music.constants.PlayerHorizontalPadding
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyle
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyleKey
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.drawscope.Stroke
-import com.convx.music.constants.SeekExtraSeconds
-import com.convx.music.constants.SwipeThumbnailKey
-import com.convx.music.constants.ThumbnailCornerRadiusKey
-import com.convx.music.constants.ThumbnailCornerRadius
-import com.convx.music.listentogether.RoomRole
-import com.convx.music.ui.component.CastButton
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.constants.CanvasSource
-import com.convx.music.constants.CanvasSourceKey
-import com.convx.music.constants.CanvasThumbnailAnimationKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.canvas.TidalCanvasProvider
-import com.convx.music.canvas.CanvasArtwork
-import com.convx.music.extensions.metadata
-import com.convx.music.ui.utils.resize
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.SeekExtraSeconds
+import com.hdemirbassmusic.music.constants.SwipeThumbnailKey
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadiusKey
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadius
+import com.hdemirbassmusic.music.listentogether.RoomRole
+import com.hdemirbassmusic.music.ui.component.CastButton
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.constants.CanvasSource
+import com.hdemirbassmusic.music.constants.CanvasSourceKey
+import com.hdemirbassmusic.music.constants.CanvasThumbnailAnimationKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.canvas.TidalCanvasProvider
+import com.hdemirbassmusic.music.canvas.CanvasArtwork
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.delay
-import com.convx.music.applecanvas.AppleMusicCanvasProvider
-import com.convx.music.convxcanvas.ConvxCanvasProvider
-import com.convx.music.utils.SpotifyCanvasLookup
+import com.hdemirbassmusic.music.applecanvas.AppleMusicCanvasProvider
+import com.hdemirbassmusic.music.hdemirbassmusiccanvas.hdemirbassmusicCanvasProvider
+import com.hdemirbassmusic.music.utils.SpotifyCanvasLookup
 import java.util.Locale
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
@@ -624,7 +624,7 @@ private fun ThumbnailItem(
     textBackgroundColor: Color,
     layoutDirection: LayoutDirection,
     onSeek: (String, Boolean) -> Unit,
-    playerConnection: com.convx.music.playback.PlayerConnection,
+    playerConnection: com.hdemirbassmusic.music.playback.PlayerConnection,
     context: android.content.Context,
     isLandscape: Boolean = false,
     isListenTogetherGuest: Boolean = false,
@@ -785,7 +785,7 @@ private fun ThumbnailItem(
                                         album = albumName,
                                         storefront = storefront
                                     )?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
-                                        ?: ConvxCanvasProvider.getBySongArtist(
+                                        ?: hdemirbassmusicCanvasProvider.getBySongArtist(
                                             song = s,
                                             artist = a
                                         )?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
@@ -806,9 +806,9 @@ private fun ThumbnailItem(
                                     )?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
                                 }
                             }
-                            CanvasSource.CONVX -> {
+                            CanvasSource.hdemirbassmusic -> {
                                 searchTasks.firstNotNullOfOrNull { (s, a) ->
-                                    ConvxCanvasProvider.getBySongArtist(
+                                    hdemirbassmusicCanvasProvider.getBySongArtist(
                                         song = s,
                                         artist = a
                                     )?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
@@ -940,7 +940,7 @@ internal fun ThumbnailImage(
     preloadUrls: List<String> = emptyList(),
     /** Skip the transition when another animation has already moved the incoming cover into place. */
     morphOnChange: Boolean = true,
-    bitmapStore: com.convx.artwork.ArtworkBitmapStore? = null,
+    bitmapStore: com.hdemirbassmusic.artwork.ArtworkBitmapStore? = null,
 ) {
     // Keep the transition visible without letting long audio crossfades make it drag on.
     val resolvedCrossfadeMillis = crossfadeMillis.coerceIn(450, 8_000)
@@ -958,7 +958,7 @@ internal fun ThumbnailImage(
 
     // Raw decoded covers, keyed by resolved URL (a fallback rung gets its own
     // slot rather than overwriting the URL that failed).
-    val ownedStore = remember { com.convx.artwork.ArtworkBitmapStore() }
+    val ownedStore = remember { com.hdemirbassmusic.artwork.ArtworkBitmapStore() }
     val store = bitmapStore ?: ownedStore
     val rawBitmaps = store.images
     // The API<33 mesh fallback needs a bitmap matching the destination size; the shader uses raw art.

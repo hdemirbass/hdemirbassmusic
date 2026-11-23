@@ -1,19 +1,19 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.extensions
+package com.hdemirbassmusic.music.extensions
 
 import android.os.Bundle
 import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata.MEDIA_TYPE_MUSIC
 import com.music.innertube.models.SongItem
-import com.convx.music.db.entities.Song
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.ui.utils.resize
 
 val MediaItem.metadata: MediaMetadata?
     get() = (localConfiguration?.tag as? MediaMetadata) ?: run {

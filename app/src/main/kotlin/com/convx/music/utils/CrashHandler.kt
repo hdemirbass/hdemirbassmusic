@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import com.convx.music.BuildConfig
-import com.convx.music.ui.screens.CrashActivity
+import com.hdemirbassmusic.music.BuildConfig
+import com.hdemirbassmusic.music.ui.screens.CrashActivity
 import timber.log.Timber
 import java.io.PrintWriter
 import java.io.File
@@ -64,7 +64,7 @@ class CrashHandler private constructor(
         }.toString()
 
         return buildString {
-            appendLine("Convx Crash Report")
+            appendLine("hdemirbassmusic Crash Report")
             appendLine("=".repeat(50))
             appendLine()
             appendLine("Manufacturer: ${Build.MANUFACTURER}")
@@ -84,7 +84,7 @@ class CrashHandler private constructor(
         const val EXTRA_CRASH_LOG = "crash_log"
         const val CRASH_REPORT_FILE = "last_crash_report.txt"
 
-        /** Set by [com.convx.music.viewmodels.BackupRestoreViewModel] right before it closes
+        /** Set by [com.hdemirbassmusic.music.viewmodels.BackupRestoreViewModel] right before it closes
          *  the shared database ahead of an intentional process exit. See the guard above. */
         @Volatile
         var databaseCloseExpected: Boolean = false

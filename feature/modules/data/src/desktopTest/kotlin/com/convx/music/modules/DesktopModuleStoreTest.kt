@@ -1,4 +1,4 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
 import java.nio.file.Files
 import kotlinx.coroutines.test.runTest
@@ -8,7 +8,7 @@ import kotlin.test.assertNull
 
 class DesktopModuleStoreTest {
     @Test fun snapshotSurvivesReopeningAndCanExceedJavaPreferencesValueLimit() = runTest {
-        val directory = Files.createTempDirectory("convx-module-store-test")
+        val directory = Files.createTempDirectory("hdemirbassmusic-module-store-test")
         val path = directory.resolve("modules.json")
         try {
             assertNull(DesktopModuleStore(path).read())

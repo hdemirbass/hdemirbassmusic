@@ -1,4 +1,4 @@
-package com.convx.music.recognition
+package com.hdemirbassmusic.music.recognition
 
 /**
  * Native library interface for generating Shazam-compatible audio fingerprints.

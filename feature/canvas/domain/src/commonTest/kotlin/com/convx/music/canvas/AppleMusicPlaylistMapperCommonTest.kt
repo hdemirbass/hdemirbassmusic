@@ -1,4 +1,4 @@
-package com.convx.music.canvas
+package com.hdemirbassmusic.music.canvas
 
 import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.json.Json

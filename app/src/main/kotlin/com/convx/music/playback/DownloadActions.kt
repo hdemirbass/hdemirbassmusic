@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.content.Context
 import androidx.core.net.toUri
@@ -90,7 +90,7 @@ fun downloadSongs(
     songs: List<DownloadTarget>,
     downloads: Map<String, Download>,
 ) {
-    com.convx.music.utils.ArtistWordmarkAssets.prefetch(context, songs.map { it.artist })
+    com.hdemirbassmusic.music.utils.ArtistWordmarkAssets.prefetch(context, songs.map { it.artist })
     val queuedIds = HashSet<String>()
     songs.forEach { song ->
         if (!queuedIds.add(song.id) || !shouldQueueDownload(downloads[song.id]?.state)) return@forEach

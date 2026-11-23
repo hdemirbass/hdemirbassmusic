@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.component
+package com.hdemirbassmusic.music.ui.ios.component
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -25,13 +25,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.ios.foundation.IosCapsule
-import com.convx.music.ui.ios.foundation.IosGlassSpec
-import com.convx.music.ui.ios.foundation.IosGlassStyle
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
-import com.convx.music.ui.ios.foundation.LocalIosTextStyle
-import com.convx.music.ui.ios.foundation.iosGlass
+import com.hdemirbassmusic.music.ui.ios.foundation.IosCapsule
+import com.hdemirbassmusic.music.ui.ios.foundation.IosGlassSpec
+import com.hdemirbassmusic.music.ui.ios.foundation.IosGlassStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosTextStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.iosGlass
 
 /**
  * The iOS 26 navigation bar: a large title that shrinks into an inline one as the

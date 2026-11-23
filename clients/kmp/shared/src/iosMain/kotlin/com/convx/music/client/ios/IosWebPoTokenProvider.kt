@@ -1,6 +1,6 @@
-package com.convx.music.client.ios
+package com.hdemirbassmusic.music.client.ios
 
-import com.convx.music.client.shared.generated.resources.Res
+import com.hdemirbassmusic.music.client.shared.generated.resources.Res
 import com.music.innertube.InnertubeWebPoTokenProvider
 import com.music.innertube.InnertubeWebPoTokens
 import kotlinx.coroutines.CancellationException
@@ -357,7 +357,7 @@ private class IosBotGuardSession(val visitorData: String) {
     }
 
     private companion object {
-        const val BRIDGE_NAME = "convxPoToken"
+        const val BRIDGE_NAME = "hdemirbassmusicPoToken"
         const val YOUTUBE_ORIGIN = "https://www.youtube.com"
         const val INITIALIZATION_TIMEOUT_MS = 60_000L
         const val TOKEN_TIMEOUT_MS = 30_000L

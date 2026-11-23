@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.ContentValues
 import android.content.Context
@@ -20,7 +20,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.provider.Settings
 import androidx.core.content.getSystemService
-import com.convx.music.constants.AudioQuality
+import com.hdemirbassmusic.music.constants.AudioQuality
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File

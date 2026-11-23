@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import android.net.Uri
 import androidx.annotation.StringRes
@@ -35,40 +35,40 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.screens.library.FolderSymbol
-import com.convx.music.viewmodels.NetworkBrowserViewModel
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.screens.library.FolderSymbol
+import com.hdemirbassmusic.music.viewmodels.NetworkBrowserViewModel
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import coil3.compose.AsyncImage
-import com.convx.music.R
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.LocalItem
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.library.PlaylistSummary
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.ListItem
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.PlaylistListItem
-import com.convx.music.ui.component.SpotlightCard
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.theme.AppPage
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.utils.bleedStart
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.plusStart
-import com.convx.music.ui.utils.localPlaylistRoute
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.utils.LocalFolderIndex
-import com.convx.music.utils.listItemShape
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.LocalItem
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.library.PlaylistSummary
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.ListItem
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.PlaylistListItem
+import com.hdemirbassmusic.music.ui.component.SpotlightCard
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.theme.AppPage
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.utils.bleedStart
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.plusStart
+import com.hdemirbassmusic.music.ui.utils.localPlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.utils.LocalFolderIndex
+import com.hdemirbassmusic.music.utils.listItemShape
 import kotlinx.coroutines.flow.first
 
 /**

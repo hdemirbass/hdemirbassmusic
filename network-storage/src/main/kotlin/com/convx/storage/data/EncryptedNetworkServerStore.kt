@@ -1,10 +1,10 @@
-package com.convx.storage.data
+package com.hdemirbassmusic.storage.data
 
 import android.content.Context
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import android.util.Base64
-import com.convx.storage.domain.*
+import com.hdemirbassmusic.storage.domain.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -85,5 +85,5 @@ class EncryptedNetworkServerStore(context: Context) : NetworkServerStore {
         }
     }
 
-    companion object { private const val KeyAlias = "convx.network-storage.v1" }
+    companion object { private const val KeyAlias = "hdemirbassmusic.network-storage.v1" }
 }

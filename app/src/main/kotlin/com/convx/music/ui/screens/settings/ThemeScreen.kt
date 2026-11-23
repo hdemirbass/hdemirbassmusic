@@ -1,7 +1,7 @@
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.content.res.Configuration
 import android.os.Build
 import androidx.compose.animation.AnimatedVisibility
@@ -70,30 +70,30 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.AppFont
-import com.convx.music.constants.DarkModeKey
-import com.convx.music.constants.DynamicThemeKey
-import com.convx.music.constants.PureBlackKey
-import com.convx.music.constants.SelectedFontKey
-import com.convx.music.constants.SelectedThemeColorKey
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Card
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.ripple
-import com.convx.music.ui.component.ColorPickerDialog
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.DefaultThemeColor
-import com.convx.music.ui.theme.ConvxTheme
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AppFont
+import com.hdemirbassmusic.music.constants.DarkModeKey
+import com.hdemirbassmusic.music.constants.DynamicThemeKey
+import com.hdemirbassmusic.music.constants.PureBlackKey
+import com.hdemirbassmusic.music.constants.SelectedFontKey
+import com.hdemirbassmusic.music.constants.SelectedThemeColorKey
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.ripple
+import com.hdemirbassmusic.music.ui.component.ColorPickerDialog
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.DefaultThemeColor
+import com.hdemirbassmusic.music.ui.theme.hdemirbassmusicTheme
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import com.materialkolor.PaletteStyle
 import com.materialkolor.rememberDynamicColorScheme
 
@@ -576,7 +576,7 @@ fun ThemeMockup(
         DarkMode.OFF -> false
     }
 
-    ConvxTheme(
+    hdemirbassmusicTheme(
         darkTheme = useDark,
         pureBlack = pureBlack,
         themeColor = themeColor
@@ -684,7 +684,7 @@ fun ThemeMockupPortrait(
         DarkMode.OFF -> false
     }
 
-    ConvxTheme(
+    hdemirbassmusicTheme(
         darkTheme = useDark,
         pureBlack = pureBlack,
         themeColor = themeColor

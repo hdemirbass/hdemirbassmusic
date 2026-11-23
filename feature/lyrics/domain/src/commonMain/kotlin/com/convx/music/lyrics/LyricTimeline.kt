@@ -1,4 +1,4 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 /** Selects the main vocal row for a playback position, ignoring blank and background rows. */
 inline fun <T> findPrimaryLyricLineIndex(

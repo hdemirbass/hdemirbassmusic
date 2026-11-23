@@ -1,28 +1,28 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
  * Runs a listening party for this device and keeps local playback in step with it.
  */
 
-package com.convx.music.jam
+package com.hdemirbassmusic.music.jam
 
 import android.content.Context
 import android.os.Build
 import android.os.SystemClock
 import android.widget.Toast
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.common.PlaybackParameters
-import com.convx.music.extensions.metadata
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.listentogether.ListenTogetherPlayerConnectionBridge
-import com.convx.music.listentogether.JamMediaRecovery
-import com.convx.music.models.MediaMetadata
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.di.ValueProvider
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.listentogether.ListenTogetherPlayerConnectionBridge
+import com.hdemirbassmusic.music.listentogether.JamMediaRecovery
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.di.ValueProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -78,7 +78,7 @@ enum class JamLocalPlayback { PREPARING, SCHEDULED, PLAYING, PAUSED, RECOVERING,
 class JamManager(
     private val context: Context,
     private val bridge: ListenTogetherPlayerConnectionBridge,
-    private val classic: ValueProvider<com.convx.music.listentogether.ListenTogetherManager>,
+    private val classic: ValueProvider<com.hdemirbassmusic.music.listentogether.ListenTogetherManager>,
 ) {
     companion object {
         private const val TAG = "Jam"
@@ -164,9 +164,9 @@ class JamManager(
 
     fun consumeInvite(): Invite? = _invite.value.also { _invite.value = null }
 
-    /** Link that opens this party in Convx. */
+    /** Link that opens this party in hdemirbassmusic. */
     fun inviteLink(code: String): String =
-        "convx://party/$code?server=" + java.net.URLEncoder.encode(serverUrl, "UTF-8")
+        "hdemirbassmusic://party/$code?server=" + java.net.URLEncoder.encode(serverUrl, "UTF-8")
 
     suspend fun warm() = client.warm(serverUrl)
 

@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,10 +14,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -34,12 +34,12 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.screens.library.LocalMusicViewModel
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.utils.LocalFolderIndex
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.screens.library.LocalMusicViewModel
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.utils.LocalFolderIndex
 
 /**
  * What the device scan is doing, and what it found.
@@ -60,7 +60,7 @@ fun ScanMusicScreen(
     val isScanning by viewModel.isScanning.collectAsStateWithLifecycle()
     val scanResult by viewModel.scanResult.collectAsStateWithLifecycle()
     val songs by viewModel.songs.collectAsStateWithLifecycle()
-    val permission = com.convx.music.ui.component.rememberLocalAudioPermission { }
+    val permission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { }
     LaunchedEffect(permission.granted) {
         if (permission.granted) viewModel.scanDevice(context, force = false)
     }
@@ -79,7 +79,7 @@ fun ScanMusicScreen(
         pageColor = AppTheme.colorScheme.background,
     ) {
         if (!permission.granted) {
-            item(key = "audio_access") { com.convx.music.ui.component.LocalMusicPermissionPrompt(permission) }
+            item(key = "audio_access") { com.hdemirbassmusic.music.ui.component.LocalMusicPermissionPrompt(permission) }
             return@SettingsLazyPage
         }
         item(key = "status") {

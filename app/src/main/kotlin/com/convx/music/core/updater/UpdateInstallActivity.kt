@@ -1,4 +1,4 @@
-package com.convx.music.core.updater
+package com.hdemirbassmusic.music.core.updater
 
 import android.content.Intent
 import android.net.Uri
@@ -18,10 +18,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.convx.music.R
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.theme.ConvxTheme
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.theme.hdemirbassmusicTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -37,7 +37,7 @@ class UpdateInstallActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ConvxTheme {
+            hdemirbassmusicTheme {
                 Column(Modifier.fillMaxSize().padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically), horizontalAlignment = Alignment.CenterHorizontally) {
                     CircularProgressIndicator(progress = { 0.6f })
                     Text(stringResource(R.string.updater_install_notice))

@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.utils.sharedTitleSource
-import com.convx.music.ui.utils.sharedArtworkImageListener
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.ui.utils.rememberArtworkSourceOwner
-import com.convx.music.ui.utils.ArtworkSourceHost
+import com.hdemirbassmusic.music.ui.utils.sharedTitleSource
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner
+import com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost
 import android.content.Context
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
@@ -34,8 +34,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import com.convx.music.ui.component.YouTubeGridItem
-import com.convx.music.ui.component.LocalItemPrefs
+import com.hdemirbassmusic.music.ui.component.YouTubeGridItem
+import com.hdemirbassmusic.music.ui.component.LocalItemPrefs
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
@@ -54,40 +54,40 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.convx.music.constants.GridCardArtShape
-import com.convx.music.db.entities.LocalItem
-import com.convx.music.db.entities.PlaylistEntity
-import com.convx.music.db.entities.Song
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.ui.component.MenuState
-import com.convx.music.ui.component.SpotlightCard
-import com.convx.music.ui.component.SpotlightCardInfoHeight
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.component.AppleContextMenu
-import com.convx.music.ui.ios.component.IosMenuItem
-import com.convx.music.ui.ios.component.IosMenuSection
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.menu.AddToPlaylistDialog
-import com.convx.music.ui.menu.YouTubeAlbumMenu
-import com.convx.music.ui.menu.YouTubeArtistMenu
-import com.convx.music.ui.menu.YouTubePlaylistMenu
-import com.convx.music.ui.menu.YouTubeSongMenu
-import com.convx.music.ui.screens.library.apple.Cover
-import com.convx.music.ui.screens.library.apple.SfStyle
-import com.convx.music.ui.screens.library.apple.songMenu
-import com.convx.music.ui.theme.AppPage
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.bleedStart
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.localPlaylistRoute
-import com.convx.music.ui.utils.onlinePlaylistRoute
-import com.convx.music.ui.utils.plusStart
+import com.hdemirbassmusic.music.constants.GridCardArtShape
+import com.hdemirbassmusic.music.db.entities.LocalItem
+import com.hdemirbassmusic.music.db.entities.PlaylistEntity
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.ui.component.MenuState
+import com.hdemirbassmusic.music.ui.component.SpotlightCard
+import com.hdemirbassmusic.music.ui.component.SpotlightCardInfoHeight
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.component.AppleContextMenu
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuItem
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuSection
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.menu.AddToPlaylistDialog
+import com.hdemirbassmusic.music.ui.menu.YouTubeAlbumMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeArtistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubePlaylistMenu
+import com.hdemirbassmusic.music.ui.menu.YouTubeSongMenu
+import com.hdemirbassmusic.music.ui.screens.library.apple.Cover
+import com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle
+import com.hdemirbassmusic.music.ui.screens.library.apple.songMenu
+import com.hdemirbassmusic.music.ui.theme.AppPage
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.bleedStart
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.localPlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.onlinePlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.plusStart
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
 import com.music.innertube.models.ArtistItem
@@ -487,7 +487,7 @@ internal fun HomePopMenu(
 
 @Composable
 internal fun ytItemMenu(item: YTItem, deps: HomeSectionDeps): Pair<List<IosMenuItem>, List<IosMenuSection>> =
-    com.convx.music.ui.screens.library.apple.ytItemMenu(item, deps.navController, deps.playerConnection) { deps.showYtItemMenu(item) }
+    com.hdemirbassmusic.music.ui.screens.library.apple.ytItemMenu(item, deps.navController, deps.playerConnection) { deps.showYtItemMenu(item) }
 
 /** Where a [YTItem] goes when tapped. Shared by every shelf that carries remote items. */
 internal fun HomeSectionDeps.openYtItem(item: YTItem) {

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import androidx.compose.ui.unit.dp
 import androidx.compose.animation.Crossfade
@@ -23,9 +23,9 @@ import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import coil3.compose.AsyncImage
-import com.convx.music.R
-import com.convx.music.ui.component.ChipsRow
-import com.convx.music.ui.theme.rememberArtworkTint
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.ChipsRow
+import com.hdemirbassmusic.music.ui.theme.rememberArtworkTint
 import com.music.innertube.pages.HomePage
 
 /** "All" followed by YouTube Music's own chips; null is the unfiltered Home. */

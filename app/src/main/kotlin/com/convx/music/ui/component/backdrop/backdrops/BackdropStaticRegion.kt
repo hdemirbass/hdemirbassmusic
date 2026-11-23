@@ -1,8 +1,8 @@
 /*
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.component.backdrop.backdrops
+package com.hdemirbassmusic.music.ui.component.backdrop.backdrops
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Rect

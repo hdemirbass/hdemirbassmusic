@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.animateFloatAsState
@@ -24,16 +24,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.constants.AppBackgroundColorKey
-import com.convx.music.constants.HomeBackgroundAnimateKey
-import com.convx.music.constants.HomeBackgroundBlurKey
-import com.convx.music.constants.HomeBackgroundDimKey
-import com.convx.music.constants.HomeBackgroundEnabledKey
-import com.convx.music.constants.HomeBackgroundIsVideoKey
-import com.convx.music.constants.HomeBackgroundPathKey
-import com.convx.music.constants.HomeBackgroundQualityKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.constants.AppBackgroundColorKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundAnimateKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundBlurKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundDimKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundEnabledKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundIsVideoKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundPathKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundQualityKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import java.io.File

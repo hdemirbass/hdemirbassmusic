@@ -2,7 +2,7 @@
  * Ported from Orchard (https://github.com/SFG5453/Orchard).
  *
  * Copyright (C) 2026 SFG545 (original Orchard implementation)
- * Copyright (C) 2026 Convx contributors (adapted from an open-source base)
+ * Copyright (C) 2026 hdemirbassmusic contributors (adapted from an open-source base)
  *
  * Orchard's original source is licensed under the GNU Affero General Public
  * License, version 3 or later. Per AGPLv3 section 13, this file is combined
@@ -19,7 +19,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import kotlinx.serialization.Serializable
 

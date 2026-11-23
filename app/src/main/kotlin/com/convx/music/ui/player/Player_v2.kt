@@ -1,19 +1,19 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 // Apple Music player UI adapted from an open-source (GPL-3.0) base.
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.lifecycle.repeatOnLifecycle
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.heroSideLiveBlur
-import com.convx.music.ui.utils.VibrantChromeInk
-import com.convx.music.ui.utils.vibrantChrome
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.heroSideLiveBlur
+import com.hdemirbassmusic.music.ui.utils.VibrantChromeInk
+import com.hdemirbassmusic.music.ui.utils.vibrantChrome
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFAirplayAudio
 import com.composables.sfsymbols.monochrome.SFHeadphones
@@ -70,38 +70,38 @@ import androidx.navigation.NavController
 import org.koin.androidx.compose.koinViewModel
 import coil3.compose.AsyncImage
 import androidx.media3.common.C
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.PlayerBackgroundStyleKey
-import com.convx.music.constants.PlayerLook
-import com.convx.music.constants.PlayerLookKey
-import com.convx.music.constants.PlayerStaticColorKey
-import com.convx.music.constants.PlayerGradientStopsKey
-import com.convx.music.ui.theme.decodeGradientStops
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyleKey
+import com.hdemirbassmusic.music.constants.PlayerLook
+import com.hdemirbassmusic.music.constants.PlayerLookKey
+import com.hdemirbassmusic.music.constants.PlayerStaticColorKey
+import com.hdemirbassmusic.music.constants.PlayerGradientStopsKey
+import com.hdemirbassmusic.music.ui.theme.decodeGradientStops
 import androidx.compose.ui.graphics.luminance
-import com.convx.music.constants.ShowPlayerThumbnailShadowKey
-import com.convx.music.constants.PlayerThumbnailShadowElevationKey
-import com.convx.music.constants.EnableGoogleCastKey
-import com.convx.music.models.MediaMetadata
-import com.convx.music.ui.component.BottomSheetState
-import com.convx.music.ui.component.DjReadout
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.liquidGlass
-import com.convx.music.ui.component.LocalAppBackdrop
-import com.convx.music.ui.component.LocalPooledGlass
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.constants.ShowPlayerThumbnailShadowKey
+import com.hdemirbassmusic.music.constants.PlayerThumbnailShadowElevationKey
+import com.hdemirbassmusic.music.constants.EnableGoogleCastKey
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.ui.component.BottomSheetState
+import com.hdemirbassmusic.music.ui.component.DjReadout
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.liquidGlass
+import com.hdemirbassmusic.music.ui.component.LocalAppBackdrop
+import com.hdemirbassmusic.music.ui.component.LocalPooledGlass
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
 import androidx.compose.runtime.saveable.rememberSaveable
-import com.convx.music.ui.component.heroFootLiveBlur
-import com.convx.music.ui.component.PlayerSliderTrack
-import com.convx.music.ui.theme.PlayerSliderColors
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.extensions.togglePlayPause
-import com.convx.music.extensions.metadata
-import com.convx.music.ui.component.Lyrics
-import com.convx.music.ui.component.rememberBottomSheetState
-import com.convx.music.ui.component.expandedAnchor
+import com.hdemirbassmusic.music.ui.component.heroFootLiveBlur
+import com.hdemirbassmusic.music.ui.component.PlayerSliderTrack
+import com.hdemirbassmusic.music.ui.theme.PlayerSliderColors
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.extensions.togglePlayPause
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.ui.component.Lyrics
+import com.hdemirbassmusic.music.ui.component.rememberBottomSheetState
+import com.hdemirbassmusic.music.ui.component.expandedAnchor
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.gestures.detectVerticalDragGestures
@@ -110,51 +110,51 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
-import com.convx.music.constants.SwipeSensitivityKey
-import com.convx.music.constants.SwipeThumbnailKey
+import com.hdemirbassmusic.music.constants.SwipeSensitivityKey
+import com.hdemirbassmusic.music.constants.SwipeThumbnailKey
 import kotlin.math.roundToInt
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.coroutines.flow.first
-import com.convx.music.ui.component.LocalBottomSheetPageState
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.menu.LyricsMenu
-import com.convx.music.ui.menu.PlayerMenu
-import com.convx.music.ui.utils.ShowMediaInfo
-import com.convx.music.ui.utils.ShowOffsetDialog
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.ui.component.LocalBottomSheetPageState
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.menu.LyricsMenu
+import com.hdemirbassmusic.music.ui.menu.PlayerMenu
+import com.hdemirbassmusic.music.ui.utils.ShowMediaInfo
+import com.hdemirbassmusic.music.ui.utils.ShowOffsetDialog
+import com.hdemirbassmusic.music.ui.utils.resize
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import coil3.size.Size as CoilSize
-import com.convx.music.core.AudioDeviceMenu
-import com.convx.music.core.AudioDeviceType
-import com.convx.music.core.audioDeviceSymbol
-import com.convx.music.core.ActiveAudioOutput
-import com.convx.music.core.getActiveAudioOutput
-import com.convx.music.ui.component.CastButton
-import com.convx.music.BuildConfig
-import com.convx.music.R
-import com.convx.music.utils.rememberPreference
-import com.convx.music.constants.CompactPlayerInTabViewKey
-import com.convx.music.LocalTabView
-import com.convx.music.constants.ShowUpNextKey
-import com.convx.music.constants.HideVolumeBarKey
+import com.hdemirbassmusic.music.core.AudioDeviceMenu
+import com.hdemirbassmusic.music.core.AudioDeviceType
+import com.hdemirbassmusic.music.core.audioDeviceSymbol
+import com.hdemirbassmusic.music.core.ActiveAudioOutput
+import com.hdemirbassmusic.music.core.getActiveAudioOutput
+import com.hdemirbassmusic.music.ui.component.CastButton
+import com.hdemirbassmusic.music.BuildConfig
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.CompactPlayerInTabViewKey
+import com.hdemirbassmusic.music.LocalTabView
+import com.hdemirbassmusic.music.constants.ShowUpNextKey
+import com.hdemirbassmusic.music.constants.HideVolumeBarKey
 import androidx.compose.ui.semantics.clearAndSetSemantics
-import com.convx.music.ui.player.customize.AbsoluteFrameDiyStickers
-import com.convx.music.ui.player.customize.PlayerGlyph
+import com.hdemirbassmusic.music.ui.player.customize.AbsoluteFrameDiyStickers
+import com.hdemirbassmusic.music.ui.player.customize.PlayerGlyph
 import androidx.compose.ui.graphics.graphicsLayer
-import com.convx.music.ui.utils.flamingoChrome
-import com.convx.music.ui.player.customize.AnimatedPlayerGlyph
-import com.convx.music.ui.player.customize.PlayerIconSlot
-import com.convx.music.ui.player.customize.rememberDiyLayout
-import com.convx.music.ui.player.customize.DiyOrientation
-import com.convx.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.ui.utils.flamingoChrome
+import com.hdemirbassmusic.music.ui.player.customize.AnimatedPlayerGlyph
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot
+import com.hdemirbassmusic.music.ui.player.customize.rememberDiyLayout
+import com.hdemirbassmusic.music.ui.player.customize.DiyOrientation
+import com.hdemirbassmusic.music.LocalPlayerConnection
 import kotlinx.coroutines.launch
-import com.convx.music.ui.utils.Motion
+import com.hdemirbassmusic.music.ui.utils.Motion
 
 enum class PlayerInternalState { COVER, LYRICS, QUEUE }
 
@@ -196,7 +196,7 @@ fun PlayerV2(
         // One uniform viewport scale keeps glyphs, type and spacing in the same proportions.
         // Menus and the quality card float over this backdrop, which records the whole
         // player (artwork too) -- see V2Overlay.kt.
-        val overlayBackdrop = com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop()
+        val overlayBackdrop = com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop()
         val overlaySlot = remember { mutableStateOf<(@Composable () -> Unit)?>(null) }
         CompositionLocalProvider(
             androidx.compose.ui.platform.LocalDensity provides
@@ -246,7 +246,7 @@ private fun PlayerV2Content(
     val videoLookup by ui.rememberVideoStreamLookup()
     val availableVideo by playerConnection.videoAvailability.collectAsStateWithLifecycle()
     val canWatchVideo = availableVideo?.songId == mediaMetadata?.id && availableVideo != null
-    val videoStream = (videoLookup as? com.convx.music.playback.VideoStreamLookup.Ready)
+    val videoStream = (videoLookup as? com.hdemirbassmusic.music.playback.VideoStreamLookup.Ready)
         ?.stream?.takeIf { it.mediaId == mediaMetadata?.id }
     val videoPresentation = LocalFullscreenVideo.current
     var previewWatchVideo by remember(mediaMetadata?.id) { mutableStateOf(false) }
@@ -284,7 +284,7 @@ private fun PlayerV2Content(
     // Track-change ladder (TrackChoreography): cover -> words -> details -> ambience.
     val trackChoreography = rememberTrackChoreography(mediaMetadata)
     val artworkMetadata = trackChoreography.artwork.value
-    val paneArtworkStore = remember { com.convx.artwork.ArtworkBitmapStore() }
+    val paneArtworkStore = remember { com.hdemirbassmusic.artwork.ArtworkBitmapStore() }
     val textMetadata = trackChoreography.text.value
     val detailMetadata = trackChoreography.detail.value
     val canvasVideo = rememberCanvasVideoController(
@@ -331,9 +331,9 @@ private fun PlayerV2Content(
     var showV2Options by remember { mutableStateOf(false) }
     var showRoutePopover by remember { mutableStateOf(false) }
     // Same condition as LyricsMenu's "Translate with AI" entry.
-    val lyricsAiProvider by rememberPreference(com.convx.music.constants.AiProviderKey, com.convx.music.ai.AiDefaults.PROVIDER)
-    val lyricsOpenRouterKey by rememberPreference(com.convx.music.constants.OpenRouterApiKey, "")
-    val lyricsDeeplKey by rememberPreference(com.convx.music.constants.DeeplApiKey, "")
+    val lyricsAiProvider by rememberPreference(com.hdemirbassmusic.music.constants.AiProviderKey, com.hdemirbassmusic.music.ai.AiDefaults.PROVIDER)
+    val lyricsOpenRouterKey by rememberPreference(com.hdemirbassmusic.music.constants.OpenRouterApiKey, "")
+    val lyricsDeeplKey by rememberPreference(com.hdemirbassmusic.music.constants.DeeplApiKey, "")
     val hasLyricsAiKey = if (lyricsAiProvider == "DeepL") lyricsDeeplKey.isNotBlank() else lyricsOpenRouterKey.isNotBlank()
     val bottomSheetPageState = LocalBottomSheetPageState.current
     val paneState: androidx.compose.runtime.MutableState<PlayerInternalState> =
@@ -352,7 +352,7 @@ private fun PlayerV2Content(
     // Shared by the swipe gesture and the neighboring-cover preview.
     val heroDragOffset = remember { Animatable(0f) }
     // Freeze the previewed cover during a skip so it cannot switch to the next neighbor.
-    var committedPeek by remember { mutableStateOf<com.convx.music.models.MediaMetadata?>(null) }
+    var committedPeek by remember { mutableStateOf<com.hdemirbassmusic.music.models.MediaMetadata?>(null) }
     // Track that was current when the skip began; null means no skip is settling.
     var committedFromId by remember { mutableStateOf<String?>(null) }
     LaunchedEffect(committedFromId, artworkMetadata?.id) {
@@ -410,9 +410,9 @@ private fun PlayerV2Content(
         }
     }
 
-    val listenTogetherManager = com.convx.music.LocalListenTogetherManager.current
-    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsStateWithLifecycle(initialValue = com.convx.music.listentogether.RoomRole.NONE)
-    val isListenTogetherGuest = listenTogetherRoleState?.value == com.convx.music.listentogether.RoomRole.GUEST
+    val listenTogetherManager = com.hdemirbassmusic.music.LocalListenTogetherManager.current
+    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsStateWithLifecycle(initialValue = com.hdemirbassmusic.music.listentogether.RoomRole.NONE)
+    val isListenTogetherGuest = listenTogetherRoleState?.value == com.hdemirbassmusic.music.listentogether.RoomRole.GUEST
     val isMuted by ui.isMuted
     val canSkipPrevious by ui.canSkipPrevious
     val canSkipNext by ui.canSkipNext
@@ -541,8 +541,8 @@ private fun PlayerV2Content(
     val sleepTimer = rememberSleepTimerState(playerConnection)
     SleepTimerDialogHost(playerConnection, sleepTimer)
 
-    val audioDeviceIcons = com.convx.music.core.rememberAudioDeviceIcons()
-    val audioDeviceNames = com.convx.music.core.rememberAudioDeviceNames()
+    val audioDeviceIcons = com.hdemirbassmusic.music.core.rememberAudioDeviceIcons()
+    val audioDeviceNames = com.hdemirbassmusic.music.core.rememberAudioDeviceNames()
     val audioOutput by produceState<ActiveAudioOutput?>(initialValue = getActiveAudioOutput(context)) {
         val am = context.getSystemService(android.content.Context.AUDIO_SERVICE) as AudioManager
         val scope = this
@@ -848,7 +848,7 @@ private fun PlayerV2Content(
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 // The song / video switch replaces the grab pill whenever a video exists for the track.
-                val videoSwitchEnabled by rememberPreference(com.convx.music.constants.ShowVideoSwitchKey, true)
+                val videoSwitchEnabled by rememberPreference(com.hdemirbassmusic.music.constants.ShowVideoSwitchKey, true)
                 val showVideoSwitch = canWatchVideo && videoSwitchEnabled && playerState == PlayerInternalState.COVER
                 if (!showVideoSwitch) Box(
                     modifier = Modifier
@@ -858,17 +858,17 @@ private fun PlayerV2Content(
                         .background(adaptivePrimary.copy(alpha = 0.3f))
                         .clickable { state.collapseSoft() }
                 )
-                val partyViewModel: com.convx.music.viewmodels.JamViewModel = koinViewModel()
+                val partyViewModel: com.hdemirbassmusic.music.viewmodels.JamViewModel = koinViewModel()
                 val party by partyViewModel.session.collectAsStateWithLifecycle()
                 party?.let { PartyChip(it.code, it.members.size, adaptivePrimary) { state.collapseSoft(); navController.navigate("listen_together/party") } }
                 if (showVideoSwitch) {
                     SongVideoModeControl(watchVideo, adaptivePrimary) { selected ->
-                        if (selected && watchVideo && videoLookup is com.convx.music.playback.VideoStreamLookup.Unavailable) {
+                        if (selected && watchVideo && videoLookup is com.hdemirbassmusic.music.playback.VideoStreamLookup.Unavailable) {
                             mediaMetadata?.id?.let(playerConnection::requestVideoStream)
                         }
                         selectVideo(selected)
                     }
-                    if (watchVideo && videoLookup is com.convx.music.playback.VideoStreamLookup.Unavailable) {
+                    if (watchVideo && videoLookup is com.hdemirbassmusic.music.playback.VideoStreamLookup.Unavailable) {
                         Text(stringResource(R.string.video_unavailable), color = adaptiveSecondary, fontSize = 12.sp)
                     }
                 }
@@ -953,8 +953,8 @@ private fun PlayerV2Content(
                                 // In wide layouts, artwork fades toward the controls column.
                                 val heroFadeBrush = remember(isWidePlayerLayout) {
                                     if (isWidePlayerLayout) androidx.compose.ui.graphics.Brush.horizontalGradient(
-                                        colorStops = com.convx.music.ui.component.heroFadeOutStops(0.6f, 1f).toTypedArray(),
-                                    ) else com.convx.music.ui.component.heroFadeOutBrush()
+                                        colorStops = com.hdemirbassmusic.music.ui.component.heroFadeOutStops(0.6f, 1f).toTypedArray(),
+                                    ) else com.hdemirbassmusic.music.ui.component.heroFadeOutBrush()
                                 }
                                 Box(
                                     modifier = if (isHeroLook) {
@@ -1445,7 +1445,7 @@ private fun PlayerV2Content(
                                             )
                                             // Shares the lyrics menu setting; shown only when an AI provider is configured.
                                             if (hasLyricsAiKey) {
-                                                val translationsOn by com.convx.music.lyrics.LyricsTranslationHelper.hasActiveTranslations.collectAsStateWithLifecycle()
+                                                val translationsOn by com.hdemirbassmusic.music.lyrics.LyricsTranslationHelper.hasActiveTranslations.collectAsStateWithLifecycle()
                                                 Box(
                                                     contentAlignment = Alignment.Center,
                                                     modifier = Modifier
@@ -1456,9 +1456,9 @@ private fun PlayerV2Content(
                                                         .background(Color.White.copy(alpha = if (translationsOn) 0.6f else 0.32f))
                                                         .clickable {
                                                             if (translationsOn) {
-                                                                com.convx.music.lyrics.LyricsTranslationHelper.triggerClearTranslations()
+                                                                com.hdemirbassmusic.music.lyrics.LyricsTranslationHelper.triggerClearTranslations()
                                                             } else {
-                                                                com.convx.music.lyrics.LyricsTranslationHelper.triggerManualTranslation()
+                                                                com.hdemirbassmusic.music.lyrics.LyricsTranslationHelper.triggerManualTranslation()
                                                             }
                                                         },
                                                 ) {
@@ -1552,7 +1552,7 @@ private fun PlayerV2Content(
             ) { lyricsShown ->
             if (lyricsShown) {
                 Box(Modifier.fillMaxSize()) {
-                    com.convx.music.ui.utils.ProvideUnscaledDensity {
+                    com.hdemirbassmusic.music.ui.utils.ProvideUnscaledDensity {
                         Lyrics(
                             sliderPositionProvider = { sliderPosition ?: position },
                             showLyrics = true,
@@ -2093,7 +2093,7 @@ private fun PlayerV2Frame(
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
-                        com.convx.music.ui.utils.ProvideFittedDensity(this@BoxWithConstraints.maxHeight - 48.dp, WideControlsDesignHeight) {
+                        com.hdemirbassmusic.music.ui.utils.ProvideFittedDensity(this@BoxWithConstraints.maxHeight - 48.dp, WideControlsDesignHeight) {
                             this@Column.controls()
                         }
                     }
@@ -2127,7 +2127,7 @@ private fun PlayerV2Frame(
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
-                        com.convx.music.ui.utils.ProvideFittedDensity(this@BoxWithConstraints.maxHeight - 48.dp, WideControlsDesignHeight) {
+                        com.hdemirbassmusic.music.ui.utils.ProvideFittedDensity(this@BoxWithConstraints.maxHeight - 48.dp, WideControlsDesignHeight) {
                             this@Column.controls()
                         }
                     }

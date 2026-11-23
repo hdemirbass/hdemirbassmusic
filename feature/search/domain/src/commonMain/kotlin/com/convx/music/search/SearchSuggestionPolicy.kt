@@ -1,4 +1,4 @@
-package com.convx.music.search
+package com.hdemirbassmusic.music.search
 
 data class SearchSuggestionCandidates(
     val history: List<SearchHistoryEntry>,

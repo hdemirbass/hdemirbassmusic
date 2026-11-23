@@ -1,6 +1,6 @@
 @file:OptIn(zone.ien.hig.ExperimentalCupertinoApi::class)
 
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -26,8 +26,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlin.math.roundToInt
-import com.convx.music.playback.PlaybackSleepTimer
-import com.convx.music.playback.PlaybackSnapshot
+import com.hdemirbassmusic.music.playback.PlaybackSleepTimer
+import com.hdemirbassmusic.music.playback.PlaybackSnapshot
 import com.kyant.backdrop.backdrops.layerBackdrop
 import com.kyant.backdrop.backdrops.rememberLayerBackdrop
 import kotlinx.coroutines.delay

@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
@@ -18,8 +18,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -40,19 +40,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.db.entities.Song
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.menu.AddToPlaylistDialogOnline
-import com.convx.music.ui.menu.CsvColumnMappingDialog
-import com.convx.music.ui.menu.CsvImportProgressDialog
-import com.convx.music.ui.menu.LoadingScreen
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.viewmodels.BackupRestoreViewModel
-import com.convx.music.viewmodels.ConvertedSongLog
-import com.convx.music.viewmodels.CsvImportState
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.menu.AddToPlaylistDialogOnline
+import com.hdemirbassmusic.music.ui.menu.CsvColumnMappingDialog
+import com.hdemirbassmusic.music.ui.menu.CsvImportProgressDialog
+import com.hdemirbassmusic.music.ui.menu.LoadingScreen
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.viewmodels.BackupRestoreViewModel
+import com.hdemirbassmusic.music.viewmodels.ConvertedSongLog
+import com.hdemirbassmusic.music.viewmodels.CsvImportState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

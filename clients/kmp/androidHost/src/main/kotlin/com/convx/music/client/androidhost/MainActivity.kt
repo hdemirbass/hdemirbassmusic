@@ -1,4 +1,4 @@
-package com.convx.music.client.androidhost
+package com.hdemirbassmusic.music.client.androidhost
 
 import android.os.Bundle
 import android.webkit.CookieManager
@@ -25,30 +25,30 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.convx.music.account.MusicAccountState
-import com.convx.music.account.SecureSessionStore
-import com.convx.music.account.presentation.MusicAccountPresentationState
-import com.convx.music.account.presentation.MusicAccountStateHolder
-import com.convx.music.account.presentation.musicAccountPresentationModule
-import com.convx.music.catalog.presentation.ConvxMusicClientShell
-import com.convx.music.catalog.presentation.MusicBrowserScreen
-import com.convx.music.catalog.presentation.catalogPresentationModule
-import com.convx.music.library.libraryCoreModule
-import com.convx.music.library.data.libraryDataModule
-import com.convx.music.library.data.MusicLibraryDatabase
-import com.convx.music.library.data.buildMusicLibraryDatabase
-import com.convx.music.playback.AudioStreamResolver
-import com.convx.music.modules.AndroidModuleStore
-import com.convx.music.modules.ModuleEnvironment
-import com.convx.music.modules.ModuleAudioStreamResolver
-import com.convx.music.modules.ModulesScreen
-import com.convx.music.playback.PlaybackSettingsRepository
-import com.convx.music.playback.PlaybackCheckpointRepository
-import com.convx.music.playback.PlaybackTrackAnalysisRepository
-import com.convx.music.playback.data.PlaybackSettingsDatabase
-import com.convx.music.playback.data.buildPlaybackSettingsDatabase
-import com.convx.music.playback.data.playbackDataModule
-import com.convx.music.playback.presentation.playbackPresentationModule
+import com.hdemirbassmusic.music.account.MusicAccountState
+import com.hdemirbassmusic.music.account.SecureSessionStore
+import com.hdemirbassmusic.music.account.presentation.MusicAccountPresentationState
+import com.hdemirbassmusic.music.account.presentation.MusicAccountStateHolder
+import com.hdemirbassmusic.music.account.presentation.musicAccountPresentationModule
+import com.hdemirbassmusic.music.catalog.presentation.hdemirbassmusicMusicClientShell
+import com.hdemirbassmusic.music.catalog.presentation.MusicBrowserScreen
+import com.hdemirbassmusic.music.catalog.presentation.catalogPresentationModule
+import com.hdemirbassmusic.music.library.libraryCoreModule
+import com.hdemirbassmusic.music.library.data.libraryDataModule
+import com.hdemirbassmusic.music.library.data.MusicLibraryDatabase
+import com.hdemirbassmusic.music.library.data.buildMusicLibraryDatabase
+import com.hdemirbassmusic.music.playback.AudioStreamResolver
+import com.hdemirbassmusic.music.modules.AndroidModuleStore
+import com.hdemirbassmusic.music.modules.ModuleEnvironment
+import com.hdemirbassmusic.music.modules.ModuleAudioStreamResolver
+import com.hdemirbassmusic.music.modules.ModulesScreen
+import com.hdemirbassmusic.music.playback.PlaybackSettingsRepository
+import com.hdemirbassmusic.music.playback.PlaybackCheckpointRepository
+import com.hdemirbassmusic.music.playback.PlaybackTrackAnalysisRepository
+import com.hdemirbassmusic.music.playback.data.PlaybackSettingsDatabase
+import com.hdemirbassmusic.music.playback.data.buildPlaybackSettingsDatabase
+import com.hdemirbassmusic.music.playback.data.playbackDataModule
+import com.hdemirbassmusic.music.playback.presentation.playbackPresentationModule
 import com.music.innertube.innertubeDataModule
 import org.koin.compose.KoinApplication
 import org.koin.compose.koinInject
@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val moduleEnvironment = remember(appContext) { ModuleEnvironment(AndroidModuleStore(appContext)) }
             val libraryDatabase = remember(appContext) {
-                val databaseFile = appContext.getDatabasePath("convx-client-library.db")
+                val databaseFile = appContext.getDatabasePath("hdemirbassmusic-client-library.db")
                 val databaseDirectory = requireNotNull(databaseFile.parentFile)
                 check(databaseDirectory.exists() || databaseDirectory.mkdirs()) {
                     "Unable to create the client library database directory."
@@ -71,7 +71,7 @@ class MainActivity : ComponentActivity() {
                 )
             }
             val playbackSettingsDatabase = remember(appContext) {
-                val databaseFile = appContext.getDatabasePath("convx-client-playback-settings.db")
+                val databaseFile = appContext.getDatabasePath("hdemirbassmusic-client-playback-settings.db")
                 val databaseDirectory = requireNotNull(databaseFile.parentFile)
                 check(databaseDirectory.exists() || databaseDirectory.mkdirs()) {
                     "Unable to create the client playback settings database directory."
@@ -167,7 +167,7 @@ class MainActivity : ComponentActivity() {
                     is MusicAccountState.ChoosingChannel -> "Cancel"
                     is MusicAccountState.SignedIn -> "Sign out"
                 }
-                ConvxMusicClientShell(
+                hdemirbassmusicMusicClientShell(
                     onModulesAction = { showModules = !showModules },
                     accountSubtitle = accountSubtitle,
                     accountActionLabel = accountActionLabel,

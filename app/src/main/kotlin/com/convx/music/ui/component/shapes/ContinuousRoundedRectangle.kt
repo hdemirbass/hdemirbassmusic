@@ -8,7 +8,7 @@
  * variants were dropped — this app only uses the LTR-aware
  * ContinuousRoundedRectangle.
  */
-package com.convx.music.ui.component.shapes
+package com.hdemirbassmusic.music.ui.component.shapes
 
 import androidx.annotation.FloatRange
 import androidx.annotation.IntRange

@@ -1,12 +1,12 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.constants.HideExplicitKey
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.Song
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.constants.HideExplicitKey
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map

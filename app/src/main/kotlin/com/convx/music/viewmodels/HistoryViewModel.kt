@@ -1,9 +1,9 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import androidx.compose.runtime.Immutable
 import android.content.Context
@@ -11,14 +11,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.music.innertube.YouTube
 import com.music.innertube.pages.HistoryPage
-import com.convx.music.constants.HideVideoSongsKey
-import com.convx.music.constants.DataSaverEnabledKey
-import com.convx.music.constants.HistorySource
-import com.convx.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.constants.HideVideoSongsKey
+import com.hdemirbassmusic.music.constants.DataSaverEnabledKey
+import com.hdemirbassmusic.music.constants.HistorySource
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
 import com.music.innertube.utils.parseCookieString
-import com.convx.music.history.HistoryLocalDataSource
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.reportException
+import com.hdemirbassmusic.music.history.HistoryLocalDataSource
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.reportException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -32,11 +32,11 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.time.LocalDate
-import com.convx.music.db.entities.EventWithSong
-import com.convx.music.history.HistoryDate
-import com.convx.music.history.HistoryRecord
-import com.convx.music.history.HistorySection
-import com.convx.music.history.groupHistoryRecords
+import com.hdemirbassmusic.music.db.entities.EventWithSong
+import com.hdemirbassmusic.music.history.HistoryDate
+import com.hdemirbassmusic.music.history.HistoryRecord
+import com.hdemirbassmusic.music.history.HistorySection
+import com.hdemirbassmusic.music.history.groupHistoryRecords
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class HistoryViewModel(

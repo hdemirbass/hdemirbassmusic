@@ -1,11 +1,11 @@
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import android.content.Context
 import android.media.MediaDataSource
 import android.net.Uri
 import android.util.Log
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.playback.AudioCache
+import com.hdemirbassmusic.music.playback.AudioCache
 import java.io.File
 
 object StemStore {
@@ -34,7 +34,7 @@ object StemStore {
 
 @UnstableApi
 object StemSeparator {
-    private const val TAG = "ConvxStemSeparator"
+    private const val TAG = "hdemirbassmusicStemSeparator"
 
     const val MAX_SECONDS = 12 * 60 // the whole track is decoded into memory
 

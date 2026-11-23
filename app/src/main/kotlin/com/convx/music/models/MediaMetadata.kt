@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.models
+package com.hdemirbassmusic.music.models
 
 import androidx.compose.runtime.Immutable
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_ATV
-import com.convx.music.db.entities.Song
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.ui.utils.resize
 import java.io.Serializable
 import java.time.LocalDateTime
 

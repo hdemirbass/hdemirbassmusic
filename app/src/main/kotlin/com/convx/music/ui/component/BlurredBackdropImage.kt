@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.graphics.Bitmap
 import androidx.compose.foundation.Image
@@ -27,8 +27,8 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.ui.utils.stackBlur
-import com.convx.music.utils.ArtworkProcessing
+import com.hdemirbassmusic.music.ui.utils.stackBlur
+import com.hdemirbassmusic.music.utils.ArtworkProcessing
 import kotlin.math.roundToInt
 import kotlinx.coroutines.withContext
 
@@ -109,7 +109,7 @@ fun BlurredBackdropImage(
     val reveal = remember(cacheKey) { androidx.compose.animation.core.Animatable(if (baked != null) 1f else 0f) }
     LaunchedEffect(baked) {
         if (baked != null && reveal.value < 1f) {
-            reveal.animateTo(1f, androidx.compose.animation.core.tween(600, easing = com.convx.music.ui.player.SeamlessEasing))
+            reveal.animateTo(1f, androidx.compose.animation.core.tween(600, easing = com.hdemirbassmusic.music.ui.player.SeamlessEasing))
         }
     }
 

@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
@@ -40,8 +40,8 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.systemBars
@@ -49,12 +49,12 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
-import com.convx.music.ui.ios.foundation.IosMenuMaterial
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.menuVibrancy
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.component.liquidGlass
-import com.convx.music.ui.component.isGlassAllowed
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMenuMaterial
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.menuVibrancy
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.component.liquidGlass
+import com.hdemirbassmusic.music.ui.component.isGlassAllowed
 import kotlin.math.roundToInt
 
 /**
@@ -87,7 +87,7 @@ fun OverlayMenu(
     modifier: Modifier = Modifier,
     glass: Boolean = true,
     /** What the glass samples: everything the panel can sit over, chrome included. */
-    backdrop: com.convx.music.ui.component.backdrop.Backdrop? = null,
+    backdrop: com.hdemirbassmusic.music.ui.component.backdrop.Backdrop? = null,
     liquid: Boolean = true,
 ) {
     val focusManager = LocalFocusManager.current
@@ -123,9 +123,9 @@ fun OverlayMenu(
     val menuBackdrop = backdrop ?: LocalAppBackdrop.current
     CompositionLocalProvider(
         LocalAppBackdrop provides menuBackdrop,
-        com.convx.music.ui.ios.foundation.LocalIosBackdrop provides menuBackdrop,
-        com.convx.music.ui.ios.foundation.LocalMenuLiquid provides (liquid && glass),
-        com.convx.music.ui.ios.foundation.LocalMenuLongPress provides true,
+        com.hdemirbassmusic.music.ui.ios.foundation.LocalIosBackdrop provides menuBackdrop,
+        com.hdemirbassmusic.music.ui.ios.foundation.LocalMenuLiquid provides (liquid && glass),
+        com.hdemirbassmusic.music.ui.ios.foundation.LocalMenuLongPress provides true,
     ) {
         fun dismiss() {
             focusManager.clearFocus()

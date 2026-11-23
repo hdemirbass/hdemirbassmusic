@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,10 +16,10 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.material3.SwitchDefaults
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -32,29 +32,29 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.constants.LyricsRomanizeAsMainKey
-import com.convx.music.constants.LyricsRomanizeBelarusianKey
-import com.convx.music.constants.LyricsRomanizeBulgarianKey
-import com.convx.music.constants.LyricsRomanizeChineseKey
-import com.convx.music.constants.LyricsRomanizeHindiKey
-import com.convx.music.constants.LyricsRomanizePunjabiKey
-import com.convx.music.constants.LyricsRomanizeCyrillicByLineKey
-import com.convx.music.constants.LyricsRomanizeJapaneseKey
-import com.convx.music.constants.LyricsRomanizeKoreanKey
-import com.convx.music.constants.LyricsRomanizeKyrgyzKey
-import com.convx.music.constants.LyricsRomanizeMacedonianKey
-import com.convx.music.constants.LyricsRomanizeRussianKey
-import com.convx.music.constants.LyricsRomanizeSerbianKey
-import com.convx.music.constants.LyricsRomanizeUkrainianKey
-import com.convx.music.ui.component.ActionPromptDialog
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.LyricsRomanizeAsMainKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeBelarusianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeBulgarianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeChineseKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeHindiKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizePunjabiKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeCyrillicByLineKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeJapaneseKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeKoreanKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeKyrgyzKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeMacedonianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeRussianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeSerbianKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeUkrainianKey
+import com.hdemirbassmusic.music.ui.component.ActionPromptDialog
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

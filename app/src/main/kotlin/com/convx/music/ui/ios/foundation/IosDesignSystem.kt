@@ -1,17 +1,17 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.foundation
+package com.hdemirbassmusic.music.ui.ios.foundation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.isSpecified
-import com.convx.music.constants.AppBackgroundColorKey
-import com.convx.music.constants.AppTextColorKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.AppBackgroundColorKey
+import com.hdemirbassmusic.music.constants.AppTextColorKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /**
  * Semantic iOS-style colors for content and Liquid Glass surfaces.

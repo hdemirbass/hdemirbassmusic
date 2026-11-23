@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.ambient
+package com.hdemirbassmusic.music.ui.screens.ambient
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -15,16 +15,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.media3.ui.AspectRatioFrameLayout
-import com.convx.music.applecanvas.AppleMusicCanvasProvider
-import com.convx.music.canvas.CanvasArtwork
-import com.convx.music.canvas.TidalCanvasProvider
-import com.convx.music.constants.AmbientCanvasFitMode
-import com.convx.music.constants.CanvasSource
-import com.convx.music.convxcanvas.ConvxCanvasProvider
-import com.convx.music.models.MediaMetadata
-import com.convx.music.ui.player.CanvasArtworkPlaybackCache
-import com.convx.music.ui.player.CanvasArtworkPlayer
-import com.convx.music.utils.SpotifyCanvasLookup
+import com.hdemirbassmusic.music.applecanvas.AppleMusicCanvasProvider
+import com.hdemirbassmusic.music.canvas.CanvasArtwork
+import com.hdemirbassmusic.music.canvas.TidalCanvasProvider
+import com.hdemirbassmusic.music.constants.AmbientCanvasFitMode
+import com.hdemirbassmusic.music.constants.CanvasSource
+import com.hdemirbassmusic.music.hdemirbassmusiccanvas.hdemirbassmusicCanvasProvider
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.ui.player.CanvasArtworkPlaybackCache
+import com.hdemirbassmusic.music.ui.player.CanvasArtworkPlayer
+import com.hdemirbassmusic.music.utils.SpotifyCanvasLookup
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -83,17 +83,17 @@ fun AmbientVideoCanvas(
                     CanvasSource.AUTO -> {
                         val spotify = SpotifyCanvasLookup.getBySongArtist(context, title, artist)
                         val apple = appleCandidates()
-                        val convx = ConvxCanvasProvider.getBySongArtist(title, artist, album)
+                        val hdemirbassmusic = hdemirbassmusicCanvasProvider.getBySongArtist(title, artist, album)
                         val tidal = TidalCanvasProvider.getBySongArtist(title, artist, album)
-                        listOfNotNull(spotify) + apple + listOfNotNull(convx, tidal)
+                        listOfNotNull(spotify) + apple + listOfNotNull(hdemirbassmusic, tidal)
                             .filter { !it.preferredAnimationUrl.isNullOrBlank() }
                     }
                     CanvasSource.SPOTIFY -> listOfNotNull(
                         SpotifyCanvasLookup.getBySongArtist(context, title, artist)
                     )
                     CanvasSource.APPLE_MUSIC -> appleCandidates()
-                    CanvasSource.CONVX -> listOfNotNull(
-                        ConvxCanvasProvider.getBySongArtist(title, artist, album)
+                    CanvasSource.hdemirbassmusic -> listOfNotNull(
+                        hdemirbassmusicCanvasProvider.getBySongArtist(title, artist, album)
                             ?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
                     )
                     CanvasSource.TIDAL -> listOfNotNull(

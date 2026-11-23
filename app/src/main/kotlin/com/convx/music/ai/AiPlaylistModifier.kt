@@ -1,18 +1,18 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ai
+package com.hdemirbassmusic.music.ai
 
 import android.content.Context
 import com.music.innertube.SearchFilter
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.PlaylistSongMap
-import com.convx.music.db.entities.SongEntity
-import com.convx.music.library.LocalPlaylistSong
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.PlaylistSongMap
+import com.hdemirbassmusic.music.db.entities.SongEntity
+import com.hdemirbassmusic.music.library.LocalPlaylistSong
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray

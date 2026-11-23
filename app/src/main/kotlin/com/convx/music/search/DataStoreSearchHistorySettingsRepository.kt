@@ -1,9 +1,9 @@
-package com.convx.music.search
+package com.hdemirbassmusic.music.search
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
-import com.convx.music.constants.PauseSearchHistoryKey
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.constants.PauseSearchHistoryKey
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map

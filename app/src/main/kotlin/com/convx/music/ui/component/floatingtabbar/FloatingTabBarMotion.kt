@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:OptIn(ExperimentalSharedTransitionApi::class)
 
-package com.convx.music.ui.component.floatingtabbar
+package com.hdemirbassmusic.music.ui.component.floatingtabbar
 
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.AnimatedVisibilityScope
@@ -26,9 +26,9 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.Dp
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.shapes.shadowShape
-import com.convx.music.ui.player.PlayerMorph
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.shapes.shadowShape
+import com.hdemirbassmusic.music.ui.player.PlayerMorph
 import kotlinx.coroutines.flow.drop
 
 /**
@@ -87,7 +87,7 @@ internal const val LandingEchoShare = 0.4f
 
 /**
  * The tab pill and the side circles answer the mini's landing overshoot
- * ([com.convx.music.ui.player.PlayerMorph.landingDipPx]) with a smaller dip of their own, so
+ * ([com.hdemirbassmusic.music.ui.player.PlayerMorph.landingDipPx]) with a smaller dip of their own, so
  * the bar lands as one piece instead of the pill bouncing alone. Draw-phase read; 0 at rest.
  */
 internal fun Modifier.landingEcho(): Modifier = graphicsLayer {
@@ -95,12 +95,12 @@ internal fun Modifier.landingEcho(): Modifier = graphicsLayer {
 }
 
 /**
- * The docked mini pill's drop shadow, scaled by [com.convx.music.ui.player.PlayerMorph.pillShadow]
+ * The docked mini pill's drop shadow, scaled by [com.hdemirbassmusic.music.ui.player.PlayerMorph.pillShadow]
  * so it fades back in after the player lands instead of popping. Same as `.shadow()`
  * (elevation + shape + clip), with the elevation read in the draw phase.
  */
 internal fun Modifier.pillShadow(shape: Shape, elevation: Dp): Modifier = graphicsLayer {
-    shadowElevation = elevation.toPx() * com.convx.music.ui.player.PlayerMorph.pillShadow.value
+    shadowElevation = elevation.toPx() * com.hdemirbassmusic.music.ui.player.PlayerMorph.pillShadow.value
     this.shape = shape.shadowShape
     // No clip: the mini's G2 capsule is a path, and a path clip is a CPU mask uploaded every
     // frame its glass re-renders. Fill and glass follow the outline themselves.
@@ -112,7 +112,7 @@ internal fun Modifier.pillShadow(shape: Shape, elevation: Dp): Modifier = graphi
  * needs the silhouette, but a permanent path clip costs a CPU mask every frame.
  */
 internal fun Modifier.clipWhilePressed(
-    glow: com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight,
+    glow: com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight,
     shape: Shape,
 ): Modifier = graphicsLayer {
     this.shape = shape

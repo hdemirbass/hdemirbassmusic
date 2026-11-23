@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.queues
+package com.hdemirbassmusic.music.playback.queues
 
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.models.toMediaMetadata
 import com.music.innertube.models.SongItem
 import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.models.YTItem

@@ -1,4 +1,4 @@
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
 import androidx.compose.ui.geometry.Rect
 import kotlin.test.Test

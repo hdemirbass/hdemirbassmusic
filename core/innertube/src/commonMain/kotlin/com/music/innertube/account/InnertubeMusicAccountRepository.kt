@@ -1,12 +1,12 @@
 package com.music.innertube.account
 
-import com.convx.music.account.MusicAccount
-import com.convx.music.account.MusicAccountError
-import com.convx.music.account.MusicAccountRepository
-import com.convx.music.account.MusicAccountResult
-import com.convx.music.account.MusicAccountState
-import com.convx.music.account.MusicSignInResult
-import com.convx.music.account.SecureSessionStore
+import com.hdemirbassmusic.music.account.MusicAccount
+import com.hdemirbassmusic.music.account.MusicAccountError
+import com.hdemirbassmusic.music.account.MusicAccountRepository
+import com.hdemirbassmusic.music.account.MusicAccountResult
+import com.hdemirbassmusic.music.account.MusicAccountState
+import com.hdemirbassmusic.music.account.MusicSignInResult
+import com.hdemirbassmusic.music.account.SecureSessionStore
 import com.music.innertube.InnertubeRepository
 import com.music.innertube.InnerTubeRateLimitException
 import com.music.innertube.models.AccountInfo

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 import android.content.ContentValues
 import android.content.Context
@@ -16,17 +16,17 @@ import androidx.media3.datasource.DataSpec
 import androidx.media3.datasource.PlaceholderDataSource
 import androidx.media3.datasource.cache.Cache
 import androidx.media3.datasource.cache.CacheDataSource
-import com.convx.music.utils.YTPlayerUtils
+import com.hdemirbassmusic.music.utils.YTPlayerUtils
 import timber.log.Timber
 import java.io.IOException
 import java.io.InputStream
 
 /** Exports a copy of downloaded audio and optional sidecars to shared storage. */
 object DownloadExporter {
-    const val FOLDER = "Download/Convx"
+    const val FOLDER = "Download/hdemirbassmusic"
 
     /** Cover and canvas files live in a hidden folder so Gallery never lists them next to the audio. */
-    private const val ART_FOLDER = "Download/Convx/.artwork"
+    private const val ART_FOLDER = "Download/hdemirbassmusic/.artwork"
 
     class Package(
         val songId: String,

@@ -1,7 +1,7 @@
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 object ShareUtils {
-    const val DOMAIN = "convx.aryavl.com"
+    const val DOMAIN = "hdemirbassmusic.aryavl.com"
     const val BASE_URL = "https://$DOMAIN"
 
     fun songUrl(songId: String): String = "$BASE_URL/watch/?v=$songId"

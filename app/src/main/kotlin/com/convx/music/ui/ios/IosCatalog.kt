@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:Suppress("FunctionName")
 
-package com.convx.music.ui.ios
+package com.hdemirbassmusic.music.ui.ios
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -34,36 +34,36 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.ios.component.IosBadge
-import com.convx.music.ui.ios.component.IosButton
-import com.convx.music.ui.ios.component.IosButtonBorderShape
-import com.convx.music.ui.ios.component.IosButtonRole
-import com.convx.music.ui.ios.component.IosButtonSizing
-import com.convx.music.ui.ios.component.IosButtonStyle
-import com.convx.music.ui.ios.component.IosCheckmark
-import com.convx.music.ui.ios.component.IosChevron
-import com.convx.music.ui.ios.component.IosDetent
-import com.convx.music.ui.ios.component.IosList
-import com.convx.music.ui.ios.component.IosListStyle
-import com.convx.music.ui.ios.component.IosMenu
-import com.convx.music.ui.ios.component.IosMenuItem
-import com.convx.music.ui.ios.component.IosMenuSection
-import com.convx.music.ui.ios.component.IosRowStyle
-import com.convx.music.ui.ios.component.IosNavigationRow
-import com.convx.music.ui.ios.component.IosSheet
-import com.convx.music.ui.ios.component.IosSlider
-import com.convx.music.ui.ios.component.IosSliderTick
-import com.convx.music.ui.ios.component.IosTab
-import com.convx.music.ui.ios.component.IosTabBar
-import com.convx.music.ui.ios.component.IosTabRole
-import com.convx.music.ui.ios.component.IosText
-import com.convx.music.ui.ios.component.IosToggle
-import com.convx.music.ui.ios.component.IosToggleStyle
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.foundation.IosCapsule
-import com.convx.music.ui.ios.foundation.IosControlSize
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.component.IosBadge
+import com.hdemirbassmusic.music.ui.ios.component.IosButton
+import com.hdemirbassmusic.music.ui.ios.component.IosButtonBorderShape
+import com.hdemirbassmusic.music.ui.ios.component.IosButtonRole
+import com.hdemirbassmusic.music.ui.ios.component.IosButtonSizing
+import com.hdemirbassmusic.music.ui.ios.component.IosButtonStyle
+import com.hdemirbassmusic.music.ui.ios.component.IosCheckmark
+import com.hdemirbassmusic.music.ui.ios.component.IosChevron
+import com.hdemirbassmusic.music.ui.ios.component.IosDetent
+import com.hdemirbassmusic.music.ui.ios.component.IosList
+import com.hdemirbassmusic.music.ui.ios.component.IosListStyle
+import com.hdemirbassmusic.music.ui.ios.component.IosMenu
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuItem
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuSection
+import com.hdemirbassmusic.music.ui.ios.component.IosRowStyle
+import com.hdemirbassmusic.music.ui.ios.component.IosNavigationRow
+import com.hdemirbassmusic.music.ui.ios.component.IosSheet
+import com.hdemirbassmusic.music.ui.ios.component.IosSlider
+import com.hdemirbassmusic.music.ui.ios.component.IosSliderTick
+import com.hdemirbassmusic.music.ui.ios.component.IosTab
+import com.hdemirbassmusic.music.ui.ios.component.IosTabBar
+import com.hdemirbassmusic.music.ui.ios.component.IosTabRole
+import com.hdemirbassmusic.music.ui.ios.component.IosText
+import com.hdemirbassmusic.music.ui.ios.component.IosToggle
+import com.hdemirbassmusic.music.ui.ios.component.IosToggleStyle
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosCapsule
+import com.hdemirbassmusic.music.ui.ios.foundation.IosControlSize
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 
 /**
  * Every component in one file, laid out for Android Studio's preview pane so the look

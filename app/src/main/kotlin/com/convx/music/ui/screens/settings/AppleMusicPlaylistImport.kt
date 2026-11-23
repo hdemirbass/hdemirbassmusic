@@ -1,4 +1,4 @@
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -11,16 +11,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.convx.music.R
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.ui.ios.compat.OutlinedTextField
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.menu.AddToPlaylistDialog
-import com.convx.music.viewmodels.AppleMusicImportState
-import com.convx.music.viewmodels.AppleMusicImportViewModel
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedTextField
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.menu.AddToPlaylistDialog
+import com.hdemirbassmusic.music.viewmodels.AppleMusicImportState
+import com.hdemirbassmusic.music.viewmodels.AppleMusicImportViewModel
 
 @Composable
 fun AppleMusicPlaylistImport(

@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import android.graphics.Bitmap
 import androidx.compose.animation.animateColorAsState
@@ -37,8 +37,8 @@ import coil3.request.ImageRequest
 import coil3.request.SuccessResult
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -93,7 +93,7 @@ data class MeshPalette(val colors: List<Color>)
 /**
  * Builds a blurred mesh from four colors sampled from album art and crossfades on track changes.
  * Blobs drift during opening and track changes only; continuous drift would blur a full-screen
- * layer every frame. [com.convx.music.constants.PlayerBackgroundStyle.LIVE_MESH] rotates artwork,
+ * layer every frame. [com.hdemirbassmusic.music.constants.PlayerBackgroundStyle.LIVE_MESH] rotates artwork,
  * while this backdrop uses its colors.
  */
 @Composable

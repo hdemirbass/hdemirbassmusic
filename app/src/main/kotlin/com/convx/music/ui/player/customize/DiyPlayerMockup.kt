@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player.customize
+package com.hdemirbassmusic.music.ui.player.customize
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
@@ -26,8 +26,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -50,32 +50,32 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.R
-import com.convx.music.constants.HidePlayerThumbnailKey
-import com.convx.music.constants.PlayerHorizontalPadding
-import com.convx.music.constants.PlayerArtworkStyle
-import com.convx.music.constants.PlayerArtworkStyleKey
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.PlayerBackgroundStyleKey
-import com.convx.music.constants.PlayerButtonsStyle
-import com.convx.music.constants.PlayerButtonsStyleKey
-import com.convx.music.constants.PlayerGradientAngleKey
-import com.convx.music.constants.PlayerGradientStopsKey
-import com.convx.music.constants.PlayerStaticColorKey
-import com.convx.music.constants.SliderStyle
-import com.convx.music.constants.SliderStyleKey
-import com.convx.music.constants.ThumbnailCornerRadiusKey
-import com.convx.music.ui.component.LocalAppBackdrop
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.withFixedStyle
-import com.convx.music.ui.component.PLAYER_BLUR_MULTIPLIER
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.isGlassAllowed
-import com.convx.music.ui.component.liquidGlass
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.theme.decodeGradientStops
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.HidePlayerThumbnailKey
+import com.hdemirbassmusic.music.constants.PlayerHorizontalPadding
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyle
+import com.hdemirbassmusic.music.constants.PlayerArtworkStyleKey
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyleKey
+import com.hdemirbassmusic.music.constants.PlayerButtonsStyle
+import com.hdemirbassmusic.music.constants.PlayerButtonsStyleKey
+import com.hdemirbassmusic.music.constants.PlayerGradientAngleKey
+import com.hdemirbassmusic.music.constants.PlayerGradientStopsKey
+import com.hdemirbassmusic.music.constants.PlayerStaticColorKey
+import com.hdemirbassmusic.music.constants.SliderStyle
+import com.hdemirbassmusic.music.constants.SliderStyleKey
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadiusKey
+import com.hdemirbassmusic.music.ui.component.LocalAppBackdrop
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.withFixedStyle
+import com.hdemirbassmusic.music.ui.component.PLAYER_BLUR_MULTIPLIER
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.isGlassAllowed
+import com.hdemirbassmusic.music.ui.component.liquidGlass
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.theme.decodeGradientStops
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlin.math.min
 import kotlin.math.sin
 

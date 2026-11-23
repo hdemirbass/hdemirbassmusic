@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.search
+package com.hdemirbassmusic.music.ui.screens.search
 
-import com.convx.music.utils.openSearchResults
+import com.hdemirbassmusic.music.utils.openSearchResults
 
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.clickable
@@ -35,15 +35,15 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.LocalContentColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Scaffold
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Scaffold
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.SearchBarDefaults
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -68,8 +68,8 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.role
-import com.convx.music.ui.ios.foundation.iosRowPress
-import com.convx.music.ui.ios.foundation.iosGlass
+import com.hdemirbassmusic.music.ui.ios.foundation.iosRowPress
+import com.hdemirbassmusic.music.ui.ios.foundation.iosGlass
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -78,25 +78,25 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.navigation.NavController
 import com.music.innertube.models.WatchEndpoint
 import com.music.innertube.utils.YouTubeUrlParser
-import com.convx.music.LocalIsPlayerExpanded
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.ui.utils.rememberGridColumns
-import com.convx.music.constants.SearchSource
-import com.convx.music.search.SearchHistoryCommands
-import com.convx.music.search.SearchHistorySettingsRepository
-import com.convx.music.search.shouldRecordSearchQuery
-import com.convx.music.playback.queues.YouTubeQueue
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.ui.utils.youtubeBrowseRoute
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.viewmodels.MoodAndGenresViewModel
-import com.convx.music.viewmodels.ExploreViewModel
-import com.convx.music.ui.screens.search.suggestions.SuggestionsTabContent
+import com.hdemirbassmusic.music.LocalIsPlayerExpanded
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.utils.rememberGridColumns
+import com.hdemirbassmusic.music.constants.SearchSource
+import com.hdemirbassmusic.music.search.SearchHistoryCommands
+import com.hdemirbassmusic.music.search.SearchHistorySettingsRepository
+import com.hdemirbassmusic.music.search.shouldRecordSearchQuery
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.youtubeBrowseRoute
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.viewmodels.MoodAndGenresViewModel
+import com.hdemirbassmusic.music.viewmodels.ExploreViewModel
+import com.hdemirbassmusic.music.ui.screens.search.suggestions.SuggestionsTabContent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.collectAsState
@@ -105,7 +105,7 @@ import org.koin.compose.koinInject
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.LazyColumn
-import com.convx.music.ui.ios.compat.CircularWavyProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.CircularWavyProgressIndicator
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -113,31 +113,31 @@ import androidx.compose.foundation.layout.PaddingValues
 
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
-import com.convx.music.ui.component.LargeScreenTitle
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.YouTubeGridItem
-import com.convx.music.ui.menu.YouTubeAlbumMenu
-import com.convx.music.constants.GridThumbnailHeight
-import com.convx.music.constants.GridItemsSizeKey
-import com.convx.music.constants.GridItemSize
-import com.convx.music.ui.component.HeroBackground
-import com.convx.music.ui.component.HomeImageBackground
-import com.convx.music.ui.component.rememberAppBackgroundColor
-import com.convx.music.ui.component.rememberHeroSource
-import com.convx.music.ui.component.rememberHeroTint
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.HeroTintedContent
+import com.hdemirbassmusic.music.ui.component.LargeScreenTitle
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.YouTubeGridItem
+import com.hdemirbassmusic.music.ui.menu.YouTubeAlbumMenu
+import com.hdemirbassmusic.music.constants.GridThumbnailHeight
+import com.hdemirbassmusic.music.constants.GridItemsSizeKey
+import com.hdemirbassmusic.music.constants.GridItemSize
+import com.hdemirbassmusic.music.ui.component.HeroBackground
+import com.hdemirbassmusic.music.ui.component.HomeImageBackground
+import com.hdemirbassmusic.music.ui.component.rememberAppBackgroundColor
+import com.hdemirbassmusic.music.ui.component.rememberHeroSource
+import com.hdemirbassmusic.music.ui.component.rememberHeroTint
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.HeroTintedContent
 
-import com.convx.music.ui.component.LocalNavSearchState
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.backdrop.catalog.components.LiquidBottomTab
-import com.convx.music.ui.component.backdrop.catalog.components.LiquidBottomTabs
+import com.hdemirbassmusic.music.ui.component.LocalNavSearchState
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberBackdropFreeze
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.components.LiquidBottomTab
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.components.LiquidBottomTabs
 import androidx.compose.ui.text.font.FontWeight
-import com.convx.music.ui.component.GlassCircleButton
-import com.convx.music.ui.component.TopFadeBlur
+import com.hdemirbassmusic.music.ui.component.GlassCircleButton
+import com.hdemirbassmusic.music.ui.component.TopFadeBlur
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeSource
 import androidx.compose.ui.text.style.TextAlign
@@ -152,7 +152,7 @@ fun SearchScreen(
     pureBlack: Boolean,
     accountImageUrl: String? = null,
     accountName: String = "",
-    onAccountClick: () -> Unit = { navController.navigate(com.convx.music.ui.screens.Screens.Settings.route) },
+    onAccountClick: () -> Unit = { navController.navigate(com.hdemirbassmusic.music.ui.screens.Screens.Settings.route) },
 ) {
     val searchHistoryCommands: SearchHistoryCommands = koinInject()
     val searchHistorySettingsRepository: SearchHistorySettingsRepository = koinInject()
@@ -171,7 +171,7 @@ fun SearchScreen(
     // Read the shared nav-bar query so results update as the user types.
     val navSearch = LocalNavSearchState.current
 
-    val localOnly = com.convx.music.LocalLocalOnlyMode.current
+    val localOnly = com.hdemirbassmusic.music.LocalLocalOnlyMode.current
 
     val onSearchFromSuggestion: (String) -> Unit = remember(
         searchHistorySettings,
@@ -207,7 +207,7 @@ fun SearchScreen(
     }
 
     // Keep the browse page and results page on the same system background.
-    val colors = com.convx.music.ui.ios.foundation.IosTheme.colors
+    val colors = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors
     val statusTop = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
     val tabletLayout = androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp >= 600
     // The phone reference reserves 62 points above its title; retain larger cutouts.
@@ -242,7 +242,7 @@ fun SearchScreen(
             )
         } else {
             val pageColor = colors.systemBackground
-            val searchBackdrop = com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop(
+            val searchBackdrop = com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop(
                 onDraw = remember(pageColor) { { drawRect(pageColor); drawContent() } },
             )
             val focusedTop = if (tabletLayout) statusTop + 10.dp else maxOf(statusTop, 58.dp)
@@ -482,8 +482,8 @@ private fun AppleSearchHeader(
     ) {
         Text(
             text = stringResource(R.string.search),
-            style = com.convx.music.ui.screens.library.apple.SfStyle(34.sp, 41.sp, FontWeight.Bold, 0.4.sp),
-            color = com.convx.music.ui.ios.foundation.IosTheme.colors.label,
+            style = com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle(34.sp, 41.sp, FontWeight.Bold, 0.4.sp),
+            color = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label,
             maxLines = 1,
             modifier = Modifier.weight(1f).height(41.dp),
         )
@@ -492,7 +492,7 @@ private fun AppleSearchHeader(
                 .iosRowPress(onClick = onAccountClick)
                 .semantics { contentDescription = profileDescription },
         ) {
-            com.convx.music.ui.component.AccountAvatar(accountImageUrl, accountName)
+            com.hdemirbassmusic.music.ui.component.AccountAvatar(accountImageUrl, accountName)
         }
     }
 }
@@ -505,17 +505,17 @@ private fun AppleSearchHeader(
 private fun SourceSwitch(
     source: SearchSource,
     onSelect: (SearchSource) -> Unit,
-    backdrop: com.convx.music.ui.component.backdrop.Backdrop,
+    backdrop: com.hdemirbassmusic.music.ui.component.backdrop.Backdrop,
     modifier: Modifier = Modifier,
 ) {
-    val colors = com.convx.music.ui.ios.foundation.IosTheme.colors
+    val colors = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors
     val thumb = if (colors.isDark) Color(0xFF1C1C1C) else Color.White
     androidx.compose.foundation.layout.BoxWithConstraints(
         modifier = modifier
             .fillMaxWidth()
             .height(50.dp)
             .iosGlass(shape = CircleShape,
-                spec = com.convx.music.ui.ios.foundation.IosGlassSpec.Control,
+                spec = com.hdemirbassmusic.music.ui.ios.foundation.IosGlassSpec.Control,
                 interactive = true, backdrop = backdrop,
                 wash = if (colors.isDark) Color.Black.copy(alpha = 0.75f) else Color.Transparent),
     ) {
@@ -544,7 +544,7 @@ private fun SourceSwitch(
             ) {
                 Text(
                     text = label,
-                    style = com.convx.music.ui.screens.library.apple.SfStyle(
+                    style = com.hdemirbassmusic.music.ui.screens.library.apple.SfStyle(
                         14.sp, 18.sp, FontWeight.SemiBold, (-0.1).sp,
                     ),
                     color = colors.label,

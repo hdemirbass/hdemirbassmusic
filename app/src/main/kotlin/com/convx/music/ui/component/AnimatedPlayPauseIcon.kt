@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.SizeTransform
@@ -10,7 +10,7 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
-import com.convx.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,10 +22,10 @@ import androidx.compose.ui.unit.dp
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFPauseFill
 import com.composables.sfsymbols.monochrome.SFPlayFill
-import com.convx.music.R
-import com.convx.music.constants.ReduceDynamicBlurKey
-import com.convx.music.ui.utils.Motion
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ReduceDynamicBlurKey
+import com.hdemirbassmusic.music.ui.utils.Motion
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 @Composable
 fun AnimatedPlayPauseIcon(

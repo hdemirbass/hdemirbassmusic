@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -36,18 +36,18 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFBubbleLeftAndBubbleRight
 import com.composables.sfsymbols.monochrome.SFChevronLeft
 import com.composables.sfsymbols.monochrome.SFPaperplane
 import com.composables.sfsymbols.monochrome.SFXmark
-import com.convx.music.listentogether.ChatMessagePayload
-import com.convx.music.listentogether.RepliedMessage
+import com.hdemirbassmusic.music.listentogether.ChatMessagePayload
+import com.hdemirbassmusic.music.listentogether.RepliedMessage
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.style.TextDecoration
 import android.net.Uri

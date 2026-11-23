@@ -1,4 +1,4 @@
-package com.convx.music.catalog
+package com.hdemirbassmusic.music.catalog
 
 /** Provider-qualified identity. The raw provider key stays opaque to shared screens. */
 data class CatalogId(

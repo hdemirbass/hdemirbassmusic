@@ -1,12 +1,12 @@
 ﻿/**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -34,13 +34,13 @@ import coil3.request.SuccessResult
 import coil3.request.allowHardware
 import coil3.toBitmap
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Slider
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Slider
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.material3.SwitchDefaults
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -56,23 +56,23 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
-import com.convx.music.constants.HomeBackgroundAnimateKey
-import com.convx.music.constants.HomeBackgroundBlurKey
-import com.convx.music.constants.HomeBackgroundDimKey
-import com.convx.music.constants.HomeBackgroundEnabledKey
-import com.convx.music.constants.HomeBackgroundIsVideoKey
-import com.convx.music.constants.HomeBackgroundPathKey
-import com.convx.music.constants.HomeBackgroundQualityKey
-import com.convx.music.constants.LibraryBackgroundMode
-import com.convx.music.constants.LibraryBackgroundModeKey
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.HomeVideoBackground
-import com.convx.music.ui.component.rememberHomeBackgroundTargetSize
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.HomeBackgroundAnimateKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundBlurKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundDimKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundEnabledKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundIsVideoKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundPathKey
+import com.hdemirbassmusic.music.constants.HomeBackgroundQualityKey
+import com.hdemirbassmusic.music.constants.LibraryBackgroundMode
+import com.hdemirbassmusic.music.constants.LibraryBackgroundModeKey
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.HomeVideoBackground
+import com.hdemirbassmusic.music.ui.component.rememberHomeBackgroundTargetSize
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

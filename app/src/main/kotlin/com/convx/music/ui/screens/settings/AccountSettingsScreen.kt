@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -22,7 +22,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.*
 // Explicit import wins over the star import above, so the two toggles below
 // pick up the glass switch without touching their call sites.
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -48,12 +48,12 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.music.innertube.YouTube
 import com.music.innertube.utils.parseCookieString
-import com.convx.music.constants.*
-import com.convx.music.ui.component.*
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.AccountSettingsViewModel
-import com.convx.music.viewmodels.HomeViewModel
-import com.convx.music.R
+import com.hdemirbassmusic.music.constants.*
+import com.hdemirbassmusic.music.ui.component.*
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.AccountSettingsViewModel
+import com.hdemirbassmusic.music.viewmodels.HomeViewModel
+import com.hdemirbassmusic.music.R
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -126,8 +126,8 @@ fun AccountSettingsScreen(
                                 }
                                 Text(
                                     text = if (isLoggedIn) accountName else stringResource(R.string.login),
-                                    color = if (isLoggedIn) com.convx.music.ui.ios.foundation.IosTheme.colors.label else com.convx.music.ui.ios.foundation.IosTheme.tint,
-                                    style = com.convx.music.ui.ios.foundation.IosTheme.typography.body.copy(fontWeight = FontWeight.SemiBold)
+                                    color = if (isLoggedIn) com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.label else com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.tint,
+                                    style = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.typography.body.copy(fontWeight = FontWeight.SemiBold)
                                 )
                             }
                         },
@@ -135,11 +135,11 @@ fun AccountSettingsScreen(
                             // iOS-style destructive pill: readable on light and dark cards alike.
                             Text(
                                 stringResource(R.string.action_logout),
-                                color = com.convx.music.ui.ios.foundation.IosTheme.colors.systemRed,
-                                style = com.convx.music.ui.ios.foundation.IosTheme.typography.subheadline.copy(fontWeight = FontWeight.SemiBold),
+                                color = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.systemRed,
+                                style = com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.typography.subheadline.copy(fontWeight = FontWeight.SemiBold),
                                 modifier = Modifier
                                     .clip(CircleShape)
-                                    .background(com.convx.music.ui.ios.foundation.IosTheme.colors.systemRed.copy(alpha = 0.14f))
+                                    .background(com.hdemirbassmusic.music.ui.ios.foundation.IosTheme.colors.systemRed.copy(alpha = 0.14f))
                                     .clickable { showLogoutDialog = true }
                                     .padding(horizontal = 14.dp, vertical = 7.dp),
                             )

@@ -1,8 +1,8 @@
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 
 import android.webkit.CookieManager
 import android.webkit.WebResourceRequest
@@ -26,15 +26,15 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TopAppBarScrollBehavior
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.TextButton
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.LinearProgressIndicator
-import com.convx.music.ui.ios.compat.ModalBottomSheet
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.rememberIosModalSheetState
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.LinearProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.ModalBottomSheet
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.rememberIosModalSheetState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -54,12 +54,12 @@ import coil3.compose.AsyncImage
 import com.music.spotify.SpotifyAuth
 import com.music.spotify.SpotifyHomeItem
 import com.music.spotify.SpotifyHomeShelf
-import com.convx.music.R
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.viewmodels.SpotifyImportViewModel
-import com.convx.music.viewmodels.SpotifyImportUiState
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.viewmodels.SpotifyImportViewModel
+import com.hdemirbassmusic.music.viewmodels.SpotifyImportUiState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
-import com.convx.music.ui.utils.MenuItemChrome
-import com.convx.music.ui.utils.MenuIconChrome
-import com.convx.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.MenuItemChrome
+import com.hdemirbassmusic.music.ui.utils.MenuIconChrome
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
 import androidx.compose.foundation.background
 import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.clickable
@@ -45,12 +45,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.isFinite
-import com.convx.music.ui.component.shapes.ContinuousCapsule
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.component.IosText
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.LocalIosContentColor
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.component.IosText
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.LocalIosContentColor
 
 /**
  * The action strip at the top of a menu sheet, drawn as SwiftUI's ControlGroup does it:
@@ -119,7 +119,7 @@ private fun ActionSegment(action: NewAction, modifier: Modifier) {
     val colors = IosTheme.colors
     val contentColor = when {
         action.contentColor.isSpecified -> action.contentColor
-        LocalInMenuPanel.current -> com.convx.music.ui.ios.foundation.IosMenuMaterial.colors.label
+        LocalInMenuPanel.current -> com.hdemirbassmusic.music.ui.ios.foundation.IosMenuMaterial.colors.label
         else -> IosTheme.tint
     }
 
@@ -142,7 +142,7 @@ private fun ActionSegment(action: NewAction, modifier: Modifier) {
     ) {
         CompositionLocalProvider(
             LocalIosContentColor provides contentColor,
-            com.convx.music.ui.ios.compat.LocalContentColor provides contentColor,
+            com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides contentColor,
         ) {
             CompositionLocalProvider(LocalSymbolChrome provides MenuItemChrome, LocalSymbolIconSize provides 24.dp) {
                 Box(Modifier.size(28.dp), contentAlignment = Alignment.Center) { action.icon() }
@@ -202,7 +202,7 @@ fun NewActionButton(
     ) {
         CompositionLocalProvider(
             LocalIosContentColor provides content,
-            com.convx.music.ui.ios.compat.LocalContentColor provides content,
+            com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides content,
         ) {
             Box(Modifier.size(28.dp), contentAlignment = Alignment.Center) { icon() }
         }
@@ -243,7 +243,7 @@ fun NewMenuItem(
         leadingContent?.let {
             CompositionLocalProvider(
                 LocalIosContentColor provides contentColor,
-                com.convx.music.ui.ios.compat.LocalContentColor provides contentColor,
+                com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides contentColor,
             ) { it() }
             Spacer(Modifier.width(16.dp))
         }
@@ -251,12 +251,12 @@ fun NewMenuItem(
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(1.dp)) {
             CompositionLocalProvider(
                 LocalIosContentColor provides contentColor,
-                com.convx.music.ui.ios.compat.LocalContentColor provides contentColor,
+                com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides contentColor,
             ) { headlineContent() }
             supportingContent?.let {
                 CompositionLocalProvider(
                     LocalIosContentColor provides colors.secondaryLabel,
-                    com.convx.music.ui.ios.compat.LocalContentColor provides colors.secondaryLabel,
+                    com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides colors.secondaryLabel,
                 ) { it() }
             }
         }
@@ -265,7 +265,7 @@ fun NewMenuItem(
             Spacer(Modifier.width(8.dp))
             CompositionLocalProvider(
                 LocalIosContentColor provides colors.secondaryLabel,
-                com.convx.music.ui.ios.compat.LocalContentColor provides colors.secondaryLabel,
+                com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides colors.secondaryLabel,
             ) { it() }
         }
     }
@@ -321,7 +321,7 @@ fun NewIconButton(
     ) {
         CompositionLocalProvider(
             LocalIosContentColor provides content,
-            com.convx.music.ui.ios.compat.LocalContentColor provides content,
+            com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides content,
         ) { icon() }
     }
 }

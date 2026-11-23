@@ -1,8 +1,8 @@
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 data class SearchableSetting(
     val title: String,
@@ -48,7 +48,7 @@ fun getAllSearchableSettings(): List<SearchableSetting> {
         SearchableSetting(stringResource(R.string.theme), null, "Appearance", "settings/appearance/theme"),
         SearchableSetting("App Font", null, "Appearance", "settings/appearance/font"),
         SearchableSetting("Canvas", null, "Appearance", "settings/appearance/canvas"),
-        SearchableSetting("Convx Lyrics effects", "Configure Convx Lyrics font, text size, glow and blur", "Lyrics", "settings/lyrics", keywords = "convx lyrics animation font typeface size text glow blur"),
+        SearchableSetting("hdemirbassmusic Lyrics effects", "Configure hdemirbassmusic Lyrics font, text size, glow and blur", "Lyrics", "settings/lyrics", keywords = "hdemirbassmusic lyrics animation font typeface size text glow blur"),
         SearchableSetting("Player Theme", null, "Appearance", "settings/appearance/playertheme"),
         SearchableSetting("Liquid Glass", null, "Appearance", "settings/appearance/liquidglass"),
         SearchableSetting("Liquid Glass advanced controls", "Glass style, tint, highlights, lens and component settings", "Appearance", "settings/appearance/liquidglass/advanced"),
@@ -180,7 +180,7 @@ fun getAllSearchableSettings(): List<SearchableSetting> {
         SearchableSetting(stringResource(R.string.liquid_glass), null, "Appearance", "settings/appearance"),
         SearchableSetting(stringResource(R.string.player_theme), null, "Appearance", "settings/appearance"),
         SearchableSetting(stringResource(R.string.mini_player_waveform), null, "Appearance", "settings/appearance"),
-        SearchableSetting(stringResource(R.string.convx_canvas), null, "Appearance", "settings/appearance"),
+        SearchableSetting(stringResource(R.string.hdemirbassmusic_canvas), null, "Appearance", "settings/appearance"),
         SearchableSetting(stringResource(R.string.swipe_song_to_add), null, "Appearance", "settings/appearance"),
         SearchableSetting(stringResource(R.string.swipe_song_to_remove), null, "Appearance", "settings/appearance"),
         SearchableSetting(stringResource(R.string.pure_black_hero_background), null, "Appearance", "settings/appearance"),
@@ -223,7 +223,7 @@ fun getAllSearchableSettings(): List<SearchableSetting> {
         SearchableSetting(stringResource(R.string.custom_font), null, "Appearance", "settings/appearance/font"),
         SearchableSetting(stringResource(R.string.canvas_source_auto), null, "Appearance", "settings/appearance/canvas"),
         SearchableSetting(stringResource(R.string.canvas_source_apple_music), null, "Appearance", "settings/appearance/canvas"),
-        SearchableSetting(stringResource(R.string.canvas_source_convx), null, "Appearance", "settings/appearance/canvas"),
+        SearchableSetting(stringResource(R.string.canvas_source_hdemirbassmusic), null, "Appearance", "settings/appearance/canvas"),
         SearchableSetting(stringResource(R.string.canvas_source_tidal), null, "Appearance", "settings/appearance/canvas"),
         SearchableSetting(stringResource(R.string.canvas_source_spotify), null, "Appearance", "settings/appearance/canvas"),
         SearchableSetting(stringResource(R.string.ambient_canvas_blur), null, "Appearance", "settings/ambient"),
@@ -284,7 +284,7 @@ fun getAllSearchableSettings(): List<SearchableSetting> {
         SearchableSetting(stringResource(R.string.line_by_line_option_title), null, "Lyrics", "settings/content/romanization"),
         SearchableSetting(stringResource(R.string.ai_deepl_formality), null, "Lyrics", "settings/ai"),
         SearchableSetting(stringResource(R.string.ai_translation_mode), null, "Lyrics", "settings/ai"),
-        SearchableSetting(stringResource(R.string.convx_equalizer), null, "Playback & audio", "settings/player"),
+        SearchableSetting(stringResource(R.string.hdemirbassmusic_equalizer), null, "Playback & audio", "settings/player"),
         SearchableSetting(stringResource(R.string.song_transitions), null, "Playback & audio", "settings/player"),
         SearchableSetting(stringResource(R.string.remember_shuffle_and_repeat), null, "Playback & audio", "settings/player"),
         SearchableSetting(stringResource(R.string.ask_before_replacing_queue), null, "Playback & audio", "settings/player"),

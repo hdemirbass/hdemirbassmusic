@@ -1,3 +1,3 @@
-package com.convx.music.utils.sabr
+package com.hdemirbassmusic.music.utils.sabr
 
 class SabrException(message: String, cause: Throwable? = null) : Exception(message, cause)

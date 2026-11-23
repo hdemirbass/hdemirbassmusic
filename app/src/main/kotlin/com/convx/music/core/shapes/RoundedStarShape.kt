@@ -1,4 +1,4 @@
-package com.convx.music.core.shapes
+package com.hdemirbassmusic.music.core.shapes
 
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Outline

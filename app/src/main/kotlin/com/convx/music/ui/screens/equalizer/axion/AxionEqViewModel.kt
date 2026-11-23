@@ -1,15 +1,15 @@
-package com.convx.music.ui.screens.equalizer.axion
+package com.hdemirbassmusic.music.ui.screens.equalizer.axion
 
 import android.content.Context
 import android.net.Uri
 import android.provider.OpenableColumns
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.eq.EqualizerService
-import com.convx.music.eq.data.EQProfileRepository
-import com.convx.music.eq.data.ParametricEQBand
-import com.convx.music.eq.data.SavedEQProfile
-import com.convx.music.eq.data.EQProfileImport
+import com.hdemirbassmusic.music.eq.EqualizerService
+import com.hdemirbassmusic.music.eq.data.EQProfileRepository
+import com.hdemirbassmusic.music.eq.data.ParametricEQBand
+import com.hdemirbassmusic.music.eq.data.SavedEQProfile
+import com.hdemirbassmusic.music.eq.data.EQProfileImport
 import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -133,7 +133,7 @@ class AxionEqViewModel(
     }
 
     private fun tuningProfile() = SavedEQProfile(
-        id = "vivi_tuning", name = "Custom tuning", deviceModel = "Convx Equalizer",
+        id = "vivi_tuning", name = "Custom tuning", deviceModel = "hdemirbassmusic Equalizer",
         bands = _bands.value, preamp = _preamp.value,
     )
 
@@ -168,7 +168,7 @@ class AxionEqViewModel(
                     val name = context.contentResolver.query(uri, arrayOf(OpenableColumns.DISPLAY_NAME), null, null, null)
                         ?.use { cursor -> if (cursor.moveToFirst()) cursor.getString(0) else null }
                         ?.substringBeforeLast('.')?.trim()?.take(120)?.takeIf { it.isNotBlank() }
-                        ?: context.getString(com.convx.music.R.string.import_profile)
+                        ?: context.getString(com.hdemirbassmusic.music.R.string.import_profile)
                     val parsed = requireNotNull(context.contentResolver.openInputStream(uri)).use(EQProfileImport::read)
                     SavedEQProfile(
                         id = "custom_${UUID.randomUUID()}", name = name, deviceModel = name,

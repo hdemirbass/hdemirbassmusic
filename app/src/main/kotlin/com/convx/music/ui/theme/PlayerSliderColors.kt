@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import androidx.compose.material3.SliderColors
 import androidx.compose.material3.SliderDefaults
@@ -22,7 +22,7 @@ object PlayerSliderColors {
      * @param activeColor Color for active (loaded) track, ticks, and thumb
      * @param inactiveAlpha Strength of the unplayed half. Flamingo's player drops this to a
      *   hairline (0.05) because its chrome is composited additively — see
-     *   [com.convx.music.ui.utils.additiveChrome] — where 0.3 white would read as a solid bar.
+     *   [com.hdemirbassmusic.music.ui.utils.additiveChrome] — where 0.3 white would read as a solid bar.
      * @return SliderColors configuration
      */
     @Composable

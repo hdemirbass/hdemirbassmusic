@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.recognition
+package com.hdemirbassmusic.music.ui.screens.recognition
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.utils.openSearchResults
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.utils.openSearchResults
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -27,8 +27,8 @@ import androidx.compose.animation.scaleOut
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -42,18 +42,18 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Button
-import com.convx.music.ui.ios.compat.Card
+import com.hdemirbassmusic.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.FilledTonalButton
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.Scaffold
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TopAppBar
+import com.hdemirbassmusic.music.ui.ios.compat.FilledTonalButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.Scaffold
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -87,19 +87,19 @@ import com.composables.sfsymbols.monochrome.SFMicrophone
 import com.composables.sfsymbols.monochrome.SFMusicNote
 import com.composables.sfsymbols.monochrome.SFPlayFill
 import com.composables.sfsymbols.monochrome.SFXmark
-import com.convx.music.LocalDatabase
-import com.convx.music.R
-import com.convx.music.db.entities.RecognitionHistory
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.utils.appTopBarWindowInsets
-import com.convx.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.entities.RecognitionHistory
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.utils.backToMain
 import com.music.shazamkit.models.RecognitionResult
 import com.music.shazamkit.models.RecognitionStatus
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
-import com.convx.music.ui.component.ScreenScaffold
-import com.convx.music.ui.component.topBarContentPadding
+import com.hdemirbassmusic.music.ui.component.ScreenScaffold
+import com.hdemirbassmusic.music.ui.component.topBarContentPadding
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -115,27 +115,27 @@ fun RecognitionScreen(
     fun recognize() {
         if (recognitionJob?.isActive == true) return
         recognitionJob = coroutineScope.launch {
-            com.convx.music.recognition.MusicRecognitionService.recognize(context)
+            com.hdemirbassmusic.music.recognition.MusicRecognitionService.recognize(context)
         }
     }
 
     fun cancelRecognition() {
         recognitionJob?.cancel()
-        com.convx.music.recognition.MusicRecognitionService.reset()
+        com.hdemirbassmusic.music.recognition.MusicRecognitionService.reset()
     }
     
     LaunchedEffect(Unit) {
-        com.convx.music.recognition.MusicRecognitionService.reset()
+        com.hdemirbassmusic.music.recognition.MusicRecognitionService.reset()
     }
     
     DisposableEffect(Unit) {
         onDispose {
             recognitionJob?.cancel()
-            com.convx.music.recognition.MusicRecognitionService.reset()
+            com.hdemirbassmusic.music.recognition.MusicRecognitionService.reset()
         }
     }
     
-    val recognitionStatus by com.convx.music.recognition.MusicRecognitionService.recognitionStatus.collectAsStateWithLifecycle()
+    val recognitionStatus by com.hdemirbassmusic.music.recognition.MusicRecognitionService.recognitionStatus.collectAsStateWithLifecycle()
     
     var hasPermission by remember {
         mutableStateOf(
@@ -447,7 +447,7 @@ private fun SuccessState(
             modifier = Modifier
                 .size(180.dp)
                 .aspectRatio(1f),
-            shape = RoundedCornerShape(com.convx.music.constants.ThumbnailCornerRadius),
+            shape = RoundedCornerShape(com.hdemirbassmusic.music.constants.ThumbnailCornerRadius),
             elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
         ) {
             AsyncImage(

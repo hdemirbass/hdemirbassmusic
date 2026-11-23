@@ -1,4 +1,4 @@
-package com.convx.music.db.entities
+package com.hdemirbassmusic.music.db.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

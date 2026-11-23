@@ -1,18 +1,18 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
-import com.convx.music.ui.ios.component.IosMenuItem
-import com.convx.music.ui.ios.component.IosMenuSection
-import com.convx.music.ui.screens.Screens
-import com.convx.music.R
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuItem
+import com.hdemirbassmusic.music.ui.ios.component.IosMenuSection
+import com.hdemirbassmusic.music.ui.screens.Screens
+import com.hdemirbassmusic.music.R
 
 /**
  * The shortcuts behind a press-and-hold on a nav bar tab.

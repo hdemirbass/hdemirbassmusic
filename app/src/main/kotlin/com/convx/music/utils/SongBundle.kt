@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.Context
 import android.net.Uri
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
 import com.music.innertube.SearchFilter
 import com.music.innertube.YouTube
 import com.music.innertube.models.ArtistItem

@@ -1,11 +1,11 @@
-package com.convx.music.account.presentation
+package com.hdemirbassmusic.music.account.presentation
 
-import com.convx.music.account.MusicAccount
-import com.convx.music.account.MusicAccountError
-import com.convx.music.account.MusicAccountRepository
-import com.convx.music.account.MusicAccountResult
-import com.convx.music.account.MusicAccountState
-import com.convx.music.account.MusicSignInResult
+import com.hdemirbassmusic.music.account.MusicAccount
+import com.hdemirbassmusic.music.account.MusicAccountError
+import com.hdemirbassmusic.music.account.MusicAccountRepository
+import com.hdemirbassmusic.music.account.MusicAccountResult
+import com.hdemirbassmusic.music.account.MusicAccountState
+import com.hdemirbassmusic.music.account.MusicSignInResult
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.test.StandardTestDispatcher
@@ -18,7 +18,7 @@ import kotlin.test.assertFalse
 class MusicAccountStateHolderTest {
     @Test
     fun restorePublishesRepositoryAccountAndCompletesLoading() = runTest {
-        val account = MusicAccount(dataSyncId = "channel-1", name = "Convx")
+        val account = MusicAccount(dataSyncId = "channel-1", name = "hdemirbassmusic")
         val repository = FakeMusicAccountRepository().apply {
             mutableState.value = MusicAccountState.SignedIn(account)
         }
@@ -34,7 +34,7 @@ class MusicAccountStateHolderTest {
 
     @Test
     fun signOutFailureKeepsAccountAndExposesRecoverableMessage() = runTest {
-        val account = MusicAccount(dataSyncId = "channel-1", name = "Convx")
+        val account = MusicAccount(dataSyncId = "channel-1", name = "hdemirbassmusic")
         val repository = FakeMusicAccountRepository().apply {
             mutableState.value = MusicAccountState.SignedIn(account)
             signOutResult = MusicAccountResult.Failure(MusicAccountError.StorageUnavailable)

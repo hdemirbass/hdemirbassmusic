@@ -1,6 +1,6 @@
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
-import com.convx.music.ui.ios.foundation.iosMenuSurface
+import com.hdemirbassmusic.music.ui.ios.foundation.iosMenuSurface
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
@@ -30,15 +30,15 @@ import androidx.compose.ui.unit.sp
 import androidx.media3.common.Player
 import androidx.media3.common.Tracks
 import androidx.media3.exoplayer.ExoPlayer
-import com.convx.music.R
-import com.convx.music.constants.ShowAudioQualityBadgeKey
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.utils.VibrantChromeInk
-import com.convx.music.ui.utils.vibrantChrome
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ShowAudioQualityBadgeKey
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.utils.VibrantChromeInk
+import com.hdemirbassmusic.music.ui.utils.vibrantChrome
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.utils.rememberPreference
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 /** Shows the active track's audio quality between the elapsed and remaining times. */
@@ -197,10 +197,10 @@ private fun AudioQualityCard(
     val pillH = cardW * 0.149f
     // Same elastic pull + bloom as the menus.
     val menuStretch = androidx.compose.runtime.rememberCoroutineScope().let { scope ->
-        remember(scope) { com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight(animationScope = scope, radiusScale = 0.6f, sheenAlpha = 0.06f, spotAlpha = 0.32f, releasePulse = true) }
+        remember(scope) { com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight(animationScope = scope, radiusScale = 0.6f, sheenAlpha = 0.06f, spotAlpha = 0.32f, releasePulse = true) }
     }
     V2Floating(onDismiss = onDismiss, placement = Centered) {
-        androidx.compose.runtime.CompositionLocalProvider(com.convx.music.ui.ios.foundation.LocalMenuLiquid provides true) {
+        androidx.compose.runtime.CompositionLocalProvider(com.hdemirbassmusic.music.ui.ios.foundation.LocalMenuLiquid provides true) {
             androidx.compose.foundation.layout.Column(
                 modifier = Modifier
                     .width(cardW)
@@ -306,7 +306,7 @@ internal fun codecFamily(mime: String?, codecs: String?): String? {
  * another source rewrites them, and cached/downloaded playback never does -- which is how
  * the badge and Song info could say Opus while FLAC played, or the other way round.
  */
-fun com.convx.music.db.entities.FormatEntity.agreesWith(live: androidx.media3.common.Format?): Boolean {
+fun com.hdemirbassmusic.music.db.entities.FormatEntity.agreesWith(live: androidx.media3.common.Format?): Boolean {
     val liveFamily = codecFamily(live?.sampleMimeType, live?.codecs) ?: return true
     return codecFamily(mimeType, codecs) == liveFamily
 }

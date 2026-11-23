@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateIntAsState
@@ -33,10 +33,10 @@ import androidx.compose.ui.layout.layout
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -60,8 +60,8 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
-import com.convx.music.LocalAmbientBackgroundColor
-import com.convx.music.designsystem.ConvxDesignTokens
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.designsystem.hdemirbassmusicDesignTokens
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.util.VelocityTracker
 import androidx.compose.ui.input.pointer.util.addPointerInputChange
@@ -91,31 +91,31 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.size.Size as CoilSize
 import androidx.compose.ui.platform.LocalContext
-import com.convx.music.ui.component.rememberNoArtworkPainter
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.ui.player.customize.PlayerGlyph
-import com.convx.music.ui.player.customize.PlayerIconSlot
-import com.convx.music.constants.MiniBarTabStyleKey
-import com.convx.music.constants.MiniPlayerWaveformKey
-import com.convx.music.constants.SwipeSensitivityKey
-import com.convx.music.constants.SwipeThumbnailKey
-import com.convx.music.extensions.togglePlayPause
-import com.convx.music.ui.component.AnimatedPlayPauseIcon
-import com.convx.music.ui.component.ScrollingWaveformSeekBar
-import com.convx.music.ui.component.floatingtabbar.SearchBarRowHeight
-import com.convx.music.ui.component.floatingtabbar.clipWhilePressed
-import com.convx.music.ui.component.rememberPlaybackFraction
-import com.convx.music.playback.PlaybackRepeatMode
+import com.hdemirbassmusic.music.ui.component.rememberNoArtworkPainter
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.player.customize.PlayerGlyph
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot
+import com.hdemirbassmusic.music.constants.MiniBarTabStyleKey
+import com.hdemirbassmusic.music.constants.MiniPlayerWaveformKey
+import com.hdemirbassmusic.music.constants.SwipeSensitivityKey
+import com.hdemirbassmusic.music.constants.SwipeThumbnailKey
+import com.hdemirbassmusic.music.extensions.togglePlayPause
+import com.hdemirbassmusic.music.ui.component.AnimatedPlayPauseIcon
+import com.hdemirbassmusic.music.ui.component.ScrollingWaveformSeekBar
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.SearchBarRowHeight
+import com.hdemirbassmusic.music.ui.component.floatingtabbar.clipWhilePressed
+import com.hdemirbassmusic.music.ui.component.rememberPlaybackFraction
+import com.hdemirbassmusic.music.playback.PlaybackRepeatMode
 import androidx.compose.ui.graphics.isSpecified
-import com.convx.music.LocalAmbientBackgroundColor
-import com.convx.music.ui.component.asSoftIconTint
-import com.convx.music.ui.component.elasticStretchLayerBlock
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.utils.flamingoChrome
-import com.convx.music.ui.utils.resize
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalAmbientBackgroundColor
+import com.hdemirbassmusic.music.ui.component.asSoftIconTint
+import com.hdemirbassmusic.music.ui.component.elasticStretchLayerBlock
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.utils.flamingoChrome
+import com.hdemirbassmusic.music.ui.utils.resize
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlin.math.abs
 import kotlin.math.exp
 import kotlin.math.roundToInt
@@ -189,13 +189,13 @@ fun FloatingMiniPlayer(
 ) {
     val playerConnection = LocalPlayerConnection.current ?: return
     val ambientColor = LocalAmbientBackgroundColor.current.value
-    val isDark = com.convx.music.ui.component.glassUsesDarkAppearance()
-    val playTint = com.convx.music.ui.theme.GlassTintTokens.glassContentColor(
+    val isDark = com.hdemirbassmusic.music.ui.component.glassUsesDarkAppearance()
+    val playTint = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassContentColor(
         isDark = isDark,
         activeTint = ambientColor,
         isSelected = false,
     ).copy(alpha = 1.0f)
-    val transportTint = com.convx.music.ui.theme.GlassTintTokens.glassContentColor(
+    val transportTint = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.glassContentColor(
         isDark = isDark,
         activeTint = ambientColor,
         isSelected = false,
@@ -303,7 +303,7 @@ fun FloatingMiniPlayer(
             // Finger-following glow, same as the search pill.
             .then(glow.gestureModifier)
             // Clip the sheen to the pill while pressed.
-            .clipWhilePressed(glow, com.convx.music.ui.component.shapes.NavContinuousCapsule)
+            .clipWhilePressed(glow, com.hdemirbassmusic.music.ui.component.shapes.NavContinuousCapsule)
             .then(glow.modifier)
             // Edge-flick skip only: center drag stretches (via glow above)
             // but never slides or commits. Snaps hop to the card scope.
@@ -422,14 +422,14 @@ fun FloatingMiniPlayer(
     ) {
         // Only the tablet pill changes height, so only it scales content to its measured height.
         val animatedHeightPx by animateIntAsState(
-            targetValue = if (tabStyle) measuredHeightPx else with(density) { ConvxDesignTokens.Metrics.MiniPlayerHeight.roundToPx() },
+            targetValue = if (tabStyle) measuredHeightPx else with(density) { hdemirbassmusicDesignTokens.Metrics.MiniPlayerHeight.roundToPx() },
             animationSpec = spring(stiffness = Spring.StiffnessMediumLow),
             label = "miniPlayerMeasuredHeight",
         )
         val measuredHeight = with(density) { animatedHeightPx.toDp() }
-        val artSize = if (tabStyle) (measuredHeight * 0.6f).coerceIn(36.dp, 60.dp) else ConvxDesignTokens.Metrics.MiniPlayerArtworkSize
+        val artSize = if (tabStyle) (measuredHeight * 0.6f).coerceIn(36.dp, 60.dp) else hdemirbassmusicDesignTokens.Metrics.MiniPlayerArtworkSize
         val artCornerRadius = artSize * 0.22f
-        val controlSize = if (tabStyle) (measuredHeight * 0.55f).coerceIn(36.dp, 52.dp) else ConvxDesignTokens.Metrics.MiniPlayerControlSize
+        val controlSize = if (tabStyle) (measuredHeight * 0.55f).coerceIn(36.dp, 52.dp) else hdemirbassmusicDesignTokens.Metrics.MiniPlayerControlSize
 
         // Keep one layout during the morph; read animated width in layout/draw to avoid recomposition.
         // The row writes this field before measuring children, so they use the same frame's width.
@@ -510,8 +510,8 @@ fun FloatingMiniPlayer(
                             Text(
                                 text = mediaMetadata?.title.orEmpty(),
                                 style = AppTheme.typography.bodyMedium,
-                                fontSize = ConvxDesignTokens.Type.MiniPlayerTitle,
-                                lineHeight = ConvxDesignTokens.Type.MiniPlayerTitleLineHeight,
+                                fontSize = hdemirbassmusicDesignTokens.Type.MiniPlayerTitle,
+                                lineHeight = hdemirbassmusicDesignTokens.Type.MiniPlayerTitleLineHeight,
                                 fontWeight = FontWeight.SemiBold,
                                 letterSpacing = (-0.23).sp,
                                 color = contentColor,
@@ -530,8 +530,8 @@ fun FloatingMiniPlayer(
                         Text(
                             text = mediaMetadata?.artists?.joinToString { it.name }.orEmpty(),
                             style = AppTheme.typography.bodySmall,
-                            fontSize = ConvxDesignTokens.Type.MiniPlayerArtist,
-                            lineHeight = ConvxDesignTokens.Type.MiniPlayerArtistLineHeight,
+                            fontSize = hdemirbassmusicDesignTokens.Type.MiniPlayerArtist,
+                            lineHeight = hdemirbassmusicDesignTokens.Type.MiniPlayerArtistLineHeight,
                             letterSpacing = 0.06.sp,
                             color = contentColor.copy(alpha = 0.7f),
                             maxLines = 1,
@@ -686,8 +686,8 @@ fun FloatingMiniPlayer(
                         Text(
                             text = mediaMetadata?.title.orEmpty(),
                             style = AppTheme.typography.bodyMedium,
-                            fontSize = ConvxDesignTokens.Type.MiniPlayerTitle,
-                            lineHeight = ConvxDesignTokens.Type.MiniPlayerTitleLineHeight,
+                            fontSize = hdemirbassmusicDesignTokens.Type.MiniPlayerTitle,
+                            lineHeight = hdemirbassmusicDesignTokens.Type.MiniPlayerTitleLineHeight,
                             fontWeight = FontWeight.SemiBold,
                             letterSpacing = (-0.23).sp,
                             color = contentColor,
@@ -697,8 +697,8 @@ fun FloatingMiniPlayer(
                         Text(
                             text = mediaMetadata?.artists?.joinToString { it.name }.orEmpty(),
                             style = AppTheme.typography.bodySmall,
-                            fontSize = ConvxDesignTokens.Type.MiniPlayerArtist,
-                            lineHeight = ConvxDesignTokens.Type.MiniPlayerArtistLineHeight,
+                            fontSize = hdemirbassmusicDesignTokens.Type.MiniPlayerArtist,
+                            lineHeight = hdemirbassmusicDesignTokens.Type.MiniPlayerArtistLineHeight,
                             letterSpacing = 0.06.sp,
                             color = contentColor.copy(alpha = 0.7f),
                             maxLines = 1,
@@ -730,7 +730,7 @@ fun FloatingMiniPlayer(
 @androidx.compose.runtime.Composable
 internal fun Modifier.noOvershootContent(): Modifier {
     // Follow animated width within the target range to avoid reflow during overshoot.
-    val hostSpec = com.convx.music.ui.component.floatingtabbar.LocalAccessoryContentSpec.current
+    val hostSpec = com.hdemirbassmusic.music.ui.component.floatingtabbar.LocalAccessoryContentSpec.current
     if (hostSpec != null) return layout { measurable, constraints ->
         val w = if (hostSpec.maxWidth > 0) {
             constraints.maxWidth.coerceIn(hostSpec.minWidth, hostSpec.maxWidth)

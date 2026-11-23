@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player.customize
+package com.hdemirbassmusic.music.ui.player.customize
 
 import android.content.Context
-import com.convx.music.constants.DiyLayoutKey
-import com.convx.music.utils.dataStore
-import com.convx.music.utils.get
+import com.hdemirbassmusic.music.constants.DiyLayoutKey
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.utils.get
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File

@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.utils
+package com.hdemirbassmusic.music.utils
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -12,7 +12,7 @@ import androidx.core.net.toUri
 /**
  * Hands a local file to whatever tag editor the user has installed.
  *
- * Convx does not write tags itself and this is not a step towards doing so: editing
+ * hdemirbassmusic does not write tags itself and this is not a step towards doing so: editing
  * ID3/Vorbis frames correctly across every container is a whole application's worth of
  * work, and several good ones already exist. This just opens the file in one.
  *

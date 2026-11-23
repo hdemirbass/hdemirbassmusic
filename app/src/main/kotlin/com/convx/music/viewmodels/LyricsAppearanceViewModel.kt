@@ -1,4 +1,4 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import android.content.Context
 import android.graphics.Typeface
@@ -6,10 +6,10 @@ import android.net.Uri
 import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.convx.music.constants.LyricsFontKey
-import com.convx.music.constants.LyricsCustomFontKey
-import com.convx.music.constants.LyricsTextSizeKey
-import com.convx.music.utils.dataStore
+import com.hdemirbassmusic.music.constants.LyricsFontKey
+import com.hdemirbassmusic.music.constants.LyricsCustomFontKey
+import com.hdemirbassmusic.music.constants.LyricsTextSizeKey
+import com.hdemirbassmusic.music.utils.dataStore
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 

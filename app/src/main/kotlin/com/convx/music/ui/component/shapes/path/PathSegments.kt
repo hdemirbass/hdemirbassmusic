@@ -4,9 +4,9 @@
  * capsule/src/main/java/com/kyant/capsule/path/PathSegments.kt
  *
  * Vendored so the shape ships as source with this app. Package renamed
- * accordingly (com.kyant.capsule -> com.convx.music.ui.component.shapes).
+ * accordingly (com.kyant.capsule -> com.hdemirbassmusic.music.ui.component.shapes).
  */
-package com.convx.music.ui.component.shapes.path
+package com.hdemirbassmusic.music.ui.component.shapes.path
 
 import androidx.compose.ui.graphics.Path
 

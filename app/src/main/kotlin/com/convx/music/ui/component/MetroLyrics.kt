@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.graphics.BlurMaskFilter
 import androidx.compose.animation.core.animateFloatAsState
@@ -12,8 +12,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -47,13 +47,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.constants.AppleMusicLyricsBlurKey
-import com.convx.music.constants.LyricsRomanizeAsMainKey
-import com.convx.music.lyrics.LyricsEntry
-import com.convx.music.lyrics.wordsWithSpacing
-import com.convx.music.ui.screens.settings.LyricsPosition
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.constants.AppleMusicLyricsBlurKey
+import com.hdemirbassmusic.music.constants.LyricsRomanizeAsMainKey
+import com.hdemirbassmusic.music.lyrics.LyricsEntry
+import com.hdemirbassmusic.music.lyrics.wordsWithSpacing
+import com.hdemirbassmusic.music.ui.screens.settings.LyricsPosition
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.isActive
 import kotlin.math.PI
 import kotlin.math.cos

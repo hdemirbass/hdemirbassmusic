@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme.colorengine
+package com.hdemirbassmusic.music.ui.theme.colorengine
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.util.LruCache
 import androidx.compose.ui.graphics.Color
-import com.convx.music.utils.ArtworkProcessing
+import com.hdemirbassmusic.music.utils.ArtworkProcessing
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

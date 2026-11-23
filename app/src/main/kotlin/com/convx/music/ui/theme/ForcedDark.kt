@@ -1,19 +1,19 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.remember
-import com.convx.music.ui.component.LocalSampledChromeDark
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.darkIosColors
-import com.convx.music.ui.ios.foundation.iosColorScheme
+import com.hdemirbassmusic.music.ui.component.LocalSampledChromeDark
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.darkIosColors
+import com.hdemirbassmusic.music.ui.ios.foundation.iosColorScheme
 
 /** True inside a scope that is always drawn with the dark palette, whatever the app theme. */
 val LocalForcedDark = compositionLocalOf { false }
@@ -23,7 +23,7 @@ val LocalForcedDark = compositionLocalOf { false }
  * preferences as the normal config, so a forced-dark scope gets dark tints, puck and rim values,
  * which are stored as fixed colours and cannot be flipped by the scope itself.
  */
-val LocalDarkGlassEffectConfig = compositionLocalOf<com.convx.music.ui.component.GlassEffectConfig?> { null }
+val LocalDarkGlassEffectConfig = compositionLocalOf<com.hdemirbassmusic.music.ui.component.GlassEffectConfig?> { null }
 
 /**
  * Draws [content] with the dark palette regardless of the app theme: iOS colours, Material
@@ -41,8 +41,8 @@ fun ForcedDarkScope(enabled: Boolean = true, content: @Composable () -> Unit) {
     CompositionLocalProvider(
         LocalForcedDark provides true,
         LocalSampledChromeDark provides true,
-        com.convx.music.ui.component.LocalGlassEffectConfig provides
-            (darkGlass ?: com.convx.music.ui.component.LocalGlassEffectConfig.current),
+        com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig provides
+            (darkGlass ?: com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig.current),
     ) {
         IosTheme(darkTheme = true, accent = accent) {
             MaterialTheme(colorScheme = iosColorScheme(colors)) {
@@ -50,7 +50,7 @@ fun ForcedDarkScope(enabled: Boolean = true, content: @Composable () -> Unit) {
                 // (search bar glyphs, menu icons) follow the dark palette too.
                 CompositionLocalProvider(
                     androidx.compose.material3.LocalContentColor provides colors.label,
-                    com.convx.music.ui.ios.compat.LocalContentColor provides colors.label,
+                    com.hdemirbassmusic.music.ui.ios.compat.LocalContentColor provides colors.label,
                 ) { content() }
             }
         }

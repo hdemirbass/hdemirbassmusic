@@ -1,4 +1,4 @@
-package com.convx.music.utils.cipher
+package com.hdemirbassmusic.music.utils.cipher
 
 import android.content.Context
 import android.webkit.ConsoleMessage
@@ -300,7 +300,7 @@ function discoverAndInit() {
     }
 
     companion object {
-        private const val TAG = "convx_CipherWebView"
+        private const val TAG = "hdemirbassmusic_CipherWebView"
         private const val JS_INTERFACE = "CipherBridge"
 
         suspend fun create(

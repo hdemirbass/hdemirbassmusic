@@ -1,4 +1,4 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
 /** Provider-independent playable audio source returned by a playback resolver. */
 data class PlaybackAudioStream(

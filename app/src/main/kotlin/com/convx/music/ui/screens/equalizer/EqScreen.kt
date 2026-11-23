@@ -1,7 +1,7 @@
-package com.convx.music.ui.screens.equalizer
+package com.hdemirbassmusic.music.ui.screens.equalizer
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.media.audiofx.AudioEffect
@@ -10,8 +10,8 @@ import android.provider.OpenableColumns
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.ui.res.painterResource
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,18 +25,18 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import com.convx.music.ui.ios.compat.AlertDialog
-import com.convx.music.ui.ios.compat.Button
+import com.hdemirbassmusic.music.ui.ios.compat.AlertDialog
+import com.hdemirbassmusic.music.ui.ios.compat.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.ListItem
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.RadioButton
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.ListItem
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.RadioButton
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -56,9 +56,9 @@ import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFPlus
 import com.composables.sfsymbols.monochrome.SFSliderHorizontal3
 import com.composables.sfsymbols.monochrome.SFTrash
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.eq.data.SavedEQProfile
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.eq.data.SavedEQProfile
 import timber.log.Timber
 
 /**
@@ -242,7 +242,7 @@ private fun EqScreenContent(
                 }
                 Row {
                     IconButton(onClick = onNavigateToAxion) {
-                        SymbolIcon(symbol = sf("SFSliderHorizontal3"), contentDescription = stringResource(R.string.convx_equalizer))
+                        SymbolIcon(symbol = sf("SFSliderHorizontal3"), contentDescription = stringResource(R.string.hdemirbassmusic_equalizer))
                     }
                     IconButton(onClick = onImportCustomEQ) {
                         SymbolIcon(symbol = sf("SFPlus"), contentDescription = stringResource(R.string.import_profile))

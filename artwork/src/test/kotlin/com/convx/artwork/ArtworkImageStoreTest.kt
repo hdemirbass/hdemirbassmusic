@@ -1,4 +1,4 @@
-package com.convx.artwork
+package com.hdemirbassmusic.artwork
 
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.async

@@ -1,4 +1,4 @@
-package com.convx.music.data.settings
+package com.hdemirbassmusic.music.data.settings
 
 /**
  * Playback speed multiplier exposed to the UI. MutableState so

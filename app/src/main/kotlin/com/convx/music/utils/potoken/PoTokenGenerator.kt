@@ -1,7 +1,7 @@
-package com.convx.music.utils.potoken
+package com.hdemirbassmusic.music.utils.potoken
 
 import android.webkit.CookieManager
-import com.convx.music.utils.cipher.CipherDeobfuscator
+import com.hdemirbassmusic.music.utils.cipher.CipherDeobfuscator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Mutex

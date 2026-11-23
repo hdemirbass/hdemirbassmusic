@@ -1,4 +1,4 @@
-package com.convx.music.playback.smart
+package com.hdemirbassmusic.music.playback.smart
 
 import kotlin.math.PI
 import kotlin.math.abs

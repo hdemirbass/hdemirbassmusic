@@ -1,8 +1,8 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -43,8 +43,8 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import coil3.size.Size as CoilSize
-import com.convx.music.ui.component.PLAYER_MINI_FADE_END
-import com.convx.music.ui.utils.resize
+import com.hdemirbassmusic.music.ui.component.PLAYER_MINI_FADE_END
+import com.hdemirbassmusic.music.ui.utils.resize
 import kotlin.math.roundToInt
 
 /**

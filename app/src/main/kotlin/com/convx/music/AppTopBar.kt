@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
-import com.convx.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.sf
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.core.tween
@@ -46,27 +46,27 @@ import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFChartBar
 import com.composables.sfsymbols.monochrome.SFClock
 import com.composables.sfsymbols.monochrome.SFPlus
-import com.convx.music.R
-import com.convx.music.ui.component.AccountAvatar
-import com.convx.music.ui.component.CreatePlaylistDialog
-import com.convx.music.ui.component.FrostedTopBar
-import com.convx.music.ui.component.GlassCircleButton
-import com.convx.music.ui.component.TopFadeBlur
-import com.convx.music.ui.component.rememberAppBackgroundTint
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.ios.component.IosGlyph
-import com.convx.music.ui.ios.compat.DropdownMenu
-import com.convx.music.ui.ios.compat.DropdownMenuItem
-import com.convx.music.ui.ios.compat.IosMenuDivider
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.menuTrigger
-import com.convx.music.ui.ios.foundation.IosGlassSpec
-import com.convx.music.ui.ios.foundation.iosGlass
-import com.convx.music.ui.screens.Screens
-import com.convx.music.ui.theme.LocalAccentTextColor
-import com.convx.music.ui.theme.SfProFontFamily
-import com.convx.music.ui.theme.isHueless
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.AccountAvatar
+import com.hdemirbassmusic.music.ui.component.CreatePlaylistDialog
+import com.hdemirbassmusic.music.ui.component.FrostedTopBar
+import com.hdemirbassmusic.music.ui.component.GlassCircleButton
+import com.hdemirbassmusic.music.ui.component.TopFadeBlur
+import com.hdemirbassmusic.music.ui.component.rememberAppBackgroundTint
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.ios.component.IosGlyph
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenu
+import com.hdemirbassmusic.music.ui.ios.compat.DropdownMenuItem
+import com.hdemirbassmusic.music.ui.ios.compat.IosMenuDivider
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.menuTrigger
+import com.hdemirbassmusic.music.ui.ios.foundation.IosGlassSpec
+import com.hdemirbassmusic.music.ui.ios.foundation.iosGlass
+import com.hdemirbassmusic.music.ui.screens.Screens
+import com.hdemirbassmusic.music.ui.theme.LocalAccentTextColor
+import com.hdemirbassmusic.music.ui.theme.SfProFontFamily
+import com.hdemirbassmusic.music.ui.theme.isHueless
 import dev.chrisbanes.haze.HazeState
 
 /** The persistent top bar: edge blur plus the large title and the library/profile actions. */

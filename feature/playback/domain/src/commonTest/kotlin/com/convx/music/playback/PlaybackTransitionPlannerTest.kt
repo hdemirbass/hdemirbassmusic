@@ -1,6 +1,6 @@
-package com.convx.music.playback
+package com.hdemirbassmusic.music.playback
 
-import com.convx.music.playback.smart.TransitionStyle
+import com.hdemirbassmusic.music.playback.smart.TransitionStyle
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull

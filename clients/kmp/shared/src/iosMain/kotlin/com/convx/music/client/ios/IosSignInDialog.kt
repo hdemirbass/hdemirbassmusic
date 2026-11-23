@@ -1,6 +1,6 @@
 @file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
 
-package com.convx.music.client.ios
+package com.hdemirbassmusic.music.client.ios
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

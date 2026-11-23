@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:Suppress("FunctionName")
 
-package com.convx.music.ui.ios.compat
+package com.hdemirbassmusic.music.ui.ios.compat
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -32,10 +32,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.component.IosButtonRole
-import com.convx.music.ui.ios.foundation.IosCapsule
-import com.convx.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.component.IosButtonRole
+import com.hdemirbassmusic.music.ui.ios.foundation.IosCapsule
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
 import androidx.compose.foundation.layout.PaddingValues
 import zone.ien.hig.CupertinoBorderedTextField
 import zone.ien.hig.CupertinoSearchTextField
@@ -43,7 +43,7 @@ import zone.ien.hig.CupertinoSlider
 import zone.ien.hig.rememberCupertinoSearchTextFieldState
 import zone.ien.hig.CupertinoSurface
 import zone.ien.hig.CupertinoSwitch
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 
 /*
  * The container half of the compat layer: surfaces, alerts, fields and the two

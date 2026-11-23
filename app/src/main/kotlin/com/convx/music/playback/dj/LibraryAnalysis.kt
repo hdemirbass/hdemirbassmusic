@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.playback.dj
+package com.hdemirbassmusic.music.playback.dj
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -16,10 +16,10 @@ import android.content.Context
 import androidx.core.app.NotificationCompat
 import androidx.core.net.toUri
 import androidx.media3.common.util.UnstableApi
-import com.convx.music.R
-import com.convx.music.db.MusicDatabase
-import com.convx.music.playback.AudioCache
-import com.convx.music.playback.smart.TrackAnalyzer
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.playback.AudioCache
+import com.hdemirbassmusic.music.playback.smart.TrackAnalyzer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -31,11 +31,11 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.coroutines.coroutineContext
-import com.convx.music.playback.smart.StemQuality
-import com.convx.music.playback.smart.StemSeparator
-import com.convx.music.constants.StemQualityKey
-import com.convx.music.utils.dataStore
-import com.convx.music.extensions.toEnum
+import com.hdemirbassmusic.music.playback.smart.StemQuality
+import com.hdemirbassmusic.music.playback.smart.StemSeparator
+import com.hdemirbassmusic.music.constants.StemQualityKey
+import com.hdemirbassmusic.music.utils.dataStore
+import com.hdemirbassmusic.music.extensions.toEnum
 import kotlinx.coroutines.flow.first
 import java.util.concurrent.ConcurrentLinkedQueue
 
@@ -54,7 +54,7 @@ object LibraryAnalysis {
     private const val PER_SONG_TIMEOUT_MS = 5 * 60_000L
     private const val CHANNEL_ID = "analysis_progress"
     private const val NOTIFICATION_ID = 5679
-    private const val ACTION_CANCEL = "com.convx.music.ANALYSIS_CANCEL"
+    private const val ACTION_CANCEL = "com.hdemirbassmusic.music.ANALYSIS_CANCEL"
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private val queue = ConcurrentLinkedQueue<Target>()

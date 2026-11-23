@@ -1,18 +1,18 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.text.input.TextFieldValue
-import com.convx.music.constants.SearchSource
+import com.hdemirbassmusic.music.constants.SearchSource
 
 /**
- * Search input state shared between [com.convx.music.ui.component.AppFloatingNavBar]
+ * Search input state shared between [com.hdemirbassmusic.music.ui.component.AppFloatingNavBar]
  * (which now owns the actual search text field) and the search_input/search/{query}
  * screens (which just read the query to filter/display results). Hoisted to
  * MainActivity, provided via [LocalNavSearchState] — the nav bar renders outside

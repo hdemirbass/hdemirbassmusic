@@ -1,15 +1,15 @@
-package com.convx.music.library.data
+package com.hdemirbassmusic.music.library.data
 
-import com.convx.music.library.PlaylistDetail
-import com.convx.music.library.PlaylistEntryReference
-import com.convx.music.library.MusicLibraryWriter
-import com.convx.music.library.PlaylistOrder
-import com.convx.music.library.PlaylistOrderEntry
-import com.convx.music.library.PlaylistRepository
-import com.convx.music.library.PlaylistSongRemoval
-import com.convx.music.library.PlaylistSummary
-import com.convx.music.library.PlaylistSyncTrack
-import com.convx.music.library.PlaylistTrack
+import com.hdemirbassmusic.music.library.PlaylistDetail
+import com.hdemirbassmusic.music.library.PlaylistEntryReference
+import com.hdemirbassmusic.music.library.MusicLibraryWriter
+import com.hdemirbassmusic.music.library.PlaylistOrder
+import com.hdemirbassmusic.music.library.PlaylistOrderEntry
+import com.hdemirbassmusic.music.library.PlaylistRepository
+import com.hdemirbassmusic.music.library.PlaylistSongRemoval
+import com.hdemirbassmusic.music.library.PlaylistSummary
+import com.hdemirbassmusic.music.library.PlaylistSyncTrack
+import com.hdemirbassmusic.music.library.PlaylistTrack
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

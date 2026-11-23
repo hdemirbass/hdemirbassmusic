@@ -1,9 +1,9 @@
-package com.convx.music.ui.theme
+package com.hdemirbassmusic.music.ui.theme
 
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 val bbhBartle = FontFamily(
     Font(R.font.bbh_bartle_regular, FontWeight.Normal)

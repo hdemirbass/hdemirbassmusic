@@ -1,4 +1,4 @@
-package com.convx.music.ui.screens.library
+package com.hdemirbassmusic.music.ui.screens.library
 
 import android.net.Uri
 import androidx.compose.foundation.clickable
@@ -12,11 +12,11 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.ui.component.*
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.utils.LocalFolderIndex
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.ui.component.*
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.utils.LocalFolderIndex
 import androidx.compose.ui.platform.LocalContext
 
 @Composable

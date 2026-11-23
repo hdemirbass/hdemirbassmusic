@@ -1,8 +1,8 @@
-package com.convx.music.core.updater.downloadmanager
+package com.hdemirbassmusic.music.core.updater.downloadmanager
 
 import android.content.Context
 import android.os.Environment
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 import kotlinx.coroutines.*
 import java.io.File
 import java.io.FileOutputStream
@@ -44,13 +44,13 @@ class CustomDownloadManager {
 
                 val downloadDir = File(
                     context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS),
-                    "convx_updates"
+                    "hdemirbassmusic_updates"
                 )
                 if (!downloadDir.exists()) {
                     downloadDir.mkdirs()
                 }
 
-                val outputFile = File(downloadDir, "convx.apk")
+                val outputFile = File(downloadDir, "hdemirbassmusic.apk")
                 val outputStream = FileOutputStream(outputFile)
 
                 val buffer = ByteArray(8192)

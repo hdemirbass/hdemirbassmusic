@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.content.Context
 import androidx.compose.foundation.Canvas
@@ -31,16 +31,16 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.convx.music.constants.DynamicThemeKey
-import com.convx.music.constants.PureBlackHeroBackgroundKey
-import com.convx.music.constants.SelectedThemeColorKey
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.theme.AppleTokens
-import com.convx.music.ui.theme.DefaultThemeColor
-import com.convx.music.ui.theme.HeroPalette
-import com.convx.music.ui.theme.colorengine.textHierarchyOn
-import com.convx.music.ui.theme.extractHeroPalette
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.constants.DynamicThemeKey
+import com.hdemirbassmusic.music.constants.PureBlackHeroBackgroundKey
+import com.hdemirbassmusic.music.constants.SelectedThemeColorKey
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.theme.AppleTokens
+import com.hdemirbassmusic.music.ui.theme.DefaultThemeColor
+import com.hdemirbassmusic.music.ui.theme.HeroPalette
+import com.hdemirbassmusic.music.ui.theme.colorengine.textHierarchyOn
+import com.hdemirbassmusic.music.ui.theme.extractHeroPalette
+import com.hdemirbassmusic.music.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -217,7 +217,7 @@ fun rememberHeroPalette(url: String?): HeroPalette {
     val context = LocalContext.current
 
     val isDark = AppTheme.colorScheme.surface.luminance() <= 0.5f
-    val fallbackTint = com.convx.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark)
+    val fallbackTint = com.hdemirbassmusic.music.ui.theme.GlassTintTokens.baseSurfaceColor(isDark)
     val fallbackPalette = remember(fallbackTint) {
         HeroPalette(
             background = fallbackTint,

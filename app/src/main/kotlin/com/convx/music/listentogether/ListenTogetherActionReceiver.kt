@@ -1,4 +1,4 @@
-package com.convx.music.listentogether
+package com.hdemirbassmusic.music.listentogether
 
 import android.content.BroadcastReceiver
 import android.content.Context

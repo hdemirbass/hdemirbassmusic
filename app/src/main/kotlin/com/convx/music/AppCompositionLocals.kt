@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music
+package com.hdemirbassmusic.music
 
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.runtime.Composable
@@ -18,12 +18,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.convx.music.db.MusicDatabase
-import com.convx.music.di.ValueProvider
-import com.convx.music.playback.DownloadUtil
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.ui.screens.settings.RingtoneViewModel
-import com.convx.music.utils.SyncUtils
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.di.ValueProvider
+import com.hdemirbassmusic.music.playback.DownloadUtil
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.ui.screens.settings.RingtoneViewModel
+import com.hdemirbassmusic.music.utils.SyncUtils
 
 val LocalDatabase = staticCompositionLocalOf<ValueProvider<MusicDatabase>> { error("No database provided") }
 val LocalRingtoneViewModel = staticCompositionLocalOf<RingtoneViewModel> { error("No RingtoneViewModel provided") }
@@ -31,7 +31,7 @@ val LocalPlayerConnection = staticCompositionLocalOf<PlayerConnection?> { error(
 val LocalPlayerAwareWindowInsets = compositionLocalOf<WindowInsets> { error("No WindowInsets provided") }
 val LocalDownloadUtil = staticCompositionLocalOf<ValueProvider<DownloadUtil>> { error("No DownloadUtil provided") }
 val LocalSyncUtils = staticCompositionLocalOf<ValueProvider<SyncUtils>> { error("No SyncUtils provided") }
-val LocalListenTogetherManager = staticCompositionLocalOf<com.convx.music.listentogether.ListenTogetherManager?> { null }
+val LocalListenTogetherManager = staticCompositionLocalOf<com.hdemirbassmusic.music.listentogether.ListenTogetherManager?> { null }
 val LocalIsPlayerExpanded = compositionLocalOf { false }
 
 /**

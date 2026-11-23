@@ -1,12 +1,12 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -15,8 +15,8 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyRow
-import com.convx.music.ui.screens.search.CategoryTile
-import com.convx.music.ui.screens.search.AppleSearchViewModel
+import com.hdemirbassmusic.music.ui.screens.search.CategoryTile
+import com.hdemirbassmusic.music.ui.screens.search.AppleSearchViewModel
 import org.koin.androidx.compose.koinViewModel
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.foundation.layout.width
@@ -55,37 +55,37 @@ import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.composables.sfsymbols.SfSymbols
 import com.composables.sfsymbols.monochrome.SFPersonCropCircle
-import com.convx.music.R
-import com.convx.music.constants.ListThumbnailSize
-import com.convx.music.constants.ThumbnailCornerRadius
-import com.convx.music.db.MusicDatabase
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Artist
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.Song
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.extensions.togglePlayPause
-import com.convx.music.models.MediaMetadata
-import com.convx.music.models.SimilarRecommendation
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.HomeHeroCard
-import com.convx.music.ui.component.LocalAppMotionFrozen
-import com.convx.music.ui.component.NavigationTitle
-import com.convx.music.ui.component.SongListItem
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.theme.AppPage
-import com.convx.music.ui.utils.albumRoute
-import com.convx.music.ui.utils.artistRoute
-import com.convx.music.ui.utils.bleedStart
-import com.convx.music.ui.utils.onlinePlaylistRoute
-import com.convx.music.ui.utils.sharedArtworkSource
-import com.convx.music.ui.utils.youtubeBrowseRoute
-import com.convx.music.ui.utils.plusStart
-import com.convx.music.utils.listItemShape
-import com.convx.music.viewmodels.CommunityPlaylistItem
-import com.convx.music.viewmodels.DailyDiscoverItem
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.ListThumbnailSize
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadius
+import com.hdemirbassmusic.music.db.MusicDatabase
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Artist
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.Song
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.extensions.togglePlayPause
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.models.SimilarRecommendation
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.HomeHeroCard
+import com.hdemirbassmusic.music.ui.component.LocalAppMotionFrozen
+import com.hdemirbassmusic.music.ui.component.NavigationTitle
+import com.hdemirbassmusic.music.ui.component.SongListItem
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.theme.AppPage
+import com.hdemirbassmusic.music.ui.utils.albumRoute
+import com.hdemirbassmusic.music.ui.utils.artistRoute
+import com.hdemirbassmusic.music.ui.utils.bleedStart
+import com.hdemirbassmusic.music.ui.utils.onlinePlaylistRoute
+import com.hdemirbassmusic.music.ui.utils.sharedArtworkSource
+import com.hdemirbassmusic.music.ui.utils.youtubeBrowseRoute
+import com.hdemirbassmusic.music.ui.utils.plusStart
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.viewmodels.CommunityPlaylistItem
+import com.hdemirbassmusic.music.viewmodels.DailyDiscoverItem
 import com.music.innertube.YouTube
 import com.music.innertube.models.PlaylistItem
 import com.music.innertube.models.ArtistItem
@@ -103,7 +103,7 @@ import kotlinx.coroutines.launch
 internal fun LazyListScope.homeSectionsContent(
     sections: List<HomeSection>,
     deps: HomeSectionDeps,
-    ui: com.convx.music.viewmodels.HomeUiState,
+    ui: com.hdemirbassmusic.music.viewmodels.HomeUiState,
     mediaMetadata: State<MediaMetadata?>,
     isPlaying: State<Boolean>,
     randomizeJob: MutableState<Job?>,
@@ -537,8 +537,8 @@ internal fun LazyListScope.similarRecommendationsSection(
                 else -> null
             }
             val albumArtworkUrl = recommendation.title.thumbnailUrl
-            com.convx.music.ui.utils.ArtworkSourceHost(Modifier.animateItem()) { sourceModifier ->
-            val artworkOwner = com.convx.music.ui.utils.rememberArtworkSourceOwner()
+            com.hdemirbassmusic.music.ui.utils.ArtworkSourceHost(Modifier.animateItem()) { sourceModifier ->
+            val artworkOwner = com.hdemirbassmusic.music.ui.utils.rememberArtworkSourceOwner()
             NavigationTitle(
                 label = stringResource(R.string.similar_to),
                 title = recommendation.title.title,
@@ -550,7 +550,7 @@ internal fun LazyListScope.similarRecommendationsSection(
                             )
                         AsyncImage(
                             model = thumbnailUrl,
-                            onSuccess = com.convx.music.ui.utils.sharedArtworkImageListener(artworkOwner, thumbnailUrl),
+                            onSuccess = com.hdemirbassmusic.music.ui.utils.sharedArtworkImageListener(artworkOwner, thumbnailUrl),
                             contentDescription = null,
                             modifier = Modifier
                                 .sharedArtworkSource(albumArtworkId, albumArtworkUrl, artworkOwner)

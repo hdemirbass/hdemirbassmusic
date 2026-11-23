@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.menu
+package com.hdemirbassmusic.music.ui.menu
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.component.menuBottomInset
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.menuBottomInset
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
@@ -15,11 +15,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
-import com.convx.music.ui.ios.compat.CircularProgressIndicator
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.ios.compat.CircularProgressIndicator
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -38,24 +38,24 @@ import androidx.compose.ui.unit.dp
 import androidx.media3.exoplayer.offline.Download
 import com.music.innertube.YouTube
 import com.music.innertube.models.SongItem
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalDownloadUtil
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.LocalSyncUtils
-import com.convx.music.R
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.models.toMediaMetadata
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.DefaultDialog
-import com.convx.music.ui.component.IosMenuGroup
-import com.convx.music.ui.component.IosMenuItemData
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalDownloadUtil
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.LocalSyncUtils
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.models.toMediaMetadata
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.DefaultDialog
+import com.hdemirbassmusic.music.ui.component.IosMenuGroup
+import com.hdemirbassmusic.music.ui.component.IosMenuItemData
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
-import com.convx.music.playback.DownloadTarget
-import com.convx.music.playback.combinedDownloadState
-import com.convx.music.playback.cancelDownloads
-import com.convx.music.playback.downloadSongs
-import com.convx.music.playback.removeDownloads
+import com.hdemirbassmusic.music.playback.DownloadTarget
+import com.hdemirbassmusic.music.playback.combinedDownloadState
+import com.hdemirbassmusic.music.playback.cancelDownloads
+import com.hdemirbassmusic.music.playback.downloadSongs
+import com.hdemirbassmusic.music.playback.removeDownloads
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
@@ -75,7 +75,7 @@ fun YouTubeSelectionSongMenu(
         mutableStateOf(false)
     }
 
-    val listenTogetherManager = com.convx.music.LocalListenTogetherManager.current
+    val listenTogetherManager = com.hdemirbassmusic.music.LocalListenTogetherManager.current
     val isGuest = listenTogetherManager?.isInRoom == true && listenTogetherManager.isHost == false
 
     var showRemoveDownloadDialog by remember {
@@ -110,8 +110,8 @@ fun YouTubeSelectionSongMenu(
         songs = remember { 
             songSelection.map { song ->
                 val metadata = song.toMediaMetadata()
-                com.convx.music.db.entities.Song(
-                    song = com.convx.music.db.entities.SongEntity(
+                com.hdemirbassmusic.music.db.entities.Song(
+                    song = com.hdemirbassmusic.music.db.entities.SongEntity(
                         id = metadata.id,
                         title = metadata.title,
                         duration = metadata.duration,
@@ -126,13 +126,13 @@ fun YouTubeSelectionSongMenu(
                         libraryRemoveToken = metadata.libraryRemoveToken
                     ),
                     artists = metadata.artists.map { artist ->
-                        com.convx.music.db.entities.ArtistEntity(
+                        com.hdemirbassmusic.music.db.entities.ArtistEntity(
                             id = artist.id ?: "",
                             name = artist.name
                         )
                     },
                     album = metadata.album?.let { album ->
-                        com.convx.music.db.entities.AlbumEntity(
+                        com.hdemirbassmusic.music.db.entities.AlbumEntity(
                             id = album.id,
                             title = album.title,
                             thumbnailUrl = metadata.thumbnailUrl, // Use song's thumbnail as album thumbnail
@@ -351,7 +351,7 @@ fun YouTubeSelectionSongMenu(
                                     val metadata = song.toMediaMetadata()
                                     if ((!allLiked && !metadata.liked) || allLiked) {
                                         insert(metadata)
-                                        val songEntity = com.convx.music.db.entities.SongEntity(
+                                        val songEntity = com.hdemirbassmusic.music.db.entities.SongEntity(
                                             id = metadata.id,
                                             title = metadata.title,
                                             duration = metadata.duration,

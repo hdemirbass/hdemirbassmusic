@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
  * REST and WebSocket client for the party server.
  */
 
-package com.convx.music.jam
+package com.hdemirbassmusic.music.jam
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

@@ -1,7 +1,7 @@
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
-import com.convx.music.playback.PlaybackSettings
-import com.convx.music.playback.PlaybackSettingsRepository
+import com.hdemirbassmusic.music.playback.PlaybackSettings
+import com.hdemirbassmusic.music.playback.PlaybackSettingsRepository
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -67,9 +67,9 @@ class PlaybackSettingsStateHolder(
     fun setBitPerfectEnabled(enabled: Boolean) = updateSettings { it.copy(bitPerfectEnabled = enabled) }
     fun setAudioOutputDevice(id: String?) = updateSettings { it.copy(audioOutputDeviceId = id).normalized() }
     fun setLocalMode(enabled: Boolean) = updateSettings { it.copy(localMode = enabled) }
-    fun updatePlayerCustomization(transform: (com.convx.music.playback.PlayerCustomization) -> com.convx.music.playback.PlayerCustomization) =
+    fun updatePlayerCustomization(transform: (com.hdemirbassmusic.music.playback.PlayerCustomization) -> com.hdemirbassmusic.music.playback.PlayerCustomization) =
         updateSettings { it.copy(playerCustomization = transform(it.playerCustomization).normalized()) }
-    fun updateAppearance(transform: (com.convx.music.playback.AppearanceSettings) -> com.convx.music.playback.AppearanceSettings) =
+    fun updateAppearance(transform: (com.hdemirbassmusic.music.playback.AppearanceSettings) -> com.hdemirbassmusic.music.playback.AppearanceSettings) =
         updateSettings { it.copy(appearance = transform(it.appearance).normalized()) }
 
     fun setEqualizerEnabled(enabled: Boolean) {

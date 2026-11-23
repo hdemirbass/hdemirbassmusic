@@ -1,16 +1,16 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.MutableIntState
 import androidx.compose.runtime.MutableFloatState
-import com.convx.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.PlayerConnection
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.only
 import androidx.compose.runtime.Composable
@@ -23,17 +23,17 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import com.convx.music.applecanvas.AppleMusicCanvasProvider
-import com.convx.music.canvas.CanvasArtwork
-import com.convx.music.canvas.TidalCanvasProvider
-import com.convx.music.constants.CanvasSource
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.convxcanvas.ConvxCanvasProvider
-import com.convx.music.models.MediaMetadata
-import com.convx.music.ui.player.CanvasArtworkPlaybackCache
-import com.convx.music.ui.player.normalizeCanvasArtistName
-import com.convx.music.ui.player.normalizeCanvasSongTitle
-import com.convx.music.utils.SpotifyCanvasLookup
+import com.hdemirbassmusic.music.applecanvas.AppleMusicCanvasProvider
+import com.hdemirbassmusic.music.canvas.CanvasArtwork
+import com.hdemirbassmusic.music.canvas.TidalCanvasProvider
+import com.hdemirbassmusic.music.constants.CanvasSource
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.hdemirbassmusiccanvas.hdemirbassmusicCanvasProvider
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.ui.player.CanvasArtworkPlaybackCache
+import com.hdemirbassmusic.music.ui.player.normalizeCanvasArtistName
+import com.hdemirbassmusic.music.ui.player.normalizeCanvasSongTitle
+import com.hdemirbassmusic.music.utils.SpotifyCanvasLookup
 import java.util.Locale
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -81,7 +81,7 @@ fun rememberSleepTimerState(playerConnection: PlayerConnection): SleepTimerState
 
 /** Time left to show beside the "Sleep timer" menu row, or null while no timer runs. */
 val SleepTimerState.menuLabel: String?
-    get() = if (enabled) com.convx.music.utils.makeTimeString(timeLeft.value.coerceAtLeast(0)) else null
+    get() = if (enabled) com.hdemirbassmusic.music.utils.makeTimeString(timeLeft.value.coerceAtLeast(0)) else null
 
 /** The dialog that starts a sleep timer; renders nothing while [SleepTimerState.showDialog] is false. */
 @Composable
@@ -169,11 +169,11 @@ fun rememberClassicCanvasState(
                     } else null
                     val appleSong = AppleMusicCanvasProvider.getBySongArtist(s, a, requestedAlbum, storefront)
                         ?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
-                    val convx = ConvxCanvasProvider.getBySongArtist(s, a)
+                    val hdemirbassmusic = hdemirbassmusicCanvasProvider.getBySongArtist(s, a)
                         ?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
                     val tidal = TidalCanvasProvider.getBySongArtist(s, a, requestedAlbum)
                         ?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
-                    listOfNotNull(spotify, appleAlbum, appleSong, convx, tidal)
+                    listOfNotNull(spotify, appleAlbum, appleSong, hdemirbassmusic, tidal)
                 }
                 CanvasSource.SPOTIFY -> listOfNotNull(
                     SpotifyCanvasLookup.getBySongArtist(context, requestedTitle, requestedArtist)
@@ -182,8 +182,8 @@ fun rememberClassicCanvasState(
                     AppleMusicCanvasProvider.getBySongArtist(s, a, requestedAlbum, storefront)
                         ?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
                 )
-                CanvasSource.CONVX -> listOfNotNull(
-                    ConvxCanvasProvider.getBySongArtist(s, a)
+                CanvasSource.hdemirbassmusic -> listOfNotNull(
+                    hdemirbassmusicCanvasProvider.getBySongArtist(s, a)
                         ?.takeIf { !it.preferredAnimationUrl.isNullOrBlank() }
                 )
                 CanvasSource.TIDAL -> listOfNotNull(

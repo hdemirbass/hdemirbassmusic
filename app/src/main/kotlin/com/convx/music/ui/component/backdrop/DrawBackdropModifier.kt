@@ -7,7 +7,7 @@
  * scale for cheaper effect rendering. KMP expect/actual declarations were
  * merged into this single Android source set. Package renamed accordingly.
  */
-package com.convx.music.ui.component.backdrop
+package com.hdemirbassmusic.music.ui.component.backdrop
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -44,15 +44,15 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.toSize
-import com.convx.music.ui.component.backdrop.backdrops.LayerBackdrop
-import com.convx.music.ui.component.backdrop.highlight.Highlight
-import com.convx.music.ui.component.backdrop.highlight.HighlightElement
-import com.convx.music.ui.component.backdrop.internal.ShapeProvider
-import com.convx.music.ui.component.backdrop.internal.recordLayer
-import com.convx.music.ui.component.backdrop.shadow.InnerShadow
-import com.convx.music.ui.component.backdrop.shadow.InnerShadowElement
-import com.convx.music.ui.component.backdrop.shadow.Shadow
-import com.convx.music.ui.component.backdrop.shadow.ShadowElement
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.LayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.Highlight
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.HighlightElement
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.ShapeProvider
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.recordLayer
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.InnerShadow
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.InnerShadowElement
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.Shadow
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.ShadowElement
 
 private val DefaultHighlight = { Highlight.Default }
 private val DefaultShadow = { Shadow.Default }

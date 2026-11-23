@@ -1,5 +1,5 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
  * Lossless (TIDAL) streaming via the open "hifi-api" family of public proxies.
@@ -17,7 +17,7 @@
  * MPD manifest) is not decoded here yet and returns null (caller falls back).
  */
 
-package com.convx.music.utils.tidal
+package com.hdemirbassmusic.music.utils.tidal
 import timber.log.Timber
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -143,7 +143,7 @@ object TidalService {
     )
 
     // Browser-ish identity so instances that block bots/datacenter UAs still answer.
-    private const val UA = "Mozilla/5.0 (compatible; Convx/1.0)"
+    private const val UA = "Mozilla/5.0 (compatible; hdemirbassmusic/1.0)"
 
     @Volatile private var cachedLive: List<String> = emptyList()
     @Volatile private var cachedAt: Long = 0L

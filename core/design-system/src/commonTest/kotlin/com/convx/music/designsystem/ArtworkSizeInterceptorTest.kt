@@ -1,4 +1,4 @@
-package com.convx.music.designsystem
+package com.hdemirbassmusic.music.designsystem
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

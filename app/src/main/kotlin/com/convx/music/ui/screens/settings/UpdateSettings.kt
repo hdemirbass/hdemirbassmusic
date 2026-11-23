@@ -1,8 +1,8 @@
-package com.convx.music.ui.screens.settings
+package com.hdemirbassmusic.music.ui.screens.settings
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.utils.appTopBarWindowInsets
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.utils.appTopBarWindowInsets
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -13,10 +13,10 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Switch
 import androidx.compose.material3.SwitchDefaults
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -35,32 +35,32 @@ import org.koin.androidx.compose.koinViewModel
 import android.content.Intent
 import android.net.Uri
 import androidx.navigation.NavController
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.R
-import com.convx.music.ui.component.IconButton
-import com.convx.music.ui.component.IosSettingsGroup
-import com.convx.music.ui.component.IosSettingsItem
-import com.convx.music.core.component.UpdateInfoDialog
-import com.convx.music.ui.utils.backToMain
-import com.convx.music.core.updater.getAutoUpdateCheckSetting
-import com.convx.music.core.updater.saveAutoUpdateCheckSetting
-import com.convx.music.core.updater.getUpdateAvailableState
-import com.convx.music.core.updater.saveUpdateAvailableState
-import com.convx.music.core.updater.getUpdateNotificationsSetting
-import com.convx.music.core.updater.saveUpdateNotificationsSetting
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.IconButton
+import com.hdemirbassmusic.music.ui.component.IosSettingsGroup
+import com.hdemirbassmusic.music.ui.component.IosSettingsItem
+import com.hdemirbassmusic.music.core.component.UpdateInfoDialog
+import com.hdemirbassmusic.music.ui.utils.backToMain
+import com.hdemirbassmusic.music.core.updater.getAutoUpdateCheckSetting
+import com.hdemirbassmusic.music.core.updater.saveAutoUpdateCheckSetting
+import com.hdemirbassmusic.music.core.updater.getUpdateAvailableState
+import com.hdemirbassmusic.music.core.updater.saveUpdateAvailableState
+import com.hdemirbassmusic.music.core.updater.getUpdateNotificationsSetting
+import com.hdemirbassmusic.music.core.updater.saveUpdateNotificationsSetting
 import android.widget.Toast
 import androidx.compose.ui.res.pluralStringResource
-import com.convx.music.core.updater.getDownloadedApkCount
-import com.convx.music.core.updater.clearDownloadedApks
-import com.convx.music.core.updater.getBetaUpdatesSetting
-import com.convx.music.core.updater.saveBetaUpdatesSetting
-import com.convx.music.core.updater.autoClearOldApks
-import com.convx.music.viewmodels.UpdateViewModel
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.BuildConfig
+import com.hdemirbassmusic.music.core.updater.getDownloadedApkCount
+import com.hdemirbassmusic.music.core.updater.clearDownloadedApks
+import com.hdemirbassmusic.music.core.updater.getBetaUpdatesSetting
+import com.hdemirbassmusic.music.core.updater.saveBetaUpdatesSetting
+import com.hdemirbassmusic.music.core.updater.autoClearOldApks
+import com.hdemirbassmusic.music.viewmodels.UpdateViewModel
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.BuildConfig
 
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
@@ -77,7 +77,7 @@ fun UpdateSettings(
     val updateViewModel: UpdateViewModel = koinViewModel()
     var autoUpdateEnabled by remember { mutableStateOf(getAutoUpdateCheckSetting(context)) }
     var updateNotificationsEnabled by remember { mutableStateOf(getUpdateNotificationsSetting(context)) }
-    val alertsPaused = com.convx.music.core.updater.AUTOMATIC_UPDATE_ALERTS_PAUSED
+    val alertsPaused = com.hdemirbassmusic.music.core.updater.AUTOMATIC_UPDATE_ALERTS_PAUSED
     var betaUpdatesEnabled by remember { mutableStateOf(getBetaUpdatesSetting(context)) }
     val isUpdateAvailable = getUpdateAvailableState(context) && autoUpdateEnabled
     var apkCount by remember { mutableStateOf(getDownloadedApkCount(context)) }

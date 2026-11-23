@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
-package com.convx.music.ui.screens.wrapped
+package com.hdemirbassmusic.music.ui.screens.wrapped
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
@@ -68,9 +68,9 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.convx.music.R
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import java.text.NumberFormat
@@ -564,7 +564,7 @@ private fun BoxScope.SummaryPage(s: WrappedState, nf: NumberFormat, manager: Wra
         }
     }
     val creation = s.playlistCreationState
-    val imageName = remember { if (kotlin.random.Random.nextBoolean()) "convx_wrapped_v1" else "convx_wrapped_v2" }
+    val imageName = remember { if (kotlin.random.Random.nextBoolean()) "hdemirbassmusic_wrapped_v1" else "hdemirbassmusic_wrapped_v2" }
     Box(
         Modifier
             .align(Alignment.BottomCenter)

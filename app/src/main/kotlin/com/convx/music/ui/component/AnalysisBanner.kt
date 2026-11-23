@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -30,8 +30,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.convx.music.R
-import com.convx.music.playback.dj.LibraryAnalysis
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.playback.dj.LibraryAnalysis
 
 @Composable
 fun AnalysisBanner(modifier: Modifier = Modifier) {

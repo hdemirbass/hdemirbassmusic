@@ -5,7 +5,7 @@
  *
  * Not published as a library — ported straight from the catalog demo app that
  * showcases Kyant0/backdrop, source-only. Package renamed, imports repointed at
- * this app's vendored com.convx.music.ui.component.backdrop, and
+ * this app's vendored com.hdemirbassmusic.music.ui.component.backdrop, and
  * com.kyant.shapes.Capsule swapped for RoundedCornerShape(percent = 50) (the
  * lens effect only supports CornerBasedShape here — see GlassEffect.kt).
  *
@@ -15,7 +15,7 @@
  * shared-element transitions, search-tab morphing) still handles primary nav —
  * this component is for smaller in-screen segmented pills.
  */
-package com.convx.music.ui.component.backdrop.catalog.components
+package com.hdemirbassmusic.music.ui.component.backdrop.catalog.components
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.EaseOut
@@ -55,19 +55,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.fastCoerceIn
 import androidx.compose.ui.util.fastRoundToInt
 import androidx.compose.ui.util.lerp
-import com.convx.music.ui.component.backdrop.Backdrop
-import com.convx.music.ui.component.backdrop.backdrops.layerBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberCombinedBackdrop
-import com.convx.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
-import com.convx.music.ui.component.backdrop.catalog.utils.DampedDragAnimation
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.backdrop.drawBackdrop
-import com.convx.music.ui.component.backdrop.effects.blur
-import com.convx.music.ui.component.backdrop.effects.lens
-import com.convx.music.ui.component.backdrop.effects.vibrancy
-import com.convx.music.ui.component.backdrop.highlight.Highlight
-import com.convx.music.ui.component.backdrop.shadow.InnerShadow
-import com.convx.music.ui.component.backdrop.shadow.Shadow
+import com.hdemirbassmusic.music.ui.component.backdrop.Backdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.layerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberCombinedBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.backdrops.rememberLayerBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.DampedDragAnimation
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.backdrop.drawBackdrop
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.blur
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.lens
+import com.hdemirbassmusic.music.ui.component.backdrop.effects.vibrancy
+import com.hdemirbassmusic.music.ui.component.backdrop.highlight.Highlight
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.InnerShadow
+import com.hdemirbassmusic.music.ui.component.backdrop.shadow.Shadow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.launch
@@ -87,7 +87,7 @@ fun LiquidBottomTabs(
     height: Dp = 64.dp,
     content: @Composable RowScope.() -> Unit
 ) {
-    val isLightTheme = !com.convx.music.ui.component.glassUsesDarkAppearance()
+    val isLightTheme = !com.hdemirbassmusic.music.ui.component.glassUsesDarkAppearance()
     val accentColor =
         if (isLightTheme) Color(0xFF0088FF)
         else Color(0xFF0091FF)

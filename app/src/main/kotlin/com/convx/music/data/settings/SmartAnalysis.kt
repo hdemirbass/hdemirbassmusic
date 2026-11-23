@@ -1,4 +1,4 @@
-package com.convx.music.data.settings
+package com.hdemirbassmusic.music.data.settings
 
 /**
  * Snapshot of the two items surrounding a transition, so the UI can

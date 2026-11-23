@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
-import com.convx.music.ui.utils.vibrantChrome
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.utils.fadingEdge
+import com.hdemirbassmusic.music.ui.utils.vibrantChrome
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.utils.fadingEdge
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.selection.toggleable
 import android.annotation.SuppressLint
@@ -124,43 +124,43 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.Timeline
 import androidx.navigation.NavController
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.AutoLoadMoreKey
-import com.convx.music.constants.CrossfadeEnabledKey
-import com.convx.music.constants.ListItemHeight
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.QueueEditLockKey
-import com.convx.music.constants.ShowCommentButtonKey
-import com.convx.music.constants.UseNewPlayerDesignKey
-import com.convx.music.extensions.metadata
-import com.convx.music.extensions.move
-import com.convx.music.listentogether.RoomRole
-import com.convx.music.models.MediaMetadata
-import com.convx.music.playback.PlaybackRepeatMode
-import com.convx.music.playback.PlaybackController
-import com.convx.music.playback.PlaybackQueueController
-import com.convx.music.ui.component.ActionPromptDialog
-import com.convx.music.ui.component.BottomSheet
-import com.convx.music.ui.component.BottomSheetState
-import com.convx.music.ui.component.LocalBottomSheetPageState
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.MediaMetadataListItem
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.component.thumbnailPx
-import com.convx.music.ui.menu.PlayerMenu
-import com.convx.music.ui.menu.QueueMenu
-import com.convx.music.ui.menu.SelectionMediaMetadataMenu
-import com.convx.music.ui.screens.CommentSheet
-import com.convx.music.ui.utils.ShowMediaInfo
-import com.convx.music.utils.listItemShape
-import com.convx.music.utils.makeTimeString
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AutoLoadMoreKey
+import com.hdemirbassmusic.music.constants.CrossfadeEnabledKey
+import com.hdemirbassmusic.music.constants.ListItemHeight
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.QueueEditLockKey
+import com.hdemirbassmusic.music.constants.ShowCommentButtonKey
+import com.hdemirbassmusic.music.constants.UseNewPlayerDesignKey
+import com.hdemirbassmusic.music.extensions.metadata
+import com.hdemirbassmusic.music.extensions.move
+import com.hdemirbassmusic.music.listentogether.RoomRole
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.playback.PlaybackRepeatMode
+import com.hdemirbassmusic.music.playback.PlaybackController
+import com.hdemirbassmusic.music.playback.PlaybackQueueController
+import com.hdemirbassmusic.music.ui.component.ActionPromptDialog
+import com.hdemirbassmusic.music.ui.component.BottomSheet
+import com.hdemirbassmusic.music.ui.component.BottomSheetState
+import com.hdemirbassmusic.music.ui.component.LocalBottomSheetPageState
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.MediaMetadataListItem
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.component.thumbnailPx
+import com.hdemirbassmusic.music.ui.menu.PlayerMenu
+import com.hdemirbassmusic.music.ui.menu.QueueMenu
+import com.hdemirbassmusic.music.ui.menu.SelectionMediaMetadataMenu
+import com.hdemirbassmusic.music.ui.screens.CommentSheet
+import com.hdemirbassmusic.music.ui.utils.ShowMediaInfo
+import com.hdemirbassmusic.music.utils.listItemShape
+import com.hdemirbassmusic.music.utils.makeTimeString
+import com.hdemirbassmusic.music.utils.rememberPreference
 import androidx.compose.material.icons.Icons
 import android.bluetooth.BluetoothDevice
-import com.convx.music.core.rememberHeadphoneConnected
-import com.convx.music.core.AudioDeviceMenu
+import com.hdemirbassmusic.music.core.rememberHeadphoneConnected
+import com.hdemirbassmusic.music.core.AudioDeviceMenu
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -171,7 +171,7 @@ import android.widget.Toast
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.convx.music.ui.utils.additiveChrome
+import com.hdemirbassmusic.music.ui.utils.additiveChrome
 import coil3.size.Size as CoilSize
 import kotlinx.coroutines.coroutineScope
 import kotlin.math.roundToInt
@@ -237,7 +237,7 @@ fun Queue(
 
     // Listen Together state (reactive)
     val listenTogetherManager = LocalListenTogetherManager.current
-    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = com.convx.music.listentogether.RoomRole.NONE)
+    val listenTogetherRoleState = listenTogetherManager?.role?.collectAsState(initial = com.hdemirbassmusic.music.listentogether.RoomRole.NONE)
     // See Player.kt: gated on control mode, not on role.
     val canControlTogether = listenTogetherManager?.canControl?.collectAsState(initial = true)
     val isListenTogetherGuest = canControlTogether?.value == false
@@ -359,7 +359,7 @@ fun Queue(
 
                     PlayerQueueButton(
                         icon =  R.drawable.flamingo_queue,
-                        iconSlot = com.convx.music.ui.player.customize.PlayerIconSlot.V2_QUEUE,
+                        iconSlot = com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot.V2_QUEUE,
                         onClick = { onOpenQueue?.invoke() ?: state.expandSoft() },
                         isActive = false,
                         shape = queueShape,
@@ -394,7 +394,7 @@ fun Queue(
 
                     PlayerQueueButton(
                         icon = R.drawable.flamingo_lyrics,
-                        iconSlot = com.convx.music.ui.player.customize.PlayerIconSlot.V2_LYRICS,
+                        iconSlot = com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot.V2_LYRICS,
                         onClick = { onToggleLyrics() },
                         isActive = showInlineLyrics,
                         shape = middleShape,
@@ -551,8 +551,8 @@ fun Queue(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.Center,
                         ) {
-                            com.convx.music.ui.player.customize.PlayerGlyph(
-                                slot = com.convx.music.ui.player.customize.PlayerIconSlot.V2_QUEUE,
+                            com.hdemirbassmusic.music.ui.player.customize.PlayerGlyph(
+                                slot = com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot.V2_QUEUE,
                                 fallbackSymbol = sf("list.bullet"),
                                 size = 28.dp,
                                 bounce = true,
@@ -650,8 +650,8 @@ fun Queue(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.Center,
                         ) {
-                            com.convx.music.ui.player.customize.PlayerGlyph(
-                                slot = com.convx.music.ui.player.customize.PlayerIconSlot.V2_LYRICS,
+                            com.hdemirbassmusic.music.ui.player.customize.PlayerGlyph(
+                                slot = com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot.V2_LYRICS,
                                 fallbackSymbol = sf("quote.bubble"),
                                 size = 28.dp,
                                 bounce = true,
@@ -1479,7 +1479,7 @@ fun Queue(
 @Composable
 private fun PlayerQueueButton(
     icon: Int,
-    iconSlot: com.convx.music.ui.player.customize.PlayerIconSlot? = null,
+    iconSlot: com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot? = null,
     activeIcon: Int? = null,
     onClick: () -> Unit,
     isActive: Boolean,
@@ -1539,12 +1539,12 @@ private fun PlayerQueueButton(
             val finalTint = if (enabled) baseTint else baseTint.copy(alpha = 0.5f)
             val resolvedIcon = if (isActive && activeIcon != null) activeIcon else icon
             if (iconSlot != null) {
-                com.convx.music.ui.player.customize.PlayerGlyph(
+                com.hdemirbassmusic.music.ui.player.customize.PlayerGlyph(
                     slot = iconSlot,
-                    fallbackSymbol = sf(if (iconSlot == com.convx.music.ui.player.customize.PlayerIconSlot.V2_QUEUE) "list.bullet" else "quote.bubble"),
+                    fallbackSymbol = sf(if (iconSlot == com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot.V2_QUEUE) "list.bullet" else "quote.bubble"),
                     size = iconSize,
                     bounce = true,
-                    contentDescription = stringResource(if (iconSlot == com.convx.music.ui.player.customize.PlayerIconSlot.V2_QUEUE) R.string.queue else R.string.lyrics),
+                    contentDescription = stringResource(if (iconSlot == com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot.V2_QUEUE) R.string.queue else R.string.lyrics),
                     modifier = Modifier.additiveChrome(true).graphicsLayer { alpha = chromeContentAlpha },
                     tint = finalTint,
                 )

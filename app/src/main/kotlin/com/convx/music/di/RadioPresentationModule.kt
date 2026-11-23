@@ -1,7 +1,7 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.RadioStationViewModel
-import com.convx.music.viewmodels.RadioViewModel
+import com.hdemirbassmusic.music.viewmodels.RadioStationViewModel
+import com.hdemirbassmusic.music.viewmodels.RadioViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

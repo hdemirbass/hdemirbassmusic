@@ -1,11 +1,11 @@
-package com.convx.music.designsystem
+package com.hdemirbassmusic.music.designsystem
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-/** Brand, layout, type, and glass defaults shared by Convx clients. */
-object ConvxDesignTokens {
+/** Brand, layout, type, and glass defaults shared by hdemirbassmusic clients. */
+object hdemirbassmusicDesignTokens {
     object Colors {
         val AccentRed = Color(0xFFFA2D48)
         val Background = Color(0xFF121212)

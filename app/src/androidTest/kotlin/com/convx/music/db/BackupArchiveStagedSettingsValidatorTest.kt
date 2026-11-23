@@ -1,8 +1,8 @@
-package com.convx.music.db
+package com.hdemirbassmusic.music.db
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.convx.music.viewmodels.BackupArchiveStagedSettingsValidator
+import com.hdemirbassmusic.music.viewmodels.BackupArchiveStagedSettingsValidator
 import org.junit.Assert.fail
 import org.junit.Test
 import org.junit.runner.RunWith

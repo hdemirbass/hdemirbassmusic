@@ -1,4 +1,4 @@
-package com.convx.music.lyrics
+package com.hdemirbassmusic.music.lyrics
 
 import kotlin.test.assertEquals
 import kotlin.test.assertSame

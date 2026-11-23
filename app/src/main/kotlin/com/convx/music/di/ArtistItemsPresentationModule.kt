@@ -1,6 +1,6 @@
-package com.convx.music.di
+package com.hdemirbassmusic.music.di
 
-import com.convx.music.viewmodels.ArtistItemsViewModel
+import com.hdemirbassmusic.music.viewmodels.ArtistItemsViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

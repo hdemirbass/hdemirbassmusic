@@ -1,14 +1,14 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 /**
  * A bottom-bar / side-bar destination.

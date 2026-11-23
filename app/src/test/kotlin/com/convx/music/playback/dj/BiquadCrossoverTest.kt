@@ -1,4 +1,4 @@
-package com.convx.music.playback.dj
+package com.hdemirbassmusic.music.playback.dj
 
 import org.junit.Assert.assertTrue
 import org.junit.Test

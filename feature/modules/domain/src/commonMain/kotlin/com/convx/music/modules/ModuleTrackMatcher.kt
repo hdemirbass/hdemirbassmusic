@@ -1,6 +1,6 @@
-package com.convx.music.modules
+package com.hdemirbassmusic.music.modules
 
-import com.convx.music.playback.PlaybackRequestTrack
+import com.hdemirbassmusic.music.playback.PlaybackRequestTrack
 import com.music.spine.ModuleSearchResult
 import kotlin.math.abs
 

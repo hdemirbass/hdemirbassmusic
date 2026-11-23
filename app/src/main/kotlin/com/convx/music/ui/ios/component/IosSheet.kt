@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.ios.component
+package com.hdemirbassmusic.music.ui.ios.component
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
@@ -45,15 +45,15 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
-import com.convx.music.ui.ios.foundation.IosCapsule
-import com.convx.music.ui.ios.foundation.IosGlassSpec
-import com.convx.music.ui.ios.foundation.IosGlassStyle
-import com.convx.music.ui.ios.foundation.IosMetrics
-import com.convx.music.ui.ios.foundation.IosTheme
-import com.convx.music.ui.ios.foundation.TopRoundedShape
-import com.convx.music.ui.ios.foundation.iosGlass
-import com.convx.music.ui.utils.nearestProjectedSnap
-import com.convx.music.ui.utils.projectedEndpoint
+import com.hdemirbassmusic.music.ui.ios.foundation.IosCapsule
+import com.hdemirbassmusic.music.ui.ios.foundation.IosGlassSpec
+import com.hdemirbassmusic.music.ui.ios.foundation.IosGlassStyle
+import com.hdemirbassmusic.music.ui.ios.foundation.IosMetrics
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.ui.ios.foundation.TopRoundedShape
+import com.hdemirbassmusic.music.ui.ios.foundation.iosGlass
+import com.hdemirbassmusic.music.ui.utils.nearestProjectedSnap
+import com.hdemirbassmusic.music.ui.utils.projectedEndpoint
 import kotlinx.coroutines.launch
 
 /** SwiftUI's PresentationDetent. */

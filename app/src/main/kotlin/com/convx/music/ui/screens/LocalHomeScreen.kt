@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -38,22 +38,22 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.convx.music.LocalPlayerAwareWindowInsets
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.constants.HomeGridColumnsOverrideKey
-import com.convx.music.constants.ShowHomeFabKey
-import com.convx.music.extensions.toMediaItem
-import com.convx.music.playback.queues.ListQueue
-import com.convx.music.ui.component.HideOnScrollFAB
-import com.convx.music.ui.component.HomeImageBackground
-import com.convx.music.ui.component.LocalMenuState
-import com.convx.music.ui.component.rememberAppBackgroundColor
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.theme.AppPage
-import com.convx.music.ui.theme.LocalMetadataColor
-import com.convx.music.ui.theme.LocalPageMetrics
-import com.convx.music.utils.rememberPreference
+import com.hdemirbassmusic.music.LocalPlayerAwareWindowInsets
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.HomeGridColumnsOverrideKey
+import com.hdemirbassmusic.music.constants.ShowHomeFabKey
+import com.hdemirbassmusic.music.extensions.toMediaItem
+import com.hdemirbassmusic.music.playback.queues.ListQueue
+import com.hdemirbassmusic.music.ui.component.HideOnScrollFAB
+import com.hdemirbassmusic.music.ui.component.HomeImageBackground
+import com.hdemirbassmusic.music.ui.component.LocalMenuState
+import com.hdemirbassmusic.music.ui.component.rememberAppBackgroundColor
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.theme.AppPage
+import com.hdemirbassmusic.music.ui.theme.LocalMetadataColor
+import com.hdemirbassmusic.music.ui.theme.LocalPageMetrics
+import com.hdemirbassmusic.music.utils.rememberPreference
 
 /**
  * Home for local-only mode: the on-device library under the same chrome as the feed Home.
@@ -65,7 +65,7 @@ import com.convx.music.utils.rememberPreference
 @Composable
 fun LocalHomeScreen(
     navController: NavController,
-    viewModel: com.convx.music.viewmodels.LocalHomeViewModel = koinViewModel(),
+    viewModel: com.hdemirbassmusic.music.viewmodels.LocalHomeViewModel = koinViewModel(),
 ) {
     val menuState = LocalMenuState.current
     val playerConnection = LocalPlayerConnection.current ?: return
@@ -81,7 +81,7 @@ fun LocalHomeScreen(
     val localPlaylists by viewModel.playlists.collectAsStateWithLifecycle()
     val localFolders by viewModel.folders.collectAsStateWithLifecycle()
 
-    val localAudioPermission = com.convx.music.ui.component.rememberLocalAudioPermission { }
+    val localAudioPermission = com.hdemirbassmusic.music.ui.component.rememberLocalAudioPermission { }
     LaunchedEffect(localAudioPermission.granted) {
         if (localAudioPermission.granted) viewModel.refresh()
     }
@@ -152,14 +152,14 @@ fun LocalHomeScreen(
             ) {
                 if (!localAudioPermission.granted) {
                     item(key = "local_permission", contentType = "local_access") {
-                        com.convx.music.ui.screens.library.apple.LocalAccessCard(
+                        com.hdemirbassmusic.music.ui.screens.library.apple.LocalAccessCard(
                             blocked = localAudioPermission.blocked,
                             onAllow = localAudioPermission.request,
                         )
                     }
                 } else if (localSongs.isEmpty()) {
                     item(key = "local_empty", contentType = "local_access") {
-                        com.convx.music.ui.component.LocalMusicEmptyState(onScan = viewModel::refresh)
+                        com.hdemirbassmusic.music.ui.component.LocalMusicEmptyState(onScan = viewModel::refresh)
                     }
                 } else localHomeContent(
                     deps = deps,

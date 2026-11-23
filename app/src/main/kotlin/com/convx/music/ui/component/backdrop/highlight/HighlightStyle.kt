@@ -7,7 +7,7 @@
  * scale for cheaper effect rendering. KMP expect/actual declarations were
  * merged into this single Android source set. Package renamed accordingly.
  */
-package com.convx.music.ui.component.backdrop.highlight
+package com.hdemirbassmusic.music.ui.component.backdrop.highlight
 
 import androidx.annotation.FloatRange
 import androidx.compose.foundation.shape.CornerBasedShape
@@ -19,11 +19,11 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.util.fastCoerceAtMost
-import com.convx.music.ui.component.backdrop.RuntimeShader
-import com.convx.music.ui.component.backdrop.RuntimeShaderCache
-import com.convx.music.ui.component.backdrop.internal.AmbientHighlightShaderString
-import com.convx.music.ui.component.backdrop.internal.DefaultHighlightShaderString
-import com.convx.music.ui.component.backdrop.isRuntimeShaderSupported
+import com.hdemirbassmusic.music.ui.component.backdrop.RuntimeShader
+import com.hdemirbassmusic.music.ui.component.backdrop.RuntimeShaderCache
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.AmbientHighlightShaderString
+import com.hdemirbassmusic.music.ui.component.backdrop.internal.DefaultHighlightShaderString
+import com.hdemirbassmusic.music.ui.component.backdrop.isRuntimeShaderSupported
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin

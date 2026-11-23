@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  * 
  */
 
-package com.convx.music.ui.player
+package com.hdemirbassmusic.music.ui.player
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
 import android.os.Build
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
@@ -33,17 +33,17 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import com.convx.music.ui.component.BlurredBackdropImage
-import com.convx.music.ui.component.ScrollingWaveformSeekBar
-import com.convx.music.ui.component.rememberNoArtworkPainter
-import com.convx.music.ui.component.rememberPlaybackFraction
-import com.convx.music.ui.component.thumbnailPx
-import com.convx.music.constants.MiniPlayerWaveformKey
-import com.convx.music.constants.PlayerGradientAngleKey
-import com.convx.music.constants.PlayerGradientStopsKey
-import com.convx.music.ui.theme.decodeGradientStops
-import com.convx.music.ui.theme.tiltedGradient
-import com.convx.music.constants.PlayerStaticColorKey
+import com.hdemirbassmusic.music.ui.component.BlurredBackdropImage
+import com.hdemirbassmusic.music.ui.component.ScrollingWaveformSeekBar
+import com.hdemirbassmusic.music.ui.component.rememberNoArtworkPainter
+import com.hdemirbassmusic.music.ui.component.rememberPlaybackFraction
+import com.hdemirbassmusic.music.ui.component.thumbnailPx
+import com.hdemirbassmusic.music.constants.MiniPlayerWaveformKey
+import com.hdemirbassmusic.music.constants.PlayerGradientAngleKey
+import com.hdemirbassmusic.music.constants.PlayerGradientStopsKey
+import com.hdemirbassmusic.music.ui.theme.decodeGradientStops
+import com.hdemirbassmusic.music.ui.theme.tiltedGradient
+import com.hdemirbassmusic.music.constants.PlayerStaticColorKey
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -59,10 +59,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableLongState
@@ -128,54 +128,54 @@ import coil3.request.allowHardware
 import coil3.request.crossfade
 import coil3.size.Size as CoilSize
 import coil3.toBitmap
-import com.convx.music.LocalDatabase
-import com.convx.music.LocalListenTogetherManager
-import com.convx.music.LocalPlayerConnection
-import com.convx.music.R
-import com.convx.music.ui.player.customize.PlayerGlyph
-import com.convx.music.ui.player.customize.PlayerIconSlot
-import com.convx.music.constants.CropAlbumArtKey
-import com.convx.music.constants.DarkModeKey
-import com.convx.music.constants.MiniPlayerBackgroundStyleKey
-import com.convx.music.constants.MiniPlayerHeight
-import com.convx.music.constants.PlayerBackgroundStyle
-import com.convx.music.constants.PureBlackMiniPlayerKey
-import com.convx.music.constants.SwipeSensitivityKey
-import com.convx.music.constants.SwipeThumbnailKey
-import com.convx.music.constants.ThumbnailCornerRadius
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.constants.UseNewMiniPlayerDesignKey
-import com.convx.music.db.entities.ArtistEntity
-import com.convx.music.listentogether.ListenTogetherManager
-import com.convx.music.models.MediaMetadata
-import com.convx.music.playback.CastConnectionHandler
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.ui.screens.settings.DarkMode
-import com.convx.music.ui.component.AnimatedPlayPauseIcon
-import com.convx.music.ui.component.GlassComponent
-import com.convx.music.ui.component.LocalGlassEffectConfig
-import com.convx.music.ui.component.resolvedTextColor
-import com.convx.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
-import com.convx.music.ui.component.elasticStretchLayerBlock
-import com.convx.music.ui.component.isGlassAllowed
-import com.convx.music.ui.component.liquidGlass
-import com.convx.music.ui.component.LocalAppMotionFrozen
-import com.convx.music.ui.theme.PlayerColorExtractor
-import com.convx.music.ui.theme.colorengine.ColorEngine
-import com.convx.music.utils.rememberEnumPreference
-import com.convx.music.utils.rememberPreference
-import com.convx.music.core.AudioDeviceMenu
+import com.hdemirbassmusic.music.LocalDatabase
+import com.hdemirbassmusic.music.LocalListenTogetherManager
+import com.hdemirbassmusic.music.LocalPlayerConnection
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.player.customize.PlayerGlyph
+import com.hdemirbassmusic.music.ui.player.customize.PlayerIconSlot
+import com.hdemirbassmusic.music.constants.CropAlbumArtKey
+import com.hdemirbassmusic.music.constants.DarkModeKey
+import com.hdemirbassmusic.music.constants.MiniPlayerBackgroundStyleKey
+import com.hdemirbassmusic.music.constants.MiniPlayerHeight
+import com.hdemirbassmusic.music.constants.PlayerBackgroundStyle
+import com.hdemirbassmusic.music.constants.PureBlackMiniPlayerKey
+import com.hdemirbassmusic.music.constants.SwipeSensitivityKey
+import com.hdemirbassmusic.music.constants.SwipeThumbnailKey
+import com.hdemirbassmusic.music.constants.ThumbnailCornerRadius
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.constants.UseNewMiniPlayerDesignKey
+import com.hdemirbassmusic.music.db.entities.ArtistEntity
+import com.hdemirbassmusic.music.listentogether.ListenTogetherManager
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.playback.CastConnectionHandler
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.ui.screens.settings.DarkMode
+import com.hdemirbassmusic.music.ui.component.AnimatedPlayPauseIcon
+import com.hdemirbassmusic.music.ui.component.GlassComponent
+import com.hdemirbassmusic.music.ui.component.LocalGlassEffectConfig
+import com.hdemirbassmusic.music.ui.component.resolvedTextColor
+import com.hdemirbassmusic.music.ui.component.backdrop.catalog.utils.InteractiveHighlight
+import com.hdemirbassmusic.music.ui.component.elasticStretchLayerBlock
+import com.hdemirbassmusic.music.ui.component.isGlassAllowed
+import com.hdemirbassmusic.music.ui.component.liquidGlass
+import com.hdemirbassmusic.music.ui.component.LocalAppMotionFrozen
+import com.hdemirbassmusic.music.ui.theme.PlayerColorExtractor
+import com.hdemirbassmusic.music.ui.theme.colorengine.ColorEngine
+import com.hdemirbassmusic.music.utils.rememberEnumPreference
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.core.AudioDeviceMenu
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
-import com.convx.music.core.rememberHeadphoneConnected
+import com.hdemirbassmusic.music.core.rememberHeadphoneConnected
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Headphones
 import androidx.compose.material.icons.filled.Speaker
 import androidx.compose.ui.draw.drawBehind
 import kotlin.math.absoluteValue
-import com.convx.music.ui.component.Icon as MIcon
+import com.hdemirbassmusic.music.ui.component.Icon as MIcon
 
 /**
  * Stable wrapper for progress state - reads values only during draw phase
@@ -237,7 +237,7 @@ private fun NewMiniPlayer(
     val preferredDark = remember(darkTheme, isSystemInDarkTheme) {
         if (darkTheme == DarkMode.AUTO) isSystemInDarkTheme else darkTheme == DarkMode.ON
     }
-    val useDarkTheme = com.convx.music.ui.theme.LocalForcedDark.current || preferredDark
+    val useDarkTheme = com.hdemirbassmusic.music.ui.theme.LocalForcedDark.current || preferredDark
     
     val miniPlayerBackground by rememberEnumPreference(MiniPlayerBackgroundStyleKey, defaultValue = PlayerBackgroundStyle.DEFAULT)
     val miniPlayerWaveform by rememberPreference(MiniPlayerWaveformKey, defaultValue = false)

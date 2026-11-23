@@ -1,4 +1,4 @@
-package com.convx.music.viewmodels
+package com.hdemirbassmusic.music.viewmodels
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -67,7 +67,7 @@ class AtomicFileReplacementTest {
     }
 
     private inline fun withTemporaryDirectory(block: (File) -> Unit) {
-        val directory = Files.createTempDirectory("convx-file-replacement-test").toFile()
+        val directory = Files.createTempDirectory("hdemirbassmusic-file-replacement-test").toFile()
         try {
             block(directory)
         } finally {

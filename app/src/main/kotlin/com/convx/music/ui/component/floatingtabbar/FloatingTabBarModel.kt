@@ -1,11 +1,11 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
 @file:OptIn(ExperimentalSharedTransitionApi::class)
 
-package com.convx.music.ui.component.floatingtabbar
+package com.hdemirbassmusic.music.ui.component.floatingtabbar
 
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.foundation.Indication
@@ -27,8 +27,8 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
-import com.convx.music.ui.component.shapes.ContinuousRoundedRectangle
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousRoundedRectangle
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 
 internal class FloatingTabBarScopeImpl : FloatingTabBarScope {
     val tabs = mutableStateListOf<FloatingTabBarTab>()
@@ -146,7 +146,7 @@ object FloatingTabBarDefaults {
     /**
      * Width of one expanded tab slot at full size. Callers that have to fit the
      * pill plus the standalone tab into a narrow screen shrink below this — see
-     * [com.convx.music.ui.component.AppFloatingNavBar] — so it is the ceiling,
+     * [com.hdemirbassmusic.music.ui.component.AppFloatingNavBar] — so it is the ceiling,
      * not a guarantee.
      */
     val TabWidth: Dp = 88.dp

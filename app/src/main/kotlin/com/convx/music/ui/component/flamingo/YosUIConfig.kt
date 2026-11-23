@@ -1,5 +1,5 @@
 /** Adapted from Flamingo by Yos-X, GPL-3.0. See NOTICE. */
-package com.convx.music.ui.component.flamingo
+package com.hdemirbassmusic.music.ui.component.flamingo
 
 import androidx.compose.runtime.Stable
 

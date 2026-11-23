@@ -1,6 +1,6 @@
 @file:OptIn(zone.ien.hig.ExperimentalCupertinoApi::class)
 
-package com.convx.music.playback.presentation
+package com.hdemirbassmusic.music.playback.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -36,9 +36,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.convx.music.designsystem.ConvxDesignTokens
-import com.convx.music.playback.EqualizerBand
-import com.convx.music.playback.PlaybackSettings
+import com.hdemirbassmusic.music.designsystem.hdemirbassmusicDesignTokens
+import com.hdemirbassmusic.music.playback.EqualizerBand
+import com.hdemirbassmusic.music.playback.PlaybackSettings
 import com.kyant.backdrop.Backdrop
 import com.kyant.backdrop.backdrops.rememberLayerBackdrop
 import kotlin.math.roundToInt
@@ -98,7 +98,7 @@ fun PlaybackEqualizerSheet(
                 }
 
                 errorMessage?.let { message ->
-                    CupertinoText(message, color = ConvxDesignTokens.Colors.AccentRed, fontSize = 13.sp)
+                    CupertinoText(message, color = hdemirbassmusicDesignTokens.Colors.AccentRed, fontSize = 13.sp)
                 }
 
                 Row(
@@ -164,7 +164,7 @@ private fun EqualizerPresetChip(
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(16.dp))
-            .background(if (selected) ConvxDesignTokens.Colors.AccentRed else CupertinoTheme.colorScheme.tertiarySystemGroupedBackground)
+            .background(if (selected) hdemirbassmusicDesignTokens.Colors.AccentRed else CupertinoTheme.colorScheme.tertiarySystemGroupedBackground)
             .semantics {
                 contentDescription = "${preset.title} equalizer preset${if (selected) ", selected" else ""}"
                 role = Role.Button

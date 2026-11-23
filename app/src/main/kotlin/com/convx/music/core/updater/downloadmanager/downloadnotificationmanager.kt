@@ -1,4 +1,4 @@
-package com.convx.music.core.updater.downloadmanager
+package com.hdemirbassmusic.music.core.updater.downloadmanager
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -10,7 +10,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.graphics.toColorInt
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 object DownloadNotificationManager {
     private lateinit var notificationManager: NotificationManager

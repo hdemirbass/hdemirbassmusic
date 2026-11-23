@@ -1,4 +1,4 @@
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -27,17 +27,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.convx.music.R
-import com.convx.music.constants.LyricsProviderOrderKey
-import com.convx.music.db.entities.LyricsEntity
-import com.convx.music.lyrics.LyricsProviderRegistry
-import com.convx.music.lyrics.LyricsProviderStatus
-import com.convx.music.models.MediaMetadata
-import com.convx.music.ui.ios.compat.AppTheme
-import com.convx.music.ui.ios.compat.IconButton
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.LyricsProviderViewModel
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.LyricsProviderOrderKey
+import com.hdemirbassmusic.music.db.entities.LyricsEntity
+import com.hdemirbassmusic.music.lyrics.LyricsProviderRegistry
+import com.hdemirbassmusic.music.lyrics.LyricsProviderStatus
+import com.hdemirbassmusic.music.models.MediaMetadata
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.ios.compat.IconButton
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.LyricsProviderViewModel
 
 @Composable
 fun LyricsProviderSelector(

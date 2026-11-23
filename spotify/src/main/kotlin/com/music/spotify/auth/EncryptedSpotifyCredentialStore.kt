@@ -65,5 +65,5 @@ class EncryptedSpotifyCredentialStore(context: Context) : SpotifyCredentialStore
         }.generateKey()
     }
 
-    private companion object { const val KeyAlias = "convx.spotify-provider.v1" }
+    private companion object { const val KeyAlias = "hdemirbassmusic.spotify-provider.v1" }
 }

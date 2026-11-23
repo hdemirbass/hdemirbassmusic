@@ -1,7 +1,7 @@
-package com.convx.music.client.watch
+package com.hdemirbassmusic.music.client.watch
 
-import com.convx.music.catalog.*
-import com.convx.music.playback.*
+import com.hdemirbassmusic.music.catalog.*
+import com.hdemirbassmusic.music.playback.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import kotlinx.serialization.Serializable
@@ -185,7 +185,7 @@ class WatchCompanion(
                 val entries = block().take(30).mapNotNull { it.watchEntry() }
                 mutable.update { it.copy(sequence = it.sequence + 1, library = entries, isLoading = false) }
             } catch (cancelled: CancellationException) { throw cancelled }
-            catch (_: Exception) { mutable.update { it.copy(sequence = it.sequence + 1, isLoading = false, message = "Open Convx on your phone to check your library connection.") } }
+            catch (_: Exception) { mutable.update { it.copy(sequence = it.sequence + 1, isLoading = false, message = "Open hdemirbassmusic on your phone to check your library connection.") } }
         }
     }
 

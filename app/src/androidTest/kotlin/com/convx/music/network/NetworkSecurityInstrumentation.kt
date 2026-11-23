@@ -1,11 +1,11 @@
-package com.convx.music.network
+package com.hdemirbassmusic.music.network
 
 import android.app.Activity
 import android.app.Instrumentation
 import android.os.Bundle
 import android.security.NetworkSecurityPolicy
-import com.convx.music.artistvideo.ArtistVideoCanvasProvider
-import com.convx.music.canvas.AppleMusicCatalog
+import com.hdemirbassmusic.music.artistvideo.ArtistVideoCanvasProvider
+import com.hdemirbassmusic.music.canvas.AppleMusicCatalog
 import com.music.lastfm.LastFM
 import com.music.spotify.Spotify
 import io.ktor.client.HttpClient

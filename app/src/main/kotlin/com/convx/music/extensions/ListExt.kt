@@ -1,13 +1,13 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.extensions
+package com.hdemirbassmusic.music.extensions
 
-import com.convx.music.db.entities.Album
-import com.convx.music.db.entities.Playlist
-import com.convx.music.db.entities.Song
+import com.hdemirbassmusic.music.db.entities.Album
+import com.hdemirbassmusic.music.db.entities.Playlist
+import com.hdemirbassmusic.music.db.entities.Song
 
 fun <T> List<T>.reversed(reversed: Boolean) = if (reversed) asReversed() else this
 

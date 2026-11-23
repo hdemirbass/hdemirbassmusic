@@ -1,5 +1,5 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  *
  * The iOS volume control: a capsule track that fills, with the speaker glyph riding
@@ -7,7 +7,7 @@
  * the bar simply grows taller while it is being dragged.
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
@@ -37,9 +37,9 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.convx.music.R
-import com.convx.music.ui.component.shapes.ContinuousCapsule
-import com.convx.music.ui.ios.foundation.IosTheme
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.ui.component.shapes.ContinuousCapsule
+import com.hdemirbassmusic.music.ui.ios.foundation.IosTheme
 
 private object IosVolumeDefaults {
     /** Resting bar height, and the taller one it grows to under a finger. */

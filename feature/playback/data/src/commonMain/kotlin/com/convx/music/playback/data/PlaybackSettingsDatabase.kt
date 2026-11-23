@@ -1,4 +1,4 @@
-package com.convx.music.playback.data
+package com.hdemirbassmusic.music.playback.data
 
 import androidx.room.ConstructedBy
 import androidx.room.AutoMigration
@@ -11,12 +11,12 @@ import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 import androidx.room.Upsert
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import com.convx.music.playback.PlaybackSettings
-import com.convx.music.playback.PlaybackCheckpoint
-import com.convx.music.playback.PlaybackTrackAnalysisRepository
-import com.convx.music.playback.PlaybackCheckpointRepository
-import com.convx.music.playback.PlaybackSettingsRepository
-import com.convx.music.playback.smart.TrackAnalysis
+import com.hdemirbassmusic.music.playback.PlaybackSettings
+import com.hdemirbassmusic.music.playback.PlaybackCheckpoint
+import com.hdemirbassmusic.music.playback.PlaybackTrackAnalysisRepository
+import com.hdemirbassmusic.music.playback.PlaybackCheckpointRepository
+import com.hdemirbassmusic.music.playback.PlaybackSettingsRepository
+import com.hdemirbassmusic.music.playback.smart.TrackAnalysis
 import kotlinx.serialization.Serializable
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged

@@ -1,4 +1,4 @@
-package com.convx.music.core
+package com.hdemirbassmusic.music.core
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -12,7 +12,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
-import com.convx.music.R
+import com.hdemirbassmusic.music.R
 
 object UpdateNotificationHelper {
     private const val CHANNEL_ID = "updates"
@@ -23,7 +23,7 @@ object UpdateNotificationHelper {
     }
 
     fun showUpdateNotification(context: Context, versionName: String) {
-        if (com.convx.music.core.updater.AUTOMATIC_UPDATE_ALERTS_PAUSED) {
+        if (com.hdemirbassmusic.music.core.updater.AUTOMATIC_UPDATE_ALERTS_PAUSED) {
             cancelUpdateNotification(context)
             return
         }
@@ -38,11 +38,11 @@ object UpdateNotificationHelper {
             nm.createNotificationChannel(channel)
         }
 
-        // Direct download URL format from convxupdater - use the full tag (vX.X.X or bX.X.X) or nightly link
+        // Direct download URL format from hdemirbassmusicupdater - use the full tag (vX.X.X or bX.X.X) or nightly link
         val apkUrl = if (versionName.contains("nightly", ignoreCase = true)) {
-            "https://nightly.link/cosmictaserdev-creator/Convx/workflows/nightly.yml/main/convx-gms-nightly.zip"
+            "https://nightly.link/cosmictaserdev-creator/hdemirbassmusic/workflows/nightly.yml/main/hdemirbassmusic-gms-nightly.zip"
         } else {
-            "https://github.com/cosmictaserdev-creator/Convx/releases/download/$versionName/convx-$versionName.apk"
+            "https://github.com/cosmictaserdev-creator/hdemirbassmusic/releases/download/$versionName/hdemirbassmusic-$versionName.apk"
         }
         val intent = Intent(Intent.ACTION_VIEW, apkUrl.toUri())
 

@@ -1,15 +1,15 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.screens.search.suggestions
+package com.hdemirbassmusic.music.ui.screens.search.suggestions
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import com.convx.music.playback.PlayerConnection
-import com.convx.music.playback.queues.YouTubeQueue
+import com.hdemirbassmusic.music.playback.PlayerConnection
+import com.hdemirbassmusic.music.playback.queues.YouTubeQueue
 import com.music.innertube.SearchFilter
 import com.music.innertube.YouTube
 import com.music.innertube.models.AlbumItem
@@ -165,7 +165,7 @@ class SuggestionsViewModel : ViewModel() {
                     if (firstAlbum != null) {
                         withContext(Dispatchers.Main) {
                             navController.navigate(
-                                com.convx.music.ui.utils.albumRoute(
+                                com.hdemirbassmusic.music.ui.utils.albumRoute(
                                     firstAlbum.id,
                                     album.thumbnailUrl,
                                     album.sharedArtworkId,

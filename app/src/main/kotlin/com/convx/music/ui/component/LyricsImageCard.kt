@@ -1,9 +1,9 @@
 /**
- * Convx Project (C) 2026
+ * hdemirbassmusic Project (C) 2026
  * Licensed under GPL-3.0 | See git history for contributors
  */
 
-package com.convx.music.ui.component
+package com.hdemirbassmusic.music.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -21,7 +21,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.convx.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -51,8 +51,8 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.rememberAsyncImagePainter
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.convx.music.R
-import com.convx.music.models.MediaMetadata
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.models.MediaMetadata
 
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Brush

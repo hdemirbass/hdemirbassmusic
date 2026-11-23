@@ -1,14 +1,14 @@
-package com.convx.music.ui.screens
+package com.hdemirbassmusic.music.ui.screens
 
-import com.convx.music.ui.component.sf
-import com.convx.music.ui.component.SymbolIcon
-import com.convx.music.ui.ios.compat.AppTheme
+import com.hdemirbassmusic.music.ui.component.sf
+import com.hdemirbassmusic.music.ui.component.SymbolIcon
+import com.hdemirbassmusic.music.ui.ios.compat.AppTheme
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import com.convx.music.ui.utils.bounceClick
-import com.convx.music.ui.utils.combinedBounceClick
+import com.hdemirbassmusic.music.ui.utils.bounceClick
+import com.hdemirbassmusic.music.ui.utils.combinedBounceClick
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
@@ -16,12 +16,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.SwitchDefaults
-import com.convx.music.ui.component.GlassSwitchCompat as Switch
-import com.convx.music.ui.ios.compat.Icon
-import com.convx.music.ui.ios.compat.OutlinedButton
-import com.convx.music.ui.ios.compat.Surface
-import com.convx.music.ui.ios.compat.Text
-import com.convx.music.ui.ios.compat.TextButton
+import com.hdemirbassmusic.music.ui.component.GlassSwitchCompat as Switch
+import com.hdemirbassmusic.music.ui.ios.compat.Icon
+import com.hdemirbassmusic.music.ui.ios.compat.OutlinedButton
+import com.hdemirbassmusic.music.ui.ios.compat.Surface
+import com.hdemirbassmusic.music.ui.ios.compat.Text
+import com.hdemirbassmusic.music.ui.ios.compat.TextButton
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -43,14 +43,14 @@ import androidx.compose.ui.window.DialogProperties
 
 import coil3.compose.AsyncImage
 import com.music.innertube.utils.parseCookieString
-import com.convx.music.R
-import com.convx.music.constants.AccountEmailKey
-import com.convx.music.constants.InnerTubeCookieKey
-import com.convx.music.constants.UseLoginForBrowse
-import com.convx.music.constants.YtmSyncKey
-import com.convx.music.BuildConfig
-import com.convx.music.utils.rememberPreference
-import com.convx.music.viewmodels.HomeViewModel
+import com.hdemirbassmusic.music.R
+import com.hdemirbassmusic.music.constants.AccountEmailKey
+import com.hdemirbassmusic.music.constants.InnerTubeCookieKey
+import com.hdemirbassmusic.music.constants.UseLoginForBrowse
+import com.hdemirbassmusic.music.constants.YtmSyncKey
+import com.hdemirbassmusic.music.BuildConfig
+import com.hdemirbassmusic.music.utils.rememberPreference
+import com.hdemirbassmusic.music.viewmodels.HomeViewModel
 import kotlinx.coroutines.flow.map
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
@@ -135,7 +135,7 @@ fun SettingDialoge(
                     
                     Text(
                         modifier = Modifier.wrapContentWidth(),
-                        text = "CONVX",
+                        text = "hdemirbassmusic",
                         style = AppTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.Bold,
                             letterSpacing = 1.sp
