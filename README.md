@@ -4,7 +4,7 @@
   <p><strong>An open-source Android music player with a calm, glass-inspired interface.</strong></p>
   <p>
     <a href="https://github.com/hdemirbass/hdemirbassmusic/releases">
-      <img src="https://img.shields.io/badge/Download-APK-5268D8?style=for-the-badge&logo=android&logoColor=white" alt="Download hdemirbassmusic APK">
+      <img src="https://img.shields.io/badge/Download-Shaly%202.0.5-5268D8?style=for-the-badge&logo=android&logoColor=white" alt="Download hdemirbassmusic shaly version 2.0.5">
     </a>
     <a href="https://github.com/hdemirbass/hdemirbassmusic/releases">
       <img src="https://img.shields.io/github/downloads/hdemirbass/hdemirbassmusic/total?style=for-the-badge&label=total%20downloads&logo=github" alt="Total hdemirbassmusic release downloads">
@@ -15,6 +15,9 @@
     <img src="https://img.shields.io/badge/Android-8.0%2B-3DDC84?style=flat&logo=android&logoColor=white" alt="Android 8.0 and later">
   </p>
 </div>
+
+> [!WARNING]
+> **The current stable version is outdated, so I have removed it from Releases.** Please try **[shaly version 2.0.5](https://github.com/hdemirbass/hdemirbassmusic/releases)** instead.
 
 hdemirbassmusic brings music discovery, playback, lyrics, and your library together in one Android app. It is built with Kotlin, Jetpack Compose, and Media3, with custom Cupertino-style controls and Liquid Glass surfaces.
 
@@ -48,7 +51,8 @@ hdemirbassmusic brings music discovery, playback, lyrics, and your library toget
 
 ## Download
 
-Download the latest APK from [GitHub Releases](https://github.com/hdemirbass/hdemirbassmusic/releases).
+- **Stable:** Removed from Releases because it is outdated.
+- **Shaly (v2.0.5):** Download **shaly version 2.0.5** from [GitHub Releases](https://github.com/hdemirbass/hdemirbassmusic/releases).
 
 hdemirbassmusic supports Android 8.0 (API 26) and later. Install APKs only from sources you trust. Android may ask you to allow installation from the app you used to download the APK.
 
