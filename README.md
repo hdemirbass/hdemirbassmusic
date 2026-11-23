@@ -87,3 +87,9 @@ Clone the repository, open it in Android Studio, and let Gradle sync. To build a
 ```bash
 ./gradlew :app:assembleUniversalFossDebug
 ./gradlew :app:testUniversalFossDebugUnitTest
+
+---
+
+> *Note: AI tools were used to assist in the development and customization of this project.*
+
+Maintained by [hdemirbass](https://github.com/hdemirbass).
