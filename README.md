@@ -72,7 +72,7 @@ hdemirbassmusic brings music discovery, playback, lyrics, and your library toget
 ## Download
 
 - **Stable:** The current release is outdated and not working. A refreshed Stable release will be published soon after the remaining issues are fixed.
-- **Nightly 2.0.4:** [Download from GitHub Releases](https://github.com/cosmictaserdev-creator/hdemirbassmusic/releases/tag/2.0.4-nightly). Nightlies are pre-release builds and may be unstable. On a 32-bit-only phone (for example Galaxy A13) that says "app not compatible", download the `arm32` APK from the same release.
+- **Nightly 2.0.4:** [Download from GitHub Releases](https://github.com/hdemirbass/hdemirbassmusic/releases/tag/2.0.4-nightly). Nightlies are pre-release builds and may be unstable. On a 32-bit-only phone (for example Galaxy A13) that says "app not compatible", download the `arm32` APK from the same release.
 
 The project website is being reworked. Use GitHub Releases for downloads for now.
 
