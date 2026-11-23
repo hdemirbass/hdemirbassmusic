@@ -3,10 +3,10 @@
   <h1>hdemirbassmusic</h1>
   <p><strong>An open-source Android music player with a calm, glass-inspired interface.</strong></p>
   <p>
-    <a href="https://github.com/cosmictaserdev-creator/hdemirbassmusic/releases/tag/2.0.4-nightly">
+    <a href="https://github.com/hdemirbass/hdemirbassmusic/releases/tag/2.0.4-nightly">
       <img src="https://img.shields.io/badge/Download-Nightly%202.0.4-5268D8?style=for-the-badge&logo=android&logoColor=white" alt="Download hdemirbassmusic Nightly 2.0.4">
     </a>
-    <a href="https://github.com/cosmictaserdev-creator/hdemirbassmusic/releases/latest">
+    <a href="https://github.com/hdemirbass/hdemirbassmusic/releases/latest">
       <img src="https://img.shields.io/badge/Stable-Outdated-888888?style=for-the-badge&logo=android&logoColor=white" alt="The current stable hdemirbassmusic release is outdated">
     </a>
   </p>
