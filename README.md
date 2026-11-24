@@ -2,7 +2,7 @@
   <p><strong>An open-source Android music player with a calm, glass-inspired interface.</strong></p>
   <p>
     <a href="https://github.com/hdemirbass/hdemirbassmusic/releases">
-      <img src="https://img.shields.io/badge/Download-Shaly%202.0.5-5268D8?style=for-the-badge&logo=android&logoColor=white" alt="Download hdemirbassmusic shaly version 2.0.5">
+      <img src="https://img.shields.io/badge/Download-Shaly%202.0.5-5268D8?style=for-the-badge&logo=android&logoColor=white" alt="Download hdemirbassmusic shaly version 2.0.7">
     </a>
     <a href="https://github.com/hdemirbass/hdemirbassmusic/releases">
       <img src="https://img.shields.io/github/downloads/hdemirbass/hdemirbassmusic/total?style=for-the-badge&label=total%20downloads&logo=github" alt="Total hdemirbassmusic release downloads">
