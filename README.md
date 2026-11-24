@@ -15,7 +15,7 @@
 </div>
 
 > [!WARNING]
-> **The current stable version is outdated, so I have removed it from Releases.** Please try **[shaly version 2.0.5](https://github.com/hdemirbass/hdemirbassmusic/releases)** instead.
+> **The current stable version is outdated, so I have removed it from Releases.** Please try **[shaly version 2.0.7](https://github.com/hdemirbass/hdemirbassmusic/releases)** instead.
 
 hdemirbassmusic brings music discovery, playback, lyrics, and your library together in one Android app. It is built with Kotlin, Jetpack Compose, and Media3, with custom Cupertino-style controls and Liquid Glass surfaces.
 
