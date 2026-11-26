@@ -50,7 +50,7 @@ hdemirbassmusic brings music discovery, playback, lyrics, and your library toget
 ## Download
 
 - **Stable:** Removed from Releases because it is outdated.
-- **Shaly (v2.0.5):** Download **shaly version 2.0.5** from [GitHub Releases](https://github.com/hdemirbass/hdemirbassmusic/releases).
+- **Shaly (v2.0.7):** Download **shaly version 2.0.7** from [GitHub Releases](https://github.com/hdemirbass/hdemirbassmusic/releases).
 
 hdemirbassmusic supports Android 8.0 (API 26) and later. Install APKs only from sources you trust. Android may ask you to allow installation from the app you used to download the APK.
 
